@@ -4,5 +4,9 @@
   "main": "index.js",
   "repository": "https://github.com/elninotech/uppload.git",
   "author": "El Nino (elnino.tech)",
-  "license": ""
+  "license": "MIT",
+  "scripts": {
+    "build": "neutrino build",
+    "lint": "neutrino lint"
+  }
 }
