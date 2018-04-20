@@ -1,11 +1,15 @@
+const webpack = require("webpack");
 const path = require("path");
 
 export default () => ({
 	mode: "production",
-	entry: "./index.js",
+	entry: {
+		uppload: "./index.js",
+		"uppload.min": "./index.js"
+	},
 	output: {
 		path: path.resolve(__dirname, "./dist"),
-		filename: "uppload.js",
+		filename: "[name].js",
 		libraryTarget: "umd",
 		globalObject: "this",
 		library: "uppload"

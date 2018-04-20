@@ -12,7 +12,7 @@ yarn add uppload
 
 ## Development
 
-### Todo
+### Roadmap
 - Modal
 - File preview
 - Image cropping
@@ -26,7 +26,7 @@ yarn install
 nvm use 8.11.1
 ```
 
-###$ Production
+### Production
 
 ```
 yarn build
