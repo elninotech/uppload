@@ -10,6 +10,13 @@ Import Uppload to your project:
 yarn add uppload
 ```
 
+Or use a CDN:
+
+```
+<script src="https://unpkg.com/uppload/dist/uppload.min.js"></script> <!-- unpkg -->
+<script src="https://cdn.jsdelivr.net/npm/uppload/dist/uppload.min.js"></script> <!-- jsDelivr -->
+```
+
 ## Development
 
 ### Roadmap
