@@ -17,6 +17,10 @@ export default () => ({
 	module: {
 		rules: [
 			{
+				test: /\.(s*)css$/,
+				use: [{ loader: "style-loader" }, { loader: "css-loader" }, { loader: "sass-loader" }]
+			},
+			{
 				test: /\.(js)$/,
 				exclude: /(node_modules|bower_components)/,
 				use: "babel-loader"

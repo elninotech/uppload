@@ -1,0 +1,32 @@
+.uppload-bg {
+    position: fixed;
+    z-index: 10000;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.uppload-modal {
+    position: fixed;
+    background: #fff;
+    z-index: 11000;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 0.25rem;
+}
+
+@media (min-width: 860px) {
+    .uppload-modal {
+        left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        width: 720px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 860px) {
+    .uppload-modal {
+        left: 0; right: 0;
+        top: 10vh; bottom: 0;
+    }
+}
