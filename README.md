@@ -1,8 +1,18 @@
 # Uppload
 
-Upload is a better JavaScript file uploader.
+Uopload is a better JavaScript file uploader.
 
-## Todo
+## Usage
+
+Import Uppload to your project:
+
+```
+yarn add uppload
+```
+
+## Development
+
+### Todo
 - Modal
 - File preview
 - Image cropping
@@ -16,7 +26,7 @@ yarn install
 nvm use 8.11.1
 ```
 
-### Production
+###$ Production
 
 ```
 yarn build
