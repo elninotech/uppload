@@ -5,16 +5,15 @@
   "repository": "https://github.com/elninotech/uppload.git",
   "author": "El Nino (elnino.tech)",
   "license": "MIT",
-  "scripts": {
-    "start": "neutrino start",
-    "build": "neutrino build --use @neutrinojs/library",
-    "lint": "neutrino lint"
-  },
   "devDependencies": {
-    "@neutrinojs/airbnb-base": "^8.2.2",
-    "@neutrinojs/library": "^8.2.2",
-    "neutrino": "^8.2.2",
-    "neutrino-middleware-sass": "^0.0.1",
-    "@neutrinojs/style-loader": "^8.2.2"
+    "onchange": "^3.3.0",
+    "prettier": "^1.12.1",
+    "webpack": "^4.6.0"
+  },
+  "scripts": {
+    "start:dev": "webpack-dev-server",
+    "start:prettier": "onchange '**/*.{js,vue}' -- prettier --use-tabs --print-width 130 --write {{changed}}",
+    "build": "webpack -p",
+    "prettier": "prettier --use-tabs --print-width 130 --write ./src/**/*.{js,vue}"
   }
 }

@@ -13,7 +13,7 @@ Upload is a better JavaScript file uploader.
 
 ```
 yarn install
-nvm use 9
+nvm use nvm install 8.11.1
 ```
 
 ### Production
