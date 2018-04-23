@@ -1,0 +1,17 @@
+.center-middle {
+    text-align: center;
+}
+
+.primary-button {
+    background-color: #00a8ff;
+    color: #fff;
+    border: none;
+    transition: 0.3s;
+    font: inherit;
+    font-size: 18px;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.25rem;
+    &:hover {
+        background-color: #0097e6;
+    }
+}

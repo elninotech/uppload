@@ -1,10 +1,19 @@
 .uppload-modal {
     aside {
-        background-color: #eee;
+        background-color: whitesmoke;
+        border-right: 1px solid rgba(0, 0, 0, 0.075);
         nav ul {
             margin: 0;
             padding: 0;
             list-style: none;
+            li {
+                svg {
+                    margin-right: 0.5rem;
+                }
+                &.active button {
+                    background-color: rgba(0, 0, 0, 0.075)
+                }
+            }
         }
     }
 }
@@ -27,7 +36,7 @@
                 width: 100%;
                 text-align: left;
                 padding: 1rem;
-                border-bottom: 1px solid #ddd;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.075);
                 &:hover {
                     background-color: rgba(0, 0, 0, 0.05);
                 }
@@ -40,5 +49,17 @@
             top: 0; bottom: 0;
             overflow-y: auto;
         }
+    }
+}
+
+.uppload-branding {
+    font-size: 80%;
+    color: rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    &:hover {
+        color: rgba(0, 0, 0, 0.5);
     }
 }

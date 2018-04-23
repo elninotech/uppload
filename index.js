@@ -2,6 +2,9 @@ import css from "./uppload.scss";
 
 let isOpen = 0;
 
+let currentPage = "upload";
+import pages from "./modules/pages";
+
 const modalBackground = document.createElement("div");
 modalBackground.classList.add("uppload-bg");
 document.body.appendChild(modalBackground);
@@ -13,19 +16,19 @@ modal.innerHTML =`
     <aside>
         <nav>
             <ul>
-                <li class="active"><button>Upload file</button></li>
-                <li><button>Click photo</button></li>
-                <li><button>Import from URL</button></li>
-                <li><button>Facebook</button></li>
-                <li><button>Google Drive</button></li>
-                <li><button>Google Photos</button></li>
-                <li><button>Dropbox</button></li>
-                <li><button>Instagram</button></li>
+                <li class="active"><button><i class="fas fa-fw fa-upload"></i>Upload file</button></li>
+                <li><button><i class="fas fa-fw fa-camera"></i>Click photo</button></li>
+                <li><button><i class="fas fa-fw fa-link"></i>Import from URL</button></li>
+                <li><button><i class="fab fa-fw fa-facebook"></i>Facebook</button></li>
+                <li><button><i class="fab fa-fw fa-google-drive"></i>Google Drive</button></li>
+                <li><button><i class="fab fa-fw fa-dropbox"></i>Dropbox</button></li>
+                <li><button><i class="fab fa-fw fa-instagram"></i>Instagram</button></li>
             </ul>
         </nav>
+        <a class="uppload-branding" href="https://github.com/elninotech/uppload" target="_blank" rel="noopener noreferrer">Get Uppload</a>
     </aside>
     <section>
-
+        ${pages[currentPage]}
     </section>
 </div>
 `;
