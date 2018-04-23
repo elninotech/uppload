@@ -15,12 +15,53 @@
     border-radius: 0.25rem;
 }
 
+.uppload-modal, .uppload-bg {
+    display: none;
+    &.visible {
+        display: block;
+    }
+    &.fadeIn {
+        animation: fadeIn 0.4s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    &.fadeOut {
+        animation: fadeOut 0.4s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    &.hidden {
+        display: none;
+    }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 @media (min-width: 860px) {
     .uppload-modal {
         left: 50%; top: 50%;
         transform: translate(-50%, -50%);
         width: 720px;
         height: 500px;
+    }
+    .uppload-bg::after {
+        z-index: 1;
+        cursor: pointer;
+        content: "\00D7";
+        font-family: sans-serif;
+        position: fixed;
+        font-size: 32px;
+        line-height: 0.5;
+        right: 2vw;
+        top: 2vw;
+        color: rgba(255, 255, 255, 0.5);
     }
 }
 

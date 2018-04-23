@@ -1,0 +1,44 @@
+.uppload-modal {
+    aside {
+        background-color: #eee;
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    }
+}
+
+@media (min-width: 860px) {
+    .uppload-modal {
+        aside {
+            width: 200px;
+            position: absolute;
+            left: 0; top: 0;
+            bottom: 0;
+            overflow-y: auto;
+            nav li button {
+                transition: 0.3s;
+                font: inherit;
+                background: none;
+                appearance: none;
+                border: none;
+                display: block;
+                width: 100%;
+                text-align: left;
+                padding: 1rem;
+                border-bottom: 1px solid #ddd;
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.05);
+                }
+            }
+        }
+        section {
+            position: absolute;
+            right: 0;
+            left: 200px;
+            top: 0; bottom: 0;
+            overflow-y: auto;
+        }
+    }
+}
