@@ -28,14 +28,14 @@ modal.innerHTML =`
         <a class="uppload-branding" href="https://github.com/elninotech/uppload" target="_blank" rel="noopener noreferrer">Get Uppload</a>
     </aside>
     <section>
-        ${pages[currentPage]}
+        ${pages[currentPage].html}
     </section>
 </div>
 `;
 document.body.appendChild(modal);
+pages[currentPage].init();
 
 window.addEventListener("keyup", event => {
-    console.log(event);
     if (event.keyCode === 27 || event.which === 27 || event.key === "Escape" || event.code === "Escape") {
         closeModal();
     }

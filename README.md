@@ -25,6 +25,7 @@ Or use a CDN:
 - Image cropping
 - Upload function
 - Import file/image (Facebook, Dropbox, etc.)
+- Add sample server configuration & files in docs
 
 ### Installation
 

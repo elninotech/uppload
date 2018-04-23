@@ -1,9 +1,9 @@
 .center-middle {
     text-align: center;
     position: absolute;
-    left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%)
+    transform: translateY(-50%);
+    left: 5rem; right: 5rem;
 }
 
 .primary-button {
@@ -31,5 +31,10 @@
 }
 
 .mb-full {
-    margin-bottom: 3rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+#dropzoneElt {
+    border: 2px dashed #aaa;
+    padding: 5rem 0;
 }
