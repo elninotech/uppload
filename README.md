@@ -1,6 +1,6 @@
 # Uppload
 
-Uopload is a better JavaScript file uploader.
+Uopload is a better JavaScript file uploader. Inspired by [Uploadcare](https://github.com/uploadcare/uploadcare-widget)'s widget, but highly customizable with an open API.
 
 ## Usage
 
@@ -20,7 +20,7 @@ Or use a CDN:
 ## Development
 
 ### Roadmap
-- Modal
+- ~~Modal~~
 - File preview
 - Image cropping
 - Upload function

@@ -1,5 +1,9 @@
 .center-middle {
     text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
 }
 
 .primary-button {
@@ -8,10 +12,24 @@
     border: none;
     transition: 0.3s;
     font: inherit;
-    font-size: 18px;
+    font-size: 115%;
     padding: 0.75rem 1.25rem;
     border-radius: 0.25rem;
     &:hover {
         background-color: #0097e6;
     }
+}
+
+.uppload-modal {
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.mb-full {
+    margin-bottom: 3rem !important;
 }
