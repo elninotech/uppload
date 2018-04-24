@@ -1,6 +1,4 @@
 import css from "./uppload.scss";
-
-let currentPage = "upload";
 import pages from "./modules/pages";
 
 class Uppload {
@@ -10,6 +8,7 @@ class Uppload {
         // Settings and initialization
         this.settings = settings || {};
         this.isOpen = 0;
+        this.currentPage = this.settings.defaultPage || "upload";
 
         // Append modal to body
         this.modalBackground = document.createElement("div");
@@ -18,16 +17,8 @@ class Uppload {
 
         this.modal = document.createElement("div");
         this.modal.classList.add("uppload-modal");
-        this.modal.innerHTML =`
-        <div>
-            ${pages.navbar.html}
-            <section>
-                ${pages[currentPage].html}
-            </section>
-        </div>
-        `;
+        this.changePage(this.currentPage);
         document.body.appendChild(this.modal);
-        pages[currentPage].init();
         
         // Add keyboard and click events to close modal
         this.modalBackground.addEventListener("click", this.closeModal.bind(this));
@@ -65,6 +56,7 @@ class Uppload {
     }
 
     openModal() {
+        if (this.isOpen === 1) return;
         this.isOpen = 1;
         this.modal.classList.add("visible");
         this.modalBackground.classList.add("visible");
@@ -79,6 +71,7 @@ class Uppload {
     };
     
     closeModal() {
+        if (this.isOpen === 0) return;
         this.isOpen = 0;
         this.modal.classList.add("fadeOut");
         this.modalBackground.classList.add("fadeOut");
@@ -89,6 +82,29 @@ class Uppload {
             this.modalBackground.classList.remove("visible");
         }, 399);
     };
+
+    changePage(newPage) {
+        if (!pages[newPage]) return;
+        this.modal.innerHTML =`
+        <div>
+            ${pages.navbar.html}
+            <section>
+                ${pages[newPage].html}
+            </section>
+        </div>
+        `;
+        setTimeout(() => {
+            pages[newPage].init();
+        }, 1);
+    }
+
+    uploadFile(file) {
+        if (typeof this.settings.onUpload === "function") {
+            this.onUpload(file);
+        } else if (this.settings.endpoint) {
+
+        }
+    }
 
 };
 window.Uppload = Uppload; // for CDN

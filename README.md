@@ -17,6 +17,41 @@ Or use a CDN:
 <script src="https://cdn.jsdelivr.net/npm/uppload/dist/uppload.min.js"></script> <!-- jsDelivr -->
 ```
 
+Create a new Uppload object with sample configuration:
+
+```
+const profilePicture = new Uppload({
+
+	// Default file value, useful for empty-state images
+	value: "https://randomuser.me/api/portraits/men/17.jpg",
+
+	// Change the values of these elements with the file URL
+	// Sets `value` for inputs and `src` for images
+	bind: ["#profilePicInput", "#profilePicImage"],
+
+	// Open the modal on clicking this button
+	call: ["#upploadBtn"],
+
+	// Function to upload the file to your server
+	// Use either this or `endpoint` with URL
+	onUpload: file => {
+		return new Promise((resolve, reject) => {
+			fetch("https://example.com/upload", {
+				method: "POST",
+				body: file
+			})
+				.then(response => response.json())
+				.then(json => {
+					let url = json.url;
+					resolve(url);
+				})
+				.catch(error => console.log(error));
+		});
+	}
+
+});
+```
+
 ## Development
 
 ### Roadmap
