@@ -36,8 +36,10 @@ class Uppload {
         // Add click event to button
         this.settings.call = this.settings.call || ["[data-uppload-button]"];
         for (let i = 0; i < this.settings.call.length; i++) {
-            let $button = document.querySelector(this.settings.call[i]);
-            $button.addEventListener("click", this.openModal.bind(this));
+            let $button = document.querySelectorAll(this.settings.call[i]);
+            for (let j = 0; j < $button.length; j++) {
+                $button[j].addEventListener("click", this.openModal.bind(this));
+            }
         }
     
     }
@@ -60,14 +62,12 @@ class Uppload {
         this.isOpen = 1;
         this.modal.classList.add("visible");
         this.modalBackground.classList.add("visible");
-        setTimeout(() => {
-            this.modal.classList.add("fadeIn");
-            this.modalBackground.classList.add("fadeIn");
-        }, 1);
+        this.modal.classList.add("fadeIn");
+        this.modalBackground.classList.add("fadeIn");
         setTimeout(() => {
             this.modal.classList.remove("fadeIn");
             this.modalBackground.classList.remove("fadeIn");
-        }, 400);
+        }, 399);
     };
     
     closeModal() {
