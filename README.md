@@ -1,6 +1,6 @@
 # Uppload
 
-Uopload is a better JavaScript file uploader. Inspired by [Uploadcare](https://github.com/uploadcare/uploadcare-widget)'s widget, but highly customizable with an open API.
+Uppload is a better JavaScript file uploader. Inspired by [Uploadcare](https://github.com/uploadcare/uploadcare-widget)'s widget, but highly customizable with an open API.
 
 ## Usage
 
@@ -52,7 +52,7 @@ const profilePicture = new Uppload({
 });
 ```
 
-## Configutation
+### Configutation
 
 You can pass the following properties in the constructor:
 
