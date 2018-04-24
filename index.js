@@ -7,24 +7,26 @@ class Uppload {
     
         // Settings and initialization
         this.settings = settings || {};
-        this.isOpen = 0;
+        this.isOpen = false;
+        this.value = null;
+        this.services = this.settings.services || [];
         this.currentPage = this.settings.defaultPage || "upload";
 
         // Append modal to body
-        this.modalBackground = document.createElement("div");
-        this.modalBackground.classList.add("uppload-bg");
-        document.body.appendChild(this.modalBackground);
+        this.backgroundElement = document.createElement("div");
+        this.backgroundElement.classList.add("uppload-bg");
+        document.body.appendChild(this.backgroundElement);
 
-        this.modal = document.createElement("div");
-        this.modal.classList.add("uppload-modal");
+        this.modalElement = document.createElement("div");
+        this.modalElement.classList.add("uppload-modal");
         this.changePage(this.currentPage);
-        document.body.appendChild(this.modal);
+        document.body.appendChild(this.modalElement);
         
         // Add keyboard and click events to close modal
-        this.modalBackground.addEventListener("click", this.closeModal.bind(this));
+        this.backgroundElement.addEventListener("click", this.closeModal.bind(this));
         window.addEventListener("keyup", event => {
             if (event.keyCode === 27 || event.which === 27 || event.key === "Escape" || event.code === "Escape") {
-                this.modalBackground.click();
+                this.backgroundElement.click();
             }
         });
 
@@ -44,6 +46,12 @@ class Uppload {
     
     }
 
+    // Dispatch custom events
+    dispatch(event, value = null) {
+        const currentEvent = new CustomEvent(event, { "detail": value });
+        document.dispatchEvent(currentEvent);
+    }
+
     updateValue(newValue, initial = 0) {
         const elements = this.settings.bind || ["[data-uppload-value]"];
         for (let i = 0; i < elements.length; i++) {
@@ -55,37 +63,40 @@ class Uppload {
             }
             $element.classList.add(`uppload-${initial === 0 ? "updated" : "initialized"}`);
         }
+        this.value = newValue;
     }
 
     openModal() {
-        if (this.isOpen === 1) return;
-        this.isOpen = 1;
-        this.modal.classList.add("visible");
-        this.modalBackground.classList.add("visible");
-        this.modal.classList.add("fadeIn");
-        this.modalBackground.classList.add("fadeIn");
+        if (this.isOpen === true) return;
+        this.isOpen = true;
+        this.dispatch("modalOpened");
+        this.modalElement.classList.add("visible");
+        this.backgroundElement.classList.add("visible");
+        this.modalElement.classList.add("fadeIn");
+        this.backgroundElement.classList.add("fadeIn");
         setTimeout(() => {
-            this.modal.classList.remove("fadeIn");
-            this.modalBackground.classList.remove("fadeIn");
+            this.modalElement.classList.remove("fadeIn");
+            this.backgroundElement.classList.remove("fadeIn");
         }, 399);
     };
     
     closeModal() {
-        if (this.isOpen === 0) return;
-        this.isOpen = 0;
-        this.modal.classList.add("fadeOut");
-        this.modalBackground.classList.add("fadeOut");
+        if (this.isOpen === false) return;
+        this.isOpen = false;
+        this.dispatch("modalClosed");
+        this.modalElement.classList.add("fadeOut");
+        this.backgroundElement.classList.add("fadeOut");
         setTimeout(() => {
-            this.modal.classList.remove("fadeOut");
-            this.modal.classList.remove("visible");
-            this.modalBackground.classList.remove("fadeOut");
-            this.modalBackground.classList.remove("visible");
+            this.modalElement.classList.remove("fadeOut");
+            this.modalElement.classList.remove("visible");
+            this.backgroundElement.classList.remove("fadeOut");
+            this.backgroundElement.classList.remove("visible");
         }, 399);
     };
 
     changePage(newPage) {
         if (!pages[newPage]) return;
-        this.modal.innerHTML =`
+        this.modalElement.innerHTML =`
         <div>
             ${pages.navbar.html}
             <section>
@@ -95,14 +106,26 @@ class Uppload {
         `;
         setTimeout(() => {
             pages[newPage].init();
+            this.dispatch("pageChanged", newPage);
         }, 1);
     }
 
     uploadFile(file) {
         if (typeof this.settings.onUpload === "function") {
-            this.onUpload(file);
+            this.onUpload(file).then(url => {
+                this.updateValue(url);
+                this.dispatch("fileUploaded", url);
+            }).catch(error => {
+                this.dispatch("fileError", error);
+            });
         } else if (this.settings.endpoint) {
-
+            fetch("URL")
+                .then(response => response.json())
+                .then(url => {
+                    this.dispatch("fileUploaded", url);
+                }).catch(error => {
+                    this.dispatch("fileUploaded", error);
+                });
         }
     }
 
