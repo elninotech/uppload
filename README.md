@@ -6,20 +6,20 @@ Uopload is a better JavaScript file uploader. Inspired by [Uploadcare](https://g
 
 Import Uppload to your project:
 
-```
+```bash
 yarn add uppload
 ```
 
 Or use a CDN:
 
-```
+```html
 <script src="https://unpkg.com/uppload/dist/uppload.min.js"></script> <!-- unpkg -->
 <script src="https://cdn.jsdelivr.net/npm/uppload/dist/uppload.min.js"></script> <!-- jsDelivr -->
 ```
 
 Create a new Uppload object with sample configuration:
 
-```
+```js
 const profilePicture = new Uppload({
 
 	// Default file value, useful for empty-state images
