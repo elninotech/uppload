@@ -52,6 +52,18 @@ const profilePicture = new Uppload({
 });
 ```
 
+## Configutation
+
+You can pass the following properties in the constructor:
+
+| Property | Default | Type | Description |
+| --- | --- | --- | --- |
+| `value` | `""` | String | Default value of the file, useful for image placeholders |
+| `bind` | `["[data-uppload-value]"]` | Array | Selectors for elements that need the uploaded file URL |
+| `call` | `["[data-uppload-button]"]` | Array | Selectors for elements that open the modal on click |
+| `onUpload` | `null` | Function | Function to upload file (returns promise with file URL) |
+| `endpoint` | `""` | String | Endpoint to upload file using fetch POST |
+
 ## Development
 
 ### Roadmap

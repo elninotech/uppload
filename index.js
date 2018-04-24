@@ -34,7 +34,7 @@ class Uppload {
         }
 
         // Add click event to button
-        this.settings.call = this.settings.call || ["data-uppload-button"];
+        this.settings.call = this.settings.call || ["[data-uppload-button]"];
         for (let i = 0; i < this.settings.call.length; i++) {
             let $button = document.querySelector(this.settings.call[i]);
             $button.addEventListener("click", this.openModal.bind(this));
@@ -43,7 +43,7 @@ class Uppload {
     }
 
     updateValue(newValue, initial = 0) {
-        const elements = this.settings.bind || [];
+        const elements = this.settings.bind || ["[data-uppload-value]"];
         for (let i = 0; i < elements.length; i++) {
             let $element = document.querySelector(elements[i]);
             if ($element.tagName === "IMG") {
