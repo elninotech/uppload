@@ -1,11 +1,15 @@
-import css from "./uppload.scss";
+import metaData from "./modules/meta";
+import { addGlobalEvent } from "./modules/dispatch";
+import dispatch from "./modules/dispatch";
 import pages from "./modules/pages";
+import css from "./uppload.scss";
 
 class Uppload {
 
     constructor(settings) {
     
         // Settings and initialization
+        this.meta = metaData;
         this.settings = settings || {};
         this.isOpen = false;
         this.value = null;
@@ -19,6 +23,7 @@ class Uppload {
 
         this.modalElement = document.createElement("div");
         this.modalElement.classList.add("uppload-modal");
+        this.modalElement.setAttribute("id", `uppload_${metaData.uniqueId}`);
         this.changePage(this.currentPage);
         document.body.appendChild(this.modalElement);
         
@@ -43,13 +48,12 @@ class Uppload {
                 $button[j].addEventListener("click", this.openModal.bind(this));
             }
         }
-    
-    }
 
-    // Dispatch custom events
-    dispatch(event, value = null) {
-        const currentEvent = new CustomEvent(event, { "detail": value });
-        document.dispatchEvent(currentEvent);
+        // Custom events
+        this.on = (upploadEvent, upploadFunction) => {
+            addGlobalEvent(upploadEvent, upploadFunction);
+        }
+    
     }
 
     updateValue(newValue, initial = 0) {
@@ -69,7 +73,7 @@ class Uppload {
     openModal() {
         if (this.isOpen === true) return;
         this.isOpen = true;
-        this.dispatch("modalOpened");
+        dispatch("modalOpened");
         this.modalElement.classList.add("visible");
         this.backgroundElement.classList.add("visible");
         this.modalElement.classList.add("fadeIn");
@@ -83,7 +87,7 @@ class Uppload {
     closeModal() {
         if (this.isOpen === false) return;
         this.isOpen = false;
-        this.dispatch("modalClosed");
+        dispatch("modalClosed");
         this.modalElement.classList.add("fadeOut");
         this.backgroundElement.classList.add("fadeOut");
         setTimeout(() => {
@@ -106,7 +110,7 @@ class Uppload {
         `;
         setTimeout(() => {
             pages[newPage].init();
-            this.dispatch("pageChanged", newPage);
+            dispatch("pageChanged", newPage);
         }, 1);
     }
 
@@ -114,17 +118,17 @@ class Uppload {
         if (typeof this.settings.onUpload === "function") {
             this.onUpload(file).then(url => {
                 this.updateValue(url);
-                this.dispatch("fileUploaded", url);
+                dispatch("fileUploaded", url);
             }).catch(error => {
-                this.dispatch("fileError", error);
+                dispatch("fileError", error);
             });
         } else if (this.settings.endpoint) {
             fetch("URL")
                 .then(response => response.json())
                 .then(url => {
-                    this.dispatch("fileUploaded", url);
+                    dispatch("fileUploaded", url);
                 }).catch(error => {
-                    this.dispatch("fileUploaded", error);
+                    dispatch("fileUploaded", error);
                 });
         }
     }

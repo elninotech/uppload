@@ -40,7 +40,7 @@ const profilePicture = new Uppload({
 
 	// Function to upload the file to your server
 	// Use either this or `endpoint` with URL
-	onUpload: file => {
+	uploadFunction: file => {
 		return new Promise((resolve, reject) => {
 			fetch("https://example.com/upload", {
 				method: "POST",
@@ -67,7 +67,7 @@ You can pass the following properties in the constructor:
 | `value` | `""` | String | Default value of the file, useful for image placeholders |
 | `bind` | `["[data-uppload-value]"]` | Array | Selectors for elements that need the uploaded file URL |
 | `call` | `["[data-uppload-button]"]` | Array | Selectors for elements that open the modal on click |
-| `onUpload` | `null` | Function | Function to upload file (returns promise with file URL) |
+| `uploadFunction` | `null` | Function | Function to upload file (returns promise with file URL) |
 | `endpoint` | `""` | String | Endpoint to upload file using fetch POST |
 | `services` | `["upload", "camera"]` | Array | List of upload services to show |
 
@@ -90,11 +90,11 @@ console.log(profilePicture.isOpen); // Returns true or false
 
 ### Events
 
-For reactive frameworks, it doesn't make sense to use the native Uppload `bind` property. Instead, you can watch the `Uppload.value` and build around that URL value. Alternately, you can also listen to events, like this (currently only supported by IE11+):
+For reactive frameworks, it doesn't make sense to use the native Uppload `bind` property. Instead, you can watch the `Uppload.value` and build around that URL value. Alternately, you can also listen to events using the `on` function:
 
 ```js
 const profilePicture = new Uppload();
-profilePicture.addEventListener("fileUploaded", fileURL => {
+profilePicture.on("fileUploaded", fileURL => {
 	console.log(fileURL); // Logs the uploaded file's URL
 });
 ```
@@ -137,7 +137,7 @@ You can customize the widget using CSS to overwrite properties. The following cl
 | `.uppload-(modal/bg).fadeIn` | Fade in animation on open (400ms) |
 | `.uppload-(modal/bg).fadeOut` | Fade out animation on close (400ms) |
 | `.uppload-modal .primary-button` | "Upload" or "Import" call-to-action button |
-| `.uppload-modal #dropzoneElt` | Dashed "drag-and-drop here" area |
+| `.uppload-modal #dragDropElement` | Dashed "drag-and-drop here" area |
 
 Uppload also adds some classes to your elements that it interacts with:
 
@@ -158,7 +158,6 @@ Uppload does **not** provide the server side implementation of handling the file
 
 You can also use any of the following Dropzone starter templates with Uppload:
 
-- [NodeJS with Express](http://howtonode.org/really-simple-file-uploads)
 - [Ruby on Rails](http://guides.rubyonrails.org/form_helpers.html#uploading-files)
 - [PHP (Basic)](http://www.startutorial.com/articles/view/how-to-build-a-file-upload-form-using-dropzonejs-and-php)
 - [Laravel](http://maxoffsky.com/code-blog/howto-ajax-multiple-file-upload-in-laravel/)
