@@ -52,7 +52,7 @@ const profilePicture = new Uppload({
 });
 ```
 
-## Configutation
+### Configutation
 
 You can pass the following properties in the constructor:
 
