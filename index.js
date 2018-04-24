@@ -114,25 +114,6 @@ class Uppload {
         }, 1);
     }
 
-    uploadFile(file) {
-        if (typeof this.settings.onUpload === "function") {
-            this.onUpload(file).then(url => {
-                this.updateValue(url);
-                dispatch("fileUploaded", url);
-            }).catch(error => {
-                dispatch("fileError", error);
-            });
-        } else if (this.settings.endpoint) {
-            fetch("URL")
-                .then(response => response.json())
-                .then(url => {
-                    dispatch("fileUploaded", url);
-                }).catch(error => {
-                    dispatch("fileUploaded", error);
-                });
-        }
-    }
-
 };
 window.Uppload = Uppload; // for CDN
 export default Uppload; // for ES6/CJS

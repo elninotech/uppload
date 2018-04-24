@@ -25,6 +25,7 @@ export default {
                 <div id="dragDropElement" class="mb-full">Drag and drop here to upload</div>
                 <p class="mb-full"><em>or</em></p>
                 <button id="selectFileBtn" class="primary-button">Choose a file</button>
+                <input type="file" id="dragDropFileElt">
             </div>
         `,
         init() {
