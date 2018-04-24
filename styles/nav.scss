@@ -10,6 +10,9 @@
                 svg {
                     margin-right: 0.5rem;
                 }
+                button {
+                    color: inherit;
+                }
                 &.active button {
                     background-color: rgba(0, 0, 0, 0.075)
                 }

@@ -5,5 +5,5 @@ export default () => {
         clickable: ".uppload-modal #dropzoneBtn",
         url: "/file/post"
     });
-    console.log(dropzoneElt);
+    // console.log(dropzoneElt);
 }
