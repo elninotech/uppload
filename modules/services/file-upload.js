@@ -1,5 +1,5 @@
-import metaData from "./meta";
-import dispatch from "./dispatch";
+import metaData from "../meta";
+import dispatch from "../dispatch";
 
 export default uploadFile => {
     const safeUploadFile = () => {

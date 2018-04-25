@@ -1,4 +1,4 @@
-import fileUploader from "./file-upload";
+import fileUploader from "./services/file-upload";
 
 export default uploadFile => {
     return {
