@@ -15,6 +15,14 @@
                     margin-right: 0.5rem;
                 }
                 button {
+                    text-align: left;
+                    transition: 0.3s;
+                    font: inherit;
+                    background: none;
+                    appearance: none;
+                    border: none;
+                    padding: 1rem;
+                    border-radius: 0;
                     color: inherit;
                 }
                 &.active button {
@@ -35,15 +43,8 @@
             overflow-y: auto;
             padding-bottom: 2rem;
             nav li button {
-                transition: 0.3s;
-                font: inherit;
-                background: none;
-                appearance: none;
-                border: none;
                 display: block;
                 width: 100%;
-                text-align: left;
-                padding: 1rem;
                 border-bottom: 1px solid rgba(0, 0, 0, 0.075);
                 &:hover {
                     background-color: rgba(0, 0, 0, 0.05);

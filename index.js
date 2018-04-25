@@ -21,8 +21,8 @@ class Uppload {
         this.isOpen = false;
         this.isUploading = false;
         this.value = null;
-        this.services = this.settings.services || [];
-        this.currentPage = this.settings.defaultPage || "upload";
+        this.currentPage = this.settings.defaultService || "upload";
+        this.settings.services = this.settings.services || ["upload", "camera"];
         this.settings.allowedTypes = this.settings.allowedTypes || "*";
         this.settings.maxFileSize = parseInt(this.settings.maxFileSize) || 100000000;
 
@@ -125,7 +125,7 @@ class Uppload {
                 }, this.settings.minimumDelay || 0);
             });
         };
-        this.pages = pagesFunction(this.uploadFile);
+        this.pages = pagesFunction(this.uploadFile, this.settings.services);
 
         // Append modal to body
         this.backgroundElement = document.createElement("div");
@@ -228,6 +228,7 @@ class Uppload {
         document.querySelector(`#uppload_${metaData.uniqueId} .currentPage`).innerHTML = this.pages[newPage].html;
         if (typeof this.pages[newPage].init === "function") this.pages[newPage].init();
         dispatch("pageChanged", newPage);
+        document.querySelector(`#uppload_${metaData.uniqueId} .service_${newPage}`).classList.add("active");
         const navbar = document.querySelector(`#uppload_${metaData.uniqueId} aside`);
         if (newPage === "uploading" || newPage === "uploaded") {
             navbar.classList.add("hidden");

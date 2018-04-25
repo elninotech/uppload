@@ -1,25 +1,7 @@
 import fileUploader from "./services/file-upload";
 
-export default uploadFile => {
-    return {
-        navbar: {
-            html: `
-                <aside>
-                    <nav>
-                        <ul>
-                            <li class="active"><button><i class="fas fa-fw fa-upload"></i>Upload file</button></li>
-                            <li><button><i class="fas fa-fw fa-camera"></i>Camera</button></li>
-                            <li><button><i class="fas fa-fw fa-link"></i>Import from URL</button></li>
-                            <li><button><i class="fab fa-fw fa-facebook"></i>Facebook</button></li>
-                            <li><button><i class="fab fa-fw fa-google-drive"></i>Google Drive</button></li>
-                            <li><button><i class="fab fa-fw fa-dropbox"></i>Dropbox</button></li>
-                            <li><button><i class="fab fa-fw fa-instagram"></i>Instagram</button></li>
-                        </ul>
-                    </nav>
-                    <a class="uppload-branding" href="https://github.com/elninotech/uppload" target="_blank" rel="noopener noreferrer">Get Uppload</a>
-                </aside>
-            `
-        },
+export default (uploadFile, services) => {
+    const serviceMetas = {
         uploading: {
             html: `
                 <div class="center-middle">
@@ -37,6 +19,8 @@ export default uploadFile => {
             `
         },
         upload: {
+            title: "Upload file",
+            icon: `<i class="fas fa-fw fa-upload"></i>`,
             html: `
                 <div class="center-middle">
                     <div id="dragDropElement" class="mb-full">Drag and drop here to upload</div>
@@ -49,5 +33,27 @@ export default uploadFile => {
                 fileUploader(uploadFile);
             }
         }
+    };
+    let navItems = ``;
+    for (let i = 0; i < services.length; i++) {
+        let currentService = serviceMetas[services[i]];
+        if (currentService) {
+            navItems += `
+                <li class="service_${services[i]}"><button>${currentService.icon || ""}${currentService.title}</button></li>
+            `;
+        }
     }
+    serviceMetas.navbar = {
+        html: `
+            <aside>
+                <nav>
+                    <ul>
+                        ${navItems}
+                    </ul>
+                </nav>
+                <a class="uppload-branding" href="https://github.com/elninotech/uppload" target="_blank" rel="noopener noreferrer">Get Uppload</a>
+            </aside>
+        `
+    };
+    return serviceMetas;
 };
