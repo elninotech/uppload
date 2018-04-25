@@ -51,7 +51,8 @@ class Uppload {
                         }
                         fetch(this.settings.endpoint.url, {
                             method: this.settings.endpoint.method || "POST",
-                            body: file
+                            body: file,
+                            headers: this.settings.headers || null
                         })
                             .then(response => response.json())
                             .then(url => {

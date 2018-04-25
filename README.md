@@ -1,6 +1,13 @@
 # Uppload
 
-Uppload is a better JavaScript file uploader. Inspired by [Uploadcare](https://github.com/uploadcare/uploadcare-widget)'s widget, but highly customizable with an open API.
+![](https://img.shields.io/npm/dw/uppload.svg?maxAge=2592000&style=flat)
+![](https://img.shields.io/npm/l/uppload.svg?maxAge=2592000&style=flat)
+![](https://img.shields.io/david/dev/elninotech/uppload.svg?maxAge=2592000)
+![](https://img.shields.io/david/elninotech/uppload.svg?maxAge=2592000)
+
+Uppload is a better JavaScript file uploader inspired by [Uploadcare](https://github.com/uploadcare/uploadcare-widget)'s widget, but is highly customizable and features an open API.
+
+**Uppload is currently in development and is NOT production-ready.**
 
 ## Usage
 
@@ -38,22 +45,9 @@ const profilePicture = new Uppload({
 	// Open the modal on clicking this button
 	call: ["#upploadBtn"],
 
-	// Function to upload the file to your server
-	// Use either this or `endpoint` with URL
-	uploadFunction: file => {
-		return new Promise((resolve, reject) => {
-			fetch("https://example.com/upload", {
-				method: "POST",
-				body: file
-			})
-				.then(response => response.json())
-				.then(json => {
-					let url = json.url;
-					resolve(url);
-				})
-				.catch(error => reject(error));
-		});
-	}
+	// Endpoint to send files to
+	// Use either this or `uploadFunction` for a custom function
+	endpoint: "https://example.com/upload_backend"
 
 });
 ```
@@ -67,11 +61,40 @@ You can pass the following properties in the constructor:
 | `value` | `""` | String | Default value of the file, useful for image placeholders |
 | `bind` | `["[data-uppload-value]"]` | Array | Selectors for elements that need the uploaded file URL |
 | `call` | `["[data-uppload-button]"]` | Array | Selectors for elements that open the modal on click |
-| `uploadFunction` | `null` | Function | Function to upload file (returns promise with file URL) |
+| `uploadFunction` | Fetch (configurable) | Function | Function to upload file (returns promise with file URL) |
 | `endpoint` | `""` | String | Endpoint to upload file using fetch POST |
 | `services` | `["upload", "camera"]` | Array | List of upload services to show |
 | `successDelay` | `1500` | Number | Number of milliseconds to show the success screen for |
 | `minimumDelay` | `0` | Number | Number of milliseconds to delay uploading by |
+| `endpoint.url` | `""` | String | Endpoint URL to fetch |
+| `endpoint.method` | `POST` | String | HTTP verb, can be changed to `PUT` if necessary |
+| `endpoint.headers` | `null` | Headers | HTTP headers to send with the request |
+
+```js
+const withEndpointOptions = new Uppload({
+	endpoint: { // Endpoint is an object with configuration
+		method: "POST",
+		url: "/my_backend"
+	}
+});
+
+const withCustomUpload = new Uppload({
+	uploadFunction: file => {  // Custom file upload handler
+		return new Promise((resolve, reject) => {
+			fetch("https://example.com/upload", {
+				method: "POST",
+				body: file
+			})
+				.then(response => response.json())
+				.then(json => {
+					let url = json.url;
+					resolve(url);
+				})
+				.catch(error => reject(error));
+		});
+	}
+});
+```
 
 ### Properties
 
@@ -108,10 +131,10 @@ profilePicture.on("fileUploaded", fileURL => {
 | `uploadStarted` | Started to upload a new file | `Blob` File |
 | `fileUploaded` | A new file is uploaded | `String` File URL |
 | `fileError` | An error ocurred in uploading the file | Server's response |
-| `dragOver` | A file is being dragged in the drop area |
-| `fileDropped` | A file has been dropped in the drop area |
-| `modalOpened` | The Uppload modal was opened | `undefined` |
-| `modalClosed` | The Uppload modal was closed | `undefined` |
+| `dragOver` | A file is being dragged in the drop area | Nothing |
+| `fileDropped` | A file has been dropped in the drop area | `Blob` File |
+| `modalOpened` | The Uppload modal was opened | Nothing |
+| `modalClosed` | The Uppload modal was closed | Nothing |
 | `pageChanged` | User navigated to this uploading service | `String` Service ID |
 
 You can also programatically call the following functions:
@@ -193,7 +216,7 @@ Uppload does **not** provide the server side implementation of handling the file
 </form>
 ```
 
-You can also use any of the following Dropzone starter templates with Uppload:
+You can also use any of the following starter templates for your backend:
 
 - [Ruby on Rails](http://guides.rubyonrails.org/form_helpers.html#uploading-files)
 - [PHP (Basic)](http://www.startutorial.com/articles/view/how-to-build-a-file-upload-form-using-dropzonejs-and-php)
@@ -213,6 +236,7 @@ You can also use any of the following Dropzone starter templates with Uppload:
 - Import file/image (Facebook, Dropbox, etc.)
 - Add sample server configuration & files in docs
 - IE support (`customEvent`)
+- Starter templates for Firebase, S3, etc.
 
 ### Installation
 

@@ -9,13 +9,13 @@ export default uploadFile => {
             if (event.dataTransfer.items[0].kind === "file") {
                 metaData.file = event.dataTransfer.items[0].getAsFile();
                 uploadFile();
-                dispatch("fileDropped");
+                dispatch("fileDropped", metaData.file);
                 dispatch("fileSelected", metaData.file);
             }
         } else {
             metaData.file = event.dataTransfer.files[0];
             uploadFile();
-            dispatch("fileDropped");
+            dispatch("fileDropped", metaData.file);
             dispatch("fileSelected", metaData.file);
         }
         event.preventDefault();
