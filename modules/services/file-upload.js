@@ -23,6 +23,16 @@ export default uploadFile => {
         }
         event.preventDefault();
     });
+    dropper.addEventListener("dragenter", event => {
+        dropper.classList.add("active");
+        dispatch("dragEnter");
+        event.preventDefault();
+    });
+    dropper.addEventListener("dragleave", event => {
+        dropper.classList.remove("active");
+        dispatch("dragLeave");
+        event.preventDefault();
+    });
     dropper.addEventListener("dragover", event => {
         dispatch("dragOver");
         event.preventDefault();

@@ -43,8 +43,8 @@ const profilePicture = new Uppload({
 	// Sets `value` for inputs and `src` for images
 	bind: ["#profilePicInput", "#profilePicImage"],
 
-	// Open the modal on clicking this button
-	call: ["#upploadBtn"],
+	// Open the modal when the user clicks on this button
+	call: ["form.profile button#uploadButton"],
 
 	// Endpoint to send files to
 	// Use either this or `uploadFunction` for a custom function
@@ -54,7 +54,7 @@ const profilePicture = new Uppload({
 	maxFileSize: 25000000,
 
 	// Types of files to allow (string or MIME type array)
-	allowedTypes: "image",
+	allowedTypes: "image"
 
 });
 ```
@@ -144,11 +144,13 @@ profilePicture.on("fileUploaded", fileURL => {
 | `uploadError` | An error ocurred in uploading the file | `Blob` File |
 | `fileError` | Invalid file (size/type/etc.) selected | Server's response |
 | `fileUploaded` | A new file is uploaded | `String` File URL |
-| `dragOver` | A file is being dragged in the drop area | Nothing |
 | `fileDropped` | A file has been dropped in the drop area | `Blob` File |
 | `modalOpened` | The Uppload modal was opened | Nothing |
 | `modalClosed` | The Uppload modal was closed | Nothing |
 | `pageChanged` | User navigated to this uploading service | `String` Service ID |
+| `dragOver` | A file is being dragged in the drop area | Nothing |
+| `dragEnter` | File has entered the drop area | Nothing |
+| `dragLeave` | File has left the drop area | Nothing |
 
 You can also programatically call the following functions:
 
