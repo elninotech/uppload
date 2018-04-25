@@ -24,6 +24,10 @@
                     padding: 1rem;
                     border-radius: 0;
                     color: inherit;
+                    &:focus {
+                        outline: none;
+                        background-color: rgba(0, 0, 0, 0.075);
+                    }
                 }
                 &.active button {
                     background-color: rgba(0, 0, 0, 0.075)

@@ -22,7 +22,7 @@ class Uppload {
         this.isUploading = false;
         this.value = null;
         this.currentPage = this.settings.defaultService || "upload";
-        this.settings.services = this.settings.services || ["upload", "camera"];
+        this.settings.services = this.settings.services || ["upload", "camera", "link", "facebook", "drive", "dropbox", "instagram"];
         this.settings.allowedTypes = this.settings.allowedTypes || "*";
         this.settings.maxFileSize = parseInt(this.settings.maxFileSize) || 100000000;
 
@@ -145,6 +145,13 @@ class Uppload {
         </div>
         `;
         document.body.appendChild(this.modalElement);
+        const navbarChildren = document.querySelectorAll(`#uppload_${metaData.uniqueId} .button_service`);
+        for (let i = 0; i < navbarChildren.length; i++) {
+            let currentChild = navbarChildren[i];
+            currentChild.addEventListener("click", () => {
+                this.changePage(currentChild.className.replace("button_service button_service_", ""));
+            });
+        }
         
         // Add keyboard and click events to close modal
         this.backgroundElement.addEventListener("click", this.closeModal.bind(this));
@@ -228,7 +235,14 @@ class Uppload {
         document.querySelector(`#uppload_${metaData.uniqueId} .currentPage`).innerHTML = this.pages[newPage].html;
         if (typeof this.pages[newPage].init === "function") this.pages[newPage].init();
         dispatch("pageChanged", newPage);
-        document.querySelector(`#uppload_${metaData.uniqueId} .service_${newPage}`).classList.add("active");
+        const navbarChildren = document.querySelectorAll(`#uppload_${metaData.uniqueId} .button_service`);
+        for (let i = 0; i < navbarChildren.length; i++) {
+            navbarChildren[i].classList.remove("active");
+        }
+        const currentChild = document.querySelector(`#uppload_${metaData.uniqueId} .button_service_${newPage}`);
+        if (currentChild) {
+            currentChild.classList.add("active");
+        }
         const navbar = document.querySelector(`#uppload_${metaData.uniqueId} aside`);
         if (newPage === "uploading" || newPage === "uploaded") {
             navbar.classList.add("hidden");

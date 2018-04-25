@@ -32,6 +32,36 @@ export default (uploadFile, services) => {
             init() {
                 fileUploader(uploadFile);
             }
+        },
+        camera: {
+            icon: `<i class="fas fa-fw fa-camera"></i>`,
+            title: "Camera",
+            html: ``
+        },
+        link: {
+            icon: `<i class="fas fa-fw fa-link"></i>`,
+            title: "Import from URL",
+            html: ``
+        },
+        facebook: {
+            icon: `<i class="fab fa-fw fa-facebook"></i>`,
+            title: "Facebook",
+            html: ``
+        },
+        drive: {
+            icon: `<i class="fab fa-fw fa-google-drive"></i>`,
+            title: "Google Drive",
+            html: ``
+        },
+        dropbox: {
+            icon: `<i class="fab fa-fw fa-dropbox"></i>`,
+            title: "Dropbox",
+            html: ``
+        },
+        instagram: {
+            icon: `<i class="fab fa-fw fa-instagram"></i>`,
+            title: "Instagram",
+            html: ``
         }
     };
     let navItems = ``;
@@ -39,7 +69,7 @@ export default (uploadFile, services) => {
         let currentService = serviceMetas[services[i]];
         if (currentService) {
             navItems += `
-                <li class="service_${services[i]}"><button>${currentService.icon || ""}${currentService.title}</button></li>
+                <li class="button_service button_service_${services[i]}"><button>${currentService.icon || ""}${currentService.title}</button></li>
             `;
         }
     }
