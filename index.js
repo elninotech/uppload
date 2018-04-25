@@ -22,7 +22,7 @@ class Uppload {
         this.isUploading = false;
         this.value = null;
         this.currentPage = this.settings.defaultService || "upload";
-        this.settings.services = this.settings.services || ["upload", "camera", "link", "facebook", "drive", "dropbox", "instagram"];
+        this.settings.services = this.settings.services || ["upload"];
         this.settings.allowedTypes = this.settings.allowedTypes || "*";
         this.settings.maxFileSize = parseInt(this.settings.maxFileSize) || 100000000;
 

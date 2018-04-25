@@ -4,7 +4,7 @@
         border-right: 1px solid rgba(0, 0, 0, 0.075);
         transition: 1s;
         &.hidden {
-            opacity: 0.25;
+            opacity: 0.333;
         }
         nav ul {
             margin: 0;
@@ -13,6 +13,8 @@
             li {
                 svg {
                     margin-right: 0.5rem;
+                    opacity: 0.5;
+                    transition: 0.3s;
                 }
                 button {
                     text-align: left;
@@ -25,11 +27,13 @@
                     border-radius: 0;
                     color: inherit;
                     &:focus {
+                        svg { opacity: 1 }
                         outline: none;
                         background-color: rgba(0, 0, 0, 0.075);
                     }
                 }
                 &.active button {
+                    svg { opacity: 1 }
                     background-color: rgba(0, 0, 0, 0.075)
                 }
             }
