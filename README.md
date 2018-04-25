@@ -71,7 +71,7 @@ You can pass the following properties in the constructor:
 | `endpoint.url` | `""` | String | Endpoint URL to fetch |
 | `endpoint.method` | `POST` | String | HTTP verb, can be changed to `PUT` if necessary |
 | `endpoint.headers` | `null` | Headers | HTTP headers to send with the request |
-| `allowedTypes` | `"*"` | Array or String | MIME or file types to allow (eg. `image/jpg` or just `image`) |
+| `allowedTypes` | `"*"` | Array or String | MIME types to allow (eg. string `"image/jpg"` or array `["image/jpg", "image/png"]`). Can also put [MIME registry](https://www.iana.org/assignments/media-types/media-types.xhtml) instead: `"image"`, `"audio"`, `"font"`, `"text"`, `"video"`, etc. |
 | `isFileTypeAllowed` | Function | Function | Function to check whether file type is allowed (returns boolean) |
 
 ```js
@@ -114,7 +114,7 @@ console.log(profilePicture.isOpen); // Returns true or false
 | `isOpen` | `false` | Boolean | Returns whether the modal is currently open |
 | `isUploading` | `false` | Boolean | Returns whether a file is currently being uploaded |
 | `value` | `null` | String | Returns the URL of the uploaded file |
-| `currentPage` | `upload` | String | Returns the current page from navbar |
+| `currentPage` | `"upload"` | String | Returns the current page from navbar |
 | `modalElement` | [DOM Element](https://developer.mozilla.org/en-US/docs/Web/API/Element) | Object | Returns the modal HTML DOM element |
 | `backgroundElement` | [DOM Element](https://developer.mozilla.org/en-US/docs/Web/API/Element) | Object | Returns the background HTML DOM element |
 
@@ -133,8 +133,9 @@ profilePicture.on("fileUploaded", fileURL => {
 | --- | --- | --- | 
 | `fileSelected` | A new file has been selected | `Blob` File |
 | `uploadStarted` | Started to upload a new file | `Blob` File |
+| `uploadError` | An error ocurred in uploading the file | `Blob` File |
+| `fileError` | Invalid file (size/type/etc.) selected | Server's response |
 | `fileUploaded` | A new file is uploaded | `String` File URL |
-| `fileError` | An error ocurred in uploading the file | Server's response |
 | `dragOver` | A file is being dragged in the drop area | Nothing |
 | `fileDropped` | A file has been dropped in the drop area | `Blob` File |
 | `modalOpened` | The Uppload modal was opened | Nothing |

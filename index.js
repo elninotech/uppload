@@ -36,7 +36,7 @@ class Uppload {
         });
 
         this.showError = error => {
-            dispatch("uploadError", error);
+            dispatch("fileError", error);
             document.querySelector(`#uppload_${metaData.uniqueId} .errorMessage`).innerHTML = `<strong>Error: </strong>${error}.`;
             document.querySelector(`#uppload_${metaData.uniqueId} .errorMessage`).classList.add("visible");
             setTimeout(() => {
@@ -68,7 +68,7 @@ class Uppload {
                             dispatch("fileUploaded", url);
                             resolve(url);
                         }).catch(error => {
-                            dispatch("fileError", error);
+                            dispatch("uploadError", error);
                             reject(error);
                         }).finally(() => {
                             this.isUploading = false;
