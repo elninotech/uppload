@@ -4,10 +4,17 @@ import dispatch from "./modules/dispatch";
 import pagesFunction from "./modules/pages";
 import css from "./uppload.scss";
 
+const bytesToSize = bytes => {
+    const sizes = ["bytes", "KB", "MB", "GB", "TB"];
+    if (bytes == 0) return "0 bytes";
+    const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+    return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
+} 
+
 class Uppload {
 
     constructor(settings) {
-    
+        
         // Settings and initialization
         this.meta = metaData;
         this.settings = settings || {};
@@ -17,6 +24,7 @@ class Uppload {
         this.services = this.settings.services || [];
         this.currentPage = this.settings.defaultPage || "upload";
         this.settings.allowedTypes = this.settings.allowedTypes || "*";
+        this.settings.maxFileSize = parseInt(this.settings.maxFileSize) || 100000000;
 
         this.isFileTypeAllowed = this.settings.isFileTypeAllowed || ((file = this.meta.file) => {
             if (typeof this.settings.allowedTypes === "object" && this.settings.allowedTypes.length > 0) {
@@ -31,6 +39,13 @@ class Uppload {
                 if (file.type.includes(`${this.settings.allowedTypes}/`)) {
                     return true;
                 }
+            }
+            return false;
+        });
+
+        this.isFileSizeAllowed = this.settings.isFileSizeAllowed || ((file = this.meta.file) => {
+            if (this.settings.maxFileSize > file.size) {
+                return true;
             }
             return false;
         });
@@ -54,6 +69,12 @@ class Uppload {
                 }
                 if (!this.isFileTypeAllowed(file)) {
                     const error = "This file type is not allowed";
+                    this.showError(error);
+                    reject(error);
+                    return;
+                }
+                if (!this.isFileSizeAllowed(file)) {
+                    const error = `File should be smaller than ${bytesToSize(this.settings.maxFileSize)}`;
                     this.showError(error);
                     reject(error);
                     return;
@@ -151,7 +172,7 @@ class Uppload {
         this.on = (upploadEvent, upploadFunction) => {
             addGlobalEvent(upploadEvent, upploadFunction);
         }
-    
+        
     }
 
     updateValue(newValue, initial = 0) {
@@ -187,7 +208,7 @@ class Uppload {
             this.backgroundElement.classList.remove("fadeIn");
         }, 399);
     };
-    
+        
     closeModal() {
         if (this.isOpen === false) return;
         this.isOpen = false;

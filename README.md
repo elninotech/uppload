@@ -48,7 +48,13 @@ const profilePicture = new Uppload({
 
 	// Endpoint to send files to
 	// Use either this or `uploadFunction` for a custom function
-	endpoint: "https://example.com/upload_backend"
+	endpoint: "https://example.com/upload_backend",
+
+	// Maximum file size allowed in bytes (this is 25 MB)
+	maxFileSize: 25000000,
+
+	// Types of files to allow (string or MIME type array)
+	allowedTypes: "image",
 
 });
 ```
@@ -72,7 +78,9 @@ You can pass the following properties in the constructor:
 | `endpoint.method` | `POST` | String | HTTP verb, can be changed to `PUT` if necessary |
 | `endpoint.headers` | `null` | Headers | HTTP headers to send with the request |
 | `allowedTypes` | `"*"` | Array or String | MIME types to allow (eg. string `"image/jpg"` or array `["image/jpg", "image/png"]`). Can also put [MIME registry](https://www.iana.org/assignments/media-types/media-types.xhtml) instead: `"image"`, `"audio"`, `"font"`, `"text"`, `"video"`, etc. |
-| `isFileTypeAllowed` | Function | Function | Function to check whether file type is allowed (returns boolean) |
+| `maxFileSize` | `100000000` (10 MB) | Number | Maximum allowed file size in bytes |
+| `isFileTypeAllowed` | Checks `allowedTypes` types | Function | Function to check whether file type is allowed (returns boolean) |
+| `isFileSizeAllowed` | Checks `maxFileSize` | Function | Function to check whether file size is allowed (returns boolean) |
 
 ```js
 const withEndpointOptions = new Uppload({
