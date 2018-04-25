@@ -73,7 +73,7 @@ You can pass the following properties in the constructor:
 
 ### Properties
 
-You can use availavle properties to get information about the state of Uppload:
+You can use available properties to get information about the state of Uppload:
 
 ```js
 const profilePicture = new Uppload();
@@ -101,13 +101,16 @@ profilePicture.on("fileUploaded", fileURL => {
 
 | Event | Dispatched when | Returns |
 | --- | --- | --- | 
+| `fileSelected` | A new file has been selected | `Blob` File |
 | `fileUploaded` | A new file is uploaded | `String` File URL |
-| `fileError` | A error ocurred in uploading the file | Server's response |
-| `modalOpened` | Model was opened | `undefined` |
-| `modalClosed` | Model was closed | `undefined` |
+| `fileError` | An error ocurred in uploading the file | Server's response |
+| `dragOver` | A file is being dragged in the drop area |
+| `fileDropped` | A file has been dropped in the drop area |
+| `modalOpened` | The Uppload modal was opened | `undefined` |
+| `modalClosed` | The Uppload modal was closed | `undefined` |
 | `pageChanged` | User navigated to this uploading service | `String` Service ID |
 
-You can also programatically call these functions:
+You can also programatically call the following functions:
 
 ```js
 const profilePicture = new Uppload();
@@ -116,11 +119,41 @@ profilePicture.openModal(); // Opens the modal
 
 | Function | Parameters | Description |
 | --- | --- | --- | 
+| `uploadFile(param)` | `Blob` File | Upload this file to the server (returns promise) |
 | `openModal()` | None | Opens the modal |
 | `closeModal()` | None | Closes the modal |
 | `updateValue(param)` | `String` URL | Make this URL the post-uploading value |
 | `changePage(param)` | `String` Service ID | Navigate to this uploading service |
-| `uploadFile(param)` | `Blob` File | Upload this file to the server |
+
+Using the above methods and events, you can also automatically upload a file using Uppload. For example, the following code fetches an image from Mashape's meme generator API and uploads it to your server:
+
+```js
+fetch("https://ronreiter-meme-generator.p.mashape.com/meme?meme=Baby+Godfather&font_size=50&font=Impact&top=Thanks+m&bottom=Later", {
+	method: "GET",
+	headers: new Headers({
+		"X-Mashape-Key": "API_KEY"
+	}),
+	mode: "cors"
+})
+	.then(response.arrayBuffer())
+	.then(buffer => {
+		let binary = "";
+		[].slice.call(new Uint8Array(buffer)).forEach(byte => binary += String.fromCharCode(byte));
+		const file = "data:image/jpeg;base64," + window.btoa(binary);
+		new Uppload({
+			endpoint: "/upload_backend"
+		}).uploadFile(file)
+			.then(fileUrl => {
+				console.log(`File uploaded: ${fileUrl}`);
+			})
+			.catch(error => {
+				console.error("Error from server", error);
+			});
+	})
+	.catch(error => {
+		console.error("Error in fetching file", error);
+	});
+```
 
 ### Customization
 

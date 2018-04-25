@@ -1,7 +1,7 @@
 import metaData from "./modules/meta";
 import { addGlobalEvent } from "./modules/dispatch";
 import dispatch from "./modules/dispatch";
-import pages from "./modules/pages";
+import pagesFunction from "./modules/pages";
 import css from "./uppload.scss";
 
 class Uppload {
@@ -15,6 +15,40 @@ class Uppload {
         this.value = null;
         this.services = this.settings.services || [];
         this.currentPage = this.settings.defaultPage || "upload";
+
+        this.uploadFile = (file = this.meta.file) => {
+            return new Promise((resolve, reject) => {
+                if (typeof this.settings.onUpload === "function") {
+                    this.onUpload(file).then(url => {
+                        this.updateValue(url);
+                        dispatch("fileUploaded", url);
+                        resolve(url);
+                    }).catch(error => {
+                        dispatch("fileError", error);
+                        reject(error);
+                    });
+                } else if (this.settings.endpoint) {
+                    if (typeof this.settings.endpoint === "string") {
+                        this.settings.endpoint = {
+                            url: this.settings.endpoint
+                        }
+                    }
+                    fetch(this.settings.endpoint.url, {
+                        method: this.settings.endpoint.method || "POST",
+                        body: file
+                    })
+                        .then(response => response.json())
+                        .then(url => {
+                            dispatch("fileUploaded", url);
+                            resolve(url);
+                        }).catch(error => {
+                            dispatch("fileUploaded", error);
+                            reject(error);
+                        });
+                }
+            });
+        };
+        this.pages = pagesFunction(this.uploadFile);
 
         // Append modal to body
         this.backgroundElement = document.createElement("div");
@@ -99,17 +133,17 @@ class Uppload {
     };
 
     changePage(newPage) {
-        if (!pages[newPage]) return;
+        if (!this.pages[newPage]) return;
         this.modalElement.innerHTML =`
         <div>
-            ${pages.navbar.html}
+            ${this.pages.navbar.html}
             <section>
-                ${pages[newPage].html}
+                ${this.pages[newPage].html}
             </section>
         </div>
         `;
         setTimeout(() => {
-            pages[newPage].init();
+            this.pages[newPage].init();
             dispatch("pageChanged", newPage);
         }, 1);
     }
