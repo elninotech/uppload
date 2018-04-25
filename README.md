@@ -1,9 +1,10 @@
 # Uppload
 
 ![](https://img.shields.io/npm/dw/uppload.svg?maxAge=2592000&style=flat)
+![](https://img.shields.io/github/size/elninotech/uppload/dist/uppload.min.js.svg?style=flat)
 ![](https://img.shields.io/npm/l/uppload.svg?maxAge=2592000&style=flat)
-![](https://img.shields.io/david/dev/elninotech/uppload.svg?maxAge=2592000)
-![](https://img.shields.io/david/elninotech/uppload.svg?maxAge=2592000)
+![](https://img.shields.io/david/elninotech/uppload.svg?maxAge=2592000&style=flat)
+![](https://img.shields.io/david/dev/elninotech/uppload.svg?maxAge=2592000&style=flat)
 
 Uppload is a better JavaScript file uploader inspired by [Uploadcare](https://github.com/uploadcare/uploadcare-widget)'s widget, but is highly customizable and features an open API.
 

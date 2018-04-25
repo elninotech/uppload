@@ -4,7 +4,6 @@ const path = require("path");
 export default () => ({
 	mode: "production",
 	entry: {
-		uppload: "./index.js",
 		"uppload.min": "./index.js"
 	},
 	output: {
