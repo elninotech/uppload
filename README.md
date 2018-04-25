@@ -102,6 +102,7 @@ profilePicture.on("fileUploaded", fileURL => {
 | Event | Dispatched when | Returns |
 | --- | --- | --- | 
 | `fileSelected` | A new file has been selected | `Blob` File |
+| `uploadStarted` | Started to upload a new file | `Blob` File |
 | `fileUploaded` | A new file is uploaded | `String` File URL |
 | `fileError` | An error ocurred in uploading the file | Server's response |
 | `dragOver` | A file is being dragged in the drop area |

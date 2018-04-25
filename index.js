@@ -18,8 +18,15 @@ class Uppload {
 
         this.uploadFile = (file = this.meta.file) => {
             return new Promise((resolve, reject) => {
-                if (typeof this.settings.onUpload === "function") {
-                    this.onUpload(file).then(url => {
+                if (!file) {
+                    const error = "No file selected";
+                    dispatch("uploadError", error);
+                    reject(error);
+                    return;
+                }
+                dispatch("uploadStarted", file);
+                if (typeof this.settings.uploadFunction === "function") {
+                    this.settings.uploadFunction(file).then(url => {
                         this.updateValue(url);
                         dispatch("fileUploaded", url);
                         resolve(url);
@@ -45,6 +52,10 @@ class Uppload {
                             dispatch("fileUploaded", error);
                             reject(error);
                         });
+                } else {
+                    const error = "No endpoint or upload function found";
+                    dispatch("uploadError", error);
+                    reject(error);
                 }
             });
         };
@@ -102,6 +113,9 @@ class Uppload {
             $element.classList.add(`uppload-${initial === 0 ? "updated" : "initialized"}`);
         }
         this.value = newValue;
+        if (initial === 0) {
+            this.closeModal();
+        }
     }
 
     openModal() {
