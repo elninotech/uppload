@@ -12,51 +12,64 @@ class Uppload {
         this.meta = metaData;
         this.settings = settings || {};
         this.isOpen = false;
+        this.isUploading = false;
         this.value = null;
         this.services = this.settings.services || [];
         this.currentPage = this.settings.defaultPage || "upload";
 
         this.uploadFile = (file = this.meta.file) => {
             return new Promise((resolve, reject) => {
+                this.isUploading = true;
+                this.changePage("uploading");
                 if (!file) {
+                    this.isUploading = false;
+                    this.changePage("uploaded");
                     const error = "No file selected";
                     dispatch("uploadError", error);
                     reject(error);
                     return;
                 }
                 dispatch("uploadStarted", file);
-                if (typeof this.settings.uploadFunction === "function") {
-                    this.settings.uploadFunction(file).then(url => {
-                        this.updateValue(url);
-                        dispatch("fileUploaded", url);
-                        resolve(url);
-                    }).catch(error => {
-                        dispatch("fileError", error);
-                        reject(error);
-                    });
-                } else if (this.settings.endpoint) {
-                    if (typeof this.settings.endpoint === "string") {
-                        this.settings.endpoint = {
-                            url: this.settings.endpoint
-                        }
-                    }
-                    fetch(this.settings.endpoint.url, {
-                        method: this.settings.endpoint.method || "POST",
-                        body: file
-                    })
-                        .then(response => response.json())
-                        .then(url => {
+                setTimeout(() => {
+                    if (typeof this.settings.uploadFunction === "function") {
+                        this.settings.uploadFunction(file).then(url => {
+                            this.updateValue(url);
                             dispatch("fileUploaded", url);
                             resolve(url);
                         }).catch(error => {
-                            dispatch("fileUploaded", error);
+                            dispatch("fileError", error);
                             reject(error);
+                        }).finally(() => {
+                            this.isUploading = false;
+                            this.changePage("uploaded");
                         });
-                } else {
-                    const error = "No endpoint or upload function found";
-                    dispatch("uploadError", error);
-                    reject(error);
-                }
+                    } else if (this.settings.endpoint) {
+                        if (typeof this.settings.endpoint === "string") {
+                            this.settings.endpoint = {
+                                url: this.settings.endpoint
+                            }
+                        }
+                        fetch(this.settings.endpoint.url, {
+                            method: this.settings.endpoint.method || "POST",
+                            body: file
+                        })
+                            .then(response => response.json())
+                            .then(url => {
+                                dispatch("fileUploaded", url);
+                                resolve(url);
+                            }).catch(error => {
+                                dispatch("fileUploaded", error);
+                                reject(error);
+                            }).finally(() => {
+                                this.isUploading = false;
+                                this.changePage("uploaded");
+                            });
+                    } else {
+                        const error = "No endpoint or upload function found";
+                        dispatch("uploadError", error);
+                        reject(error);
+                    }
+                }, this.settings.minimumDelay || 0);
             });
         };
         this.pages = pagesFunction(this.uploadFile);
@@ -69,7 +82,12 @@ class Uppload {
         this.modalElement = document.createElement("div");
         this.modalElement.classList.add("uppload-modal");
         this.modalElement.setAttribute("id", `uppload_${metaData.uniqueId}`);
-        this.changePage(this.currentPage);
+        this.modalElement.innerHTML =`
+        <div>
+            ${this.pages.navbar.html}
+            <section class="currentPage"></section>
+        </div>
+        `;
         document.body.appendChild(this.modalElement);
         
         // Add keyboard and click events to close modal
@@ -114,12 +132,15 @@ class Uppload {
         }
         this.value = newValue;
         if (initial === 0) {
-            this.closeModal();
+            setTimeout(() => {
+                this.closeModal();
+            }, this.settings.successDelay || 1500);
         }
     }
 
     openModal() {
         if (this.isOpen === true) return;
+        this.changePage(this.currentPage);
         this.isOpen = true;
         dispatch("modalOpened");
         this.modalElement.classList.add("visible");
@@ -148,18 +169,15 @@ class Uppload {
 
     changePage(newPage) {
         if (!this.pages[newPage]) return;
-        this.modalElement.innerHTML =`
-        <div>
-            ${this.pages.navbar.html}
-            <section>
-                ${this.pages[newPage].html}
-            </section>
-        </div>
-        `;
-        setTimeout(() => {
-            this.pages[newPage].init();
-            dispatch("pageChanged", newPage);
-        }, 1);
+        document.querySelector(`#uppload_${metaData.uniqueId} .currentPage`).innerHTML = this.pages[newPage].html;
+        if (typeof this.pages[newPage].init === "function") this.pages[newPage].init();
+        dispatch("pageChanged", newPage);
+        const navbar = document.querySelector(`#uppload_${metaData.uniqueId} aside`);
+        if (newPage === "uploading" || newPage === "uploaded") {
+            navbar.classList.add("hidden");
+        } else {
+            navbar.classList.remove("hidden");
+        }
     }
 
 };

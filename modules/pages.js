@@ -20,6 +20,22 @@ export default uploadFile => {
                 </aside>
             `
         },
+        uploading: {
+            html: `
+                <div class="center-middle">
+                    <div><i class="fas fa-spinner fa-spin loading-spinner"></i></div>
+                    <div>Uploading...</div>
+                </div>
+            `
+        },
+        uploaded: {
+            html: `
+                <div class="center-middle">
+                    <div><i class="fas fa-check loading-spinner"></i></div>
+                    <div>Uploaded</div>
+                </div>
+            `
+        },
         upload: {
             html: `
                 <div class="center-middle">

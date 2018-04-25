@@ -2,6 +2,10 @@
     aside {
         background-color: whitesmoke;
         border-right: 1px solid rgba(0, 0, 0, 0.075);
+        transition: 1s;
+        &.hidden {
+            opacity: 0.25;
+        }
         nav ul {
             margin: 0;
             padding: 0;

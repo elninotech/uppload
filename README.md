@@ -70,6 +70,8 @@ You can pass the following properties in the constructor:
 | `uploadFunction` | `null` | Function | Function to upload file (returns promise with file URL) |
 | `endpoint` | `""` | String | Endpoint to upload file using fetch POST |
 | `services` | `["upload", "camera"]` | Array | List of upload services to show |
+| `successDelay` | `1500` | Number | Number of milliseconds to show the success screen for |
+| `minimumDelay` | `0` | Number | Number of milliseconds to delay uploading by |
 
 ### Properties
 
@@ -83,6 +85,7 @@ console.log(profilePicture.isOpen); // Returns true or false
 | Property | Default | Type | Description |
 | --- | --- | --- | --- |
 | `isOpen` | `false` | Boolean | Returns whether the modal is currently open |
+| `isUploading` | `false` | Boolean | Returns whether a file is currently being uploaded |
 | `value` | `null` | String | Returns the URL of the uploaded file |
 | `currentPage` | `upload` | String | Returns the current page from navbar |
 | `modalElement` | [DOM Element](https://developer.mozilla.org/en-US/docs/Web/API/Element) | Object | Returns the modal HTML DOM element |
