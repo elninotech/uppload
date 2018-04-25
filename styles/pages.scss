@@ -44,9 +44,28 @@
         display: none !important;
     }
 
-    .loading-spinner {
+    .loading-spinner, .uploaded-icon {
         color: #aaa;
         font-size: 300%;
         margin-bottom: 1.5rem;
+    }
+    .uploaded-icon {
+        background-color: #2ed573;
+        color: #fff;
+        padding: 1rem;
+        border-radius: 100%;
+    }
+
+    .errorMessage {
+        color: rgba(255, 255, 255, 0.9);
+        background-color: #ff4757;
+        padding: 1rem;
+        position: absolute;
+        left: 0; right: 0; top: 0;
+        opacity: 0;
+        transition: 0.5s;
+        &.visible {
+            opacity: 1;
+        }
     }
 }

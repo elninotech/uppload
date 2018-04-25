@@ -31,7 +31,7 @@ export default uploadFile => {
         uploaded: {
             html: `
                 <div class="center-middle">
-                    <div><i class="fas fa-check loading-spinner"></i></div>
+                    <div><i class="fas fa-check uploaded-icon"></i></div>
                     <div>Uploaded</div>
                 </div>
             `

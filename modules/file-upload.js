@@ -2,19 +2,22 @@ import metaData from "./meta";
 import dispatch from "./dispatch";
 
 export default uploadFile => {
+    const safeUploadFile = () => {
+        uploadFile().catch(() => {});
+    };
     const dropper = document.querySelector(`#uppload_${metaData.uniqueId} #dragDropElement`);
     const inputFile = document.querySelector(`#uppload_${metaData.uniqueId} #dragDropFileElt`);
     dropper.addEventListener("drop", event => {
         if (event.dataTransfer.items) {
             if (event.dataTransfer.items[0].kind === "file") {
                 metaData.file = event.dataTransfer.items[0].getAsFile();
-                uploadFile();
+                safeUploadFile();
                 dispatch("fileDropped", metaData.file);
                 dispatch("fileSelected", metaData.file);
             }
         } else {
             metaData.file = event.dataTransfer.files[0];
-            uploadFile();
+            safeUploadFile();
             dispatch("fileDropped", metaData.file);
             dispatch("fileSelected", metaData.file);
         }
@@ -34,7 +37,7 @@ export default uploadFile => {
     });
     inputFile.addEventListener("change", event => {
         metaData.file = inputFile.files[0];
-        uploadFile();
+        safeUploadFile();
         dispatch("fileSelected", metaData.file);
     });
 }

@@ -16,19 +16,50 @@ class Uppload {
         this.value = null;
         this.services = this.settings.services || [];
         this.currentPage = this.settings.defaultPage || "upload";
+        this.settings.allowedTypes = this.settings.allowedTypes || "*";
+
+        this.isFileTypeAllowed = this.settings.isFileTypeAllowed || ((file = this.meta.file) => {
+            if (typeof this.settings.allowedTypes === "object" && this.settings.allowedTypes.length > 0) {
+                if (this.settings.allowedTypes.includes(file.type)) {
+                    return true;
+                }
+            } else if (this.settings.allowedTypes === file.type) {
+                return true;
+            } else if (this.settings.allowedTypes === "*") {
+                return true;
+            } else {
+                if (file.type.includes(`${this.settings.allowedTypes}/`)) {
+                    return true;
+                }
+            }
+            return false;
+        });
+
+        this.showError = error => {
+            dispatch("uploadError", error);
+            document.querySelector(`#uppload_${metaData.uniqueId} .errorMessage`).innerHTML = `<strong>Error: </strong>${error}.`;
+            document.querySelector(`#uppload_${metaData.uniqueId} .errorMessage`).classList.add("visible");
+            setTimeout(() => {
+                document.querySelector(`#uppload_${metaData.uniqueId} .errorMessage`).classList.remove("visible");
+            }, this.settings.errorDelay || 3000);
+        };
 
         this.uploadFile = (file = this.meta.file) => {
             return new Promise((resolve, reject) => {
-                this.isUploading = true;
-                this.changePage("uploading");
                 if (!file) {
-                    this.isUploading = false;
-                    this.changePage("uploaded");
-                    const error = "No file selected";
-                    dispatch("uploadError", error);
+                    const error = "You have not selected a file";
+                    showError(error);
                     reject(error);
                     return;
                 }
+                if (!this.isFileTypeAllowed(file)) {
+                    const error = "This file type is not allowed";
+                    this.showError(error);
+                    reject(error);
+                    return;
+                }
+                this.isUploading = true;
+                this.changePage("uploading");
                 dispatch("uploadStarted", file);
                 setTimeout(() => {
                     if (typeof this.settings.uploadFunction === "function") {
@@ -67,7 +98,7 @@ class Uppload {
                             });
                     } else {
                         const error = "No endpoint or upload function found";
-                        dispatch("uploadError", error);
+                        showError(error);
                         reject(error);
                     }
                 }, this.settings.minimumDelay || 0);
@@ -86,7 +117,10 @@ class Uppload {
         this.modalElement.innerHTML =`
         <div>
             ${this.pages.navbar.html}
-            <section class="currentPage"></section>
+            <section>
+                <div class="errorMessage"></div>
+                <div class="currentPage"></div>
+            </section>
         </div>
         `;
         document.body.appendChild(this.modalElement);

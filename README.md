@@ -67,9 +67,12 @@ You can pass the following properties in the constructor:
 | `services` | `["upload", "camera"]` | Array | List of upload services to show |
 | `successDelay` | `1500` | Number | Number of milliseconds to show the success screen for |
 | `minimumDelay` | `0` | Number | Number of milliseconds to delay uploading by |
+| `errorDelay` | `2000` | Number | Number of milliseconds to show an error message for |
 | `endpoint.url` | `""` | String | Endpoint URL to fetch |
 | `endpoint.method` | `POST` | String | HTTP verb, can be changed to `PUT` if necessary |
 | `endpoint.headers` | `null` | Headers | HTTP headers to send with the request |
+| `allowedTypes` | `"*"` | Array or String | MIME or file types to allow (eg. `image/jpg` or just `image`) |
+| `isFileTypeAllowed` | Function | Function | Function to check whether file type is allowed (returns boolean) |
 
 ```js
 const withEndpointOptions = new Uppload({
