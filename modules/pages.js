@@ -1,6 +1,7 @@
 import fileUploader from "./services/file-upload";
+import instagram from "./services/instagram";
 
-export default (uploadFile, services) => {
+export default (uploadFile, services, parent) => {
     const serviceMetas = {
         uploading: {
             html: `
@@ -61,7 +62,18 @@ export default (uploadFile, services) => {
         instagram: {
             icon: `<i class="fab fa-fw fa-instagram"></i>`,
             title: "Instagram",
-            html: ``
+            html: `
+                <div class="center-middle">
+                    <label>
+                        <div>Instagram post URL</div>
+                        <input id="instagramInput" type="text" value="https://www.instagram.com/p/BeV6tOhFUor" placeholder="https://www.instagram.com/p/BeV6tOhFUor">
+                    </label>
+                    <button id="instagramButton" class="primary-button">Import from Instagram</button>
+                </div>
+            `,
+            init() {
+                instagram(uploadFile, parent);
+            }
         }
     };
     let navItems = ``;

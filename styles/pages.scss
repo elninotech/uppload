@@ -1,3 +1,6 @@
+@import "./services/instagram";
+@import "./services/upload";
+
 .uppload-modal {
     .center-middle {
         text-align: center;
@@ -34,20 +37,6 @@
     .mb-full {
         margin-bottom: 1.5rem !important;
     }
-    
-    #dragDropElement {
-        border: 2px dashed #aaa;
-        padding: 5rem 0;
-        transition: 0.5s;
-        &.active {
-            transform: scale(1.05);
-            background-color: whitesmoke;
-        }
-    }
-
-    #dragDropFileElt {
-        display: none !important;
-    }
 
     .loading-spinner, .uploaded-icon {
         color: #aaa;
@@ -72,5 +61,13 @@
         &.visible {
             opacity: 1;
         }
+    }
+
+    label {
+        font-size: 110%;
+        div {
+            margin-bottom: 1rem;
+        }
+        margin-bottom: 1.5rem;
     }
 }

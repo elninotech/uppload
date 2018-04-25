@@ -1,0 +1,17 @@
+.uppload-modal {
+
+    #dragDropElement {
+        border: 2px dashed #aaa;
+        padding: 5rem 0;
+        transition: 0.5s;
+        &.active {
+            transform: scale(1.05);
+            background-color: whitesmoke;
+        }
+    }
+
+    #dragDropFileElt {
+        display: none !important;
+    }
+
+}

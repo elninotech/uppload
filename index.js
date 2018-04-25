@@ -22,7 +22,7 @@ class Uppload {
         this.isUploading = false;
         this.value = null;
         this.currentPage = this.settings.defaultService || "upload";
-        this.settings.services = this.settings.services || ["upload"];
+        this.settings.services = this.settings.services || ["upload", "camera", "link", "facebook", "drive", "dropbox", "instagram"];
         this.settings.allowedTypes = this.settings.allowedTypes || "*";
         this.settings.maxFileSize = parseInt(this.settings.maxFileSize) || 100000000;
 
@@ -63,7 +63,7 @@ class Uppload {
             return new Promise((resolve, reject) => {
                 if (!file) {
                     const error = "You have not selected a file";
-                    showError(error);
+                    this.showError(error);
                     reject(error);
                     return;
                 }
@@ -119,13 +119,13 @@ class Uppload {
                             });
                     } else {
                         const error = "No endpoint or upload function found";
-                        showError(error);
+                        this.showError(error);
                         reject(error);
                     }
                 }, this.settings.minimumDelay || 0);
             });
         };
-        this.pages = pagesFunction(this.uploadFile, this.settings.services);
+        this.pages = pagesFunction(this.uploadFile, this.settings.services, this);
 
         // Append modal to body
         this.backgroundElement = document.createElement("div");
