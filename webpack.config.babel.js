@@ -1,5 +1,6 @@
 const webpack = require("webpack");
 const path = require("path");
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 
 export default () => ({
 	mode: "production",
@@ -25,5 +26,10 @@ export default () => ({
 				use: "babel-loader"
 			}
 		]
-	}
+	},
+	plugins: [
+		new UglifyJSPlugin({
+			sourceMap: true
+		})
+	]
 });

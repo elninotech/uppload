@@ -3,12 +3,13 @@ import instagram from "./services/instagram";
 
 export default scope => {
 	const services = scope.settings.services;
+	const i18n = scope.i18n;
 	const serviceMetas = {
 		uploading: {
 			html: `
                 <div class="center-middle">
                     <div><i class="fas fa-spinner fa-spin loading-spinner"></i></div>
-                    <div>Uploading...</div>
+                    <div>${i18n.uploading}</div>
                 </div>
             `
 		},
@@ -16,7 +17,7 @@ export default scope => {
 			html: `
                 <div class="center-middle">
                     <div><i class="fas fa-check uploaded-icon"></i></div>
-                    <div>Uploaded</div>
+                    <div>${i18n.uploaded}</div>
                 </div>
             `
 		},
@@ -25,9 +26,9 @@ export default scope => {
 			icon: `<i class="fas fa-fw fa-upload"></i>`,
 			html: `
                 <div class="center-middle">
-                    <div id="dragDropElement" class="mb-full">Drag and drop here to upload</div>
-                    <p class="mb-full"><em>or</em></p>
-                    <button id="selectFileBtn" class="primary-button">Choose a file</button>
+                    <div id="dragDropElement" class="mb-full">${i18n.select_file.drag_here}</div>
+                    <p class="mb-full"><em>${i18n.select_file.or}</em></p>
+                    <button id="selectFileBtn" class="primary-button">${i18n.select_file.choose_file}</button>
                     <input type="file" id="dragDropFileElt">
                 </div>
             `,
@@ -66,10 +67,10 @@ export default scope => {
 			html: `
                 <div class="center-middle">
                     <label>
-                        <div>Instagram post URL</div>
+                        <div>${i18n.instagram.post_url}</div>
                         <input id="instagramInput" type="text" value="https://www.instagram.com/p/BeV6tOhFUor" placeholder="https://www.instagram.com/p/BeV6tOhFUor">
                     </label>
-                    <button id="instagramButton" class="primary-button">Import from Instagram</button>
+                    <button id="instagramButton" class="primary-button">${i18n.instagram.import}</button>
                 </div>
             `,
 			init() {

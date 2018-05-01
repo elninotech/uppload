@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start:dev": "webpack-dev-server",
-    "start:prettier": "onchange '**/*.{js,vue}' -- prettier --use-tabs --print-width 130 --write {{changed}}",
+    "start:prettier": "onchange '**/*.{js,vue} !*.min.js' -- prettier --use-tabs --print-width 130 --write {{changed}}",
     "build": "webpack -p",
     "prettier": "prettier --use-tabs --print-width 130 --write ./src/**/*.{js,vue}",
     "live": "webpack --watch",

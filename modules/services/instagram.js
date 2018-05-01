@@ -7,7 +7,7 @@ export default scope => {
 	};
 	const err = () => {
 		scope.changePage("instagram");
-		const error = "Unable to fetch this image from Instagram";
+		const error = scope.i18n.errors.instagram_no_fetch;
 		scope.showError(error);
 		dispatch("uploadError", error);
 		scope.isUploading = false;

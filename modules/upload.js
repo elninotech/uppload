@@ -69,7 +69,7 @@ export default (file, scope) => {
 						scope.changePage("uploaded");
 					});
 			} else {
-				const error = "No endpoint or upload function found";
+				const error = scope.i18n.errors.no_endpoint;
 				scope.showError(error);
 				reject(error);
 			}
