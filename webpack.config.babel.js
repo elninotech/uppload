@@ -1,6 +1,5 @@
 import webpack from "webpack";
 import path from "path";
-import UglifyJSPlugin from "uglifyjs-webpack-plugin";
 
 export default () => ({
 	mode: "production",
@@ -26,10 +25,5 @@ export default () => ({
 				use: "babel-loader"
 			}
 		]
-	},
-	plugins: [
-		new UglifyJSPlugin({
-			sourceMap: true
-		})
-	]
+	}
 });
