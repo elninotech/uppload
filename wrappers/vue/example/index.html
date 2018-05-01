@@ -16,13 +16,13 @@
 		<script src="uppload-vue.js"></script>
 		<script>
 			const UpploadVue = window["uppload-vue"].default;
-			const key = "Your key here"
 			const app = new Vue({
 				el: "#app",
 				name: "App",
 				template: `
 				<div>
-					{{ message }}
+					<p>Upload image URL: {{ url || "None yet..." }}</p>
+					<p>{{ message }}</p>
 					<uppload :settings="settings" @uploaded="onUploaded">
 						<button class="btn">Upload</button>
 					</uppload>
@@ -30,21 +30,21 @@
 				`,
 				componentName: "App",
 				data: {
+					url: "",
 					message: "Click on the button below to upload a new file:",
 					settings: {
 						minimumDelay: 2000,
 						uploadFunction: file => {
 							return new Promise((resolve, reject) => {
 								let url = "https://randomuser.me/api/portraits/men/18.jpg";
-								console.log(url);
 								resolve(url);
 							});
 						}
 					}
 				},
 				methods: {
-					onUploaded(event) {
-						console.log("uploaded: ", event);
+					onUploaded(url) {
+						this.url = url;
 					}
 				},
 				components: {

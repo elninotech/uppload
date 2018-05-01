@@ -3637,8 +3637,8 @@ upath@^1.0.0:
   resolved "https://registry.yarnpkg.com/upath/-/upath-1.0.5.tgz#02cab9ecebe95bbec6d5fc2566325725ab6d1a73"
 
 uppload@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/uppload/-/uppload-0.1.1.tgz#7f23dbb4fe965c1e0501adda4a0dcbee8382af6d"
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/uppload/-/uppload-0.1.2.tgz#a9af9b495d4756a0ee3b5e167de0359f80530650"
 
 uri-js@^3.0.2:
   version "3.0.2"
