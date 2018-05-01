@@ -1,6 +1,6 @@
-const webpack = require("webpack");
-const path = require("path");
-const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+import webpack from "webpack";
+import path from "path";
+import UglifyJSPlugin from "uglifyjs-webpack-plugin";
 
 export default () => ({
 	mode: "production",
