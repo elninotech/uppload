@@ -71,3 +71,16 @@
         margin-bottom: 1.5rem;
     }
 }
+
+@media (max-width: 860px) {
+    .uppload-modal {
+        .errorMessage {
+            top: auto;
+            bottom: 0;
+        }
+        .center-middle {
+            left: 1.5rem;
+            right: 1.5rem;
+        }
+    }
+}

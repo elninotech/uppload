@@ -80,3 +80,19 @@
         color: rgba(0, 0, 0, 0.5);
     }
 }
+
+@media (max-width: 860px) {
+    .uppload-modal {
+        aside {
+            nav {
+                ul {
+                    white-space: nowrap;
+                    overflow-x: auto;
+                }
+                li {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

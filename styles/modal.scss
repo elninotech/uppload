@@ -45,6 +45,18 @@
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+.uppload-bg::after {
+    z-index: 1;
+    cursor: pointer;
+    content: "\00D7";
+    font-family: sans-serif;
+    position: fixed;
+    font-size: 32px;
+    line-height: 0.5;
+    right: 2vw;
+    top: 2vw;
+    color: rgba(255, 255, 255, 0.5);
+}
 
 @media (min-width: 860px) {
     .uppload-modal {
@@ -52,18 +64,6 @@
         transform: translate(-50%, -50%);
         width: 720px;
         height: 500px;
-    }
-    .uppload-bg::after {
-        z-index: 1;
-        cursor: pointer;
-        content: "\00D7";
-        font-family: sans-serif;
-        position: fixed;
-        font-size: 32px;
-        line-height: 0.5;
-        right: 2vw;
-        top: 2vw;
-        color: rgba(255, 255, 255, 0.5);
     }
 }
 
