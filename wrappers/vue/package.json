@@ -1,6 +1,6 @@
 {
   "name": "uppload-vue",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Official Vue.js component for Uppload",
   "main": "uppload.vue",
   "repository": "https://github.com/elninotech/uppload/tree/master/wrappers/vue",
