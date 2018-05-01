@@ -186,12 +186,14 @@ class Uppload {
 		const elements = this.settings.bind || ["[data-uppload-value]"];
 		for (let i = 0; i < elements.length; i++) {
 			let $element = document.querySelector(elements[i]);
-			if ($element.tagName === "IMG") {
-				$element.setAttribute("src", newValue);
-			} else {
-				$element.setAttribute("value", newValue);
+			if ($element) {
+				if ($element.tagName === "IMG") {
+					$element.setAttribute("src", newValue);
+				} else {
+					$element.setAttribute("value", newValue);
+				}
+				$element.classList.add(`uppload-${initial === 0 ? "updated" : "initialized"}`);
 			}
-			$element.classList.add(`uppload-${initial === 0 ? "updated" : "initialized"}`);
 		}
 		this.value = newValue;
 		if (initial === 0) {
