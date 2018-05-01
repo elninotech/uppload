@@ -1,4 +1,4 @@
-<p align="center"><img alt="Uppload logo" src="https://user-images.githubusercontent.com/38886034/39476496-7100aa64-4d5c-11e8-9a6f-9ee734bb788b.png" width="200"></p>
+<p align="center"><img alt="Uppload logo" src="https://user-images.githubusercontent.com/38886034/39478268-359f87f0-4d62-11e8-8b93-abd1ad2df398.png" width="140"></p>
 
 <p align="center">
 <img alt="" src="https://img.shields.io/npm/dw/uppload.svg?maxAge=2592000&style=flat">
