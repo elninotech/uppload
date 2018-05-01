@@ -21,9 +21,16 @@ export default {
 	},
 	mounted() {
 		this.uppload = new Uppload(this.settings);
+		this.uppload.on("uploadStarted", () => {
+			console.log("upload started");
+		});
+		setInterval(() => {
+			console.log(this.uppload.value);
+		}, 1000);
 		this.uppload.on("fileUploaded", url => {
+			console.log("upload successful");
 			this.updateUrl(url);
-			this.$emit("success", url);
+			this.$emit("uploaded", url);
 		});
 	},
 	methods: {

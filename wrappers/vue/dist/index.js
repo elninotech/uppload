@@ -137,9 +137,16 @@ const addGlobalEvent = (upploadEvent, upploadFunction, scopeElement) => {
 
   mounted() {
     this.uppload = new __WEBPACK_IMPORTED_MODULE_0_uppload__["a" /* default */](this.settings);
+    this.uppload.on("uploadStarted", () => {
+      console.log("upload started");
+    });
+    setInterval(() => {
+      console.log(this.uppload.value);
+    }, 1000);
     this.uppload.on("fileUploaded", url => {
+      console.log("upload successful");
       this.updateUrl(url);
-      this.$emit("success", url);
+      this.$emit("uploaded", url);
     });
   },
 
