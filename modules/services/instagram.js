@@ -1,8 +1,9 @@
 import dispatch from "../dispatch";
+import uploadFile from "../upload";
 
-export default (uploadFile, scope) => {
+export default scope => {
 	const safeUploadFile = () => {
-		uploadFile().catch(() => {});
+		uploadFile(null, scope).catch(() => {});
 	};
 	const err = () => {
 		scope.changePage("instagram");

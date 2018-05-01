@@ -79,7 +79,7 @@ You can pass the following properties in the constructor:
 | `endpoint.method` | `POST` | String | HTTP verb, can be changed to `PUT` if necessary |
 | `endpoint.headers` | `null` | Headers | HTTP headers to send with the request |
 | `allowedTypes` | `"*"` | Array or String | MIME types to allow (eg. string `"image/jpg"` or array `["image/jpg", "image/png"]`). Can also put [MIME registry](https://www.iana.org/assignments/media-types/media-types.xhtml) instead: `"image"`, `"audio"`, `"font"`, `"text"`, `"video"`, etc. |
-| `maxFileSize` | `100000000` (10 MB) | Number | Maximum allowed file size in bytes |
+| `maxFileSize` | `"infinite"` | Number | Maximum allowed file size in bytes, defaults to string infinte |
 | `isFileTypeAllowed` | Checks `allowedTypes` types | Function | Function to check whether file type is allowed (returns boolean) |
 | `isFileSizeAllowed` | Checks `maxFileSize` | Function | Function to check whether file size is allowed (returns boolean) |
 

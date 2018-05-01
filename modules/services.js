@@ -1,7 +1,8 @@
 import fileUploader from "./services/file-upload";
 import instagram from "./services/instagram";
 
-export default (uploadFile, services, scope) => {
+export default scope => {
+	const services = scope.settings.services;
 	const serviceMetas = {
 		uploading: {
 			html: `
@@ -31,7 +32,7 @@ export default (uploadFile, services, scope) => {
                 </div>
             `,
 			init() {
-				fileUploader(uploadFile, scope);
+				fileUploader(scope);
 			}
 		},
 		camera: {
@@ -72,7 +73,7 @@ export default (uploadFile, services, scope) => {
                 </div>
             `,
 			init() {
-				instagram(uploadFile, scope);
+				instagram(scope);
 			}
 		}
 	};

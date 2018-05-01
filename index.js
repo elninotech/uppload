@@ -1,34 +1,71 @@
 import { addGlobalEvent } from "./modules/dispatch";
+import i18n from "./modules/i18n";
 import dispatch from "./modules/dispatch";
-import pagesFunction from "./modules/pages";
+import servicesFunction from "./modules/services";
 import css from "./uppload.scss";
 
-const bytesToSize = bytes => {
-	const sizes = ["bytes", "KB", "MB", "GB", "TB"];
+/*
+ * Converts number of bytes to readable string
+ * 10000 => "10 KB"
+ * Source: https://stackoverflow.com/a/18650828
+ */
+const bytesToSize = (bytes, decimals) => {
 	if (bytes == 0) return "0 bytes";
-	const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
-	return Math.round(bytes / Math.pow(1024, i), 2) + " " + sizes[i];
+	let k = 1000,
+		dm = decimals || 2,
+		sizes = ["bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"],
+		i = Math.floor(Math.log(bytes) / Math.log(k));
+	return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
 };
 
+/**
+ * Returns whether current file type is allowed or not
+ * @constructor
+ * @param {string} author - The author of the book.
+ */
 class Uppload {
 	constructor(settings) {
-		// Settings and initialization
+		/*
+		 * Metadata containing unique ID (multiple instances)
+		 * Also includes globals like files
+		 */
 		this.meta = {
 			uniqueId: Math.random()
 				.toString(36)
 				.slice(2),
 			file: null
 		};
-		console.log(this.meta.uniqueId);
+
+		// Set user preferences as `settings`
 		this.settings = settings || {};
+
+		// Internationalization of text
+		this.i18n = this.settings.i18n || i18n;
+
+		// Stores boolean values if modal is open/uploading
 		this.isOpen = false;
 		this.isUploading = false;
-		this.value = null;
-		this.currentPage = this.settings.defaultService || "upload";
-		this.settings.services = this.settings.services || ["upload", "camera", "link", "facebook", "drive", "dropbox", "instagram"];
-		this.settings.allowedTypes = this.settings.allowedTypes || "*";
-		this.settings.maxFileSize = parseInt(this.settings.maxFileSize) || 100000000;
 
+		// Stores current image URL value
+		this.value = null;
+
+		// Current page you're on, fallback to default service or "upload"
+		this.currentPage = this.settings.defaultService || "upload";
+
+		// Array of services plugin should have, fallback default
+		this.settings.services = this.settings.services || ["upload", "camera", "link", "facebook", "drive", "dropbox", "instagram"];
+
+		// Array or string contains allowed file types, default "*" => all
+		this.settings.allowedTypes = this.settings.allowedTypes || "*";
+
+		// Integer containing maximum file size, fallback to 100 MB
+		this.settings.maxFileSize = parseInt(this.settings.maxFileSize) || "infinite";
+
+		/**
+		 * Returns whether current file type is allowed or not
+		 * @param {File} file - File object containing selected file
+		 * @returns {boolean}
+		 */
 		this.isFileTypeAllowed =
 			this.settings.isFileTypeAllowed ||
 			((file = this.meta.file) => {
@@ -48,97 +85,24 @@ class Uppload {
 				return false;
 			});
 
+		/**
+		 * Returns whether file size is in allowed range
+		 * @param {File} file - File object containing selected file
+		 * @returns {boolean}
+		 */
 		this.isFileSizeAllowed =
 			this.settings.isFileSizeAllowed ||
 			((file = this.meta.file) => {
-				if (this.settings.maxFileSize > file.size) {
+				if (this.settings.maxFileSize === "infinite") {
+					return true;
+				} else if (this.settings.maxFileSize > file.size) {
 					return true;
 				}
 				return false;
 			});
 
-		this.showError = error => {
-			dispatch("fileError", error);
-			document.querySelector(`#uppload_${this.meta.uniqueId} .errorMessage`).innerHTML = `<strong>Error: </strong>${error}.`;
-			document.querySelector(`#uppload_${this.meta.uniqueId} .errorMessage`).classList.add("visible");
-			setTimeout(() => {
-				document.querySelector(`#uppload_${this.meta.uniqueId} .errorMessage`).classList.remove("visible");
-			}, this.settings.errorDelay || 3000);
-		};
-
-		this.uploadFile = (file = this.meta.file) => {
-			return new Promise((resolve, reject) => {
-				if (!file) {
-					const error = "You have not selected a file";
-					this.showError(error);
-					reject(error);
-					return;
-				}
-				if (!this.isFileTypeAllowed(file)) {
-					const error = "This file type is not allowed";
-					this.showError(error);
-					reject(error);
-					return;
-				}
-				if (!this.isFileSizeAllowed(file)) {
-					const error = `File should be smaller than ${bytesToSize(this.settings.maxFileSize)}`;
-					this.showError(error);
-					reject(error);
-					return;
-				}
-				this.isUploading = true;
-				this.changePage("uploading");
-				dispatch("uploadStarted", file);
-				setTimeout(() => {
-					if (typeof this.settings.uploadFunction === "function") {
-						this.settings
-							.uploadFunction(file)
-							.then(url => {
-								this.updateValue(url);
-								dispatch("fileUploaded", url);
-								resolve(url);
-							})
-							.catch(error => {
-								dispatch("uploadError", error);
-								reject(error);
-							})
-							.finally(() => {
-								this.isUploading = false;
-								this.changePage("uploaded");
-							});
-					} else if (this.settings.endpoint) {
-						if (typeof this.settings.endpoint === "string") {
-							this.settings.endpoint = {
-								url: this.settings.endpoint
-							};
-						}
-						fetch(this.settings.endpoint.url, {
-							method: this.settings.endpoint.method || "POST",
-							body: file,
-							headers: this.settings.headers || null
-						})
-							.then(response => response.json())
-							.then(url => {
-								dispatch("fileUploaded", url);
-								resolve(url);
-							})
-							.catch(error => {
-								dispatch("fileUploaded", error);
-								reject(error);
-							})
-							.finally(() => {
-								this.isUploading = false;
-								this.changePage("uploaded");
-							});
-					} else {
-						const error = "No endpoint or upload function found";
-						this.showError(error);
-						reject(error);
-					}
-				}, this.settings.minimumDelay || 0);
-			});
-		};
-		this.pages = pagesFunction(this.uploadFile, this.settings.services, this);
+		// Get all services
+		this.services = servicesFunction(this);
 
 		// Append modal to body
 		this.backgroundElement = document.createElement("div");
@@ -150,7 +114,7 @@ class Uppload {
 		this.modalElement.setAttribute("id", `uppload_${this.meta.uniqueId}`);
 		this.modalElement.innerHTML = `
         <div>
-            ${this.pages.navbar.html}
+            ${this.services.navbar.html}
             <section>
                 <div class="errorMessage"></div>
                 <div class="currentPage"></div>
@@ -187,6 +151,21 @@ class Uppload {
 				$button[j].addEventListener("click", this.openModal.bind(this));
 			}
 		}
+	}
+
+	/**
+	 * Shows error after selecting file
+	 * @param {string} error - String for error text
+	 */
+	showError(error) {
+		dispatch("fileError", error);
+		document.querySelector(`#uppload_${this.meta.uniqueId} .errorMessage`).innerHTML = `<strong>${
+			this.i18n.error
+		}: </strong>${error}.`;
+		document.querySelector(`#uppload_${this.meta.uniqueId} .errorMessage`).classList.add("visible");
+		setTimeout(() => {
+			document.querySelector(`#uppload_${this.meta.uniqueId} .errorMessage`).classList.remove("visible");
+		}, this.settings.errorDelay || 3000);
 	}
 
 	// `on` function for global event listeners
@@ -244,9 +223,9 @@ class Uppload {
 	}
 
 	changePage(newPage) {
-		if (!this.pages[newPage]) return;
-		document.querySelector(`#uppload_${this.meta.uniqueId} .currentPage`).innerHTML = this.pages[newPage].html;
-		if (typeof this.pages[newPage].init === "function") this.pages[newPage].init();
+		if (!this.services[newPage]) return;
+		document.querySelector(`#uppload_${this.meta.uniqueId} .currentPage`).innerHTML = this.services[newPage].html;
+		if (typeof this.services[newPage].init === "function") this.services[newPage].init();
 		dispatch("pageChanged", newPage);
 		const navbarChildren = document.querySelectorAll(`#uppload_${this.meta.uniqueId} .button_service`);
 		for (let i = 0; i < navbarChildren.length; i++) {
@@ -264,5 +243,6 @@ class Uppload {
 		}
 	}
 }
+
 window.Uppload = Uppload; // for CDN
 export default Uppload; // for ES6/CJS
