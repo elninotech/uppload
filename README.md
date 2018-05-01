@@ -10,7 +10,7 @@
 
 <p align="center">Uppload is a better JavaScript file uploader inspired by [Uploadcare](https://github.com/uploadcare/uploadcare-widget)'s widget, but is highly customizable and features an open API.</p>
 
-<p align="center">**Uppload is currently in development and is NOT production-ready.**</p>
+<p align="center"><strong>Uppload is currently in development and is NOT production-ready.</strong></p>
 
 ## Usage
 
