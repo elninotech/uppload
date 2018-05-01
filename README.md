@@ -82,6 +82,7 @@ You can pass the following properties in the constructor:
 | `maxFileSize` | `"infinite"` | Number | Maximum allowed file size in bytes, defaults to string infinte |
 | `isFileTypeAllowed` | Checks `allowedTypes` types | Function | Function to check whether file type is allowed (returns boolean) |
 | `isFileSizeAllowed` | Checks `maxFileSize` | Function | Function to check whether file size is allowed (returns boolean) |
+| `i18n` | English (US) dictionary | Object | Object for internationalization strings ([configuration help](#internationalization)) |
 
 ```js
 const withEndpointOptions = new Uppload({
@@ -241,6 +242,10 @@ You can also use any of the following starter templates for your backend:
 - [ASP.NET](http://venkatbaggu.com/file-upload-in-asp-net-mvc-using-dropzone-js-and-html5/)
 - [ServiceStack](http://www.buildclassifieds.com/2016/01/08/uploading-images-servicestack-and-dropzone/)
 - [Golang](https://hackernoon.com/how-to-build-a-file-upload-form-using-dropzonejs-and-go-8fb9f258a991)
+
+### Internationalization
+
+Uppload comes with English (US) support built-in. You can overwrite all string by supplying a `i18n` property during initialization. The template is available [here](https://github.com/elninotech/uppload/blob/master/modules/i18n.js).
 
 ## Development
 
