@@ -1,4 +1,4 @@
-import fileUploader from "./services/file-upload";
+import selectFile from "./services/select-file";
 import instagram from "./services/instagram";
 
 export default scope => {
@@ -32,7 +32,7 @@ export default scope => {
                 </div>
             `,
 			init() {
-				fileUploader(scope);
+				selectFile(scope);
 			}
 		},
 		camera: {
