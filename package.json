@@ -12,6 +12,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
     "css-loader": "^0.28.9",
+    "husky": "^1.0.0-rc.2",
     "node-sass": "^4.8.3",
     "onchange": "^3.3.0",
     "prettier": "^1.12.1",
@@ -29,5 +30,10 @@
     "prettier": "prettier --use-tabs --print-width 130 --write ./src/**/*.{js,vue}",
     "live": "webpack --watch",
     "deploy": "yarn build && npm publish"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn build"
+    }
   }
 }
