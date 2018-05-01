@@ -30,10 +30,5 @@
     "prettier": "prettier --use-tabs --print-width 130 --write ./src/**/*.{js,vue}",
     "live": "webpack --watch",
     "deploy": "yarn build && npm publish"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn build"
-    }
   }
 }

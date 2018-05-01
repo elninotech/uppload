@@ -1,7 +1,6 @@
 const webpack = require("webpack");
 const path = require("path");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
-var OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 export default () => ({
 	mode: "production",
@@ -31,9 +30,6 @@ export default () => ({
 	plugins: [
 		new UglifyJSPlugin({
 			sourceMap: true
-		}),
-		new OptimizeCssAssetsPlugin({
-			
 		})
 	]
 });
