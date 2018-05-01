@@ -1,6 +1,10 @@
 import dispatch from "../dispatch";
 import uploadFile from "../upload";
 
+/**
+ * Initialization function for Instagram service
+ * @param {Object} scope - Parent Uppload object
+ */
 export default scope => {
 	const safeUploadFile = () => {
 		uploadFile(null, scope).catch(() => {});

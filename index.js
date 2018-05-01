@@ -168,12 +168,20 @@ class Uppload {
 		}, this.settings.errorDelay || 3000);
 	}
 
-	// `on` function for global event listeners
-	// Binds `dispatch function to user's callbacks`
+	/**
+	 * Binds dispatch to user's callbacks
+	 * @param {String} upploadEvent - Name of event listener
+	 * @param {Function} upploadFunction - Function that receives callback
+	 */
 	on(upploadEvent, upploadFunction) {
 		addGlobalEvent(upploadEvent, upploadFunction, this);
 	}
 
+	/**
+	 * Binds dispatch to user's callbacks
+	 * @param {String} newValue - New URL value to update to
+	 * @param {Number} initial - 1 or 0 to say whether it's the initial URL update
+	 */
 	updateValue(newValue, initial = 0) {
 		const elements = this.settings.bind || ["[data-uppload-value]"];
 		for (let i = 0; i < elements.length; i++) {
@@ -193,6 +201,9 @@ class Uppload {
 		}
 	}
 
+	/**
+	 * Opens the modal
+	 */
 	openModal() {
 		if (this.isOpen === true) return;
 		this.changePage(this.currentPage);
@@ -208,6 +219,9 @@ class Uppload {
 		}, 399);
 	}
 
+	/**
+	 * Closes the modal
+	 */
 	closeModal() {
 		if (this.isOpen === false) return;
 		this.isOpen = false;
@@ -222,6 +236,10 @@ class Uppload {
 		}, 399);
 	}
 
+	/**
+	 * Navigates to a new service/page
+	 * @param {String} newPage - Name of the service to go to
+	 */
 	changePage(newPage) {
 		if (!this.services[newPage]) return;
 		document.querySelector(`#uppload_${this.meta.uniqueId} .currentPage`).innerHTML = this.services[newPage].html;

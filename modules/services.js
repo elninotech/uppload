@@ -1,6 +1,10 @@
 import selectFile from "./services/select-file";
 import instagram from "./services/instagram";
 
+/**
+ * Returns layouts for different services
+ * @param {Object} scope - Parent Uppload object
+ */
 export default scope => {
 	const services = scope.settings.services;
 	const i18n = scope.i18n;

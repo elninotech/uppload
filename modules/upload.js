@@ -3,6 +3,7 @@ import dispatch from "./dispatch";
 /**
  * Upload selected or new file
  * @param {File} file - File object to upload
+ * @param {Object} scope - Parent Uppload object
  * @returns {Promise}
  */
 export default (file, scope) => {
