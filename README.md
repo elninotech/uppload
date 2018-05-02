@@ -85,6 +85,9 @@ You can pass the following properties in the constructor:
 | `isFileTypeAllowed` | Checks `allowedTypes` types | Function | Function to check whether file type is allowed (returns boolean) |
 | `isFileSizeAllowed` | Checks `maxFileSize` | Function | Function to check whether file size is allowed (returns boolean) |
 | `i18n` | English (US) dictionary | Object | Object for internationalization strings ([configuration help](#internationalization)) |
+| `crop.aspectRatio` | `null` | Number | Aspect ratio for image cropping |
+| `crop.maxSize` | `null` | `[width, height, unit?]` | Maximum image size after cropping |
+| `crop.minSize` | `null` | `[width, height, unit?]` | Minimum image size after cropping |
 
 ```js
 const withEndpointOptions = new Uppload({
@@ -155,6 +158,9 @@ profilePicture.on("fileUploaded", fileURL => {
 | `dragOver` | A file is being dragged in the drop area | Nothing |
 | `dragEnter` | File has entered the drop area | Nothing |
 | `dragLeave` | File has left the drop area | Nothing |
+| `cropStart` | Image has started being cropped | `Object` with crop details |
+| `cropMove` | Image is currently being cropped | `Object` with crop details |
+| `cropEnd` | Image has ended being cropped | `Object` with crop details |
 
 You can also programatically call the following functions:
 

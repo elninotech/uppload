@@ -58,6 +58,9 @@ class Uppload {
 		// Array or string contains allowed file types, default "*" => all
 		this.settings.allowedTypes = this.settings.allowedTypes || "*";
 
+		// Object contains configuration for image cropping
+		this.settings.crop = this.settings.crop || {};
+
 		// Integer containing maximum file size, fallback to 100 MB
 		this.settings.maxFileSize = parseInt(this.settings.maxFileSize) || "infinite";
 

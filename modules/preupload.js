@@ -1,5 +1,6 @@
 import Croppr from "croppr";
 import upload from "./upload";
+import dispatch from "./dispatch";
 
 export default scope => {
 	const file = scope.meta.file;
@@ -12,7 +13,18 @@ export default scope => {
 			image.setAttribute("src", imageDataUri);
 			image.addEventListener("load", () => {
 				const cropInstance = new Croppr(scope.modalElement.querySelector("#previewImage"), {
-					aspectRatio: 1
+					aspectRatio: scope.settings.crop.aspectRatio || null,
+					maxSize: scope.settings.crop.maxSize || null,
+					minSize: scope.settings.crop.minSize || null,
+					onCropStart: data => {
+						dispatch("cropStart", data);
+					},
+					onCropMove: data => {
+						dispatch("cropMove", data);
+					},
+					onCropEnd: data => {
+						dispatch("cropEnd", data);
+					}
 				});
 				const button = scope.modalElement.querySelector("#cropAndUploadBtn");
 				button.addEventListener("click", () => {
