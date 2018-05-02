@@ -1,4 +1,5 @@
 import selectFile from "./services/select-file";
+import preupload from "./preupload";
 import instagram from "./services/instagram";
 
 /**
@@ -9,6 +10,26 @@ export default scope => {
 	const services = scope.settings.services;
 	const i18n = scope.i18n;
 	const serviceMetas = {
+		preupload: {
+			html: `
+				<div class="preupload-container">
+					<div class="preview">
+						<img id="previewImage">
+					</div>
+					<div class="bottom-buttons">
+						<div class="toolbar">
+							<button data-aspect-ratio="null">Free</button>
+							<button data-aspect-ratio="1">1:1</button>
+							<button data-aspect-ratio="1.33333333">4:3</button>
+						</div>
+						<div class="cta"><button class="primary-button" id="cropAndUploadBtn">Crop &amp; upload</button></div>
+					</div>
+				</div>
+            `,
+			init() {
+				preupload(scope);
+			}
+		},
 		uploading: {
 			html: `
                 <div class="center-middle">

@@ -1,86 +1,95 @@
 @import "./services/instagram";
+@import "./services/preupload";
 @import "./services/upload";
 
 .uppload-modal {
-    .center-middle {
-        text-align: center;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 5rem; right: 5rem;
-    }
-    
-    .primary-button {
-        background-color: #00a8ff;
-        color: #fff;
-        border: none;
-        transition: 0.3s;
-        font: inherit;
-        font-size: 115%;
-        padding: 0.75rem 1.25rem;
-        border-radius: 0.25rem;
-        &:hover {
-            background-color: #0097e6;
-        }
-    }
-    
-    .uppload-modal {
-        p {
-            margin-top: 0;
-            margin-bottom: 1rem;
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-    }
-    
-    .mb-full {
-        margin-bottom: 1.5rem !important;
-    }
+	.currentPage {
+		display: flex;
+		flex: 1 0 0;
+	}
+	.center-middle {
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 5rem;
+		right: 5rem;
+	}
 
-    .loading-spinner, .uploaded-icon {
-        color: #aaa;
-        font-size: 300%;
-        margin-bottom: 1.5rem;
-    }
-    .uploaded-icon {
-        background-color: #2ed573;
-        color: #fff;
-        padding: 1rem;
-        border-radius: 100%;
-    }
+	.primary-button {
+		background-color: #00a8ff;
+		color: #fff;
+		border: none;
+		transition: 0.3s;
+		font: inherit;
+		font-size: 115%;
+		padding: 0.75rem 1.25rem;
+		border-radius: 0.25rem;
+		&:hover {
+			background-color: #0097e6;
+		}
+	}
 
-    .errorMessage {
-        color: rgba(255, 255, 255, 0.9);
-        background-color: #ff4757;
-        padding: 1rem;
-        position: absolute;
-        left: 0; right: 0; top: 0;
-        opacity: 0;
-        transition: 0.5s;
-        &.visible {
-            opacity: 1;
-        }
-    }
+	.uppload-modal {
+		p {
+			margin-top: 0;
+			margin-bottom: 1rem;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
 
-    label {
-        font-size: 110%;
-        div {
-            margin-bottom: 1rem;
-        }
-        margin-bottom: 1.5rem;
-    }
+	.mb-full {
+		margin-bottom: 1.5rem !important;
+	}
+
+	.loading-spinner,
+	.uploaded-icon {
+		color: #aaa;
+		font-size: 300%;
+		margin-bottom: 1.5rem;
+	}
+	.uploaded-icon {
+		background-color: #2ed573;
+		color: #fff;
+		padding: 1rem;
+		border-radius: 100%;
+	}
+
+	.errorMessage {
+		color: rgba(255, 255, 255, 0.9);
+		background-color: #ff4757;
+		padding: 1rem;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		opacity: 0;
+		transition: 0.5s;
+		&.visible {
+			opacity: 1;
+		}
+	}
+
+	label {
+		font-size: 110%;
+		div {
+			margin-bottom: 1rem;
+		}
+		margin-bottom: 1.5rem;
+	}
 }
 
 @media (max-width: 860px) {
-    .uppload-modal {
-        .errorMessage {
-            top: auto;
-            bottom: 0;
-        }
-        .center-middle {
-            left: 1.5rem;
-            right: 1.5rem;
-        }
-    }
+	.uppload-modal {
+		.errorMessage {
+			top: auto;
+			bottom: 0;
+		}
+		.center-middle {
+			left: 1.5rem;
+			right: 1.5rem;
+		}
+	}
 }
