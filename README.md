@@ -8,7 +8,7 @@
 <img alt="" src="https://img.shields.io/david/dev/elninotech/uppload.svg?maxAge=2592000&style=flat">
 </p>
 
-<p align="center">Uppload is a better JavaScript file uploader inspired by [Uploadcare](https://github.com/uploadcare/uploadcare-widget)'s widget, but is highly customizable and features an open API.</p>
+<p align="center">Uppload is a better JavaScript file uploader inspired by <a href="https://github.com/uploadcare/uploadcare-widget">Uploadcare</a>'s widget, but is highly customizable and features an open API.</p>
 
 <p align="center"><strong>Uppload is currently in development and is NOT production-ready.</strong></p>
 
