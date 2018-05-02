@@ -8,13 +8,13 @@
 <img alt="" src="https://img.shields.io/david/dev/elninotech/uppload.svg?maxAge=2592000&style=flat">
 </p>
 
-<p align="center">Uppload is a better JavaScript file uploader inspired by <a href="https://github.com/uploadcare/uploadcare-widget">Uploadcare</a>'s widget, but is highly customizable and features an open API.</p>
+<p align="center">Uppload is a better JavaScript file uploader inspired by <a href="https://github.com/uploadcare/uploadcare-widget">Uploadcare</a>'s widget, but is highly customizable, completely free and open-source, and can be used with any file uploading backend.</p>
 
 <p align="center"><strong>Uppload is currently in development and is NOT production-ready.</strong></p>
 
 ## Usage
 
-Import Uppload to your project:
+Install Uppload in your project directory:
 
 ```bash
 yarn add uppload
@@ -249,28 +249,37 @@ You can also use any of the following starter templates for your backend:
 
 Uppload comes with English (US) support built-in. You can overwrite all string by supplying a `i18n` property during initialization. The template is available [here](https://github.com/elninotech/uppload/blob/master/modules/i18n.js).
 
+### Wrappers
+
+We've built the following wrappers for Uppload for our favorite frameworks:
+
+- [Vue.js](https://github.com/elninotech/uppload/tree/master/wrappers/vue) (NPM `uppload-vue`)
+
 ## Development
 
 ### Roadmap
 - ~~Modal~~
 - File preview
 - Image cropping
-- Upload function
+- ~~Upload function~~
 - Import file/image (Facebook, Dropbox, etc.)
 - Add sample server configuration & files in docs
 - IE support (`customEvent`)
 - Starter templates for Firebase, S3, etc.
+- Wrappers for
+	- ~~Vue.js~~
+	- React
 
 ### Installation
 
-```
+```bash
 yarn install
-nvm use 8.11.1
+nvm use 8.11.1 # LTS
 ```
 
 ### Production
 
-```
+```bash
 yarn build
 ```
 
