@@ -40,6 +40,10 @@ export default scope => {
 			.catch(() => {});
 		return;
 	}
+	if (!!scope.settings.crop.aspectRatio) {
+		const toolbar = scope.modalElement.querySelector(".toolbar");
+		toolbar.parentNode.removeChild(toolbar);
+	}
 	const reader = new FileReader();
 	reader.readAsDataURL(file);
 	reader.addEventListener("load", event => {

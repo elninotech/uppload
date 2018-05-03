@@ -14,7 +14,7 @@ export default scope => {
 			html: `
 				<div class="preupload-container">
 					<div class="preview">
-						<img id="previewImage">
+						<div><img id="previewImage"></div>
 					</div>
 					<div class="bottom-buttons">
 						<div class="toolbar">

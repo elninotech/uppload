@@ -53,7 +53,7 @@ class Uppload {
 		this.currentPage = this.settings.defaultService || "upload";
 
 		// Array of services plugin should have, fallback default
-		this.settings.services = this.settings.services || ["upload", "camera", "link", "facebook", "drive", "dropbox", "instagram"];
+		this.settings.services = this.settings.services || ["upload", "camera", "link", "instagram"];
 
 		// Array or string contains allowed file types, default "*" => all
 		this.settings.allowedTypes = this.settings.allowedTypes || "*";
