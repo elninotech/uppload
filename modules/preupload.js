@@ -32,6 +32,14 @@ const dataURItoBlob = dataURI => {
 
 export default scope => {
 	const file = scope.meta.file;
+	if (!["image/png", "image/jpeg", "image/gif", "image/jpeg"].includes(file.type)) {
+		scope.changePage("upload");
+		scope.meta.file = file;
+		upload(null, scope)
+			.then(() => {})
+			.catch(() => {});
+		return;
+	}
 	const reader = new FileReader();
 	reader.readAsDataURL(file);
 	reader.addEventListener("load", event => {
@@ -40,6 +48,7 @@ export default scope => {
 			const image = scope.modalElement.querySelector("#previewImage");
 			image.setAttribute("src", imageDataUri);
 			image.addEventListener("load", () => {
+				image.style.display = "block";
 				const cropInstance = new Croppr(scope.modalElement.querySelector("#previewImage"), {
 					aspectRatio: scope.settings.crop.aspectRatio || null,
 					maxSize: scope.settings.crop.maxSize || null,

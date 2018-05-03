@@ -1,5 +1,6 @@
 .uppload-modal {
 	.preupload-container {
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		.preview {
@@ -29,7 +30,7 @@
 		max-width: 100%;
 	}
 	#previewImage {
-		background-color: #aaa;
+		display: none;
 		width: 100%;
 	}
 }

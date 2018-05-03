@@ -1,7 +1,6 @@
 .uppload-modal {
 	aside {
-		background-color: whitesmoke;
-		border-right: 1px solid rgba(0, 0, 0, 0.075);
+		background-color: #dfe6e9;
 		transition: 1s;
 		&.hidden {
 			opacity: 0.333;
@@ -38,7 +37,7 @@
 					svg {
 						opacity: 1;
 					}
-					background-color: rgba(0, 0, 0, 0.075);
+					background-color: #fff;
 				}
 			}
 		}
@@ -82,7 +81,7 @@
 	font-size: 80%;
 	color: rgba(0, 0, 0, 0.3);
 	text-decoration: none;
-	position: absolute;
+	position: fixed;
 	bottom: 1rem;
 	left: 1rem;
 	&:hover {
