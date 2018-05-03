@@ -1,6 +1,6 @@
 import selectFile from "./services/select-file";
 import preupload from "./preupload";
-import instagram from "./services/instagram";
+import microLinkFetch from "./services/microLinkFetch";
 
 /**
  * Returns layouts for different services
@@ -93,13 +93,13 @@ export default scope => {
                 <div class="center-middle">
                     <label>
                         <div>${i18n.instagram.post_url}</div>
-                        <input id="instagramInput" type="text" value="https://www.instagram.com/p/BeV6tOhFUor" placeholder="https://www.instagram.com/p/BeV6tOhFUor">
+                        <input id="microLinkInput" type="text" value="https://www.instagram.com/p/BeV6tOhFUor" placeholder="https://www.instagram.com/p/BeV6tOhFUor">
                     </label>
-                    <button id="instagramButton" class="primary-button">${i18n.instagram.import}</button>
+                    <button id="microLinkButton" class="primary-button">${i18n.instagram.import}</button>
                 </div>
             `,
 			init() {
-				instagram(scope);
+				microLinkFetch(scope, "instagram");
 			}
 		}
 	};
