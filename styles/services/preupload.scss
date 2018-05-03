@@ -1,0 +1,104 @@
+.uppload-modal {
+	.preupload-container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		.preview {
+			flex: 1 0 0;
+			background-color: #34495e;
+			padding: 1rem;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			overflow: auto;
+			> div > img {
+				margin: auto;
+			}
+			.croppr-container {
+				text-align: center;
+				margin: auto;
+			}
+		}
+		.bottom-buttons {
+			text-align: center;
+			.toolbar {
+				background: #2c3e50;
+				button {
+					background: none;
+					color: #fff;
+					border-radius: none;
+					padding: 1rem;
+				}
+			}
+			.cta {
+				padding: 0.5rem 0;
+			}
+		}
+	}
+	img {
+		max-width: 100%;
+	}
+	#previewImage {
+		display: none;
+		max-height: 500px;
+	}
+}
+
+.croppr-container * {
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.croppr-container img {
+	vertical-align: middle;
+	max-width: 100%;
+}
+
+.croppr {
+	position: relative;
+	display: inline-block;
+}
+
+.croppr-overlay {
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	cursor: crosshair;
+}
+
+.croppr-region {
+	border: 1px dashed rgba(0, 0, 0, 0.5);
+	position: absolute;
+	z-index: 3;
+	cursor: move;
+	top: 0;
+}
+
+.croppr-imageClipped {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	pointer-events: none;
+}
+
+.croppr-handle {
+	border: 1px solid black;
+	background-color: white;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	z-index: 4;
+	top: 0;
+}

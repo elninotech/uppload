@@ -50,13 +50,16 @@ class Uppload {
 		this.value = null;
 
 		// Current page you're on, fallback to default service or "upload"
-		this.currentPage = this.settings.defaultService || "upload";
+		this.currentPage = this.settings.defaultService || "camera";
 
 		// Array of services plugin should have, fallback default
-		this.settings.services = this.settings.services || ["upload", "camera", "link", "facebook", "drive", "dropbox", "instagram"];
+		this.settings.services = this.settings.services || ["upload", "camera", "link", "instagram"];
 
 		// Array or string contains allowed file types, default "*" => all
 		this.settings.allowedTypes = this.settings.allowedTypes || "*";
+
+		// Object contains configuration for image cropping
+		this.settings.crop = this.settings.crop || {};
 
 		// Integer containing maximum file size, fallback to 100 MB
 		this.settings.maxFileSize = parseInt(this.settings.maxFileSize) || "infinite";

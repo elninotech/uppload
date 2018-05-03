@@ -1,75 +1,116 @@
 .uppload-bg {
-    position: fixed;
-    z-index: 10000;
-    left: 0; right: 0;
-    top: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	z-index: 10000;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
 }
 
 .uppload-modal {
-    position: fixed;
-    background: #fff;
-    z-index: 11000;
-    box-sizing: border-box;
-    overflow: hidden;
-    border-radius: 0.25rem;
+	position: fixed;
+	background: #fff;
+	z-index: 11000;
+	box-sizing: border-box;
+	overflow: hidden;
+	border-radius: 0.25rem;
 }
 
-.uppload-modal, .uppload-bg {
-    display: none;
-    opacity: 0;
-    &.visible {
-        opacity: 1;
-        display: block;
-    }
-    &.fadeIn {
-        animation: fadeIn 0.4s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-    }
-    &.fadeOut {
-        animation: fadeOut 0.4s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-    }
-    &.hidden {
-        display: none;
-    }
+.uppload-modal,
+.uppload-bg {
+	display: none;
+	opacity: 0;
+	&.visible {
+		opacity: 1;
+		display: block;
+	}
+	&.fadeIn {
+		animation: fadeIn 0.4s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+	&.fadeOut {
+		animation: fadeOut 0.4s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+	&.hidden {
+		display: none;
+	}
 }
 
 @keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
 }
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 .uppload-bg::after {
-    z-index: 1;
-    cursor: pointer;
-    content: "\00D7";
-    font-family: sans-serif;
-    position: fixed;
-    font-size: 32px;
-    line-height: 0.5;
-    right: 2vw;
-    top: 2vw;
-    color: rgba(255, 255, 255, 0.5);
+	z-index: 1;
+	cursor: pointer;
+	content: "\00D7";
+	font-family: sans-serif;
+	position: fixed;
+	font-size: 32px;
+	line-height: 0.5;
+	right: 2vw;
+	top: 2vw;
+	color: rgba(255, 255, 255, 0.5);
 }
 
 @media (min-width: 860px) {
-    .uppload-modal {
-        left: 50%; top: 50%;
-        transform: translate(-50%, -50%);
-        width: 720px;
-        height: 500px;
-    }
+	.uppload-modal {
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 720px;
+		height: 500px;
+	}
+}
+@media (min-width: 960px) {
+	.uppload-modal {
+		width: 800px;
+	}
+}
+
+@media (max-height: 600px) {
+	.uppload-modal {
+		top: 10%;
+		transform: translate(-50%, 0%);
+		height: auto;
+		bottom: 10%;
+	}
 }
 
 @media (max-width: 860px) {
-    .uppload-modal {
-        left: 0; right: 0;
-        top: 10vh; bottom: 0;
-    }
+	.uppload-modal {
+		left: 0;
+		right: 0;
+		top: 10vh;
+		bottom: 0;
+		> div {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			display: flex;
+			flex-direction: column;
+			background-color: #aaa;
+		}
+		section {
+			flex: 1 0 0;
+		}
+	}
 }
