@@ -1,5 +1,7 @@
-import selectFile from "./services/select-file";
 import preupload from "./preupload";
+import preview from "./services/preview";
+import selectFile from "./services/select-file";
+import camera from "./services/camera";
 import microLinkFetch from "./services/microLinkFetch";
 
 /**
@@ -10,6 +12,24 @@ export default scope => {
 	const services = scope.settings.services;
 	const i18n = scope.i18n;
 	const serviceMetas = {
+		preview: {
+			html: `
+				<div class="preview-container">
+					<div class="preview">
+						<img id="previewImage">
+					</div>
+					<div class="bottom-buttons">
+						<div class="cta">
+							<button class="primary-button" id="backBtn">Back</button>
+							<button class="primary-button" id="continueBtn">Continue</button>
+						</div>
+					</div>
+				</div>
+            `,
+			init() {
+				preview(scope);
+			}
+		},
 		preupload: {
 			html: `
 				<div class="preupload-container">
@@ -62,9 +82,22 @@ export default scope => {
 			}
 		},
 		camera: {
-			icon: `<i class="fas fa-fw fa-camera"></i>`,
+			icon: `<svg class="svg-inline--fa fa-camera fa-w-16 fa-fw" aria-hidden="true" data-prefix="fas" data-icon="camera" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M512 144v288c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48h88l12.3-32.9c7-18.7 24.9-31.1 44.9-31.1h125.5c20 0 37.9 12.4 44.9 31.1L376 96h88c26.5 0 48 21.5 48 48zM376 288c0-66.2-53.8-120-120-120s-120 53.8-120 120 53.8 120 120 120 120-53.8 120-120zm-32 0c0 48.5-39.5 88-88 88s-88-39.5-88-88 39.5-88 88-88 88 39.5 88 88z"></path></svg>`,
 			title: "Camera",
-			html: ``
+			html: `
+				<div class="camera-container">
+					<div class="preview">
+						<video id="cameraVideo">Video stream not available.</video>
+						<canvas id="cameraCanvas"></canvas>
+					</div>
+					<div class="bottom-buttons">
+						<div class="cta"><button class="primary-button" id="clickButton">Click photo</button></div>
+					</div>
+				</div>
+			`,
+			init() {
+				camera(scope);
+			}
 		},
 		link: {
 			icon: `<i class="fas fa-fw fa-link"></i>`,

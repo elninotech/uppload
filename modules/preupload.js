@@ -1,6 +1,7 @@
 import Croppr from "croppr";
 import upload from "./upload";
 import dispatch from "./dispatch";
+import dataURItoBlob from "./dataUriToBlob";
 
 const getImagePortion = (imgObj, newWidth, newHeight, startX, startY, ratio) => {
 	const tnCanvas = document.createElement("canvas");
@@ -14,20 +15,6 @@ const getImagePortion = (imgObj, newWidth, newHeight, startX, startY, ratio) => 
 	bufferContext.drawImage(imgObj, 0, 0);
 	tnCanvasContext.drawImage(bufferCanvas, startX, startY, newWidth * ratio, newHeight * ratio, 0, 0, newWidth, newHeight);
 	return tnCanvas.toDataURL();
-};
-
-const dataURItoBlob = dataURI => {
-	const byteString = atob(dataURI.split(",")[1]);
-	const mimeString = dataURI
-		.split(",")[0]
-		.split(":")[1]
-		.split(";")[0];
-	const ab = new ArrayBuffer(byteString.length);
-	const ia = new Uint8Array(ab);
-	for (let i = 0; i < byteString.length; i++) {
-		ia[i] = byteString.charCodeAt(i);
-	}
-	return new Blob([ab], { type: mimeString });
 };
 
 export default scope => {

@@ -1,0 +1,13 @@
+.preview-container {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	.preview {
+		flex: 1 0 0;
+		width: 100%;
+	}
+	.bottom-buttons {
+		padding: 0.5rem 0;
+		text-align: center;
+	}
+}
