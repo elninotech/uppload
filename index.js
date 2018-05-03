@@ -50,7 +50,7 @@ class Uppload {
 		this.value = null;
 
 		// Current page you're on, fallback to default service or "upload"
-		this.currentPage = this.settings.defaultService || "camera";
+		this.currentPage = this.settings.defaultService || "upload";
 
 		// Array of services plugin should have, fallback default
 		this.settings.services = this.settings.services || ["upload", "camera", "link", "instagram"];

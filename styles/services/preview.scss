@@ -1,13 +1,19 @@
 .preview-container {
-	display: flex;
 	width: 100%;
+	display: flex;
 	flex-direction: column;
 	.preview {
 		flex: 1 0 0;
-		width: 100%;
+		overflow-y: auto;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		img {
+			margin: 0 auto;
+		}
 	}
 	.bottom-buttons {
-		padding: 0.5rem 0;
+		padding: 0.5rem;
 		text-align: center;
 	}
 }

@@ -30,6 +30,12 @@
 		&:hover {
 			background-color: #0097e6;
 		}
+		&.secondary {
+			background-color: #95a5a6;
+			&:hover {
+				background-color: #7f8c8d;
+			}
+		}
 	}
 
 	.uppload-modal {

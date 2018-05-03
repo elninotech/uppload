@@ -20,8 +20,8 @@ export default scope => {
 					</div>
 					<div class="bottom-buttons">
 						<div class="cta">
-							<button class="primary-button" id="backBtn">Back</button>
-							<button class="primary-button" id="continueBtn">Continue</button>
+							<button class="primary-button secondary" id="backBtn"><i class="fas fa-arrow-left"></i> &nbsp;Back</button>
+							<button class="primary-button" id="continueBtn">Continue &nbsp;<i class="fas fa-arrow-right"></i></button>
 						</div>
 					</div>
 				</div>
