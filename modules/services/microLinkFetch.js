@@ -6,7 +6,7 @@ import uploadFile from "../upload";
  * Used for Instagram and others
  * @param {Object} scope - Parent Uppload object
  */
-export default (scope, serviceName) => {
+export default (scope, serviceName, isMicroLink = false) => {
 	const safeUploadFile = () => {
 		uploadFile(null, scope).catch(() => {});
 	};
@@ -22,37 +22,53 @@ export default (scope, serviceName) => {
 	buttonElt.addEventListener("click", event => {
 		scope.changePage("uploading");
 		scope.isUploading = true;
-		dispatch("uploadStarted");
 		setTimeout(() => {
-			fetch(`https://api.microlink.io/?url=${encodeURIComponent(inputElt.value)}`)
-				.then(response => response.json())
-				.then(json => {
-					if (json.status === "success") {
-						if (json.data && json.data.image && json.data.image.url) {
-							fetch(
-								`${scope.settings.fileFetchEndpoint || "https://images.weserv.nl/"}?url=${encodeURIComponent(
-									json.data.image.url.replace(/^https?\:\/\//i, "")
-								)}`
-							)
-								.then(response => response.blob())
-								.then(blob => {
-									scope.meta.file = blob;
-									dispatch("fileSelected", scope.meta.file);
-									scope.changePage("preupload");
-								})
-								.catch(() => {
-									err();
-								});
+			if (isMicroLink) {
+				fetch(`https://api.microlink.io/?url=${encodeURIComponent(inputElt.value)}`)
+					.then(response => response.json())
+					.then(json => {
+						if (json.status === "success") {
+							if (json.data && json.data.image && json.data.image.url) {
+								fetch(
+									`${scope.settings.fileFetchEndpoint || "https://images.weserv.nl/"}?url=${encodeURIComponent(
+										json.data.image.url.replace(/^https?\:\/\//i, "")
+									)}`
+								)
+									.then(response => response.blob())
+									.then(blob => {
+										scope.meta.file = blob;
+										dispatch("fileSelected", scope.meta.file);
+										scope.changePage("preupload");
+									})
+									.catch(() => {
+										err();
+									});
+							} else {
+								err();
+							}
 						} else {
 							err();
 						}
-					} else {
+					})
+					.catch(error => {
 						err();
-					}
-				})
-				.catch(error => {
-					err();
-				});
+					});
+			} else {
+				fetch(
+					`${scope.settings.fileFetchEndpoint || "https://images.weserv.nl/"}?url=${encodeURIComponent(
+						inputElt.value.replace(/^https?\:\/\//i, "")
+					)}`
+				)
+					.then(response => response.blob())
+					.then(blob => {
+						scope.meta.file = blob;
+						dispatch("fileSelected", scope.meta.file);
+						scope.changePage("preupload");
+					})
+					.catch(() => {
+						err();
+					});
+			}
 		}, scope.settings.minimumDelay || 0);
 	});
 	inputElt.addEventListener("keyup", event => {

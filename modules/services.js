@@ -69,7 +69,18 @@ export default scope => {
 		link: {
 			icon: `<i class="fas fa-fw fa-link"></i>`,
 			title: "Import from URL",
-			html: ``
+			html: `
+                <div class="center-middle">
+                    <label>
+                        <div>${i18n.link.post_url}</div>
+                        <input id="microLinkInput" type="text" value="https://www.w3schools.com/howto/img_paris.jpg" placeholder="https://www.w3schools.com/howto/img_paris.jpg">
+                    </label>
+                    <button id="microLinkButton" class="primary-button">${i18n.link.import}</button>
+                </div>
+            `,
+			init() {
+				microLinkFetch(scope, "link");
+			}
 		},
 		facebook: {
 			icon: `<i class="fab fa-fw fa-facebook"></i>`,
@@ -95,11 +106,11 @@ export default scope => {
                         <div>${i18n.instagram.post_url}</div>
                         <input id="microLinkInput" type="text" value="https://www.instagram.com/p/BeV6tOhFUor" placeholder="https://www.instagram.com/p/BeV6tOhFUor">
                     </label>
-                    <button id="microLinkButton" class="primary-button">${i18n.instagram.import}</button>
+                    <button id="microLinkButton" class="primary-button instagram">${i18n.instagram.import}</button>
                 </div>
             `,
 			init() {
-				microLinkFetch(scope, "instagram");
+				microLinkFetch(scope, "instagram", true);
 			}
 		}
 	};

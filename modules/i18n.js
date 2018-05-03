@@ -10,6 +10,10 @@ export default {
 		post_url: "Instagram post URL",
 		import: "Import from Instagram"
 	},
+	link: {
+		post_url: "Link to file",
+		import: "Import from URL"
+	},
 	error: "Error",
 	errors: {
 		no_endpoint: "No endpoint or upload function found",
