@@ -11,11 +11,11 @@ export default scope => {
 	let startbutton = null;
 	let width = 0;
 	let height = 0;
+	video = scope.modalElement.querySelector("#cameraVideo");
+	canvas = scope.modalElement.querySelector("#cameraCanvas");
+	startbutton = scope.modalElement.querySelector("#clickButton");
 	function startup() {
 		let streaming = false;
-		video = scope.modalElement.querySelector("#cameraVideo");
-		canvas = scope.modalElement.querySelector("#cameraCanvas");
-		startbutton = scope.modalElement.querySelector("#clickButton");
 		navigator.getMedia =
 			navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 		navigator.getMedia(
@@ -24,6 +24,10 @@ export default scope => {
 				audio: false
 			},
 			function(stream) {
+				video.style.display = "";
+				canvas.style.display = "";
+				scope.modalElement.querySelector("#cameraError").style.display = "none";
+				scope.modalElement.querySelector("#cameraPermission").style.display = "none";
 				if (navigator.mozGetUserMedia) {
 					video.mozSrcObject = stream;
 				} else {
@@ -36,7 +40,12 @@ export default scope => {
 				}
 				video.play();
 			},
-			function(err) {}
+			function(err) {
+				video.style.display = "none";
+				canvas.style.display = "none";
+				scope.modalElement.querySelector("#cameraPermission").style.display = "none";
+				scope.modalElement.querySelector("#cameraError").style.display = "block";
+			}
 		);
 		video.addEventListener(
 			"canplay",

@@ -22,7 +22,8 @@ export default {
 		upload: "Crop &amp; upload"
 	},
 	camera: {
-		click: "Click photo"
+		click: "Click photo",
+		permission: "Grant camera permission"
 	},
 	error: "Error",
 	errors: {
@@ -31,6 +32,7 @@ export default {
 		file_type_not_allowed: "This file type is not allowed",
 		file_too_large: "File should be smaller than _FILESIZE_",
 		instagram_no_fetch: "Unable to fetch this image from Instagram",
-		video_unavailable: "Video stream not available"
+		video_unavailable: "Video stream not available",
+		camera_error: "Unable to access camera"
 	}
 };

@@ -18,6 +18,17 @@ const bytesToSize = (bytes, decimals) => {
 	return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
 };
 
+/*
+ * Checks whether browsers supports video
+ * without actually asking permission for it
+ */
+let webcamAvailable = false;
+navigator.getMedia =
+	navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+if (typeof navigator.getMedia === "function") {
+	webcamAvailable = true;
+}
+
 /**
  * Returns whether current file type is allowed or not
  * @constructor
@@ -54,6 +65,13 @@ class Uppload {
 
 		// Array of services plugin should have, fallback default
 		this.settings.services = this.settings.services || ["upload", "camera", "link", "instagram"];
+		// Remove `camera` from the array if browser doesn't support it
+		if (!webcamAvailable) {
+			const index = this.settings.services.indexOf("camera");
+			if (index > -1) {
+				this.settings.services.splice(index, 1);
+			}
+		}
 
 		// Array or string contains allowed file types, default "*" => all
 		this.settings.allowedTypes = this.settings.allowedTypes || "*";
@@ -116,14 +134,14 @@ class Uppload {
 		this.modalElement.classList.add("uppload-modal");
 		this.modalElement.setAttribute("id", `uppload_${this.meta.uniqueId}`);
 		this.modalElement.innerHTML = `
-        <div>
-            ${this.services.navbar.html}
-            <section>
-                <div class="errorMessage"></div>
-                <div class="currentPage"></div>
-            </section>
-        </div>
-        `;
+		<div>
+			${this.services.navbar.html}
+			<section>
+				<div class="errorMessage"></div>
+				<div class="currentPage"></div>
+			</section>
+		</div>
+		`;
 		document.body.appendChild(this.modalElement);
 		const navbarChildren = document.querySelectorAll(`#uppload_${this.meta.uniqueId} .button_service`);
 		for (let i = 0; i < navbarChildren.length; i++) {

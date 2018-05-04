@@ -85,6 +85,8 @@ export default scope => {
 			html: `
 				<div class="camera-container">
 					<div class="preview">
+						<div id="cameraPermission"><div>${icons.error}</div><div>${i18n.camera.permission}</div></div>
+						<div id="cameraError"><div>${icons.error}</div><div>${i18n.errors.camera_error}</div></div>
 						<video id="cameraVideo">${i18n.errors.video_unavailable}</video>
 						<canvas id="cameraCanvas"></canvas>
 					</div>
