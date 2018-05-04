@@ -5,7 +5,6 @@
 		flex-direction: column;
 		.preview {
 			flex: 1 0 0;
-			background-color: #34495e;
 			padding: 1rem;
 			display: flex;
 			justify-content: center;
@@ -46,12 +45,7 @@
 
 .croppr-container * {
 	user-select: none;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
 	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 }
 
 .croppr-container img {
