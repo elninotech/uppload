@@ -12,7 +12,8 @@
 
 <p align="center"><strong>Uppload is currently in development and is NOT production-ready.</strong></p>
 
-<video width="400" autoplay loop><source src="https://cdn.rawgit.com/elninotech/uppload/f4639960/Uppload.mp4" type="video/mp4"></video>
+
+![uppload](https://user-images.githubusercontent.com/2841780/39637480-75d62e88-4fc3-11e8-8df8-3d462ef7e450.gif)
 
 ## Usage
 
