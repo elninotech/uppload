@@ -13,16 +13,23 @@ export default () => ({
 		globalObject: "this",
 		library: "uppload"
 	},
+	resolveLoader: {
+		modules: ["node_modules", path.resolve(__dirname, "loaders")]
+	},
 	module: {
 		rules: [
 			{
 				test: /\.(s*)css$/,
-				use: [{ loader: "style-loader" }, { loader: "css-loader" }, { loader: "sass-loader" }]
+				use: [
+					{ loader: "style-loader" },
+					{ loader: "css-loader", options: { minimize: true } },
+					{ loader: "sass-loader", options: { minimize: true } }
+				]
 			},
 			{
 				test: /\.(js)$/,
 				exclude: /(node_modules|bower_components)/,
-				use: "babel-loader"
+				use: ["babel-loader", "anand-loader"]
 			}
 		]
 	}
