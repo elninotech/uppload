@@ -4,6 +4,8 @@ import selectFile from "./services/select-file";
 import camera from "./services/camera";
 import microLinkFetch from "./services/microLinkFetch";
 
+let cameraIcon = `<svg class="svg-inline--fa fa-camera fa-w-16 fa-fw" aria-hidden="true" data-prefix="fas" data-icon="camera" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M512 144v288c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48h88l12.3-32.9c7-18.7 24.9-31.1 44.9-31.1h125.5c20 0 37.9 12.4 44.9 31.1L376 96h88c26.5 0 48 21.5 48 48zM376 288c0-66.2-53.8-120-120-120s-120 53.8-120 120 53.8 120 120 120 120-53.8 120-120zm-32 0c0 48.5-39.5 88-88 88s-88-39.5-88-88 39.5-88 88-88 88 39.5 88 88z"></path></svg>`;
+
 /**
  * Returns layouts for different services
  * @param {Object} scope - Parent Uppload object
@@ -20,8 +22,8 @@ export default scope => {
 					</div>
 					<div class="bottom-buttons">
 						<div class="cta">
-							<button class="primary-button secondary" id="backBtn"><i class="fas fa-arrow-left"></i> &nbsp;Back</button>
-							<button class="primary-button" id="continueBtn">Continue &nbsp;<i class="fas fa-arrow-right"></i></button>
+							<button class="primary-button secondary" id="backBtn"><i class="fas fa-arrow-left"></i> &nbsp;${i18n.preview.back}</button>
+							<button class="primary-button" id="continueBtn">${i18n.preview.continue} &nbsp;<i class="fas fa-arrow-right"></i></button>
 						</div>
 					</div>
 				</div>
@@ -39,7 +41,7 @@ export default scope => {
 						</div>
 					</div>
 					<div class="bottom-buttons">
-						<div class="cta"><button class="primary-button" id="cropAndUploadBtn">Crop &amp; upload</button></div>
+						<div class="cta"><button class="primary-button" id="cropAndUploadBtn">${i18n.crop.upload}</button></div>
 					</div>
 				</div>
             `,
@@ -79,16 +81,16 @@ export default scope => {
 			}
 		},
 		camera: {
-			icon: `<svg class="svg-inline--fa fa-camera fa-w-16 fa-fw" aria-hidden="true" data-prefix="fas" data-icon="camera" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M512 144v288c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48h88l12.3-32.9c7-18.7 24.9-31.1 44.9-31.1h125.5c20 0 37.9 12.4 44.9 31.1L376 96h88c26.5 0 48 21.5 48 48zM376 288c0-66.2-53.8-120-120-120s-120 53.8-120 120 53.8 120 120 120 120-53.8 120-120zm-32 0c0 48.5-39.5 88-88 88s-88-39.5-88-88 39.5-88 88-88 88 39.5 88 88z"></path></svg>`,
+			icon: `${cameraIcon}`,
 			title: "Camera",
 			html: `
 				<div class="camera-container">
 					<div class="preview">
-						<video id="cameraVideo">Video stream not available.</video>
+						<video id="cameraVideo">${i18n.errors.video_unavailable}</video>
 						<canvas id="cameraCanvas"></canvas>
 					</div>
 					<div class="bottom-buttons">
-						<div class="cta"><button class="primary-button" id="clickButton">Click photo</button></div>
+						<div class="cta"><button class="primary-button" id="clickButton">${cameraIcon} &nbsp;${i18n.camera.click}</button></div>
 					</div>
 				</div>
 			`,

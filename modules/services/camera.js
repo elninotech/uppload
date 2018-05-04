@@ -28,7 +28,11 @@ export default scope => {
 					video.mozSrcObject = stream;
 				} else {
 					let vendorURL = window.URL || window.webkitURL;
-					video.src = vendorURL.createObjectURL(stream);
+					try {
+						video.srcObject = stream;
+					} catch (error) {
+						video.src = vendorURL.createObjectURL(stream);
+					}
 				}
 				video.play();
 			},
@@ -75,7 +79,7 @@ export default scope => {
 		}
 	}
 	setTimeout(() => {
-		width = previewWindow.offsetWidth * 0.8;
+		width = previewWindow.offsetWidth;
 		startup();
 	}, 1);
 };
