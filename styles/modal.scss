@@ -5,16 +5,18 @@
 	right: 0;
 	top: 0;
 	bottom: 0;
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(150, 150, 150, 0.3);
 }
 
 .uppload-modal {
 	position: fixed;
+	color: #333;
 	background: #fff;
 	z-index: 11000;
 	box-sizing: border-box;
 	overflow: hidden;
 	border-radius: 0.25rem;
+	box-shadow: 0 30px 150px rgba(0, 0, 0, 0.2);
 }
 
 .uppload-modal,
@@ -66,7 +68,7 @@
 	line-height: 0.5;
 	right: 2vw;
 	top: 2vw;
-	color: rgba(255, 255, 255, 0.5);
+	color: rgba(0, 0, 0, 0.5);
 }
 
 @media (min-width: 860px) {
