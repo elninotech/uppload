@@ -13,13 +13,13 @@ export default scope => {
 				scope.meta.file = event.dataTransfer.items[0].getAsFile();
 				dispatch("fileDropped", scope.meta.file);
 				dispatch("fileSelected", scope.meta.file);
-				scope.changePage("preupload");
+				scope.changePage("crop");
 			}
 		} else {
 			scope.meta.file = event.dataTransfer.files[0];
 			dispatch("fileDropped", scope.meta.file);
 			dispatch("fileSelected", scope.meta.file);
-			scope.changePage("preupload");
+			scope.changePage("crop");
 		}
 		event.preventDefault();
 	});
@@ -48,6 +48,6 @@ export default scope => {
 	inputFile.addEventListener("change", event => {
 		scope.meta.file = inputFile.files[0];
 		dispatch("fileSelected", scope.meta.file);
-		scope.changePage("preupload");
+		scope.changePage("crop");
 	});
 };

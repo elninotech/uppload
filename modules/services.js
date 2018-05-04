@@ -1,5 +1,5 @@
-import preupload from "./preupload";
 import crop from "./services/crop";
+import preview from "./services/preview";
 import selectFile from "./services/select-file";
 import camera from "./services/camera";
 import microLinkFetch from "./services/microLinkFetch";
@@ -12,7 +12,7 @@ export default scope => {
 	const services = scope.settings.services;
 	const i18n = scope.i18n;
 	const serviceMetas = {
-		crop: {
+		preview: {
 			html: `
 				<div class="preview-container">
 					<div class="preview">
@@ -27,27 +27,24 @@ export default scope => {
 				</div>
             `,
 			init() {
-				crop(scope);
+				preview(scope);
 			}
 		},
-		preupload: {
+		crop: {
 			html: `
-				<div class="preupload-container">
+				<div class="crop-container">
 					<div class="preview">
-						<div><img id="previewImage"></div>
+						<div>
+							<img id="previewImage" draggable="false">
+						</div>
 					</div>
 					<div class="bottom-buttons">
-						<div class="toolbar">
-							<button data-aspect-ratio="null">Free</button>
-							<button data-aspect-ratio="1">1:1</button>
-							<button data-aspect-ratio="1.33333333">4:3</button>
-						</div>
 						<div class="cta"><button class="primary-button" id="cropAndUploadBtn">Crop &amp; upload</button></div>
 					</div>
 				</div>
             `,
 			init() {
-				preupload(scope);
+				crop(scope);
 			}
 		},
 		uploading: {

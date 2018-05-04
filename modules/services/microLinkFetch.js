@@ -38,7 +38,7 @@ export default (scope, serviceName, isMicroLink = false) => {
 									.then(blob => {
 										scope.meta.file = blob;
 										dispatch("fileSelected", scope.meta.file);
-										scope.changePage("preupload");
+										scope.changePage("crop");
 									})
 									.catch(() => {
 										err();
@@ -63,7 +63,7 @@ export default (scope, serviceName, isMicroLink = false) => {
 					.then(blob => {
 						scope.meta.file = blob;
 						dispatch("fileSelected", scope.meta.file);
-						scope.changePage("preupload");
+						scope.changePage("crop");
 					})
 					.catch(() => {
 						err();
