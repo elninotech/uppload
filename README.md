@@ -12,6 +12,8 @@
 
 <p align="center"><strong>Uppload is currently in development and is NOT production-ready.</strong></p>
 
+<video width="400" autoplay loop><source src="https://cdn.rawgit.com/elninotech/uppload/f4639960/Uppload.mp4" type="video/mp4"></video>
+
 ## Usage
 
 Install Uppload in your project directory:
