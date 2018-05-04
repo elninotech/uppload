@@ -3,8 +3,7 @@ import preview from "./services/preview";
 import selectFile from "./services/select-file";
 import camera from "./services/camera";
 import microLinkFetch from "./services/microLinkFetch";
-
-let cameraIcon = `<svg class="svg-inline--fa fa-camera fa-w-16 fa-fw" aria-hidden="true" data-prefix="fas" data-icon="camera" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M512 144v288c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48h88l12.3-32.9c7-18.7 24.9-31.1 44.9-31.1h125.5c20 0 37.9 12.4 44.9 31.1L376 96h88c26.5 0 48 21.5 48 48zM376 288c0-66.2-53.8-120-120-120s-120 53.8-120 120 53.8 120 120 120 120-53.8 120-120zm-32 0c0 48.5-39.5 88-88 88s-88-39.5-88-88 39.5-88 88-88 88 39.5 88 88z"></path></svg>`;
+import icons from "./icons";
 
 /**
  * Returns layouts for different services
@@ -22,8 +21,8 @@ export default scope => {
 					</div>
 					<div class="bottom-buttons">
 						<div class="cta">
-							<button class="primary-button secondary" id="backBtn"><i class="fas fa-arrow-left"></i> &nbsp;${i18n.preview.back}</button>
-							<button class="primary-button" id="continueBtn">${i18n.preview.continue} &nbsp;<i class="fas fa-arrow-right"></i></button>
+							<button class="primary-button secondary" id="backBtn">${icons.back} &nbsp;${i18n.preview.back}</button>
+							<button class="primary-button" id="continueBtn">${i18n.preview.continue} &nbsp;${icons.forward}</button>
 						</div>
 					</div>
 				</div>
@@ -52,7 +51,7 @@ export default scope => {
 		uploading: {
 			html: `
                 <div class="center-middle">
-                    <div><i class="fas fa-spinner fa-spin loading-spinner"></i></div>
+                    <div>${icons.uploading}</div>
                     <div>${i18n.uploading}</div>
                 </div>
             `
@@ -60,14 +59,14 @@ export default scope => {
 		uploaded: {
 			html: `
                 <div class="center-middle">
-                    <div><i class="fas fa-check uploaded-icon"></i></div>
+                    <div>${icons.uploaded}</div>
                     <div>${i18n.uploaded}</div>
                 </div>
             `
 		},
 		upload: {
 			title: "Upload file",
-			icon: `<i class="fas fa-fw fa-upload"></i>`,
+			icon: icons.upload,
 			html: `
                 <div class="center-middle">
                     <div id="dragDropElement" class="mb-full">${i18n.select_file.drag_here}</div>
@@ -81,7 +80,7 @@ export default scope => {
 			}
 		},
 		camera: {
-			icon: `${cameraIcon}`,
+			icon: `${icons.camera}`,
 			title: "Camera",
 			html: `
 				<div class="camera-container">
@@ -90,7 +89,7 @@ export default scope => {
 						<canvas id="cameraCanvas"></canvas>
 					</div>
 					<div class="bottom-buttons">
-						<div class="cta"><button class="primary-button" id="clickButton">${cameraIcon} &nbsp;${i18n.camera.click}</button></div>
+						<div class="cta"><button class="primary-button" id="clickButton">${icons.camera} &nbsp;${i18n.camera.click}</button></div>
 					</div>
 				</div>
 			`,
@@ -99,7 +98,7 @@ export default scope => {
 			}
 		},
 		link: {
-			icon: `<i class="fas fa-fw fa-link"></i>`,
+			icon: icons.import,
 			title: "Import from URL",
 			html: `
                 <div class="center-middle">
@@ -114,23 +113,8 @@ export default scope => {
 				microLinkFetch(scope, "link");
 			}
 		},
-		facebook: {
-			icon: `<i class="fab fa-fw fa-facebook"></i>`,
-			title: "Facebook",
-			html: ``
-		},
-		drive: {
-			icon: `<i class="fab fa-fw fa-google-drive"></i>`,
-			title: "Google Drive",
-			html: ``
-		},
-		dropbox: {
-			icon: `<i class="fab fa-fw fa-dropbox"></i>`,
-			title: "Dropbox",
-			html: ``
-		},
 		instagram: {
-			icon: `<i class="fab fa-fw fa-instagram"></i>`,
+			icon: icons.instagram,
 			title: "Instagram",
 			html: `
                 <div class="center-middle">
