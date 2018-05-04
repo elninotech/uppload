@@ -1,4 +1,4 @@
-import Croppr from "croppr";
+import loadFile from "../loadFile";
 import upload from "../upload";
 import dispatch from "../dispatch";
 import dataURItoBlob from "../dataUriToBlob";
@@ -17,55 +17,65 @@ const getImagePortion = (imgObj, newWidth, newHeight, startX, startY, ratio) => 
 	return tnCanvas.toDataURL();
 };
 
+let loaded = false;
 export default scope => {
-	const file = scope.meta.file;
-	if (!["image/png", "image/jpeg", "image/gif", "image/jpeg"].includes(file.type)) {
-		scope.changePage("upload");
-		scope.meta.file = file;
-		upload(null, scope)
-			.then(() => {})
-			.catch(() => {});
-		return;
-	}
-	// if (!!scope.settings.crop.aspectRatio) {
-	// 	const toolbar = scope.modalElement.querySelector(".toolbar");
-	// 	toolbar.parentNode.removeChild(toolbar);
-	// }
-	const reader = new FileReader();
-	reader.readAsDataURL(file);
-	reader.addEventListener("load", event => {
-		const imageDataUri = event.target.result;
-		if (imageDataUri) {
-			const image = scope.modalElement.querySelector("#previewImage");
-			image.setAttribute("src", imageDataUri);
-			image.addEventListener("load", () => {
-				image.style.display = "block";
-				const cropInstance = new Croppr(scope.modalElement.querySelector("#previewImage"), {
-					aspectRatio: scope.settings.crop.aspectRatio || null,
-					maxSize: scope.settings.crop.maxSize || null,
-					minSize: scope.settings.crop.minSize || null,
-					onCropStart: data => {
-						dispatch("cropStart", data);
-					},
-					onCropMove: data => {
-						dispatch("cropMove", data);
-					},
-					onCropEnd: data => {
-						dispatch("cropEnd", data);
-					}
-				});
-				const cropperDiv = scope.modalElement.querySelector("#imageCropper");
-				const button = scope.modalElement.querySelector("#cropAndUploadBtn");
-				button.addEventListener("click", () => {
-					const cropValues = cropInstance.getValue();
-					const newImage = getImagePortion(image, cropValues.width, cropValues.height, cropValues.x, cropValues.y, 1);
-					scope.meta.file = dataURItoBlob(newImage);
-					upload(null, scope)
-						.then(() => {})
-						.catch(() => {});
-				});
+	if (!loaded) {
+		scope.changePage("uploading");
+		loadFile("https://cdn.jsdelivr.net/npm/croppr@2.3.0/dist/croppr.min.js")
+			.then(() => {
+				loaded = true;
+				scope.changePage("crop");
+			})
+			.catch(() => {
+				upload(null, scope)
+					.then(() => {})
+					.catch(() => {});
 			});
-		} else {
+	} else {
+		const file = scope.meta.file;
+		if (!["image/png", "image/jpeg", "image/gif", "image/jpeg"].includes(file.type)) {
+			scope.changePage("upload");
+			scope.meta.file = file;
+			upload(null, scope)
+				.then(() => {})
+				.catch(() => {});
+			return;
 		}
-	});
+		const reader = new FileReader();
+		reader.readAsDataURL(file);
+		reader.addEventListener("load", event => {
+			const imageDataUri = event.target.result;
+			if (imageDataUri) {
+				const image = scope.modalElement.querySelector("#previewImage");
+				image.setAttribute("src", imageDataUri);
+				image.addEventListener("load", () => {
+					image.style.display = "block";
+					const cropInstance = new Croppr(scope.modalElement.querySelector("#previewImage"), {
+						aspectRatio: scope.settings.crop.aspectRatio || null,
+						maxSize: scope.settings.crop.maxSize || null,
+						minSize: scope.settings.crop.minSize || null,
+						onCropStart: data => {
+							dispatch("cropStart", data);
+						},
+						onCropMove: data => {
+							dispatch("cropMove", data);
+						},
+						onCropEnd: data => {
+							dispatch("cropEnd", data);
+						}
+					});
+					const cropperDiv = scope.modalElement.querySelector("#imageCropper");
+					const button = scope.modalElement.querySelector("#cropAndUploadBtn");
+					button.addEventListener("click", () => {
+						const cropValues = cropInstance.getValue();
+						const newImage = getImagePortion(image, cropValues.width, cropValues.height, cropValues.x, cropValues.y, 1);
+						scope.meta.file = dataURItoBlob(newImage);
+						upload(null, scope)
+							.then(() => {})
+							.catch(() => {});
+					});
+				});
+			}
+		});
+	}
 };
