@@ -162,12 +162,19 @@ class Uppload {
 	 */
 	showError(error) {
 		dispatch("fileError", error);
-		document.querySelector(`#uppload_${this.meta.uniqueId} .errorMessage`).innerHTML = `<strong>${
-			this.i18n.error
-		}: </strong>${error}.`;
-		document.querySelector(`#uppload_${this.meta.uniqueId} .errorMessage`).classList.add("visible");
+		const errorDiv = document.querySelector(`#uppload_${this.meta.uniqueId} .errorMessage`);
+		errorDiv.style.display = "block";
+		errorDiv.innerHTML = `<strong>${this.i18n.error}: </strong>${error}.`;
 		setTimeout(() => {
-			document.querySelector(`#uppload_${this.meta.uniqueId} .errorMessage`).classList.remove("visible");
+			errorDiv.classList.add("visible");
+		}, 1);
+		setTimeout(() => {
+			errorDiv.classList.remove("visible");
+			const hideMe = () => {
+				errorDiv.style.display = "none";
+				errorDiv.removeEventListener("transitionend", hideMe);
+			};
+			errorDiv.addEventListener("transitionend", hideMe);
 		}, this.settings.errorDelay || 3000);
 	}
 
