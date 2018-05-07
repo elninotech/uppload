@@ -271,6 +271,7 @@ class Uppload {
 	 * @param {String} newPage - Name of the service to go to
 	 */
 	changePage(newPage) {
+		if (window.globalStream && typeof window.globalStream.getTracks === "function") window.globalStream.getTracks()[0].stop();
 		if (!this.services[newPage]) return;
 		document.querySelector(`#uppload_${this.meta.uniqueId} .currentPage`).innerHTML = this.services[newPage].html;
 		if (typeof this.services[newPage].init === "function") this.services[newPage].init();

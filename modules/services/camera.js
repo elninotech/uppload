@@ -1,5 +1,11 @@
 import dispatch from "../dispatch";
 
+const stopStream = () => {
+	setTimeout(() => {
+		if (window.globalStream && typeof window.globalStream.getTracks === "function") window.globalStream.getTracks()[0].stop();
+	}, 100);
+}
+
 /**
  * Initialization function for select/drag-drop file service
  * @param {Object} scope - Parent Uppload object
@@ -16,14 +22,13 @@ export default scope => {
 	startbutton = scope.modalElement.querySelector("#clickButton");
 	function startup() {
 		let streaming = false;
-		navigator.getMedia =
-			navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 		navigator.getMedia(
 			{
 				video: true,
 				audio: false
 			},
 			function(stream) {
+				window.globalStream = stream;
 				video.style.display = "";
 				canvas.style.display = "";
 				scope.modalElement.querySelector("#cameraError").style.display = "none";
