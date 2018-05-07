@@ -1,10 +1,11 @@
 import webpack from "webpack";
 import path from "path";
+import "babel-polyfill";
 
 export default () => ({
 	mode: "production",
 	entry: {
-		"uppload.min": "./index.js"
+		"uppload.min": ["babel-polyfill", "./index.js"]
 	},
 	output: {
 		path: path.resolve(__dirname, "./dist"),
