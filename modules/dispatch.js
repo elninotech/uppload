@@ -19,6 +19,7 @@ export const addGlobalEvent = (upploadEvent, upploadFunction, scopeElement) => {
  * @param {String} value - Param value
  */
 export default (event, value) => {
+	if (!scope) return;
 	if (typeof globalEvents[scope.meta.uniqueId][event] === "function") {
 		globalEvents[scope.meta.uniqueId][event](value);
 	}
