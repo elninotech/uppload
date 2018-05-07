@@ -1,29 +1,29 @@
 export default {
-	uploading: "Uploading...",
-	uploaded: "Uploaded",
+	uploading: "Mengunggah",
+	uploaded: "Diunggah",
 	select_file: {
-		drag_here: "Drag and drop here to upload",
-		choose_file: "Choose a file",
-		or: "or"
+		drag_here: "Seret dan letakkan di sini untuk mengunggah",
+		choose_file: "Pilih file",
+		or: "atau"
 	},
 	instagram: {
-		post_url: "Instagram post URL",
-		import: "Import from Instagram"
+		post_url: "URL posting Instagram",
+		import: "Impor dari Instagram "
 	},
 	link: {
-		post_url: "Link to file",
-		import: "Import from URL"
+		post_url: "Tautan ke file",
+		import: "Impor dari URL"
 	},
 	preview: {
-		back: "Back",
-		continue: "Continue"
+		back: "Kembali",
+		continue: "Lanjutkan"
 	},
 	crop: {
-		upload: "Crop &amp; upload"
+		upload: "Pangkas"
 	},
 	camera: {
 		click: "Click photo",
-		permission: "Grant camera permission"
+		permission: "Waiting for camera permission..."
 	},
 	error: "Error",
 	errors: {
@@ -36,3 +36,4 @@ export default {
 		camera_error: "Unable to access camera"
 	}
 };
+		

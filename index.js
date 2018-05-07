@@ -1,5 +1,5 @@
 import { addGlobalEvent } from "./modules/dispatch";
-import i18n from "./modules/i18n";
+import en from "./modules/i18n/en";
 import dispatch from "./modules/dispatch";
 import servicesFunction from "./modules/services";
 import css from "./uppload.scss";
@@ -51,7 +51,7 @@ class Uppload {
 		this.settings = settings || {};
 
 		// Internationalization of text
-		this.i18n = this.settings.i18n || i18n;
+		this.i18n = this.settings.i18n || en;
 
 		// Stores boolean values if modal is open/uploading
 		this.isOpen = false;
