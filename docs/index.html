@@ -46,7 +46,7 @@
 				</div>
 			</fieldset>
 		</form>
-		<script src="./uppload.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uppload/dist/uppload.min.js"></script>
 		<script>
 			(() => {
 				const profilePicture = new Uppload({
@@ -55,29 +55,13 @@
 					call: ["#upploadBtn"],
 					maxFileSize: 10000000,
 					minimumDelay: 2000,
-					uploadFunction: file => {
+					uploadFunction: file => { /* Dummy uploader */
 						return new Promise((resolve, reject) => {
 							let url = "https://randomuser.me/api/portraits/men/18.jpg";
 							resolve(url);
 						});
 					}
 				});
-				profilePicture.on("uploadStarted", () => {
-					console.log("File upload has started");
-				});
-				profilePicture.on("fileUploaded", url => {
-					console.log("A file has been uploaded", url);
-				});
-				profilePicture.openModal();
-				// const xyz = new Uppload({
-				// 	uploadFunction: file => {
-				// 		return new Promise((resolve, reject) => {
-				// 			let url = "https://randomuser.me/api/portraits/men/18.jpg";
-				// 			resolve(url);
-				// 		});
-				// 	}
-				// });
-				// xyz.openModal();
 			})();
 		</script>
 	</body>
