@@ -66,11 +66,7 @@ const profilePicture = new Uppload({
 
 ### Browser Support
 
-With `babel-polyfill`, Uppload works with IE11 and above. Uppload ships this way by default.
-
-Without polyfills, it works with browsers that natively support both promises and the Fetch API. Chrome 32+, Edge, Firefox 29+ Opera 19+, and Safari 8+ all support promises, but only Chrome 63+, Opera 50+, and Firefox 58+ support `Promise.prototype.finally()`, which Uppload needs. Edge and Safari still don't support it.
-
-Uppload also works with the majority of mobile browsers, including the Android browser, Chrome Android, Firefox Android, and Opera Mobile. With polyfills, Safari, Edge Mobile and Samsung Internet support it too.
+With `babel-polyfill`, Uppload works with IE11 and above. Uppload ships this way by default. Without polyfills, it works with browsers that natively support both promises and the Fetch API.
 
 ### Configutation
 

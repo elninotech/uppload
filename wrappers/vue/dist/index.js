@@ -196,7 +196,7 @@
 										Object(__WEBPACK_IMPORTED_MODULE_0__dispatch__["b" /* default */])("uploadError", error);
 										reject(error);
 									})
-									.finally(() => {
+									.then(() => {
 										scope.isUploading = false;
 										scope.changePage("uploaded");
 									});
@@ -220,7 +220,7 @@
 										Object(__WEBPACK_IMPORTED_MODULE_0__dispatch__["b" /* default */])("fileUploaded", error);
 										reject(error);
 									})
-									.finally(() => {
+									.then(() => {
 										scope.isUploading = false;
 										scope.changePage("uploaded");
 									});

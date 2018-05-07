@@ -41,7 +41,7 @@ export default (file, scope) => {
 						dispatch("uploadError", error);
 						reject(error);
 					})
-					.finally(() => {
+					.then(() => {
 						scope.isUploading = false;
 						scope.changePage("uploaded");
 					});
@@ -65,7 +65,7 @@ export default (file, scope) => {
 						dispatch("fileUploaded", error);
 						reject(error);
 					})
-					.finally(() => {
+					.then(() => {
 						scope.isUploading = false;
 						scope.changePage("uploaded");
 					});
