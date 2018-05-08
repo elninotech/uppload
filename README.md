@@ -14,6 +14,26 @@
 
 ![uppload](https://user-images.githubusercontent.com/2841780/39637480-75d62e88-4fc3-11e8-8df8-3d462ef7e450.gif)
 
+## Table of Contents
+
+- [Usage](#usage)
+	- [Browser Support](#browser-support)
+	- [Configutation](#configutation)
+	- [Properties](#properties)
+	- [Events](#events)
+- [Demos](#demos)
+	- [Automated Demo](#automated-demo)
+	- [Firebase Demo](#firebase-demo)
+- [Customization](#customization)
+- [Server-side Implementation](#server-side-implementation)
+	- [Starter Templates](#starter-templates)
+- [Internationalization](#internationalization)
+- [Wrappers](#wrappers)
+- [Development](#development)
+	- [Roadmap](#roadmap)
+	- [Installation](#installation)
+	- [Production](#production)
+-  [El Niño](#el-ni%C3%B1o)
 
 ## Usage
 
@@ -184,7 +204,9 @@ profilePicture.openModal(); // Opens the modal
 | `updateValue(param)` | `String` URL | Make this URL the post-uploading value |
 | `changePage(param)` | `String` Service ID | Navigate to this uploading service |
 
-### Automated Demo
+### Demos
+
+#### Automated Demo
 
 Using the above methods and events, you can also automatically upload a file using Uppload. For example, the following code fetches an image from Mashape's meme generator API and uploads it to your server:
 
@@ -216,7 +238,7 @@ fetch("https://ronreiter-meme-generator.p.mashape.com/meme?meme=Baby+Godfather&f
 	});
 ```
 
-### Firebase Demo
+#### Firebase Demo
 
 You can just as easily upload files to Firebase Storage. Check out the [online demo](https://elninotech.github.io/uppload/firebase).
 
@@ -271,7 +293,7 @@ Uppload also adds some classes to your elements that it interacts with:
 | `.uppload-initialized` | Default value of file was set |
 | `.uppload-updated` | New file was uploaded and set |
 
-### Server-side implementation
+### Server-side Implementation
 
 Uppload does **not** provide the server side implementation of handling the files, but the way files are uploaded is identical to simple file upload forms like this:
 
@@ -280,6 +302,8 @@ Uppload does **not** provide the server side implementation of handling the file
 	<input type="file" name="file" />
 </form>
 ```
+
+#### Starter Templates
 
 You can also use any of the following starter templates for your backend:
 
