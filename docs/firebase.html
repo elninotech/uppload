@@ -4,16 +4,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Uppload</title>
 		<style>
-			body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; margin: 5rem; }
+			body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; margin: 5rem; line-height: 1.5; }
 			fieldset { padding: 1rem } fieldset div + div { margin-top: 1rem }
 			label { display: block } label div + input { margin-top: 0.5rem }label input + div { margin-top: 0.5rem; color: #999; font-size: 90% }
 			input { width: 100%; font: inherit; padding: 0.5rem; box-sizing: border-box; border: 1px solid #ccc; border-radius: 0.25rem }
 			button { background-color: #666; color: #fff; font: inherit; border: none; padding: 0.5rem 0.75rem; border-radius: 0.25rem }
-			nav { margin-bottom: 2rem } nav ul { margin: 0; padding: 0; list-style: none } nav li { display: inline-block; margin: 0 1rem }
+			nav.x { margin-bottom: 2rem } nav.x ul { margin: 0; padding: 0; list-style: none } nav.x li { display: inline-block; margin: 0 1rem }
 		</style>
 	</head>
 	<body>
-		<nav>
+		<nav class="x">
 			<ul>
 				<li><strong>Demos</strong></li>
 				<li><a href="index.html">Basic Uppload demo</a></li>
@@ -21,6 +21,7 @@
 			</ul>
 		</nav>
 		<form style="max-width: 500px">
+			<p>This demo will upload these files to Firebase. We periodically delete these files. Please don't upload sensitive information.</p>
 			<fieldset>
 				<legend>Profile Settings</legend>
 				<div>
@@ -55,22 +56,36 @@
 			</fieldset>
 		</form>
 		<script src="https://cdn.jsdelivr.net/npm/uppload/dist/uppload.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 		<script>
-			(() => {
-				const profilePicture = new Uppload({
-					value: "https://randomuser.me/api/portraits/men/17.jpg",
-					bind: ["#profilePicInput", "#profilePicImage"],
-					call: ["#upploadBtn"],
-					maxFileSize: 10000000,
-					minimumDelay: 2000,
-					uploadFunction: file => { /* Dummy uploader */
-						return new Promise((resolve, reject) => {
-							let url = "https://randomuser.me/api/portraits/men/18.jpg";
-							resolve(url);
+			var config = {
+				apiKey: "AIzaSyDZGcrdh48alSZlUoiQSpXP0fktcVPJf2w",
+				databaseURL: "https://talanx-hack.firebaseio.com",
+				projectId: "talanx-hack",
+				storageBucket: "talanx-hack.appspot.com",
+			};
+			firebase.initializeApp(config);
+			var profilePicture = new Uppload({
+				value: "https://randomuser.me/api/portraits/men/17.jpg",
+				bind: ["#profilePicInput", "#profilePicImage"],
+				call: ["#upploadBtn"],
+				allowedTypes: "image",
+				maxFileSize: 25000000,
+ 				/* Upload to Firebase uploader */
+				uploadFunction: file => {
+					return new Promise(function(resolve, reject) {
+						var fileType = file.type.split("/")[1] || "jpg";
+						var storageRef = firebase.storage().ref().child("/uppload/" + Math.random().toString(36).slice(2) + "." + fileType);
+						storageRef.put(file).then(function(snapshot) {
+							try {
+								resolve(snapshot.metadata.downloadURLs[0]);
+							} catch(e) {
+								reject("Unable to upload to Firebase");
+							}
 						});
-					}
-				});
-			})();
+					});
+				}
+			});
 		</script>
 	</body>
 </html>

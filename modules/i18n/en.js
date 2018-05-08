@@ -19,7 +19,7 @@ export default {
 		continue: "Continue"
 	},
 	crop: {
-		upload: "Crop "
+		upload: "Crop &amp; upload"
 	},
 	camera: {
 		click: "Click photo",
