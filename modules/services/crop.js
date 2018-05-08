@@ -43,6 +43,7 @@ export default scope => {
 		}
 		const reader = new FileReader();
 		reader.readAsDataURL(file);
+		scope.meta.originalFileName = file.name;
 		reader.addEventListener("load", event => {
 			const imageDataUri = event.target.result;
 			if (imageDataUri) {

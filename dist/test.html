@@ -49,16 +49,16 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/native-promise-only/0.8.1/npo.js"></script>
 		<script src="./uppload.min.js"></script>
 		<script>
-
 				var profilePicture = new Uppload({
 					value: "https://randomuser.me/api/portraits/men/17.jpg",
 					bind: ["#profilePicInput", "#profilePicImage"],
 					call: ["#upploadBtn"],
 					maxFileSize: 10000000,
 					minimumDelay: 2000,
-					uploadFunction: function(file) {
+					uploadFunction: function(file, metadata) {
 						return new Promise(function(resolve, reject) {
 							var url = "https://randomuser.me/api/portraits/men/18.jpg";
+							console.log(metadata);
 							resolve(url);
 						});
 					}

@@ -105,7 +105,7 @@ const withEndpointOptions = new Uppload({
 });
 
 const withCustomUpload = new Uppload({
-	uploadFunction: file => {  // Custom file upload handler
+	uploadFunction: (file, metadata) => {  // Custom file upload handler
 		return new Promise((resolve, reject) => {
 			fetch("https://example.com/upload", {
 				method: "POST",
@@ -230,10 +230,9 @@ firebase.initializeApp({
 const profilePicture = new Uppload({
 	allowedTypes: "image",
 	maxFileSize: 25000000,
-	uploadFunction: file => {
+	uploadFunction: (file, metadata) => {
 		return new Promise((resolve, reject) => {
-			const fileType = file.type.split("/")[1] || "jpg";
-			const storageRef = firebase.storage().ref().child("/uppload/" + Math.random().toString(36).slice(2) + "." + fileType);
+			const storageRef = firebase.storage().ref().child("/uppload/" + metadata.name);
 			storageRef.put(file).then(snapshot => {
 				try {
 					resolve(snapshot.metadata.downloadURLs[0]);

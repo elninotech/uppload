@@ -71,10 +71,9 @@
 				allowedTypes: "image",
 				maxFileSize: 25000000,
  				/* Upload to Firebase */
-				uploadFunction: file => {
+				uploadFunction: function(file, metadata) {
 					return new Promise(function(resolve, reject) {
-						var fileType = file.type.split("/")[1] || "jpg";
-						var storageRef = firebase.storage().ref().child("/uppload/" + Math.random().toString(36).slice(2) + "." + fileType);
+						var storageRef = firebase.storage().ref().child("/uppload/" + metadata.name);
 						storageRef.put(file).then(function(snapshot) {
 							try {
 								resolve(snapshot.metadata.downloadURLs[0]);

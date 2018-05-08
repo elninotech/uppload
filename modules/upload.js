@@ -30,8 +30,18 @@ export default (file, scope) => {
 		dispatch("uploadStarted", file);
 		setTimeout(() => {
 			if (typeof scope.settings.uploadFunction === "function") {
+				const fileType = file.type.split("/")[1] || null;
 				scope.settings
-					.uploadFunction(file)
+					.uploadFunction(file, {
+						name:
+							(scope.meta.originalFileName ? scope.meta.originalFileName.split(".")[0] : "").toLowerCase() +
+							"-" +
+							[...Array(10)].map(() => Math.random().toString(36)[3]).join("") +
+							"." +
+							fileType,
+						mime: file.type || null,
+						type: fileType
+					})
 					.then(url => {
 						scope.updateValue(url);
 						dispatch("fileUploaded", url);
