@@ -60,7 +60,6 @@
 		<script>
 			var config = {
 				apiKey: "AIzaSyDZGcrdh48alSZlUoiQSpXP0fktcVPJf2w",
-				databaseURL: "https://talanx-hack.firebaseio.com",
 				projectId: "talanx-hack",
 				storageBucket: "talanx-hack.appspot.com",
 			};
@@ -71,7 +70,7 @@
 				call: ["#upploadBtn"],
 				allowedTypes: "image",
 				maxFileSize: 25000000,
- 				/* Upload to Firebase uploader */
+ 				/* Upload to Firebase */
 				uploadFunction: file => {
 					return new Promise(function(resolve, reject) {
 						var fileType = file.type.split("/")[1] || "jpg";
@@ -82,6 +81,8 @@
 							} catch(e) {
 								reject("Unable to upload to Firebase");
 							}
+						}).catch(function(error) {
+							reject(error);
 						});
 					});
 				}

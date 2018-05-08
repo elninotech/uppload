@@ -184,6 +184,8 @@ profilePicture.openModal(); // Opens the modal
 | `updateValue(param)` | `String` URL | Make this URL the post-uploading value |
 | `changePage(param)` | `String` Service ID | Navigate to this uploading service |
 
+### Automated Demo
+
 Using the above methods and events, you can also automatically upload a file using Uppload. For example, the following code fetches an image from Mashape's meme generator API and uploads it to your server:
 
 ```js
@@ -212,6 +214,38 @@ fetch("https://ronreiter-meme-generator.p.mashape.com/meme?meme=Baby+Godfather&f
 	.catch(error => {
 		console.error("Error in fetching file", error);
 	});
+```
+
+### Firebase Demo
+
+You can just as easily upload files to Firebase Storage. Check out the [online demo](https://elninotech.github.io/uppload/firebase).
+
+```js
+import firebase from "firebase";
+firebase.initializeApp({
+	apiKey: "YOUR_API_KEY",
+	projectId: "YOUR_PROJECT_ID",
+	storageBucket: "YOUR_SUBDOMAIN.appspot.com",
+});
+const profilePicture = new Uppload({
+	allowedTypes: "image",
+	maxFileSize: 25000000,
+	uploadFunction: file => {
+		return new Promise((resolve, reject) => {
+			const fileType = file.type.split("/")[1] || "jpg";
+			const storageRef = firebase.storage().ref().child("/uppload/" + Math.random().toString(36).slice(2) + "." + fileType);
+			storageRef.put(file).then(snapshot => {
+				try {
+					resolve(snapshot.metadata.downloadURLs[0]);
+				} catch(e) {
+					reject("Unable to upload to Firebase");
+				}
+			}).catch(error => {
+				reject(error);
+			});
+		});
+	}
+});
 ```
 
 ### Customization
