@@ -50,16 +50,20 @@ And then import it to your project:
 import Uppload from "uppload";
 ```
 
-You can also `require` it in your project since it ships as UMD, or use it from one of the CDNs below:
+You can also `require` it in your project since it ships as UMD, or use it from one of the CDNs below. You only need any one of the following, since wrappers come with Uppload built-in.
 
 ```html
-<!-- unpkg -->
-<script src="https://unpkg.com/uppload/dist/uppload.no-polyfills-min.js"></script> <!-- Uppload -->
-<script src="https://unpkg.com/uppload/dist/uppload.min.js"></script> <!-- Uppload with polyfills -->
+<!-- Served by unpkg -->
+<!-- Uppload --><script src="https://unpkg.com/uppload/dist/uppload.no-polyfills.min.js"></script> 
+<!-- Uppload with polyfills --><script src="https://unpkg.com/uppload/dist/uppload.min.js"></script> 
+<!-- Uppload Vue --><script src="https://unpkg.com/uppload-vue/dist/uppload-vue.min.js"></script> 
+<!-- Uppload Vue with polyfills --><script src="https://unpkg.com/uppload-vue/dist/uppload-vue.polyfills.min.js"></script> 
 
-<!-- jsDelivr -->
-<script src="https://cdn.jsdelivr.net/npm/uppload/dist/uppload.no-polyfills-min.js"></script> <!-- Uppload -->
-<script src="https://cdn.jsdelivr.net/npm/uppload/dist/uppload.min.js"></script> <!-- Uppload with polyfills -->
+<!-- Served by jsDelivr -->
+<!-- Uppload --><script src="https://cdn.jsdelivr.net/npm/uppload/dist/uppload.no-polyfills.min.js"></script> 
+<!-- Uppload with polyfills --><script src="https://cdn.jsdelivr.net/npm/uppload/dist/uppload.min.js"></script> 
+<!-- Uppload Vue --><script src="https://cdn.jsdelivr.net/npm/uppload-vue/dist/uppload-vue.min.js"></script> 
+<!-- Uppload Vue with polyfills --><script src="https://cdn.jsdelivr.net/npm/uppload-vue/dist/uppload-vue.polyfills.min.js"></script> 
 ```
 
 Create a new Uppload object with sample configuration:

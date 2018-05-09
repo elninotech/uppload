@@ -6,6 +6,7 @@ import "babel-polyfill";
 export default () => ({
 	mode: "production",
 	entry: {
+		"uppload-vue.polyfills.min": ["babel-polyfill", "./uppload.vue"],
 		"uppload-vue.min": ["./uppload.vue"]
 	},
 	output: {
