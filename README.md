@@ -2,7 +2,7 @@
 
 <p align="center">
 <img alt="" src="https://img.shields.io/npm/dw/uppload.svg?style=flat">
-<img alt="" src="https://img.shields.io/github/size/elninotech/uppload/dist/uppload.min.js.svg?style=flat">
+<img alt="" src="https://img.shields.io/github/size/elninotech/uppload/dist/uppload.no-polyfills.min.js.svg?style=flat">
 <img alt="" src="https://img.shields.io/npm/l/uppload.svg?maxAge=2592000&style=flat">
 <img alt="" src="https://img.shields.io/david/elninotech/uppload.svg?maxAge=2592000&style=flat">
 <img alt="" src="https://img.shields.io/david/dev/elninotech/uppload.svg?maxAge=2592000&style=flat">
@@ -87,6 +87,13 @@ const profilePicture = new Uppload({
 ### Browser Support
 
 With `babel-polyfill`, Uppload works with IE11 and above. Uppload ships this way by default. Without polyfills, it works with browsers that natively support both promises and the Fetch API.
+
+### File Size
+
+| File | Size |
+| --- | --- |
+| `uppload.min.js` | ![File size](https://img.shields.io/github/size/elninotech/uppload/dist/uppload.min.js.svg?style=flat) |
+| `uppload.no-polyfills.min.js` | ![File size](https://img.shields.io/github/size/elninotech/uppload/dist/uppload.no-polyfills.min.js.svg?style=flat) |
 
 ### Configutation
 

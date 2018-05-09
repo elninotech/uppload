@@ -5,7 +5,8 @@ import "babel-polyfill";
 export default () => ({
 	mode: "production",
 	entry: {
-		"uppload.min": ["babel-polyfill", "./index.js"]
+		"uppload.min": ["babel-polyfill", "./index.js"],
+		"uppload.no-polyfills.min": ["./index.js"]
 	},
 	output: {
 		path: path.resolve(__dirname, "./dist"),
