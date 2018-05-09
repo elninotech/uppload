@@ -324,21 +324,22 @@ Uppload comes with English (US) support built-in. You can overwrite all string b
 We've built the following wrappers for Uppload for our favorite frameworks:
 
 - [Vue.js](https://github.com/elninotech/uppload/tree/master/wrappers/vue) (NPM `uppload-vue`)
+- [React](https://github.com/elninotech/uppload/tree/master/wrappers/react) (NPM `uppload-react`)
 
 ## Development
 
 ### Roadmap
 - ~~Modal~~
-- File preview
-- Image cropping
+- ~~File preview~~
+- ~~Image cropping~~
 - ~~Upload function~~
 - Import file/image (Facebook, Dropbox, etc.)
-- Add sample server configuration & files in docs
+- ~~Add sample server configuration & files in docs~~
 - IE support (`customEvent`)
-- Starter templates for Firebase, S3, etc.
-- Wrappers for
+- Starter templates for ~~Firebase~~, S3, etc.
+- ~~Wrappers for~~
 	- ~~Vue.js~~
-	- React
+	- ~~React~~
 
 ### Installation
 
