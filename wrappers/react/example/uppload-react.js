@@ -752,14 +752,29 @@ function (_React$Component) {
     _classCallCheck(this, UpploadReact);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(UpploadReact).call(this, props));
-    console.log("I have been invoked!");
+    _this.Uppload = new _uppload.default(props.settings || {});
+
+    _this.Uppload.on("fileUploaded", function (url) {
+      if (typeof _this.props.onUpload === "function") {
+        _this.props.onUpload(url);
+      }
+    });
+
     return _this;
   }
 
   _createClass(UpploadReact, [{
     key: "render",
     value: function render() {
-      return _react.default.createElement("p", null, "Uppload");
+      var _this2 = this;
+
+      return _react.default.createElement("div", {
+        onClick: function onClick(event) {
+          _this2.Uppload.openModal();
+
+          event.preventDefault();
+        }
+      }, this.props.children);
     }
   }]);
 
