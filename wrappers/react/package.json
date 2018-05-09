@@ -1,0 +1,28 @@
+{
+  "name": "uppload-react",
+  "version": "0.2.0",
+  "description": "Official React component for Uppload",
+  "main": "uppload.js",
+  "repository": "https://github.com/elninotech/uppload/tree/master/wrappers/react",
+  "author": "El Niño (elnino.tech)",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "live": "webpack --watch"
+  },
+  "dependencies": {
+    "uppload": "^0.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.31",
+    "@babel/preset-env": "^7.0.0-beta.31",
+    "@babel/preset-react": "^7.0.0-beta.46",
+    "babel-loader": "^8.0.0-beta.0",
+    "css-loader": "^0.28.11",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^3.8.1"
+  }
+}
