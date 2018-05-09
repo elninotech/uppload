@@ -7,8 +7,8 @@
   "author": "El Niño (elnino.tech)",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
-    "live": "webpack --watch"
+    "build": "webpack -p",
+    "live": "webpack -p --watch"
   },
   "dependencies": {
     "uppload": "^0.1.2"
@@ -20,8 +20,9 @@
     "css-loader": "^0.28.11",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
-    "vue-loader": "^13.5.0",
-    "vue-template-compiler": "^2.5.3",
-    "webpack": "^3.8.1"
+    "vue": "^2.5.16",
+    "vue-loader": "^15.0.9",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.8.1"
   }
 }

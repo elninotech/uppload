@@ -18,6 +18,7 @@
 
 - [Usage](#usage)
 	- [Browser Support](#browser-support)
+	- [File Size](#file-size)
 	- [Configutation](#configutation)
 	- [Properties](#properties)
 	- [Events](#events)
@@ -52,8 +53,13 @@ import Uppload from "uppload";
 You can also `require` it in your project since it ships as UMD, or use it from one of the CDNs below:
 
 ```html
-<script src="https://unpkg.com/uppload/dist/uppload.min.js"></script> <!-- unpkg -->
-<script src="https://cdn.jsdelivr.net/npm/uppload/dist/uppload.min.js"></script> <!-- jsDelivr -->
+<!-- unpkg -->
+<script src="https://unpkg.com/uppload/dist/uppload.no-polyfills-min.js"></script> <!-- Uppload -->
+<script src="https://unpkg.com/uppload/dist/uppload.min.js"></script> <!-- Uppload with polyfills -->
+
+<!-- jsDelivr -->
+<script src="https://cdn.jsdelivr.net/npm/uppload/dist/uppload.no-polyfills-min.js"></script> <!-- Uppload -->
+<script src="https://cdn.jsdelivr.net/npm/uppload/dist/uppload.min.js"></script> <!-- Uppload with polyfills -->
 ```
 
 Create a new Uppload object with sample configuration:
