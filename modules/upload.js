@@ -34,8 +34,7 @@ export default (file, scope) => {
 				scope.settings
 					.uploadFunction(file, {
 						name:
-							(scope.meta.originalFileName ? scope.meta.originalFileName.split(".")[0] : "").toLowerCase() +
-							"-" +
+							(scope.meta.originalFileName ? scope.meta.originalFileName.split(".")[0] + "-" : "").toLowerCase() +
 							[...Array(10)].map(() => Math.random().toString(36)[3]).join("") +
 							"." +
 							fileType,
