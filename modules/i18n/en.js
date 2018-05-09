@@ -1,6 +1,7 @@
 export default {
 	uploading: "Uploading...",
 	uploaded: "Uploaded",
+	your_file: "Your file",
 	select_file: {
 		drag_here: "Drag and drop here to upload",
 		choose_file: "Choose a file",
@@ -36,4 +37,3 @@ export default {
 		camera_error: "Unable to access camera"
 	}
 };
-		

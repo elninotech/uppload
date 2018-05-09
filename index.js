@@ -3,6 +3,7 @@ import en from "./modules/i18n/en";
 import dispatch from "./modules/dispatch";
 import servicesFunction from "./modules/services";
 import css from "./uppload.scss";
+import loadFile from "./modules/loadFile";
 
 /*
  * Converts number of bytes to readable string
@@ -235,6 +236,7 @@ class Uppload {
 	 * Opens the modal
 	 */
 	openModal() {
+		loadFile("https://use.fontawesome.com/releases/v5.0.12/js/all.js");
 		if (this.isOpen === true) return;
 		this.changePage(this.currentPage);
 		this.isOpen = true;
@@ -281,14 +283,20 @@ class Uppload {
 			navbarChildren[i].classList.remove("active");
 		}
 		const currentChild = document.querySelector(`#uppload_${this.meta.uniqueId} .button_service_${newPage}`);
+		const navbar = document.querySelector(`#uppload_${this.meta.uniqueId} aside`);
 		if (currentChild) {
 			currentChild.classList.add("active");
 		}
-		const navbar = document.querySelector(`#uppload_${this.meta.uniqueId} aside`);
+		navbar.querySelector(".button_service_preview").classList.add("active");
 		if (newPage === "uploading" || newPage === "uploaded") {
 			navbar.classList.add("hidden");
 		} else {
 			navbar.classList.remove("hidden");
+		}
+		if (["preview", "crop", "uploading", "uploaded"].includes(newPage)) {
+			navbar.querySelector(".button_service_preview").style.display = "";
+		} else {
+			navbar.querySelector(".button_service_preview").style.display = "none";
 		}
 	}
 }

@@ -5,6 +5,8 @@ import camera from "./services/camera";
 import microLinkFetch from "./services/microLinkFetch";
 import icons from "./icons";
 
+const rightArrow = ` &nbsp;${icons.forward}`;
+
 /**
  * Returns layouts for different services
  * @param {Object} scope - Parent Uppload object
@@ -71,7 +73,7 @@ export default scope => {
                 <div class="center-middle">
                     <div id="dragDropElement" class="mb-full">${i18n.select_file.drag_here}</div>
                     <p class="mb-full"><em>${i18n.select_file.or}</em></p>
-                    <button id="selectFileBtn" class="primary-button">${i18n.select_file.choose_file}</button>
+                    <button id="selectFileBtn" class="primary-button">${i18n.select_file.choose_file + rightArrow}</button>
                     <input type="file" id="dragDropFileElt">
                 </div>
             `,
@@ -108,7 +110,7 @@ export default scope => {
                         <div>${i18n.link.post_url}</div>
                         <input id="microLinkInput" type="text" value="https://www.w3schools.com/howto/img_paris.jpg" placeholder="https://www.w3schools.com/howto/img_paris.jpg">
                     </label>
-                    <button id="microLinkButton" class="primary-button">${i18n.link.import}</button>
+                    <button id="microLinkButton" class="primary-button">${i18n.link.import + rightArrow}</button>
                 </div>
             `,
 			init() {
@@ -124,7 +126,7 @@ export default scope => {
                         <div>${i18n.instagram.post_url}</div>
                         <input id="microLinkInput" type="text" value="https://www.instagram.com/p/BeV6tOhFUor" placeholder="https://www.instagram.com/p/BeV6tOhFUor">
                     </label>
-                    <button id="microLinkButton" class="primary-button instagram">${i18n.instagram.import}</button>
+                    <button id="microLinkButton" class="primary-button instagram">${i18n.instagram.import + rightArrow}</button>
                 </div>
             `,
 			init() {
@@ -147,7 +149,8 @@ export default scope => {
 		html: `
             <aside>
                 <nav>
-                    <ul>
+					<ul>
+						<li class="button_service button_service_preview active"><button>${icons.file}${i18n.your_file}</button></li>
                         ${navItems}
                     </ul>
                 </nav>

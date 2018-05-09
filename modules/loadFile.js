@@ -1,13 +1,20 @@
+const loadedFiles = [];
+
 export default url => {
 	return new Promise((resolve, reject) => {
-		const file = document.createElement("script");
-		file.src = url;
-		file.addEventListener("load", () => {
+		if (loadedFiles.includes(url)) {
 			resolve();
-		});
-		file.addEventListener("error", () => {
-			resolve();
-		});
-		(document.head || document.body).appendChild(file);
+		} else {
+			loadedFiles.push(url);
+			const file = document.createElement("script");
+			file.src = url;
+			file.addEventListener("load", () => {
+				resolve();
+			});
+			file.addEventListener("error", () => {
+				resolve();
+			});
+			(document.head || document.body).appendChild(file);
+		}
 	});
 };
