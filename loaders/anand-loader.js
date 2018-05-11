@@ -4,7 +4,7 @@
  * @param {String} source
  * @returns {String}
  */
-module.exports = function(source) {
+export default source => {
 	return source
 		.replace(/ +(?= )/g, "")
 		.replace(/"\n\t"/g, "")
