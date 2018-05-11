@@ -1,76 +1,268 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700">
+		<link rel="stylesheet" href="styles.css">
 		<title>Uppload</title>
-		<style>
-			body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; margin: 5rem; }
-			fieldset { padding: 1rem } fieldset div + div { margin-top: 1rem }
-			label { display: block } label div + input { margin-top: 0.5rem }label input + div { margin-top: 0.5rem; color: #999; font-size: 90% }
-			input { width: 100%; font: inherit; padding: 0.5rem; box-sizing: border-box; border: 1px solid #ccc; border-radius: 0.25rem }
-			button { background-color: #666; color: #fff; font: inherit; border: none; padding: 0.5rem 0.75rem; border-radius: 0.25rem }
-			nav { margin-bottom: 2rem } nav ul { margin: 0; padding: 0; list-style: none } nav li { display: inline-block; margin: 0 1rem }
-		</style>
 	</head>
 	<body>
-		<nav>
-			<ul>
-				<li><strong>Demos</strong></li>
-				<li><a href="index.html">Basic Uppload demo</a></li>
-				<li><a href="firebase.html">Upload to Firebase</a></li>
-			</ul>
-		</nav>
-		<form style="max-width: 500px">
-			<fieldset>
-				<legend>Profile Settings</legend>
-				<div>
-					<label>
-						<div>Name</div>
-						<input type="text" value="John Doe">
-					</label>
-				</div>
-				<div>
-					<label>
-						<div>Email</div>
-						<input type="email" value="john.doe@example.com">
-					</label>
-				</div>
-				<div>
-					<label>
-						<div>Profile Picture</div>
-						<input id="profilePicInput" type="text">
-						<div>This field will contain the URL of the image from Uppload</div>
-					</label>
-					<div style="float: left; margin-top: 1rem">
-						<img id="profilePicImage" alt="Profile picture" style="width: 150px; height: 150px">
+		<header id="masthead">
+			<div class="container">
+				<!-- <div class="row justify-content-center"> -->
+					<!-- <div class="col-md-6"> -->
+						<img alt="Uppload logo" src="./assets/logo.svg" class="logo">
+						<p>Uppload is a better JavaScript file uploader. It's highly customizable, completely free and open-source, and can be used with any file uploading backend.</p>
+						<div class="mt-4">
+							<a target="_blank" rel="noopener noreferrer" href="https://github.com/elninotech/uppload" class="btn btn-outline-light"><i class="fab fa-github mr-2"></i>GitHub</a>
+							<a target="_blank" rel="noopener noreferrer" href="https://www.npmjs.com/package/uppload" class="btn btn-outline-light ml-2"><i class="fab fa-npm mr-2"></i>NPM</a>
+						</div>
+					<!-- </div> -->
+				<!-- </div> -->
+			</div>
+		</header>
+		<main id="content">
+			<div class="container">
+				<section>
+					<h2 class="h3 mt-0 mb-4">Try Uppload</h2>
+					<div class="card card-body">
+						<div class="row">
+							<div class="col-md-4 text-center">
+								<p>Your profile picture:</p>
+								<img class="dp" alt="" data-uppload-value>
+							</div>
+							<div class="col-md d-flex align-items-center mt-4 justify-content-center mt-md-0">
+								<div>
+									<button data-uppload-button class="btn btn-primary btn-lg"><i class="fas fa-upload mr-2"></i>Upload image</button>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div style="margin-left: 1rem; float: left">
-						<button id="upploadBtn" type="button">Change profile picture</button>
+				</section>
+				<section>
+					<h2 class="h3 mt-0 mb-4">Get Uppload</h2>
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link active" id="build-tab" data-toggle="tab" href="#build" role="tab" aria-controls="build" aria-selected="true">CDN</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="npm-tab" data-toggle="tab" href="#npm" role="tab" aria-controls="npm" aria-selected="false">NPM</a>
+						</li>
+					</ul>
+					<div class="tab-content p-3" id="myTabContent">
+						<div class="tab-pane fade show active" id="build" role="tabpanel" aria-labelledby="build-tab">
+							<p>Which frontend framework are you using?</p>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="framework" id="framework_none" value="uppload/dist/uppload" checked>
+								<label class="form-check-label" for="framework_none">None (Vanilla JS)</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="framework" id="framework_vue" value="uppload-vue/dist/uppload">
+								<label class="form-check-label" for="framework_vue">Vue.js</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="framework" id="framework_react" value="uppload-react/dist/uppload" disabled>
+								<label class="form-check-label" for="framework_react">React (Coming soon)</label>
+							</div>
+							<p class="mt-4">Which browsers do you want to support?</p>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="polyfills" id="polyfills_no" value="no" checked>
+								<label class="form-check-label" for="polyfills_no">Modern browsers (Fetch + Promise)</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="polyfills" id="polyfills_yes" value="yes">
+								<label class="form-check-label" for="polyfills_yes">Older browsers too (IE11+)</label>
+							</div>
+							<p class="mt-4">Which content delivery network do you prefer?</p>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="cdn" id="cdn_jsdelivr" value="https://cdn.jsdelivr.net/npm/">
+								<label class="form-check-label" for="cdn_jsdelivr">jsDelivr</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="cdn" id="cdn_unpkg" value="https://unpkg.com/" checked>
+								<label class="form-check-label" for="cdn_unpkg">unpkg</label>
+							</div>
+							<div class="code mt-3">
+								<p>Copy and paste the following code to your <code>head</code>:</p>
+								<pre><code>&lt;script src="<span id="scriptUrl">https://unpkg.com/uppload/dist/uppload.no-polyfills.min.js</span>"&gt;&lt;/script&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="npm" role="tabpanel" aria-labelledby="npm-tab">
+							<p>Add the vanilla JS Uppload plugin:</p>
+							<pre><code>yarn add uppload</code></pre>
+							<p>For Vue.js:</p>
+							<pre><code>yarn add uppload-vue</code></pre>
+							<p>For React:</p>
+							<pre><code>yarn add uppload-react</code></pre>
+						</div>
 					</div>
-					<div style="clear: both"></div>
-				</div>
-				<div>
-					<button>Save profile</button>
-				</div>
-			</fieldset>
-		</form>
-		<script src="https://cdn.jsdelivr.net/npm/uppload/dist/uppload.min.js"></script>
+				</section>
+				<section class="compare">
+					<h2 class="h3 mt-0 mb-4">Compare Uppload</h2>
+					<div class="card card-body">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>&nbsp;</th>
+									<th>Uploadcare</th>
+									<th>Dropzone.js</th>
+									<th>Uppload</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Responsive</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Yes</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Yes</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Yes</td>
+								</tr>
+								<tr>
+									<td>Drag and drop</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Supported</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Supported</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Supported</td>
+								</tr>
+								<tr>
+									<td>File previews</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Supported</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Supported</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Supported</td>
+								</tr>
+								<tr>
+									<td>Import from URL</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Available</td>
+									<td><i class="fas fa-times mr-2"></i>Unavailable</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Available</td>
+								</tr>
+								<tr>
+									<td>Import from Instagram</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Available</td>
+									<td><i class="fas fa-times mr-2"></i>Unavailable</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Available</td>
+								</tr>
+								<tr>
+									<td>Resize images</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Built-in</td>
+									<td><i class="fas fa-times mr-2"></i>Unavailable</td>
+									<td><i class="fas fa-check-circle mr-2"></i>CDN-loaded</td>
+								</tr>
+								<tr>
+									<td>Click photo</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Built-in</td>
+									<td><i class="fas fa-times mr-2"></i>Unavailable</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Built-in</td>
+								</tr>
+								<tr>
+									<td>Custom i18n</td>
+									<td><i class="fas fa-times mr-2"></i>20 languages</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Custom</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Custom</td>
+								</tr>
+								<tr>
+									<td>Custom backend</td>
+									<td><i class="fas fa-times mr-2"></i>Paid</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Supported</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Supported</td>
+								</tr>
+								<tr>
+									<td>Framework</td>
+									<td><i class="fas fa-times mr-2"></i>jQuery</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Vanilla</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Vanilla</td>
+								</tr>
+								<tr>
+									<td>Custom services</td>
+									<td><i class="fas fa-times mr-2"></i>Unsupported</td>
+									<td><i class="fas fa-times mr-2"></i>Unsupported</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Supported</td>
+								</tr>
+								<tr>
+									<td>Upload to Firebase</td>
+									<td><i class="fas fa-times mr-2"></i>Unsupported</td>
+									<td><i class="fas fa-times mr-2"></i>Unsupported</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Supported</td>
+								</tr>
+								<tr>
+									<td>Free and open-source</td>
+									<td><i class="fas fa-times mr-2"></i>Widget only</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Completely</td>
+									<td><i class="fas fa-check-circle mr-2"></i>Completely</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+			</div>
+		</main>
+		<script src="https://unpkg.com/uppload/dist/uppload.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 		<script>
-			(() => {
-				const profilePicture = new Uppload({
-					value: "https://randomuser.me/api/portraits/men/17.jpg",
-					bind: ["#profilePicInput", "#profilePicImage"],
-					call: ["#upploadBtn"],
-					maxFileSize: 10000000,
-					minimumDelay: 2000,
-					uploadFunction: file => { /* Dummy uploader */
-						return new Promise((resolve, reject) => {
-							let url = "https://randomuser.me/api/portraits/men/18.jpg";
-							resolve(url);
+			var config = {
+				apiKey: "AIzaSyDZGcrdh48alSZlUoiQSpXP0fktcVPJf2w",
+				projectId: "talanx-hack",
+				storageBucket: "talanx-hack.appspot.com",
+			};
+			firebase.initializeApp(config);
+			var profilePicture = new Uppload({
+				value: "https://upload.wikimedia.org/wikipedia/commons/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg",
+				allowedTypes: "image",
+				maxFileSize: 25000000,
+				crop: {
+					aspectRatio: 1
+				},
+				uploadFunction: function(file, metadata) {
+					return new Promise(function(resolve, reject) {
+						var storageRef = firebase.storage().ref().child("/uppload/" + metadata.name);
+						storageRef.put(file).then(function(snapshot) {
+							try {
+								resolve(snapshot.metadata.downloadURLs[0]);
+							} catch(e) {
+								reject("Unable to upload to Firebase");
+							}
+						}).catch(function(error) {
+							reject(error);
 						});
-					}
-				});
-			})();
+					});
+				}
+			});
 		</script>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script>
+			$(function() {
+				function updateValues() {
+					var poly = "";
+					var framework = $("input[name='framework']:checked").val();
+					if (framework === "uppload/dist/uppload") {
+						if ($("input[name='polyfills']:checked").val() === "no") {
+							poly = ".no-polyfills";
+						}
+					} else if (framework === "uppload-vue/dist/uppload") {
+						framework += "-vue";
+						if ($("input[name='polyfills']:checked").val() === "yes") {
+							poly = ".polyfills";
+						}
+					}
+					poly += ".min.js";
+					$("#scriptUrl").html($("input[name='cdn']:checked").val() + framework + poly);
+				}
+				$("input").change(function() {
+					updateValues();
+				});
+				updateValues();
+			});
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.0.12/js/all.js" integrity="sha384-Voup2lBiiyZYkRto2XWqbzxHXwzcm4A5RfdfG6466bu5LqjwwrjXCMBQBLMWh7qR" crossorigin="anonymous"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15148382-2"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag("js", new Date());
+			gtag("config", "UA-15148382-2");
+		</script>
+
 	</body>
 </html>

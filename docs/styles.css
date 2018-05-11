@@ -1,0 +1,76 @@
+body {
+    font-family: "Lato";
+}
+
+.container {
+    max-width: 720px;
+}
+
+#masthead {
+    background-color: #f05d5e;
+    color: #fff;
+    padding: 10vh 0;
+    text-align: center;
+}
+
+#content {
+    background-color: whitesmoke;
+    padding: 10vh 0;
+}
+
+.h3 {
+    font-weight: bold;
+    color: #555;
+}
+
+.tab-content {
+    background-color: #fff;
+    border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+}
+
+pre {
+    background-color: whitesmoke;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+}
+
+section + section {
+    margin-top: 10vh;
+}
+
+.compare td, .compare th {
+    text-align: center;
+}
+.compare td:nth-child(1) {
+    text-align: left;
+}
+.compare td:last-child,
+.compare th:last-child {
+    background-color: whitesmoke;
+}
+.compare table {
+    min-width: 600px;
+}
+.compare .card {
+    overflow-y: auto;
+}
+
+.fa-check-circle {
+    color: #2ecc71;
+}
+.fa-times {
+    color: #c0392b;
+}
+
+.logo {
+    height: 150px;
+    margin-bottom: 1rem;
+}
+
+.dp {
+    height: 100px;
+}
