@@ -228,7 +228,7 @@ class Uppload {
 		if (initial === 0) {
 			setTimeout(() => {
 				this.closeModal();
-			}, this.settings.successDelay || 1500);
+			}, this.settings.successDelay || 1000);
 		}
 	}
 

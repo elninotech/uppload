@@ -20,7 +20,6 @@
     "css-loader": "^0.28.11",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
-    "vue": "^2.5.16",
     "vue-loader": "^15.0.9",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.8.1"

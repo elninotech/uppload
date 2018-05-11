@@ -119,7 +119,7 @@ You can pass the following properties in the constructor:
 | `endpoint` | `""` | String | Endpoint to upload file using fetch POST |
 | `services` | `["upload", "camera"]` | Array | List of upload services to show |
 | `defaultService` | `"upload"` | String | List of default service |
-| `successDelay` | `1500` | Number | Number of milliseconds to show the success screen for |
+| `successDelay` | `1000` | Number | Number of milliseconds to show the success screen for |
 | `minimumDelay` | `0` | Number | Number of milliseconds to delay uploading by |
 | `errorDelay` | `2000` | Number | Number of milliseconds to show an error message for |
 | `endpoint.url` | `""` | String | Endpoint URL to fetch |
