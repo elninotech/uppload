@@ -29,6 +29,7 @@
     "build": "webpack -p",
     "prettier": "prettier --use-tabs --print-width 130 --write ./src/**/*.{js,vue}",
     "live": "webpack --watch",
-    "deploy": "yarn build && npm publish"
+    "deploy": "yarn build && npm publish",
+    "test": "echo \"Error: no test specified\" && exit 0"
   }
 }
