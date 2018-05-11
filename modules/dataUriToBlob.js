@@ -1,3 +1,7 @@
+/**
+ * Convert a Data URI object to blob
+ * @param {String} dataURI - A base64-encoded data URI object
+ */
 export default dataURI => {
 	const byteString = atob(dataURI.split(",")[1]);
 	const mimeString = dataURI
