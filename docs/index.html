@@ -11,16 +11,12 @@
 	<body>
 		<header id="masthead">
 			<div class="container">
-				<!-- <div class="row justify-content-center"> -->
-					<!-- <div class="col-md-6"> -->
-						<img alt="Uppload logo" src="./assets/logo.svg" class="logo">
-						<p>Uppload is a better JavaScript file uploader. It's highly customizable, completely free and open-source, and can be used with any file uploading backend.</p>
-						<div class="mt-4">
-							<a target="_blank" rel="noopener noreferrer" href="https://github.com/elninotech/uppload" class="btn btn-outline-light"><i class="fab fa-github mr-2"></i>GitHub</a>
-							<a target="_blank" rel="noopener noreferrer" href="https://www.npmjs.com/package/uppload" class="btn btn-outline-light ml-2"><i class="fab fa-npm mr-2"></i>NPM</a>
-						</div>
-					<!-- </div> -->
-				<!-- </div> -->
+				<img alt="Uppload logo" src="./assets/logo.svg" class="logo">
+				<p class="lead">Uppload is a better JavaScript file uploader. It's highly customizable, completely free and open-source, and can be used with any file uploading backend.</p>
+				<div class="mt-4">
+					<a target="_blank" rel="noopener noreferrer" href="https://github.com/elninotech/uppload" class="btn btn-lg btn-outline-light"><i class="fab fa-github mr-2"></i>GitHub</a>
+					<a target="_blank" rel="noopener noreferrer" href="https://www.npmjs.com/package/uppload" class="btn btn-lg btn-outline-light ml-2"><i class="fab fa-npm mr-2"></i>NPM</a>
+				</div>
 			</div>
 		</header>
 		<main id="content">
@@ -63,8 +59,8 @@
 								<label class="form-check-label" for="framework_vue">Vue.js</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="framework" id="framework_react" value="uppload-react/dist/uppload" disabled>
-								<label class="form-check-label" for="framework_react">React (Coming soon)</label>
+								<input class="form-check-input" type="radio" name="framework" id="framework_react" value="uppload-react/dist/uppload">
+								<label class="form-check-label" for="framework_react">React</label>
 							</div>
 							<p class="mt-4">Which browsers do you want to support?</p>
 							<div class="form-check form-check-inline">
@@ -196,6 +192,21 @@
 				</section>
 			</div>
 		</main>
+		<footer id="colophon">
+			<div class="container">
+				<div class="mb-5">
+					<a target="_blank" rel="noopener noreferrer" href="https://elnino.tech">
+						<img alt="El Niño" src="https://www.elnino.tech/assets/images/logo-elnino.png">
+					</a>
+				</div>
+				<div class="mb-5">
+					<a target="_blank" rel="noopener noreferrer" href="https://github.com/elninotech/uppload/stargazers" class="d-block mb-3 mb-md-0 d-md-inline-block btn btn-lg btn-outline-light"><i class="fas fa-star mr-2"></i><span id="stargazers">Star</span></a>
+					<a target="_blank" rel="noopener noreferrer" href="https://github.com/elninotech/uppload/network" class="d-block mb-3 mb-md-0 d-md-inline-block btn btn-lg btn-outline-light ml-md-2"><i class="fas fa-code-branch mr-2"></i><span id="network">Star</span></a>
+					<a target="_blank" rel="noopener noreferrer" href="https://github.com/elninotech/uppload/issues" class="d-block mb-3 mb-md-0 d-md-inline-block btn btn-lg btn-outline-light ml-md-2"><i class="fas fa-exclamation-circle mr-2"></i><span id="open_issues">Issues</span></a>
+				</div>
+				<div>Made with &nbsp;&hearts;&nbsp; in Enschede, the Netherlands<div>
+			</div>
+		</footer>
 		<script src="https://unpkg.com/uppload/dist/uppload.min.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 		<script>
@@ -243,6 +254,11 @@
 						if ($("input[name='polyfills']:checked").val() === "yes") {
 							poly = ".polyfills";
 						}
+					} else if (framework === "uppload-react/dist/uppload") {
+						framework += "-react";
+						if ($("input[name='polyfills']:checked").val() === "yes") {
+							poly = ".polyfills";
+						}
 					}
 					poly += ".min.js";
 					$("#scriptUrl").html($("input[name='cdn']:checked").val() + framework + poly);
@@ -251,6 +267,11 @@
 					updateValues();
 				});
 				updateValues();
+				$.get("https://api.github.com/repos/elninotech/uppload", function(response) {
+					$("#stargazers").html(response.stargazers_count ? response.stargazers_count + " stars" : "Star");
+					$("#network").html(response.forks ? response.forks + " forks" : "Fork");
+					$("#open_issues").html(response.open_issues !== null && response.open_issues !== undefined ? response.open_issues + " issues" : "Issues"); // JavaScript happened...
+				});
 			});
 		</script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -263,6 +284,5 @@
 			gtag("js", new Date());
 			gtag("config", "UA-15148382-2");
 		</script>
-
 	</body>
 </html>

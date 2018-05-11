@@ -6,7 +6,7 @@ body {
     max-width: 720px;
 }
 
-#masthead {
+#masthead, #colophon {
     background-color: #f05d5e;
     color: #fff;
     padding: 10vh 0;
