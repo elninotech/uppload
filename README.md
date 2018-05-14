@@ -4,7 +4,7 @@
 <img alt="Number of downloads" src="https://img.shields.io/npm/dw/uppload.svg?style=flat">
 <img alt="Travis CI builds" src="https://api.travis-ci.org/elninotech/uppload.svg?branch=master">
 <img alt="File size" src="https://img.shields.io/github/size/elninotech/uppload/dist/uppload.no-polyfills.min.js.svg?style=flat">
-<img alt="Number of downloads" src="https://img.shields.io/npm/l/uppload.svg?maxAge=2592000&style=flat">
+<img alt="Licence" src="https://img.shields.io/npm/l/uppload.svg?maxAge=2592000&style=flat">
 <img alt="Number of dependencies" src="https://img.shields.io/david/elninotech/uppload.svg?maxAge=2592000&style=flat">
 <img alt="Updates to devDependencies" src="https://img.shields.io/david/dev/elninotech/uppload.svg?maxAge=2592000&style=flat">
 </p>
