@@ -59,12 +59,16 @@ You can also `require` it in your project since it ships as UMD, or use it from 
 <!-- Uppload with polyfills --><script src="https://unpkg.com/uppload/dist/uppload.min.js"></script> 
 <!-- Uppload Vue --><script src="https://unpkg.com/uppload-vue/dist/uppload-vue.min.js"></script> 
 <!-- Uppload Vue with polyfills --><script src="https://unpkg.com/uppload-vue/dist/uppload-vue.polyfills.min.js"></script> 
+<!-- Uppload React --><script src="https://unpkg.com/uppload-react/dist/uppload-react.min.js"></script> 
+<!-- Uppload React with polyfills --><script src="https://unpkg.com/uppload-react/dist/uppload-react.polyfills.min.js"></script> 
 
 <!-- Served by jsDelivr -->
 <!-- Uppload --><script src="https://cdn.jsdelivr.net/npm/uppload/dist/uppload.no-polyfills.min.js"></script> 
 <!-- Uppload with polyfills --><script src="https://cdn.jsdelivr.net/npm/uppload/dist/uppload.min.js"></script> 
 <!-- Uppload Vue --><script src="https://cdn.jsdelivr.net/npm/uppload-vue/dist/uppload-vue.min.js"></script> 
 <!-- Uppload Vue with polyfills --><script src="https://cdn.jsdelivr.net/npm/uppload-vue/dist/uppload-vue.polyfills.min.js"></script> 
+<!-- Uppload React --><script src="https://cdn.jsdelivr.net/npm/uppload-react/dist/uppload-react.min.js"></script> 
+<!-- Uppload React with polyfills --><script src="https://cdn.jsdelivr.net/npm/uppload-react/dist/uppload-react.polyfills.min.js"></script> 
 ```
 
 Create a new Uppload object with sample configuration:
