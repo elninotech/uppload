@@ -1,6 +1,6 @@
 {
   "name": "uppload-react",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Official React component for Uppload",
   "main": "uppload-react.js",
   "repository": "https://github.com/elninotech/uppload/tree/master/wrappers/react",
