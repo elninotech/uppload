@@ -72,25 +72,25 @@ Create a new Uppload object with sample configuration:
 ```js
 const profilePicture = new Uppload({
 
-	// Default file value, useful for empty-state images
-	value: "https://randomuser.me/api/portraits/men/17.jpg",
+    // Default file value, useful for empty-state images
+    value: "https://randomuser.me/api/portraits/men/17.jpg",
 
-	// Change the values of these elements with the file URL
-	// Sets `value` for inputs and `src` for images
-	bind: ["#profilePicInput", "#profilePicImage"],
+    // Change the values of these elements with the file URL
+    // Sets `value` for inputs and `src` for images
+    bind: ["#profilePicInput", "#profilePicImage"],
 
-	// Open the modal when the user clicks on this button
-	call: ["form.profile button#uploadButton"],
+    // Open the modal when the user clicks on this button
+    call: ["form.profile button#uploadButton"],
 
-	// Endpoint to send files to
-	// Use either this or `uploadFunction` for a custom function
-	endpoint: "https://example.com/upload_backend",
+    // Endpoint to send files to
+    // Use either this or `uploadFunction` for a custom function
+    endpoint: "https://example.com/upload_backend",
 
-	// Maximum file size allowed in bytes (this is 25 MB)
-	maxFileSize: 25000000,
+    // Maximum file size allowed in bytes (this is 25 MB)
+    maxFileSize: 25000000,
 
-	// Types of files to allow (string or MIME type array)
-	allowedTypes: "image"
+    // Types of files to allow (string or MIME type array)
+    allowedTypes: "image"
 
 });
 ```
@@ -136,27 +136,27 @@ You can pass the following properties in the constructor:
 
 ```js
 const withEndpointOptions = new Uppload({
-	endpoint: { // Endpoint is an object with configuration
-		method: "POST",
-		url: "/my_backend"
-	}
+    endpoint: { // Endpoint is an object with configuration
+        method: "POST",
+        url: "/my_backend"
+    }
 });
 
 const withCustomUpload = new Uppload({
-	uploadFunction: (file, metadata) => {  // Custom file upload handler
-		return new Promise((resolve, reject) => {
-			fetch("https://example.com/upload", {
-				method: "POST",
-				body: file
-			})
-				.then(response => response.json())
-				.then(json => {
-					let url = json.url;
-					resolve(url);
-				})
-				.catch(error => reject(error));
-		});
-	}
+    uploadFunction: (file, metadata) => {  // Custom file upload handler
+        return new Promise((resolve, reject) => {
+            fetch("https://example.com/upload", {
+                method: "POST",
+                body: file
+            })
+                .then(response => response.json())
+                .then(json => {
+                    let url = json.url;
+                    resolve(url);
+                })
+                .catch(error => reject(error));
+        });
+    }
 });
 ```
 
@@ -230,30 +230,30 @@ Using the above methods and events, you can also automatically upload a file usi
 
 ```js
 fetch("https://ronreiter-meme-generator.p.mashape.com/meme?meme=Baby+Godfather&font_size=50&font=Impact&top=Thanks+m&bottom=Later", {
-	method: "GET",
-	headers: new Headers({
-		"X-Mashape-Key": "API_KEY"
-	}),
-	mode: "cors"
+    method: "GET",
+    headers: new Headers({
+        "X-Mashape-Key": "API_KEY"
+    }),
+    mode: "cors"
 })
-	.then(response.arrayBuffer())
-	.then(buffer => {
-		let binary = "";
-		[].slice.call(new Uint8Array(buffer)).forEach(byte => binary += String.fromCharCode(byte));
-		const file = "data:image/jpeg;base64," + window.btoa(binary);
-		new Uppload({
-			endpoint: "/upload_backend"
-		}).uploadFile(file)
-			.then(fileUrl => {
-				console.log(`File uploaded: ${fileUrl}`);
-			})
-			.catch(error => {
-				console.error("Error from server", error);
-			});
-	})
-	.catch(error => {
-		console.error("Error in fetching file", error);
-	});
+    .then(response.arrayBuffer())
+    .then(buffer => {
+        let binary = "";
+        [].slice.call(new Uint8Array(buffer)).forEach(byte => binary += String.fromCharCode(byte));
+        const file = "data:image/jpeg;base64," + window.btoa(binary);
+        new Uppload({
+            endpoint: "/upload_backend"
+        }).uploadFile(file)
+            .then(fileUrl => {
+                console.log(`File uploaded: ${fileUrl}`);
+            })
+            .catch(error => {
+                console.error("Error from server", error);
+            });
+    })
+    .catch(error => {
+        console.error("Error in fetching file", error);
+    });
 ```
 
 #### Firebase Demo
@@ -263,27 +263,27 @@ You can just as easily upload files to Firebase Storage. Check out the [online d
 ```js
 import firebase from "firebase";
 firebase.initializeApp({
-	apiKey: "YOUR_API_KEY",
-	projectId: "YOUR_PROJECT_ID",
-	storageBucket: "YOUR_SUBDOMAIN.appspot.com",
+    apiKey: "YOUR_API_KEY",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_SUBDOMAIN.appspot.com",
 });
 const profilePicture = new Uppload({
-	allowedTypes: "image",
-	maxFileSize: 25000000,
-	uploadFunction: (file, metadata) => {
-		return new Promise((resolve, reject) => {
-			const storageRef = firebase.storage().ref().child("/uppload/" + metadata.name);
-			storageRef.put(file).then(snapshot => {
-				try {
-					resolve(snapshot.metadata.downloadURLs[0]);
-				} catch(e) {
-					reject("Unable to upload to Firebase");
-				}
-			}).catch(error => {
-				reject(error);
-			});
-		});
-	}
+    allowedTypes: "image",
+    maxFileSize: 25000000,
+    uploadFunction: (file, metadata) => {
+        return new Promise((resolve, reject) => {
+            const storageRef = firebase.storage().ref().child("/uppload/" + metadata.name);
+            storageRef.put(file).then(snapshot => {
+                try {
+                    resolve(snapshot.metadata.downloadURLs[0]);
+                } catch(e) {
+                    reject("Unable to upload to Firebase");
+                }
+            }).catch(error => {
+                reject(error);
+            });
+        });
+    }
 });
 ```
 
@@ -317,7 +317,7 @@ Uppload does **not** provide the server side implementation of handling the file
 
 ```html
 <form action="/upload_endpoint" method="post" enctype="multipart/form-data">
-	<input type="file" name="file" />
+    <input type="file" name="file" />
 </form>
 ```
 
