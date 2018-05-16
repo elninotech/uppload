@@ -227,6 +227,7 @@
 						storageBucket: "uppload-storage.appspot.com",
 					};
 					firebase.initializeApp(config);
+					var storageRef = firebase.storage().ref();
 					var profilePicture = new Uppload({
 						value: "https://upload.wikimedia.org/wikipedia/commons/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg",
 						allowedTypes: "image",
@@ -234,19 +235,11 @@
 						crop: {
 							aspectRatio: 1
 						},
-						uploadFunction: function(file, metadata) {
-							return new Promise(function(resolve, reject) {
-								var storageRef = firebase.storage().ref().child("/uppload/" + metadata.name);
-								storageRef.put(file).then(function(snapshot) {
-									try {
-										resolve(snapshot.metadata.downloadURLs[0]);
-									} catch(e) {
-										reject("Unable to upload to Firebase");
-									}
-								}).catch(function(error) {
-									reject(error);
-								});
-							});
+						uploadPreset: {
+							preset: "firebase",
+							options: {
+								storageRef: storageRef
+							}
 						}
 					});
 				});

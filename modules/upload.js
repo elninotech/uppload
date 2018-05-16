@@ -41,7 +41,7 @@ export default (file, scope) => {
 				type: fileType
 			};
 			if (typeof scope.settings.uploadPreset === "object") {
-				switch (scope.settings.uploadPreset.name) {
+				switch (scope.settings.uploadPreset.preset) {
 					case "firebase":
 						firebase(scope.settings.uploadPreset.options, file, metaData)
 							.then(url => {

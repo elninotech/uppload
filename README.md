@@ -139,15 +139,17 @@ You can pass the following properties in the constructor:
 | `crop.minSize` | `null` | `[width, height, unit?]` | Minimum image size after cropping |
 
 ```js
+// Endpoint is an object with configuration
 const withEndpointOptions = new Uppload({
-    endpoint: { // Endpoint is an object with configuration
+    endpoint: {
         method: "POST",
         url: "/my_backend"
     }
 });
 
+// Custom file upload handler
 const withCustomUpload = new Uppload({
-    uploadFunction: (file, metadata) => {  // Custom file upload handler
+    uploadFunction: (file, metadata) => {
         return new Promise((resolve, reject) => {
             fetch("https://example.com/upload", {
                 method: "POST",
@@ -160,6 +162,16 @@ const withCustomUpload = new Uppload({
                 })
                 .catch(error => reject(error));
         });
+    }
+});
+
+// Using an Uppload preset with configuration
+const withUploadPreset = new Uppload({
+    uploadPreset: {
+        preset: "firebase",
+        options: {
+            storageRef: firebase.storage().ref()
+        }
     }
 });
 ```
@@ -274,19 +286,9 @@ firebase.initializeApp({
 const profilePicture = new Uppload({
     allowedTypes: "image",
     maxFileSize: 25000000,
-    uploadFunction: (file, metadata) => {
-        return new Promise((resolve, reject) => {
-            const storageRef = firebase.storage().ref().child("/uppload/" + metadata.name);
-            storageRef.put(file).then(snapshot => {
-                try {
-                    resolve(snapshot.metadata.downloadURLs[0]);
-                } catch(e) {
-                    reject("Unable to upload to Firebase");
-                }
-            }).catch(error => {
-                reject(error);
-            });
-        });
+    uploadPreset: {
+        preset: "firebase",
+        storageRef: firebase.storage().ref()
     }
 });
 ```
@@ -336,6 +338,23 @@ You can also use any of the following starter templates for your backend:
 - [ASP.NET](http://venkatbaggu.com/file-upload-in-asp-net-mvc-using-dropzone-js-and-html5/)
 - [ServiceStack](http://www.buildclassifieds.com/2016/01/08/uploading-images-servicestack-and-dropzone/)
 - [Golang](https://hackernoon.com/how-to-build-a-file-upload-form-using-dropzonejs-and-go-8fb9f258a991)
+
+#### Presets
+
+Instead of building your own backend or writing an upload handler, you can also use a preset:
+
+```js
+const profilePicture = new Uppload({
+    uploadPreset: {
+        preset: PRESET_NAME,
+        options: OPTIONS_OBJECT
+    }
+});
+```
+
+| Preset Name | Configuration |
+| --- | --- |
+| `firebase` | `storageRef` contains the Firebase storage reference |
 
 ### Internationalization
 
