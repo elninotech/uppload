@@ -7,7 +7,7 @@ after_success:
   - yarn build
 deploy:
   provider: npm
-  email: rick@elnino.tech
+  email: anand+elpablo@elnino.tech
   api_key: $NPM_TOKEN
   on:
     tags: true
