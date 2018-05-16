@@ -1,39 +1,39 @@
 export default {
-	uploading: "Yüklendi",
-	uploaded: "Yüklemek için buraya sürükleyin ve bırakın",
+	uploading: "Yükleniyor...",
+	uploaded: "Yüklendi",
+	your_file: "Dosyanız",
 	select_file: {
-		drag_here: "Bir dosya seçin",
-		choose_file: "veya",
-		or: "Instagram yazılan URL"
+		drag_here: "Yüklemek için sürükle ve bırak",
+		choose_file: "Bir dosya seç",
+		or: "veya"
 	},
 	instagram: {
-		post_url: "---Dosyaya bağlantı",
-		import: "URL&#39;den içe aktar"
+		post_url: "Instagram gönderi URL'si",
+		import: "Instagram'dan aktar"
 	},
 	link: {
-		post_url: "Geri",
-		import: "Devam"
+		post_url: "Dosya adresi",
+		import: "URL'den aktar"
 	},
 	preview: {
-		back: "Crop",
-		continue: ""
+		back: "Geri",
+		continue: "Devam"
 	},
 	crop: {
-		upload: ""
+		upload: "Kes &amp; yükle"
 	},
 	camera: {
-		click: "Click photo",
-		permission: "Waiting for camera permission..."
+		click: "Fotoğraf için tıkla",
+		permission: "Kamera için izin bekleniyor..."
 	},
-	error: "Error",
+	error: "Hata",
 	errors: {
-		no_endpoint: "No endpoint or upload function found",
-		no_file_selected: "You have not selected a file",
-		file_type_not_allowed: "This file type is not allowed",
-		file_too_large: "File should be smaller than _FILESIZE_",
-		instagram_no_fetch: "Unable to fetch this image from Instagram",
-		video_unavailable: "Video stream not available",
-		camera_error: "Unable to access camera"
+		no_endpoint: "Bir arka plan veya yükleme fonksiyonu bulunamadı",
+		no_file_selected: "Dosya seçmediniz",
+		file_type_not_allowed: "Bu dosya tipine izin verilmedi",
+		file_too_large: "Dosya boyutu maksimum _FILESIZE_ olmalıdır",
+		instagram_no_fetch: "Dosya Instagram'dan alınamadı",
+		video_unavailable: "Video yayını bulunamadı",
+		camera_error: "Kameraya erişilemedi"
 	}
 };
-		
