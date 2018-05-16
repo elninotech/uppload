@@ -25,15 +25,18 @@
 	- [Events](#events)
 - [Demos](#demos)
 	- [Automated Demo](#automated-demo)
-	- [Firebase Demo](#firebase-demo)
 - [Customization](#customization)
 - [Server-side Implementation](#server-side-implementation)
 	- [Starter Templates](#starter-templates)
+- [Presets](#presets)
+	- [Firebase](#firebase)
+	- [AWS S3](#aws-s3)
 - [Internationalization](#internationalization)
 - [Wrappers](#wrappers)
 - [Development](#development)
 	- [Roadmap](#roadmap)
 	- [Installation](#installation)
+	- [Local Setup](#Local-setup)
 	- [Production](#production)
 -  [El Niño](#el-ni%C3%B1o)
 
@@ -272,27 +275,6 @@ fetch("https://ronreiter-meme-generator.p.mashape.com/meme?meme=Baby+Godfather&f
     });
 ```
 
-#### Firebase Demo
-
-You can just as easily upload files to Firebase Storage. Check out the [online demo](https://elninotech.github.io/uppload/firebase).
-
-```js
-import firebase from "firebase";
-firebase.initializeApp({
-    apiKey: "YOUR_API_KEY",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_SUBDOMAIN.appspot.com",
-});
-const profilePicture = new Uppload({
-    allowedTypes: "image",
-    maxFileSize: 25000000,
-    uploadPreset: {
-        preset: "firebase",
-        storageRef: firebase.storage().ref()
-    }
-});
-```
-
 ### Customization
 
 You can customize the widget using CSS to overwrite properties. The following classes are used by Uppload:
@@ -339,7 +321,7 @@ You can also use any of the following starter templates for your backend:
 - [ServiceStack](http://www.buildclassifieds.com/2016/01/08/uploading-images-servicestack-and-dropzone/)
 - [Golang](https://hackernoon.com/how-to-build-a-file-upload-form-using-dropzonejs-and-go-8fb9f258a991)
 
-#### Presets
+### Presets
 
 Instead of building your own backend or writing an upload handler, you can also use a preset:
 
@@ -355,6 +337,46 @@ const profilePicture = new Uppload({
 | Preset Name | Configuration |
 | --- | --- |
 | `firebase` | `storageRef` contains the Firebase storage reference |
+| `s3` | `s3Object` is the S3 object |
+
+#### Firebase
+
+```js
+import firebase from "firebase";
+firebase.initializeApp({
+    apiKey: "YOUR_API_KEY",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_SUBDOMAIN.appspot.com",
+});
+const profilePicture = new Uppload({
+    uploadPreset: {
+        preset: "firebase",
+        storageRef: firebase.storage().ref()
+    }
+});
+```
+
+#### AWS S3
+
+```js
+import AWS from "aws-sdk";
+AWS.config.update({
+    region: "REGION",
+    credentials: new AWS.CognitoIdentityCredentials({
+        IdentityPoolId: "IDENTITY_POOL_ID"
+    })
+});
+const s3 = new AWS.S3({
+    apiVersion: "2006-03-01",
+    params: { Bucket: "BUCKET_NAME" }
+});
+const profilePicture = new Uppload({
+    uploadPreset: {
+        preset: "s3",
+        s3Object: s3
+    }
+});
+```
 
 ### Internationalization
 
@@ -377,7 +399,7 @@ We've built the following wrappers for Uppload for our favorite frameworks:
 - Import file/image (Facebook, Dropbox, etc.)
 - ~~Add sample server configuration & files in docs~~
 - IE support (`customEvent`)
-- Starter templates for ~~Firebase~~, S3, etc.
+- Presets for ~~Firebase~~, ~~S3~~, etc.
 - ~~Wrappers for~~
 	- ~~Vue.js~~
 	- ~~React~~

@@ -7,18 +7,18 @@
  */
 export default (options, file, metadata) => {
 	return new Promise((resolve, reject) => {
-		const reference = options.storageRef.child("/uppload/" + metadata.name);
-		reference
-			.put(file)
-			.then(function(snapshot) {
-				try {
-					resolve(snapshot.metadata.downloadURLs[0]);
-				} catch (e) {
-					reject("Unable to upload to Firebase");
-				}
-			})
-			.catch(function(error) {
-				reject(error);
-			});
+		if (!options.storageRef) {
+			reject();
+			return;
+		}
+		try {
+			const reference = options.storageRef.child("/uppload/" + metadata.name);
+			reference
+				.put(file)
+				.then(snapshot => resolve(snapshot.metadata.downloadURLs[0]))
+				.catch(error => reject(error));
+		} catch (error) {
+			reject("Unable to upload to Firebase");
+		}
 	});
 };

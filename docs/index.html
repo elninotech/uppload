@@ -53,19 +53,33 @@
 			<div class="container">
 				<section>
 					<h2 class="h3 mt-0 mb-4">Try Uppload</h2>
-					<div class="card card-body">
-						<div class="row">
-							<div class="col-md-4 text-center">
-								<p>Your profile picture:</p>
-								<img class="dp" alt="" data-uppload-value>
-							</div>
-							<div class="col-md d-flex align-items-center mt-4 justify-content-center mt-md-0">
-								<div>
-									<button data-uppload-button class="btn btn-primary btn-lg"><i class="fas fa-upload mr-2"></i>Upload image</button>
+					<ul class="nav nav-tabs" id="myTab2" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link active" id="firebase-tab" data-toggle="tab" href="#firebase" role="tab" aria-controls="firebase" aria-selected="true">Upload to Firebase</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="awss3-tab" data-toggle="tab" href="#awss3" role="tab" aria-controls="awss3" aria-selected="false">Upload to S3</a>
+						</li>
+					</ul>
+					<div class="tab-content p-3" id="myTab2Content">
+						<div class="tab-pane fade show active" id="firebase" role="tabpanel" aria-labelledby="firebase-tab">
+							<div class="row">
+								<div class="col-md-4 text-center">
+									<p>Your profile picture:</p>
+									<img class="dp" alt="" data-uppload-value>
+								</div>
+								<div class="col-md d-flex align-items-center mt-4 justify-content-center mt-md-0">
+									<div>
+										<button data-uppload-button class="btn btn-primary btn-lg"><i class="fas fa-upload mr-2"></i>Upload image</button>
+									</div>
 								</div>
 							</div>
 						</div>
+						<div class="tab-pane fade" id="awss3" role="tabpanel" aria-labelledby="awss3-tab">
+							Demo coming soon
+						</div>
 					</div>
+					<p class="text-muted mt-2"><small>We delete uploaded images from time to time. We never share your data.</small></p>
 				</section>
 				<section>
 					<h2 class="h3 mt-0 mb-4">Get Uppload</h2>
