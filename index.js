@@ -30,12 +30,12 @@ if (typeof navigator.getMedia === "function") {
 	webcamAvailable = true;
 }
 
-/**
- * Returns whether current file type is allowed or not
- * @constructor
- * @param {string} author - The author of the book.
- */
 class Uppload {
+	/**
+	 * Initialize the plugin
+	 * @constructor
+	 * @param {object} settings - Object with user's config
+	 */
 	constructor(settings) {
 		/*
 		 * Metadata containing unique ID (multiple instances)
