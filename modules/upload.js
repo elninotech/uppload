@@ -1,4 +1,5 @@
 import dispatch from "./dispatch";
+import firebase from "./presets/firebase";
 
 /**
  * Upload selected or new file
@@ -29,18 +30,38 @@ export default (file, scope) => {
 		scope.changePage("uploading");
 		dispatch("uploadStarted", file);
 		setTimeout(() => {
-			if (typeof scope.settings.uploadFunction === "function") {
-				const fileType = file.type.split("/")[1] || null;
+			const fileType = file.type.split("/")[1] || null;
+			const metaData = {
+				name:
+					(scope.meta.originalFileName ? scope.meta.originalFileName.split(".")[0] + "-" : "").toLowerCase() +
+					[...Array(10)].map(() => Math.random().toString(36)[3]).join("") +
+					"." +
+					fileType,
+				mime: file.type || null,
+				type: fileType
+			};
+			if (typeof scope.settings.uploadPreset === "object") {
+				switch (scope.settings.uploadPreset.name) {
+					case "firebase":
+						firebase(scope.settings.uploadPreset.options, file, metaData)
+							.then(url => {
+								scope.updateValue(url);
+								dispatch("fileUploaded", url);
+								resolve(url);
+							})
+							.catch(error => {
+								dispatch("uploadError", error);
+								reject(error);
+							})
+							.then(() => {
+								scope.isUploading = false;
+								scope.changePage("uploaded");
+							});
+						break;
+				}
+			} else if (typeof scope.settings.uploadFunction === "function") {
 				scope.settings
-					.uploadFunction(file, {
-						name:
-							(scope.meta.originalFileName ? scope.meta.originalFileName.split(".")[0] + "-" : "").toLowerCase() +
-							[...Array(10)].map(() => Math.random().toString(36)[3]).join("") +
-							"." +
-							fileType,
-						mime: file.type || null,
-						type: fileType
-					})
+					.uploadFunction(file, metaData)
 					.then(url => {
 						scope.updateValue(url);
 						dispatch("fileUploaded", url);
