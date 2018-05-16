@@ -8,6 +8,11 @@ export default () => ({
 		"uppload.min": ["babel-polyfill", "./index.js"],
 		"uppload.no-polyfills.min": ["./index.js"]
 	},
+	devServer: {
+		contentBase: path.join(__dirname, "./docs"),
+		compress: true,
+		port: 9000
+	},
 	output: {
 		path: path.resolve(__dirname, "./dist"),
 		filename: "[name].js",

@@ -371,6 +371,14 @@ yarn install
 nvm use 8.11.1 # LTS
 ```
 
+### Local Setup
+
+```bash
+yarn start:dev
+```
+
+Navigate to http://localhost:9000
+
 ### Production
 
 ```bash

@@ -207,37 +207,50 @@
 				<div>Made with &nbsp;&hearts;&nbsp; in Enschede, the Netherlands<div>
 			</div>
 		</footer>
-		<script src="https://unpkg.com/uppload/dist/uppload.min.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 		<script>
-			var config = {
-				apiKey: "AIzaSyAv67if95tsnEcfQ3AnzPRNjsrma5i0peE",
-				projectId: "uppload-storage",
-				storageBucket: "uppload-storage.appspot.com",
-			};
-			firebase.initializeApp(config);
-			var profilePicture = new Uppload({
-				value: "https://upload.wikimedia.org/wikipedia/commons/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg",
-				allowedTypes: "image",
-				maxFileSize: 25000000,
-				crop: {
-					aspectRatio: 1
-				},
-				uploadFunction: function(file, metadata) {
-					return new Promise(function(resolve, reject) {
-						var storageRef = firebase.storage().ref().child("/uppload/" + metadata.name);
-						storageRef.put(file).then(function(snapshot) {
-							try {
-								resolve(snapshot.metadata.downloadURLs[0]);
-							} catch(e) {
-								reject("Unable to upload to Firebase");
-							}
-						}).catch(function(error) {
-							reject(error);
-						});
-					});
+			(function() {
+				// Load Uppload dynamically from the CDN
+				var url = "https://unpkg.com/uppload/dist/uppload.min.js";
+				// If using webpack-dev-server, then the local build
+				if (location.hostname === "localhost") {
+					url = "./uppload.min.js";
 				}
-			});
+				var script = document.createElement("script");
+				script.setAttribute("src", url);
+				(document.head || document.body || document.getElementsByTagName("head")[0]).appendChild(script);
+				// When Uppload has loaded, initialize it
+				script.addEventListener("load", function() {
+					var config = {
+						apiKey: "AIzaSyAv67if95tsnEcfQ3AnzPRNjsrma5i0peE",
+						projectId: "uppload-storage",
+						storageBucket: "uppload-storage.appspot.com",
+					};
+					firebase.initializeApp(config);
+					var profilePicture = new Uppload({
+						value: "https://upload.wikimedia.org/wikipedia/commons/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg",
+						allowedTypes: "image",
+						maxFileSize: 25000000,
+						crop: {
+							aspectRatio: 1
+						},
+						uploadFunction: function(file, metadata) {
+							return new Promise(function(resolve, reject) {
+								var storageRef = firebase.storage().ref().child("/uppload/" + metadata.name);
+								storageRef.put(file).then(function(snapshot) {
+									try {
+										resolve(snapshot.metadata.downloadURLs[0]);
+									} catch(e) {
+										reject("Unable to upload to Firebase");
+									}
+								}).catch(function(error) {
+									reject(error);
+								});
+							});
+						}
+					});
+				});
+			})();
 		</script>
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script>
