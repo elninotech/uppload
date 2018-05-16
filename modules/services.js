@@ -108,7 +108,7 @@ export default scope => {
                 <div class="center-middle">
                     <label>
                         <div>${i18n.link.post_url}</div>
-                        <input id="microLinkInput" type="text" value="https://www.w3schools.com/howto/img_paris.jpg" placeholder="https://www.w3schools.com/howto/img_paris.jpg">
+                        <input id="microLinkInput" type="text" placeholder="http://example.com/image.jpg">
                     </label>
                     <button id="microLinkButton" class="primary-button">${i18n.link.import + rightArrow}</button>
                 </div>
@@ -124,7 +124,7 @@ export default scope => {
                 <div class="center-middle">
                     <label>
                         <div>${i18n.instagram.post_url}</div>
-                        <input id="microLinkInput" type="text" value="https://www.instagram.com/p/BeV6tOhFUor" placeholder="https://www.instagram.com/p/BeV6tOhFUor">
+                        <input id="microLinkInput" type="text" value="https://www.instagram.com/p/BeV6tOhFUor" placeholder="https://www.instagram.com/p/example">
                     </label>
                     <button id="microLinkButton" class="primary-button instagram">${i18n.instagram.import + rightArrow}</button>
                 </div>

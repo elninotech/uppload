@@ -18,6 +18,22 @@
 		right: 5rem;
 	}
 
+	input {
+		border: 2px solid #eee;
+		width: 350px;
+		max-width: 85vw;
+		transition: 0.3s;
+		font: inherit;
+		font-size: 115%;
+		padding: 0.75rem 1.25rem;
+		border-radius: 0.25rem;
+		display: block;
+		&:focus {
+			outline: none;
+			border-color: #bbb;
+		}
+	}
+
 	.primary-button {
 		background-color: #00a8ff;
 		color: #fff;
