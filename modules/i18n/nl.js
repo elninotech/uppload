@@ -22,18 +22,18 @@ export default {
 		upload: "Bijsnijden"
 	},
 	camera: {
-		click: "Click photo",
-		permission: "Waiting for camera permission..."
+		click: "Webcam foto",
+		permission: "Wachten op camera permissie..."
 	},
 	error: "Error",
 	errors: {
-		no_endpoint: "No endpoint or upload function found",
-		no_file_selected: "You have not selected a file",
-		file_type_not_allowed: "This file type is not allowed",
-		file_too_large: "File should be smaller than _FILESIZE_",
-		instagram_no_fetch: "Unable to fetch this image from Instagram",
-		video_unavailable: "Video stream not available",
-		camera_error: "Unable to access camera"
+		no_endpoint: "Geen endpoint of upload functie gevonden",
+		no_file_selected: "Je hebt geen bestand geselecteerd",
+		file_type_not_allowed: "Dit bestands type wordt niet ondersteund",
+		file_too_large: "Het bestand moet kleiner zijn dan _FILESIZE_",
+		instagram_no_fetch: "Kan dit bestand niet downloaden van Instagram",
+		video_unavailable: "Video stream niet beschikbaar",
+		camera_error: "Kan de camera niet bereiken"
 	}
 };
 		
