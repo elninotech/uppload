@@ -2,38 +2,38 @@ export default {
 	uploading: "Cargando",
 	uploaded: "Cargado",
 	select_file: {
-		drag_here: "Arrastre y suelte aquí para cargar",
-		choose_file: "Elija un archivo",
+		drag_here: "Arrastre y suelte aquí el fichero para cargarlo",
+		choose_file: "Elija un fichero",
 		or: "o"
 	},
 	instagram: {
-		post_url: "URL de la cuenta de Instagram",
-		import: "Importar de Instagram "
+		post_url: "URL de tu cuenta en Instagram",
+		import: "Importar fichero desde Instagram "
 	},
 	link: {
-		post_url: "Enlace al archivo",
-		import: "Importar de URL"
+		post_url: "URL al fichero",
+		import: "Importar usando el URL"
 	},
 	preview: {
-		back: "Atrás",
-		continue: "Continuar"
+		back: "Volver",
+		continue: "Siguiente"
 	},
 	crop: {
 		upload: "Recortar"
 	},
 	camera: {
-		click: "Click photo",
-		permission: "Waiting for camera permission..."
+		click: "Toma una foto",
+		permission: "Acepta el permiso para poder utilizar tu camera..."
 	},
 	error: "Error",
 	errors: {
-		no_endpoint: "No endpoint or upload function found",
-		no_file_selected: "You have not selected a file",
-		file_type_not_allowed: "This file type is not allowed",
-		file_too_large: "File should be smaller than _FILESIZE_",
-		instagram_no_fetch: "Unable to fetch this image from Instagram",
-		video_unavailable: "Video stream not available",
-		camera_error: "Unable to access camera"
+		no_endpoint: "No se ha encontrado una URL o función para cargar el fichero",
+		no_file_selected: "No ha elegido un fichero",
+		file_type_not_allowed: "No se acepta este tipo de fichero",
+		file_too_large: "El fichero tiene que tener un tamaño menor que _FILESIZE_",
+		instagram_no_fetch: "No es posible descargar el fichero desde Instagram",
+		video_unavailable: "El video stream no esta disponible",
+		camera_error: "No es posible acceder tu camera"
 	}
 };
 		
