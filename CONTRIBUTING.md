@@ -15,4 +15,4 @@ Currently, the translations are mostly machine-generated using the Google Cloud 
 ### Credits
 
 - [Turkish](https://github.com/elninotech/uppload/blob/master/modules/i18n/tr.js) by Ekrem Erdem
-- [Dutch](https://github.com/elninotech/uppload/blob/master/modules/i18n/nl.js) by Victor Lap
+- [Dutch](https://github.com/elninotech/uppload/blob/master/modules/i18n/nl.js) by [Victor Lap](https://github.com/victorlap)
