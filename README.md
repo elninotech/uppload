@@ -380,7 +380,7 @@ const profilePicture = new Uppload({
 
 ### Internationalization
 
-Uppload comes with English (US) support built-in. You can overwrite all string by supplying a `i18n` property during initialization. The template is available [here](https://github.com/elninotech/uppload/blob/master/modules/i18n.js).
+Uppload comes with i18n support built-in. We have over 100 languages, but most of them are machine translated. You can overwrite all string by supplying a `i18n` property during initialization. The template is available [here](https://github.com/elninotech/uppload/blob/master/modules/i18n/es.js).
 
 ### Wrappers
 
@@ -388,6 +388,7 @@ We've built the following wrappers for Uppload for our favorite frameworks:
 
 - [Vue.js](https://github.com/elninotech/uppload/tree/master/wrappers/vue) (NPM `uppload-vue`)
 - [React](https://github.com/elninotech/uppload/tree/master/wrappers/react) (NPM `uppload-react`)
+- [Angular](https://github.com/elninotech/uppload/tree/master/wrappers/angular) (NPM `uppload-angular`)
 
 ## Development
 
@@ -403,6 +404,7 @@ We've built the following wrappers for Uppload for our favorite frameworks:
 - ~~Wrappers for~~
 	- ~~Vue.js~~
 	- ~~React~~
+	- Angular
 - Use Tardis for module loading
 
 ### Installation
