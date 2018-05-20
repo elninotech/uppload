@@ -428,7 +428,7 @@ yarn build
 
 ## El Niño
 
-Uppload is made with ❤️ in Enschede, the Netherlands by [El Niño](https://www.elnino.tech).
+Uppload is made with ❤️ in Enschede, the Netherlands by [El Niño](https://www.elnino.tech) and [contributors](https://github.com/elninotech/uppload/graphs/contributors).
 
 El Niño is een internetbureau uit Enschede. We hebben meer dan 12 jaar ervaring in het ontwikkelen van op maat gemaakte digitale oplossingen. Met een team van vakfanaten dragen we bij aan het succes van elke organisatie. 
 
