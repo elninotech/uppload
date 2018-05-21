@@ -404,7 +404,7 @@ We've built the following wrappers for Uppload for our favorite frameworks:
 - ~~Wrappers for~~
 	- ~~Vue.js~~
 	- ~~React~~
-	- Angular
+	- ~~Angular~~
 - Use Tardis for module loading
 
 ### Installation
