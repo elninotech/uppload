@@ -1,6 +1,6 @@
 {
   "name": "uppload",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "main": "index.js",
   "repository": "https://github.com/elninotech/uppload.git",
   "author": "El Nino (elnino.tech)",

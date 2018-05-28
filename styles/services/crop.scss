@@ -14,10 +14,6 @@
 		}
 		.preview {
 			flex: 1 0 0;
-			padding: 1rem;
-			display: flex;
-			justify-content: center;
-			flex-direction: column;
 			overflow: auto;
 			> div > img {
 				margin: auto;
@@ -56,12 +52,6 @@
 	user-select: none;
 	box-sizing: border-box;
 }
-
-.croppr-container img {
-	vertical-align: middle;
-	max-width: 100%;
-}
-
 .croppr {
 	position: relative;
 	display: inline-block;

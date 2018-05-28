@@ -48,33 +48,54 @@ export default scope => {
 			const imageDataUri = event.target.result;
 			if (imageDataUri) {
 				const image = scope.modalElement.querySelector("#previewImage");
+				const previewWindow = scope.modalElement.querySelector(".preview");
 				image.setAttribute("src", imageDataUri);
 				image.addEventListener("load", () => {
 					image.style.display = "block";
-					const cropInstance = new Croppr(scope.modalElement.querySelector("#previewImage"), {
-						aspectRatio: scope.settings.crop.aspectRatio || null,
-						maxSize: scope.settings.crop.maxSize || null,
-						minSize: scope.settings.crop.minSize || null,
-						onCropStart: data => {
-							dispatch("cropStart", data);
-						},
-						onCropMove: data => {
-							dispatch("cropMove", data);
-						},
-						onCropEnd: data => {
-							dispatch("cropEnd", data);
-						}
-					});
-					const cropperDiv = scope.modalElement.querySelector("#imageCropper");
-					const button = scope.modalElement.querySelector("#cropAndUploadBtn");
-					button.addEventListener("click", () => {
-						const cropValues = cropInstance.getValue();
-						const newImage = getImagePortion(image, cropValues.width, cropValues.height, cropValues.x, cropValues.y, 1);
-						scope.meta.file = dataURItoBlob(newImage);
-						upload(null, scope)
-							.then(() => {})
-							.catch(() => {});
-					});
+					if (image.offsetHeight > previewWindow.offsetHeight) {
+						image.style.height = previewWindow.offsetHeight + "px";
+						previewWindow.querySelector("*").style.height = previewWindow.offsetHeight + "px";
+					} else {
+						previewWindow.style.display = "flex";
+						previewWindow.style.justifyContent = "center";
+						previewWindow.style.flexDirection = "column";
+					}
+					setTimeout(() => {
+						const cropInstance = new Croppr(scope.modalElement.querySelector("#previewImage"), {
+							aspectRatio: scope.settings.crop.aspectRatio || null,
+							maxSize: scope.settings.crop.maxSize || null,
+							minSize: scope.settings.crop.minSize || null,
+							startSize: [50, 50, "%"],
+							onCropStart: data => {
+								dispatch("cropStart", data);
+							},
+							onCropMove: data => {
+								dispatch("cropMove", data);
+							},
+							onCropEnd: data => {
+								dispatch("cropEnd", data);
+							},
+							onInitialize: instance => {
+								const allImages = previewWindow.querySelectorAll("img");
+								for (let i = 0; i < allImages.length; i++) {
+									console.log(allImages[i]);
+									if (allImages[i].offsetHeight > previewWindow.offsetHeight) {
+										allImages[i].style.height = previewWindow.offsetHeight + "px";
+									}
+								}
+							}
+						});
+						const cropperDiv = scope.modalElement.querySelector("#imageCropper");
+						const button = scope.modalElement.querySelector("#cropAndUploadBtn");
+						button.addEventListener("click", () => {
+							const cropValues = cropInstance.getValue();
+							const newImage = getImagePortion(image, cropValues.width, cropValues.height, cropValues.x, cropValues.y, 1);
+							scope.meta.file = dataURItoBlob(newImage);
+							upload(null, scope)
+								.then(() => {})
+								.catch(() => {});
+						});
+					}, 1);
 				});
 			}
 		});
