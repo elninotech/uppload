@@ -13,7 +13,7 @@
 
 <p align="center"><strong>Uppload is currently in development and is NOT production-ready.</strong></p>
 
-![uppload](https://user-images.githubusercontent.com/2841780/39637480-75d62e88-4fc3-11e8-8df8-3d462ef7e450.gif)
+![uppload](https://user-images.githubusercontent.com/2841780/40658486-bac5ca08-634b-11e8-895e-a788a89f8dd0.gif)
 
 ## Table of Contents
 
