@@ -5,6 +5,7 @@ script:
   - yarn test
 after_success:
   - yarn build
+  - .travis/push.sh
 deploy:
   provider: npm
   email: anand+elpablo@elnino.tech
