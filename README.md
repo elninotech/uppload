@@ -351,12 +351,16 @@ firebase.initializeApp({
 const profilePicture = new Uppload({
     uploadPreset: {
         preset: "firebase",
-        storageRef: firebase.storage().ref()
+        options: {
+            storageRef: firebase.storage().ref()
+        }
     }
 });
 ```
 
 #### AWS S3
+
+This preset is current in development
 
 ```js
 import AWS from "aws-sdk";
@@ -373,7 +377,9 @@ const s3 = new AWS.S3({
 const profilePicture = new Uppload({
     uploadPreset: {
         preset: "s3",
-        s3Object: s3
+        options: {
+            s3Object: s3
+        }
     }
 });
 ```
