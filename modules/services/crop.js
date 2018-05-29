@@ -78,7 +78,6 @@ export default scope => {
 							onInitialize: instance => {
 								const allImages = previewWindow.querySelectorAll("img");
 								for (let i = 0; i < allImages.length; i++) {
-									console.log(allImages[i]);
 									if (allImages[i].offsetHeight > previewWindow.offsetHeight) {
 										allImages[i].style.height = previewWindow.offsetHeight + "px";
 									}
