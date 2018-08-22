@@ -17,3 +17,4 @@ Currently, the translations are mostly machine-generated using the Google Cloud 
 - [Turkish](https://github.com/elninotech/uppload/blob/master/modules/i18n/tr.js) by Ekrem Erdem
 - [Dutch](https://github.com/elninotech/uppload/blob/master/modules/i18n/nl.js) by [Victor Lap](https://github.com/victorlap)
 - [Spanish](https://github.com/elninotech/uppload/blob/master/modules/i18n/es.js) by [Michael Angelo Groeneveld](https://github.com/elnino-ict)
+- [German](https://github.com/elninotech/uppload/blob/master/modules/i18n/de.js) by [Jordan Kniest](https://github.com/jkniest)
