@@ -9,8 +9,6 @@
 
 <p align="center">Uppload is a better JavaScript file uploader inspired by <a href="https://github.com/uploadcare/uploadcare-widget">Uploadcare</a>'s widget, but is highly customizable, completely free and open-source, and can be used with any file uploading backend.</p>
 
-<p align="center"><strong>Uppload is currently in development and is NOT production-ready.</strong></p>
-
 ![uppload](https://user-images.githubusercontent.com/2841780/40658486-bac5ca08-634b-11e8-895e-a788a89f8dd0.gif)
 
 ## Table of Contents
@@ -384,7 +382,7 @@ const profilePicture = new Uppload({
 
 ### Internationalization
 
-Uppload comes with i18n support built-in. We have over 100 languages, but most of them are machine translated. You can overwrite all string by supplying a `i18n` property during initialization. The template is available [here](https://github.com/elninotech/uppload/blob/master/modules/i18n/es.js).
+Uppload comes with i18n support built-in. We have over 100 languages, but most of them are machine translated. You can overwrite all string by supplying a `i18n` property during initialization. The template is available [here](https://github.com/elninotech/uppload/blob/master/modules/i18n/en.js).
 
 ### Wrappers
 
