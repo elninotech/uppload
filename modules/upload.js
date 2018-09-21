@@ -66,14 +66,16 @@ export default (file, scope) => {
 						scope.updateValue(url);
 						dispatch("fileUploaded", url);
 						resolve(url);
+						scope.changePage("uploaded");
 					})
 					.catch(error => {
 						dispatch("uploadError", error);
+						throwFileUploadError(error);
+						scope.changePage("upload");
 						reject(error);
 					})
 					.then(() => {
 						scope.isUploading = false;
-						scope.changePage("uploaded");
 					});
 			} else if (scope.settings.endpoint) {
 				if (typeof scope.settings.endpoint === "string") {
