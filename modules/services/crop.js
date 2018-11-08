@@ -65,7 +65,7 @@ export default scope => {
 							aspectRatio: scope.settings.crop.aspectRatio || null,
 							maxSize: scope.settings.crop.maxSize || null,
 							minSize: scope.settings.crop.minSize || null,
-							startSize: [50, 50, "%"],
+							startSize: scope.settings.crop.startSize || [50, 50, "%"],
 							onCropStart: data => {
 								dispatch("cropStart", data);
 							},
