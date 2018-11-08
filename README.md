@@ -137,6 +137,7 @@ You can pass the following properties in the constructor:
 | `crop.aspectRatio` | `null` | Number | Aspect ratio for image cropping |
 | `crop.maxSize` | `null` | `[width, height, unit?]` | Maximum image size after cropping |
 | `crop.minSize` | `null` | `[width, height, unit?]` | Minimum image size after cropping |
+| `crop.startSize` | `[50, 50, "%"]` | `[width, height, unit?]` | Default size when cropping starts |
 
 ```js
 // Endpoint is an object with configuration
