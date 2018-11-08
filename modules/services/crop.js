@@ -82,6 +82,7 @@ export default scope => {
 										allImages[i].style.height = previewWindow.offsetHeight + "px";
 									}
 								}
+								instance.reset();
 							}
 						});
 						const cropperDiv = scope.modalElement.querySelector("#imageCropper");
