@@ -61,7 +61,7 @@ export default scope => {
 						previewWindow.style.flexDirection = "column";
 					}
 					setTimeout(() => {
-						const cropInstance = new Croppr(scope.modalElement.querySelector("#previewImage"), {
+						const cropOptions = {
 							aspectRatio: scope.settings.crop.aspectRatio || null,
 							maxSize: scope.settings.crop.maxSize || null,
 							minSize: scope.settings.crop.minSize || null,
@@ -82,9 +82,14 @@ export default scope => {
 										allImages[i].style.height = previewWindow.offsetHeight + "px";
 									}
 								}
-								instance.reset();
+								try {
+									instance.options = Croppr.parseOptions(cropOptions);
+									instance.options.convertToPixels(instance.cropperEl);
+									instance.reset();
+								} catch (error) {}
 							}
-						});
+						};
+						const cropInstance = new Croppr(scope.modalElement.querySelector("#previewImage"), cropOptions);
 						const cropperDiv = scope.modalElement.querySelector("#imageCropper");
 						const button = scope.modalElement.querySelector("#cropAndUploadBtn");
 						button.addEventListener("click", () => {
