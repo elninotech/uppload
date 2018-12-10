@@ -80,6 +80,9 @@ class Uppload {
 		// Object contains configuration for image cropping
 		this.settings.crop = this.settings.crop || {};
 
+		// Object contains configuration for image format
+		this.settings.uploadFormat = this.settings.uploadFormat || {};
+
 		// Integer containing maximum file size, fallback to 100 MB
 		this.settings.maxFileSize = parseInt(this.settings.maxFileSize) || "infinite";
 

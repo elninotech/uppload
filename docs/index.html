@@ -58,9 +58,9 @@
 						<li class="nav-item">
 							<a class="nav-link active" id="firebase-tab" data-toggle="tab" href="#firebase" role="tab" aria-controls="firebase" aria-selected="true">Upload to Firebase</a>
 						</li>
-						<li class="nav-item">
+						<!-- <li class="nav-item">
 							<a class="nav-link" id="awss3-tab" data-toggle="tab" href="#awss3" role="tab" aria-controls="awss3" aria-selected="false">Upload to S3</a>
-						</li>
+						</li> -->
 					</ul>
 					<div class="tab-content p-3" id="myTab2Content">
 						<div class="tab-pane fade show active" id="firebase" role="tabpanel" aria-labelledby="firebase-tab">
@@ -274,10 +274,10 @@
 					firebase.initializeApp(config);
 					var storageRef = firebase.storage().ref();
 					var profilePicture = new Uppload({
-						value: "https://upload.wikimedia.org/wikipedia/commons/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg",
+						value: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHgAeAMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAAAwYEBQcBAv/EADgQAAIBAgIFCAgGAwAAAAAAAAABAgMEBREGITFBURIiMlJhcYHREzNCU3KxweEWI2KSofBDgpH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A7iAAAAAAAAAR+mpZ5ekhnw5SAkB5megAAAAAAAAAAAAAA0mLY7G2lKjapVKq1Sk+jHzZJpDiErS3VKlLKrVzWa9lcSpATXN3cXUm7itOfY3q/wCEGS4IACe2u7i1edvWnDsT1PwLHhOOxuZRo3SUKr1KS6MvJlVG0DooNRo9iDu7d0qss6tLJNv2luZtwAAAAAAAAAAApePVnWxStnsg+QvD75muMvFE44ldJ+9k/wCTEAAAAAANjgNZ0cUo8J5wfj98i6FEwtOWJWqXvYv+S9gAAAAAAAAAABU9J7V0r1V0ubWWt/qRpi+YhaU722lRqas9kuD4lKvLWrZ13SrRya2PdJcUBAAAABPZ2ta8rqlQjm973RXFgbLRi2dW9ddrmUlqf6n/AFlsMaws6dlbRo092tvi+JkgAAAAAAAAAAAIbq1o3dP0dxTU47s9q7jFu8YsrXOMqqnNbYw1s1lbSZ/4bbxnLyAXOjPOzta6S6tRfVGL+Hb7PLOjlx5T8hPSK+k+bGjHujn9T4/EGIden+wDNttGecndV1l1aa2+LN7a2tG0p+jt6ahHs395WIaRXy6Soy/1a+plUdJvf23jCXmBYwa+0xixumowqqE3sjPUzYAAAAAAAAAQ3VxStaMqtaXJhEqWJYxcXrcIN06D9hPau1n3pBeu5vZUov8AKotxXa97NUAAAAAAD08AB69pssNxi4smoTbq0OrJ613M1oA6Ba3FK6oxrUZcqEt5KU/R++la3saUn+VWfJa4Pcy4AAAAPmpLk05S6qbPojuPUVPgfyA59m2s2829oEeiu4AAAAAAAAAAAB7nks08mtaZ0KnLlU4y4rM549j7joND1FP4V8gJAAAI7j1FT4H8gAOfR6K7gAAAAAAAAAAAAB7H3HQbf1FP4V8gAJAAB//Z",
 						allowedTypes: "image",
 						uploadFormat: {
-							type: "image/jpg",
+							type: "image/jpeg",
 							quality: 0.5
 						},
 						maxFileSize: 25000000,
@@ -290,6 +290,9 @@
 								storageRef: storageRef
 							}
 						}
+					});
+					profilePicture.on("uploadStarted", file => {
+						console.log(file);
 					});
 				});
 			})();

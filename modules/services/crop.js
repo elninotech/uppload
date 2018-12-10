@@ -3,7 +3,7 @@ import upload from "../upload";
 import dispatch from "../dispatch";
 import dataURItoBlob from "../dataUriToBlob";
 
-const getImagePortion = (imgObj, newWidth, newHeight, startX, startY, ratio) => {
+const getImagePortion = (imgObj, newWidth, newHeight, startX, startY, ratio, type, encoderOptions) => {
 	const tnCanvas = document.createElement("canvas");
 	const tnCanvasContext = tnCanvas.getContext("2d");
 	tnCanvas.width = newWidth;
@@ -14,14 +14,14 @@ const getImagePortion = (imgObj, newWidth, newHeight, startX, startY, ratio) => 
 	bufferCanvas.height = imgObj.height;
 	bufferContext.drawImage(imgObj, 0, 0);
 	tnCanvasContext.drawImage(bufferCanvas, startX, startY, newWidth * ratio, newHeight * ratio, 0, 0, newWidth, newHeight);
-	return tnCanvas.toDataURL();
+	return tnCanvas.toDataURL(type, encoderOptions);
 };
 
 let loaded = false;
 export default scope => {
 	if (!loaded) {
 		scope.changePage("uploading");
-		loadFile("https://cdn.jsdelivr.net/npm/croppr@2.3.0/dist/croppr.min.js")
+		loadFile("https://cdn.jsdelivr.net/npm/croppr@2.3.1/dist/croppr.min.js")
 			.then(() => {
 				loaded = true;
 				scope.changePage("crop");
@@ -33,7 +33,7 @@ export default scope => {
 			});
 	} else {
 		const file = scope.meta.file;
-		if (!["image/png", "image/jpeg", "image/gif", "image/jpeg"].includes(file.type)) {
+		if (!["image/png", "image/jpg", "image/gif", "image/jpeg"].includes(file.type)) {
 			scope.changePage("upload");
 			scope.meta.file = file;
 			upload(null, scope)
@@ -94,8 +94,13 @@ export default scope => {
 						const button = scope.modalElement.querySelector("#cropAndUploadBtn");
 						button.addEventListener("click", () => {
 							const cropValues = cropInstance.getValue();
-							const newImage = getImagePortion(image, cropValues.width, cropValues.height, cropValues.x, cropValues.y, 1);
+							// These upload format settings with fallback to `undefined` (browser default) if unspecified
+							const type = scope.settings.uploadFormat.type;
+							const encoderOptions = scope.settings.uploadFormat.quality;
+							console.log(type, encoderOptions);
+							const newImage = getImagePortion(image, cropValues.width, cropValues.height, cropValues.x, cropValues.y, 1, type, encoderOptions);
 							scope.meta.file = dataURItoBlob(newImage);
+							console.log(newImage);
 							upload(null, scope)
 								.then(() => {})
 								.catch(() => {});
