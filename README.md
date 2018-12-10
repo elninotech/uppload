@@ -128,7 +128,7 @@ You can pass the following properties in the constructor:
 | `crop.minSize` | `null` | `[width, height, unit?]` | Minimum image size after cropping |
 | `crop.startSize` | `[50, 50, "%"]` | `[width, height, unit?]` | Default size when cropping starts |
 | `uploadFormat.type` | `image/jpeg` | String | Image MIME type to upload to server |
-| `quality` | `0.92` | Number | Image quality to upload to server (between 0 and 1) |
+| `uploadFormat.quality` | `0.92` | Number | Image quality to upload to server (between 0 and 1) |
 
 ```js
 // Endpoint is an object with configuration
