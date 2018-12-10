@@ -54,21 +54,10 @@ import Uppload from "uppload";
 You can also `require` it in your project since it ships as UMD, or use it from one of the CDNs below. You only need any one of the following, since wrappers come with Uppload built-in.
 
 ```html
-<!-- Served by unpkg -->
 <!-- Uppload --><script src="https://unpkg.com/uppload/dist/uppload.no-polyfills.min.js"></script> 
 <!-- Uppload with polyfills --><script src="https://unpkg.com/uppload/dist/uppload.min.js"></script> 
 <!-- Uppload Vue --><script src="https://unpkg.com/uppload-vue/dist/uppload-vue.min.js"></script> 
-<!-- Uppload Vue with polyfills --><script src="https://unpkg.com/uppload-vue/dist/uppload-vue.polyfills.min.js"></script> 
-<!-- Uppload React --><script src="https://unpkg.com/uppload-react/dist/uppload-react.min.js"></script> 
-<!-- Uppload React with polyfills --><script src="https://unpkg.com/uppload-react/dist/uppload-react.polyfills.min.js"></script> 
-
-<!-- Served by jsDelivr -->
-<!-- Uppload --><script src="https://cdn.jsdelivr.net/npm/uppload/dist/uppload.no-polyfills.min.js"></script> 
-<!-- Uppload with polyfills --><script src="https://cdn.jsdelivr.net/npm/uppload/dist/uppload.min.js"></script> 
-<!-- Uppload Vue --><script src="https://cdn.jsdelivr.net/npm/uppload-vue/dist/uppload-vue.min.js"></script> 
-<!-- Uppload Vue with polyfills --><script src="https://cdn.jsdelivr.net/npm/uppload-vue/dist/uppload-vue.polyfills.min.js"></script> 
-<!-- Uppload React --><script src="https://cdn.jsdelivr.net/npm/uppload-react/dist/uppload-react.min.js"></script> 
-<!-- Uppload React with polyfills --><script src="https://cdn.jsdelivr.net/npm/uppload-react/dist/uppload-react.polyfills.min.js"></script> 
+<!-- Uppload React --><script src="https://unpkg.com/uppload-react/dist/uppload-react.min.js"></script> </script>
 ```
 
 Create a new Uppload object with sample configuration:
@@ -138,6 +127,8 @@ You can pass the following properties in the constructor:
 | `crop.maxSize` | `null` | `[width, height, unit?]` | Maximum image size after cropping |
 | `crop.minSize` | `null` | `[width, height, unit?]` | Minimum image size after cropping |
 | `crop.startSize` | `[50, 50, "%"]` | `[width, height, unit?]` | Default size when cropping starts |
+| `uploadFormat.type` | `image/jpeg` | String | Image MIME type to upload to server |
+| `quality` | `0.92` | Number | Image quality to upload to server (between 0 and 1) |
 
 ```js
 // Endpoint is an object with configuration
