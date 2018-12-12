@@ -395,6 +395,7 @@ We've built the following wrappers for Uppload for our favorite frameworks:
 - Import file/image (Facebook, Dropbox, etc.)
 - ~~Add sample server configuration & files in docs~~
 - IE support (`customEvent`)
+- Basic and advanced docs
 - Presets for ~~Firebase~~, ~~S3~~, etc.
 - ~~Wrappers for~~
 	- ~~Vue.js~~
