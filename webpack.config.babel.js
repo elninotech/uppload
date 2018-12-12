@@ -5,8 +5,8 @@ import "babel-polyfill";
 export default () => ({
 	mode: "production",
 	entry: {
-		"uppload.min": ["babel-polyfill", "./index.js"],
-		"uppload.no-polyfills.min": ["./index.js"]
+		"uppload.min": ["./index.js"],
+		"uppload.polyfills": ["babel-polyfill", "./index.js"]
 	},
 	devServer: {
 		contentBase: path.join(__dirname, "./docs"),
