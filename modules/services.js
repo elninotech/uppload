@@ -132,6 +132,22 @@ export default scope => {
 			init() {
 				microLinkFetch(scope, "instagram", true);
 			}
+		},
+		facebook: {
+			icon: icons.facebook,
+			title: "Facebook",
+			html: `
+                <div class="center-middle">
+                    <label>
+                        <div>${i18n.instagram.post_url}</div>
+                        <input id="microLinkInput" type="text" value="https://www.facebook.com/utwente/photos/a.2213200618711319/2213200642044650/" placeholder="https://www.facebook.com/example">
+                    </label>
+                    <button id="microLinkButton" class="primary-button facebook">${i18n.instagram.import + rightArrow}</button>
+                </div>
+            `,
+			init() {
+				microLinkFetch(scope, "facebook", true);
+			}
 		}
 	};
 	let navItems = ``;

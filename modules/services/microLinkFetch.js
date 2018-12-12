@@ -3,7 +3,7 @@ import uploadFile from "../upload";
 
 /**
  * Initialization function for Microlink fetch service
- * Used for Instagram and others
+ * Used for Instagram, Facebook and others
  * @param {Object} scope - Parent Uppload object
  */
 export default (scope, serviceName, isMicroLink = false) => {

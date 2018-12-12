@@ -3,6 +3,7 @@ export default {
 	upload: `<i class="fas fa-upload fa-fw"></i>`,
 	import: `<i class="fas fa-link fa-fw"></i>`,
 	instagram: `<i class="fab fa-instagram fa-fw"></i>`,
+	facebook: `<i class="fab fa-facebook fa-fw"></i>`,
 	back: `<i class="fas fa-arrow-left fa-fw"></i>`,
 	forward: `<i class="fas fa-arrow-right fa-fw"></i>`,
 	uploading: `<i class="fas fa-spinner fa-4x fa-spin fa-fw"></i><br><br>`,

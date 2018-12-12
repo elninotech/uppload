@@ -65,7 +65,7 @@ class Uppload {
 		this.currentPage = this.settings.defaultService || "upload";
 
 		// Array of services plugin should have, fallback default
-		this.settings.services = this.settings.services || ["upload", "camera", "link", "instagram"];
+		this.settings.services = this.settings.services || ["upload", "camera", "link", "instagram", "facebook"];
 		// Remove `camera` from the array if browser doesn't support it
 		if (!webcamAvailable) {
 			const index = this.settings.services.indexOf("camera");
