@@ -93,7 +93,7 @@ With `babel-polyfill`, Uppload works with IE11 and above. Without polyfills, it 
 | File | Size |
 | --- | --- |
 | `uppload.min.js` | ![File size](https://img.shields.io/github/size/elninotech/uppload/dist/uppload.min.js.svg?style=flat) |
-| `uppload.polyfills.min.js` | ![File size](https://img.shields.io/github/size/elninotech/uppload/dist/uppload.polyfills.min.js.svg?style=flat) |
+| `uppload.polyfills.js` | ![File size](https://img.shields.io/github/size/elninotech/uppload/dist/uppload.polyfills.js.svg?style=flat) |
 
 ### Configutation
 
