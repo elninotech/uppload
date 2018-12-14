@@ -1,8 +1,14 @@
 import webpack from "webpack";
 import path from "path";
+import pkg from "./package.json";
 import "babel-polyfill";
 
 export default () => ({
+	plugins: [
+		new webpack.DefinePlugin({
+			UPPLOAD_VERSION: JSON.stringify(pkg.version.replace(/\./g, "-"))
+		})
+	],
 	mode: "production",
 	entry: {
 		"uppload.min": ["./index.js"],

@@ -139,10 +139,10 @@ export default scope => {
 			html: `
                 <div class="center-middle">
                     <label>
-                        <div>${i18n.instagram.post_url}</div>
+                        <div>${i18n.facebook.post_url}</div>
                         <input id="microLinkInput" type="text" value="https://www.facebook.com/utwente/photos/a.2213200618711319/2213200642044650/" placeholder="https://www.facebook.com/example">
                     </label>
-                    <button id="microLinkButton" class="primary-button facebook">${i18n.instagram.import + rightArrow}</button>
+                    <button id="microLinkButton" class="primary-button facebook">${i18n.facebook.import + rightArrow}</button>
                 </div>
             `,
 			init() {
@@ -170,7 +170,7 @@ export default scope => {
                         ${navItems}
                     </ul>
                 </nav>
-                <a class="uppload-branding" href="https://github.com/elninotech/uppload" target="_blank" rel="noopener noreferrer">Get Uppload</a>
+                <a class="uppload-branding" href="https://uppload.js.org/?utm_source=uppload-widget&utm_medium=${encodeURIComponent(UPPLOAD_VERSION)}&utm_campaign=${encodeURIComponent(document.domain || window.location.hostname)}" target="_blank" rel="noopener noreferrer">Get Uppload</a>
             </aside>
         `
 	};

@@ -1,9 +1,9 @@
 {
   "name": "uppload",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "main": "index.js",
   "repository": "https://github.com/elninotech/uppload.git",
-  "author": "Anand Chowdhary (mail@anandchowdhary) with El Niño (https://elnino.tech)",
+  "author": "Anand Chowdhary (mail@anandchowdhary.com) with El Niño (https://elnino.tech)",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",
