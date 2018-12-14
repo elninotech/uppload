@@ -4,13 +4,12 @@
 <img alt="Travis CI builds" src="https://api.travis-ci.org/elninotech/uppload.svg?branch=master">
 <img alt="Licence" src="https://img.shields.io/npm/l/uppload.svg?maxAge=2592000&style=flat">
 <img alt="Number of dependencies" src="https://img.shields.io/david/elninotech/uppload.svg?maxAge=2592000&style=flat">
-<img alt="Updates to devDependencies" src="https://img.shields.io/david/dev/elninotech/uppload.svg?maxAge=2592001&style=flat">
 <a href="https://cityofenschede.com/"><img alt="Made in Enschede" src="https://img.shields.io/badge/made%20in-Enschede-brightgreen.svg"></a>
 </p>
 
 <p align="center">Uppload is a better JavaScript file uploader inspired by <a href="https://github.com/uploadcare/uploadcare-widget">Uploadcare</a>'s widget, but is highly customizable, completely free and open-source, and can be used with any file uploading backend.</p>
 
-![uppload](https://user-images.githubusercontent.com/2841780/40658486-bac5ca08-634b-11e8-895e-a788a89f8dd0.gif)
+![Uppload logo](https://user-images.githubusercontent.com/2841780/40658486-bac5ca08-634b-11e8-895e-a788a89f8dd0.gif)
 
 ## Table of Contents
 
@@ -20,8 +19,6 @@
 	- [Configutation](#configutation)
 	- [Properties](#properties)
 	- [Events](#events)
-- [Demos](#demos)
-	- [Automated Demo](#automated-demo)
 - [Customization](#customization)
 - [Server-side Implementation](#server-side-implementation)
 	- [Starter Templates](#starter-templates)
@@ -54,10 +51,8 @@ import Uppload from "uppload";
 You can also `require` it in your project since it ships as UMD, or use it from one of the CDNs below. You only need any one of the following, since wrappers come with Uppload built-in.
 
 ```html
-<!-- Uppload --><script src="https://unpkg.com/uppload/dist/uppload.no-polyfills.min.js"></script> 
-<!-- Uppload with polyfills --><script src="https://unpkg.com/uppload/dist/uppload.min.js"></script> 
-<!-- Uppload Vue --><script src="https://unpkg.com/uppload-vue/dist/uppload-vue.min.js"></script> 
-<!-- Uppload React --><script src="https://unpkg.com/uppload-react/dist/uppload-react.min.js"></script> </script>
+<!-- Uppload --><script src="https://unpkg.com/uppload/dist/uppload.min.js"></script> 
+<!-- Uppload with polyfills --><script src="https://unpkg.com/uppload/dist/uppload.polyfills.js"></script> 
 ```
 
 Create a new Uppload object with sample configuration:
@@ -90,14 +85,14 @@ const profilePicture = new Uppload({
 
 ### Browser Support
 
-With `babel-polyfill`, Uppload works with IE11 and above. Uppload ships this way by default. Without polyfills, it works with browsers that natively support both promises and the Fetch API.
+With `babel-polyfill`, Uppload works with IE11 and above. Without polyfills, it works with browsers that natively support both promises and the Fetch API. You can use the `uppload.polyfills.js` file to support older browsers, or manually import relevant polyfills (e.g. `Array.prototype.includes()`, `fetch()`, etc.)
 
 ### File Size
 
 | File | Size |
 | --- | --- |
 | `uppload.min.js` | ![File size](https://img.shields.io/github/size/elninotech/uppload/dist/uppload.min.js.svg?style=flat) |
-| `uppload.no-polyfills.min.js` | ![File size](https://img.shields.io/github/size/elninotech/uppload/dist/uppload.no-polyfills.min.js.svg?style=flat) |
+| `uppload.polyfills.js` | ![File size](https://img.shields.io/github/size/elninotech/uppload/dist/uppload.polyfills.js.svg?style=flat) |
 
 ### Configutation
 
@@ -229,40 +224,6 @@ profilePicture.openModal(); // Opens the modal
 | `closeModal()` | None | Closes the modal |
 | `updateValue(param)` | `String` URL | Make this URL the post-uploading value |
 | `changePage(param)` | `String` Service ID | Navigate to this uploading service |
-
-### Demos
-
-#### Automated Demo
-
-Using the above methods and events, you can also automatically upload a file using Uppload. For example, the following code fetches an image from Mashape's meme generator API and uploads it to your server:
-
-```js
-fetch("https://ronreiter-meme-generator.p.mashape.com/meme?meme=Baby+Godfather&font_size=50&font=Impact&top=Thanks+m&bottom=Later", {
-    method: "GET",
-    headers: new Headers({
-        "X-Mashape-Key": "API_KEY"
-    }),
-    mode: "cors"
-})
-    .then(response.arrayBuffer())
-    .then(buffer => {
-        let binary = "";
-        [].slice.call(new Uint8Array(buffer)).forEach(byte => binary += String.fromCharCode(byte));
-        const file = "data:image/jpeg;base64," + window.btoa(binary);
-        new Uppload({
-            endpoint: "/upload_backend"
-        }).uploadFile(file)
-            .then(fileUrl => {
-                console.log(`File uploaded: ${fileUrl}`);
-            })
-            .catch(error => {
-                console.error("Error from server", error);
-            });
-    })
-    .catch(error => {
-        console.error("Error in fetching file", error);
-    });
-```
 
 ### Customization
 

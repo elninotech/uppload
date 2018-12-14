@@ -93,6 +93,7 @@
 		top: 0;
 		opacity: 0;
 		transition: 0.5s;
+		z-index: 10;
 		&.visible {
 			opacity: 1;
 		}
