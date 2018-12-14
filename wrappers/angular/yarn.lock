@@ -2510,9 +2510,10 @@ update-notifier@^2.3.0:
     semver-diff "^2.0.0"
     xdg-basedir "^3.0.0"
 
-uppload@^0.2.7:
-  version "0.2.7"
-  resolved "https://registry.yarnpkg.com/uppload/-/uppload-0.2.7.tgz#baddc812e9fb537bff9f371154b8c4dc146fe375"
+uppload@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/uppload/-/uppload-0.4.1.tgz#8cb147eb1c7bbc771d8a25d62272410c78f906d6"
+  integrity sha512-RD5gG7wmPTdLl089Y61cYFZoxc9Dluig/vmGplQT1q3EqzG5i1r4ltqP3coCHfbYKnvaGNQakeMwCUnIAbhU9g==
 
 url-parse-lax@^1.0.0:
   version "1.0.0"

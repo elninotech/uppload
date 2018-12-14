@@ -3572,9 +3572,10 @@ upath@^1.0.0:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/upath/-/upath-1.0.5.tgz#02cab9ecebe95bbec6d5fc2566325725ab6d1a73"
 
-uppload@^0.1.2:
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/uppload/-/uppload-0.1.7.tgz#d0b6c2f7bf6a937fcfd816d30afd400c2c33f4dc"
+uppload@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/uppload/-/uppload-0.4.1.tgz#8cb147eb1c7bbc771d8a25d62272410c78f906d6"
+  integrity sha512-RD5gG7wmPTdLl089Y61cYFZoxc9Dluig/vmGplQT1q3EqzG5i1r4ltqP3coCHfbYKnvaGNQakeMwCUnIAbhU9g==
 
 uri-js@^4.2.1:
   version "4.2.1"
@@ -3650,10 +3651,6 @@ vue-template-compiler@^2.5.16:
 vue-template-es2015-compiler@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
-
-vue@^2.5.16:
-  version "2.5.16"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.16.tgz#07edb75e8412aaeed871ebafa99f4672584a0085"
 
 watchpack@^1.5.0:
   version "1.6.0"
