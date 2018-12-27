@@ -293,8 +293,12 @@
 							}
 						}
 					});
-					profilePicture.on("uploadStarted", file => {
-						console.log(file);
+					profilePicture.on("fileUploaded", fileUrl => {
+						if (typeof window.agastya === "object" && typeof window.agastya.secureTrack === "function") {
+							window.agastya.secureTrack({
+								file_uploaded: fileUrl
+							});
+						}
 					});
 				});
 			})();
@@ -334,7 +338,6 @@
 				});
 			});
 		</script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		<script defer src="https://use.fontawesome.com/releases/v5.0.12/js/all.js" integrity="sha384-Voup2lBiiyZYkRto2XWqbzxHXwzcm4A5RfdfG6466bu5LqjwwrjXCMBQBLMWh7qR" crossorigin="anonymous"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15148382-2"></script>
