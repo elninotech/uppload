@@ -1,15 +1,13 @@
-<p align="center"><img alt="Uppload logo" src="https://user-images.githubusercontent.com/38886034/39478268-359f87f0-4d62-11e8-8b93-abd1ad2df398.png" width="140"></p>
+# Uppload
 
-<p align="center">
-<img alt="Travis CI builds" src="https://api.travis-ci.org/elninotech/uppload.svg?branch=master">
-<img alt="Licence" src="https://img.shields.io/npm/l/uppload.svg?maxAge=2592000&style=flat">
-<img alt="Number of dependencies" src="https://img.shields.io/david/elninotech/uppload.svg?maxAge=2592000&style=flat">
-<a href="https://cityofenschede.com/"><img alt="Made in Enschede" src="https://img.shields.io/badge/made%20in-Enschede-brightgreen.svg"></a>
-</p>
+Uppload is a better JavaScript file uploader. It's highly customizable, completely free and open-source, and can be used with any file uploading backend.
 
-<p align="center">Uppload is a better JavaScript file uploader inspired by <a href="https://github.com/uploadcare/uploadcare-widget">Uploadcare</a>'s widget, but is highly customizable, completely free and open-source, and can be used with any file uploading backend.</p>
+[![Travis CI builds](https://api.travis-ci.org/elninotech/uppload.svg?branch=master)](https://travis-ci.org/elninotech/uppload)
+[![Licence](https://img.shields.io/npm/l/uppload.svg?maxAge=2592000&style=flat)](LICENSE)
+[![Number of dependencies](https://img.shields.io/david/elninotech/uppload.svg?maxAge=2592000&style=flat)](https://www.npmjs.com/package/uppload?activeTab=dependencies)
+[![Made in Enschede](https://img.shields.io/badge/made%20in-Enschede-brightgreen.svg)](https://cityofenschede.com)
 
-![Uppload logo](https://user-images.githubusercontent.com/2841780/40658486-bac5ca08-634b-11e8-895e-a788a89f8dd0.gif)
+[![Uppload demo GIF](https://user-images.githubusercontent.com/2841780/40658486-bac5ca08-634b-11e8-895e-a788a89f8dd0.gif)](https://uppload.js.org?utm_source=github&utm_medium=demo-gif)
 
 ## Table of Contents
 
