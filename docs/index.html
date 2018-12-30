@@ -284,7 +284,25 @@
 						},
 						maxFileSize: 25000000,
 						crop: {
-							aspectRatio: 1
+							aspectRatio: 1,
+							aspectButtons: [
+								{
+									text: "Free",
+									value: null
+								},
+								{
+									text: "1",
+									value: 1
+								},
+								{
+									text: "16:9",
+									value: 16/9
+								},
+								{
+									text: "4:3",
+									value: 4/3
+								}
+							]
 						},
 						uploadPreset: {
 							preset: "firebase",

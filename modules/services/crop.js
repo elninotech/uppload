@@ -2,6 +2,7 @@ import loadFile from "../loadFile";
 import upload from "../upload";
 import dispatch from "../dispatch";
 import dataURItoBlob from "../dataUriToBlob";
+import { create } from "domain";
 
 const getImagePortion = (imgObj, newWidth, newHeight, startX, startY, ratio, type, encoderOptions) => {
 	const tnCanvas = document.createElement("canvas");
@@ -104,6 +105,20 @@ export default scope => {
 							upload(null, scope)
 								.then(() => {})
 								.catch(() => {});
+						});
+						const createAspectButton = (aspectDiv, aspectRatio) => {
+							const aspectButton = document.createElement('button');
+							aspectButton.classList.add('primary-button', 'secondary')
+							aspectButton.innerHTML = aspectRatio.text;
+							aspectButton.addEventListener("click", () => {
+								cropInstance.options.aspectRatio = aspectRatio.value;
+								cropInstance.reset();
+							});
+							aspectDiv.append(aspectButton);
+						};
+						const aspectDiv = scope.modalElement.querySelector('#aspectButtons');
+						(scope.settings.crop.aspectButtons || []).map( aspectRatio => {
+							createAspectButton(aspectDiv, aspectRatio);
 						});
 					}, 1);
 				});

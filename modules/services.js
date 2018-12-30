@@ -42,7 +42,10 @@ export default scope => {
 						</div>
 					</div>
 					<div class="bottom-buttons">
-						<div class="cta"><button class="primary-button" id="cropAndUploadBtn">${i18n.crop.upload}</button></div>
+						<div class="cta">
+							<span id="aspectButtons"></span>
+							<button class="primary-button" id="cropAndUploadBtn">${i18n.crop.upload}</button>
+						</div>
 					</div>
 				</div>
             `,
