@@ -5,6 +5,7 @@ Uppload is a better JavaScript file uploader. It's highly customizable, complete
 [![Travis CI builds](https://api.travis-ci.org/elninotech/uppload.svg?branch=master)](https://travis-ci.org/elninotech/uppload)
 [![Licence](https://img.shields.io/npm/l/uppload.svg?maxAge=2592000&style=flat)](LICENSE)
 [![Number of dependencies](https://img.shields.io/david/elninotech/uppload.svg?maxAge=2592000&style=flat)](https://www.npmjs.com/package/uppload?activeTab=dependencies)
+![](https://img.shields.io/snyk/vulnerabilities/github/elninotech/uppload.svg)
 [![Made in Enschede](https://img.shields.io/badge/made%20in-Enschede-brightgreen.svg)](https://cityofenschede.com)
 
 [![Uppload demo GIF](https://user-images.githubusercontent.com/2841780/40658486-bac5ca08-634b-11e8-895e-a788a89f8dd0.gif)](https://uppload.js.org?utm_source=github&utm_medium=demo-gif)
