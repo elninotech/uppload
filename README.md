@@ -15,7 +15,7 @@ Uppload is a better JavaScript file uploader. It's highly customizable, complete
 - [Usage](#usage)
 	- [Browser Support](#browser-support)
 	- [File Size](#file-size)
-	- [Configutation](#configutation)
+	- [Configuration](#configuration)
 	- [Properties](#properties)
 	- [Events](#events)
 - [Customization](#customization)
