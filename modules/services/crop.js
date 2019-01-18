@@ -2,7 +2,6 @@ import loadFile from "../loadFile";
 import upload from "../upload";
 import dispatch from "../dispatch";
 import dataURItoBlob from "../dataUriToBlob";
-import { create } from "domain";
 
 const getImagePortion = (imgObj, newWidth, newHeight, startX, startY, ratio, type, encoderOptions) => {
 	const tnCanvas = document.createElement("canvas");
