@@ -117,7 +117,7 @@ You can pass the following properties in the constructor:
 | `isFileSizeAllowed` | Checks `maxFileSize` | Function | Function to check whether file size is allowed (returns boolean) |
 | `i18n` | English (US) dictionary | Object | Object for internationalization strings ([configuration help](#internationalization)) |
 | `crop.aspectRatio` | `null` | Number | Aspect ratio for image cropping |
-| `crop.aspectButtons` | `[]` | Array of objects for allowing the user to choose their aspect ratio `{ text: "16:9", value: 16/9 }` |
+| `crop.aspectButtons` | `[]` | Array | Aspect ration buttons eg `[{ text: "16:9", value: 16/9 }, ..]` |
 | `crop.maxSize` | `null` | `[width, height, unit?]` | Maximum image size after cropping |
 | `crop.minSize` | `null` | `[width, height, unit?]` | Minimum image size after cropping |
 | `crop.startSize` | `[50, 50, "%"]` | `[width, height, unit?]` | Default size when cropping starts |
