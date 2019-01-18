@@ -105,6 +105,20 @@ export default scope => {
 								.then(() => {})
 								.catch(() => {});
 						});
+						const createAspectButton = (aspectDiv, aspectRatio) => {
+							const aspectButton = document.createElement('button');
+							aspectButton.classList.add('primary-button', 'secondary')
+							aspectButton.innerHTML = aspectRatio.text;
+							aspectButton.addEventListener("click", () => {
+								cropInstance.options.aspectRatio = aspectRatio.value;
+								cropInstance.reset();
+							});
+							aspectDiv.append(aspectButton);
+						};
+						const aspectDiv = scope.modalElement.querySelector('#aspectButtons');
+						(scope.settings.crop.aspectButtons || []).map( aspectRatio => {
+							createAspectButton(aspectDiv, aspectRatio);
+						});
 					}, 1);
 				});
 			}
