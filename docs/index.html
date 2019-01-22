@@ -352,7 +352,7 @@
 				$.get("https://api.github.com/repos/elninotech/uppload", function(response) {
 					$("#stargazers").html(response.stargazers_count ? response.stargazers_count + " stars" : "Star");
 					$("#network").html(response.forks ? response.forks + " forks" : "Fork");
-					$("#open_issues").html(response.open_issues !== null && response.open_issues !== undefined ? response.open_issues + " issues" : "Issues"); // JavaScript happened...
+					$("#open_issues").html(response.open_issues !== null && response.open_issues !== undefined ? (response.open_issues > 1 ? response.open_issues + " issues" : "1 issue") : "Issues"); // JavaScript happened...
 				});
 			});
 		</script>
