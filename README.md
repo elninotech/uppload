@@ -84,7 +84,7 @@ const profilePicture = new Uppload({
 
 ### Browser Support
 
-With `babel-polyfill`, Uppload works with IE11 and above. Without polyfills, it works with browsers that natively support both promises and the Fetch API. You can use the `uppload.polyfills.js` file to support older browsers, or manually import relevant polyfills (e.g. `Array.prototype.includes()`, `fetch()`, etc.)
+With `babel-polyfill`, Uppload works with IE11 and above. Without polyfills, it works with browsers that natively support both promises and the Fetch API. You can use the `uppload.polyfills.js` file to support older browsers, or manually import relevant polyfills (e.g. `fetch()`, etc.)
 
 ### File Size
 

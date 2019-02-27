@@ -1,8 +1,9 @@
 const loadedFiles = [];
+import arrayIncludes from "./arrayIncludes";
 
 export default url => {
 	return new Promise((resolve, reject) => {
-		if (loadedFiles.includes(url)) {
+		if (arrayIncludes(loadedFiles, url)) {
 			resolve();
 		} else {
 			loadedFiles.push(url);

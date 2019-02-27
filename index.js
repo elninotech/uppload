@@ -4,6 +4,7 @@ import dispatch from "./modules/dispatch";
 import servicesFunction from "./modules/services";
 import css from "./uppload.scss";
 import loadFile from "./modules/loadFile";
+import arrayIncludes from "./modules/arrayIncludes";
 
 /*
  * Converts number of bytes to readable string
@@ -95,7 +96,7 @@ class Uppload {
 			this.settings.isFileTypeAllowed ||
 			((file = this.meta.file) => {
 				if (typeof this.settings.allowedTypes === "object" && this.settings.allowedTypes.length > 0) {
-					if (this.settings.allowedTypes.includes(file.type)) {
+					if (arrayIncludes(this.settings.allowedTypes, file.type)) {
 						return true;
 					}
 				} else if (this.settings.allowedTypes === file.type) {
@@ -103,7 +104,7 @@ class Uppload {
 				} else if (this.settings.allowedTypes === "*") {
 					return true;
 				} else {
-					if (file.type.includes(`${this.settings.allowedTypes}/`)) {
+					if (arrayIncludes(file.type, `${this.settings.allowedTypes}/`)) {
 						return true;
 					}
 				}
@@ -296,7 +297,7 @@ class Uppload {
 		} else {
 			navbar.classList.remove("hidden");
 		}
-		if (["preview", "crop", "uploading", "uploaded"].includes(newPage)) {
+		if (arrayIncludes(["preview", "crop", "uploading", "uploaded"], newPage)) {
 			navbar.querySelector(".button_service_preview").style.display = "";
 		} else {
 			navbar.querySelector(".button_service_preview").style.display = "none";

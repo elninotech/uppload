@@ -2,6 +2,7 @@ import loadFile from "../loadFile";
 import upload from "../upload";
 import dispatch from "../dispatch";
 import dataURItoBlob from "../dataUriToBlob";
+import arrayIncludes from "../arrayIncludes";
 
 const getImagePortion = (imgObj, newWidth, newHeight, startX, startY, ratio, type, encoderOptions) => {
 	const tnCanvas = document.createElement("canvas");
@@ -33,7 +34,7 @@ export default scope => {
 			});
 	} else {
 		const file = scope.meta.file;
-		if (!["image/png", "image/jpg", "image/gif", "image/jpeg"].includes(file.type)) {
+		if (!arrayIncludes(["image/png", "image/jpg", "image/gif", "image/jpeg"], file.type)) {
 			scope.changePage("upload");
 			scope.meta.file = file;
 			upload(null, scope)
