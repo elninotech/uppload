@@ -1,6 +1,6 @@
 {
   "name": "uppload-react",
-  "version": "0.9.0",
+  "version": "1.1.0",
   "description": "Official React component for Uppload",
   "main": "uppload-react.js",
   "repository": "https://github.com/elninotech/uppload/tree/master/wrappers/react",
@@ -11,7 +11,7 @@
     "live": "webpack -p --watch"
   },
   "dependencies": {
-    "uppload": "^0.4.1"
+    "uppload": "^1.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",

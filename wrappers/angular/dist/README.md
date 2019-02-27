@@ -40,7 +40,7 @@ export class AppComponent {
   public settings: UpploadSettings = {
     crop: { aspectRatio: 1 },
     uploadFunction: () => {
-      return new Promise((resolve) => {
+      return new Promise(resolve => {
         resolve('https://randomuser.me/api/portraits/men/18.jpg');
       });
     }

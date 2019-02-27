@@ -3572,10 +3572,9 @@ upath@^1.0.0:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/upath/-/upath-1.0.5.tgz#02cab9ecebe95bbec6d5fc2566325725ab6d1a73"
 
-uppload@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/uppload/-/uppload-0.4.1.tgz#8cb147eb1c7bbc771d8a25d62272410c78f906d6"
-  integrity sha512-RD5gG7wmPTdLl089Y61cYFZoxc9Dluig/vmGplQT1q3EqzG5i1r4ltqP3coCHfbYKnvaGNQakeMwCUnIAbhU9g==
+uppload@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/uppload/-/uppload-1.1.0.tgz#6b937a5be4288947ff58a7b2a01d76fad1434409"
 
 uri-js@^4.2.1:
   version "4.2.1"
