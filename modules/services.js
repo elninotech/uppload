@@ -173,7 +173,7 @@ export default scope => {
                         ${navItems}
                     </ul>
                 </nav>
-                <a class="uppload-branding" href="https://uppload.js.org/?utm_source=uppload-widget&utm_medium=${encodeURIComponent(UPPLOAD_VERSION)}&utm_campaign=${encodeURIComponent(document.domain || window.location.hostname)}" target="_blank" rel="noopener noreferrer">Get Uppload</a>
+                <a class="uppload-branding" href="https://uppload.js.org/?utm_source=uppload-widget&utm_medium=1.1.0&utm_campaign=${encodeURIComponent(document.domain || window.location.hostname)}" target="_blank" rel="noopener noreferrer">Get Uppload</a>
             </aside>
         `
 	};
