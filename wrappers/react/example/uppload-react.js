@@ -665,7 +665,7 @@ object-assign
 								fetch(scope.settings.endpoint.url, {
 									method: scope.settings.endpoint.method || "POST",
 									body: file,
-									headers: scope.settings.headers || null
+									headers: scope.settings.headers || {}
 								})
 									.then(response => response.json())
 									.then(url => {
