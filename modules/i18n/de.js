@@ -10,6 +10,10 @@ export default {
 		post_url: "Instagram Post URL",
 		import: "Import von Instagram "
 	},
+	facebook: {
+		post_url: "Link zu Datei",
+		import: "Import von URL"
+	},
 	link: {
 		post_url: "Link zu Datei",
 		import: "Import von URL"
