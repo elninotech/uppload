@@ -76,8 +76,8 @@ UpploadComponent.decorators = [
             },] },
 ];
 UpploadComponent.propDecorators = {
-    "settings": [{ type: core.Input },],
-    "event": [{ type: core.Output },],
+    settings: [{ type: core.Input }],
+    event: [{ type: core.Output }]
 };
 var UpploadModule = /** @class */ (function () {
     function UpploadModule() {

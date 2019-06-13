@@ -17,7 +17,7 @@
     "ng-packagr": "^2.4.5",
     "tslib": "^1.9.1",
     "typescript": "2.7.2",
-    "uppload": "1.1.1"
+    "uppload": "1.1.2"
   },
   "main": "bundles/uppload-angular.umd.js",
   "module": "esm5/uppload-angular.js",

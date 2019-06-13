@@ -3348,10 +3348,10 @@ update-notifier@^2.3.0:
     semver-diff "^2.0.0"
     xdg-basedir "^3.0.0"
 
-uppload@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/uppload/-/uppload-1.1.1.tgz#733011aad32e615da89968b1e96dad00e577cd33"
-  integrity sha512-p4mM1FZDSStNcQqPWYRcPxsXXp02ALe7rkQtpUT+qDGeDG0xBcpbjO3K6bAXxTnmMmRfziigKrxFh9pb7gvSkA==
+uppload@1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/uppload/-/uppload-1.1.2.tgz#6d81a19df7d49edd83e8de92ff44d9d84448dd38"
+  integrity sha512-MTfaygincipwyX8uTXsAH8QWAozE6UUSYnf5xmlxT0T2xCxztzqbrms9uKpPxzf3AEuARFTU4i19nQPyKn5FzQ==
 
 uri-js@^4.2.2:
   version "4.2.2"
