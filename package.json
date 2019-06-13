@@ -1,6 +1,6 @@
 {
   "name": "uppload",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Uppload is a better JavaScript file uploader",
   "main": "index.js",
   "homepage": "https://uppload.js.org",
