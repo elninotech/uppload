@@ -26,7 +26,7 @@ const bytesToSize = (bytes, decimals) => {
  */
 let webcamAvailable = false;
 navigator.getMedia =
-	navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+	(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 if (typeof navigator.getMedia === "function") {
 	webcamAvailable = true;
 }

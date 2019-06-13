@@ -1,11 +1,3 @@
-import dispatch from "../dispatch";
-
-const stopStream = () => {
-	setTimeout(() => {
-		if (window.globalStream && typeof window.globalStream.getTracks === "function") window.globalStream.getTracks()[0].stop();
-	}, 100);
-}
-
 /**
  * Initialization function for select/drag-drop file service
  * @param {Object} scope - Parent Uppload object
@@ -22,39 +14,47 @@ export default scope => {
 	startbutton = scope.modalElement.querySelector("#clickButton");
 	function startup() {
 		let streaming = false;
-		navigator.getMedia(
-			{
-				video: true,
-				audio: false
-			},
-			function(stream) {
-				window.globalStream = stream;
-				video.style.display = "";
-				canvas.style.display = "";
-				scope.modalElement.querySelector("#cameraError").style.display = "none";
-				scope.modalElement.querySelector("#cameraPermission").style.display = "none";
-				if (navigator.mozGetUserMedia) {
-					video.mozSrcObject = stream;
-				} else {
-					let vendorURL = window.URL || window.webkitURL;
-					try {
-						video.srcObject = stream;
-					} catch (error) {
-						video.src = vendorURL.createObjectURL(stream);
-					}
+		let constraints = {
+			video: true,
+			audio: false
+		};
+		let successFunction = stream => {
+			window.globalStream = stream;
+			video.style.display = "";
+			canvas.style.display = "";
+			scope.modalElement.querySelector("#cameraError").style.display = "none";
+			scope.modalElement.querySelector("#cameraPermission").style.display = "none";
+			if (navigator.mozGetUserMedia) {
+				video.mozSrcObject = stream;
+			} else {
+				let vendorURL = window.URL || window.webkitURL;
+				try {
+					video.srcObject = stream;
+				} catch (error) {
+					video.src = vendorURL.createObjectURL(stream);
 				}
-				video.play();
-			},
-			function(err) {
-				video.style.display = "none";
-				canvas.style.display = "none";
-				scope.modalElement.querySelector("#cameraPermission").style.display = "none";
-				scope.modalElement.querySelector("#cameraError").style.display = "block";
 			}
-		);
+			video.play();
+		};
+
+		let errorFunction = err => {
+			console.error(err);
+			video.style.display = "none";
+			canvas.style.display = "none";
+			scope.modalElement.querySelector("#cameraPermission").style.display = "none";
+			scope.modalElement.querySelector("#cameraError").style.display = "block";
+		};
+
+		if (typeof navigator.mediaDevices !== "undefined" && navigator.mediaDevices.getUserMedia) {
+			navigator.mediaDevices.getUserMedia(constraints).then(successFunction).catch(errorFunction);
+		}
+		else {
+			navigator.getUserMedia(constraints, successFunction, errorFunction);
+		}
+
 		video.addEventListener(
 			"canplay",
-			function(ev) {
+			function() {
 				if (!streaming) {
 					height = video.videoHeight / (video.videoWidth / width);
 					if (isNaN(height)) {

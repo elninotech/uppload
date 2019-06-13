@@ -5,6 +5,8 @@ import dataURItoBlob from "../dataUriToBlob";
 import arrayIncludes from "../arrayIncludes";
 
 const getImagePortion = (imgObj, newWidth, newHeight, startX, startY, ratio, type, encoderOptions) => {
+	newWidth = newWidth > 0 ? newWidth : 50;
+	newHeight = newHeight > 0 ? newHeight : 50;
 	const tnCanvas = document.createElement("canvas");
 	const tnCanvasContext = tnCanvas.getContext("2d");
 	tnCanvas.width = newWidth;
