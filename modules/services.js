@@ -96,7 +96,10 @@ export default scope => {
 						<canvas id="cameraCanvas"></canvas>
 					</div>
 					<div class="bottom-buttons">
-						<div class="cta"><button class="primary-button" id="clickButton">${icons.camera} &nbsp;${i18n.camera.click}</button></div>
+						<div class="cta">
+                            <button class="primary-button secondary" id="switchDeviceButton" style="display: none;">${icons.switchDevice}</button>
+                            <button class="primary-button" id="clickButton">${icons.camera} &nbsp;${i18n.camera.click}</button>
+                        </div>
 					</div>
 				</div>
 			`,
