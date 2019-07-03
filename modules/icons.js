@@ -9,5 +9,6 @@ export default {
 	uploading: `<i class="fas fa-spinner fa-4x fa-spin fa-fw"></i><br><br>`,
 	uploaded: `<i class="fas fa-check-circle fa-4x fa-fw"></i><br><br>`,
 	error: `<i class="fas fa-exclamation-triangle fa-4x fa-fw"></i><br><br>`,
-	file: `<i class="fas fa-file fa-fw"></i>`
+	file: `<i class="fas fa-file fa-fw"></i>`,
+	switchDevice: `<i class="fas fa-sync fa-fw"></i>`,
 };

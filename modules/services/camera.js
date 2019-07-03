@@ -6,10 +6,14 @@ export default scope => {
 	const previewWindow = scope.modalElement.querySelector(".camera-container .preview");
 	let video = null;
 	let canvas = null;
+	let switchDeviceButton = null;
 	let startbutton = null;
 	let width = 0;
 	let height = 0;
+	let videoDevices = [];
+	let selectedDeviceIndex = null;
 	video = scope.modalElement.querySelector("#cameraVideo");
+	switchDeviceButton = scope.modalElement.querySelector('#switchDeviceButton');
 	canvas = scope.modalElement.querySelector("#cameraCanvas");
 	startbutton = scope.modalElement.querySelector("#clickButton");
 	function startup() {
@@ -22,6 +26,15 @@ export default scope => {
 			window.globalStream = stream;
 			video.style.display = "";
 			canvas.style.display = "";
+			if (selectedDeviceIndex == null) {
+				navigator.mediaDevices.enumerateDevices().then(devices => {
+					videoDevices = devices.filter(device => device.kind === 'videoinput');
+					selectedDeviceIndex = 0;
+					if (videoDevices.length > 1) {
+						switchDeviceButton.style.display = "inline-block";
+					}
+				});
+			}
 			scope.modalElement.querySelector("#cameraError").style.display = "none";
 			scope.modalElement.querySelector("#cameraPermission").style.display = "none";
 			if (navigator.mozGetUserMedia) {
@@ -45,12 +58,15 @@ export default scope => {
 			scope.modalElement.querySelector("#cameraError").style.display = "block";
 		};
 
-		if (typeof navigator.mediaDevices !== "undefined" && navigator.mediaDevices.getUserMedia) {
-			navigator.mediaDevices.getUserMedia(constraints).then(successFunction).catch(errorFunction);
+		let initializeMedia = () => {
+			if (typeof navigator.mediaDevices !== "undefined" && navigator.mediaDevices.getUserMedia) {
+				navigator.mediaDevices.getUserMedia(constraints).then(successFunction).catch(errorFunction);
+			}
+			else {
+				navigator.getUserMedia(constraints, successFunction, errorFunction);
+			}
 		}
-		else {
-			navigator.getUserMedia(constraints, successFunction, errorFunction);
-		}
+		initializeMedia();
 
 		video.addEventListener(
 			"canplay",
@@ -68,6 +84,16 @@ export default scope => {
 				}
 			},
 			false
+		);
+		switchDeviceButton.addEventListener(
+			"click",
+			event => {
+				selectedDeviceIndex = (selectedDeviceIndex + 1) % videoDevices.length;
+				constraints.video = {
+					deviceId: videoDevices[selectedDeviceIndex].deviceId
+				}
+				initializeMedia();
+			}
 		);
 		startbutton.addEventListener(
 			"click",
