@@ -240,7 +240,8 @@ class Uppload {
 	 * Opens the modal
 	 */
 	openModal() {
-		loadFile("https://use.fontawesome.com/releases/v5.0.12/js/all.js");
+		if (!this.settings.ignoreFontAwesome)
+		  loadFile("https://use.fontawesome.com/releases/v5.0.12/js/all.js");
 		if (this.isOpen === true) return;
 		this.changePage(this.currentPage);
 		this.isOpen = true;
