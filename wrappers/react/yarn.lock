@@ -4210,10 +4210,10 @@ upath@^1.1.1:
   resolved "https://registry.yarnpkg.com/upath/-/upath-1.1.2.tgz#3db658600edaeeccbe6db5e684d67ee8c2acd068"
   integrity sha512-kXpym8nmDmlCBr7nKdIx8P2jNBa+pBpIUFRnKJ4dr8htyYGJFokkr2ZvERRtUN+9SY+JqXouNgUPtv6JQva/2Q==
 
-uppload@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/uppload/-/uppload-1.2.0.tgz#0af1500bb4faaf0a53df4ffc343528b003246683"
-  integrity sha512-PCAjGct8cUcQ2c2LzRu89KU/b1ZnZ0b9EQazpnNdYBE69ymULTGUEdiVAK+Wx5psYBa6JKWK4dSl8gG9+wJXHQ==
+uppload@1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/uppload/-/uppload-1.2.1.tgz#3f7d1f863ebd67b7a7fea25f029e6ba213a6f95d"
+  integrity sha512-lWO+TITNto9y/rep3fAbNtkrD6FLEjTZA5LLD4zGIonffMWG+jt6D2/ozNxQwkDQawM6gdQZtjM92Pvj5GEUIQ==
 
 uri-js@^4.2.2:
   version "4.2.2"

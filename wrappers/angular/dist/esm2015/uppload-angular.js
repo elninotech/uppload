@@ -3,7 +3,7 @@ import Uppload from 'uppload';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 class UpploadEndpoint {
 }
@@ -32,7 +32,7 @@ UpploadEvents.uploadStarted = "uploadStarted";
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 class UpploadComponent {
     constructor() {
@@ -91,15 +91,14 @@ UpploadComponent.decorators = [
   `
             },] },
 ];
-/** @nocollapse */
 UpploadComponent.propDecorators = {
-    "settings": [{ type: Input },],
-    "event": [{ type: Output },],
+    settings: [{ type: Input }],
+    event: [{ type: Output }]
 };
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 class UpploadModule {
 }
@@ -112,12 +111,12 @@ UpploadModule.decorators = [
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 /**
  * Generated bundle index. Do not edit.
