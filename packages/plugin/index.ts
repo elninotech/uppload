@@ -1,6 +1,3 @@
-interface Plugin {
-  type?: string;
-}
-
-export default class UpploadPlugin implements Plugin {
+export default class UpploadPlugin {
+  type?: "service" | "example";
 }
