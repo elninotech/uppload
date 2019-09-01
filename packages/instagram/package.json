@@ -1,15 +1,9 @@
 {
-  "name": "@uppload/manager",
-  "version": "1.0.0",
+  "name": "@uppload/instagram",
+  "version": "0.9.0",
   "description": "Uppload is a JavaScript file uploader",
   "main": "dist/index.js",
   "repository": "https://github.com/elninotech/uppload",
   "author": "Anand Chowdhary <anandchowdhary@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "build": "tsc"
-  },
-  "devDependencies": {
-    "typescript": "^3.6.2"
-  }
+  "license": "MIT"
 }
