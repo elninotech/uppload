@@ -28,7 +28,6 @@ export default class Uppload {
   }
 
   ready() {
-    console.log("Uppload is ready!", this.services);
   }
 
   use(plugin: UpploadPlugin | UpploadService | UpploadPlugin[] | UpploadService[]) {
@@ -54,6 +53,7 @@ export default class Uppload {
 
   update() {
     this.container.innerHTML = this.render();
+    window.requestAnimationFrame(() => this.handlers());
   }
 
   render() {
@@ -62,7 +62,7 @@ export default class Uppload {
         <aside>
           <ul>
             ${this.services.map(service =>
-              `<li class="service-${this.activeService === service.name ? 'active' : 'inactive'}">
+              `<li data-uppload-service="${service.name}" class="service-${this.activeService === service.name ? 'active' : 'inactive'}">
                 <span>${service.name}</span>
               </li>`
             ).join("")}
@@ -79,8 +79,30 @@ export default class Uppload {
     const activeServices = this.services.filter(service => service.name === this.activeService);
     if (activeServices.length) {
       const activeService = activeServices[0];
-      console.log(activeService);
+      requestAnimationFrame(() => {
+        if (typeof activeService.handlers === "function") activeService.handlers({ upload: this.upload, handle: this.handle });
+      });
       return `${typeof activeService.template === "function" ? activeService.template() : ""}`;
     }
+  }
+
+  async upload(file: Blob) {
+    return "";
+  }
+  handle(error: any) {
+
+  }
+
+  handlers() {
+    const sidebarLinks = this.container.querySelectorAll("aside ul li");
+    sidebarLinks.forEach(link => {
+      link.addEventListener("click", e => {
+        const service = link.getAttribute("data-uppload-service");
+        if (service) this.activeService = service;
+        this.update();
+        e.preventDefault();
+        return false;
+      });
+    });
   }
 }

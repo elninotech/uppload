@@ -1,9 +1,11 @@
 import UpploadPlugin from "../plugin";
+import { HandlersParams } from "../core";
 
 export class UpploadService extends UpploadPlugin {
   type = "service";
   name?: string;
   template?: () => string;
+  handlers?: (params: HandlersParams) => void;
 
   /**
    * http://kangax.github.io/compat-table/es5/#test-Object/array_literal_extensions_Reserved_words_as_property_names

@@ -13,7 +13,7 @@ export default class Instagram extends UpploadService {
     `;
   }
 
-  handlers({ upload, handle }: HandlersParams) {
+  handlers = ({ upload, handle }: HandlersParams) => {
     const form = document.querySelector(`.${this.class("form")}`) as HTMLFormElement | null;
     if (form) {
       form.addEventListener("submit", event => {
@@ -24,6 +24,7 @@ export default class Instagram extends UpploadService {
             .then(blob => upload(blob))
             .catch(error => handle(error));
         }
+        alert("Got here");
         event.preventDefault();
         return false;
       });
