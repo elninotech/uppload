@@ -2,6 +2,7 @@
 import { UpploadService } from "../service";
 import { UpploadUploader } from "../uploader";
 import "./index.scss";
+import { Elements, getElements } from "./elements";
 
 export interface HandlersParams {
   upload: (file: Blob) => Promise<string>;
@@ -23,10 +24,16 @@ class FakeUploader extends UpploadUploader {
     console.log("Debug: Using fake uploader");
     return new Promise(resolve => {
       setTimeout(() => {
-        resolve("Fake URL");
+        resolve(`https://via.placeholder.com/150/${(Math.random() *  0xFFFFFF << 0).toString(16)}`);
       }, 1500);
     });
   }
+}
+
+export interface UpploadSettings {
+  value?: string;
+  bind?: Elements;
+  call?: Elements;
 }
 
 export default class Uppload {
@@ -34,9 +41,11 @@ export default class Uppload {
   uploaders: UpploadUploader[] = [new FakeUploader()];
   isOpen = false;
   activeService = "default";
+  settings: UpploadSettings;
   container: HTMLDivElement;
 
-  constructor() {
+  constructor(settings?: UpploadSettings) {
+    this.settings = settings || {};
     const div = document.createElement("div");
     const body = document.body;
     if (body) {
@@ -46,6 +55,20 @@ export default class Uppload {
   }
 
   ready() {
+    if (this.settings.value) this.bind(this.settings.value);
+  }
+
+  bind(value: string) {
+    if (this.settings.bind) {
+      const elements = getElements(this.settings.bind);
+      elements.forEach(element => {
+        if (element.nodeName === "IMG") {
+          element.setAttribute("src", value);
+        } else {
+          element.setAttribute("value", value);
+        }
+      });
+    }
   }
 
   use(plugin: UpploadUploader | UpploadService | UpploadUploader[] | UpploadService[]) {
@@ -118,6 +141,7 @@ export default class Uppload {
       if (typeof uploader.upload === "function") {
         const url = await uploader.upload(file);
         console.log("File uploaded successfully", url);
+        this.bind(url);
         this.navigate("default");
         return url;
       }
