@@ -10,10 +10,17 @@ export default class Uppload {
   services: UpploadService[] = [];
 
   ready() {
-    console.log("Uppload is ready!");
+    console.log("Uppload is ready!", this.services);
   }
 
-  use(plugin: UpploadPlugin) {
+  use(plugin: UpploadPlugin | UpploadService | UpploadPlugin[] | UpploadService[]) {
+    if (Array.isArray(plugin)) {
+      plugin.forEach(item => this.install(item));
+    } else {
+      this.install(plugin);
+    }
+  }
+  install(plugin: UpploadPlugin | UpploadService) {
     if (plugin.type === "service") {
       // Install this service
       this.services.push(plugin as UpploadService);
