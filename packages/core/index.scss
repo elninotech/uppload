@@ -1,0 +1,29 @@
+// example
+body {
+  margin: 3rem;
+  font: menu;
+  font-size: 100%;
+}
+
+.uppload-modal {
+  background-color: whitesmoke;
+  max-width: 600px;
+  margin: 5rem;
+  display: flex;
+  border: 1px solid #ccc;
+
+  aside {
+    border-right: 1px solid #ccc;
+    width: 25%;
+  }
+
+  section {
+    padding: 1rem;
+    width: 75%;
+    box-sizing: border-box;
+  }
+
+  .service-active {
+    font-weight: bold;
+  }
+}

@@ -3,3 +3,5 @@ import Instagram from "../packages/instagram";
 
 const uppload = new Uppload();
 uppload.use(new Instagram());
+
+uppload.open();

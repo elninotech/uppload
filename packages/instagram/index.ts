@@ -4,7 +4,7 @@ import { HandlersParams } from "../core";
 export default class Instagram extends UpploadService {
   name = "instagram";
 
-  template() {
+  template = () => {
     return `
       <form class="${this.class("form")}">
         <input class="${this.class("input")}" type="search" placeholder="Enter a URL">

@@ -1,14 +1,9 @@
 import UpploadPlugin from "../plugin";
 
-export interface Service {
-  type: string;
-  name?: string;
-  template?: () => string;
-}
-
-export class UpploadService extends UpploadPlugin implements Service {
+export class UpploadService extends UpploadPlugin {
   type = "service";
   name?: string;
+  template?: () => string;
 
   /**
    * http://kangax.github.io/compat-table/es5/#test-Object/array_literal_extensions_Reserved_words_as_property_names
