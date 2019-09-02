@@ -20,7 +20,8 @@ export default class Instagram extends UpploadService {
         const input = document.querySelector(`.${this.class("input")}`) as HTMLInputElement | null;
         if (input) {
           const url = input.value;
-          this.fetch(url)
+          window.fetch(url)
+            .then(response => response.blob())
             .then(blob => upload(blob))
             .catch(error => handle(error));
         }
@@ -30,9 +31,12 @@ export default class Instagram extends UpploadService {
     }
   }
 
-  async fetch(url: string) {
-    const image = await window.fetch("");
-    const blob = await image.blob();
-    return blob;
+  fetch(url: string) {
+    return new Promise((resolve, reject) => {
+      window.fetch("")
+        .then(response => response.blob())
+        .then(blob => resolve(blob))
+        .catch(error => reject(error));
+    })
   }
 }

@@ -14,9 +14,13 @@ export default class Firebase extends UpploadUploader {
     this.path = path;
   }
 
-  upload = async (file: Blob) => {
-    const reference = this.app.storage(this.url).ref(this.path);
-    await reference.put(file);
-    return await reference.getDownloadURL();
+  upload = (file: Blob): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reference = this.app.storage(this.url).ref(this.path);
+      reference.put(file)
+        .then(() => reference.getDownloadURL())
+        .then(url => resolve(url))
+        .catch(error => reject(error));
+    })
   }
 }

@@ -133,20 +133,25 @@ export default class Uppload {
     }
   }
 
-  async upload(file: Blob) {
-    console.log("Uploading a file", file);
-    this.navigate("uploading");
-    if (this.uploaders.length) {
-      const uploader = this.uploaders[0];
-      if (typeof uploader.upload === "function") {
-        const url = await uploader.upload(file);
-        console.log("File uploaded successfully", url);
-        this.bind(url);
-        this.navigate("default");
-        return url;
+  upload(file: Blob) {
+    return new Promise((resolve, reject) => {
+      console.log("Uploading a file", file);
+      this.navigate("uploading");
+      if (this.uploaders.length) {
+        const uploader = this.uploaders[0];
+        console.log(this.uploaders);
+        if (typeof uploader.upload === "function") {
+          uploader.upload(file)
+            .then(url => {
+              console.log("File uploaded successfully", url);
+              this.bind(url);
+              this.navigate("default");
+              resolve(url);
+            })
+            .catch(error => reject(error));
+        }
       }
-    }
-    throw new Error("no-uploader");
+    })
   }
   handle(error: any) {
     console.log("Handling an error", error);

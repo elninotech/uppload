@@ -10,10 +10,13 @@
     "build": "tsc",
     "demo": "parcel example/index.html"
   },
-  "browserslist": ["last 1 Chrome versions"],
+  "browserslist": [
+    "last 1 Chrome versions"
+  ],
   "devDependencies": {
     "parcel": "^1.12.3",
     "sass": "^1.22.10",
     "typescript": "^3.6.2"
-  }
+  },
+  "dependencies": {}
 }
