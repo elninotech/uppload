@@ -133,13 +133,12 @@ export default class Uppload {
     }
   }
 
-  upload(file: Blob) {
+  upload(file: Blob): Promise<string> {
     return new Promise((resolve, reject) => {
-      console.log("Uploading a file", file);
       this.navigate("uploading");
       if (this.uploaders.length) {
-        const uploader = this.uploaders[0];
-        console.log(this.uploaders);
+        const uploader = this.uploaders[this.uploaders.length - 1];
+        console.log("Uploading a file", file, "using", uploader);
         if (typeof uploader.upload === "function") {
           uploader.upload(file)
             .then(url => {
