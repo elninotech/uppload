@@ -2,14 +2,4 @@ language: node_js
 node_js:
   - "8.11.1"
 script:
-  - yarn test
-after_success:
   - yarn build
-  - .travis/push.sh
-deploy:
-  provider: npm
-  email: anand+elpablo@elnino.tech
-  api_key: $NPM_TOKEN
-  on:
-    tags: true
-    branch: master
