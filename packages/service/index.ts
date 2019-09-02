@@ -4,6 +4,7 @@ import { HandlersParams } from "../core";
 export class UpploadService extends UpploadPlugin {
   type = "service";
   name?: string;
+  invisible = false;
   template?: () => string;
   handlers?: (params: HandlersParams) => void;
 

@@ -24,7 +24,6 @@ export default class Instagram extends UpploadService {
             .then(blob => upload(blob))
             .catch(error => handle(error));
         }
-        alert("Got here");
         event.preventDefault();
         return false;
       });
