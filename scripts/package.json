@@ -1,0 +1,6 @@
+{
+	"dependencies": {
+		"fs-extra": "^8.1.0",
+		"shelljs": "^0.8.3"
+	}
+}
