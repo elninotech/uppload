@@ -5,5 +5,11 @@
   "main": "dist/index.js",
   "repository": "https://github.com/elninotech/uppload",
   "author": "Anand Chowdhary <anandchowdhary@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^3.6.4"
+  }
 }
