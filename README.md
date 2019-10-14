@@ -24,3 +24,8 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
 - [ ] Starter templates to show people how to use Uppload with e.g., Firebase
 - [ ] Documentation, including a static site for docs
 - [ ] TypeDoc(s) for exploring packages
+
+## 📄 License
+
+- Code: [MIT](https://github.com/elninotech/uppload/blob/master/LICENSE)
+- Logo and assets: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
