@@ -1,0 +1,11 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.16.3
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run: cd scripts && npm install && node publish.js
