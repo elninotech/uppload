@@ -6,9 +6,6 @@
   "repository": "https://github.com/elninotech/uppload",
   "author": "Anand Chowdhary <anandchowdhary@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "firebase": "^6.5.0"
-  },
   "devDependencies": {
     "parcel": "^1.12.4"
   }

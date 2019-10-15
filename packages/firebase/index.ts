@@ -1,5 +1,5 @@
 import { UpploadUploader } from "../uploader";
-import { app } from "firebase";
+import { app, initializeApp } from "firebase";
 
 export default class Firebase extends UpploadUploader {
   name = "firebase";
@@ -7,10 +7,10 @@ export default class Firebase extends UpploadUploader {
   url: string | undefined;
   path: string | undefined;
 
-  constructor({ app, url, path }: { app: app.App, url?: string; path?: string }) {
+  constructor({ app, url, path }: { app: Object, url?: string; path?: string }) {
     super();
     this.url = url;
-    this.app = app;
+    this.app = initializeApp(app);
     this.path = path;
   }
 
@@ -20,7 +20,7 @@ export default class Firebase extends UpploadUploader {
       const child = reference.child(`file-name.${file.type}`);
       child.put(file)
         .then(() => child.getDownloadURL())
-        .then(url => resolve(url))
+        .then((url: string) => resolve(url))
         .catch(error => reject(error));
     })
   }
