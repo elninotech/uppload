@@ -2,6 +2,8 @@
 
 Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file uploading widget. It's written in TypeScript and supports custom builds.
 
+**[View Uppload 2 docs →](https://uppload.netlify.com)**
+
 ## 🛣️ Roadmap
 
 - [x] Uppload 2 core with TypeScript package support
@@ -23,6 +25,9 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
 - [x] PR and issue templates for the GitHub community
 - [ ] Starter templates to show people how to use Uppload with e.g., Firebase
 - [ ] Documentation, including a static site for docs
+  - [x] Static site generator
+  - [ ] Getting started page
+  - [x] Sitemap and links
 - [ ] TypeDoc(s) for exploring packages
 
 ## 📄 License
