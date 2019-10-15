@@ -63,6 +63,7 @@ typings/
 
 # Built files
 dist/
+public/
 
 # package-lock & yarn.lock (we commit pnpm-lock.yaml)
 package-lock.json
