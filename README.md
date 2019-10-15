@@ -30,6 +30,11 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
   - [x] Sitemap and links
 - [ ] TypeDoc(s) for exploring packages
 
+### Post-merge checklist
+
+- [ ] Add all-contributors to README
+- [ ] Change Netlify branch from `typescript` to `master`
+
 ## 📄 License
 
 - Code: [MIT](https://github.com/elninotech/uppload/blob/master/LICENSE)
