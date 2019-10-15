@@ -1,0 +1,3 @@
+[build]
+	command = "cd site && npm install && npm run build"
+	publish = "site/public"

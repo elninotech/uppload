@@ -1,0 +1,248 @@
+$theme: #f05d5e;
+$text-color: #130000;
+$link-color: #dc3545;
+$light-color: #fff;
+
+@font-face {
+  font-family: "Public Sans";
+  src: url("https://public-cdn.oswaldlabs.com/fonts/public-sans/PublicSans-ExtraLight.woff2")
+      format("woff2"),
+    url("https://public-cdn.oswaldlabs.com/fonts/public-sans/PublicSans-ExtraLight.woff")
+      format("woff"),
+    url("https://public-cdn.oswaldlabs.com/fonts/public-sans/PublicSans-ExtraLight.ttf")
+      format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "Public Sans";
+  src: url("https://public-cdn.oswaldlabs.com/fonts/public-sans/PublicSans-Regular.woff2")
+      format("woff2"),
+    url("https://public-cdn.oswaldlabs.com/fonts/public-sans/PublicSans-Regular.woff")
+      format("woff"),
+    url("https://public-cdn.oswaldlabs.com/fonts/public-sans/PublicSans-Regular.ttf")
+      format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "Public Sans";
+  src: url("https://public-cdn.oswaldlabs.com/fonts/public-sans/PublicSans-Italic.woff2")
+      format("woff2"),
+    url("https://public-cdn.oswaldlabs.com/fonts/public-sans/PublicSans-Italic.woff")
+      format("woff"),
+    url("https://public-cdn.oswaldlabs.com/fonts/public-sans/PublicSans-Italic.ttf")
+      format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "Public Sans";
+  src: url("https://public-cdn.oswaldlabs.com/fonts/public-sans/PublicSans-Bold.woff2")
+      format("woff2"),
+    url("https://public-cdn.oswaldlabs.com/fonts/public-sans/PublicSans-Bold.woff")
+      format("woff"),
+    url("https://public-cdn.oswaldlabs.com/fonts/public-sans/PublicSans-Bold.ttf")
+      format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+}
+
+body {
+  font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  color: $text-color;
+  margin: 0;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+}
+
+main,
+div {
+  max-width: 720px;
+  margin: auto;
+  padding: 0 1.5rem;
+}
+
+main {
+  margin: 7.5vh auto;
+  font-size: 1.5rem;
+}
+
+header {
+  text-align: center;
+  background-color: $theme;
+  color: $light-color;
+  padding: 7.5vh 0 0 0;
+  a {
+    display: inline-block;
+    color: inherit;
+    &.logo:hover,
+    &.logo:focus {
+      text-decoration: none;
+    }
+  }
+  nav {
+    margin-top: 5vh;
+    padding: 1rem 0;
+    background-color: whitesmoke;
+    color: $text-color;
+    font-size: 130%;
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+  .icon {
+    width: 5rem;
+    margin: 0 2rem 2rem 0;
+    vertical-align: middle;
+  }
+  h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 200;
+    display: inline-block;
+  }
+}
+
+li + li {
+  margin-top: 0.5rem;
+}
+
+li {
+  padding-left: 0.5rem;
+}
+
+a,
+h2,
+cite,
+footer {
+  color: $link-color;
+}
+
+a {
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+header a + a,
+footer a + a {
+  margin-left: 1.5rem;
+}
+
+h2,
+h3 {
+  font-weight: 700;
+  font-size: 90%;
+  text-transform: uppercase;
+  margin-top: 7.5vh;
+  letter-spacing: 1px;
+  + p {
+    margin-top: 0;
+  }
+}
+
+h3 {
+  color: #555;
+  font-size: 85%;
+}
+
+footer {
+  margin-bottom: 5vh;
+  a {
+    color: inherit;
+  }
+  p {
+    margin: 0;
+  }
+  button {
+    appearance: none;
+    font: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    color: inherit;
+  }
+}
+
+blockquote {
+  margin-left: 0;
+  padding-left: 2rem;
+  border-left: 0.5rem solid rgba($theme, 0.1);
+  font-style: italic;
+}
+
+.skip-link {
+  background: $light-color;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  font-weight: bold;
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  &:focus {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+  }
+}
+
+code {
+  display: inline-block;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  background-color: whitesmoke;
+  color: #ab2323;
+  font-size: 80%;
+  padding: 0.2rem 0.4rem;
+  margin: 0 0.1rem;
+  border-radius: 0.2rem;
+}
+
+pre {
+  font-size: 70% !important;
+}
+
+.post-footer {
+  opacity: 0.75;
+  font-size: 80%;
+}
+
+@media (max-width: 500px) {
+  main,
+  div {
+    font-size: 1.25rem;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  footer div {
+    font-size: 1rem;
+  }
+  header nav > div {
+    a {
+      width: 50%;
+      margin: 0.5rem 0;
+    }
+  }
+}
