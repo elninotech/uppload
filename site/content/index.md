@@ -1,3 +1,0 @@
-# Home
-
-More content will be added soon...
