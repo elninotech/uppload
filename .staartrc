@@ -1,0 +1,13 @@
+{
+  "title": "Uppload",
+  "hostname": "https://uppload.netlify.com",
+  "themeColor": "#f05d5e",
+  "textColor": "#130000",
+  "linkColor": "#dc3545",
+  "navbar": [
+    "[🛠️ Getting started](/getting-started)",
+    "[🎨 Customization](/customization)",
+    "[🐱 GitHub](https://github.com/elninotech/uppload)",
+    "[📦 NPM](https://www.npmjs.com/org/staart)"
+  ]
+}

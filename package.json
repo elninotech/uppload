@@ -1,13 +1,15 @@
 {
   "name": "@uppload/manager",
   "version": "1.0.0",
-  "description": "Uppload is a JavaScript file uploader",
+  "description": "Uppload is a JavaScript widget for better file uploading on the web.",
+  "keywords": ["uppload", "typescript", "css", "scss", "el nino", "file upload", "image upload", "crop", "uploader", "upload", "javascript"],
   "main": "dist/index.js",
   "repository": "https://github.com/elninotech/uppload",
-  "author": "Anand Chowdhary <anandchowdhary@gmail.com>",
+  "author": "El Niño <https://elnino.tech>",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
+    "build-site": "npx @staart/site",
     "demo": "parcel example/index.html"
   },
   "browserslist": [

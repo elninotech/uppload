@@ -1,3 +1,3 @@
 [build]
-	command = "cd site && npm install && npm run build"
-	publish = "site/public"
+	command = "npx @staart/site"
+	publish = "public"
