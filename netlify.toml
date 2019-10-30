@@ -1,3 +1,3 @@
 [build]
-	command = "npx @staart/site"
+	command = "yarn build-site"
 	publish = "public"
