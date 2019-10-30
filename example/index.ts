@@ -8,6 +8,9 @@ const uppload = new Uppload({
   call: ".uppload-button"
 });
 uppload.use(new Instagram());
-uppload.use(new Axios());
+uppload.use(new Axios(() => ({
+  method: "GET",
+  url: "https://jsonplaceholder.typicode.com/todos/1"
+})));
 
 uppload.open();

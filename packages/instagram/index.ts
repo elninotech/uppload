@@ -21,7 +21,7 @@ export default class Instagram extends UpploadService {
         const input = document.querySelector(`.${this.class("input")}`) as HTMLInputElement | null;
         if (input) {
           const url = input.value;
-          window.fetch(`https://images.weserv.nl/?url=scontent-iad3-1.cdninstagram.com%2Fvp%2Ff101d8b39d8d146769f71381999e3468%2F5D6F7AB9%2Ft51.2885-15%2Ffr%2Fe15%2Fs1080x1080%2F26867070_171196260320789_7698587573655961600_n.jpg%3F_nc_ht%3Dscontent-iad3-1.cdninstagram.com`)
+          window.fetch(`https://images.weserv.nl/?url=${url}`)
             .then(response => response.blob())
             .then(blob => upload(blob))
             .catch(error => handle(error));

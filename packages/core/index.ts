@@ -1,4 +1,3 @@
-
 import { UpploadService } from "../service";
 import { UpploadUploader } from "../uploader";
 import "./index.scss";
@@ -11,34 +10,25 @@ export interface HandlersParams {
 
 class DefaultService extends UpploadService {
   name = "default";
-  template = () => `<p>Select a service from the left.</p>`;
+  template = () => `<p>Select a file</p>`;
 };
+
 class UploadingService extends UpploadService {
   name = "uploading";
   invisible = true;
   template = () => `<p>Uploading your file...</p>`;
-}
-class FakeUploader extends UpploadUploader {
-  name = "fake-uploader";
-  upload = (file: Blob): Promise<string> => {
-    console.log("Debug: Using fake uploader");
-    return new Promise(resolve => {
-      setTimeout(() => {
-        resolve(`https://via.placeholder.com/150/${(Math.random() *  0xFFFFFF << 0).toString(16)}`);
-      }, 1500);
-    });
-  }
 }
 
 export interface UpploadSettings {
   value?: string;
   bind?: Elements;
   call?: Elements;
+  defaultService?: string;
 }
 
 export default class Uppload {
   services: UpploadService[] = [new DefaultService(), new UploadingService()];
-  uploaders: UpploadUploader[] = [new FakeUploader()];
+  uploaders: UpploadUploader[] = [];
   isOpen = false;
   activeService = "default";
   settings: UpploadSettings;
@@ -51,6 +41,7 @@ export default class Uppload {
     if (body) {
       body.appendChild(div);
     }
+    if (this.settings.defaultService) this.activeService = this.settings.defaultService;
     this.container = div;
   }
 
@@ -100,22 +91,22 @@ export default class Uppload {
     window.requestAnimationFrame(() => this.handlers());
   }
 
+  private getNavbar() {
+    return `<ul>
+      ${this.services.filter(service => !service.invisible).map(service =>
+        `<li data-uppload-service="${service.name}" class="service-${this.activeService === service.name ? 'active' : 'inactive'}">
+          <span class="service-icon" aria-hidden="true" style="background-image: url('${service.icon || ""}')"></span>
+          <span>${service.name}</span>
+        </li>`
+      ).join("")}
+    </ul>`;
+  }
+
   render() {
     return `
       <div class="uppload-modal">
-        <aside>
-          <ul>
-            ${this.services.filter(service => !service.invisible).map(service =>
-              `<li data-uppload-service="${service.name}" class="service-${this.activeService === service.name ? 'active' : 'inactive'}">
-                <span class="service-icon" aria-hidden="true" style="background-image: url('${service.icon || ""}')"></span>
-                <span>${service.name}</span>
-              </li>`
-            ).join("")}
-          </ul>
-        </aside>
-        <section>
-          ${this.renderActiveService()}
-        </section>
+        <aside>${this.getNavbar()}</aside>
+        <section>${this.renderActiveService()}</section>
       </div>
       <div class="uppload-modal-bg"></div>
     `;
