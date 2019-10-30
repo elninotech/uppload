@@ -1,5 +1,5 @@
-import UpploadPlugin from "../plugin";
-import { HandlersParams } from "../core";
+import UpploadPlugin from "@uppload/plugin";
+import { HandlersParams } from "@uppload/common";
 
 export class UpploadService extends UpploadPlugin {
   type = "service";
