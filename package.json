@@ -21,6 +21,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
+    "package": "cd scripts && node publish.js",
     "build-site": "site",
     "demo": "parcel example/index.html"
   },
