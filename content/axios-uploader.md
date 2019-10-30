@@ -46,3 +46,20 @@ const configurationFunction = (file: Blob) => {
 };
 uploader.use(new AxiosUploader(configurationFunction, "fileUrl"));
 ```
+
+Similarly, you can also make authenticated requests using custom headers, change the data type, etc., using the configuration function. For example, we will add an API key:
+
+```ts
+const configurationFunction = (file: Blob) => {
+  return {
+    method: "PUT",
+    data: {
+      file
+    },
+    headers: {
+      "Authorization": "Bearer my-api-key"
+    }
+  };
+};
+uploader.use(new AxiosUploader(configurationFunction, "fileUrl"));
+```
