@@ -24,6 +24,7 @@ export interface UpploadSettings {
   bind?: Elements;
   call?: Elements;
   defaultService?: string;
+  lang?: { [index: string]: string; };
 }
 
 export default class Uppload {
@@ -34,6 +35,7 @@ export default class Uppload {
   activeService = "default";
   settings: UpploadSettings;
   container: HTMLDivElement;
+  lang: { [index: string]: string; } = {};
 
   constructor(settings?: UpploadSettings) {
     this.settings = settings || {};
@@ -43,6 +45,7 @@ export default class Uppload {
       body.appendChild(div);
     }
     if (this.settings.defaultService) this.activeService = this.settings.defaultService;
+    if (this.settings.lang) this.lang = this.settings.lang;
     this.container = div;
   }
 
@@ -149,9 +152,8 @@ export default class Uppload {
       }
     })
   }
-  handle(error: any) {
-    console.log("Handling an error", error);
-    this.error = String(error);
+  handle(error: Error) {
+    this.error = this.lang[error.message] || error.message;
     this.update();
     setTimeout(() => {
       this.error = undefined;
