@@ -17,8 +17,8 @@ Then, you can initialize your plugin:
 ```ts
 import Uppload from "@uppload/core";
 import DragAndDrop from "@uppload/drag";
-import FetchUploader from "@uppload/fetch";
+import AxiosUploader from "@uppload/axios";
 
 const uploader = new Uppload();
-uploader.use(new DragAndDrop(), new FetchUploader());
+uploader.use(new DragAndDrop(), new AxiosUploader());
 ```
