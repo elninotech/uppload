@@ -1,5 +1,5 @@
 import Uppload from "../packages/core";
-import Firebase from "../packages/firebase";
+import Axios from "../packages/axios";
 import Instagram from "../packages/instagram";
 
 const uppload = new Uppload({
@@ -8,12 +8,6 @@ const uppload = new Uppload({
   call: ".uppload-button"
 });
 uppload.use(new Instagram());
-uppload.use(new Firebase({
-  app: {
-    apiKey: "AIzaSyAv67if95tsnEcfQ3AnzPRNjsrma5i0peE",
-		projectId: "uppload-storage",
-		storageBucket: "uppload-storage.appspot.com"
-  }
-}));
+uppload.use(new Axios());
 
 uppload.open();
