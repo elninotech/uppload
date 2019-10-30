@@ -107,6 +107,7 @@ export default class Uppload {
           <ul>
             ${this.services.filter(service => !service.invisible).map(service =>
               `<li data-uppload-service="${service.name}" class="service-${this.activeService === service.name ? 'active' : 'inactive'}">
+                <span class="service-icon" aria-hidden="true" style="background-image: url('${service.icon || ""}')"></span>
                 <span>${service.name}</span>
               </li>`
             ).join("")}
@@ -116,6 +117,7 @@ export default class Uppload {
           ${this.renderActiveService()}
         </section>
       </div>
+      <div class="uppload-modal-bg"></div>
     `;
   }
 

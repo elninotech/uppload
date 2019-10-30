@@ -5,6 +5,7 @@ export class UpploadService extends UpploadPlugin {
   type = "service";
   name?: string;
   invisible = false;
+  icon?: string;
   template?: () => string;
   handlers?: (params: HandlersParams) => void;
 
