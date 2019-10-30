@@ -30,6 +30,7 @@ export default class Uppload {
   services: UpploadService[] = [new DefaultService(), new UploadingService()];
   uploaders: UpploadUploader[] = [];
   isOpen = false;
+  error?: string;
   activeService = "default";
   settings: UpploadSettings;
   container: HTMLDivElement;
@@ -106,7 +107,10 @@ export default class Uppload {
     return `
       <div class="uppload-modal">
         <aside>${this.getNavbar()}</aside>
-        <section>${this.renderActiveService()}</section>
+        <section>
+          ${this.error ? `<div class="uppload-error">${this.error}</div>` : ""}
+          ${this.renderActiveService()}
+        </section>
       </div>
       <div class="uppload-modal-bg"></div>
     `;
@@ -147,6 +151,12 @@ export default class Uppload {
   }
   handle(error: any) {
     console.log("Handling an error", error);
+    this.error = String(error);
+    this.update();
+    setTimeout(() => {
+      this.error = undefined;
+      this.update();
+    }, 4000);
   }
 
   handlers() {

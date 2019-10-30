@@ -15,6 +15,17 @@ body {
   z-index: $modalBackgroundZIndex;
 }
 
+.uppload-error {
+  background-color: #c33;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
 .uppload-modal {
   background-color: #fff;
   box-shadow: 0 30px 150px rgba(0, 0, 0, 0.2);

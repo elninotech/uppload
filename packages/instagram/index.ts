@@ -22,7 +22,10 @@ export default class Instagram extends UpploadService {
         if (input) {
           const url = input.value;
           window.fetch(`https://images.weserv.nl/?url=${url}`)
-            .then(response => response.blob())
+            .then(response => {
+              if (!response.ok) throw new Error("Network response was not ok");
+              return response.blob();
+            })
             .then(blob => upload(blob))
             .catch(error => handle(error));
         }
