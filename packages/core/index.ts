@@ -72,6 +72,7 @@ export default class Uppload {
       this.install(plugin);
     }
   }
+
   install(plugin: UpploadUploader | UpploadService) {
     if (plugin.type === "service") {
       // Install this service
@@ -88,6 +89,13 @@ export default class Uppload {
     this.isOpen = true;
     this.update();
     this.emitter.emit("open");
+  }
+
+  close() {
+    if (!this.isOpen) return;
+    this.isOpen = false;
+    this.update();
+    this.emitter.emit("close");
   }
 
   update() {
@@ -154,8 +162,10 @@ export default class Uppload {
       }
     })
   }
+
   handle(error: Error) {
     this.error = this.lang[error.message] || error.message;
+    this.emitter.emit("error", this.error);
     this.update();
     setTimeout(() => {
       this.error = undefined;
