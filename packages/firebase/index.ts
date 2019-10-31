@@ -1,4 +1,4 @@
-import { UpploadUploader } from "../uploader";
+import { UpploadUploader } from "@uppload/uploader";
 import { app, initializeApp } from "firebase";
 
 export default class Firebase extends UpploadUploader {
