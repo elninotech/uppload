@@ -1,0 +1,10 @@
+dependencies:
+  '@uppload/plugin': 0.10.0
+lockfileVersion: 5.1
+packages:
+  /@uppload/plugin/0.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-hIpRYqm70IPGYcsopAikrajODjMNMpYyYAHM9GzF6KSxtL5El460l6i1SR2+6dFY1Ics3wSLzb81GaZb2Zpz9A==
+specifiers:
+  '@uppload/plugin': ^0.10.0

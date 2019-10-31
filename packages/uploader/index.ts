@@ -1,4 +1,4 @@
-import UpploadPlugin from "../plugin";
+import UpploadPlugin from "@uppload/plugin";
 
 export class UpploadUploader extends UpploadPlugin {
   type = "uploader";
