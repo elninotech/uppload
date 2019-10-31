@@ -1,0 +1,23 @@
+dependencies:
+  '@uppload/common': 0.10.0
+  '@uppload/service': 0.10.0
+lockfileVersion: 5.1
+packages:
+  /@uppload/common/0.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-PoxcieJL/ZrSNP8zy4TY8GaZTtNs361Shx+FicNjahDdOF0YRYGXfzkwjqVq1mzwSzHupom/Qv+EhPNQWwk7CQ==
+  /@uppload/plugin/0.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-hIpRYqm70IPGYcsopAikrajODjMNMpYyYAHM9GzF6KSxtL5El460l6i1SR2+6dFY1Ics3wSLzb81GaZb2Zpz9A==
+  /@uppload/service/0.10.0:
+    dependencies:
+      '@uppload/common': 0.10.0
+      '@uppload/plugin': 0.10.0
+    dev: false
+    resolution:
+      integrity: sha512-ZHcDHFM28PDFVmjINJAs7s9RWCxA23ECOE/4kYTnA3a3m5c3zNJV16+bW6DPnFxQ3q5XGTsWox4Op0jnciE4sw==
+specifiers:
+  '@uppload/common': ^0.10.0
+  '@uppload/service': ^0.10.0

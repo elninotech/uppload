@@ -1,5 +1,5 @@
-import { UpploadService } from "../service";
-import { HandlersParams } from "../core";
+import { UpploadService } from "@uppload/service";
+import { HandlersParams } from "@uppload/common";
 
 export default class Instagram extends UpploadService {
   name = "instagram";
