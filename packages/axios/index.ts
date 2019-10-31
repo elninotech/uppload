@@ -1,4 +1,4 @@
-import { UpploadUploader } from "../uploader";
+import { UpploadUploader } from "@uppload/uploader";
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
 type axiosFunction = (...params: any[]) => AxiosRequestConfig;
