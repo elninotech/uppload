@@ -1,13 +1,29 @@
-devDependencies:
-  typescript: 3.6.4
+dependencies:
+  '@uppload/service': 0.10.0
+  '@uppload/uploader': 0.10.0
 lockfileVersion: 5.1
 packages:
-  /typescript/3.6.4:
-    dev: true
-    engines:
-      node: '>=4.2.0'
-    hasBin: true
+  /@uppload/common/0.10.0:
+    dev: false
     resolution:
-      integrity: sha512-unoCll1+l+YK4i4F8f22TaNVPRHcD9PA3yCuZ8g5e0qGqlVlJ/8FSateOLLSagn+Yg5+ZwuPkL8LFUc0Jcvksg==
+      integrity: sha512-PoxcieJL/ZrSNP8zy4TY8GaZTtNs361Shx+FicNjahDdOF0YRYGXfzkwjqVq1mzwSzHupom/Qv+EhPNQWwk7CQ==
+  /@uppload/plugin/0.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-hIpRYqm70IPGYcsopAikrajODjMNMpYyYAHM9GzF6KSxtL5El460l6i1SR2+6dFY1Ics3wSLzb81GaZb2Zpz9A==
+  /@uppload/service/0.10.0:
+    dependencies:
+      '@uppload/common': 0.10.0
+      '@uppload/plugin': 0.10.0
+    dev: false
+    resolution:
+      integrity: sha512-ZHcDHFM28PDFVmjINJAs7s9RWCxA23ECOE/4kYTnA3a3m5c3zNJV16+bW6DPnFxQ3q5XGTsWox4Op0jnciE4sw==
+  /@uppload/uploader/0.10.0:
+    dependencies:
+      '@uppload/plugin': 0.10.0
+    dev: false
+    resolution:
+      integrity: sha512-xMgvyH3Yw9M1BtxgtlXbB4XBf3l5vZbyvWiXsIZ+esU0tHXTqZx/5rhRDkpg1M0P1Wg+HKTPttZVFws+kEn1Lg==
 specifiers:
-  typescript: ^3.6.4
+  '@uppload/service': ^0.10.0
+  '@uppload/uploader': ^0.10.0

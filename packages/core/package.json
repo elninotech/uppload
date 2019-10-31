@@ -1,15 +1,13 @@
 {
   "name": "@uppload/core",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Uppload is a JavaScript file uploader",
   "main": "dist/index.js",
   "repository": "https://github.com/elninotech/uppload",
   "author": "Anand Chowdhary <anandchowdhary@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "build": "tsc"
-  },
-  "devDependencies": {
-    "typescript": "^3.6.4"
+  "dependencies": {
+    "@uppload/service": "^0.10.0",
+    "@uppload/uploader": "^0.10.0"
   }
 }

@@ -1,12 +1,7 @@
-import { UpploadService } from "../service";
-import { UpploadUploader } from "../uploader";
+import { UpploadService } from "@uppload/service";
+import { UpploadUploader } from "@uppload/uploader";
 import "./index.scss";
 import { Elements, getElements } from "./elements";
-
-export interface HandlersParams {
-  upload: (file: Blob) => Promise<string>;
-  handle: (error: any) => void;
-}
 
 class DefaultService extends UpploadService {
   name = "default";
