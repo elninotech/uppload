@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "@uppload/service": "^0.10.0",
-    "@uppload/uploader": "^0.10.0"
+    "@uppload/uploader": "^0.10.0",
+    "mitt": "^1.2.0"
   }
 }

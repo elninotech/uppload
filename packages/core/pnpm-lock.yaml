@@ -1,6 +1,7 @@
 dependencies:
   '@uppload/service': 0.10.0
   '@uppload/uploader': 0.10.0
+  mitt: 1.2.0
 lockfileVersion: 5.1
 packages:
   /@uppload/common/0.10.0:
@@ -24,6 +25,11 @@ packages:
     dev: false
     resolution:
       integrity: sha512-xMgvyH3Yw9M1BtxgtlXbB4XBf3l5vZbyvWiXsIZ+esU0tHXTqZx/5rhRDkpg1M0P1Wg+HKTPttZVFws+kEn1Lg==
+  /mitt/1.2.0:
+    dev: false
+    resolution:
+      integrity: sha512-r6lj77KlwqLhIUku9UWYes7KJtsczvolZkzp8hbaDPPaE24OmWl5s539Mytlj22siEQKosZ26qCBgda2PKwoJw==
 specifiers:
   '@uppload/service': ^0.10.0
   '@uppload/uploader': ^0.10.0
+  mitt: ^1.2.0

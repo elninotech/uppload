@@ -2,6 +2,7 @@ import { UpploadService } from "@uppload/service";
 import { UpploadUploader } from "@uppload/uploader";
 import "./index.scss";
 import { Elements, getElements } from "./elements";
+import mitt, { Handler } from "mitt";
 
 class DefaultService extends UpploadService {
   name = "default";
@@ -31,6 +32,7 @@ export default class Uppload {
   settings: UpploadSettings;
   container: HTMLDivElement;
   lang: { [index: string]: string; } = {};
+  emitter = mitt();
 
   constructor(settings?: UpploadSettings) {
     this.settings = settings || {};
@@ -46,6 +48,7 @@ export default class Uppload {
 
   ready() {
     if (this.settings.value) this.bind(this.settings.value);
+    this.emitter.emit("ready");
   }
 
   bind(value: string) {
@@ -58,6 +61,7 @@ export default class Uppload {
           element.setAttribute("value", value);
         }
       });
+      this.emitter.emit("bind");
     }
   }
 
@@ -83,6 +87,7 @@ export default class Uppload {
     if (this.isOpen) return;
     this.isOpen = true;
     this.update();
+    this.emitter.emit("open");
   }
 
   update() {
@@ -129,6 +134,7 @@ export default class Uppload {
   }
 
   upload(file: Blob): Promise<string> {
+    this.emitter.emit("before-upload");
     return new Promise((resolve, reject) => {
       this.navigate("uploading");
       if (this.uploaders.length) {
@@ -141,6 +147,7 @@ export default class Uppload {
               this.bind(url);
               this.navigate("default");
               resolve(url);
+              this.emitter.emit("upload", url);
             })
             .catch(error => reject(error));
         }
@@ -173,5 +180,13 @@ export default class Uppload {
       throw new Error("invalid-service");
     this.activeService = service;
     this.update();
+  }
+
+  on(type: string, handler: Handler) {
+    return this.emitter.on(type, handler);
+  }
+
+  off(type: string, handler: Handler) {
+    return this.emitter.on(type, handler);
   }
 }
