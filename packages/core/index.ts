@@ -1,8 +1,7 @@
 import { UpploadService } from "@uppload/service";
 import { UpploadUploader } from "@uppload/uploader";
-import "./index.scss";
 import { Elements, getElements } from "./elements";
-import mitt, { Handler } from "mitt";
+import mitt from "mitt";
 
 class DefaultService extends UpploadService {
   name = "default";
@@ -192,11 +191,11 @@ export default class Uppload {
     this.update();
   }
 
-  on(type: string, handler: Handler) {
+  on(type: string, handler: (event?: any) => void) {
     return this.emitter.on(type, handler);
   }
 
-  off(type: string, handler: Handler) {
+  off(type: string, handler: (event?: any) => void) {
     return this.emitter.on(type, handler);
   }
 }
