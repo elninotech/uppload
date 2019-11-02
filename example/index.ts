@@ -1,7 +1,7 @@
-import Uppload from "../packages/core";
-import Axios from "../packages/axios";
-import Instagram from "../packages/instagram";
-import { en } from "../packages/i18n";
+import Uppload from "@uppload/core";
+import Axios from "@uppload/axios";
+import Instagram from "@uppload/instagram";
+import { en } from "@uppload/i18n";
 
 const uppload = new Uppload({
   value: "https://via.placeholder.com/150",

@@ -1,3 +1,8 @@
+dependencies:
+  '@uppload/axios': 0.10.0
+  '@uppload/core': 0.10.0
+  '@uppload/i18n': 0.9.0
+  '@uppload/instagram': 0.10.0
 devDependencies:
   parcel: 1.12.4
 lockfileVersion: 5.1
@@ -823,6 +828,52 @@ packages:
     dev: true
     resolution:
       integrity: sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
+  /@uppload/axios/0.10.0:
+    dependencies:
+      '@uppload/uploader': 0.10.0
+      axios: 0.19.0
+    dev: false
+    resolution:
+      integrity: sha512-0SV61WbtsG5KJi1K8VliTCDY9Wql/3xrs6/Rdfg7r4M158Mdl6yKrw0o8O17sZQo2oE8sFj8+YxYSaFU/htXZQ==
+  /@uppload/common/0.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-PoxcieJL/ZrSNP8zy4TY8GaZTtNs361Shx+FicNjahDdOF0YRYGXfzkwjqVq1mzwSzHupom/Qv+EhPNQWwk7CQ==
+  /@uppload/core/0.10.0:
+    dependencies:
+      '@uppload/service': 0.10.0
+      '@uppload/uploader': 0.10.0
+    dev: false
+    resolution:
+      integrity: sha512-92YKWZzfjPq9SQ9vVQ/fyMXhQwzRRjmCRZDM907x3Qt648XaLwmC9OBfqGof+fYgVGnLamX/rm5XIFUNxMRnlQ==
+  /@uppload/i18n/0.9.0:
+    dev: false
+    resolution:
+      integrity: sha512-sRglZ4J90VpuTOqQoxxRCDHsZdyTS97GzrIXkSDDRhe+ITyU4109ZrAWCdkD83sR20tWOLcnCLk1MbXR1Nwvyg==
+  /@uppload/instagram/0.10.0:
+    dependencies:
+      '@uppload/common': 0.10.0
+      '@uppload/service': 0.10.0
+    dev: false
+    resolution:
+      integrity: sha512-Y+NrGoGw7Yjd3deyfT/63coVlKVztr0X9WEEUQy+enns7ZOr8hAkoRH0wkwnqpg3zrGsaRUpFSTMXNV2K7K8rQ==
+  /@uppload/plugin/0.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-hIpRYqm70IPGYcsopAikrajODjMNMpYyYAHM9GzF6KSxtL5El460l6i1SR2+6dFY1Ics3wSLzb81GaZb2Zpz9A==
+  /@uppload/service/0.10.0:
+    dependencies:
+      '@uppload/common': 0.10.0
+      '@uppload/plugin': 0.10.0
+    dev: false
+    resolution:
+      integrity: sha512-ZHcDHFM28PDFVmjINJAs7s9RWCxA23ECOE/4kYTnA3a3m5c3zNJV16+bW6DPnFxQ3q5XGTsWox4Op0jnciE4sw==
+  /@uppload/uploader/0.10.0:
+    dependencies:
+      '@uppload/plugin': 0.10.0
+    dev: false
+    resolution:
+      integrity: sha512-xMgvyH3Yw9M1BtxgtlXbB4XBf3l5vZbyvWiXsIZ+esU0tHXTqZx/5rhRDkpg1M0P1Wg+HKTPttZVFws+kEn1Lg==
   /abab/2.0.2:
     dev: true
     resolution:
@@ -1001,6 +1052,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-ReZxvNHIOv88FlT7rxcXIIC0fPt4KZqZbOlivyWtXLt8ESx84zd3kMC6iK5jVeS2qt+g7ftS7ye4fi06X5rtRQ==
+  /axios/0.19.0:
+    dependencies:
+      follow-redirects: 1.5.10
+      is-buffer: 2.0.4
+    dev: false
+    resolution:
+      integrity: sha512-1uvKqKQta3KBxIz14F2v06AEHZ/dIoeKfbTRkK1E5oqjDnuEerLmYTgJB5AiQZHJcljpg1TuRzdjDR06qNk0DQ==
   /babel-plugin-dynamic-import-node/2.3.0:
     dependencies:
       object.assign: 4.1.0
@@ -1755,6 +1813,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==
+  /debug/3.1.0:
+    dependencies:
+      ms: 2.0.0
+    dev: false
+    resolution:
+      integrity: sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
   /debug/4.1.1:
     dependencies:
       ms: 2.1.2
@@ -2189,6 +2253,14 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-1USBHUKPmOsGpj3EAtJAPDKMOPc=
+  /follow-redirects/1.5.10:
+    dependencies:
+      debug: 3.1.0
+    dev: false
+    engines:
+      node: '>=4.0'
+    resolution:
+      integrity: sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
   /for-in/1.0.2:
     dev: true
     engines:
@@ -2593,6 +2665,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
+  /is-buffer/2.0.4:
+    dev: false
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha512-Kq1rokWXOPXWuaMAqZiJW4XxsmD9zGx9q4aePabbn3qCRGedtH7Cm+zV8WETitMfu1wdh+Rvd6w5egwSngUX2A==
   /is-callable/1.1.4:
     dev: true
     engines:
@@ -3126,7 +3204,6 @@ packages:
     resolution:
       integrity: sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   /ms/2.0.0:
-    dev: true
     resolution:
       integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
   /ms/2.1.1:
@@ -5069,4 +5146,8 @@ packages:
     resolution:
       integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==
 specifiers:
+  '@uppload/axios': ^0.10.0
+  '@uppload/core': ^0.10.0
+  '@uppload/i18n': ^0.9.0
+  '@uppload/instagram': ^0.10.0
   parcel: ^1.12.4
