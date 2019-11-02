@@ -1,6 +1,6 @@
 dependencies:
-  '@uppload/service': 0.10.0
-  '@uppload/uploader': 0.10.0
+  '@uppload/service': 0.11.0
+  '@uppload/uploader': 0.11.0
   mitt: 1.2.0
 lockfileVersion: 5.1
 packages:
@@ -12,24 +12,24 @@ packages:
     dev: false
     resolution:
       integrity: sha512-hIpRYqm70IPGYcsopAikrajODjMNMpYyYAHM9GzF6KSxtL5El460l6i1SR2+6dFY1Ics3wSLzb81GaZb2Zpz9A==
-  /@uppload/service/0.10.0:
+  /@uppload/service/0.11.0:
     dependencies:
       '@uppload/common': 0.10.0
       '@uppload/plugin': 0.10.0
     dev: false
     resolution:
-      integrity: sha512-ZHcDHFM28PDFVmjINJAs7s9RWCxA23ECOE/4kYTnA3a3m5c3zNJV16+bW6DPnFxQ3q5XGTsWox4Op0jnciE4sw==
-  /@uppload/uploader/0.10.0:
+      integrity: sha512-LmY0Nnz/PE1KY1KdGmKdjLPaPD6KXwOPeUlsg6l83vkezJyc+9UYkLkFg8thDRc3OFLXrcOTSCafJUDyhVOfFQ==
+  /@uppload/uploader/0.11.0:
     dependencies:
       '@uppload/plugin': 0.10.0
     dev: false
     resolution:
-      integrity: sha512-xMgvyH3Yw9M1BtxgtlXbB4XBf3l5vZbyvWiXsIZ+esU0tHXTqZx/5rhRDkpg1M0P1Wg+HKTPttZVFws+kEn1Lg==
+      integrity: sha512-bwDZ+ChnYpTZJJlNMFrFWRRNfWgivtJ5I5BUG2Dz0ddE/L8p3REYTCAqA7439kxKY22owuNS3LHvLwKJNZofzA==
   /mitt/1.2.0:
     dev: false
     resolution:
       integrity: sha512-r6lj77KlwqLhIUku9UWYes7KJtsczvolZkzp8hbaDPPaE24OmWl5s539Mytlj22siEQKosZ26qCBgda2PKwoJw==
 specifiers:
-  '@uppload/service': ^0.10.0
-  '@uppload/uploader': ^0.10.0
+  '@uppload/service': ^0.11.0
+  '@uppload/uploader': ^0.11.0
   mitt: ^1.2.0

@@ -1,5 +1,5 @@
 dependencies:
-  '@uppload/uploader': 0.10.0
+  '@uppload/uploader': 0.11.0
   axios: 0.19.0
 lockfileVersion: 5.1
 packages:
@@ -7,12 +7,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-hIpRYqm70IPGYcsopAikrajODjMNMpYyYAHM9GzF6KSxtL5El460l6i1SR2+6dFY1Ics3wSLzb81GaZb2Zpz9A==
-  /@uppload/uploader/0.10.0:
+  /@uppload/uploader/0.11.0:
     dependencies:
       '@uppload/plugin': 0.10.0
     dev: false
     resolution:
-      integrity: sha512-xMgvyH3Yw9M1BtxgtlXbB4XBf3l5vZbyvWiXsIZ+esU0tHXTqZx/5rhRDkpg1M0P1Wg+HKTPttZVFws+kEn1Lg==
+      integrity: sha512-bwDZ+ChnYpTZJJlNMFrFWRRNfWgivtJ5I5BUG2Dz0ddE/L8p3REYTCAqA7439kxKY22owuNS3LHvLwKJNZofzA==
   /axios/0.19.0:
     dependencies:
       follow-redirects: 1.5.10
@@ -45,5 +45,5 @@ packages:
     resolution:
       integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
 specifiers:
-  '@uppload/uploader': ^0.10.0
+  '@uppload/uploader': ^0.11.0
   axios: ^0.19.0

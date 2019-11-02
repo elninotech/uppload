@@ -1,15 +1,15 @@
 {
   "name": "@uppload/firebase",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Uppload is a JavaScript file uploader",
   "main": "dist/index.js",
   "repository": "https://github.com/elninotech/uppload",
   "author": "Anand Chowdhary <anandchowdhary@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "firebase": "^6.5.0"
+    "firebase": "^7.2.3"
   },
   "dependencies": {
-    "@uppload/uploader": "^0.10.0"
+    "@uppload/uploader": "^0.11.0"
   }
 }
