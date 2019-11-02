@@ -1,5 +1,5 @@
 dependencies:
-  '@uppload/uploader': 0.11.0
+  '@uppload/uploader': 0.12.0
 devDependencies:
   firebase: 7.2.3
 lockfileVersion: 5.1
@@ -315,16 +315,16 @@ packages:
     dev: true
     resolution:
       integrity: sha512-KEjODidV4XYUlJBF3XdjSH5FWoMCtO0utnhtdLf1AgeuZLOrRbvmU/gaRCVg7ZaQDjVf3l84egiY0mRNe5xE4A==
-  /@uppload/plugin/0.10.0:
+  /@uppload/plugin/0.11.0:
     dev: false
     resolution:
-      integrity: sha512-hIpRYqm70IPGYcsopAikrajODjMNMpYyYAHM9GzF6KSxtL5El460l6i1SR2+6dFY1Ics3wSLzb81GaZb2Zpz9A==
-  /@uppload/uploader/0.11.0:
+      integrity: sha512-WKrX7wDAtqUwGS2qXa6467MkosMrboeCZSLhsfrGZkS6LvoW5XUB106FlAaJw2xvzs02+Q9yMGAGVqGjhxYcVw==
+  /@uppload/uploader/0.12.0:
     dependencies:
-      '@uppload/plugin': 0.10.0
+      '@uppload/plugin': 0.11.0
     dev: false
     resolution:
-      integrity: sha512-bwDZ+ChnYpTZJJlNMFrFWRRNfWgivtJ5I5BUG2Dz0ddE/L8p3REYTCAqA7439kxKY22owuNS3LHvLwKJNZofzA==
+      integrity: sha512-9+M4vSaR4qM8JdWmLOi0CPdQ/EGIf35Elswr4OrsnHAxcyUdIxY3/WAdju4uKgY/HM85ETVglakobl2/ZylRVQ==
   /ansi-regex/2.1.1:
     dev: true
     engines:
@@ -725,5 +725,5 @@ packages:
     resolution:
       integrity: sha1-AwiOnr+edWtpdRYR0qXvWRSCyZU=
 specifiers:
-  '@uppload/uploader': ^0.11.0
+  '@uppload/uploader': ^0.12.0
   firebase: ^7.2.3

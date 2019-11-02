@@ -1,13 +1,13 @@
 {
   "name": "@uppload/axios",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "description": "Uppload is a JavaScript file uploader",
   "main": "dist/index.js",
   "repository": "https://github.com/elninotech/uppload",
   "author": "Anand Chowdhary <anandchowdhary@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@uppload/uploader": "^0.11.0",
+    "@uppload/uploader": "^0.12.0",
     "axios": "^0.19.0"
   }
 }
