@@ -3,11 +3,11 @@ import { HandlersParams } from "@uppload/common";
 
 export class UpploadService extends UpploadPlugin {
   type = "service";
-  name?: string;
+  name: string = "";
   invisible = false;
-  icon?: string;
-  template?: () => string;
-  handlers?: (params: HandlersParams) => void;
+  icon: string = "";
+  template: () => string = () => "";
+  handlers: (params: HandlersParams) => void = () => {};
 
   constructor() {
     super();
