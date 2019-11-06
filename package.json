@@ -21,9 +21,8 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "package": "cd scripts && node publish.js",
     "build-site": "site",
-    "demo": "parcel example/index.html"
+    "demo": "parcel demo/index.html"
   },
   "browserslist": [
     "last 1 Chrome versions"
