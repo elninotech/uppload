@@ -1,6 +1,6 @@
 import { Uppload } from "../src/uppload";
 // import Axios from "@uppload/axios";
-// import Instagram from "@uppload/instagram";
+import Instagram from "../src/uploaders/instagram";
 import { en } from "../src/i18n";
 
 const uppload = new Uppload({
@@ -9,7 +9,7 @@ const uppload = new Uppload({
   call: ".uppload-button",
   lang: en
 });
-// uppload.use(new Instagram());
+uppload.use(new Instagram());
 // uppload.use(new Axios(() => ({
 //   method: "GET",
 //   url: "https://jsonplaceholder.typicode.com/todos/1"
