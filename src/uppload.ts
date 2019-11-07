@@ -1,7 +1,7 @@
 import { UpploadService } from "./service";
 import { UpploadUploader } from "./uploader";
 import { Elements, getElements } from "./helpers/elements";
-// import { show, hide } from "show-hide";
+import { show, hide } from "show-hide";
 import mitt from "mitt";
 
 class DefaultService extends UpploadService {
@@ -14,7 +14,7 @@ class UploadingService extends UpploadService {
   name = "uploading";
   invisible = true;
   template = () => `<p>Uploading your file...</p>`;
-}s
+};
 
 export interface UpploadSettings {
   value?: string;

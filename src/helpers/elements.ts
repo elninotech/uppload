@@ -1,6 +1,7 @@
 export type Elements = string | string[] | Element | Element[];
 
-export const getElements = (query: Elements): Element[] => {
+export const getElements = (query?: Elements): Element[] => {
+  if (!query) return [];
   const elements: Element[] = [];
   if (typeof query === "string") {
     elements.push(...Array.prototype.slice.call(document.querySelectorAll(query)));
