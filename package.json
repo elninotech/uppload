@@ -28,10 +28,10 @@
     "last 1 Chrome versions"
   ],
   "devDependencies": {
-    "@staart/site": "^1.5.1",
-    "parcel": "^1.12.3",
-    "sass": "^1.22.10",
-    "typescript": "^3.6.2"
+    "@staart/site": "^1.7.14",
+    "parcel": "^1.12.4",
+    "sass": "^1.23.3",
+    "typescript": "^3.7.2"
   },
   "dependencies": {}
 }
