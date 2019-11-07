@@ -5,6 +5,7 @@ export class UpploadService {
   name: string = "";
   invisible = false;
   icon: string = "";
+  color = "#333";
   template: () => string = () => "";
   handlers: (params: HandlersParams) => void = () => {};
 

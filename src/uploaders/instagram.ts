@@ -4,6 +4,7 @@ import { HandlersParams } from "../helpers/interfaces";
 export default class Instagram extends UpploadService {
   name = "instagram";
   icon = "fab fa-instagram";
+  color = "#cc3366";
 
   template = () => {
     return `

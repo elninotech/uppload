@@ -114,7 +114,7 @@ export class Uppload {
     return `<ul>
       ${this.services.filter(service => !service.invisible).map(service =>
         `<li data-uppload-service="${service.name}" class="service-${this.activeService === service.name ? 'active' : 'inactive'}">
-          <i class="${service.icon || "fas fa-image"}"></i>
+          <i class="${service.icon || "fas fa-image"}" style="color: ${service.color}"></i>
           <span>${this.lang.services && this.lang.services[service.name] && this.lang.services[service.name].title ? this.lang.services[service.name].title : service.name}</span>
         </li>`
       ).join("")}

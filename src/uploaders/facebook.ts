@@ -4,6 +4,7 @@ import { HandlersParams } from "../helpers/interfaces";
 export default class Facebook extends UpploadService {
   name = "facebook";
   icon = "fab fa-facebook";
+  color = "#1b69f6";
 
   template = () => {
     return `

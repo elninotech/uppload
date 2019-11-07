@@ -4,6 +4,7 @@ import { HandlersParams } from "../helpers/interfaces";
 export default class Camera extends UpploadService {
   name = "camera";
   icon = "fas fa-camera";
+  color = "#16a085";
 
   template = () => {
     return `

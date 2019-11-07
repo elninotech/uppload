@@ -4,6 +4,7 @@ import { HandlersParams } from "../helpers/interfaces";
 export default class Local extends UpploadService {
   name = "local";
   icon = "fas fa-upload";
+  color = "#34495e";
 
   template = () => {
     return `
