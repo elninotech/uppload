@@ -21,7 +21,7 @@ export interface UpploadSettings {
   bind?: Elements;
   call?: Elements;
   defaultService?: string;
-  lang?: { [index: string]: string; };
+  lang?: { [index: string]: any; };
 }
 
 export class Uppload {
