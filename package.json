@@ -1,6 +1,6 @@
 {
-  "name": "@uppload/manager",
-  "version": "1.0.0",
+  "name": "uppload",
+  "version": "2.0.0-beta",
   "description": "Uppload is a JavaScript widget for better file uploading on the web.",
   "keywords": [
     "uppload",
@@ -21,18 +21,21 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "package": "cd scripts && node publish.js",
     "build-site": "site",
-    "demo": "parcel example/index.html"
+    "demo": "parcel demo/index.html"
   },
   "browserslist": [
     "last 1 Chrome versions"
   ],
   "devDependencies": {
-    "@staart/site": "^1.5.1",
-    "parcel": "^1.12.3",
-    "sass": "^1.22.10",
-    "typescript": "^3.6.2"
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "@staart/site": "^1.7.14",
+    "parcel": "^1.12.4",
+    "sass": "^1.23.3",
+    "typescript": "^3.7.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "mitt": "^1.2.0",
+    "show-hide": "^0.9.0"
+  }
 }

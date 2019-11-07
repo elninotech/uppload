@@ -1,0 +1,9 @@
+@import "./modal.scss";
+@import "./services.scss";
+
+.uppload-container {
+  display: none;
+  &.visible {
+    display: block;
+  }
+}
