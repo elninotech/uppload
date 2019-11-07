@@ -1,19 +1,21 @@
 .uppload-service--default {
   text-align: center;
   p {
-    padding: 1rem 0;
+    padding: 0;
+    margin: 1rem 0 2rem 0;
     font-size: 150%;
-    margin-bottom: -1rem;
   }
   ul {
     margin: 0;
-    padding: 2rem;
+    padding: 0;
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     li {
       background-color: whitesmoke;
       box-sizing: border-box;
-      width: 30%;
+      width: 22.5%;
+      margin: 0 1.25%;
       padding: 1.5rem 0;
       border-radius: 0.2rem;
       text-align: center;
