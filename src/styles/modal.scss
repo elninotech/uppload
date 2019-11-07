@@ -34,6 +34,14 @@ $modalForegroundZIndex: 12000;
   overflow: hidden;
   z-index: $modalForegroundZIndex;
 
+  p {
+    margin: 0;
+    margin-bottom: 2rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   aside {
     background-color: #dfe6e9;
     width: 25%;
@@ -67,7 +75,7 @@ $modalForegroundZIndex: 12000;
 
   section {
     padding: 1rem;
-    width: 75%;
+    flex: 1 0 0;
     box-sizing: border-box;
   }
 

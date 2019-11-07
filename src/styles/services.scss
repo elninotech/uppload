@@ -1,0 +1,15 @@
+.uppload-service--default {
+  ul {
+    margin: 0;
+    padding: 2rem;
+    list-style: none;
+    display: flex;
+    li {
+      background-color: gray;
+      box-sizing: border-box;
+      width: 30%;
+      padding: 2rem 0;
+      text-align: center;
+    }
+  }
+}

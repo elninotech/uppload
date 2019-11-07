@@ -5,7 +5,8 @@ import mitt from "mitt";
 
 class DefaultService extends UpploadService {
   name = "default";
-  template = () => `<p>Select a file</p>`;
+  invisible = true;
+  template = () => `<p>Select a service from the left</p>`;
 };
 
 class UploadingService extends UpploadService {
@@ -116,10 +117,12 @@ export class Uppload {
   render() {
     return `
       <div class="uppload-modal">
-        <aside>${this.getNavbar()}</aside>
+        ${this.activeService !== "default" ? `<aside>${this.getNavbar()}</aside>` : ""}
         <section>
           ${this.error ? `<div class="uppload-error">${this.error}</div>` : ""}
-          ${this.renderActiveService()}
+          <div class="uppload-service uppload-service--${this.activeService}">
+            ${this.activeService === "default" ? this.getNavbar() : this.renderActiveService()}
+          </div>
         </section>
       </div>
       <div class="uppload-modal-bg"></div>
