@@ -2,6 +2,7 @@ dependencies:
   mitt: 1.2.0
   show-hide: 0.9.0
 devDependencies:
+  '@fortawesome/fontawesome-free': 5.11.2
   '@staart/site': 1.7.14
   parcel: 1.12.4
   sass: 1.23.3
@@ -777,6 +778,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-YTf6PXoh3+eZgRCBzzP25Bugd2ngmpQVrk7kXX0i5N9BO7TFBtIgZYs7WtxtOGs8e6A4ZI7ECkbBCEHeXocvOA==
+  /@fortawesome/fontawesome-free/5.11.2:
+    dev: true
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-XiUPoS79r1G7PcpnNtq85TJ7inJWe0v+b5oZJZKb0pGHNIV6+UiNeQWiFGmuQ0aj7GEhnD/v9iqxIsjuRKtEnQ==
   /@iarna/toml/2.2.3:
     dev: true
     resolution:
@@ -1631,7 +1638,7 @@ packages:
   /concurrently/5.0.0:
     dependencies:
       chalk: 2.4.2
-      date-fns: 2.6.0
+      date-fns: 2.7.0
       lodash: 4.17.15
       read-pkg: 4.0.1
       rxjs: 6.5.3
@@ -1969,10 +1976,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-YTWYI9se1P55u58gL5GkQHW4P6VJBJ5iBT+B5a7i2Tjadhv52paJG0qHX4A0OR6/t52odI64KP2YvFpkDOi3eQ==
-  /date-fns/2.6.0:
+  /date-fns/2.7.0:
     dev: true
     resolution:
-      integrity: sha512-F55YxqRdEfP/eYQmQjLN798v0AwLjmZ8nMBjdQvNwEE3N/zWVrlkkqT+9seBlPlsbkybG4JmWg3Ee3dIV9BcGQ==
+      integrity: sha512-wxYp2PGoUDN5ZEACc61aOtYFvSsJUylIvCjpjDOqM1UDaKIIuMJ9fAnMYFHV3TQaDpfTVxhwNK/GiCaHKuemTA==
   /deasync/0.1.15:
     dependencies:
       bindings: 1.2.1
@@ -6304,6 +6311,7 @@ packages:
     resolution:
       integrity: sha512-Lhz8TLaYnxq/2ObqHDql8dX8CJi97oHxrjUcYtzKbbykPtVW9WB+poxI+NM2UIzsMgNCZTIf0AQwsjK5yMAqZw==
 specifiers:
+  '@fortawesome/fontawesome-free': ^5.11.2
   '@staart/site': ^1.7.14
   mitt: ^1.2.0
   parcel: ^1.12.4

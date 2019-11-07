@@ -28,6 +28,7 @@
     "last 1 Chrome versions"
   ],
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
     "@staart/site": "^1.7.14",
     "parcel": "^1.12.4",
     "sass": "^1.23.3",
