@@ -12,6 +12,11 @@ export default class Instagram extends UpploadService {
         <input class="${this.class("input")}" type="search" placeholder="Enter a URL">
         <button type="submit">Get image</button>
       </form>
+      <footer>
+        <p>
+          <a href="https://uppload.netlify.com/help/instagram">Where do I find the URL?</a>
+        </p>
+      </footer>
     `;
   }
 
