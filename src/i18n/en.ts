@@ -15,6 +15,9 @@ export default {
     },
     facebook: {
       title: "Facebook"
+    },
+    screenshot: {
+      title: "Screenshot"
     }
   }
 }

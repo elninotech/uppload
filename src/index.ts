@@ -17,4 +17,5 @@ import Instagram from "./services/instagram";
 import Facebook from "./services/facebook";
 import Local from "./services/local";
 import URL from "./services/url";
-export { Camera, Instagram, Facebook, Local, URL };
+import Screenshot from "./services/screenshot";
+export { Camera, Instagram, Facebook, Local, URL, Screenshot };
