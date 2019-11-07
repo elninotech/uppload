@@ -3,7 +3,7 @@ import { HandlersParams } from "../helpers/interfaces";
 
 export default class Instagram extends UpploadService {
   name = "instagram";
-  icon = "https://cdns.iconmonstr.com/wp-content/assets/preview/2016/240/iconmonstr-instagram-11.png";
+  icon = "fab fa-instagram";
 
   template = () => {
     return `

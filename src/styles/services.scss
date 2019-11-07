@@ -1,15 +1,5 @@
 .uppload-service--default {
   text-align: center;
-  .service-icon {
-    width: 2rem;
-    height: 2rem;
-    margin: 0 auto 1rem auto;
-    background-image: url("https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-instagram.png");
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    display: block;
-  }
   p {
     padding: 1rem 0;
     font-size: 150%;
@@ -27,6 +17,11 @@
       padding: 1.5rem 0;
       border-radius: 0.2rem;
       text-align: center;
+      i {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 200%;
+      }
     }
   }
 }
