@@ -37,6 +37,7 @@ export class Uppload {
   constructor(settings?: UpploadSettings) {
     this.settings = settings || {};
     const div = document.createElement("div");
+    div.classList.add("uppload-container");
     const body = document.body;
     if (body) {
       body.appendChild(div);
@@ -101,6 +102,11 @@ export class Uppload {
   update() {
     this.container.innerHTML = this.render();
     window.requestAnimationFrame(() => this.handlers());
+    if (!this.isOpen) {
+      this.container.classList.remove("visible");
+    } else {
+      this.container.classList.add("visible");
+    }
   }
 
   private getNavbar() {
@@ -185,6 +191,11 @@ export class Uppload {
         return false;
       });
     });
+    const background = document.querySelector(".uppload-modal-bg");
+    if (background)
+      background.addEventListener("click", () => {
+        this.close();
+      });
   }
 
   navigate(service: string) {
