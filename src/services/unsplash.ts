@@ -3,7 +3,7 @@ import { HandlersParams } from "../helpers/interfaces";
 
 export default class Unsplash extends UpploadService {
   name = "unsplash";
-  icon = "fas fa-desktop";
+  icon = "https://user-images.githubusercontent.com/5659117/53183813-c7a2f900-35da-11e9-8c41-b1e399dc3a6c.png";
   color = "#e67e22";
 
   template = () => {
