@@ -1,3 +1,6 @@
+dependencies:
+  mitt: 1.2.0
+  show-hide: 0.9.0
 devDependencies:
   '@staart/site': 1.7.14
   parcel: 1.12.4
@@ -1305,7 +1308,7 @@ packages:
   /browserslist/4.7.2:
     dependencies:
       caniuse-lite: 1.0.30001008
-      electron-to-chromium: 1.3.304
+      electron-to-chromium: 1.3.305
       node-releases: 1.1.39
     dev: true
     hasBin: true
@@ -2164,10 +2167,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
-  /electron-to-chromium/1.3.304:
+  /electron-to-chromium/1.3.305:
     dev: true
     resolution:
-      integrity: sha512-a5mqa13jCdBc+Crgk3Gyr7vpXCiFWfFq23YDCEmrPYeiDOQKZDVE6EX/Q4Xdv97n3XkcjiSBDOY0IS19yP2yeA==
+      integrity: sha512-jBEhRZ3eeJWf3eAnGYB1vDy09uBQpZWshC5fxiiIRofA9L3vkpa3SxsXleVS2MvuYir15oTVxzWPsOwj7KBzUw==
   /elliptic/6.5.1:
     dependencies:
       bn.js: 4.11.8
@@ -3741,6 +3744,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-o1AIsg9BOD7sH7kU9M1d95omQoQ=
+  /mitt/1.2.0:
+    dev: false
+    resolution:
+      integrity: sha512-r6lj77KlwqLhIUku9UWYes7KJtsczvolZkzp8hbaDPPaE24OmWl5s539Mytlj22siEQKosZ26qCBgda2PKwoJw==
   /mixin-deep/1.3.2:
     dependencies:
       for-in: 1.0.2
@@ -5354,6 +5361,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-2kL0l0DAtC2yypcoVxyxkMmO/qM=
+  /show-hide/0.9.0:
+    dev: false
+    resolution:
+      integrity: sha512-j1o64maTZPspIxV0cZKQHTe/KS37R4Jcg99RcTB06c33Rk+wvmTgibfWOohgGiI0rN/lfWkxceXGtzoHpgxF7w==
   /signal-exit/3.0.2:
     dev: true
     resolution:
@@ -6294,6 +6305,8 @@ packages:
       integrity: sha512-Lhz8TLaYnxq/2ObqHDql8dX8CJi97oHxrjUcYtzKbbykPtVW9WB+poxI+NM2UIzsMgNCZTIf0AQwsjK5yMAqZw==
 specifiers:
   '@staart/site': ^1.7.14
+  mitt: ^1.2.0
   parcel: ^1.12.4
   sass: ^1.23.3
+  show-hide: ^0.9.0
   typescript: ^3.7.2

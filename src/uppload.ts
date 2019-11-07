@@ -1,6 +1,7 @@
 import { UpploadService } from "./service";
 import { UpploadUploader } from "./uploader";
 import { Elements, getElements } from "./helpers/elements";
+// import { show, hide } from "show-hide";
 import mitt from "mitt";
 
 class DefaultService extends UpploadService {
@@ -13,7 +14,7 @@ class UploadingService extends UpploadService {
   name = "uploading";
   invisible = true;
   template = () => `<p>Uploading your file...</p>`;
-}
+}s
 
 export interface UpploadSettings {
   value?: string;
@@ -152,7 +153,7 @@ export class Uppload {
   }
 
   /**
-   * 
+   * Upload a file
    * @param file - A Blob object containing the file to upload
    * @returns The file URL
    */
