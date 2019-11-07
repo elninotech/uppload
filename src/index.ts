@@ -14,6 +14,7 @@ export { en } from "./i18n";
 // Uploaders
 import Camera from "./uploaders/camera";
 import Instagram from "./uploaders/instagram";
+import Facebook from "./uploaders/facebook";
 import Local from "./uploaders/local";
 import URL from "./uploaders/url";
-export { Camera, Instagram, Local, URL };
+export { Camera, Instagram, Facebook, Local, URL };

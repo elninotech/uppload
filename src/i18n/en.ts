@@ -13,5 +13,8 @@ export default {
     url: {
       title: "Direct URL"
     },
+    facebook: {
+      title: "Facebook"
+    }
   }
 }
