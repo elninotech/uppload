@@ -32,7 +32,7 @@ export class Uppload {
   activeService = "default";
   settings: UpploadSettings;
   container: HTMLDivElement;
-  lang: { [index: string]: string; } = {};
+  lang: { [index: string]: any; } = {};
   emitter = mitt();
 
   constructor(settings?: UpploadSettings) {
@@ -115,7 +115,7 @@ export class Uppload {
       ${this.services.filter(service => !service.invisible).map(service =>
         `<li data-uppload-service="${service.name}" class="service-${this.activeService === service.name ? 'active' : 'inactive'}">
           <span class="service-icon" aria-hidden="true" style="background-image: url('${service.icon || ""}')"></span>
-          <span>${service.name}</span>
+          <span>${this.lang.services && this.lang.services[service.name] && this.lang.services[service.name].title ? this.lang.services[service.name].title : service.name}</span>
         </li>`
       ).join("")}
     </ul>`;
