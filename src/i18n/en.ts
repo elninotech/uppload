@@ -4,8 +4,14 @@ export default {
     local: {
       title: "Local file"
     },
+    camera: {
+      title: "Camera"
+    },
     instagram: {
       title: "Instagram"
-    }
+    },
+    url: {
+      title: "Direct URL"
+    },
   }
 }
