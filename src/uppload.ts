@@ -151,7 +151,12 @@ export class Uppload {
     }
   }
 
-  upload(file: Blob): Promise<string> {
+  /**
+   * 
+   * @param file - A Blob object containing the file to upload
+   * @returns The file URL
+   */
+  private upload(file: Blob): Promise<string> {
     this.emitter.emit("before-upload");
     return new Promise((resolve, reject) => {
       this.navigate("uploading");
@@ -186,6 +191,10 @@ export class Uppload {
   handlers() {
     const openFunction = () => this.open();
     const closeFunction = () => this.close();
+
+    /**
+     * Clicking on each sidebar link should open its service
+     */
     const sidebarLinks = this.container.querySelectorAll("aside ul li");
     sidebarLinks.forEach(link => {
       const linkFunction = (e: Event) => {
@@ -197,11 +206,19 @@ export class Uppload {
       link.removeEventListener("click", linkFunction);
       link.addEventListener("click", linkFunction);
     });
+
+    /**
+     * Clicking on the background should close the modal
+     */
     const background = document.querySelector(".uppload-modal-bg");
     if (background) {
       background.removeEventListener("click", closeFunction);
       background.addEventListener("click", closeFunction);
     }
+
+    /**
+     * All elements in `call` should open the modal on click
+     */
     if (this.settings.call) {
       const elements = getElements(this.settings.call);
       elements.forEach(element => {
@@ -211,6 +228,10 @@ export class Uppload {
     }
   }
 
+  /**
+   * Navigate to an Uppload service page
+   * @param service - Slug name of service (e.g., instagram)
+   */
   navigate(service: string) {
     if (!this.services.filter(item => item.name === service).length)
       throw new Error("invalid-service");
@@ -218,10 +239,20 @@ export class Uppload {
     this.update();
   }
 
+  /**
+   * Add an event listener
+   * @param type - Type of event listener (e.g., open)
+   * @param handler - Event handler function
+   */
   on(type: string, handler: (event?: any) => void) {
     return this.emitter.on(type, handler);
   }
 
+  /**
+   * Remove an event listener
+   * @param type - Type of event listener (e.g., open)
+   * @param handler - Event handler function
+   */
   off(type: string, handler: (event?: any) => void) {
     return this.emitter.on(type, handler);
   }
