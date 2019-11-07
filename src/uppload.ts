@@ -131,7 +131,9 @@ export class Uppload {
           </div>
         </section>
       </div>
-      <div class="uppload-modal-bg"></div>
+      <div class="uppload-modal-bg">
+        <button class="uppload-close" aria-label="Close">&times;</button>
+      </div>
     `;
   }
 

@@ -7,6 +7,7 @@ $modalForegroundZIndex: 12000;
   top: 0; bottom: 0;
   background: rgba(125, 125, 125, 0.25);
   z-index: $modalBackgroundZIndex;
+  text-align: right;
 }
 
 .uppload-error {
@@ -82,4 +83,16 @@ $modalForegroundZIndex: 12000;
   .service-active {
     font-weight: bold;
   }
+}
+
+.uppload-close {
+  font: inherit;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  vertical-align: top;
+  appearance: none;
+  background: none;
+  margin: 1rem 1.5rem;
+  font-size: 200%;
 }
