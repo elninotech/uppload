@@ -184,20 +184,31 @@ export class Uppload {
   }
 
   handlers() {
+    const openFunction = () => this.open();
+    const closeFunction = () => this.close();
     const sidebarLinks = this.container.querySelectorAll("aside ul li");
     sidebarLinks.forEach(link => {
-      link.addEventListener("click", e => {
+      const linkFunction = (e: Event) => {
         const service = link.getAttribute("data-uppload-service");
         if (service) this.navigate(service);
         e.preventDefault();
         return false;
-      });
+      }
+      link.removeEventListener("click", linkFunction);
+      link.addEventListener("click", linkFunction);
     });
     const background = document.querySelector(".uppload-modal-bg");
-    if (background)
-      background.addEventListener("click", () => {
-        this.close();
+    if (background) {
+      background.removeEventListener("click", closeFunction);
+      background.addEventListener("click", closeFunction);
+    }
+    if (this.settings.call) {
+      const elements = getElements(this.settings.call);
+      elements.forEach(element => {
+        element.removeEventListener("click", openFunction);
+        element.addEventListener("click", openFunction);
       });
+    }
   }
 
   navigate(service: string) {
