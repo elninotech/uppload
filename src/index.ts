@@ -12,9 +12,9 @@ export { HandlersParams } from "./helpers/interfaces";
 export { en } from "./i18n";
 
 // Uploaders
-import Camera from "./uploaders/camera";
-import Instagram from "./uploaders/instagram";
-import Facebook from "./uploaders/facebook";
-import Local from "./uploaders/local";
-import URL from "./uploaders/url";
+import Camera from "./services/camera";
+import Instagram from "./services/instagram";
+import Facebook from "./services/facebook";
+import Local from "./services/local";
+import URL from "./services/url";
 export { Camera, Instagram, Facebook, Local, URL };
