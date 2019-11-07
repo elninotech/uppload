@@ -1,10 +1,10 @@
-import { Uppload } from "../src/uppload";
+import { Uppload } from "../src";
 // import Axios from "@uppload/axios";
-import Instagram from "../src/uploaders/instagram";
-import Camera from "../src/uploaders/camera";
-import URL from "../src/uploaders/URL";
-import Local from "../src/uploaders/local";
-import { en } from "../src/i18n";
+import { Instagram } from "../src";
+import { Camera } from "../src";
+import { URL } from "../src";
+import { Local } from "../src";
+import { en } from "../src";
 
 const uppload = new Uppload({
   value: "https://via.placeholder.com/150",
