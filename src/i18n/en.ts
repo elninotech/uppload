@@ -18,6 +18,12 @@ export default {
     },
     screenshot: {
       title: "Screenshot"
+    },
+    giphy: {
+      title: "GIPHY"
+    },
+    unsplash: {
+      title: "Unsplash"
     }
   }
 }

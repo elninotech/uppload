@@ -5,6 +5,8 @@ import { Facebook } from "../src";
 import { Camera } from "../src";
 import { URL } from "../src";
 import { Local } from "../src";
+import { GIPHY } from "../src";
+import { Unsplash } from "../src";
 import { Screenshot } from "../src";
 import { en } from "../src";
 
@@ -14,7 +16,7 @@ const uppload = new Uppload({
   call: ".uppload-button",
   lang: en
 });
-uppload.use([new Local(), new Camera(), new Instagram(), new URL(), new Facebook(), new Screenshot()]);
+uppload.use([new Local(), new Camera(), new Instagram(), new URL(), new Facebook(), new Screenshot(), new GIPHY(), new Unsplash()]);
 // uppload.use(new Axios(() => ({
 //   method: "GET",
 //   url: "https://jsonplaceholder.typicode.com/todos/1"
