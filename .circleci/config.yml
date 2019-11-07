@@ -8,4 +8,4 @@ jobs:
 
     steps:
       - checkout
-      - run: cd scripts && npm install && node publish.js
+      - run: npm run build
