@@ -1,5 +1,5 @@
-import { UpploadService } from "@uppload/service";
-import { UpploadUploader } from "@uppload/uploader";
+import { UpploadService } from "./service";
+import { UpploadUploader } from "./uploader";
 import { Elements, getElements } from "./helpers/elements";
 import mitt from "mitt";
 
