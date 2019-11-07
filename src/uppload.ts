@@ -7,7 +7,7 @@ import mitt from "mitt";
 class DefaultService extends UpploadService {
   name = "default";
   invisible = true;
-  template = () => `<p>Select a service from the left</p>`;
+  template = () => `<p>Select a file to upload</p>`;
 };
 
 class UploadingService extends UpploadService {
@@ -128,7 +128,8 @@ export class Uppload {
         <section>
           ${this.error ? `<div class="uppload-error">${this.error}</div>` : ""}
           <div class="uppload-service uppload-service--${this.activeService}">
-            ${this.activeService === "default" ? this.getNavbar() : this.renderActiveService()}
+            ${this.renderActiveService()}
+            ${this.activeService === "default" ? this.getNavbar() : ""}
           </div>
         </section>
       </div>
@@ -196,7 +197,7 @@ export class Uppload {
     /**
      * Clicking on each sidebar link should open its service
      */
-    const sidebarLinks = this.container.querySelectorAll("aside ul li");
+    const sidebarLinks = this.container.querySelectorAll(".uppload-modal aside ul li, .uppload-service--default li");
     sidebarLinks.forEach(link => {
       const linkFunction = (e: Event) => {
         const service = link.getAttribute("data-uppload-service");

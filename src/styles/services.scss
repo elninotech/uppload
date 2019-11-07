@@ -1,14 +1,31 @@
 .uppload-service--default {
+  text-align: center;
+  .service-icon {
+    width: 2rem;
+    height: 2rem;
+    margin: 0 auto 1rem auto;
+    background-image: url("https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-instagram.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+  }
+  p {
+    padding: 1rem 0;
+    font-size: 150%;
+    margin-bottom: -1rem;
+  }
   ul {
     margin: 0;
     padding: 2rem;
     list-style: none;
     display: flex;
     li {
-      background-color: gray;
+      background-color: whitesmoke;
       box-sizing: border-box;
       width: 30%;
-      padding: 2rem 0;
+      padding: 1.5rem 0;
+      border-radius: 0.2rem;
       text-align: center;
     }
   }
