@@ -11,7 +11,10 @@ export default class Axios extends UpploadUploader {
   getUrlFunction?: returnFunction;
   getUrlFunctionKey?: string;
 
-  constructor(endpointDetails?: string | axiosFunction, returnDetails?: string | returnFunction) {
+  constructor(
+    endpointDetails?: string | axiosFunction,
+    returnDetails?: string | returnFunction
+  ) {
     super();
     if (typeof endpointDetails === "string") {
       this.endpoint = endpointDetails;
@@ -46,5 +49,5 @@ export default class Axios extends UpploadUploader {
         })
         .catch(error => reject(error));
     });
-  }
+  };
 }

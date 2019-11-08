@@ -9,8 +9,10 @@ body {
 
 .uppload-modal-bg {
   position: fixed;
-  left: 0; right: 0;
-  top: 0; bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   background: rgba(125, 125, 125, 0.75);
   z-index: $modalBackgroundZIndex;
 }

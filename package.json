@@ -22,7 +22,8 @@
   "scripts": {
     "build": "tsc",
     "build-site": "site",
-    "demo": "parcel demo/index.html"
+    "demo": "parcel demo/index.html",
+    "lint": "prettier '**/*.{ts,js,json,yml,yaml,scss,toml}' --write"
   },
   "browserslist": [
     "last 1 Chrome versions"

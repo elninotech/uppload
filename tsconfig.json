@@ -14,12 +14,8 @@
     "resolveJsonModule": true,
     "declarationDir": "./dist",
     "outDir": "./dist",
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "typeRoots": ["node_modules/@types"]
   },
   "include": ["./src/*.ts"],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

@@ -6,7 +6,7 @@ import mitt from "mitt";
 class DefaultService extends UpploadService {
   name = "default";
   template = () => `<p>Select a file</p>`;
-};
+}
 
 class UploadingService extends UpploadService {
   name = "uploading";
@@ -19,7 +19,7 @@ export interface UpploadSettings {
   bind?: Elements;
   call?: Elements;
   defaultService?: string;
-  lang?: { [index: string]: string; };
+  lang?: { [index: string]: string };
 }
 
 export default class Uppload {
@@ -30,7 +30,7 @@ export default class Uppload {
   activeService = "default";
   settings: UpploadSettings;
   container: HTMLDivElement;
-  lang: { [index: string]: string; } = {};
+  lang: { [index: string]: string } = {};
   emitter = mitt();
 
   constructor(settings?: UpploadSettings) {
@@ -40,7 +40,8 @@ export default class Uppload {
     if (body) {
       body.appendChild(div);
     }
-    if (this.settings.defaultService) this.activeService = this.settings.defaultService;
+    if (this.settings.defaultService)
+      this.activeService = this.settings.defaultService;
     if (this.settings.lang) this.lang = this.settings.lang;
     this.container = div;
   }
@@ -64,9 +65,17 @@ export default class Uppload {
     }
   }
 
-  use(plugin: UpploadUploader | UpploadService | UpploadUploader[] | UpploadService[]) {
+  use(
+    plugin:
+      | UpploadUploader
+      | UpploadService
+      | UpploadUploader[]
+      | UpploadService[]
+  ) {
     if (Array.isArray(plugin)) {
-      plugin.forEach((item: UpploadUploader | UpploadService) => this.install(item));
+      plugin.forEach((item: UpploadUploader | UpploadService) =>
+        this.install(item)
+      );
     } else {
       this.install(plugin);
     }
@@ -104,12 +113,19 @@ export default class Uppload {
 
   private getNavbar() {
     return `<ul>
-      ${this.services.filter(service => !service.invisible).map(service =>
-        `<li data-uppload-service="${service.name}" class="service-${this.activeService === service.name ? 'active' : 'inactive'}">
-          <span class="service-icon" aria-hidden="true" style="background-image: url('${service.icon || ""}')"></span>
+      ${this.services
+        .filter(service => !service.invisible)
+        .map(
+          service =>
+            `<li data-uppload-service="${service.name}" class="service-${
+              this.activeService === service.name ? "active" : "inactive"
+            }">
+          <span class="service-icon" aria-hidden="true" style="background-image: url('${service.icon ||
+            ""}')"></span>
           <span>${service.name}</span>
         </li>`
-      ).join("")}
+        )
+        .join("")}
     </ul>`;
   }
 
@@ -127,16 +143,23 @@ export default class Uppload {
   }
 
   renderActiveService() {
-    const activeServices = this.services.filter(service => service.name === this.activeService);
+    const activeServices = this.services.filter(
+      service => service.name === this.activeService
+    );
     if (activeServices.length) {
       const activeService = activeServices[0];
       requestAnimationFrame(() => {
-        if (typeof activeService.handlers === "function") activeService.handlers({
-          upload: this.upload.bind(this),
-          handle: this.handle.bind(this)
-        });
+        if (typeof activeService.handlers === "function")
+          activeService.handlers({
+            upload: this.upload.bind(this),
+            handle: this.handle.bind(this)
+          });
       });
-      return `${typeof activeService.template === "function" ? activeService.template() : ""}`;
+      return `${
+        typeof activeService.template === "function"
+          ? activeService.template()
+          : ""
+      }`;
     }
   }
 
@@ -148,7 +171,8 @@ export default class Uppload {
         const uploader = this.uploaders[this.uploaders.length - 1];
         console.log("Uploading a file", file, "using", uploader);
         if (typeof uploader.upload === "function") {
-          uploader.upload(file)
+          uploader
+            .upload(file)
             .then(url => {
               console.log("File uploaded successfully", url);
               this.bind(url);
@@ -159,7 +183,7 @@ export default class Uppload {
             .catch(error => reject(error));
         }
       }
-    })
+    });
   }
 
   handle(error: Error) {

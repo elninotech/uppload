@@ -3,8 +3,10 @@ $modalForegroundZIndex: 12000;
 
 .uppload-modal-bg {
   position: fixed;
-  left: 0; right: 0;
-  top: 0; bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   background: rgba(125, 125, 125, 0.25);
   z-index: $modalBackgroundZIndex;
   text-align: right;
@@ -56,7 +58,7 @@ $modalForegroundZIndex: 12000;
       .uppload-service-name {
         position: relative;
 
-        input[type=radio] {
+        input[type="radio"] {
           position: absolute;
           // display: none;
 
@@ -70,14 +72,14 @@ $modalForegroundZIndex: 12000;
           display: block;
           padding: 1rem;
           line-height: 1;
-  
+
           img {
             height: 1rem;
             margin-right: 0.5rem;
             vertical-align: middle;
             margin-top: -0.1rem;
           }
-  
+
           i {
             font-weight: normal;
             margin-right: 0.5rem;

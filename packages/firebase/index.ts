@@ -7,7 +7,15 @@ export default class Firebase extends UpploadUploader {
   url: string | undefined;
   path: string | undefined;
 
-  constructor({ app, url, path }: { app: Object, url?: string; path?: string }) {
+  constructor({
+    app,
+    url,
+    path
+  }: {
+    app: Object;
+    url?: string;
+    path?: string;
+  }) {
     super();
     this.url = url;
     this.app = initializeApp(app);
@@ -18,10 +26,11 @@ export default class Firebase extends UpploadUploader {
     return new Promise((resolve, reject) => {
       const reference = this.app.storage(this.url).ref(this.path);
       const child = reference.child(`file-name.${file.type}`);
-      child.put(file)
+      child
+        .put(file)
         .then(() => child.getDownloadURL())
         .then((url: string) => resolve(url))
         .catch(error => reject(error));
-    })
-  }
+    });
+  };
 }

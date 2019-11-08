@@ -18,6 +18,9 @@ export class UpploadService extends UpploadPlugin {
    * @param i - CSS class identifier
    */
   class(name: string) {
-    return `${(this.name || "1abc9c").toLowerCase().replace(/ /g, "-").replace(/[^\w-]+/g, "")}-${name}`;
+    return `${(this.name || "1abc9c")
+      .toLowerCase()
+      .replace(/ /g, "-")
+      .replace(/[^\w-]+/g, "")}-${name}`;
   }
 }

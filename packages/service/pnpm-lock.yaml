@@ -1,6 +1,6 @@
 dependencies:
-  '@uppload/common': 0.10.0
-  '@uppload/plugin': 0.11.0
+  "@uppload/common": 0.10.0
+  "@uppload/plugin": 0.11.0
 lockfileVersion: 5.1
 packages:
   /@uppload/common/0.10.0:
@@ -12,5 +12,5 @@ packages:
     resolution:
       integrity: sha512-WKrX7wDAtqUwGS2qXa6467MkosMrboeCZSLhsfrGZkS6LvoW5XUB106FlAaJw2xvzs02+Q9yMGAGVqGjhxYcVw==
 specifiers:
-  '@uppload/common': ^0.10.0
-  '@uppload/plugin': ^0.11.0
+  "@uppload/common": ^0.10.0
+  "@uppload/plugin": ^0.11.0

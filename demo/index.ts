@@ -16,7 +16,16 @@ const uppload = new Uppload({
   call: ".uppload-button",
   lang: en
 });
-uppload.use([new Local(), new Camera(), new Instagram(), new URL(), new Facebook(), new Screenshot(), new GIPHY(), new Unsplash()]);
+uppload.use([
+  new Local(),
+  new Camera(),
+  new Instagram(),
+  new URL(),
+  new Facebook(),
+  new Screenshot(),
+  new GIPHY(),
+  new Unsplash()
+]);
 // uppload.use(new Axios(() => ({
 //   method: "GET",
 //   url: "https://jsonplaceholder.typicode.com/todos/1"

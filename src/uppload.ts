@@ -8,20 +8,20 @@ class DefaultService extends UpploadService {
   name = "default";
   invisible = true;
   template = () => `<p>Select a file to upload</p>`;
-};
+}
 
 class UploadingService extends UpploadService {
   name = "uploading";
   invisible = true;
   template = () => `<p>Uploading your file...</p>`;
-};
+}
 
 export interface UpploadSettings {
   value?: string;
   bind?: Elements;
   call?: Elements;
   defaultService?: string;
-  lang?: { [index: string]: any; };
+  lang?: { [index: string]: any };
 }
 
 export class Uppload {
@@ -32,7 +32,7 @@ export class Uppload {
   activeService = "default";
   settings: UpploadSettings;
   container: HTMLDivElement;
-  lang: { [index: string]: any; } = {};
+  lang: { [index: string]: any } = {};
   emitter = mitt();
 
   constructor(settings?: UpploadSettings) {
@@ -43,7 +43,8 @@ export class Uppload {
     if (body) {
       body.appendChild(div);
     }
-    if (this.settings.defaultService) this.activeService = this.settings.defaultService;
+    if (this.settings.defaultService)
+      this.activeService = this.settings.defaultService;
     if (this.settings.lang) this.lang = this.settings.lang;
     this.container = div;
   }
@@ -67,9 +68,17 @@ export class Uppload {
     }
   }
 
-  use(plugin: UpploadUploader | UpploadService | UpploadUploader[] | UpploadService[]) {
+  use(
+    plugin:
+      | UpploadUploader
+      | UpploadService
+      | UpploadUploader[]
+      | UpploadService[]
+  ) {
     if (Array.isArray(plugin)) {
-      plugin.forEach((item: UpploadUploader | UpploadService) => this.install(item));
+      plugin.forEach((item: UpploadUploader | UpploadService) =>
+        this.install(item)
+      );
     } else {
       this.install(plugin);
     }
@@ -112,22 +121,52 @@ export class Uppload {
 
   private getNavbar(sidebar = false) {
     return `<${sidebar ? "nav" : "div"} class="uppload-services">
-      ${this.services.filter(service => !service.invisible).map(service =>
-        `<div data-uppload-service="${service.name}" class="uppload-service-name">
-          ${sidebar ? `<input type="radio" id="uppload-service-radio-${service.name}" value="${service.name}" name="uppload-radio">` : ""}
-          <${sidebar ? `label for="uppload-service-radio-${service.name}"` : "button"} data-uppload-service="${service.name}">
-            ${service.icon.startsWith("http") ? `<img class="service-icon" alt="" src="${service.icon}">` : `<i class="${service.icon || "fas fa-image"}" style="color: ${service.color}"></i>`}
-            <span>${this.lang.services && this.lang.services[service.name] && this.lang.services[service.name].title ? this.lang.services[service.name].title : service.name}</span>
+      ${this.services
+        .filter(service => !service.invisible)
+        .map(
+          service =>
+            `<div data-uppload-service="${
+              service.name
+            }" class="uppload-service-name">
+          ${
+            sidebar
+              ? `<input type="radio" id="uppload-service-radio-${service.name}" value="${service.name}" name="uppload-radio">`
+              : ""
+          }
+          <${
+            sidebar
+              ? `label for="uppload-service-radio-${service.name}"`
+              : "button"
+          } data-uppload-service="${service.name}">
+            ${
+              service.icon.startsWith("http")
+                ? `<img class="service-icon" alt="" src="${service.icon}">`
+                : `<i class="${service.icon || "fas fa-image"}" style="color: ${
+                    service.color
+                  }"></i>`
+            }
+            <span>${
+              this.lang.services &&
+              this.lang.services[service.name] &&
+              this.lang.services[service.name].title
+                ? this.lang.services[service.name].title
+                : service.name
+            }</span>
           </${sidebar ? "label" : "button"}>
         </div>`
-      ).join("")}
+        )
+        .join("")}
     </${sidebar ? "nav" : "div"}>`;
   }
 
   render() {
     return `
       <div class="uppload-modal">
-        ${this.activeService !== "default" ? `<aside>${this.getNavbar(true)}</aside>` : ""}
+        ${
+          this.activeService !== "default"
+            ? `<aside>${this.getNavbar(true)}</aside>`
+            : ""
+        }
         <section>
           ${this.error ? `<div class="uppload-error">${this.error}</div>` : ""}
           <div class="uppload-service uppload-service--${this.activeService}">
@@ -143,16 +182,23 @@ export class Uppload {
   }
 
   renderActiveService() {
-    const activeServices = this.services.filter(service => service.name === this.activeService);
+    const activeServices = this.services.filter(
+      service => service.name === this.activeService
+    );
     if (activeServices.length) {
       const activeService = activeServices[0];
       requestAnimationFrame(() => {
-        if (typeof activeService.handlers === "function") activeService.handlers({
-          upload: this.upload.bind(this),
-          handle: this.handle.bind(this)
-        });
+        if (typeof activeService.handlers === "function")
+          activeService.handlers({
+            upload: this.upload.bind(this),
+            handle: this.handle.bind(this)
+          });
       });
-      return `${typeof activeService.template === "function" ? activeService.template() : ""}`;
+      return `${
+        typeof activeService.template === "function"
+          ? activeService.template()
+          : ""
+      }`;
     }
   }
 
@@ -169,7 +215,8 @@ export class Uppload {
         const uploader = this.uploaders[this.uploaders.length - 1];
         console.log("Uploading a file", file, "using", uploader);
         if (typeof uploader.upload === "function") {
-          uploader.upload(file)
+          uploader
+            .upload(file)
             .then((url: string) => {
               console.log("File uploaded successfully", url);
               this.bind(url);
@@ -180,7 +227,7 @@ export class Uppload {
             .catch((error: Error) => reject(error));
         }
       }
-    })
+    });
   }
 
   handle(error: Error) {
@@ -200,14 +247,16 @@ export class Uppload {
     /**
      * Clicking on each sidebar link should open its service
      */
-    const sidebarLinks = this.container.querySelectorAll(".uppload-service--default .uppload-service-name button");
+    const sidebarLinks = this.container.querySelectorAll(
+      ".uppload-service--default .uppload-service-name button"
+    );
     sidebarLinks.forEach(link => {
       const linkFunction = (e: Event) => {
         const service = link.getAttribute("data-uppload-service");
         if (service) this.navigate(service);
         e.preventDefault();
         return false;
-      }
+      };
       link.removeEventListener("click", linkFunction);
       link.addEventListener("click", linkFunction);
     });
@@ -215,14 +264,20 @@ export class Uppload {
     /**
      * Clicking on each sidebar link should open its service
      */
-    const inputRadios: NodeListOf<HTMLInputElement> = this.container.querySelectorAll(".uppload-services input[type='radio']");
+    const inputRadios: NodeListOf<
+      HTMLInputElement
+    > = this.container.querySelectorAll(
+      ".uppload-services input[type='radio']"
+    );
     inputRadios.forEach(radio => {
       const radioFunction = (e: Event) => {
-        const inputRadio = document.querySelector("[name='uppload-radio']:checked") as HTMLInputElement;
+        const inputRadio = document.querySelector(
+          "[name='uppload-radio']:checked"
+        ) as HTMLInputElement;
         if (!inputRadio) return;
         const service = inputRadio.value;
         this.activeService = service;
-      }
+      };
       radio.removeEventListener("change", radioFunction);
       radio.addEventListener("change", radioFunction);
     });

@@ -9,22 +9,23 @@ export default class Local extends UpploadService {
   template = () => {
     return `
       <form class="${this.class("form")}">
-        <input class="${this.class("input")}" type="search" placeholder="Enter a URL">
+        <input class="${this.class(
+          "input"
+        )}" type="search" placeholder="Enter a URL">
         <button type="submit">Get image</button>
       </form>
     `;
-  }
+  };
 
-  handlers = ({ upload, handle }: HandlersParams) => {
-    
-  }
+  handlers = ({ upload, handle }: HandlersParams) => {};
 
   fetch(url: string) {
     return new Promise((resolve, reject) => {
-      window.fetch("")
+      window
+        .fetch("")
         .then(response => response.blob())
         .then(blob => resolve(blob))
         .catch(error => reject(error));
-    })
+    });
   }
 }
