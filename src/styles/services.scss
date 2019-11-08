@@ -5,20 +5,23 @@
     margin: 1rem 0 2rem 0;
     font-size: 150%;
   }
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  .uppload-services {
     display: flex;
     flex-wrap: wrap;
-    li {
-      background-color: whitesmoke;
+    .uppload-service-name {
       box-sizing: border-box;
       width: 22.5%;
       margin: 0 1.25% 2.5% 1.25%;
-      padding: 1.5rem 0;
-      border-radius: 0.2rem;
-      text-align: center;
+      button {
+        background-color: whitesmoke;
+        border: none;
+        font: inherit;
+        display: block;
+        width: 100%;
+        padding: 1.5rem 0;
+        border-radius: 0.2rem;
+        text-align: center;
+      }
       img.service-icon {
         height: 2em;
         display: block;

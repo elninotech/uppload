@@ -110,21 +110,24 @@ export class Uppload {
     }
   }
 
-  private getNavbar() {
-    return `<ul>
+  private getNavbar(sidebar = false) {
+    return `<${sidebar ? "nav" : "div"} class="uppload-services">
       ${this.services.filter(service => !service.invisible).map(service =>
-        `<li data-uppload-service="${service.name}" class="service-${this.activeService === service.name ? 'active' : 'inactive'}">
-          ${service.icon.startsWith("http") ? `<img class="service-icon" alt="" src="${service.icon}">` : `<i class="${service.icon || "fas fa-image"}" style="color: ${service.color}"></i>`}
-          <span>${this.lang.services && this.lang.services[service.name] && this.lang.services[service.name].title ? this.lang.services[service.name].title : service.name}</span>
-        </li>`
+        `<div data-uppload-service="${service.name}" class="uppload-service-name">
+          ${sidebar ? `<input type="radio" id="uppload-service-radio-${service.name}" value="${service.name}" name="uppload-radio">` : ""}
+          <${sidebar ? `label for="uppload-service-radio-${service.name}"` : "button"} data-uppload-service="${service.name}">
+            ${service.icon.startsWith("http") ? `<img class="service-icon" alt="" src="${service.icon}">` : `<i class="${service.icon || "fas fa-image"}" style="color: ${service.color}"></i>`}
+            <span>${this.lang.services && this.lang.services[service.name] && this.lang.services[service.name].title ? this.lang.services[service.name].title : service.name}</span>
+          </${sidebar ? "label" : "button"}>
+        </div>`
       ).join("")}
-    </ul>`;
+    </${sidebar ? "nav" : "div"}>`;
   }
 
   render() {
     return `
       <div class="uppload-modal">
-        ${this.activeService !== "default" ? `<aside>${this.getNavbar()}</aside>` : ""}
+        ${this.activeService !== "default" ? `<aside>${this.getNavbar(true)}</aside>` : ""}
         <section>
           ${this.error ? `<div class="uppload-error">${this.error}</div>` : ""}
           <div class="uppload-service uppload-service--${this.activeService}">
@@ -197,7 +200,7 @@ export class Uppload {
     /**
      * Clicking on each sidebar link should open its service
      */
-    const sidebarLinks = this.container.querySelectorAll(".uppload-modal aside ul li, .uppload-service--default li");
+    const sidebarLinks = this.container.querySelectorAll(".uppload-service--default .uppload-service-name button");
     sidebarLinks.forEach(link => {
       const linkFunction = (e: Event) => {
         const service = link.getAttribute("data-uppload-service");
@@ -207,6 +210,21 @@ export class Uppload {
       }
       link.removeEventListener("click", linkFunction);
       link.addEventListener("click", linkFunction);
+    });
+
+    /**
+     * Clicking on each sidebar link should open its service
+     */
+    const inputRadios: NodeListOf<HTMLInputElement> = this.container.querySelectorAll(".uppload-services input[type='radio']");
+    inputRadios.forEach(radio => {
+      const radioFunction = (e: Event) => {
+        const inputRadio = document.querySelector("[name='uppload-radio']:checked") as HTMLInputElement;
+        if (!inputRadio) return;
+        const service = inputRadio.value;
+        this.activeService = service;
+      }
+      radio.removeEventListener("change", radioFunction);
+      radio.addEventListener("change", radioFunction);
     });
 
     /**

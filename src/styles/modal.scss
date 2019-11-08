@@ -46,30 +46,43 @@ $modalForegroundZIndex: 12000;
   aside {
     background-color: #dfe6e9;
     width: 25%;
+    overflow-x: auto;
 
-    ul {
+    nav {
       margin: 0;
       padding: 0;
       list-style: none;
 
-      li {
-        padding: 1rem;
-        line-height: 1;
-        &.service-active {
-          background-color: #fff;
+      .uppload-service-name {
+        position: relative;
+
+        input[type=radio] {
+          position: absolute;
+          // display: none;
+
+          &:checked + label {
+            background-color: #fff;
+            font-weight: bold;
+          }
         }
 
-        img {
-          height: 1rem;
-          margin-right: 0.5rem;
-          vertical-align: middle;
-          margin-top: -0.1rem;
-        }
-
-        i {
-          font-weight: normal;
-          margin-right: 0.5rem;
-          transform: scale(1.25);
+        label {
+          display: block;
+          padding: 1rem;
+          line-height: 1;
+  
+          img {
+            height: 1rem;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+            margin-top: -0.1rem;
+          }
+  
+          i {
+            font-weight: normal;
+            margin-right: 0.5rem;
+            transform: scale(1.25);
+          }
         }
       }
     }
@@ -79,10 +92,6 @@ $modalForegroundZIndex: 12000;
     padding: 1rem;
     flex: 1 0 0;
     box-sizing: border-box;
-  }
-
-  .service-active {
-    font-weight: bold;
   }
 }
 
