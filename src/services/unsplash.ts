@@ -1,6 +1,9 @@
 import { UpploadService } from "../service";
 import { HandlersParams } from "../helpers/interfaces";
 import { cachedFetch } from "../helpers/http";
+import { safeListen } from "../helpers/elements";
+
+let params: HandlersParams | undefined = undefined;
 
 export interface UnsplashResult {
   id: string;
@@ -66,8 +69,27 @@ export default class Unsplash extends UpploadService {
     )
       .then(photos => {
         this.results = photos;
+        this.update();
       })
       .catch(() => {});
+  }
+
+  getButton(image: UnsplashResult) {
+    return `<button data-full-url="${image.urls.regular}" style="background-image: url('${image.urls.thumb}')"></button>`;
+  }
+
+  updateImages() {
+    const imagesContainer = document.querySelector(".unsplash-images");
+    if (imagesContainer) {
+      imagesContainer.innerHTML = `
+        ${this.results.map(result => this.getButton(result)).join("\n")}
+      `;
+    }
+  }
+
+  update() {
+    this.updateImages();
+    if (params) this.handlers(params);
   }
 
   template = () => {
@@ -77,17 +99,19 @@ export default class Unsplash extends UpploadService {
         <input class="${this.class(
           "input"
         )}" type="search" placeholder="Enter a URL">
-        <button type="submit">Get image</button>
+        <button type="submit">Search</button>
       </form>
+      <div class="unsplash-images"></div>
     `;
   };
 
   handlers = ({ upload, handle }: HandlersParams) => {
+    params = { upload, handle };
     const form = document.querySelector(
       `.${this.class("form")}`
     ) as HTMLFormElement | null;
     if (form) {
-      form.addEventListener("submit", event => {
+      safeListen(form, "submit", event => {
         const input = document.querySelector(
           `.${this.class("input")}`
         ) as HTMLInputElement | null;
@@ -100,6 +124,7 @@ export default class Unsplash extends UpploadService {
           )
             .then(json => {
               this.results = json.results;
+              this.update();
             })
             .catch(error => handle(error));
         }
@@ -107,5 +132,14 @@ export default class Unsplash extends UpploadService {
         return false;
       });
     }
+    this.updateImages();
+    const imageButtons = document.querySelectorAll(
+      ".uppload-service--unsplash .unsplash-images button"
+    );
+    imageButtons.forEach(image => {
+      safeListen(image, "click", () => {
+        console.log(image.getAttribute("data-full-url"));
+      });
+    });
   };
 }

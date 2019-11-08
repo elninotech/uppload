@@ -35,3 +35,20 @@
     }
   }
 }
+
+.uppload-service--unsplash {
+  .unsplash-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    button {
+      border: none;
+      width: 32%;
+      height: 7rem;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      margin-bottom: 2%;
+    }
+  }
+}
