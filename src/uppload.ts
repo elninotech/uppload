@@ -114,6 +114,8 @@ export class Uppload {
   update() {
     const content = this.container.querySelector(".uppload-service-container");
     if (content) content.innerHTML = this.render();
+    const aside = this.container.querySelector("aside");
+    if (aside && this.activeService !== "default") aside.style.display = "block";
     window.requestAnimationFrame(() => this.handlers());
     if (!this.isOpen) {
       this.container.classList.remove("visible");
@@ -165,7 +167,7 @@ export class Uppload {
   renderContainer() {
     if (this.container) this.container.innerHTML = `
       <div class="uppload-modal">
-        <aside>
+        <aside style="display: none">
           ${this.getNavbar(true)}
         </aside>
         <section>
@@ -255,13 +257,15 @@ export class Uppload {
     /**
      * Clicking on each sidebar link should open its service
      */
-    const sidebarLinks = this.container.querySelectorAll(
+    const defaultServiceLinks = this.container.querySelectorAll(
       ".uppload-service--default .uppload-service-name button"
     );
-    sidebarLinks.forEach(link => {
+    defaultServiceLinks.forEach(link => {
       const linkFunction = (e: Event) => {
         const service = link.getAttribute("data-uppload-service");
         if (service) this.navigate(service);
+        const serviceRadio = document.querySelector(`input[type=radio][value='${service}']`);
+        if (serviceRadio) serviceRadio.setAttribute("checked", "checked");
         e.preventDefault();
         return false;
       };
@@ -278,7 +282,6 @@ export class Uppload {
     );
     inputRadios.forEach(radio => {
       const radioFunction = (e: Event) => {
-        console.log(new Date());
         const inputRadio = document.querySelector(
           "[name='uppload-radio']:checked"
         ) as HTMLInputElement;
