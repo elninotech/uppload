@@ -185,3 +185,26 @@ $modalForegroundZIndex: 12000;
   margin: 1rem 1.5rem;
   font-size: 200%;
 }
+
+.uppload-container {
+  .active-effect-container {
+    flex: 1 0 0;
+  }
+  .effects-continue {
+    text-align: center;
+    button {
+      font: inherit;
+      background-color: whitesmoke;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 125%;
+      margin: 0 0.5rem;
+      border-radius: 0.2rem;
+
+      &.effects-continue--upload {
+        background-color: #3498db;
+        color: #fff;
+      }
+    }
+  }
+}

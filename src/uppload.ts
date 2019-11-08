@@ -284,11 +284,17 @@ export class Uppload {
             handle: this.handle.bind(this)
           });
       });
-      return `${
-        typeof activeEffect.template === "function"
-          ? activeEffect.template(file)
-          : ""
-      }`;
+      return `
+        <div class="active-effect-container">${
+          typeof activeEffect.template === "function"
+            ? activeEffect.template(file)
+            : ""
+        }</div>
+        <div class="effects-continue">
+          <button class="effects-continue--cancel">Cancel</button>
+          <button class="effects-continue--upload">Upload</button>
+        </div>
+      `;
     }
   }
 
@@ -384,6 +390,25 @@ export class Uppload {
         if (!inputRadio) return;
         const service = inputRadio.value;
         this.activeService = service;
+        this.update();
+      };
+      safeListen(radio, "change", radioFunction);
+    });
+
+    /**
+     * Clicking on each sidebar link should open its service
+     */
+    const effectInputRadios: NodeListOf<
+      HTMLInputElement
+    > = this.container.querySelectorAll(".effects-nav input[type='radio']");
+    effectInputRadios.forEach(radio => {
+      const radioFunction = (e: Event) => {
+        const inputRadio = document.querySelector(
+          "[name='uppload-effect-radio']:checked"
+        ) as HTMLInputElement;
+        if (!inputRadio) return;
+        const effect = inputRadio.value;
+        this.activeEffect = effect;
         this.update();
       };
       safeListen(radio, "change", radioFunction);
