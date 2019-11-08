@@ -5,6 +5,6 @@ export class UpploadEffect {
   name: string = "";
   invisible = false;
   icon: string = "";
-  template: () => string = () => "";
+  template: (file: Blob) => string = () => "";
   handlers: (params: HandlersParams) => void = () => {};
 }

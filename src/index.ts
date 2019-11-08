@@ -25,3 +25,7 @@ import Unsplash from "./services/unsplash";
 import URL from "./services/url";
 import Screenshot from "./services/screenshot";
 export { Camera, Instagram, Facebook, Local, URL, Screenshot, GIPHY, Unsplash };
+
+// Effects
+import Preview from "./effects/preview";
+export { Preview };

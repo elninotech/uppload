@@ -1,5 +1,7 @@
 import { UpploadService } from "./service";
 import { UpploadUploader } from "./uploader";
+import { UpploadEffect } from "./effect";
+import Preview from "./effects/preview";
 import { Elements, getElements, safeListen } from "./helpers/elements";
 import { show, hide } from "show-hide";
 import mitt from "mitt";
@@ -28,11 +30,14 @@ export interface UpploadSettings {
 export class Uppload {
   services: UpploadService[] = [new DefaultService(), new UploadingService()];
   uploaders: UpploadUploader[] = [];
+  effects: UpploadEffect[] = [new Preview()];
   isOpen = false;
   error?: string;
   activeService = "default";
+  activeEffect = "";
   settings: UpploadSettings;
   container: HTMLDivElement;
+  file: Blob | undefined = undefined;
   lang: { [index: string]: any } = {};
   emitter = mitt();
 
@@ -95,6 +100,9 @@ export class Uppload {
       this.ready();
     } else if (plugin.type === "uploader") {
       this.uploaders.push(plugin as UpploadUploader);
+      this.ready();
+    } else if (plugin.type === "effect") {
+      this.effects.push(plugin as UpploadEffect);
       this.ready();
     }
   }
@@ -190,7 +198,11 @@ export class Uppload {
     return `
       ${this.error ? `<div class="uppload-error">${this.error}</div>` : ""}
       <div class="uppload-service uppload-service--${this.activeService}">
-        ${this.renderActiveService()}
+        ${
+          this.activeEffect && this.file
+            ? this.renderActiveEffect(this.file)
+            : this.renderActiveService()
+        }
         ${this.activeService === "default" ? this.getNavbar() : ""}
       </div>
     `;
@@ -218,8 +230,32 @@ export class Uppload {
     }
   }
 
+  renderActiveEffect(file: Blob) {
+    const activeEffects = this.effects.filter(
+      effect => effect.name === this.activeEffect
+    );
+    if (activeEffects.length) {
+      const activeEffect = activeEffects[0];
+      requestAnimationFrame(() => {
+        if (typeof activeEffect.handlers === "function")
+          activeEffect.handlers({
+            next: this.next.bind(this),
+            upload: this.upload.bind(this),
+            handle: this.handle.bind(this)
+          });
+      });
+      return `${
+        typeof activeEffect.template === "function"
+          ? activeEffect.template(file)
+          : ""
+      }`;
+    }
+  }
+
   private next(file: Blob) {
-    console.log("GOT FILE", file);
+    this.activeEffect = "preview";
+    this.file = file;
+    this.update();
   }
 
   /**
