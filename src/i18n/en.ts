@@ -28,5 +28,19 @@ export default {
     unsplash: {
       title: "Unsplash"
     }
+  },
+  effects: {
+    crop: {
+      title: "Crop"
+    },
+    rotate: {
+      title: "Rotate"
+    },
+    sharpen: {
+      title: "Sharpen"
+    },
+    grayscale: {
+      title: "Grayscale"
+    }
   }
 };

@@ -187,18 +187,19 @@ export class Uppload {
       <input type="radio" id="uppload-effect-radio-${effect.name}" value="${
             effect.name
           }" name="uppload-effect-radio">
-        <label aria-label="${
-          this.lang.effects &&
-          this.lang.effects[effect.name] &&
-          this.lang.effects[effect.name].title
-            ? this.lang.effects[effect.name].title
-            : effect.name
-        }" for="uppload-effect-radio-${effect.name}">
+        <label for="uppload-effect-radio-${effect.name}">
           ${
             effect.icon.startsWith("http")
               ? `<img class="effect-icon" alt="" src="${effect.icon}">`
               : `<i class="${effect.icon || "fas fa-image"}"></i>`
           }
+          <span>${
+            this.lang.effects &&
+            this.lang.effects[effect.name] &&
+            this.lang.effects[effect.name].title
+              ? this.lang.effects[effect.name].title
+              : effect.name
+          }</span>
         </label>
       `
         )

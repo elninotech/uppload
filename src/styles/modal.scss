@@ -116,8 +116,15 @@ $modalForegroundZIndex: 12000;
 
       label {
         display: block;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0;
+        text-align: center;
+        width: 4.5rem;
         font-size: 120%;
+        span {
+          font-size: 55%;
+          margin-top: -0.1rem;
+          display: block;
+        }
       }
     }
 
