@@ -1,6 +1,9 @@
 export default {
   response_not_ok: "We got an error in uploading this file",
   services: {
+    default: {
+      heading: "Select an image"
+    },
     local: {
       title: "Choose file"
     },

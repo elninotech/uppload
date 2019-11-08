@@ -4,10 +4,11 @@ import { Elements, getElements, safeListen } from "./helpers/elements";
 import { show, hide } from "show-hide";
 import mitt from "mitt";
 
+let lang: { [index: string]: any } | undefined = undefined;
 class DefaultService extends UpploadService {
   name = "default";
   invisible = true;
-  template = () => `<p>Select a file to upload</p>`;
+  template = () => `<p>${lang ? lang.services.default.heading : ""}</p>`;
 }
 
 class UploadingService extends UpploadService {
@@ -37,6 +38,7 @@ export class Uppload {
 
   constructor(settings?: UpploadSettings) {
     this.settings = settings || {};
+    lang = this.settings.lang;
     const div = document.createElement("div");
     this.renderContainer();
     div.classList.add("uppload-container");
