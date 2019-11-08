@@ -31,6 +31,7 @@
     "@fortawesome/fontawesome-free": "^5.11.2",
     "@staart/site": "^1.7.14",
     "parcel": "^1.12.4",
+    "prettier": "^1.18.2",
     "sass": "^1.23.3",
     "typescript": "^3.7.2"
   },

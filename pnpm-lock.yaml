@@ -5,6 +5,7 @@ devDependencies:
   '@fortawesome/fontawesome-free': 5.11.2
   '@staart/site': 1.7.14
   parcel: 1.12.4
+  prettier: 1.18.2
   sass: 1.23.3
   typescript: 3.7.2
 lockfileVersion: 5.1
@@ -1315,7 +1316,7 @@ packages:
   /browserslist/4.7.2:
     dependencies:
       caniuse-lite: 1.0.30001008
-      electron-to-chromium: 1.3.305
+      electron-to-chromium: 1.3.306
       node-releases: 1.1.39
     dev: true
     hasBin: true
@@ -2174,10 +2175,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
-  /electron-to-chromium/1.3.305:
+  /electron-to-chromium/1.3.306:
     dev: true
     resolution:
-      integrity: sha512-jBEhRZ3eeJWf3eAnGYB1vDy09uBQpZWshC5fxiiIRofA9L3vkpa3SxsXleVS2MvuYir15oTVxzWPsOwj7KBzUw==
+      integrity: sha512-frDqXvrIROoYvikSKTIKbHbzO6M3/qC6kCIt/1FOa9kALe++c4VAJnwjSFvf1tYLEUsP2n9XZ4XSCyqc3l7A/A==
   /elliptic/6.5.1:
     dependencies:
       bn.js: 4.11.8
@@ -2601,6 +2602,7 @@ packages:
       - node-pre-gyp
     dependencies:
       nan: 2.14.0
+    deprecated: 'One of your dependencies needs to upgrade to fsevents v2: 1) Proper nodejs v10+ support 2) No more fetching binaries from AWS, smaller package size'
     dev: true
     engines:
       node: '>=4.0'
@@ -4247,7 +4249,7 @@ packages:
       postcss: 7.0.21
       postcss-value-parser: 3.3.1
       posthtml: 0.11.6
-      posthtml-parser: 0.4.1
+      posthtml-parser: 0.4.2
       posthtml-render: 1.1.5
       resolve: 1.12.0
       semver: 5.7.1
@@ -4782,13 +4784,12 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-uIFtJElxJo29QC753JzhidoAhvp/e/Exezkdhfmt8AymWT6/5B7W1WmponYWkHk2eg6sONyTch0A3nkMPun3SQ==
-  /posthtml-parser/0.4.1:
+  /posthtml-parser/0.4.2:
     dependencies:
       htmlparser2: 3.10.1
-      object-assign: 4.1.1
     dev: true
     resolution:
-      integrity: sha512-h7vXIQ21Ikz2w5wPClPakNP6mJeJCK6BT0GpqnQrNNABdR7/TchNlFyryL1Bz6Ww53YWCKkr6tdZuHlxY1AVdQ==
+      integrity: sha512-BUIorsYJTvS9UhXxPTzupIztOMVNPa/HtAm9KHni9z6qEfiJ1bpOBL5DfUOL9XAc3XkLIEzBzpph+Zbm4AdRAg==
   /posthtml-render/1.1.5:
     dev: true
     engines:
@@ -4797,7 +4798,7 @@ packages:
       integrity: sha512-yvt54j0zCBHQVEFAuR+yHld8CZrCa/E1Z/OcFNCV1IEWTLVxT8O7nYnM4IIw1CD4r8kaRd3lc42+0lgCKgm87w==
   /posthtml/0.11.6:
     dependencies:
-      posthtml-parser: 0.4.1
+      posthtml-parser: 0.4.2
       posthtml-render: 1.1.5
     dev: true
     engines:
@@ -4810,6 +4811,13 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
+  /prettier/1.18.2:
+    dev: true
+    engines:
+      node: '>=4'
+    hasBin: true
+    resolution:
+      integrity: sha512-OeHeMc0JhFE9idD4ZdtNibzY0+TPHSpSSb9h8FqtP+YnoZZ1sl8Vc9b1sasjfymH3SonAF4QcA2+mzHPhMvIiw==
   /private/0.1.8:
     dev: true
     engines:
@@ -6315,6 +6323,7 @@ specifiers:
   '@staart/site': ^1.7.14
   mitt: ^1.2.0
   parcel: ^1.12.4
+  prettier: ^1.18.2
   sass: ^1.23.3
   show-hide: ^0.9.0
   typescript: ^3.7.2
