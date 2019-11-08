@@ -99,6 +99,30 @@ $modalForegroundZIndex: 12000;
     flex: 1 0 0;
     box-sizing: border-box;
     overflow-x: auto;
+
+    form {
+      text-align: center;
+      margin: 2rem 0;
+      input,
+      button {
+        -webkit-appearance: none;
+        appearance: none;
+        font: inherit;
+        padding: 0.5rem 1rem;
+        border-radius: 0.2rem;
+        font-size: 125%;
+        display: block;
+        margin: 1rem auto;
+        border: 0.1rem solid rgba(0, 0, 0, 0.1);
+      }
+      input {
+        width: 75%;
+      }
+      button {
+        background-color: #333;
+        color: #fff;
+      }
+    }
   }
 }
 

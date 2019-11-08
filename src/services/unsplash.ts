@@ -57,7 +57,7 @@ export default class Unsplash extends UpploadService {
   name = "unsplash";
   icon =
     "https://user-images.githubusercontent.com/5659117/53183813-c7a2f900-35da-11e9-8c41-b1e399dc3a6c.png";
-  color = "#e67e22";
+  color = "#333333";
   apiKey: string;
   results: UnsplashResult[] = [];
 
@@ -75,7 +75,13 @@ export default class Unsplash extends UpploadService {
   }
 
   getButton(image: UnsplashResult) {
-    return `<button data-full-url="${image.urls.regular}" style="background-image: url('${image.urls.thumb}')"></button>`;
+    return `<div class="result">
+      <button aria-label="${image.alt_description}" data-full-url="${image.urls.regular}" style="background-image: url('${image.urls.thumb}')"></button>
+      <small class="author">
+        <img alt="" src="${image.user.profile_image.small}">
+        <span>${image.user.name}</span>
+      </small>
+    </div>`;
   }
 
   updateImages() {
@@ -94,12 +100,13 @@ export default class Unsplash extends UpploadService {
 
   template = () => {
     return `
-      <h1>Unsplash</h1>
       <form class="${this.class("form")}">
         <input class="${this.class(
           "input"
-        )}" type="search" placeholder="Enter a URL">
-        <button type="submit">Search</button>
+        )}" type="search" placeholder="Find an image..." required>
+        <button type="submit" style="background: ${
+          this.color
+        }">Search on Unsplash</button>
       </form>
       <div class="unsplash-images"></div>
     `;
