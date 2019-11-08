@@ -6,6 +6,8 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
 
 ![Screenshot of Uppload](https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-1.png)
 
+![Screenshot of Unsplash service](https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-2.png)
+
 ## 🛣️ Roadmap
 
 - [x] Uppload 2 architecture
@@ -22,7 +24,7 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
   - [ ] Import image from web service
     - [ ] Instagram
     - [ ] Facebook
-    - [ ] Unsplash
+    - [x] Unsplash
     - [ ] GIPHY
     - [ ] URL screenshot
 - [ ] Effects (ways to change the file)
