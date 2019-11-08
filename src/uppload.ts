@@ -205,6 +205,7 @@ export class Uppload {
       requestAnimationFrame(() => {
         if (typeof activeService.handlers === "function")
           activeService.handlers({
+            next: this.next.bind(this),
             upload: this.upload.bind(this),
             handle: this.handle.bind(this)
           });
@@ -215,6 +216,10 @@ export class Uppload {
           : ""
       }`;
     }
+  }
+
+  private next(file: Blob) {
+    console.log("GOT FILE", file);
   }
 
   /**

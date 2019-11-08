@@ -17,7 +17,7 @@ export default class Local extends UpploadService {
     `;
   };
 
-  handlers = ({ upload, handle }: HandlersParams) => {};
+  handlers = ({ next }: HandlersParams) => {};
 
   fetch(url: string) {
     return new Promise((resolve, reject) => {

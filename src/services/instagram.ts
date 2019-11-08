@@ -22,7 +22,7 @@ export default class Instagram extends UpploadService {
     `;
   };
 
-  handlers = ({ upload, handle }: HandlersParams) => {
+  handlers = ({ next, handle }: HandlersParams) => {
     const form = document.querySelector(
       `.${this.class("form")}`
     ) as HTMLFormElement | null;
@@ -39,7 +39,7 @@ export default class Instagram extends UpploadService {
               if (!response.ok) throw new Error("response_not_ok");
               return response.blob();
             })
-            .then(blob => upload(blob))
+            .then(blob => next(blob))
             .catch(error => handle(error));
         }
         event.preventDefault();

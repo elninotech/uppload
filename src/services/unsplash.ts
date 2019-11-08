@@ -3,7 +3,7 @@ import { HandlersParams } from "../helpers/interfaces";
 import { cachedFetch, imageUrlToBlob } from "../helpers/http";
 import { safeListen } from "../helpers/elements";
 
-let params: HandlersParams | undefined = undefined;
+let params: any | undefined = undefined;
 
 export interface UnsplashResult {
   id: string;
@@ -112,8 +112,8 @@ export default class Unsplash extends UpploadService {
     `;
   };
 
-  handlers = ({ upload, handle }: HandlersParams) => {
-    params = { upload, handle };
+  handlers = ({ next, handle }: HandlersParams) => {
+    params = { next, handle };
     const form = document.querySelector(
       `.${this.class("form")}`
     ) as HTMLFormElement | null;
@@ -148,7 +148,7 @@ export default class Unsplash extends UpploadService {
         const url = image.getAttribute("data-full-url");
         if (url)
           imageUrlToBlob(url)
-            .then(blob => upload(blob))
+            .then(blob => next(blob))
             .catch(error => handle(error));
       });
     });
