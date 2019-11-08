@@ -29,4 +29,7 @@ export { Camera, Instagram, Facebook, Local, URL, Screenshot, GIPHY, Unsplash };
 // Effects
 import Preview from "./effects/preview";
 import Crop from "./effects/crop";
-export { Preview, Crop };
+import Grayscale from "./effects/grayscale";
+import Rotate from "./effects/rotate";
+import Sharpen from "./effects/sharpen";
+export { Preview, Crop, Grayscale, Rotate, Sharpen };

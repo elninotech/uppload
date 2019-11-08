@@ -9,6 +9,9 @@ import { GIPHY } from "../src";
 import { Unsplash } from "../src";
 import { Screenshot } from "../src";
 import { Crop } from "../src";
+import { Grayscale } from "../src";
+import { Rotate } from "../src";
+import { Sharpen } from "../src";
 import { en } from "../src";
 
 const uppload = new Uppload({
@@ -29,7 +32,10 @@ uppload.use([
   new Unsplash(
     "3135681ed1e271e3d3d167e184aecfb0ad74d2043f6f378bf19a23a6647954d8"
   ),
-  new Crop()
+  new Crop(),
+  new Rotate(),
+  new Sharpen(),
+  new Grayscale()
 ]);
 // uppload.use(new Axios(() => ({
 //   method: "GET",
