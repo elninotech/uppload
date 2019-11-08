@@ -8,6 +8,7 @@ export { UpploadUploader } from "./uploader";
 export { getElements } from "./helpers/elements";
 export { safeListen } from "./helpers/elements";
 export { HandlersParams } from "./helpers/interfaces";
+export { cachedFetch } from "./helpers/http";
 
 // Language packs
 export { en } from "./i18n";
