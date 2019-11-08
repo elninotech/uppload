@@ -95,10 +95,38 @@ $modalForegroundZIndex: 12000;
   }
 
   section {
-    padding: 1rem;
     flex: 1 0 0;
-    box-sizing: border-box;
-    overflow-x: auto;
+    display: flex;
+    height: 400px;
+    flex-direction: column;
+
+    footer.effects-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #dfe6e9;
+
+      input[type="radio"] {
+        position: absolute;
+        opacity: 0.1;
+        &:checked + label {
+          background-color: #fff;
+        }
+      }
+
+      label {
+        display: block;
+        padding: 0.5rem 1rem;
+        font-size: 120%;
+      }
+    }
+
+    .uppload-service-container {
+      flex: 1 0 0;
+      padding: 1rem;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
 
     form {
       text-align: center;

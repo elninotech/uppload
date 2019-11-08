@@ -81,11 +81,13 @@ export class Uppload {
     plugin:
       | UpploadUploader
       | UpploadService
+      | UpploadEffect
       | UpploadUploader[]
       | UpploadService[]
+      | UpploadEffect[]
   ) {
     if (Array.isArray(plugin)) {
-      plugin.forEach((item: UpploadUploader | UpploadService) =>
+      plugin.forEach((item: UpploadUploader | UpploadService | UpploadEffect) =>
         this.install(item)
       );
     } else {
@@ -93,7 +95,7 @@ export class Uppload {
     }
   }
 
-  install(plugin: UpploadUploader | UpploadService) {
+  install(plugin: UpploadUploader | UpploadService | UpploadEffect) {
     if (plugin.type === "service") {
       // Install this service
       this.services.push(plugin as UpploadService);
@@ -176,6 +178,34 @@ export class Uppload {
     </${sidebar ? "nav" : "div"}>`;
   }
 
+  getEffectsNavbar() {
+    return `
+      ${this.effects
+        .filter(e => e.name !== "preview")
+        .map(
+          effect => `
+      <input type="radio" id="uppload-effect-radio-${effect.name}" value="${
+            effect.name
+          }" name="uppload-effect-radio">
+        <label aria-label="${
+          this.lang.effects &&
+          this.lang.effects[effect.name] &&
+          this.lang.effects[effect.name].title
+            ? this.lang.effects[effect.name].title
+            : effect.name
+        }" for="uppload-effect-radio-${effect.name}">
+          ${
+            effect.icon.startsWith("http")
+              ? `<img class="effect-icon" alt="" src="${effect.icon}">`
+              : `<i class="${effect.icon || "fas fa-image"}"></i>`
+          }
+        </label>
+      `
+        )
+        .join("")}
+    `;
+  }
+
   renderContainer() {
     if (this.container)
       this.container.innerHTML = `
@@ -186,6 +216,7 @@ export class Uppload {
         <section>
           ${this.error ? `<div class="uppload-error">${this.error}</div>` : ""}
           <div class="uppload-service-container"></div>
+          <footer class="effects-nav">${this.getEffectsNavbar()}</footer>
         </section>
       </div>
       <div class="uppload-modal-bg">

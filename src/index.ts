@@ -28,4 +28,5 @@ export { Camera, Instagram, Facebook, Local, URL, Screenshot, GIPHY, Unsplash };
 
 // Effects
 import Preview from "./effects/preview";
-export { Preview };
+import Crop from "./effects/crop";
+export { Preview, Crop };
