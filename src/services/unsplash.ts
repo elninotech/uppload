@@ -1,6 +1,6 @@
 import { UpploadService } from "../service";
 import { HandlersParams } from "../helpers/interfaces";
-import { cachedFetch } from "../helpers/http";
+import { cachedFetch, imageUrlToBlob } from "../helpers/http";
 import { safeListen } from "../helpers/elements";
 
 let params: HandlersParams | undefined = undefined;
@@ -138,7 +138,11 @@ export default class Unsplash extends UpploadService {
     );
     imageButtons.forEach(image => {
       safeListen(image, "click", () => {
-        console.log(image.getAttribute("data-full-url"));
+        const url = image.getAttribute("data-full-url");
+        if (url)
+          imageUrlToBlob(url)
+            .then(blob => upload(blob))
+            .catch(error => handle(error));
       });
     });
   };

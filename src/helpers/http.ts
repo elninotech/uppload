@@ -33,3 +33,11 @@ export function cachedFetch<T>(
       .catch(error => reject(error));
   });
 }
+
+export const imageUrlToBlob = (url: string): Promise<Blob> => {
+  return new Promise((resolve, reject) => {
+    cachedFetch<Blob>(`https://images.weserv.nl/?url=${url}`, "blob")
+      .then(blob => resolve(blob))
+      .catch(error => reject(error));
+  });
+};
