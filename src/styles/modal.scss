@@ -60,11 +60,15 @@ $modalForegroundZIndex: 12000;
 
         input[type="radio"] {
           position: absolute;
-          // display: none;
+          opacity: 0;
 
           &:checked + label {
             background-color: #fff;
             font-weight: bold;
+          }
+
+          &:focus + label {
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
           }
         }
 
