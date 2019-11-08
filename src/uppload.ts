@@ -116,7 +116,8 @@ export class Uppload {
     const content = this.container.querySelector(".uppload-service-container");
     if (content) content.innerHTML = this.render();
     const aside = this.container.querySelector("aside");
-    if (aside && this.activeService !== "default") aside.style.display = "block";
+    if (aside && this.activeService !== "default")
+      aside.style.display = "block";
     window.requestAnimationFrame(() => this.handlers());
     if (!this.isOpen) {
       this.container.classList.remove("visible");
@@ -166,7 +167,8 @@ export class Uppload {
   }
 
   renderContainer() {
-    if (this.container) this.container.innerHTML = `
+    if (this.container)
+      this.container.innerHTML = `
       <div class="uppload-modal">
         <aside style="display: none">
           ${this.getNavbar(true)}
@@ -265,7 +267,9 @@ export class Uppload {
       const linkFunction = (e: Event) => {
         const service = link.getAttribute("data-uppload-service");
         if (service) this.navigate(service);
-        const serviceRadio = document.querySelector(`input[type=radio][value='${service}']`);
+        const serviceRadio = document.querySelector(
+          `input[type=radio][value='${service}']`
+        );
         if (serviceRadio) serviceRadio.setAttribute("checked", "checked");
         e.preventDefault();
         return false;

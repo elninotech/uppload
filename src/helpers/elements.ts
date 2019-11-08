@@ -23,10 +23,16 @@ export const getElements = (query?: Elements): Element[] => {
   return elements;
 };
 
-const listening: { element: Element, type: string }[] = [];
-export const safeListen = (element: Element, type: string, fn: EventListenerOrEventListenerObject) => {
-  const hasListener = !!listening.find(a => a.element === element && a.type === type);
+const listening: { element: Element; type: string }[] = [];
+export const safeListen = (
+  element: Element,
+  type: string,
+  fn: EventListenerOrEventListenerObject
+) => {
+  const hasListener = !!listening.find(
+    a => a.element === element && a.type === type
+  );
   if (hasListener) return;
   element.addEventListener(type, fn);
   listening.push({ element, type });
-}
+};

@@ -1,13 +1,16 @@
 /**
  * Make an HTTP request with the Fetch API and cache results
  */
-export function cachedFetch<T>(input: RequestInfo, type: "arrayBuffer" | "blob" | "formData" | "json" | "text" = "json"): Promise<T> {
+export function cachedFetch<T>(
+  input: RequestInfo,
+  type: "arrayBuffer" | "blob" | "formData" | "json" | "text" = "json"
+): Promise<T> {
   return new Promise((resolve, reject) => {
     const key = `uppload-cache-${JSON.stringify(input)}`;
     const cachedResult = localStorage.getItem(key);
-    if (cachedResult)
-      return resolve(JSON.parse(cachedResult));
-    window.fetch(input)
+    if (cachedResult) return resolve(JSON.parse(cachedResult));
+    window
+      .fetch(input)
       .then(response => {
         if (!response.ok) throw new Error("response_not_ok");
         switch (type) {
@@ -28,5 +31,5 @@ export function cachedFetch<T>(input: RequestInfo, type: "arrayBuffer" | "blob" 
         resolve(result);
       })
       .catch(error => reject(error));
-  })
-};
+  });
+}

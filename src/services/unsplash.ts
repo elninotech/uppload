@@ -48,7 +48,7 @@ export interface UnsplashResult {
       self: string;
     };
   };
-};
+}
 
 export default class Unsplash extends UpploadService {
   name = "unsplash";
@@ -61,7 +61,9 @@ export default class Unsplash extends UpploadService {
   constructor(apiKey: string) {
     super();
     this.apiKey = apiKey;
-    cachedFetch<UnsplashResult[]>(`https://api.unsplash.com/photos?client_id=${this.apiKey}`)
+    cachedFetch<UnsplashResult[]>(
+      `https://api.unsplash.com/photos?client_id=${this.apiKey}`
+    )
       .then(photos => {
         this.results = photos;
       })
@@ -91,7 +93,11 @@ export default class Unsplash extends UpploadService {
         ) as HTMLInputElement | null;
         if (input) {
           const query = input.value;
-          cachedFetch<{ results: UnsplashResult[] }>(`https://api.unsplash.com/search/photos?client_id=${this.apiKey}&page=1&query=${encodeURIComponent(query)}`)
+          cachedFetch<{ results: UnsplashResult[] }>(
+            `https://api.unsplash.com/search/photos?client_id=${
+              this.apiKey
+            }&page=1&query=${encodeURIComponent(query)}`
+          )
             .then(json => {
               this.results = json.results;
             })
@@ -101,5 +107,5 @@ export default class Unsplash extends UpploadService {
         return false;
       });
     }
-  }
-};
+  };
+}

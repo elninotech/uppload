@@ -23,7 +23,7 @@
     "build": "tsc",
     "build-site": "site",
     "demo": "parcel demo/index.html",
-    "lint": "prettier '**/*.{ts,js,json,yml,yaml,scss,toml}' --write"
+    "lint": "prettier '**/*.{ts,scss}' --write"
   },
   "browserslist": [
     "last 1 Chrome versions"
@@ -31,6 +31,7 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",
     "@staart/site": "^1.7.14",
+    "husky": "^3.0.9",
     "parcel": "^1.12.4",
     "prettier": "^1.18.2",
     "sass": "^1.23.3",
@@ -39,5 +40,10 @@
   "dependencies": {
     "mitt": "^1.2.0",
     "show-hide": "^0.9.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && git add ."
+    }
   }
 }

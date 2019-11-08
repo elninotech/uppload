@@ -25,7 +25,9 @@ uppload.use([
   new Facebook(),
   new Screenshot(),
   new GIPHY(),
-  new Unsplash("3135681ed1e271e3d3d167e184aecfb0ad74d2043f6f378bf19a23a6647954d8")
+  new Unsplash(
+    "3135681ed1e271e3d3d167e184aecfb0ad74d2043f6f378bf19a23a6647954d8"
+  )
 ]);
 // uppload.use(new Axios(() => ({
 //   method: "GET",
