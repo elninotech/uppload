@@ -4,35 +4,58 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
 
 **[View Uppload 2 docs →](https://uppload.netlify.com)**
 
+![Screenshot of Uppload](https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-1.png)
+
 ## 🛣️ Roadmap
 
-- [x] Uppload 2 core with TypeScript package support
-- [ ] Drag and drop to upload file
-- [ ] Image previews
-- [ ] Image cropping functionality
-- [ ] Instagram-like image filters before uploading
-- [ ] Import image from URL
-- [ ] Import image from Instagram/Facebook URL
-- [ ] Upload file to AWS S3 bucket
-- [ ] Upload file to Firebase
-- [ ] Upload file to any REST endpoint
-- [ ] Support for custom Uppload builds (with specific modules) instead of full build
-- [ ] Build system with automatic deployments to NPM of all packages
-- [ ] Support for i18n, so community driven-translations can be applied
-- [ ] Event emitter for tracking (on/off events API)
-- [ ] Uppload API for manipulating widget (open, upload file, close, etc.)
-- [x] Community guidelines
-- [x] PR and issue templates for the GitHub community
-- [ ] Starter templates to show people how to use Uppload with e.g., Firebase
-- [ ] Documentation, including a static site for docs
-  - [x] Static site generator
+- [x] Uppload 2 architecture
+  - [x] TypeScript core & package support
+  - [x] Support for custom builds instead of full build
+  - [x] Build system with CI + CD to NPM
+  - [x] Support for I18N
+  - [x] Event emitter
+  - [x] API for manipulating widget
+- [ ] Services (ways to choose a file)
+  - [ ] Drag and drop to upload file
+  - [ ] Import image from URL
+  - [ ] Click photo from camera
+  - [ ] Import image from web service
+    - [ ] Instagram
+    - [ ] Facebook
+    - [ ] Unsplash
+    - [ ] GIPHY
+    - [ ] URL screenshot
+- [ ] Effects (ways to change the file)
+  - [ ] Preview
+  - [ ] Crop
+  - [ ] Filters
+  - [ ] Rotation
+  - [ ] Sharpen
+  - [ ] Flip/mirror
+  - [ ] Grayscale
+- [ ] Uploaders (ways to send the file to a server)
+  - [x] Custom function
+  - [ ] REST endpoint
+  - [ ] AWS S3 bucket
+  - [ ] Firebase
+  - [ ] Upload to web service
+- [ ] Wrappers
+  - [ ] Vue.js
+  - [ ] React
+  - [ ] Angular
+  - [ ] Ember.js
+- [ ] Documentation
+  - [x] Community guidelines
+  - [x] PR and issue templates for the GitHub community
+  - [x] Static site for docs
+  - [ ] Starter templates to show people how to use Uppload with e.g., Firebase
   - [ ] Getting started page
-  - [x] Sitemap and links
-- [ ] TypeDoc(s) for exploring packages
+  - [ ] TypeDoc for exploring packages
 
 ### Post-merge checklist
 
 - [ ] Add all-contributors to README
+  - [ ] Include previous I18N contributors
 - [ ] Change Netlify branch from `typescript` to `master`
 
 ## 📄 License
