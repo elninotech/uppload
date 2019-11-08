@@ -1,6 +1,6 @@
 import { UpploadService } from "./service";
 import { UpploadUploader } from "./uploader";
-import { Elements, getElements } from "./helpers/elements";
+import { Elements, getElements, safeListen } from "./helpers/elements";
 import { show, hide } from "show-hide";
 import mitt from "mitt";
 
@@ -38,6 +38,7 @@ export class Uppload {
   constructor(settings?: UpploadSettings) {
     this.settings = settings || {};
     const div = document.createElement("div");
+    this.renderContainer();
     div.classList.add("uppload-container");
     const body = document.body;
     if (body) {
@@ -51,6 +52,7 @@ export class Uppload {
 
   ready() {
     if (this.settings.value) this.bind(this.settings.value);
+    this.renderContainer();
     this.emitter.emit("ready");
   }
 
@@ -110,7 +112,8 @@ export class Uppload {
   }
 
   update() {
-    this.container.innerHTML = this.render();
+    const content = this.container.querySelector(".uppload-service-container");
+    if (content) content.innerHTML = this.render();
     window.requestAnimationFrame(() => this.handlers());
     if (!this.isOpen) {
       this.container.classList.remove("visible");
@@ -159,24 +162,29 @@ export class Uppload {
     </${sidebar ? "nav" : "div"}>`;
   }
 
-  render() {
-    return `
+  renderContainer() {
+    if (this.container) this.container.innerHTML = `
       <div class="uppload-modal">
-        ${
-          this.activeService !== "default"
-            ? `<aside>${this.getNavbar(true)}</aside>`
-            : ""
-        }
+        <aside>
+          ${this.getNavbar(true)}
+        </aside>
         <section>
           ${this.error ? `<div class="uppload-error">${this.error}</div>` : ""}
-          <div class="uppload-service uppload-service--${this.activeService}">
-            ${this.renderActiveService()}
-            ${this.activeService === "default" ? this.getNavbar() : ""}
-          </div>
+          <div class="uppload-service-container"></div>
         </section>
       </div>
       <div class="uppload-modal-bg">
         <button class="uppload-close" aria-label="Close">&times;</button>
+      </div>
+    `;
+  }
+
+  render() {
+    return `
+      ${this.error ? `<div class="uppload-error">${this.error}</div>` : ""}
+      <div class="uppload-service uppload-service--${this.activeService}">
+        ${this.renderActiveService()}
+        ${this.activeService === "default" ? this.getNavbar() : ""}
       </div>
     `;
   }
@@ -257,8 +265,7 @@ export class Uppload {
         e.preventDefault();
         return false;
       };
-      link.removeEventListener("click", linkFunction);
-      link.addEventListener("click", linkFunction);
+      safeListen(link, "click", linkFunction);
     });
 
     /**
@@ -271,15 +278,16 @@ export class Uppload {
     );
     inputRadios.forEach(radio => {
       const radioFunction = (e: Event) => {
+        console.log(new Date());
         const inputRadio = document.querySelector(
           "[name='uppload-radio']:checked"
         ) as HTMLInputElement;
         if (!inputRadio) return;
         const service = inputRadio.value;
         this.activeService = service;
+        this.update();
       };
-      radio.removeEventListener("change", radioFunction);
-      radio.addEventListener("change", radioFunction);
+      safeListen(radio, "change", radioFunction);
     });
 
     /**
@@ -287,8 +295,7 @@ export class Uppload {
      */
     const background = document.querySelector(".uppload-modal-bg");
     if (background) {
-      background.removeEventListener("click", closeFunction);
-      background.addEventListener("click", closeFunction);
+      safeListen(background, "click", closeFunction);
     }
 
     /**
@@ -297,8 +304,7 @@ export class Uppload {
     if (this.settings.call) {
       const elements = getElements(this.settings.call);
       elements.forEach(element => {
-        element.removeEventListener("click", openFunction);
-        element.addEventListener("click", openFunction);
+        safeListen(element, "click", openFunction);
       });
     }
   }

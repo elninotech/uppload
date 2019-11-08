@@ -6,6 +6,7 @@ export { UpploadUploader } from "./uploader";
 
 // Helpers
 export { getElements } from "./helpers/elements";
+export { safeListen } from "./helpers/elements";
 export { HandlersParams } from "./helpers/interfaces";
 
 // Language packs
