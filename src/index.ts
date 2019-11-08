@@ -27,9 +27,8 @@ import Screenshot from "./services/screenshot";
 export { Camera, Instagram, Facebook, Local, URL, Screenshot, GIPHY, Unsplash };
 
 // Effects
-import Preview from "./effects/preview";
 import Crop from "./effects/crop";
 import Grayscale from "./effects/grayscale";
 import Rotate from "./effects/rotate";
 import Sharpen from "./effects/sharpen";
-export { Preview, Crop, Grayscale, Rotate, Sharpen };
+export { Crop, Grayscale, Rotate, Sharpen };

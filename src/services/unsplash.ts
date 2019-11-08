@@ -100,7 +100,7 @@ export default class Unsplash extends UpploadService {
 
   template = () => {
     return `
-      <form class="${this.class("form")}">
+      <div><form class="${this.class("form")}">
         <input class="${this.class(
           "input"
         )}" type="search" placeholder="Find an image..." required>
@@ -108,7 +108,7 @@ export default class Unsplash extends UpploadService {
           this.color
         }">Search on Unsplash</button>
       </form>
-      <div class="unsplash-images"></div>
+      <div class="unsplash-images"></div></div>
     `;
   };
 

@@ -133,6 +133,19 @@ $modalForegroundZIndex: 12000;
       padding: 1rem;
       overflow-y: auto;
       box-sizing: border-box;
+
+      footer {
+        text-align: center;
+        font-size: 90%;
+        a {
+          color: inherit;
+          text-decoration: none;
+          opacity: 0.75;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
     }
 
     form {

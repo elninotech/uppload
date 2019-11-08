@@ -1,7 +1,6 @@
 import { UpploadService } from "./service";
 import { UpploadUploader } from "./uploader";
 import { UpploadEffect } from "./effect";
-import Preview from "./effects/preview";
 import { Elements, getElements, safeListen } from "./helpers/elements";
 import { show, hide } from "show-hide";
 import mitt from "mitt";
@@ -30,7 +29,7 @@ export interface UpploadSettings {
 export class Uppload {
   services: UpploadService[] = [new DefaultService(), new UploadingService()];
   uploaders: UpploadUploader[] = [];
-  effects: UpploadEffect[] = [new Preview()];
+  effects: UpploadEffect[] = [];
   isOpen = false;
   error?: string;
   activeService = "default";
@@ -128,8 +127,18 @@ export class Uppload {
     const content = this.container.querySelector(".uppload-service-container");
     if (content) content.innerHTML = this.render();
     const aside = this.container.querySelector("aside");
-    if (aside && this.activeService !== "default")
+    if (aside && this.activeService !== "default" && !this.activeEffect)
       aside.style.display = "block";
+    const footerEffectsNav: HTMLElement | null = this.container.querySelector(
+      ".effects-nav"
+    );
+    if (aside && footerEffectsNav && this.activeEffect) {
+      footerEffectsNav.style.display = "";
+      aside.style.display = "none";
+    } else if (aside && footerEffectsNav) {
+      aside.style.display = "";
+      footerEffectsNav.style.display = "none";
+    }
     window.requestAnimationFrame(() => this.handlers());
     if (!this.isOpen) {
       this.container.classList.remove("visible");
@@ -181,7 +190,6 @@ export class Uppload {
   getEffectsNavbar() {
     return `
       ${this.effects
-        .filter(e => e.name !== "preview")
         .map(
           effect => `
       <input type="radio" id="uppload-effect-radio-${effect.name}" value="${
@@ -217,7 +225,7 @@ export class Uppload {
         <section>
           ${this.error ? `<div class="uppload-error">${this.error}</div>` : ""}
           <div class="uppload-service-container"></div>
-          <footer class="effects-nav">${this.getEffectsNavbar()}</footer>
+          <footer style="display: none" class="effects-nav">${this.getEffectsNavbar()}</footer>
         </section>
       </div>
       <div class="uppload-modal-bg">
@@ -285,9 +293,17 @@ export class Uppload {
   }
 
   private next(file: Blob) {
-    this.activeEffect = "preview";
-    this.file = file;
-    this.update();
+    if (this.effects.length) {
+      this.activeEffect = this.effects[0].name;
+      this.file = file;
+      this.update();
+      const activeRadio = document.querySelector(
+        `input[name='uppload-effect-radio'][value='${this.activeEffect}']`
+      );
+      if (activeRadio) activeRadio.setAttribute("checked", "checked");
+    } else {
+      // Upload directly
+    }
   }
 
   /**
