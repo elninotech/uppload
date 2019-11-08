@@ -112,6 +112,7 @@ export class Uppload {
   }
 
   update() {
+    if (!this.container) return;
     const content = this.container.querySelector(".uppload-service-container");
     if (content) content.innerHTML = this.render();
     const aside = this.container.querySelector("aside");

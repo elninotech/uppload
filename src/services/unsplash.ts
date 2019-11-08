@@ -6,9 +6,73 @@ export default class Unsplash extends UpploadService {
   icon =
     "https://user-images.githubusercontent.com/5659117/53183813-c7a2f900-35da-11e9-8c41-b1e399dc3a6c.png";
   color = "#e67e22";
+  apiKey: string;
+  results: {
+    id: string;
+    alt_description: string;
+    color: string;
+    created_at: string;
+    description: string;
+    height: number;
+    width: number;
+    likes: number;
+    links: {
+      download: string;
+      download_location: string;
+      html: string;
+      self: string;
+    };
+    tags: {
+      type: string;
+      title: string;
+    }[];
+    urls: {
+      full: string;
+      raw: string;
+      regular: string;
+      small: string;
+      thumb: string;
+    };
+    user: {
+      id: string;
+      username: string;
+      name: string;
+      location: string;
+      profile_image: {
+        large: string;
+        medium: string;
+        small: string;
+      };
+      links: {
+        followers: string;
+        following: string;
+        html: string;
+        likes: string;
+        photos: string;
+        portfolio: string;
+        self: string;
+      };
+    };
+  }[] = [];
+
+  constructor(apiKey: string) {
+    super();
+    this.apiKey = apiKey;
+    window
+      .fetch(`https://api.unsplash.com/photos?client_id=${this.apiKey}`)
+      .then(response => {
+        if (!response.ok) throw new Error("response_not_ok");
+        return response.json();
+      })
+      .then(json => {
+        this.results = json.results;
+      })
+      .catch(() => {});
+  }
 
   template = () => {
     return `
+      <h1>Unsplash</h1>
       <form class="${this.class("form")}">
         <input class="${this.class(
           "input"
@@ -18,15 +82,31 @@ export default class Unsplash extends UpploadService {
     `;
   };
 
-  handlers = ({ upload, handle }: HandlersParams) => {};
-
-  fetch(url: string) {
-    return new Promise((resolve, reject) => {
-      window
-        .fetch("")
-        .then(response => response.blob())
-        .then(blob => resolve(blob))
-        .catch(error => reject(error));
-    });
+  handlers = ({ upload, handle }: HandlersParams) => {
+    const form = document.querySelector(
+      `.${this.class("form")}`
+    ) as HTMLFormElement | null;
+    if (form) {
+      form.addEventListener("submit", event => {
+        const input = document.querySelector(
+          `.${this.class("input")}`
+        ) as HTMLInputElement | null;
+        if (input) {
+          const query = input.value;
+          window
+            .fetch(`https://api.unsplash.com/search/photos?client_id=${this.apiKey}&page=1&query=${encodeURIComponent(query)}`)
+            .then(response => {
+              if (!response.ok) throw new Error("response_not_ok");
+              return response.json();
+            })
+            .then(json => {
+              this.results = json.results;
+            })
+            .catch(error => handle(error));
+        }
+        event.preventDefault();
+        return false;
+      });
+    }
   }
 }

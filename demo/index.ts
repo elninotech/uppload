@@ -14,7 +14,8 @@ const uppload = new Uppload({
   value: "https://via.placeholder.com/150",
   bind: ".uppload-image",
   call: ".uppload-button",
-  lang: en
+  lang: en,
+  defaultService: "unsplash"
 });
 uppload.use([
   new Local(),
@@ -24,7 +25,7 @@ uppload.use([
   new Facebook(),
   new Screenshot(),
   new GIPHY(),
-  new Unsplash()
+  new Unsplash("3135681ed1e271e3d3d167e184aecfb0ad74d2043f6f378bf19a23a6647954d8")
 ]);
 // uppload.use(new Axios(() => ({
 //   method: "GET",
