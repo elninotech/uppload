@@ -6,3 +6,10 @@ body {
   margin: 2rem;
   line-height: 1.5;
 }
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #000;
+    color: rgba(255, 255, 255, 0.95);
+  }
+}

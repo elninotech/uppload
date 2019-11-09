@@ -74,3 +74,10 @@
     }
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .uppload-service--default .uppload-services .uppload-service-name button {
+    background-color: #444;
+    color: #fff;
+  }
+}

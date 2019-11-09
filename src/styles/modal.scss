@@ -11,6 +11,11 @@ $modalForegroundZIndex: 12000;
   z-index: $modalBackgroundZIndex;
   text-align: right;
 }
+@media (prefers-color-scheme: dark) {
+  .uppload-modal-bg {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
 
 .uppload-error {
   background-color: #c33;
@@ -199,6 +204,18 @@ $modalForegroundZIndex: 12000;
       button {
         background-color: #333;
         color: #fff;
+      }
+    }
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .uppload-modal {
+    background: #222;
+    color: #fff;
+    aside {
+      background-color: #444;
+      nav .uppload-service-name input[type="radio"]:checked + label {
+        background-color: #222;
       }
     }
   }

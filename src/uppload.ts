@@ -244,7 +244,7 @@ export class Uppload {
         ${this.activeEffect && this.file ? "" : this.renderActiveService()}
         ${this.activeService === "default" ? this.getNavbar() : ""}
       </div>
-      <div class="uppload-effect upload-effect--${this.activeEffect}">
+      <div class="uppload-effect upload-effect--${this.activeEffect || "none"}">
         ${
           this.activeEffect && this.file
             ? this.renderActiveEffect(this.file)
