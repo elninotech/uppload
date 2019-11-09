@@ -8,6 +8,8 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
 
 ![Screenshot of Unsplash service](https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-2.png)
 
+![Screenshot of Unsplash filters](https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-3.png)
+
 ## 🛣️ Roadmap
 
 - [x] Uppload 2 architecture
