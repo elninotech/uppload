@@ -12,6 +12,17 @@ This project and everyone participating in it is governed by the [Uppload Code o
 
 We use [Gitmoji](https://gitmoji.carloscuesta.me) when writing commits to automatically generate changelogs, releases, etc. If you're writing code for Uppload, we highly encourage you to use Gitmoji.
 
+## Icons
+
+When adding a new service or effect, make sure you design an SVG icon using the following settings. This way, we can theme it using the CSS `fill` property:
+
+- 256px square
+- Black fill color
+- Convert all text to outlines
+- No borders, only shapes
+
+Then, make sure you compress the icon using [SVGOMG](https://jakearchibald.github.io/svgomg/). On average, we've seen that a ~800 byte SVG icon can be compressed to ~250 bytes. Use the minimum precision setting that does not distort the icon and remove all metadata except for xmlns.
+
 ## Translations
 
 *TODO: Add translation guide*

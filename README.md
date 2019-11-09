@@ -61,6 +61,8 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
 
 - [ ] Add all-contributors to README
   - [ ] Include previous I18N contributors
+  - [ ] The Noun Project icons
+    - [ ] https://thenounproject.com/nikhilsahukar/collection/image/
 - [ ] Change Netlify branch from `typescript` to `master`
 
 ## 📄 License
