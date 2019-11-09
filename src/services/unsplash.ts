@@ -2,6 +2,7 @@ import { UpploadService } from "../service";
 import { HandlersParams } from "../helpers/interfaces";
 import { cachedFetch, imageUrlToBlob } from "../helpers/http";
 import { safeListen } from "../helpers/elements";
+import { translate } from "../helpers/i18n";
 
 let params: any | undefined = undefined;
 
@@ -106,7 +107,9 @@ export default class Unsplash extends UpploadService {
         )}" type="search" placeholder="Find an image..." required>
         <button type="submit" style="background: ${
           this.color
-        }">Search on Unsplash</button>
+        }"><i class="fas fa-search"></i>${translate(
+      "services.unsplash.button"
+    )}</button>
       </form>
       <div class="unsplash-images"></div></div>
     `;

@@ -1,6 +1,7 @@
 import { UpploadService } from "./service";
 import { UpploadUploader } from "./uploader";
 import { UpploadEffect } from "./effect";
+import { setI18N } from "./helpers/i18n";
 import { Elements, getElements, safeListen } from "./helpers/elements";
 import { show, hide } from "show-hide";
 import mitt from "mitt";
@@ -43,6 +44,7 @@ export class Uppload {
   constructor(settings?: UpploadSettings) {
     this.settings = settings || {};
     lang = this.settings.lang;
+    setI18N(this.settings.lang);
     const div = document.createElement("div");
     this.renderContainer();
     div.classList.add("uppload-container");

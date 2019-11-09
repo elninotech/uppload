@@ -1,5 +1,6 @@
 import { UpploadService } from "../service";
 import { HandlersParams } from "../helpers/interfaces";
+import { translate } from "../helpers/i18n";
 
 export default class Facebook extends UpploadService {
   name = "facebook";
@@ -12,7 +13,11 @@ export default class Facebook extends UpploadService {
         <input class="${this.class(
           "input"
         )}" type="search" placeholder="Enter a URL">
-        <button type="submit">Get image</button>
+        <button type="submit" style="background: ${
+          this.color
+        }"><i class="fas fa-file-import"></i>${translate(
+      "services.facebook.button"
+    )}</button>
       </form>
     `;
   };

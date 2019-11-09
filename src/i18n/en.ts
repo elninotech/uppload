@@ -5,28 +5,36 @@ export default {
       heading: "Select an image"
     },
     local: {
-      title: "Choose file"
+      title: "Choose file",
+      button: "Choose a file"
     },
     camera: {
-      title: "Camera"
+      title: "Camera",
+      button: "Click photo"
     },
     instagram: {
-      title: "Instagram"
+      title: "Instagram",
+      button: "Import from Instagram"
     },
     url: {
-      title: "Direct URL"
+      title: "Direct URL",
+      button: "Import from URL"
     },
     facebook: {
-      title: "Facebook"
+      title: "Facebook",
+      button: "Import from Facebook"
     },
     screenshot: {
-      title: "Screenshot"
+      title: "Screenshot",
+      button: "Take screenshot"
     },
     giphy: {
-      title: "GIPHY"
+      title: "GIPHY",
+      button: "Serch on GIPHY"
     },
     unsplash: {
-      title: "Unsplash"
+      title: "Unsplash",
+      button: "Serch on Unsplash"
     }
   },
   effects: {

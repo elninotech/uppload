@@ -1,5 +1,6 @@
 import { UpploadService } from "../service";
 import { HandlersParams } from "../helpers/interfaces";
+import { translate } from "../helpers/i18n";
 
 export default class Camera extends UpploadService {
   name = "camera";
@@ -12,7 +13,7 @@ export default class Camera extends UpploadService {
         <input class="${this.class(
           "input"
         )}" type="search" placeholder="Enter a URL">
-        <button type="submit">Get image</button>
+        <button type="submit">${translate("services.camera.button")}</button>
       </form>
     `;
   };

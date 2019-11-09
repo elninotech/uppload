@@ -1,10 +1,11 @@
 import { UpploadService } from "../service";
 import { HandlersParams } from "../helpers/interfaces";
+import { translate } from "../helpers/i18n";
 
 export default class GIPHY extends UpploadService {
   name = "giphy";
   icon = "https://cdn.worldvectorlogo.com/logos/giphy-logo-1.svg";
-  color = "#e67e22";
+  color = "#a800ff";
 
   template = () => {
     return `
@@ -12,7 +13,11 @@ export default class GIPHY extends UpploadService {
         <input class="${this.class(
           "input"
         )}" type="search" placeholder="Enter a URL">
-        <button type="submit">Get image</button>
+        <button type="submit" style="background: ${
+          this.color
+        }"><i class="fas fa-search"></i>${translate(
+      "services.giphy.button"
+    )}</button>
       </form>
     `;
   };
