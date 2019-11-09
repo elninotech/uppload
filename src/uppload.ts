@@ -135,6 +135,9 @@ export class Uppload {
     if (aside && footerEffectsNav && this.activeEffect) {
       footerEffectsNav.style.display = "";
       aside.style.display = "none";
+    } else if (aside && footerEffectsNav && this.activeService === "default") {
+      aside.style.display = "none";
+      footerEffectsNav.style.display = "none";
     } else if (aside && footerEffectsNav) {
       aside.style.display = "";
       footerEffectsNav.style.display = "none";
@@ -238,12 +241,15 @@ export class Uppload {
     return `
       ${this.error ? `<div class="uppload-error">${this.error}</div>` : ""}
       <div class="uppload-service uppload-service--${this.activeService}">
+        ${this.activeEffect && this.file ? "" : this.renderActiveService()}
+        ${this.activeService === "default" ? this.getNavbar() : ""}
+      </div>
+      <div class="uppload-effect upload-effect--${this.activeEffect}">
         ${
           this.activeEffect && this.file
             ? this.renderActiveEffect(this.file)
-            : this.renderActiveService()
+            : ""
         }
-        ${this.activeService === "default" ? this.getNavbar() : ""}
       </div>
     `;
   }
@@ -292,7 +298,7 @@ export class Uppload {
         }</div>
         <div class="effects-continue">
           <button class="effects-continue--cancel">Cancel</button>
-          <button class="effects-continue--upload">Upload</button>
+          <button class="effects-continue--upload">Upload<i class="fas fa-arrow-right"></i></button>
         </div>
       `;
     }
@@ -431,6 +437,18 @@ export class Uppload {
         safeListen(element, "click", openFunction);
       });
     }
+
+    /**
+     * Clicking on the cancel button restarts the process
+     */
+    const cancelButton = document.querySelector(".effects-continue--cancel");
+    if (cancelButton)
+      safeListen(cancelButton, "click", () => {
+        this.file = undefined;
+        this.activeService = "default";
+        this.activeEffect = "";
+        this.update();
+      });
   }
 
   /**

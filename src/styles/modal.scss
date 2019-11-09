@@ -128,6 +128,36 @@ $modalForegroundZIndex: 12000;
       }
     }
 
+    .uppload-effect {
+      height: 310px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .active-effect-container {
+        flex: 1 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        > div:first-child {
+          flex: 1 0 0;
+        }
+
+        .settings {
+          text-align: center;
+          padding: 1rem 0;
+
+          .value {
+            margin-left: 0.5rem;
+          }
+        }
+
+        input[type="range"] {
+          margin: 0 auto;
+          width: 75%;
+        }
+      }
+    }
+
     .uppload-service-container {
       flex: 1 0 0;
       padding: 1rem;
@@ -204,6 +234,10 @@ $modalForegroundZIndex: 12000;
       &.effects-continue--upload {
         background-color: #3498db;
         color: #fff;
+
+        i {
+          margin-left: 0.75rem;
+        }
       }
     }
   }
