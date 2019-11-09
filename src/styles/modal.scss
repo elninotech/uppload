@@ -219,6 +219,24 @@ $modalForegroundZIndex: 12000;
       }
     }
   }
+  .uppload-modal section footer.effects-nav {
+    background-color: #333;
+  }
+  .uppload-modal
+    section
+    footer.effects-nav
+    input[type="radio"]:checked
+    + label {
+    background-color: #222;
+  }
+  .uppload-modal section form input {
+    background-color: #111;
+    color: #fff;
+  }
+  .uppload-modal aside nav .uppload-service-name label i,
+  .uppload-service--default .uppload-services .uppload-service-name i {
+    filter: brightness(200%);
+  }
 }
 
 .uppload-close {

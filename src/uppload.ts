@@ -142,6 +142,11 @@ export class Uppload {
       aside.style.display = "";
       footerEffectsNav.style.display = "none";
     }
+    const effectsContainer = document.querySelector(
+      ".uppload-effect"
+    ) as HTMLElement;
+    if (effectsContainer)
+      effectsContainer.style.display = this.activeEffect ? "" : "none";
     window.requestAnimationFrame(() => this.handlers());
     if (!this.isOpen) {
       this.container.classList.remove("visible");
