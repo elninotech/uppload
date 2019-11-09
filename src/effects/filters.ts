@@ -7,12 +7,38 @@ export default class Filters extends UpploadEffect {
   icon = "fas fa-images";
 
   template = (file: Blob) => {
+    const image = URL.createObjectURL(file);
     return `
-      <div>This is filter</div>
-      <div class="settings">
-        <input type="range">
-        <span class="value"><span>0</span>%</span>
-      </div>
+      <div><div class="filter-previews"><div class="filter-previews-scroll">
+        <div>
+          <div class="filter-pic filter-normal"><img alt="" src="${image}"></div>
+          <div>Normal</div>
+        </div>
+        <div>
+          <div class="filter-pic filter-1977"><img alt="" src="${image}"></div>
+          <div>1977</div>
+        </div>
+        <div>
+          <div class="filter-pic filter-aden"><img alt="" src="${image}"></div>
+          <div>Aden</div>
+        </div>
+        <div>
+          <div class="filter-pic filter-brooklyn"><img alt="" src="${image}"></div>
+          <div>Brooklyn</div>
+        </div>
+        <div>
+          <div class="filter-pic filter-inkwell"><img alt="" src="${image}"></div>
+          <div>Inkwell</div>
+        </div>
+        <div>
+          <div class="filter-pic filter-poprocket"><img alt="" src="${image}"></div>
+          <div>Poprocket</div>
+        </div>
+        <div>
+          <div class="filter-pic filter-x-pro-ii"><img alt="" src="${image}"></div>
+          <div>X-Pro II</div>
+        </div>
+      </div></div></div>
     `;
   };
 
