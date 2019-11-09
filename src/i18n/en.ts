@@ -30,14 +30,17 @@ export default {
     },
     giphy: {
       title: "GIPHY",
-      button: "Serch on GIPHY"
+      button: "Search on GIPHY"
     },
     unsplash: {
       title: "Unsplash",
-      button: "Serch on Unsplash"
+      button: "Search on Unsplash"
     }
   },
   effects: {
+    filters: {
+      title: "Filters"
+    },
     crop: {
       title: "Crop"
     },
