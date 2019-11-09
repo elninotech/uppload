@@ -17,6 +17,7 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
   - [x] Support for I18N
   - [x] Event emitter
   - [x] API for manipulating widget
+  - [x] Dark and light theme
 - [ ] Services (ways to choose a file)
   - [ ] Drag and drop to upload file
   - [ ] Import image from URL
