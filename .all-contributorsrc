@@ -50,6 +50,16 @@
         "translation",
         "doc"
       ]
+    },
+    {
+      "login": "Rick053",
+      "name": "Rick van Gemert",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4579963?v=4",
+      "profile": "https://github.com/Rick053",
+      "contributions": [
+        "bug",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 5,
