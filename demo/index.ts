@@ -20,7 +20,7 @@ const uppload = new Uppload({
   bind: ".uppload-image",
   call: ".uppload-button",
   lang: en,
-  defaultService: "giphy"
+  defaultService: "screenshot"
 });
 uppload.use([
   new Local(),

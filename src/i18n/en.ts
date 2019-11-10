@@ -27,7 +27,9 @@ export default {
     },
     screenshot: {
       title: "Screenshot",
-      button: "Take screenshot"
+      button: "Take screenshot",
+      placeholder: "Enter a webpage URL",
+      loading: "Taking a screenshot..."
     },
     giphy: {
       title: "GIPHY",

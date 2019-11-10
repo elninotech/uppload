@@ -23,7 +23,7 @@ export function cachedFetch<T>(input: RequestInfo): Promise<T> {
 export const imageUrlToBlob = (url: string): Promise<Blob> => {
   return new Promise((resolve, reject) => {
     window
-      .fetch(`https://images.weserv.nl/?url=${url}`)
+      .fetch(`https://images.weserv.nl/?url=${encodeURIComponent(url)}`)
       .then(response => {
         if (!response.ok) throw new Error("response_not_ok");
         return response.blob();
