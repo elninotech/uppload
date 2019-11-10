@@ -4,6 +4,7 @@
   ],
   "imageSize": 100,
   "commit": false,
+  "commitConvention": "gitmoji",
   "contributors": [
     {
       "login": "elnino-ict",
@@ -18,7 +19,7 @@
       ]
     }
   ],
-  "contributorsPerLine": 7,
+  "contributorsPerLine": 5,
   "projectName": "uppload",
   "projectOwner": "elninotech",
   "repoType": "github",
