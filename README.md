@@ -110,6 +110,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/jkniest"><img src="https://avatars0.githubusercontent.com/u/15618191?v=4" width="100px;" alt="Jordan Kniest"/><br /><sub><b>Jordan Kniest</b></sub></a><br /><a href="#translation-jkniest" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/beeman"><img src="https://avatars3.githubusercontent.com/u/36491?v=4" width="100px;" alt="Bram Borggreve"/><br /><sub><b>Bram Borggreve</b></sub></a><br /><a href="https://github.com/elninotech/uppload/commits?author=beeman" title="Code">💻</a> <a href="#platform-beeman" title="Packaging/porting to new platform">📦</a></td>
+    <td align="center"><a href="http://AlexImbrea.com"><img src="https://avatars2.githubusercontent.com/u/4534299?v=4" width="100px;" alt="Alex Imbrea"/><br /><sub><b>Alex Imbrea</b></sub></a><br /><a href="https://github.com/elninotech/uppload/commits?author=AlexImb" title="Documentation">📖</a></td>
   </tr>
 </table>
 
