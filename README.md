@@ -4,6 +4,8 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
 
 **[View Uppload 2 docs →](https://uppload.netlify.com)**
 
+**[View live demo →](https://uppload.netlify.com/demo.html)**
+
 ![Screenshot of Uppload](https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-1.png)
 
 ![Screenshot of Unsplash service](https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-2.png)
@@ -28,7 +30,7 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
     - [ ] Instagram
     - [ ] Facebook
     - [x] Unsplash
-    - [ ] GIPHY
+    - [x] GIPHY
     - [ ] URL screenshot
 - [ ] Effects (ways to change the file)
   - [ ] Preview
