@@ -79,20 +79,15 @@ $modalForegroundZIndex: 12000;
 
         label {
           display: block;
-          padding: 1rem;
+          padding: 0.95rem 1rem;
           line-height: 1;
 
-          img {
-            height: 1rem;
+          svg {
             margin-right: 0.5rem;
-            vertical-align: middle;
+            height: 1.25rem;
+            display: inline-block;
             margin-top: -0.1rem;
-          }
-
-          i {
-            font-weight: normal;
-            margin-right: 0.5rem;
-            transform: scale(1.25);
+            vertical-align: middle;
           }
         }
       }
