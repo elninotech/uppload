@@ -28,6 +28,17 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "thlassche",
+      "name": "Teun Lassche",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2959888?v=4",
+      "profile": "http://thlassche.nl",
+      "contributions": [
+        "bug",
+        "code",
+        "security"
+      ]
     }
   ],
   "contributorsPerLine": 5,
