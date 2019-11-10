@@ -79,6 +79,15 @@
         "bug",
         "code"
       ]
+    },
+    {
+      "login": "robisaks",
+      "name": "Rob",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/87010?v=4",
+      "profile": "http://foxego.com",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 5,
