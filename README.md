@@ -32,6 +32,57 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
   </tr>
 </table>
 
+## 🛠 Getting started
+
+First, install Uppload using your package manager:
+
+```bash
+npm install uppload
+```
+
+Then, import Uppload and your language of choice and initialize the class:
+
+```ts
+import { Uppload, en } from "uppload";
+
+const profilePicture = new Uppload({
+  value: "https://via.placeholder.com/150",
+  bind: ".uppload-image",
+  call: ".uppload-button",
+  lang: en
+});
+```
+
+Finally, choose which services (ways to select a file), effects (ways to manipulate a file), and uploaders (ways to send the file to a server) you want. Then, import these classes and use the `Uppload.use()` function to create your package:
+
+```ts
+import { Uppload, en, Local, Unsplash, Crop, Filters } from "uppload";
+
+const profilePicture = new Uppload();
+profilePicture.use([
+  new Local(),                        // Select file from computer
+  new Unsplash("your api-key"),       // Search and import from Unsplash
+  new Crop(16 / 9),                   // Let users crop image to 16:9
+  new Filters()                       // Let users apply image filters
+]);
+```
+
+## 💻 Usage Docs
+
+- [Getting started](https://uppload.netlify.com/getting-started)
+- Building a custom package
+- Listening to events
+- Multiple Uppload instances
+- Migrating from Uppload 1.x
+- Services
+- Effects
+- Uploaders
+- Themes
+- Wrappers
+- Backends
+
+**[View Uppload 2 docs →](https://uppload.netlify.com)**
+
 ## 🛣️ Roadmap
 
 - [x] Uppload 2 architecture
