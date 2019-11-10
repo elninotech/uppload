@@ -175,7 +175,7 @@ export default class Unsplash extends UpploadService {
           imageUrlToBlob(url)
             .then(blob => next(blob))
             .catch(error => handle(error))
-            .finally(() => (this.loading = false));
+            .then(() => (this.loading = false));
       });
     });
   };

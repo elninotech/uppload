@@ -58,7 +58,7 @@ export class MicrolinkBaseClass extends UpploadService {
             )
               .then(blob => next(blob))
               .catch(error => handle(error))
-              .finally(() => (this.loading = false));
+              .then(() => (this.loading = false));
           } else if (this.name === "url") {
             imageUrlToBlob(url)
               .then(blob => next(blob))

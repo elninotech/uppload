@@ -136,7 +136,7 @@ export default class Giphy extends UpploadService {
           imageUrlToBlob(url)
             .then(blob => next(blob))
             .catch(error => handle(error))
-            .finally(() => (this.loading = false));
+            .then(() => (this.loading = false));
       });
     });
   };
