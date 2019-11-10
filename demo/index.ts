@@ -19,8 +19,7 @@ const uppload = new Uppload({
   value: "https://via.placeholder.com/150",
   bind: ".uppload-image",
   call: ".uppload-button",
-  lang: en,
-  defaultService: "screenshot"
+  lang: en
 });
 uppload.use([
   new Local(),

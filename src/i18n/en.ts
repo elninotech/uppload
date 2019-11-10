@@ -1,5 +1,5 @@
 export default {
-  response_not_ok: "We got an error in uploading this file",
+  response_not_ok: "We got an error in fetching this file",
   fetching: "Getting your image from $1$...",
   services: {
     default: {
@@ -16,33 +16,39 @@ export default {
     instagram: {
       title: "Instagram",
       button: "Import from Instagram",
-      placeholder: "Instagram post URL"
+      label: "Instagram post URL",
+      placeholder: "Enter an Instagram post URL"
     },
     url: {
       title: "Direct URL",
       button: "Import from URL",
-      placeholder: "Image URL"
+      label: "Image URL",
+      placeholder: "Enter an image URL"
     },
     facebook: {
       title: "Facebook",
       button: "Import from Facebook",
-      placeholder: "Facebook post URL"
+      label: "Facebook post URL",
+      placeholder: "Enter a Facebook post URL"
     },
     screenshot: {
       title: "Screenshot",
       button: "Take screenshot",
+      label: "URL",
       placeholder: "Enter a webpage URL",
       loading: "Taking a screenshot..."
     },
     giphy: {
       title: "GIPHY",
       button: "Search on GIPHY",
-      placeholder: "Find a GIF..."
+      label: "Find a GIF",
+      placeholder: "Search for something"
     },
     unsplash: {
       title: "Unsplash",
       button: "Search on Unsplash",
-      placeholder: "Find an image..."
+      label: "Find an image",
+      placeholder: "Search for something"
     }
   },
   effects: {

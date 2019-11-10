@@ -108,11 +108,12 @@ export default class Unsplash extends UpploadService {
   template = () => {
     return `
       <div class="unsplash-container"><form class="${this.class("form")}">
+      <label><span>${translate("services.unsplash.label")}</span>
         <input class="${this.class(
           "input"
         )}" type="search" placeholder="${translate(
       "services.unsplash.placeholder"
-    )}" required>
+    )}" required></label>
         <button type="submit" style="background: ${this.color}">${translate(
       "services.unsplash.button"
     )}</button>

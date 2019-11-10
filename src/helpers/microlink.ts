@@ -9,11 +9,14 @@ export class MicrolinkBaseClass extends UpploadService {
   template = () => {
     return `
       <div class="microlink-container"><form class="${this.class("form")}">
+        <label>
+        <span>${translate(`services.${this.name}.label`)}</span>
         <input class="${this.class(
           "input"
         )}" type="url" placeholder="${translate(
       `services.${this.name}.placeholder`
-    )}" required>
+    ) || ""}" required>
+        </label>
         <button type="submit" style="background: ${this.color}">${translate(
       `services.${this.name}.button`
     )}</button></form></div><div class="uppload-loader microlink-loader">
@@ -56,6 +59,10 @@ export class MicrolinkBaseClass extends UpploadService {
               .then(blob => next(blob))
               .catch(error => handle(error))
               .finally(() => (this.loading = false));
+          } else if (this.name === "url") {
+            imageUrlToBlob(url)
+              .then(blob => next(blob))
+              .catch(error => handle(error));
           } else {
             cachedFetch<{
               data: {

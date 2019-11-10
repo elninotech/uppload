@@ -71,11 +71,12 @@ export default class Giphy extends UpploadService {
   template = () => {
     return `
       <div class="giphy-container"><form class="${this.class("form")}">
+      <label><span>${translate("services.giphy.label")}</span>
         <input class="${this.class(
           "input"
         )}" type="search" placeholder="${translate(
       "services.giphy.placeholder"
-    )}" required>
+    )}" required></label>
         <button type="submit" style="background: ${this.color}">${translate(
       "services.giphy.button"
     )}</button>
