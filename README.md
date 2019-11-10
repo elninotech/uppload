@@ -1,4 +1,5 @@
 # 🖼️ Uppload
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 ## Uppload 1.x
 
@@ -90,3 +91,19 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
 
 - Code: [MIT](https://github.com/elninotech/uppload/blob/master/LICENSE)
 - Logo and assets: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://www.elnino.tech"><img src="https://avatars0.githubusercontent.com/u/2854021?v=4" width="100px;" alt="El Niño"/><br /><sub><b>El Niño</b></sub></a><br /><a href="#business-elnino-ict" title="Business development">💼</a> <a href="#financial-elnino-ict" title="Financial">💵</a> <a href="#infra-elnino-ict" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#projectManagement-elnino-ict" title="Project Management">📆</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
