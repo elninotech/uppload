@@ -1,4 +1,12 @@
-# 🖼️ Uppload 2
+# 🖼️ Uppload
+
+## Uppload 1.x
+
+This README is for the upcoming TypeScript rewrite of Uppload, releasing in December 2019.
+
+You can [view the README of Uppload 1.x](https://github.com/elninotech/uppload/tree/master), the current stable version, in the `master` branch.
+
+## Uppload 2
 
 Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file uploading widget. It's written in TypeScript and supports custom builds.
 
