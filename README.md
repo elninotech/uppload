@@ -107,6 +107,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://mihir.ch"><img src="https://avatars1.githubusercontent.com/u/31861755?v=4" width="100px;" alt="Mihir Chaturvedi"/><br /><sub><b>Mihir Chaturvedi</b></sub></a><br /><a href="https://github.com/elninotech/uppload/commits?author=plibither8" title="Documentation">📖</a></td>
     <td align="center"><a href="https://marrec.io"><img src="https://avatars2.githubusercontent.com/u/25272043?v=4" width="100px;" alt="Kevin Marrec"/><br /><sub><b>Kevin Marrec</b></sub></a><br /><a href="https://github.com/elninotech/uppload/commits?author=kevinmarrec" title="Documentation">📖</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/jkniest"><img src="https://avatars0.githubusercontent.com/u/15618191?v=4" width="100px;" alt="Jordan Kniest"/><br /><sub><b>Jordan Kniest</b></sub></a><br /><a href="#translation-jkniest" title="Translation">🌍</a></td>
+  </tr>
 </table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
