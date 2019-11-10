@@ -37,25 +37,29 @@
     }
   }
 
-  .uppload-container {
-    .effects-continue {
-      button {
-        background-color: $effectsButtonBackground;
-        color: $effectsButtonForeground;
-        &.effects-continue--upload {
-          background-color: $effectsCTAButtonBackground;
-          color: $effectsCTAButtonForeground;
-        }
+  .effects-continue {
+    button {
+      background-color: $effectsButtonBackground;
+      color: $effectsButtonForeground;
+      &.effects-continue--upload {
+        background-color: $effectsCTAButtonBackground;
+        color: $effectsCTAButtonForeground;
       }
     }
+  }
 
-    footer.effects-nav {
-      background-color: $effectsNavBackground;
-      color: $effectsNavForeground;
-      input[type="radio"]:checked + label {
-        background-color: $effectsNavActiveBackground;
-        color: $effectsNavActiveForeground;
-      }
+  footer.effects-nav {
+    background-color: $effectsNavBackground;
+    color: $effectsNavForeground;
+
+    label svg g,
+    label svg path {
+      fill: $effectsNavItemIconColor;
+    }
+
+    input[type="radio"]:checked + label {
+      background-color: $effectsNavActiveBackground;
+      color: $effectsNavActiveForeground;
     }
   }
 

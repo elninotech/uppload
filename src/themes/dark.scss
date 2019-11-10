@@ -1,45 +1,46 @@
 /**
- * Light theme (default)
+ * Dark theme
  */
 
+$colorBlack: #000;
 $colorWhite: #fff;
-$colorLightGray: whitesmoke;
-$colorDarkGray: #dfe6e9;
+$colorLightGray: #222;
+$colorDarkGray: #111;
 
 /**
  * All variables
  */
 
 $modalBackground: rgba(125, 125, 125, 0.25);
-$modalElementBackground: $colorWhite;
-$modalElementForeground: inherit;
+$modalElementBackground: $colorBlack;
+$modalElementForeground: $colorWhite;
 $modalElementBoxShadow: 0 5rem 10rem rgba(0, 0, 0, 0.3);
 
 $sidebarNavBackground: $colorDarkGray;
-$sidebarNavForeground: inherit;
-$sidebarNavActiveBackground: $colorWhite;
-$sidebarNavActiveForeground: inherit;
+$sidebarNavForeground: $colorWhite;
+$sidebarNavActiveBackground: $colorBlack;
+$sidebarNavActiveForeground: $colorWhite;
 $sidebarNavFocusBoxShadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 
 $errorBackground: #c33;
-$errorForeground: $colorWhite;
+$errorForeground: $colorBlack;
 
-$inputBorderColor: rgba(0, 0, 0, 0.1);
+$inputBorderColor: rgba(0, 0, 0, 0.3);
 $buttonDefaultBackground: #333;
 $buttonDefaultForeground: $colorWhite;
 
 $effectsButtonBackground: $colorLightGray;
-$effectsButtonForeground: inherit;
+$effectsButtonForeground: $colorWhite;
 $effectsCTAButtonBackground: #3498db;
 $effectsCTAButtonForeground: $colorWhite;
 $effectsNavBackground: $colorDarkGray;
-$effectsNavForeground: inherit;
-$effectsNavActiveBackground: $colorWhite;
-$effectsNavActiveForeground: inherit;
-$effectsNavItemIconColor: #000;
+$effectsNavForeground: $colorWhite;
+$effectsNavActiveBackground: $colorBlack;
+$effectsNavActiveForeground: $colorWhite;
+$effectsNavItemIconColor: $colorWhite;
 
 $HomeNavItemBackground: $colorLightGray;
-$HomeNavItemForeground: inherit;
+$HomeNavItemForeground: $colorWhite;
 
 $loaderColor: #333;
 
