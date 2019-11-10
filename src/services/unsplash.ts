@@ -120,7 +120,7 @@ export default class Unsplash extends UpploadService {
       </form>
       <div class="unsplash-images"></div>
       <p class="unsplash-footer">${translate(
-        "services.unsplash.poweredBy",
+        "imagesPoweredBy",
         `<a href="https://unsplash.com">${translate(
           "services.unsplash.title"
         )}</a>`

@@ -80,7 +80,7 @@ export default class Pixabay extends UpploadService {
       </form>
       <div class="pixabay-images"></div>
       <p class="pixabay-footer">${translate(
-        "services.pixabay.poweredBy",
+        "imagesPoweredBy",
         `<a href="https://pixabay.com">${translate(
           "services.pixabay.title"
         )}</a>`

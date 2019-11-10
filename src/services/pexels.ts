@@ -84,7 +84,7 @@ export default class Pexels extends UpploadService {
       </form>
       <div class="pexels-images"></div>
       <p class="pexels-footer">${translate(
-        "services.pexels.poweredBy",
+        "imagesPoweredBy",
         `<a href="https://pexels.com">${translate("services.pexels.title")}</a>`
       )}</p></div>
       <div class="uppload-loader pexels-loader">
