@@ -1,5 +1,4 @@
 # 🖼️ Uppload
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 ## Uppload 1.x
 
@@ -87,12 +86,7 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
     - [ ] https://thenounproject.com/nikhilsahukar/collection/image/
 - [ ] Change Netlify branch from `typescript` to `master`
 
-## 📄 License
-
-- Code: [MIT](https://github.com/elninotech/uppload/blob/master/LICENSE)
-- Logo and assets: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-
-## Contributors ✨
+## 👥 Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -107,3 +101,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## 📄 License
+
+- Code: [MIT](https://github.com/elninotech/uppload/blob/master/LICENSE)
+- Logo and assets: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
