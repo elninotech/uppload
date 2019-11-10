@@ -24,14 +24,14 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
   - [x] Dark and light theme
 - [ ] Services (ways to choose a file)
   - [ ] Drag and drop to upload file
-  - [ ] Import image from URL
+  - [x] Import image from URL
   - [ ] Click photo from camera
   - [ ] Import image from web service
-    - [ ] Instagram
-    - [ ] Facebook
+    - [x] Instagram
+    - [x] Facebook
     - [x] Unsplash
     - [x] GIPHY
-    - [ ] URL screenshot
+    - [x] URL screenshot
 - [ ] Effects (ways to change the file)
   - [ ] Preview
   - [ ] Crop
