@@ -15,7 +15,8 @@ export default {
     },
     instagram: {
       title: "Instagram",
-      button: "Import from Instagram"
+      button: "Import from Instagram",
+      placeholder: "Instagram post URL"
     },
     url: {
       title: "Direct URL",
@@ -23,7 +24,8 @@ export default {
     },
     facebook: {
       title: "Facebook",
-      button: "Import from Facebook"
+      button: "Import from Facebook",
+      placeholder: "Facebook post URL"
     },
     screenshot: {
       title: "Screenshot",
