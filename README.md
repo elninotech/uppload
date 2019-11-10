@@ -21,6 +21,15 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
 
 **[View live demo →](https://uppload.netlify.com/demo.html)**
 
+## ⭐ Features
+
+- Drag and drop to upload file
+- Import image from web services (URL, Instagram, Facebook, etc.)
+- Search for pictures and import (Unsplash, Pexels, Pixabay)
+- Edit photo before uploading (filters, crop, rotate, etc.)
+- All file uploading backends supported
+- Works with all modern browsers (IE 11+)
+
 <table>
   <tr>
     <td><img alt="Screenshot of Uppload home" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-1.png"></td>
@@ -103,6 +112,7 @@ profilePicture.use([
     - [x] Instagram
     - [x] Facebook
     - [x] Unsplash
+    - [x] Pixabay
     - [x] GIPHY
     - [x] URL screenshot
 - [ ] Effects (ways to change the file)
