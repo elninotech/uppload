@@ -125,6 +125,15 @@
         "code",
         "platform"
       ]
+    },
+    {
+      "login": "AlexImb",
+      "name": "Alex Imbrea",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4534299?v=4",
+      "profile": "http://AlexImbrea.com",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 5,
