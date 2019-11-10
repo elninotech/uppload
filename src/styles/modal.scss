@@ -32,8 +32,8 @@ $modalForegroundZIndex: 12000;
   background-color: #fff;
   box-shadow: 0 5rem 10rem rgba(0, 0, 0, 0.3);
   border-radius: 0.2rem;
-  width: 720px;
-  height: 400px;
+  width: 800px;
+  height: 500px;
   display: flex;
   position: fixed;
   left: 50%;
@@ -54,14 +54,23 @@ $modalForegroundZIndex: 12000;
     background-color: #dfe6e9;
     width: 25%;
     overflow-x: auto;
+    display: flex;
+    justify-content: stretch;
 
     nav {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
       margin: 0;
       padding: 0;
       list-style: none;
 
       .uppload-service-name {
         position: relative;
+        width: 100%;
+        flex: 1 0 0;
+        display: flex;
 
         input[type="radio"] {
           position: absolute;
@@ -79,11 +88,14 @@ $modalForegroundZIndex: 12000;
 
         label {
           display: block;
-          padding: 0.95rem 1rem;
+          width: 100%;
+          display: flex;
+          padding: 0 1rem;
+          align-items: center;
           line-height: 1;
 
           svg {
-            margin-right: 0.5rem;
+            margin-right: 0.75rem;
             height: 1.25rem;
             display: inline-block;
             margin-top: -0.1rem;
@@ -97,7 +109,6 @@ $modalForegroundZIndex: 12000;
   section {
     flex: 1 0 0;
     display: flex;
-    height: 400px;
     flex-direction: column;
 
     footer.effects-nav {
@@ -133,7 +144,7 @@ $modalForegroundZIndex: 12000;
     }
 
     .uppload-effect {
-      height: 310px;
+      flex: 1 0 0;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -162,11 +173,17 @@ $modalForegroundZIndex: 12000;
       }
     }
 
-    .uppload-service-container {
+    .uppload-active-container {
+      display: flex;
       flex: 1 0 0;
       padding: 1rem;
       overflow-y: auto;
       box-sizing: border-box;
+
+      .uppload-service {
+        width: 100%;
+        flex: 1 0 0;
+      }
 
       footer {
         text-align: center;
@@ -204,8 +221,9 @@ $modalForegroundZIndex: 12000;
       button {
         background-color: #333;
         color: #fff;
-        i {
-          margin-right: 0.75rem;
+        &[type="submit"]::after {
+          content: "→";
+          margin-left: 0.5rem;
         }
       }
     }

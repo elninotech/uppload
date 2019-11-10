@@ -131,7 +131,7 @@ export class Uppload {
 
   update() {
     if (!this.container) return;
-    const content = this.container.querySelector(".uppload-service-container");
+    const content = this.container.querySelector(".uppload-active-container");
     if (content) content.innerHTML = this.render();
     const aside = this.container.querySelector("aside");
     if (aside && this.activeService !== "default" && !this.activeEffect)
@@ -237,7 +237,7 @@ export class Uppload {
         </aside>
         <section>
           ${this.error ? `<div class="uppload-error">${this.error}</div>` : ""}
-          <div class="uppload-service-container"></div>
+          <div class="uppload-active-container"></div>
           <footer style="display: none" class="effects-nav">${this.getEffectsNavbar()}</footer>
         </section>
       </div>
@@ -250,18 +250,21 @@ export class Uppload {
   render() {
     return `
       ${this.error ? `<div class="uppload-error">${this.error}</div>` : ""}
-      <div class="uppload-service uppload-service--${this.activeService}">
-        ${this.activeEffect && this.file ? "" : this.renderActiveService()}
-        ${this.activeService === "default" ? this.getNavbar() : ""}
-      </div>
-      <div class="uppload-effect upload-effect--${this.activeEffect || "none"}">
-        ${
-          this.activeEffect && this.file
-            ? this.renderActiveEffect(this.file)
-            : ""
-        }
-      </div>
-    `;
+      ${
+        this.activeEffect
+          ? `<div class="uppload-effect upload-effect--${this.activeEffect ||
+              "none"}">
+      ${
+        this.activeEffect && this.file ? this.renderActiveEffect(this.file) : ""
+      }
+    </div>`
+          : `<div class="uppload-service uppload-service--${
+              this.activeService
+            }">
+      ${this.activeEffect && this.file ? "" : this.renderActiveService()}
+      ${this.activeService === "default" ? this.getNavbar() : ""}
+    </div>`
+      }`;
   }
 
   renderActiveService() {
