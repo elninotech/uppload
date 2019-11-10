@@ -1,7 +1,7 @@
 import { UpploadService } from "../service";
 import { translate } from "../helpers/i18n";
 import { HandlersParams } from "./interfaces";
-import { imageUrlToBlob } from "./http";
+import { imageUrlToBlob, cachedFetch } from "./http";
 
 export class MicrolinkBaseClass extends UpploadService {
   loading = false;
@@ -47,14 +47,32 @@ export class MicrolinkBaseClass extends UpploadService {
           const url = input.value;
           this.loading = true;
           this.update();
-          imageUrlToBlob(
-            `https://api.microlink.io?url=${encodeURIComponent(
-              url
-            )}&screenshot=true&meta=false&embed=screenshot.url`
-          )
-            .then(blob => next(blob))
-            .catch(error => handle(error))
-            .finally(() => (this.loading = false));
+          if (this.name === "screenshot") {
+            imageUrlToBlob(
+              `https://api.microlink.io?url=${encodeURIComponent(
+                url
+              )}&screenshot=true&meta=false&embed=screenshot.url`
+            )
+              .then(blob => next(blob))
+              .catch(error => handle(error))
+              .finally(() => (this.loading = false));
+          } else {
+            cachedFetch<{
+              data: {
+                image?: {
+                  url: string;
+                };
+              };
+            }>(`https://api.microlink.io/?url=${encodeURIComponent(url)}`)
+              .then(result => {
+                if (!result.data.image || !result.data.image.url)
+                  throw new Error("response_not_ok");
+                return result.data.image.url;
+              })
+              .then(url => imageUrlToBlob(url))
+              .then(blob => next(blob))
+              .catch(error => handle(error));
+          }
         }
         event.preventDefault();
         return false;
