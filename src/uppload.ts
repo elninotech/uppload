@@ -114,6 +114,10 @@ export class Uppload {
   open() {
     if (this.isOpen) return;
     this.isOpen = true;
+    const serviceRadio = document.querySelector(
+      `input[type=radio][value='${this.activeService}']`
+    );
+    if (serviceRadio) serviceRadio.setAttribute("checked", "checked");
     this.update();
     this.emitter.emit("open");
   }
