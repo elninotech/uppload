@@ -21,9 +21,15 @@ export const setI18N = (translations: any) => {
   i18n = flattenObject(translations);
 };
 
-export const translate = (key: string) => {
+export const translate = (key: string, params?: string | string[]) => {
   try {
-    return i18n[key];
+    let term = i18n[key] as string;
+    if (typeof params === "string") params = [params];
+    if (params)
+      params.forEach((param, index) => {
+        term = term.replace(`$${index + 1}$`, param);
+      });
+    return term;
   } catch (error) {
     return "";
   }

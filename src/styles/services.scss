@@ -178,3 +178,30 @@
     mix-blend-mode: multiply;
   }
 }
+
+.uppload-loader {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  > div {
+    width: 7.5rem;
+    height: 7.5rem;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+    background-color: #333;
+    border-radius: 100%;
+    animation: sk-scaleout 1.5s infinite ease-in-out;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}

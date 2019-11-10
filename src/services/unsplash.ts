@@ -60,6 +60,7 @@ export default class Unsplash extends UpploadService {
   color = "#333333";
   apiKey: string;
   results: UnsplashResult[] = [];
+  loading = false;
 
   constructor(apiKey: string) {
     super();
@@ -96,11 +97,17 @@ export default class Unsplash extends UpploadService {
   update() {
     this.updateImages();
     if (params) this.handlers(params);
+    const loader = document.querySelector(".unsplash-loader") as HTMLDivElement;
+    const container = document.querySelector(
+      ".unsplash-container"
+    ) as HTMLDivElement;
+    if (container) container.style.display = this.loading ? "none" : "";
+    if (loader) loader.style.display = this.loading ? "" : "none";
   }
 
   template = () => {
     return `
-      <div><form class="${this.class("form")}">
+      <div class="unsplash-container"><form class="${this.class("form")}">
         <input class="${this.class(
           "input"
         )}" type="search" placeholder="Find an image..." required>
@@ -109,6 +116,13 @@ export default class Unsplash extends UpploadService {
     )}</button>
       </form>
       <div class="unsplash-images"></div></div>
+      <div class="uppload-loader unsplash-loader">
+        <div></div>
+        <p>${translate(
+          "fetching",
+          translate(`services.${this.name}.title`)
+        )}</p>
+      </div>
     `;
   };
 
@@ -146,10 +160,13 @@ export default class Unsplash extends UpploadService {
     imageButtons.forEach(image => {
       safeListen(image, "click", () => {
         const url = image.getAttribute("data-full-url");
+        this.loading = true;
+        this.update();
         if (url)
           imageUrlToBlob(url)
             .then(blob => next(blob))
-            .catch(error => handle(error));
+            .catch(error => handle(error))
+            .finally(() => (this.loading = false));
       });
     });
   };

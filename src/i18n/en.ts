@@ -1,5 +1,6 @@
 export default {
   response_not_ok: "We got an error in uploading this file",
+  fetching: "Getting your image from $1$...",
   services: {
     default: {
       heading: "Select an image"
