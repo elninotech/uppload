@@ -9,9 +9,9 @@ import { GIPHY } from "../src";
 import { Unsplash } from "../src";
 import { Screenshot } from "../src";
 import { Crop } from "../src";
-import { Grayscale } from "../src";
 import { Filters } from "../src";
 import { Rotate } from "../src";
+import { Hue } from "../src";
 import { Sharpen } from "../src";
 import { en } from "../src";
 
@@ -34,10 +34,10 @@ uppload.use([
     "3135681ed1e271e3d3d167e184aecfb0ad74d2043f6f378bf19a23a6647954d8"
   ),
   new Filters(),
+  new Hue(),
   new Crop(),
   new Rotate(),
-  new Sharpen(),
-  new Grayscale()
+  new Sharpen()
 ]);
 // uppload.use(new Axios(() => ({
 //   method: "GET",

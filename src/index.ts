@@ -27,8 +27,8 @@ export { Camera, Instagram, Facebook, Local, URL, Screenshot, GIPHY, Unsplash };
 
 // Effects
 import Crop from "./effects/crop";
-import Grayscale from "./effects/grayscale";
 import Rotate from "./effects/rotate";
 import Filters from "./effects/filters";
+import Hue from "./effects/hue";
 import Sharpen from "./effects/sharpen";
-export { Crop, Grayscale, Rotate, Sharpen, Filters };
+export { Hue, Crop, Rotate, Sharpen, Filters };

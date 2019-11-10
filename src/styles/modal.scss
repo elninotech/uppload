@@ -122,8 +122,12 @@ $modalForegroundZIndex: 12000;
         font-size: 120%;
         span {
           font-size: 55%;
-          margin-top: -0.1rem;
           display: block;
+        }
+        svg {
+          display: block;
+          margin: 0.2rem auto;
+          height: 1.25rem;
         }
       }
     }
@@ -188,13 +192,14 @@ $modalForegroundZIndex: 12000;
         font: inherit;
         padding: 0.5rem 1rem;
         border-radius: 0.2rem;
+        border: none;
         font-size: 125%;
         display: block;
         margin: 1rem auto;
-        border: 0.1rem solid rgba(0, 0, 0, 0.1);
       }
       input {
         width: 75%;
+        border: 0.1rem solid rgba(0, 0, 0, 0.1);
       }
       button {
         background-color: #333;
