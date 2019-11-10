@@ -56,8 +56,7 @@ export interface UnsplashResult {
 
 export default class Unsplash extends UpploadService {
   name = "unsplash";
-  icon =
-    "https://user-images.githubusercontent.com/5659117/53183813-c7a2f900-35da-11e9-8c41-b1e399dc3a6c.png";
+  icon = `<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M81 113v72h94v-72h81v143H0V113h81zM175 0v71H81V0h94z" fill="#000" fill-rule="evenodd"/></svg>`;
   color = "#333333";
   apiKey: string;
   results: UnsplashResult[] = [];

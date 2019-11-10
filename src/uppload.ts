@@ -179,9 +179,7 @@ export class Uppload {
             ${
               service.icon.startsWith("http")
                 ? `<img class="service-icon" alt="" src="${service.icon}">`
-                : `<i class="${service.icon || "fas fa-image"}" style="color: ${
-                    service.color
-                  }"></i>`
+                : service.icon
             }
             <span>${
               this.lang.services &&
@@ -209,7 +207,7 @@ export class Uppload {
           ${
             effect.icon.startsWith("http")
               ? `<img class="effect-icon" alt="" src="${effect.icon}">`
-              : `<i class="${effect.icon || "fas fa-image"}"></i>`
+              : effect.icon
           }
           <span>${
             this.lang.effects &&

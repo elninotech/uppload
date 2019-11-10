@@ -19,8 +19,8 @@ const uppload = new Uppload({
   value: "https://via.placeholder.com/150",
   bind: ".uppload-image",
   call: ".uppload-button",
-  lang: en,
-  defaultService: "unsplash"
+  lang: en
+  // defaultService: "unsplash"
 });
 uppload.use([
   new Local(),

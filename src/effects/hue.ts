@@ -1,13 +1,13 @@
-import { UpploadEffect } from "../";
+import { UpploadEffect } from "..";
 import { safeListen } from "../helpers/elements";
 
-export default class Crop extends UpploadEffect {
-  name = "crop";
-  icon = `<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M74 0v182h134v-25h-26V74H99V48h96c4 0 7 1 9 4 3 2 4 5 4 9v121h48v26h-48v48h-26v-48H61a13 13 0 01-13-13V74H0V48h48V0h26z" fill="#000" fill-rule="nonzero"/></svg>`;
+export default class Hue extends UpploadEffect {
+  name = "hue";
+  icon = `<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M138 166v23h118v34H137l1 22h-34v-79h34zm-59 23v34H0v-34h79zm1-100v79H46l-1-23H0v-34h46V89h34zm176 22v34H103v-34h153zM210 11v22h46v34h-47l1 23h-34V11h34zm-57 22v34H0V33h153z" fill="#000" fill-rule="evenodd"/></svg>`;
 
   template = (file: Blob) => {
     return `
-      <div>This is crop</div>
+      <div>This is brightness</div>
       <div class="settings">
         <input type="range">
         <span class="value"><span>0</span>%</span>
