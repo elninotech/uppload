@@ -42,19 +42,22 @@ export default {
       title: "GIPHY",
       button: "Search on GIPHY",
       label: "Find a GIF",
-      placeholder: "Search for something"
+      placeholder: "Search for something",
+      poweredBy: "Powered by $1$"
     },
     unsplash: {
       title: "Unsplash",
       button: "Search on Unsplash",
       label: "Find an image",
-      placeholder: "Search for something"
+      placeholder: "Search for something",
+      poweredBy: "Powered by $1$"
     },
     pixabay: {
       title: "Pixabay",
       button: "Search on Pixabay",
       label: "Find an image",
-      placeholder: "Search for something"
+      placeholder: "Search for something",
+      poweredBy: "Powered by $1$"
     }
   },
   effects: {

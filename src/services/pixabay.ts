@@ -7,18 +7,13 @@ import { translate } from "../helpers/i18n";
 let params: any | undefined = undefined;
 
 export interface PixabayResult {
-  id: string;
-  title: string;
-  url: string;
-  images: {
-    downsized_large: { url: string };
-    preview_gif: { url: string };
-  };
-  user?: {
-    avatar_url: string;
-    display_name: string;
-    profile_url: string;
-  };
+  id: number;
+  largeImageURL: string;
+  previewURL: string;
+  user: string;
+  userImageURL: string;
+  pageURL: string;
+  tags: string;
 }
 
 export default class Pixabay extends UpploadService {
@@ -32,11 +27,11 @@ export default class Pixabay extends UpploadService {
   constructor(apiKey: string) {
     super();
     this.apiKey = apiKey;
-    cachedFetch<{ data: PixabayResult[] }>(
-      `https://api.pixabay.com/v1/gifs/trending?api_key=${this.apiKey}&limit=18&rating=G`
+    cachedFetch<{ hits: PixabayResult[] }>(
+      `https://pixabay.com/api/?key=${this.apiKey}&per_page=18&image_type=photo`
     )
       .then(photos => {
-        this.results = photos.data;
+        this.results = photos.hits;
         this.update();
       })
       .catch(() => {});
@@ -44,7 +39,10 @@ export default class Pixabay extends UpploadService {
 
   getButton(image: PixabayResult) {
     return `<div class="result">
-      <button aria-label="${image.title}" data-full-url="${image.images.downsized_large.url}" style="background-image: url('${image.images.preview_gif.url}')"></button></div>`;
+      <button aria-label="${image.tags}" data-full-url="${image.largeImageURL}" style="background-image: url('${image.previewURL}')"></button><small class="author">
+      <img alt="" src="${image.userImageURL}">
+      <span>${image.user}</span>
+    </small></div>`;
   }
 
   updateImages() {
@@ -80,7 +78,13 @@ export default class Pixabay extends UpploadService {
       "services.pixabay.button"
     )}</button>
       </form>
-      <div class="pixabay-images"></div></div>
+      <div class="pixabay-images"></div>
+      <p class="pixabay-footer">${translate(
+        "services.pixabay.poweredBy",
+        `<a href="https://pixabay.com">${translate(
+          "services.pixabay.title"
+        )}</a>`
+      )}</p></div>
       <div class="uppload-loader pixabay-loader">
         <div></div>
         <p>${translate(
@@ -103,13 +107,13 @@ export default class Pixabay extends UpploadService {
         ) as HTMLInputElement | null;
         if (input) {
           const query = input.value;
-          cachedFetch<{ data: PixabayResult[] }>(
-            `https://api.pixabay.com/v1/gifs/search?api_key=${
+          cachedFetch<{ hits: PixabayResult[] }>(
+            `https://pixabay.com/api/?key=${
               this.apiKey
-            }&q=${encodeURIComponent(query)}&limit=18&offset=0&rating=G&lang=en`
+            }&per_page=18&q=${encodeURIComponent(query)}&image_type=photo`
           )
             .then(json => {
-              this.results = json.data;
+              this.results = json.hits;
               this.update();
             })
             .catch(error => handle(error));
