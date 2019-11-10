@@ -1,0 +1,72 @@
+.uppload-modal-bg {
+  background-color: $modalBackground;
+}
+
+.uppload-modal {
+  background-color: $modalElementBackground;
+  color: $modalElementForeground;
+  box-shadow: $modalElementBoxShadow;
+
+  aside {
+    background-color: $sidebarNavBackground;
+    color: $sidebarNavForeground;
+
+    nav .uppload-service-name input[type="radio"] {
+      &:checked + label {
+        background-color: $sidebarNavActiveBackground;
+        color: $sidebarNavActiveForeground;
+      }
+      &:focus + label {
+        box-shadow: $sidebarNavFocusBoxShadow;
+      }
+    }
+  }
+
+  .uppload-error {
+    background-color: $errorBackground;
+    color: $errorForeground;
+  }
+
+  form {
+    input {
+      border-color: $inputBorderColor;
+    }
+    button {
+      background-color: $buttonDefaultBackground;
+      color: $buttonDefaultForeground;
+    }
+  }
+
+  .uppload-container {
+    .effects-continue {
+      button {
+        background-color: $effectsButtonBackground;
+        color: $effectsButtonForeground;
+        &.effects-continue--upload {
+          background-color: $effectsCTAButtonBackground;
+          color: $effectsCTAButtonForeground;
+        }
+      }
+    }
+
+    footer.effects-nav {
+      background-color: $effectsNavBackground;
+      color: $effectsNavForeground;
+      input[type="radio"]:checked + label {
+        background-color: $effectsNavActiveBackground;
+        color: $effectsNavActiveForeground;
+      }
+    }
+  }
+
+  .uppload-service--default {
+    .uppload-services button {
+      background-color: $HomeNavItemBackground;
+      color: $HomeNavItemForeground;
+    }
+  }
+
+  .uppload-loader > div {
+    background-color: $loaderColor;
+  }
+}

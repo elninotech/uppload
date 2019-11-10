@@ -13,7 +13,6 @@
       width: 22.5%;
       margin: 0 1.25% 2.5% 1.25%;
       button {
-        background-color: whitesmoke;
         border: none;
         font: inherit;
         display: block;
@@ -91,13 +90,6 @@
     }
   }
 }
-
-// @media (prefers-color-scheme: dark) {
-//   .uppload-service--default .uppload-services .uppload-service-name button {
-//     background-color: #444;
-//     color: #fff;
-//   }
-// }
 
 .filter-previews {
   overflow-x: auto;
@@ -212,7 +204,6 @@
     height: 7.5rem;
     margin-top: -2rem;
     margin-bottom: 2rem;
-    background-color: #333;
     border-radius: 100%;
     animation: sk-scaleout 1.5s infinite ease-in-out;
   }

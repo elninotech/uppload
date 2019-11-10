@@ -1,0 +1,81 @@
+.uppload-container {
+  .active-effect-container {
+    flex: 1 0 0;
+  }
+
+  .effects-continue {
+    text-align: center;
+    button {
+      font: inherit;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 125%;
+      margin: 0 0.5rem;
+      border-radius: 0.2rem;
+
+      &.effects-continue--upload {
+        i {
+          margin-left: 0.75rem;
+        }
+      }
+    }
+  }
+
+  footer.effects-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+    }
+
+    label {
+      display: block;
+      padding: 0.5rem 0;
+      text-align: center;
+      width: 4.5rem;
+      font-size: 120%;
+      span {
+        font-size: 55%;
+        display: block;
+      }
+      svg {
+        display: block;
+        margin: 0.2rem auto;
+        height: 1.25rem;
+      }
+    }
+  }
+
+  .uppload-effect {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .active-effect-container {
+      flex: 1 0 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      > div:first-child {
+        flex: 1 0 0;
+      }
+
+      .settings {
+        text-align: center;
+        padding: 1rem 0;
+
+        .value {
+          margin-left: 0.5rem;
+        }
+      }
+
+      input[type="range"] {
+        margin: 0 auto;
+        width: 75%;
+      }
+    }
+  }
+}

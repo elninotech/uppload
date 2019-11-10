@@ -1,0 +1,45 @@
+.uppload-modal {
+  p {
+    margin: 0;
+    margin-bottom: 1rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .uppload-error {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  form {
+    text-align: center;
+    margin: 2rem 0;
+    input,
+    button {
+      -webkit-appearance: none;
+      appearance: none;
+      font: inherit;
+      padding: 0.5rem 1rem;
+      border-radius: 0.2rem;
+      border: none;
+      font-size: 125%;
+      display: block;
+      margin: 1rem auto;
+    }
+    input {
+      width: 75%;
+      border: 0.1rem solid;
+    }
+    button {
+      &[type="submit"]::after {
+        content: "→";
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}

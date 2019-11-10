@@ -1,0 +1,33 @@
+$modalBackground: rgba(125, 125, 125, 0.25);
+$modalElementBackground: #fff;
+$modalElementForeground: inherit;
+$modalElementBoxShadow: 0 5rem 10rem rgba(0, 0, 0, 0.3);
+
+$sidebarNavBackground: #dfe6e9;
+$sidebarNavForeground: inherit;
+$sidebarNavActiveBackground: #fff;
+$sidebarNavActiveForeground: inherit;
+$sidebarNavFocusBoxShadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+
+$errorBackground: #c33;
+$errorForeground: #fff;
+
+$inputBorderColor: rgba(0, 0, 0, 0.1);
+$buttonDefaultBackground: #333;
+$buttonDefaultForeground: #fff;
+
+$effectsButtonBackground: whitesmoke;
+$effectsButtonForeground: inherit;
+$effectsCTAButtonBackground: #3498db;
+$effectsCTAButtonForeground: #fff;
+$effectsNavBackground: #dfe6e9;
+$effectsNavForeground: inherit;
+$effectsNavActiveBackground: #fff;
+$effectsNavActiveForeground: inherit;
+
+$HomeNavItemBackground: whitesmoke;
+$HomeNavItemForeground: inherit;
+
+$loaderColor: #333;
+
+@import "./theme.scss";
