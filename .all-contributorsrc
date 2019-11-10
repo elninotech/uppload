@@ -134,6 +134,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "dingsbams",
+      "name": "Achim Krämer",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/16029597?v=4",
+      "profile": "https://github.com/dingsbams",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 5,
