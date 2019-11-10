@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "elnino-ict",
+      "name": "El Niño",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2854021?v=4",
+      "profile": "https://www.elnino.tech",
+      "contributions": [
+        "business",
+        "financial",
+        "infra",
+        "projectManagement"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "uppload",
+  "projectOwner": "elninotech",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
