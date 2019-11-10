@@ -22,6 +22,7 @@ import Local from "./services/local";
 import GIPHY from "./services/giphy";
 import Pixabay from "./services/pixabay";
 import Unsplash from "./services/unsplash";
+import Pexels from "./services/pexels";
 import URL from "./services/url";
 import Screenshot from "./services/screenshot";
 export {
@@ -33,7 +34,8 @@ export {
   URL,
   Screenshot,
   GIPHY,
-  Unsplash
+  Unsplash,
+  Pexels
 };
 
 // Effects

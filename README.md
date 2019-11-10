@@ -113,6 +113,7 @@ profilePicture.use([
     - [x] Facebook
     - [x] Unsplash
     - [x] Pixabay
+    - [x] Pexels
     - [x] GIPHY
     - [x] URL screenshot
 - [ ] Effects (ways to change the file)

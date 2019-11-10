@@ -1,6 +1,7 @@
 export default {
   response_not_ok: "We got an error in fetching this file",
   fetching: "Getting your image from $1$...",
+  imagesPoweredBy: "Images powered by $1$",
   services: {
     default: {
       heading: "Select an image"
@@ -42,22 +43,25 @@ export default {
       title: "GIPHY",
       button: "Search on GIPHY",
       label: "Find a GIF",
-      placeholder: "Search for something",
-      poweredBy: "Powered by $1$"
+      placeholder: "Search for something"
     },
     unsplash: {
       title: "Unsplash",
       button: "Search on Unsplash",
       label: "Find an image",
-      placeholder: "Search for something",
-      poweredBy: "Powered by $1$"
+      placeholder: "Search for something"
     },
     pixabay: {
       title: "Pixabay",
       button: "Search on Pixabay",
       label: "Find an image",
-      placeholder: "Search for something",
-      poweredBy: "Powered by $1$"
+      placeholder: "Search for something"
+    },
+    pexels: {
+      title: "Pexels",
+      button: "Search on Pexels",
+      label: "Find an image",
+      placeholder: "Search for something"
     }
   },
   effects: {

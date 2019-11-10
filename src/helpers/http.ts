@@ -1,13 +1,16 @@
 /**
  * Make an HTTP request with the Fetch API and cache results
  */
-export function cachedFetch<T>(input: RequestInfo): Promise<T> {
+export function cachedFetch<T>(
+  input: RequestInfo,
+  settings?: RequestInit
+): Promise<T> {
   return new Promise((resolve, reject) => {
     const key = `uppload-cache-${JSON.stringify(input)}`;
     const cachedResult = localStorage.getItem(key);
     if (cachedResult) return resolve(JSON.parse(cachedResult));
     window
-      .fetch(input)
+      .fetch(input, settings)
       .then(response => {
         if (!response.ok) throw new Error("response_not_ok");
         return response.json();

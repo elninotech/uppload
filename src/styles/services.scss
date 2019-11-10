@@ -32,10 +32,12 @@
 
 .uppload-service--unsplash,
 .uppload-service--pixabay,
-.uppload-service--giphy {
+.uppload-service--giphy,
+.uppload-service--pexels {
   .unsplash-images,
   .pixabay-images,
-  .giphy-images {
+  .giphy-images,
+  .pexels-images {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -73,7 +75,8 @@
   }
   .unsplash-footer,
   .pixabay-footer,
-  .giphy-footer {
+  .giphy-footer,
+  .pexels-footer {
     text-align: center;
     padding-bottom: 1.5rem;
     font-size: 90%;
