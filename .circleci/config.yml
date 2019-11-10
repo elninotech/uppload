@@ -3,9 +3,16 @@ jobs:
   build:
     docker:
       - image: circleci/node:10.16.3
-
     working_directory: ~/repo
-
     steps:
       - checkout
-      - run: npm run build
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: yarn build
