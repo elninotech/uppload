@@ -20,7 +20,8 @@ export default {
     },
     url: {
       title: "Direct URL",
-      button: "Import from URL"
+      button: "Import from URL",
+      placeholder: "Image URL"
     },
     facebook: {
       title: "Facebook",
