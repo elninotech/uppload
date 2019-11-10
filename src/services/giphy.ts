@@ -81,7 +81,11 @@ export default class Giphy extends UpploadService {
       "services.giphy.button"
     )}</button>
       </form>
-      <div class="giphy-images"></div></div>
+      <div class="giphy-images"></div>
+      <p class="giphy-footer">${translate(
+        "services.giphy.poweredBy",
+        `<a href="https://giphy.com">${translate("services.giphy.title")}</a>`
+      )}</p></div>
       <div class="uppload-loader giphy-loader">
         <div></div>
         <p>${translate(

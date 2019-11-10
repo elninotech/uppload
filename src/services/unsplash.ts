@@ -118,7 +118,13 @@ export default class Unsplash extends UpploadService {
       "services.unsplash.button"
     )}</button>
       </form>
-      <div class="unsplash-images"></div></div>
+      <div class="unsplash-images"></div>
+      <p class="unsplash-footer">${translate(
+        "services.unsplash.poweredBy",
+        `<a href="https://unsplash.com">${translate(
+          "services.unsplash.title"
+        )}</a>`
+      )}</p></div>
       <div class="uppload-loader unsplash-loader">
         <div></div>
         <p>${translate(

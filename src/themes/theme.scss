@@ -7,6 +7,10 @@
   color: $modalElementForeground;
   box-shadow: $modalElementBoxShadow;
 
+  a {
+    color: $linkColor;
+  }
+
   aside {
     background-color: $sidebarNavBackground;
     color: $sidebarNavForeground;

@@ -31,9 +31,11 @@
 }
 
 .uppload-service--unsplash,
-.uppload-service--pixabay {
+.uppload-service--pixabay,
+.uppload-service--giphy {
   .unsplash-images,
-  .pixabay-images {
+  .pixabay-images,
+  .giphy-images {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -70,33 +72,12 @@
     }
   }
   .unsplash-footer,
-  .pixabay-footer {
+  .pixabay-footer,
+  .giphy-footer {
     text-align: center;
     padding-bottom: 1.5rem;
     font-size: 90%;
     opacity: 0.75;
-  }
-}
-
-.uppload-service--giphy {
-  .giphy-images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    .result {
-      width: 32%;
-      margin-bottom: 2%;
-      button {
-        display: block;
-        width: 100%;
-        cursor: pointer;
-        border: none;
-        height: 7rem;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-      }
-    }
   }
 }
 
