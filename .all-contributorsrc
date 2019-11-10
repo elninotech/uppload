@@ -69,6 +69,16 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "pegler",
+      "name": "Matt",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/94491?v=4",
+      "profile": "https://pegler.io/",
+      "contributions": [
+        "bug",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 5,
