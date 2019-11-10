@@ -1,5 +1,4 @@
 import { Uppload } from "../src";
-// import Axios from "@uppload/axios";
 import { Instagram } from "../src";
 import { Facebook } from "../src";
 import { Camera } from "../src";
@@ -7,6 +6,7 @@ import { URL } from "../src";
 import { Local } from "../src";
 import { GIPHY } from "../src";
 import { Unsplash } from "../src";
+import { Pixabay } from "../src";
 import { Screenshot } from "../src";
 import { Crop } from "../src";
 import { Filters } from "../src";
@@ -21,6 +21,14 @@ const uppload = new Uppload({
   call: ".uppload-button",
   lang: en
 });
+
+// These are our public demo API keys
+// You should create your own (free!) account on these services and use your own API keys
+const GIPHY_API_KEY = "Oxp1XWdrjdIVi2NUSD93h4HTuVpmIOAy";
+const PIXABAY_API_KEY = "14234762-6301dcca06f491e77f115de8e";
+const UNSPLASH_API_KEY =
+  "3135681ed1e271e3d3d167e184aecfb0ad74d2043f6f378bf19a23a6647954d8";
+
 uppload.use([
   new Local(),
   new Camera(),
@@ -28,10 +36,9 @@ uppload.use([
   new URL(),
   new Facebook(),
   new Screenshot(),
-  new GIPHY("Oxp1XWdrjdIVi2NUSD93h4HTuVpmIOAy"),
-  new Unsplash(
-    "3135681ed1e271e3d3d167e184aecfb0ad74d2043f6f378bf19a23a6647954d8"
-  ),
+  new GIPHY(GIPHY_API_KEY),
+  new Unsplash(UNSPLASH_API_KEY),
+  new Pixabay(PIXABAY_API_KEY),
   new Filters(),
   new Hue(),
   new Crop(),

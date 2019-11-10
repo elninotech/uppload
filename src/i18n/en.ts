@@ -49,6 +49,12 @@ export default {
       button: "Search on Unsplash",
       label: "Find an image",
       placeholder: "Search for something"
+    },
+    pixabay: {
+      title: "Pixabay",
+      button: "Search on Pixabay",
+      label: "Find an image",
+      placeholder: "Search for something"
     }
   },
   effects: {
