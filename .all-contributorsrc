@@ -97,6 +97,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "kevinmarrec",
+      "name": "Kevin Marrec",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/25272043?v=4",
+      "profile": "https://marrec.io",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 5,

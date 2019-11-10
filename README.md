@@ -105,6 +105,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://pegler.io/"><img src="https://avatars0.githubusercontent.com/u/94491?v=4" width="100px;" alt="Matt"/><br /><sub><b>Matt</b></sub></a><br /><a href="https://github.com/elninotech/uppload/issues?q=author%3Apegler" title="Bug reports">🐛</a> <a href="https://github.com/elninotech/uppload/commits?author=pegler" title="Code">💻</a></td>
     <td align="center"><a href="http://foxego.com"><img src="https://avatars2.githubusercontent.com/u/87010?v=4" width="100px;" alt="Rob"/><br /><sub><b>Rob</b></sub></a><br /><a href="https://github.com/elninotech/uppload/issues?q=author%3Arobisaks" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://mihir.ch"><img src="https://avatars1.githubusercontent.com/u/31861755?v=4" width="100px;" alt="Mihir Chaturvedi"/><br /><sub><b>Mihir Chaturvedi</b></sub></a><br /><a href="https://github.com/elninotech/uppload/commits?author=plibither8" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://marrec.io"><img src="https://avatars2.githubusercontent.com/u/25272043?v=4" width="100px;" alt="Kevin Marrec"/><br /><sub><b>Kevin Marrec</b></sub></a><br /><a href="https://github.com/elninotech/uppload/commits?author=kevinmarrec" title="Documentation">📖</a></td>
   </tr>
 </table>
 
