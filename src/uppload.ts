@@ -308,7 +308,7 @@ export class Uppload {
         }</div>
         <div class="effects-continue">
           <button class="effects-continue--cancel">Cancel</button>
-          <button class="effects-continue--upload">Upload<i class="fas fa-arrow-right"></i></button>
+          <button class="effects-continue--upload">Upload</button>
         </div>
       `;
     }
@@ -393,9 +393,7 @@ export class Uppload {
     /**
      * Clicking on each sidebar link should open its service
      */
-    const inputRadios: NodeListOf<
-      HTMLInputElement
-    > = this.container.querySelectorAll(
+    const inputRadios: NodeListOf<HTMLInputElement> = this.container.querySelectorAll(
       ".uppload-services input[type='radio']"
     );
     inputRadios.forEach(radio => {
@@ -414,9 +412,9 @@ export class Uppload {
     /**
      * Clicking on each sidebar link should open its service
      */
-    const effectInputRadios: NodeListOf<
-      HTMLInputElement
-    > = this.container.querySelectorAll(".effects-nav input[type='radio']");
+    const effectInputRadios: NodeListOf<HTMLInputElement> = this.container.querySelectorAll(
+      ".effects-nav input[type='radio']"
+    );
     effectInputRadios.forEach(radio => {
       const radioFunction = (e: Event) => {
         const inputRadio = document.querySelector(

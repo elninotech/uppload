@@ -13,9 +13,7 @@ export default class Camera extends UpploadService {
         <input class="${this.class(
           "input"
         )}" type="search" placeholder="Enter a URL">
-        <button type="submit" style="background: ${
-          this.color
-        }"><i class="fas fa-dot-circle"></i>${translate(
+        <button type="submit" style="background: ${this.color}">${translate(
       "services.camera.button"
     )}</button>
       </form>

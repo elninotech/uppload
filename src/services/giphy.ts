@@ -14,9 +14,7 @@ export default class GIPHY extends UpploadService {
         <input class="${this.class(
           "input"
         )}" type="search" placeholder="Enter a URL">
-        <button type="submit" style="background: ${
-          this.color
-        }"><i class="fas fa-search"></i>${translate(
+        <button type="submit" style="background: ${this.color}">${translate(
       "services.giphy.button"
     )}</button>
       </form>

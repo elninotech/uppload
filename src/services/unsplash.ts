@@ -104,9 +104,7 @@ export default class Unsplash extends UpploadService {
         <input class="${this.class(
           "input"
         )}" type="search" placeholder="Find an image..." required>
-        <button type="submit" style="background: ${
-          this.color
-        }"><i class="fas fa-search"></i>${translate(
+        <button type="submit" style="background: ${this.color}">${translate(
       "services.unsplash.button"
     )}</button>
       </form>

@@ -13,9 +13,7 @@ export default class URL extends UpploadService {
         <input class="${this.class(
           "input"
         )}" type="search" placeholder="Enter a URL">
-        <button type="submit" style="background: ${
-          this.color
-        }"><i class="fas fa-file-import"></i>${translate(
+        <button type="submit" style="background: ${this.color}">${translate(
       "services.url.button"
     )}</button>
       </form>
