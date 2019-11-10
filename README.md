@@ -100,6 +100,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://victorlap.nl"><img src="https://avatars0.githubusercontent.com/u/1645632?v=4" width="100px;" alt="Victor"/><br /><sub><b>Victor</b></sub></a><br /><a href="https://github.com/elninotech/uppload/commits?author=victorlap" title="Code">💻</a> <a href="#translation-victorlap" title="Translation">🌍</a> <a href="https://github.com/elninotech/uppload/commits?author=victorlap" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/Rick053"><img src="https://avatars1.githubusercontent.com/u/4579963?v=4" width="100px;" alt="Rick van Gemert"/><br /><sub><b>Rick van Gemert</b></sub></a><br /><a href="https://github.com/elninotech/uppload/issues?q=author%3ARick053" title="Bug reports">🐛</a> <a href="https://github.com/elninotech/uppload/commits?author=Rick053" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/tomtenvoorde"><img src="https://avatars0.githubusercontent.com/u/38886034?v=4" width="100px;" alt="tomtenvoorde"/><br /><sub><b>tomtenvoorde</b></sub></a><br /><a href="#design-tomtenvoorde" title="Design">🎨</a></td>
+  </tr>
 </table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
