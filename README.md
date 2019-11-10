@@ -23,11 +23,12 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
 
 <table>
   <tr>
-    <td><img alt="" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-1.png"></td>
-    <td><img alt="" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-2.png"></td>
+    <td><img alt="Screenshot of Uppload home" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-1.png"></td>
+    <td><img alt="Screenshot of Unsplash service" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-2.png"></td>
   </tr>
   <tr>
-    <td><img alt="" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-3.png"></td>
+    <td><img alt="Screenshot of Instagram service" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-3.png"></td>
+    <td><img alt="Screenshot of filter effects" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-4.png"></td>
   </tr>
 </table>
 
