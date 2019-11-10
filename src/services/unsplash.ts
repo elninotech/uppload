@@ -102,7 +102,7 @@ export default class Unsplash extends UpploadService {
       ".unsplash-container"
     ) as HTMLDivElement;
     if (container) container.style.display = this.loading ? "none" : "";
-    if (loader) loader.style.display = this.loading ? "" : "none";
+    if (loader) loader.style.display = this.loading ? "flex" : "none";
   }
 
   template = () => {
@@ -110,7 +110,9 @@ export default class Unsplash extends UpploadService {
       <div class="unsplash-container"><form class="${this.class("form")}">
         <input class="${this.class(
           "input"
-        )}" type="search" placeholder="Find an image..." required>
+        )}" type="search" placeholder="${translate(
+      "services.unsplash.placeholder"
+    )}" required>
         <button type="submit" style="background: ${this.color}">${translate(
       "services.unsplash.button"
     )}</button>

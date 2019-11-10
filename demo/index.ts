@@ -20,7 +20,7 @@ const uppload = new Uppload({
   bind: ".uppload-image",
   call: ".uppload-button",
   lang: en,
-  defaultService: "unsplash"
+  defaultService: "giphy"
 });
 uppload.use([
   new Local(),
@@ -29,7 +29,7 @@ uppload.use([
   new URL(),
   new Facebook(),
   new Screenshot(),
-  new GIPHY(),
+  new GIPHY("Oxp1XWdrjdIVi2NUSD93h4HTuVpmIOAy"),
   new Unsplash(
     "3135681ed1e271e3d3d167e184aecfb0ad74d2043f6f378bf19a23a6647954d8"
   ),

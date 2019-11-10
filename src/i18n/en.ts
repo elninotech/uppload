@@ -31,11 +31,13 @@ export default {
     },
     giphy: {
       title: "GIPHY",
-      button: "Search on GIPHY"
+      button: "Search on GIPHY",
+      placeholder: "Find a GIF..."
     },
     unsplash: {
       title: "Unsplash",
-      button: "Search on Unsplash"
+      button: "Search on Unsplash",
+      placeholder: "Find an image..."
     }
   },
   effects: {

@@ -70,6 +70,28 @@
   }
 }
 
+.uppload-service--giphy {
+  .giphy-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .result {
+      width: 32%;
+      margin-bottom: 2%;
+      button {
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        border: none;
+        height: 7rem;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
 // @media (prefers-color-scheme: dark) {
 //   .uppload-service--default .uppload-services .uppload-service-name button {
 //     background-color: #444;
@@ -181,7 +203,7 @@
 
 .uppload-loader {
   height: 100%;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
