@@ -24,7 +24,8 @@
     "build-site": "site",
     "build-demo": "parcel build demo/index.html",
     "demo": "parcel demo/index.html",
-    "lint": "prettier '**/*.{ts,scss}' --write"
+    "lint": "prettier '**/*.{ts,scss}' --write",
+    "changelog": "gitmoji-changelog"
   },
   "browserslist": [
     "last 1 Chrome versions"
@@ -32,6 +33,7 @@
   "devDependencies": {
     "@staart/site": "^1.7.14",
     "cssnano": "^4.1.10",
+    "gitmoji-changelog": "^2.0.0",
     "husky": "^3.0.9",
     "parcel": "^1.12.4",
     "prettier": "^1.18.2",
