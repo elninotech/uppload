@@ -17,7 +17,7 @@ export default class Instagram extends UpploadService {
           this.color
         }"><i class="fas fa-file-import"></i>${translate(
       "services.instagram.button"
-    )}</button>s
+    )}</button>
       </form>
       <footer>
         <p>

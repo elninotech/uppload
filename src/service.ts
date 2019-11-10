@@ -4,6 +4,7 @@ export class UpploadService {
   type = "service";
   name: string = "";
   invisible = false;
+  noRecolor = false;
   icon: string = "";
   color = "#333";
   template: () => string = () => "";

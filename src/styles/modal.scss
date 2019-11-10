@@ -11,11 +11,11 @@ $modalForegroundZIndex: 12000;
   z-index: $modalBackgroundZIndex;
   text-align: right;
 }
-@media (prefers-color-scheme: dark) {
-  .uppload-modal-bg {
-    background: rgba(0, 0, 0, 0.5);
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   .uppload-modal-bg {
+//     background: rgba(0, 0, 0, 0.5);
+//   }
+// }
 
 .uppload-error {
   background-color: #c33;
@@ -206,36 +206,36 @@ $modalForegroundZIndex: 12000;
     }
   }
 }
-@media (prefers-color-scheme: dark) {
-  .uppload-modal {
-    background: #222;
-    color: #fff;
-    aside {
-      background-color: #444;
-      nav .uppload-service-name input[type="radio"]:checked + label {
-        background-color: #222;
-      }
-    }
-  }
-  .uppload-modal section footer.effects-nav {
-    background-color: #333;
-  }
-  .uppload-modal
-    section
-    footer.effects-nav
-    input[type="radio"]:checked
-    + label {
-    background-color: #222;
-  }
-  .uppload-modal section form input {
-    background-color: #111;
-    color: #fff;
-  }
-  .uppload-modal aside nav .uppload-service-name label i,
-  .uppload-service--default .uppload-services .uppload-service-name i {
-    filter: brightness(200%);
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   .uppload-modal {
+//     background: #222;
+//     color: #fff;
+//     aside {
+//       background-color: #444;
+//       nav .uppload-service-name input[type="radio"]:checked + label {
+//         background-color: #222;
+//       }
+//     }
+//   }
+//   .uppload-modal section footer.effects-nav {
+//     background-color: #333;
+//   }
+//   .uppload-modal
+//     section
+//     footer.effects-nav
+//     input[type="radio"]:checked
+//     + label {
+//     background-color: #222;
+//   }
+//   .uppload-modal section form input {
+//     background-color: #111;
+//     color: #fff;
+//   }
+//   .uppload-modal aside nav .uppload-service-name label i,
+//   .uppload-service--default .uppload-services .uppload-service-name i {
+//     filter: brightness(200%);
+//   }
+// }
 
 .uppload-close {
   font: inherit;

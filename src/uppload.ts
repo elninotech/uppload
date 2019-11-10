@@ -4,6 +4,7 @@ import { UpploadEffect } from "./effect";
 import { setI18N } from "./helpers/i18n";
 import { Elements, getElements, safeListen } from "./helpers/elements";
 import { show, hide } from "show-hide";
+import { colorSVG } from "./helpers/assets";
 import mitt from "mitt";
 
 let lang: { [index: string]: any } | undefined = undefined;
@@ -179,7 +180,7 @@ export class Uppload {
             ${
               service.icon.startsWith("http")
                 ? `<img class="service-icon" alt="" src="${service.icon}">`
-                : service.icon
+                : colorSVG(service.icon, service)
             }
             <span>${
               this.lang.services &&
@@ -207,7 +208,7 @@ export class Uppload {
           ${
             effect.icon.startsWith("http")
               ? `<img class="effect-icon" alt="" src="${effect.icon}">`
-              : effect.icon
+              : colorSVG(effect.icon, effect)
           }
           <span>${
             this.lang.effects &&
