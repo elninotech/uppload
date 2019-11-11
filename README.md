@@ -32,12 +32,16 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
 
 <table>
   <tr>
-    <td><img alt="Screenshot of Uppload home" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-1.png"></td>
-    <td><img alt="Screenshot of Unsplash service" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-2.png"></td>
+    <td><img alt="Screenshot of Uppload home" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/home.png"></td>
+    <td><img alt="Screenshot of local service" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/local.png"></td>
   </tr>
   <tr>
-    <td><img alt="Screenshot of Instagram service" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-3.png"></td>
-    <td><img alt="Screenshot of filter effects" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/wip-4.png"></td>
+    <td><img alt="Screenshot of Unsplash service" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/unsplash.png"></td>
+    <td><img alt="Screenshot of filter effects" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/filters.png"></td>
+  </tr>
+  <tr>
+    <td><img alt="Screenshot of GIPHY service" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/giphy.png"></td>
+    <td><img alt="Screenshot of Instagram effects" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/instagram.png"></td>
   </tr>
 </table>
 
@@ -78,10 +82,10 @@ profilePicture.use([
 ## 💻 Usage Docs
 
 - [Getting started](https://uppload.netlify.com/getting-started)
-- Building a custom package
-- Listening to events
-- Multiple Uppload instances
-- Migrating from Uppload 1.x
+- [Building a custom package](https://uppload.netlify.com/custom-package)
+- [Listening to events](https://uppload.netlify.com/listening-to-events)
+- [Multiple Uppload instances](https://uppload.netlify.com/multiple-instances)
+- [Migrating from Uppload 1.x](https://uppload.netlify.com/migrating-to-1x)
 - Services
 - Effects
 - Uploaders
