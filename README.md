@@ -189,3 +189,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 - Code: [MIT](https://github.com/elninotech/uppload/blob/master/LICENSE)
 - Logo and assets: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- Image filter icons: [CC BY 3.0](https://thenounproject.com/nikhilsahukar/collection/image/)
