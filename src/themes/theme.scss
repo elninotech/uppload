@@ -19,9 +19,15 @@
       &:checked + label {
         background-color: $sidebarNavActiveBackground;
         color: $sidebarNavActiveForeground;
+        &:hover {
+          background-color: $sidebarNavActiveBackground;
+        }
       }
       &:focus + label {
         box-shadow: $sidebarNavFocusBoxShadow;
+      }
+      + label:hover {
+        background-color: darken($sidebarNavBackground, 5);
       }
     }
   }
