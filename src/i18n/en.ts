@@ -34,6 +34,12 @@ export default {
       label: "Facebook post URL",
       placeholder: "Enter a Facebook post URL"
     },
+    flickr: {
+      title: "Flickr",
+      button: "Import from Flickr",
+      label: "Flickr photo URL",
+      placeholder: "Enter a Flickr photo URL"
+    },
     screenshot: {
       title: "Screenshot",
       button: "Take screenshot",

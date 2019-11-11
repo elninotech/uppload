@@ -14,6 +14,7 @@ import { Filters } from "../src";
 import { Rotate } from "../src";
 import { Hue } from "../src";
 import { Sharpen } from "../src";
+import { Flickr } from "../src";
 import { en } from "../src";
 
 const uppload = new Uppload({
@@ -43,6 +44,7 @@ uppload.use([
   new Unsplash(UNSPLASH_API_KEY),
   new Pixabay(PIXABAY_API_KEY),
   new Pexels(PEXELS_API_KEY),
+  new Flickr(),
   new Filters(),
   new Hue(),
   new Crop(),

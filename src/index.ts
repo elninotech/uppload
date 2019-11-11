@@ -25,6 +25,7 @@ import Unsplash from "./services/unsplash";
 import Pexels from "./services/pexels";
 import URL from "./services/url";
 import Screenshot from "./services/screenshot";
+import Flickr from "./services/flickr";
 export {
   Camera,
   Instagram,
@@ -35,7 +36,8 @@ export {
   Screenshot,
   GIPHY,
   Unsplash,
-  Pexels
+  Pexels,
+  Flickr
 };
 
 // Effects
