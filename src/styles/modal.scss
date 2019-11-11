@@ -44,18 +44,8 @@ $modalForegroundZIndex: 12000;
   aside {
     width: 25%;
     overflow-x: auto;
-    display: flex;
-    justify-content: stretch;
 
     nav {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-
       .uppload-service-name {
         position: relative;
         width: 100%;
@@ -76,7 +66,7 @@ $modalForegroundZIndex: 12000;
           display: block;
           width: 100%;
           display: flex;
-          padding: 0 1rem;
+          padding: 1rem;
           align-items: center;
           line-height: 1;
 
