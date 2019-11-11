@@ -16,11 +16,11 @@ export default class Local extends UpploadService {
 
   template = () => {
     return `<div class="drop-area">
-      <div>Drop files here</div>
-      <em>or</em>
+      <div>${translate("services.local.drop")}</div>
+      <em>${translate("services.local.or")}</em>
       <button class="uppload-button uppload-button--cta" style="background: ${
         this.color
-      }">Select a file</button>
+      }">${translate("services.local.button")}</button>
     </div>
       <div class="alternate-input">
         <input type="file" accept="${this.mimeTypes.join()}">

@@ -8,7 +8,9 @@ export default {
     },
     local: {
       title: "Choose file",
-      button: "Choose a file"
+      button: "Select a file",
+      or: "or",
+      drop: "Drop files here"
     },
     camera: {
       title: "Camera",
