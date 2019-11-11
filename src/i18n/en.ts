@@ -52,6 +52,12 @@ export default {
       label: "DeviantArt post URL",
       placeholder: "Enter a DeviantArt post URL"
     },
+    artstation: {
+      title: "ArtStation",
+      button: "Import from ArtStation",
+      label: "ArtStation post URL",
+      placeholder: "Enter a ArtStation post URL"
+    },
     pinterest: {
       title: "Pinterest",
       button: "Import from Pinterest",

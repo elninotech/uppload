@@ -19,7 +19,8 @@ import {
   NineGag,
   Pinterest,
   en,
-  DeviantArt
+  DeviantArt,
+  ArtStation
 } from "../src";
 
 const uppload = new Uppload({
@@ -53,6 +54,7 @@ uppload.use([
   new Flickr(),
   new NineGag(),
   new DeviantArt(),
+  new ArtStation(),
   new Filters(),
   new Hue(),
   new Crop(),
