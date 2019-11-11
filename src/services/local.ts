@@ -15,22 +15,55 @@ export default class Local extends UpploadService {
   }
 
   template = () => {
-    return `<div>
-      <div class="drop-area">Drop files here</div>
-    </div>`;
+    return `<div class="drop-area">
+      <div>Drop files here</div>
+      <em>or</em>
+      <button class="uppload-button uppload-button--cta" style="background: ${
+        this.color
+      }">Select a file</button>
+    </div>
+      <div class="alternate-input">
+        <input type="file" accept="${this.mimeTypes.join()}">
+      </div>`;
   };
 
   handlers = ({ next }: HandlersParams) => {
     const dropArea = document.querySelector(".drop-area");
     if (dropArea)
-      safeListen(dropArea, "drop", event => {
-        this.dropHandler(event as DragEvent, next);
-      });
+      safeListen(dropArea, "drop", event =>
+        this.dropHandler(event as DragEvent, next)
+      );
     if (dropArea) safeListen(dropArea, "dragover", this.dragHandler);
     if (dropArea) safeListen(dropArea, "dragend", this.dragStop);
     if (dropArea) safeListen(dropArea, "dragexit", this.dragStop);
     if (dropArea) safeListen(dropArea, "dragleave", this.dragStop);
+    if (dropArea) safeListen(dropArea, "click", this.fileSelect);
+    const input = document.querySelector(
+      ".alternate-input input[type=file]"
+    ) as HTMLInputElement | null;
+    if (input) safeListen(input, "change", event => this.getFile(event, next));
   };
+
+  getFile(event: Event, next: (file: Blob) => void) {
+    const files = (event.target as HTMLInputElement).files;
+    let file: File | null = null; // getAsFile() returns File | null
+    if (files) {
+      for (let i = 0; i < files.length; i++) {
+        const item = files[i];
+        if (this.mimeTypes.includes(item.type)) file = item;
+      }
+    }
+    if (!file) return;
+    if (file) next(file);
+    event.preventDefault();
+  }
+
+  fileSelect() {
+    const input = document.querySelector(
+      ".alternate-input input[type=file]"
+    ) as HTMLInputElement | null;
+    if (input) input.click();
+  }
 
   dragStop() {
     const dropArea = document.querySelector(".drop-area");
@@ -44,6 +77,7 @@ export default class Local extends UpploadService {
   }
 
   dropHandler(event: DragEvent, next: (file: Blob) => void) {
+    this.dragStop();
     let file: File | null = null; // getAsFile() returns File | null
     if (event.dataTransfer && event.dataTransfer.items) {
       for (let i = 0; i < event.dataTransfer.items.length; i++) {

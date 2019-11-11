@@ -19,27 +19,28 @@
   form {
     text-align: center;
     margin: 2rem 0;
-    input,
-    button {
-      -webkit-appearance: none;
-      appearance: none;
-      font: inherit;
-      padding: 0.5rem 1rem;
-      border-radius: 0.2rem;
-      border: none;
-      font-size: 125%;
-      display: block;
-      margin: 1rem auto;
-    }
     input {
       width: 75%;
       border: 0.1rem solid;
     }
-    button {
-      &[type="submit"]::after {
-        content: "→";
-        margin-left: 0.5rem;
-      }
-    }
+  }
+
+  form input,
+  form button,
+  button.uppload-button {
+    -webkit-appearance: none;
+    appearance: none;
+    font: inherit;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    border: none;
+    font-size: 125%;
+    display: block;
+    margin: 1rem auto;
+  }
+  form button[type="submit"]::after,
+  .uppload-button--cta::after {
+    content: "→";
+    margin-left: 0.5rem;
   }
 }

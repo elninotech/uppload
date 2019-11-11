@@ -35,10 +35,12 @@
     input {
       border-color: $inputBorderColor;
     }
-    button {
-      background-color: $buttonDefaultBackground;
-      color: $buttonDefaultForeground;
-    }
+  }
+
+  form button,
+  .uppload-button {
+    background-color: $buttonDefaultBackground;
+    color: $buttonDefaultForeground;
   }
 
   .effects-continue {
