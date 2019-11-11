@@ -86,13 +86,13 @@ profilePicture.use([
 - [Listening to events](https://uppload.netlify.com/listening-to-events)
 - [Multiple Uppload instances](https://uppload.netlify.com/multiple-instances)
 - [Migrating from Uppload 1.x](https://uppload.netlify.com/migrating-to-1x)
-- Services
+- [Services](https://uppload.netlify.com/services)
 - Effects
 - Uploaders
 - Themes
 - Wrappers
 - Backends
-- Internationalization
+- [Internationalization](https://uppload.netlify.com/i18n)
 
 **[View Uppload 2 docs →](https://uppload.netlify.com)**
 
