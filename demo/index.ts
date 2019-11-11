@@ -1,21 +1,24 @@
-import { Uppload } from "../src";
-import { Instagram } from "../src";
-import { Facebook } from "../src";
-import { Camera } from "../src";
-import { URL } from "../src";
-import { Local } from "../src";
-import { GIPHY } from "../src";
-import { Unsplash } from "../src";
-import { Pixabay } from "../src";
-import { Pexels } from "../src";
-import { Screenshot } from "../src";
-import { Crop } from "../src";
-import { Filters } from "../src";
-import { Rotate } from "../src";
-import { Hue } from "../src";
-import { Sharpen } from "../src";
-import { Flickr } from "../src";
-import { en } from "../src";
+import {
+  Uppload,
+  Instagram,
+  Facebook,
+  Camera,
+  URL,
+  Local,
+  GIPHY,
+  Unsplash,
+  Pixabay,
+  Pexels,
+  Screenshot,
+  Crop,
+  Filters,
+  Rotate,
+  Hue,
+  Sharpen,
+  Flickr,
+  NineGag,
+  en
+} from "../src";
 
 const uppload = new Uppload({
   value: "https://via.placeholder.com/150",
@@ -45,6 +48,7 @@ uppload.use([
   new Pixabay(PIXABAY_API_KEY),
   new Pexels(PEXELS_API_KEY),
   new Flickr(),
+  new NineGag(),
   new Filters(),
   new Hue(),
   new Crop(),

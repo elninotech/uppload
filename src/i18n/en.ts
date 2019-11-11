@@ -40,6 +40,12 @@ export default {
       label: "Flickr photo URL",
       placeholder: "Enter a Flickr photo URL"
     },
+    ninegag: {
+      title: "9GAG",
+      button: "Import from 9GAG",
+      label: "9GAG photo URL",
+      placeholder: "Enter a 9GAG photo URL"
+    },
     screenshot: {
       title: "Screenshot",
       button: "Take screenshot",
