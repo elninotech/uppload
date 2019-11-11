@@ -58,6 +58,12 @@ export default {
       label: "ArtStation post URL",
       placeholder: "Enter a ArtStation post URL"
     },
+    twitter: {
+      title: "Twitter",
+      button: "Import from Twitter",
+      label: "Twitter image tweet URL",
+      placeholder: "Enter a Twitter image tweet URL"
+    },
     pinterest: {
       title: "Pinterest",
       button: "Import from Pinterest",
