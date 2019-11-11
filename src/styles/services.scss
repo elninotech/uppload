@@ -223,3 +223,14 @@
     width: 100%;
   }
 }
+
+.uppload-service--local {
+  .drop-area {
+    text-align: center;
+    border: 1px dashed;
+    padding: 3rem;
+    margin: 2rem;
+    font-size: 150%;
+    border-radius: 0.2rem;
+  }
+}

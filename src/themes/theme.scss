@@ -74,6 +74,19 @@
     }
   }
 
+  .uppload-service--local {
+    .drop-area {
+      border: $dropAreaBorder;
+      background-color: $dropAreaBackground;
+      color: $dropAreaColor;
+      &.drop-area-active {
+        border: $dropAreaActiveBorder;
+        background-color: $dropAreaActiveBackground;
+        color: $dropAreaActiveColor;
+      }
+    }
+  }
+
   .uppload-loader > div {
     background-color: $loaderColor;
   }

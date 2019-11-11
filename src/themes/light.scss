@@ -43,5 +43,11 @@ $HomeNavItemBackground: $colorLightGray;
 $HomeNavItemForeground: inherit;
 
 $loaderColor: #333;
+$dropAreaBorder: 3px dashed rgba(0, 0, 0, 0.1);
+$dropAreaBackground: transparent;
+$dropAreaColor: inherit;
+$dropAreaActiveBorder: 3px dashed rgba(0, 0, 0, 0.25);
+$dropAreaActiveBackground: $colorLightGray;
+$dropAreaActiveColor: inherit;
 
 @import "./theme.scss";
