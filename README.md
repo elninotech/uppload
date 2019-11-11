@@ -120,6 +120,7 @@ profilePicture.use([
   - [x] Import image from web service
     - [x] Instagram
     - [x] Facebook
+    - [x] Flickr
     - [x] URL screenshot
 - [ ] Effects (ways to change the file)
   - [ ] Preview

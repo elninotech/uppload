@@ -7,6 +7,7 @@ Users can import photos from web services in Uppload by specifying the resource 
 | Direct URL | `URL` |
 | Instagram | `Instagram` |
 | Facebook | `Facebook` |
+| Flickr | `Flickr` |
 | Webpage screenshot | `Screenshot` |
 
 ![Screenshot of Instagram service](/assets/screenshots/instagram.png)
