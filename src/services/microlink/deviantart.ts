@@ -1,4 +1,4 @@
-import { MicrolinkBaseClass } from "../helpers/microlink";
+import { MicrolinkBaseClass } from "../../helpers/microlink";
 
 export default class DeviantArt extends MicrolinkBaseClass {
   name = "deviantart";

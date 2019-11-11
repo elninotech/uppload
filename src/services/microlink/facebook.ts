@@ -1,4 +1,4 @@
-import { MicrolinkBaseClass } from "../helpers/microlink";
+import { MicrolinkBaseClass } from "../../helpers/microlink";
 
 export default class Facebook extends MicrolinkBaseClass {
   name = "facebook";

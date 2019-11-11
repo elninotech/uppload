@@ -16,21 +16,21 @@ export { en } from "./i18n";
 
 // Uploaders
 import Camera from "./services/camera";
-import Instagram from "./services/instagram";
-import Facebook from "./services/facebook";
+import Instagram from "./services/microlink/instagram";
+import Facebook from "./services/microlink/facebook";
 import Local from "./services/local";
 import GIPHY from "./services/giphy";
 import Pixabay from "./services/pixabay";
 import Unsplash from "./services/unsplash";
 import Pexels from "./services/pexels";
-import URL from "./services/url";
-import Screenshot from "./services/screenshot";
-import Flickr from "./services/flickr";
-import Pinterest from "./services/pinterest";
-import DeviantArt from "./services/deviantart";
-import NineGag from "./services/9gag";
-import ArtStation from "./services/artstation";
-import Twitter from "./services/twitter";
+import URL from "./services/microlink/url";
+import Screenshot from "./services/microlink/screenshot";
+import Flickr from "./services/microlink/flickr";
+import Pinterest from "./services/microlink/pinterest";
+import DeviantArt from "./services/microlink/deviantart";
+import NineGag from "./services/microlink/9gag";
+import ArtStation from "./services/microlink/artstation";
+import Twitter from "./services/microlink/twitter";
 export {
   Camera,
   Instagram,
