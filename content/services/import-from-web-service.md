@@ -22,7 +22,7 @@ picture.use(new Instagram());
 
 ## Development
 
-Under the hood, all of these web service importers use the [Microlink API](https://microlink.io), so they have a shared codebase.
+Under the hood, all of these web service importers use the [Microlink API](https://microlink.io), so they have a shared codebase. Uppload also caches API responses in local storage.
 
 If you want to build your own Microlink-based web service importer, you can do this:
 
