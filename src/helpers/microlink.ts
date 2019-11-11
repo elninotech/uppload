@@ -5,6 +5,7 @@ import { imageUrlToBlob, cachedFetch } from "./http";
 
 export class MicrolinkBaseClass extends UpploadService {
   loading = false;
+  validator: (value: string) => boolean = () => true;
 
   template = () => {
     return `
@@ -43,11 +44,13 @@ export class MicrolinkBaseClass extends UpploadService {
     ) as HTMLFormElement | null;
     if (form) {
       form.addEventListener("submit", event => {
+        event.preventDefault();
         const input = document.querySelector(
           `.${this.class("input")}`
         ) as HTMLInputElement | null;
         if (input) {
           const url = input.value;
+          if (!this.validator(url)) return handle("invalid_url");
           this.loading = true;
           this.update();
           if (this.name === "screenshot") {
@@ -81,7 +84,6 @@ export class MicrolinkBaseClass extends UpploadService {
               .catch(error => handle(error));
           }
         }
-        event.preventDefault();
         return false;
       });
     }
