@@ -20,7 +20,8 @@ import {
   Pinterest,
   en,
   DeviantArt,
-  ArtStation
+  ArtStation,
+  Twitter
 } from "../src";
 
 const uppload = new Uppload({
@@ -52,6 +53,7 @@ uppload.use([
   new Pexels(PEXELS_API_KEY),
   new Pinterest(),
   new Flickr(),
+  new Twitter(),
   new NineGag(),
   new DeviantArt(),
   new ArtStation(),

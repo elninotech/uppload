@@ -30,6 +30,7 @@ import Pinterest from "./services/pinterest";
 import DeviantArt from "./services/deviantart";
 import NineGag from "./services/9gag";
 import ArtStation from "./services/artstation";
+import Twitter from "./services/twitter";
 export {
   Camera,
   Instagram,
@@ -45,7 +46,8 @@ export {
   Flickr,
   NineGag,
   DeviantArt,
-  ArtStation
+  ArtStation,
+  Twitter
 };
 
 // Effects
