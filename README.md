@@ -67,7 +67,6 @@ Finally, choose which services (ways to select a file), effects (ways to manipul
 ```ts
 import { Uppload, en, Local, Unsplash, Crop, Filters } from "uppload";
 
-const profilePicture = new Uppload();
 profilePicture.use([
   new Local(),                        // Select file from computer
   new Unsplash("your api-key"),       // Search and import from Unsplash
@@ -105,16 +104,17 @@ profilePicture.use([
     - [x] Light (default theme)
     - [x] Dark theme
 - [ ] Services (ways to choose a file)
-  - [ ] Drag and drop to upload file
+  - [x] Drag and drop to upload file
   - [x] Import image from URL
   - [ ] Click photo from camera
-  - [ ] Import image from web service
-    - [x] Instagram
-    - [x] Facebook
+  - [x] Search for pictures and import
     - [x] Unsplash
     - [x] Pixabay
     - [x] Pexels
     - [x] GIPHY
+  - [x] Import image from web service
+    - [x] Instagram
+    - [x] Facebook
     - [x] URL screenshot
 - [ ] Effects (ways to change the file)
   - [ ] Preview
