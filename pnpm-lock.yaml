@@ -1,4 +1,5 @@
 dependencies:
+  jslib-html5-camera-photo: 3.1.3
   mitt: 1.2.0
   show-hide: 0.9.0
 devDependencies:
@@ -4069,6 +4070,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==
+  /jslib-html5-camera-photo/3.1.3:
+    dev: false
+    resolution:
+      integrity: sha512-8vJwX0a6o82+AJur7KntGvGLYhfxN5h7HRNd77zuoLOi3/Rd+5L47gL9MwTHdtWu3J3VC3a3MuC4KiW8l8HXzA==
   /json-parse-better-errors/1.0.2:
     dev: true
     resolution:
@@ -8009,6 +8014,7 @@ specifiers:
   cssnano: ^4.1.10
   gitmoji-changelog: ^2.0.0
   husky: ^3.0.9
+  jslib-html5-camera-photo: ^3.1.3
   mitt: ^1.2.0
   parcel: ^1.12.4
   prettier: ^1.18.2
