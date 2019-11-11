@@ -8,7 +8,7 @@ You can [view the README of Uppload 1.x](https://github.com/elninotech/uppload/t
 
 ## Uppload 2
 
-Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file uploading widget. It's written in TypeScript and supports custom builds.
+Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file uploading widget with 15+ ways to select images. It's written in TypeScript and supports custom builds.
 
 |  | Status |
 | - | - |
