@@ -10,6 +10,7 @@ Users can import photos from web services in Uppload by specifying the resource 
 | Flickr | `Flickr` |
 | 9GAG | `NineGag` |
 | Pinterest | `Pinterest` |
+| DeviantArt | `DeviantArt` |
 | Webpage screenshot | `Screenshot` |
 
 ![Screenshot of Instagram service](/assets/screenshots/instagram.png)

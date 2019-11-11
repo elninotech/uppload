@@ -46,6 +46,12 @@ export default {
       label: "9GAG photo URL",
       placeholder: "Enter a 9GAG photo URL"
     },
+    deviantart: {
+      title: "DeviantArt",
+      button: "Import from DeviantArt",
+      label: "DeviantArt post URL",
+      placeholder: "Enter a DeviantArt post URL"
+    },
     pinterest: {
       title: "Pinterest",
       button: "Import from Pinterest",

@@ -27,6 +27,7 @@ import URL from "./services/url";
 import Screenshot from "./services/screenshot";
 import Flickr from "./services/flickr";
 import Pinterest from "./services/pinterest";
+import DeviantArt from "./services/deviantart";
 import NineGag from "./services/9gag";
 export {
   Camera,
@@ -41,7 +42,8 @@ export {
   Pexels,
   Pinterest,
   Flickr,
-  NineGag
+  NineGag,
+  DeviantArt
 };
 
 // Effects
