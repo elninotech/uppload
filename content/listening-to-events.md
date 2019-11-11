@@ -3,8 +3,8 @@
 You can listen to events by using the `on` function:
 
 ```ts
-import Uppload from "@uppload/core";
-const uploader = new Uppload();
+import { Uppload, en } from "uppload";
+const uploader = new Uppload({ lang: en });
 
 uploader.on("upload", (url: string) => {
   console.log(`The URL of the uploaded file is: ${url}`);

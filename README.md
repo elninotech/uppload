@@ -88,6 +88,7 @@ profilePicture.use([
 - Themes
 - Wrappers
 - Backends
+- Internationalization
 
 **[View Uppload 2 docs →](https://uppload.netlify.com)**
 
@@ -142,14 +143,6 @@ profilePicture.use([
   - [ ] Starter templates to show people how to use Uppload with e.g., Firebase
   - [ ] Getting started page
   - [ ] TypeDoc for exploring packages
-
-### Post-merge checklist
-
-- [ ] Add all-contributors to README
-  - [ ] Include previous I18N contributors
-  - [ ] The Noun Project icons
-    - [ ] https://thenounproject.com/nikhilsahukar/collection/image/
-- [ ] Change Netlify branch from `typescript` to `master`
 
 ## 👥 Contributors
 
