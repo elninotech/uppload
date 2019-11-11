@@ -26,6 +26,7 @@ import Pexels from "./services/pexels";
 import URL from "./services/url";
 import Screenshot from "./services/screenshot";
 import Flickr from "./services/flickr";
+import Pinterest from "./services/pinterest";
 import NineGag from "./services/9gag";
 export {
   Camera,
@@ -38,6 +39,7 @@ export {
   GIPHY,
   Unsplash,
   Pexels,
+  Pinterest,
   Flickr,
   NineGag
 };

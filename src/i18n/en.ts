@@ -46,6 +46,12 @@ export default {
       label: "9GAG photo URL",
       placeholder: "Enter a 9GAG photo URL"
     },
+    pinterest: {
+      title: "Pinterest",
+      button: "Import from Pinterest",
+      label: "Pinterest pin URL",
+      placeholder: "Enter a Pinterest pin URL"
+    },
     screenshot: {
       title: "Screenshot",
       button: "Take screenshot",

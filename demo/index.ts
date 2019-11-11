@@ -17,6 +17,7 @@ import {
   Sharpen,
   Flickr,
   NineGag,
+  Pinterest,
   en
 } from "../src";
 
@@ -47,6 +48,7 @@ uppload.use([
   new Unsplash(UNSPLASH_API_KEY),
   new Pixabay(PIXABAY_API_KEY),
   new Pexels(PEXELS_API_KEY),
+  new Pinterest(),
   new Flickr(),
   new NineGag(),
   new Filters(),

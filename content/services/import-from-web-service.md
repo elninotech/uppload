@@ -9,6 +9,7 @@ Users can import photos from web services in Uppload by specifying the resource 
 | Facebook | `Facebook` |
 | Flickr | `Flickr` |
 | 9GAG | `NineGag` |
+| Pinterest | `Pinterest` |
 | Webpage screenshot | `Screenshot` |
 
 ![Screenshot of Instagram service](/assets/screenshots/instagram.png)
