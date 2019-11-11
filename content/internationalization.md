@@ -1,0 +1,36 @@
+# Internationalization
+
+Uppload is very easy to localize. For example, if you want to use Uppload in English, simply import `en` and specify it in the `lang` parameter of the constructor:
+
+```ts
+import { Uppload, en } from "uppload";
+
+const profilePicture = new Uppload({
+  lang: en
+});
+```
+
+If you want to overwrite some keys, you can do that too:
+
+```ts
+const lang = en;
+lang.services.local.drop = "Drag and drop files here";
+
+const profilePicture = new Uppload({ lang });
+```
+
+Similarly, you can add your own language pack:
+
+```ts
+const nl = {
+  response_not_ok: "Error",
+  imagesPoweredBy: "Images powered by $1$"
+  // ...and so on
+};
+
+const profilePicture = new Uppload({ lang: nl });
+```
+
+As you'll see in the code sample above, terms such as `$1$` (in general, `$n$` where `n` is a number) are replaced by variables in templates using the [i18n helper](https://github.com/elninotech/uppload/tree/typescript/src/helpers/i18n.ts).
+
+Finally, if you're building your own language pack for Uppload, you can also contribute it to the open-source project. Simply go ahead and create a `lang.ts` file in the `./src/i18n` directory (where `lang` is the two letter ISO code for the language) using `en.ts` as the base.
