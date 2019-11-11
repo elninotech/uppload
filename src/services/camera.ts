@@ -19,26 +19,26 @@ export default class Camera extends UpploadService {
   };
 
   handlers = () => {
-    console.log(new Date());
-    const video = document.querySelector("video");
-    if (video) {
-      const cameraPhoto = new CameraPhoto(video);
-      cameraPhoto
-        .startCamera(FACING_MODES.ENVIRONMENT)
-        .then(stream => console.log("stream", stream))
-        .catch(error => console.log("error", error));
-      setTimeout(() => {
-        // console.log(cameraPhoto.getDataUri({
-        //   sizeFactor: 1,
-        //   imageType: IMAGE_TYPES.JPG,
-        //   imageCompression: 0.95,
-        //   isImageMirror: false
-        // }));
-        console.log(cameraPhoto.getCameraSettings());
-      }, 1000);
-      const stopButton = document.querySelector("button.camera-stop");
-      if (stopButton)
-        safeListen(stopButton, "click", () => cameraPhoto.startCamera());
-    }
+    // console.log(new Date());
+    // const video = document.querySelector("video");
+    // if (video) {
+    //   const cameraPhoto = new CameraPhoto(video);
+    //   cameraPhoto
+    //     .startCamera(FACING_MODES.ENVIRONMENT)
+    //     .then(stream => console.log("stream", stream))
+    //     .catch(error => console.log("error", error));
+    //   setTimeout(() => {
+    //     // console.log(cameraPhoto.getDataUri({
+    //     //   sizeFactor: 1,
+    //     //   imageType: IMAGE_TYPES.JPG,
+    //     //   imageCompression: 0.95,
+    //     //   isImageMirror: false
+    //     // }));
+    //     console.log(cameraPhoto.getCameraSettings());
+    //   }, 1000);
+    //   const stopButton = document.querySelector("button.camera-stop");
+    //   if (stopButton)
+    //     safeListen(stopButton, "click", () => cameraPhoto.startCamera());
+    // }
   };
 }

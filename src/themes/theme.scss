@@ -31,10 +31,8 @@
     color: $errorForeground;
   }
 
-  form {
-    input {
-      border-color: $inputBorderColor;
-    }
+  form input {
+    border-color: $inputBorderColor;
   }
 
   form button,
