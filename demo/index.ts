@@ -21,7 +21,8 @@ import {
   en,
   DeviantArt,
   ArtStation,
-  Twitter
+  Twitter,
+  Brightness
 } from "../src";
 
 const uppload = new Uppload({
@@ -57,11 +58,12 @@ uppload.use([
   new NineGag(),
   new DeviantArt(),
   new ArtStation(),
-  new Crop(),
-  new Filters(),
+  // new Crop(),
+  // new Filters(),
   new Blur(),
-  new Rotate(),
-  new Sharpen()
+  new Brightness()
+  // new Rotate(),
+  // new Sharpen()
 ]);
 // uppload.use(new Axios(() => ({
 //   method: "GET",

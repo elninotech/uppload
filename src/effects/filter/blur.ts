@@ -1,4 +1,4 @@
-import UpploadFilterBaseClass from "../helpers/filter";
+import UpploadFilterBaseClass from "../../helpers/filter";
 
 export default class Blur extends UpploadFilterBaseClass {
   name = "blur";

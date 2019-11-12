@@ -5,7 +5,9 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
   canvas: HTMLCanvasElement = document.createElement("canvas");
   originalfileURL = "";
   cssFilter = "";
+  max = 10;
   unit = "px";
+  value = 0;
 
   template = (file: Blob) => {
     const image = URL.createObjectURL(file);
@@ -15,7 +17,7 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
         <img style="width: 20px" alt="" src="${image}">
       </div>
       <div class="settings">
-        <input type="range" value="0" min="0" max="10">
+        <input type="range" value="${this.value}" min="0" max="${this.max}">
         <span class="value"><span>0</span>${this.unit}</span>
       </div>
     `;

@@ -54,7 +54,8 @@ export {
 import Crop from "./effects/crop";
 import Rotate from "./effects/rotate";
 import Filters from "./effects/filters";
-import Blur from "./effects/blur";
+import Brightness from "./effects/filter/brightness";
+import Blur from "./effects/filter/blur";
 import Preview from "./effects/preview";
 import Sharpen from "./effects/sharpen";
-export { Blur, Crop, Rotate, Sharpen, Filters, Preview };
+export { Brightness, Crop, Rotate, Sharpen, Filters, Preview, Blur };
