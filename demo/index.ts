@@ -13,7 +13,7 @@ import {
   Crop,
   Filters,
   Rotate,
-  Hue,
+  Blur,
   Sharpen,
   Flickr,
   NineGag,
@@ -59,7 +59,7 @@ uppload.use([
   new ArtStation(),
   new Crop(),
   new Filters(),
-  new Hue(),
+  new Blur(),
   new Rotate(),
   new Sharpen()
 ]);
