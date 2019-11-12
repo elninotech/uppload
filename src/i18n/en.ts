@@ -104,6 +104,9 @@ export default {
     }
   },
   effects: {
+    preview: {
+      title: "Preview"
+    },
     filters: {
       title: "Filters"
     },
@@ -122,6 +125,9 @@ export default {
     },
     grayscale: {
       title: "Grayscale"
+    },
+    hue: {
+      title: "Color"
     }
   }
 };

@@ -55,5 +55,6 @@ import Crop from "./effects/crop";
 import Rotate from "./effects/rotate";
 import Filters from "./effects/filters";
 import Hue from "./effects/hue";
+import Preview from "./effects/preview";
 import Sharpen from "./effects/sharpen";
-export { Hue, Crop, Rotate, Sharpen, Filters };
+export { Hue, Crop, Rotate, Sharpen, Filters, Preview };

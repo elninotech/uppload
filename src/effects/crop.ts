@@ -1,7 +1,7 @@
 import { UpploadEffect } from "../";
 import Cropper from "cropperjs";
 import { HandlersParams } from "../helpers/interfaces";
-import { safeListen } from "../helpers/elements";
+import { safeListen, fitImageToContainer } from "../helpers/elements";
 import { translate } from "../helpers/i18n";
 
 export default class Crop extends UpploadEffect {
@@ -64,31 +64,36 @@ export default class Crop extends UpploadEffect {
       ".uppload-cropping-element img"
     ) as HTMLImageElement | null;
     if (cropperElement) {
-      const parent = cropperElement.parentElement as HTMLElement;
-      const currentDimensions = cropperElement.getBoundingClientRect();
-      const dimensions = parent.getBoundingClientRect();
-      if (currentDimensions.height < currentDimensions.width) {
-        cropperElement.style.height = `${dimensions.height}px`;
-        cropperElement.style.width = "auto";
-      } else {
-        cropperElement.style.width = `${dimensions.width}px`;
-        cropperElement.style.height = "auto";
-      }
-      requestAnimationFrame(() => {
-        const currentDimensions = cropperElement.getBoundingClientRect();
-        if (currentDimensions.height > dimensions.height) {
-          cropperElement.style.height = `${dimensions.height}px`;
-          cropperElement.style.width = "auto";
-        } else if (currentDimensions.width > dimensions.width) {
-          cropperElement.style.width = `${dimensions.width}px`;
-          cropperElement.style.height = "auto";
-        }
-        requestAnimationFrame(() => {
-          const cropper = new Cropper(cropperElement, {
-            aspectRatio: this.aspectRatio,
-            autoCropArea: 1,
-            viewMode: 1,
-            cropend() {
+      fitImageToContainer(cropperElement).then(() => {
+        const cropper = new Cropper(cropperElement, {
+          aspectRatio: this.aspectRatio,
+          autoCropArea: 1,
+          viewMode: 1,
+          cropend() {
+            cropper.getCroppedCanvas().toBlob(
+              result => {
+                if (!result) return;
+                next(result);
+              },
+              "image/png",
+              1
+            );
+          }
+        });
+        const aspectRatios = document.querySelectorAll(
+          "input[name='crop-aspect-ratio']"
+        );
+        aspectRatios.forEach(aspectRatio => {
+          safeListen(aspectRatio, "change", () => {
+            const selectedAspectRatio = document.querySelector(
+              "input[name='crop-aspect-ratio']:checked"
+            );
+            if (selectedAspectRatio) {
+              cropper.setAspectRatio(
+                this.aspectRatioOptions[
+                  selectedAspectRatio.getAttribute("data-name") || "free"
+                ]
+              );
               cropper.getCroppedCanvas().toBlob(
                 result => {
                   if (!result) return;
@@ -98,31 +103,6 @@ export default class Crop extends UpploadEffect {
                 1
               );
             }
-          });
-          const aspectRatios = document.querySelectorAll(
-            "input[name='crop-aspect-ratio']"
-          );
-          aspectRatios.forEach(aspectRatio => {
-            safeListen(aspectRatio, "change", () => {
-              const selectedAspectRatio = document.querySelector(
-                "input[name='crop-aspect-ratio']:checked"
-              );
-              if (selectedAspectRatio) {
-                cropper.setAspectRatio(
-                  this.aspectRatioOptions[
-                    selectedAspectRatio.getAttribute("data-name") || "free"
-                  ]
-                );
-                cropper.getCroppedCanvas().toBlob(
-                  result => {
-                    if (!result) return;
-                    next(result);
-                  },
-                  "image/png",
-                  1
-                );
-              }
-            });
           });
         });
       });
