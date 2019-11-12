@@ -3,6 +3,11 @@ export default {
   invalid_url: "This URL is seems to be invalid",
   fetching: "Getting your image from $1$...",
   imagesPoweredBy: "Images powered by $1$",
+  units: {
+    px: "px",
+    "%": "%",
+    deg: "°"
+  },
   services: {
     default: {
       heading: "Select an image"

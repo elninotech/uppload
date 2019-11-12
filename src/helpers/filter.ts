@@ -1,6 +1,7 @@
 import { UpploadEffect } from "..";
 import { safeListen, fitImageToContainer } from "../helpers/elements";
 import { HandlersParams } from "./interfaces";
+import { translate } from "./i18n";
 
 export default class UpploadFilterBaseClass extends UpploadEffect {
   canvas: HTMLCanvasElement = document.createElement("canvas");
@@ -19,7 +20,8 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
       </div>
       <div class="settings">
         <input type="range" value="${this.value}" min="0" max="${this.max}">
-        <span class="value"><span>0</span>${this.unit}</span>
+        <span class="value"><span>0</span>${translate(`units.${this.unit}`) ||
+          this.unit}</span>
       </div>
     `;
   };
