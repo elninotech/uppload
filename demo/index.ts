@@ -22,7 +22,10 @@ import {
   DeviantArt,
   ArtStation,
   Twitter,
-  Brightness
+  Brightness,
+  Contrast,
+  Grayscale,
+  HueRotate
 } from "../src";
 
 const uppload = new Uppload({
@@ -61,7 +64,10 @@ uppload.use([
   // new Crop(),
   // new Filters(),
   new Blur(),
-  new Brightness()
+  new Brightness(),
+  new Contrast(),
+  new Grayscale(),
+  new HueRotate()
   // new Rotate(),
   // new Sharpen()
 ]);
