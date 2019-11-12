@@ -256,7 +256,7 @@ export class Uppload {
       ${this.error ? `<div class="uppload-error">${this.error}</div>` : ""}
       ${
         this.activeEffect
-          ? `<div class="uppload-effect upload-effect--${this.activeEffect ||
+          ? `<div class="uppload-effect uppload-effect--${this.activeEffect ||
               "none"}">
       ${
         this.activeEffect && this.file ? this.renderActiveEffect(this.file) : ""

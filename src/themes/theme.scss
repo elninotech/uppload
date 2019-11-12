@@ -96,4 +96,9 @@
   .uppload-loader > div {
     background-color: $loaderColor;
   }
+
+  .uppload-effect--crop .uppload-actions label {
+    background-color: $effectsLabelBackground;
+    color: $effectsLabelColor;
+  }
 }

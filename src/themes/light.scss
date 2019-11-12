@@ -37,7 +37,9 @@ $effectsNavBackground: $colorDarkGray;
 $effectsNavForeground: inherit;
 $effectsNavActiveBackground: $colorWhite;
 $effectsNavActiveForeground: inherit;
-$effectsNavItemIconColor: #000;
+$effectsNavItemIconColor: inherit;
+$effectsLabelBackground: $colorDarkGray;
+$effectsLabelColor: inherit;
 
 $HomeNavItemBackground: $colorLightGray;
 $HomeNavItemForeground: inherit;
