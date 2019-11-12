@@ -115,13 +115,11 @@ profilePicture.use([
   - [x] Search for pictures and import
   - [x] Import image from web service
 - [ ] Effects (ways to change the file)
-  - [ ] Preview
-  - [ ] Crop
+  - [x] Preview
+  - [x] Crop
   - [ ] Filters
-  - [ ] Rotation
-  - [ ] Sharpen
-  - [ ] Flip/mirror
-  - [ ] Grayscale
+  - [ ] Rotation, mirror
+  - [ ] Sharpen, grayscale, blur
 - [ ] Uploaders (ways to send the file to a server)
   - [x] Custom function
   - [ ] REST endpoint
