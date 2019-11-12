@@ -27,7 +27,8 @@
 
   form input,
   form button,
-  button.uppload-button {
+  button.uppload-button,
+  .effects-continue button {
     -webkit-appearance: none;
     appearance: none;
     font: inherit;
@@ -36,10 +37,15 @@
     font-size: 125%;
     display: block;
     margin: 1rem auto;
+    transition: 0.2s;
   }
   form button,
-  button.uppload-button {
+  button.uppload-button,
+  .effects-continue button {
     border: none;
+  }
+  .effects-continue button {
+    margin: 0 1rem;
   }
   form button[type="submit"]::after,
   .uppload-button--cta::after {

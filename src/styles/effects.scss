@@ -8,19 +8,11 @@
     margin: 0 1rem;
   }
 
-  .effects-continue--cancel {
-    font: inherit;
-    border: none;
-    appearance: none;
-    background: none;
-    padding: 1rem;
-    margin-left: 0.25rem;
-  }
-
   footer.effects-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
 
     .effects-tabs {
       flex-wrap: wrap;
@@ -38,6 +30,7 @@
       text-align: center;
       width: 4.5rem;
       font-size: 120%;
+      transition: 0.2s;
       span {
         font-size: 55%;
         display: block;

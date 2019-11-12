@@ -201,7 +201,7 @@ export class Uppload {
   }
 
   getEffectsNavbar() {
-    return `<div>
+    return `<div class="effects-continue">
     <button class="effects-continue--cancel">Cancel</button>
   </div><div class="effects-tabs">
       ${this.effects
@@ -228,7 +228,7 @@ export class Uppload {
         )
         .join("")}
       </div><div class="effects-continue">
-        <button class="uppload-button effects-continue--upload">Upload</button>
+        <button class="effects-continue--upload">Upload</button>
       </div>`;
   }
 
@@ -459,6 +459,18 @@ export class Uppload {
         this.activeService = "default";
         this.activeEffect = "";
         this.update();
+      });
+
+    /**
+     * Clicking on the cancel button restarts the process
+     */
+    const uploadButton = document.querySelector(".effects-continue--upload");
+    if (uploadButton)
+      safeListen(uploadButton, "click", () => {
+        if (!this.file) return;
+        this.activeService = "";
+        this.activeEffect = "";
+        this.upload(this.file);
       });
   }
 
