@@ -1,5 +1,6 @@
 import { UpploadEffect } from "..";
 import { safeListen, fitImageToContainer } from "../helpers/elements";
+import { HandlersParams } from "./interfaces";
 
 export default class UpploadFilterBaseClass extends UpploadEffect {
   canvas: HTMLCanvasElement = document.createElement("canvas");
@@ -39,7 +40,7 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
     });
   }
 
-  handlers = () => {
+  handlers = ({ next }: HandlersParams) => {
     const hueElement = document.querySelector(
       ".uppload-hue-image img"
     ) as HTMLImageElement | null;
@@ -48,12 +49,12 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
         const range = document.querySelector(
           ".settings input[type='range']"
         ) as HTMLInputElement;
-        if (range) safeListen(range, "change", this.update.bind(this));
+        if (range) safeListen(range, "change", this.update.bind(this, next));
       });
     }
   };
 
-  update() {
+  update(next: (file: Blob) => void) {
     let value = 0;
     const range = document.querySelector(
       ".settings input[type='range']"
@@ -69,6 +70,7 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
       `${this.cssFilter}(${range.value}${this.unit})`
     ).then(blob => {
       if (!blob) return;
+      next(blob);
       const image = URL.createObjectURL(blob);
       hueElement.setAttribute("src", image);
     });
