@@ -64,7 +64,7 @@ uppload.use([
   new NineGag(),
   new DeviantArt(),
   new ArtStation(),
-  // new Crop(),
+  new Crop(),
   // new Filters(),
   new Blur(),
   new Brightness(),

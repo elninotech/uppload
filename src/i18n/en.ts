@@ -123,11 +123,29 @@ export default {
     sharpen: {
       title: "Sharpen"
     },
+    blur: {
+      title: "Blur"
+    },
+    brightness: {
+      title: "Brightness"
+    },
+    contrast: {
+      title: "Contrast"
+    },
     grayscale: {
       title: "Grayscale"
     },
-    hue: {
-      title: "Color"
+    "hue-rotate": {
+      title: "Hue rotate"
+    },
+    invert: {
+      title: "Invert"
+    },
+    saturate: {
+      title: "Saturate"
+    },
+    sepia: {
+      title: "Sepia"
     }
   }
 };

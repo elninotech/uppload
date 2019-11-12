@@ -15,8 +15,8 @@
     overflow: hidden;
 
     .effects-tabs {
-      flex-wrap: wrap;
       display: flex;
+      flex-wrap: wrap;
     }
 
     input[type="radio"] {
@@ -31,6 +31,7 @@
       width: 4.5rem;
       font-size: 120%;
       transition: 0.2s;
+
       span {
         font-size: 55%;
         display: block;
