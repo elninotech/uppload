@@ -1,3 +1,5 @@
+@import "./input-range.scss";
+
 .uppload-container {
   .active-effect-container {
     flex: 1 0 0;
@@ -63,6 +65,8 @@
         padding: 1rem 0;
 
         .value {
+          display: inline-block;
+          vertical-align: middle;
           margin-left: 0.5rem;
         }
       }
