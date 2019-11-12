@@ -3,6 +3,7 @@ import { HandlersParams } from "../helpers/interfaces";
 import { cachedFetch, imageUrlToBlob } from "../helpers/http";
 import { safeListen } from "../helpers/elements";
 import { translate } from "../helpers/i18n";
+import { colorSVG } from "../helpers/assets";
 
 let params: any | undefined = undefined;
 
@@ -69,9 +70,10 @@ export default class Pexels extends UpploadService {
     if (loader) loader.style.display = this.loading ? "flex" : "none";
   }
 
-  template = () => {
+  template = (): string => {
     return `
       <div class="pexels-container"><form class="${this.class("form")}">
+      <div class="service-icon">${colorSVG(this.icon, this)}</div>
       <label><span>${translate("services.pexels.label")}</span>
         <input class="${this.class(
           "input"

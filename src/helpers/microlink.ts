@@ -2,14 +2,17 @@ import { UpploadService } from "../service";
 import { translate } from "../helpers/i18n";
 import { HandlersParams } from "./interfaces";
 import { imageUrlToBlob, cachedFetch } from "./http";
+import { colorSVG } from "./assets";
 
 export class MicrolinkBaseClass extends UpploadService {
   loading = false;
   validator: (value: string) => boolean = () => true;
 
-  template = () => {
+  template = (): string => {
     return `
-      <div class="microlink-container"><form class="${this.class("form")}">
+      <div class="microlink-container">
+      <form class="${this.class("form")}">
+        <div class="service-icon">${colorSVG(this.icon, this)}</div>
         <label>
         <span>${translate(`services.${this.name}.label`)}</span>
         <input class="${this.class(

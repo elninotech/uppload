@@ -1,5 +1,13 @@
 @import "./services/cropper.scss";
 
+.service-icon {
+  margin-bottom: 2rem;
+  svg {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
 .uppload-service--default {
   text-align: center;
   p {
