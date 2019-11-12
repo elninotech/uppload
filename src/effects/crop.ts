@@ -1,5 +1,7 @@
 import { UpploadEffect } from "../";
 import Cropper from "cropperjs";
+import { HandlersParams } from "../helpers/interfaces";
+import { safeListen } from "../helpers/elements";
 
 export default class Crop extends UpploadEffect {
   name = "crop";
@@ -11,10 +13,13 @@ export default class Crop extends UpploadEffect {
       <div class="uppload-cropping-element">
         <img style="width: 20px" alt="" src="${image}">
       </div>
+      <div class="actions">
+        <button class="confirm-cropping">Done</button>
+      </div>
     `;
   };
 
-  handlers = () => {
+  handlers = ({ next }: HandlersParams) => {
     const cropperElement = document.querySelector(
       ".uppload-cropping-element img"
     ) as HTMLImageElement | null;
@@ -40,23 +45,24 @@ export default class Crop extends UpploadEffect {
         }
         requestAnimationFrame(() => {
           const cropper = new Cropper(cropperElement, {
-            crop(event) {
-              console.log("Got event", event);
-            }
+            autoCropArea: 1
           });
+          const doneButton = document.querySelector(".confirm-cropping");
+          if (doneButton)
+            safeListen(doneButton, "click", () => {
+              cropper.getCroppedCanvas().toBlob(
+                result => {
+                  if (!result) return;
+                  next(result);
+                  const image = URL.createObjectURL(result);
+                  cropperElement.setAttribute("src", image);
+                },
+                "image/png",
+                1
+              );
+            });
         });
       });
     }
   };
-
-  update() {
-    console.log(new Date());
-    let value = 0;
-    const range = document.querySelector(
-      ".settings input[type='range']"
-    ) as HTMLInputElement;
-    if (range) value = parseInt(range.value);
-    const displayer = document.querySelector(".settings .value span");
-    if (displayer) displayer.innerHTML = value.toString();
-  }
 }

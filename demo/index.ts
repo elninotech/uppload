@@ -57,9 +57,9 @@ uppload.use([
   new NineGag(),
   new DeviantArt(),
   new ArtStation(),
+  new Crop(),
   new Filters(),
   new Hue(),
-  new Crop(),
   new Rotate(),
   new Sharpen()
 ]);
