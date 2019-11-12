@@ -201,7 +201,9 @@ export class Uppload {
   }
 
   getEffectsNavbar() {
-    return `
+    return `<div>
+    <button class="effects-continue--cancel">Cancel</button>
+  </div><div class="effects-tabs">
       ${this.effects
         .map(
           effect => `
@@ -225,7 +227,9 @@ export class Uppload {
       `
         )
         .join("")}
-    `;
+      </div><div class="effects-continue">
+        <button class="uppload-button effects-continue--upload">Upload</button>
+      </div>`;
   }
 
   renderContainer() {
@@ -309,18 +313,14 @@ export class Uppload {
             ? activeEffect.template(file)
             : ""
         }</div>
-        <div class="effects-continue">
-          <button class="effects-continue--cancel">Cancel</button>
-          <button class="effects-continue--upload">Upload</button>
-        </div>
       `;
     }
   }
 
   private next(file: Blob) {
-    if (this.effects.length) {
+    this.file = file;
+    if (this.effects.length && !this.activeEffect) {
       this.activeEffect = this.effects[0].name;
-      this.file = file;
       this.update();
       const activeRadio = document.querySelector(
         `input[name='uppload-effect-radio'][value='${this.activeEffect}']`

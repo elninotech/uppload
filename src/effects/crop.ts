@@ -20,7 +20,7 @@ export default class Crop extends UpploadEffect {
   }: {
     aspectRatio?: number;
     aspectRatioOptions?: { [index: string]: number };
-  }) {
+  } = {}) {
     super();
     if (aspectRatio) this.aspectRatio = aspectRatio;
     if (aspectRatioOptions) this.aspectRatioOptions = aspectRatioOptions;
@@ -48,7 +48,6 @@ export default class Crop extends UpploadEffect {
         `
           )
           .join("")}
-        <button class="confirm-cropping">Done</button>
       </div>
     `;
   };
@@ -81,22 +80,18 @@ export default class Crop extends UpploadEffect {
           const cropper = new Cropper(cropperElement, {
             aspectRatio: this.aspectRatio,
             autoCropArea: 1,
-            viewMode: 1
-          });
-          const doneButton = document.querySelector(".confirm-cropping");
-          if (doneButton)
-            safeListen(doneButton, "click", () => {
+            viewMode: 1,
+            cropend() {
               cropper.getCroppedCanvas().toBlob(
                 result => {
                   if (!result) return;
                   next(result);
-                  const image = URL.createObjectURL(result);
-                  cropperElement.setAttribute("src", image);
                 },
                 "image/png",
                 1
               );
-            });
+            }
+          });
           const aspectRatios = document.querySelectorAll(
             "input[name='crop-aspect-ratio']"
           );

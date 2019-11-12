@@ -3,28 +3,29 @@
     flex: 1 0 0;
   }
 
-  .effects-continue {
-    text-align: center;
-    button {
-      font: inherit;
-      border: none;
-      padding: 0.5rem 1rem;
-      font-size: 125%;
-      margin: 0 0.5rem;
-      border-radius: 0.2rem;
+  .effects-continue button.uppload-button {
+    display: inline-block;
+    margin: 0 1rem;
+  }
 
-      &.effects-continue--upload {
-        i {
-          margin-left: 0.75rem;
-        }
-      }
-    }
+  .effects-continue--cancel {
+    font: inherit;
+    border: none;
+    appearance: none;
+    background: none;
+    padding: 1rem;
+    margin-left: 0.25rem;
   }
 
   footer.effects-nav {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    .effects-tabs {
+      flex-wrap: wrap;
+      display: flex;
+    }
 
     input[type="radio"] {
       position: absolute;
@@ -78,4 +79,9 @@
       }
     }
   }
+}
+
+.actions {
+  text-align: center;
+  padding: 0.5rem;
 }

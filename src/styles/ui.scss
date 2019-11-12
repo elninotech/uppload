@@ -37,7 +37,8 @@
     display: block;
     margin: 1rem auto;
   }
-  form button {
+  form button,
+  button.uppload-button {
     border: none;
   }
   form button[type="submit"]::after,
