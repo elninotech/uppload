@@ -242,6 +242,10 @@
     padding: 3rem;
     margin: 2rem;
     border-radius: 0.2rem;
+    transition: 0.2s;
+    &.drop-area-active {
+      transform: scale(1.05);
+    }
     > div {
       font-size: 150%;
     }
