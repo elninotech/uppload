@@ -119,7 +119,8 @@ profilePicture.use([
   - [x] Crop
   - [ ] Filters
   - [ ] Rotation, mirror
-  - [ ] Sharpen, grayscale, blur
+  - [x] Blur, brightness, contrast, grayscale
+  - [x] Hue rotate, invert, saturate, sepia
 - [ ] Uploaders (ways to send the file to a server)
   - [x] Custom function
   - [ ] REST endpoint
