@@ -108,7 +108,11 @@ export default {
       title: "Filters"
     },
     crop: {
-      title: "Crop"
+      title: "Crop",
+      aspectRatios: {
+        free: "Free",
+        square: "Square"
+      }
     },
     rotate: {
       title: "Rotate"
