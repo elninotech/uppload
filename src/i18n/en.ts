@@ -1,6 +1,7 @@
 export default {
   response_not_ok: "We got an error in fetching this file",
   invalid_url: "This URL is seems to be invalid",
+  uploading: "Uploading...",
   fetching: "Getting your image from $1$...",
   imagesPoweredBy: "Images powered by $1$",
   units: {

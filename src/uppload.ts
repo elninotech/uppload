@@ -1,7 +1,7 @@
 import { UpploadService } from "./service";
 import { UpploadUploader } from "./uploader";
 import { UpploadEffect } from "./effect";
-import { setI18N } from "./helpers/i18n";
+import { setI18N, translate } from "./helpers/i18n";
 import { Elements, getElements, safeListen } from "./helpers/elements";
 import { show, hide } from "show-hide";
 import { colorSVG } from "./helpers/assets";
@@ -17,7 +17,10 @@ class DefaultService extends UpploadService {
 class UploadingService extends UpploadService {
   name = "uploading";
   invisible = true;
-  template = () => `<p>Uploading your file...</p>`;
+  template = () => `<div class="uppload-loader">
+  <div></div>
+    <p>${translate("uploading")}</p>
+  </div>`;
 }
 
 export interface UpploadSettings {

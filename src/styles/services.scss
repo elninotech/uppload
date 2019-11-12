@@ -8,6 +8,10 @@
   }
 }
 
+.uppload-service--uploading .uppload-loader {
+  display: flex;
+}
+
 .uppload-service--default {
   text-align: center;
   p {
