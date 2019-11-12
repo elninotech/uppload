@@ -48,7 +48,8 @@
     margin: 0 1rem;
   }
   form button[type="submit"]::after,
-  .uppload-button--cta::after {
+  .uppload-button--cta::after,
+  .effects-continue--upload::after {
     content: "→";
     margin-left: 0.5rem;
   }
