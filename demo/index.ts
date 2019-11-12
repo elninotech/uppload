@@ -25,7 +25,10 @@ import {
   Brightness,
   Contrast,
   Grayscale,
-  HueRotate
+  HueRotate,
+  Invert,
+  Saturate,
+  Sepia
 } from "../src";
 
 const uppload = new Uppload({
@@ -67,7 +70,10 @@ uppload.use([
   new Brightness(),
   new Contrast(),
   new Grayscale(),
-  new HueRotate()
+  new HueRotate(),
+  new Invert(),
+  new Saturate(),
+  new Sepia()
   // new Rotate(),
   // new Sharpen()
 ]);

@@ -61,6 +61,9 @@ import Blur from "./effects/filter/blur";
 import Contrast from "./effects/filter/contrast";
 import Grayscale from "./effects/filter/grayscale";
 import HueRotate from "./effects/filter/hue-rotate";
+import Invert from "./effects/filter/invert";
+import Sepia from "./effects/filter/sepia";
+import Saturate from "./effects/filter/saturate";
 export {
   Brightness,
   Crop,
@@ -71,5 +74,8 @@ export {
   Blur,
   Contrast,
   Grayscale,
-  HueRotate
+  HueRotate,
+  Invert,
+  Sepia,
+  Saturate
 };
