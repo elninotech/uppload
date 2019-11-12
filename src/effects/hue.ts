@@ -24,20 +24,15 @@ export default class Hue extends UpploadEffect {
   imageToCanvasBlob(filters: string): Promise<Blob | null> {
     return new Promise(resolve => {
       this.canvas = document.createElement("canvas");
-      const hueElement = document.querySelector(
-        ".uppload-hue-image img"
-      ) as HTMLImageElement | null;
-      if (!hueElement) return;
-      const size = hueElement.getBoundingClientRect();
-      this.canvas.width = size.width;
-      this.canvas.height = size.height;
+      const image = document.createElement("img");
+      image.src = this.originalfileURL;
+      this.canvas.width = image.width;
+      this.canvas.height = image.height;
       const context = this.canvas.getContext("2d");
       if (!context) return;
       context.clearRect(0, 0, this.canvas.width, this.canvas.height);
       context.filter = filters;
-      const image = document.createElement("img");
-      image.src = this.originalfileURL;
-      context.drawImage(image, 0, 0, size.width, size.height);
+      context.drawImage(image, 0, 0);
       this.canvas.toBlob(blob => {
         if (blob) console.log(blob.size);
         resolve(blob);
