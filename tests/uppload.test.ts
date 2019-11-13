@@ -32,7 +32,26 @@ describe("event emitter", () => {
 });
 
 describe("modal functions", () => {
-  it("modal is initially closed", () => {
+  it("opens", () => {
+    uppload.open();
+    expect(uppload.modalOpen()).toBeTruthy();
+  });
+  it("closes", () => {
+    uppload.close();
     expect(uppload.modalOpen()).toBeFalsy();
+  });
+  it("has a default active service", () => {
+    expect(uppload.activeService).toBe("default");
+  });
+  it("has a default active effect", () => {
+    expect(uppload.activeEffect).toBeFalsy();
+  });
+  it("navigates to service", () => {
+    uppload.navigate("instagram");
+    expect(uppload.activeService).toBe("instagram");
+  });
+  it("navigates to effect", () => {
+    uppload.navigate("instagram");
+    expect(uppload.activeService).toBe("instagram");
   });
 });
