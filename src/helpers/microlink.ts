@@ -6,6 +6,7 @@ import { colorSVG } from "./assets";
 
 export class MicrolinkBaseClass extends UpploadService {
   loading = false;
+  exampleURL = "";
   validator: (value: string) => boolean = () => true;
 
   template = (): string => {

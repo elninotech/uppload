@@ -6,7 +6,7 @@ import { translate } from "../helpers/i18n";
 
 let params: any | undefined = undefined;
 
-export default class SearchBaseClass<ImageResult = any> extends UpploadService {
+export class SearchBaseClass<ImageResult = any> extends UpploadService {
   apiKey: string;
   results: ImageResult[] = [];
   loading = false;

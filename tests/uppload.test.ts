@@ -50,6 +50,9 @@ describe("modal functions", () => {
     uppload.navigate("instagram");
     expect(uppload.activeService).toBe("instagram");
   });
+  it("navigates to service", () => {
+    expect(() => uppload.navigate("unknown-service")).toThrow();
+  });
   it("navigates to effect", () => {
     uppload.navigate("instagram");
     expect(uppload.activeService).toBe("instagram");
