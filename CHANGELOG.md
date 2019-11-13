@@ -1,5 +1,44 @@
 # Changelog
 
+<a name="2.0.0-beta.1"></a>
+## 2.0.0-beta.1 (2019-11-13)
+
+### Added
+
+- 👷‍♂️ Report test results to Coveralls [[2cd4e27](https://github.com/elninotech/uppload/commit/2cd4e2707ccb2b39aac150ccfd0ab29157ba4b93)]
+- ✅ Add modal effect, service tests [[fc78fd8](https://github.com/elninotech/uppload/commit/fc78fd8a5cda3f158d9814ac506570056a87fd63)]
+- ✅ Add tests for basic class [[6a471a4](https://github.com/elninotech/uppload/commit/6a471a43eae2b44e7a6776e786138573e0468cc9)]
+- ✅ Add helper tests [[b96adb4](https://github.com/elninotech/uppload/commit/b96adb4fe66c75c033336aba862be778f10193f7)]
+- ➕ Add dependencies for tests [[24502b8](https://github.com/elninotech/uppload/commit/24502b80150f70f532e63a544cefdf6d31a78802)]
+- ✨ Add invert, sepia, saturate [[9f7c08a](https://github.com/elninotech/uppload/commit/9f7c08a146f2ef30fc50e798af416e07c0814565)]
+- ✨ Add contrast, grayscale, hue rotate [[87c8885](https://github.com/elninotech/uppload/commit/87c8885f767f2e197ba98d8c99ddb0bca5410921)]
+- ✨ Add brightness effect, base class [[c71bbd5](https://github.com/elninotech/uppload/commit/c71bbd5e1bb52c34367065d153bcefd367d367e7)]
+- ✨ Add single filter base class [[2ee3a5b](https://github.com/elninotech/uppload/commit/2ee3a5b028c36f277b22b41e5fe6356e9e576ea2)]
+- ✨ Make blurring range work [[7612d72](https://github.com/elninotech/uppload/commit/7612d7216fa227ecf8ff3f871e49a1df121afff4)]
+
+### Changed
+
+- 🔧 Move jest config to package.json [[4a3883d](https://github.com/elninotech/uppload/commit/4a3883d1952df9c665a1ed67483abe0104801c14)]
+- 🔧 Add test configuration file [[67757d7](https://github.com/elninotech/uppload/commit/67757d7350b82462b06c92d97ad1750835c59d8e)]
+- 💄 Add uploading state [[e42285b](https://github.com/elninotech/uppload/commit/e42285b8ff2982f448dbcd82df16ae3182c00dcc)]
+- 💄 Add service icons [[2e10a0e](https://github.com/elninotech/uppload/commit/2e10a0e46d6498b1d773c5f1703ff79153797e0b)]
+- 💄 Custom input range styling [[33b9003](https://github.com/elninotech/uppload/commit/33b90035a20e95b05e860093693cc24fb89efee7)]
+- 💄 Drag hover animation [[e431dbb](https://github.com/elninotech/uppload/commit/e431dbbb4621308e4438dff109707c08276aa923)]
+
+### Fixed
+
+- 🐛 Fix filter helper update file on change [[e3663e0](https://github.com/elninotech/uppload/commit/e3663e0e156ac45263c65768d1def3a1ff95893c)]
+- 🐛 Fix bug with canvas size [[52443b4](https://github.com/elninotech/uppload/commit/52443b494617a669ebfde6ecf975d6c8724ecee5)]
+
+### Miscellaneous
+
+- 📝 Add TypeDoc comments [[d6cf25c](https://github.com/elninotech/uppload/commit/d6cf25c3686d9c6afeab99deefb924e91b63412d)]
+- 🌐 Add i18n for units [[83d7c30](https://github.com/elninotech/uppload/commit/83d7c301f433df0f6b19510843a72d24b61141a0)]
+- 📝 Update progress in README [[8fc7545](https://github.com/elninotech/uppload/commit/8fc75457b7f58680edabcaf5d5bec2ede3238261)]
+- 🌐 Add i18n for new filters [[59fbe24](https://github.com/elninotech/uppload/commit/59fbe2413e5c73db16404b97a19b851d577cf0c8)]
+- 📝 Update README with progress [[2f5b93d](https://github.com/elninotech/uppload/commit/2f5b93d3368ed91790c4266d7ad58007b249e4a5)]
+
+
 <a name="2.0.0-beta.0"></a>
 ## 2.0.0-beta.0 (2019-11-10)
 

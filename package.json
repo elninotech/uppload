@@ -1,6 +1,6 @@
 {
   "name": "uppload",
-  "version": "2.0.0-beta.0",
+  "version": "2.0.0-beta.1",
   "description": "Uppload is a JavaScript widget for better file uploading on the web.",
   "keywords": [
     "uppload",
@@ -26,6 +26,7 @@
     "build-demo": "parcel build demo/index.html",
     "demo": "parcel demo/index.html",
     "lint": "prettier '**/*.{ts,scss}' --write",
+    "test-report": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "changelog": "gitmoji-changelog"
   },
   "browserslist": [
