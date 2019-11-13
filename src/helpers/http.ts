@@ -1,5 +1,7 @@
 /**
  * Make an HTTP request with the Fetch API and cache results
+ * @param input API endpoint
+ * @param settings HTTP Fetch configuration
  */
 export function cachedFetch<T>(
   input: RequestInfo,
@@ -23,6 +25,10 @@ export function cachedFetch<T>(
   });
 }
 
+/**
+ * Get a file Blob from an image URL
+ * @param url - URL of an image
+ */
 export const imageUrlToBlob = (url: string): Promise<Blob> => {
   return new Promise((resolve, reject) => {
     window

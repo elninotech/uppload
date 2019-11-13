@@ -31,6 +31,9 @@ export interface UpploadSettings {
   lang?: { [index: string]: any };
 }
 
+/**
+ * Uppload image uploading widget
+ */
 export class Uppload {
   services: UpploadService[] = [new DefaultService(), new UploadingService()];
   uploaders: UpploadUploader[] = [];
@@ -45,6 +48,10 @@ export class Uppload {
   lang: { [index: string]: any } = {};
   emitter = mitt();
 
+  /**
+   * Create a new Uppload instance
+   * @param settings - Uppload instance settings
+   */
   constructor(settings?: UpploadSettings) {
     this.settings = settings || {};
     lang = this.settings.lang;
@@ -62,13 +69,17 @@ export class Uppload {
     this.container = div;
   }
 
-  ready() {
+  private ready() {
     if (this.settings.value) this.bind(this.settings.value);
     this.renderContainer();
     this.emitter.emit("ready");
   }
 
-  bind(value: string) {
+  /**
+   * Bind the image URL value to DOM elements
+   * @param value - URL of the image
+   */
+  private bind(value: string) {
     if (this.settings.bind) {
       const elements = getElements(this.settings.bind);
       elements.forEach(element => {
@@ -82,6 +93,10 @@ export class Uppload {
     }
   }
 
+  /**
+   * Use an uploader, service, or effect in your package
+   * @param plugin - A single uploader, service, or effect or an array of them
+   */
   use(
     plugin:
       | UpploadUploader
@@ -100,7 +115,11 @@ export class Uppload {
     }
   }
 
-  install(plugin: UpploadUploader | UpploadService | UpploadEffect) {
+  /**
+   * Install a new uploader, service, or effect to this instance
+   * @param plugin - A single uploader, service, or effect
+   */
+  private install(plugin: UpploadUploader | UpploadService | UpploadEffect) {
     if (plugin.type === "service") {
       // Install this service
       this.services.push(plugin as UpploadService);
@@ -114,6 +133,9 @@ export class Uppload {
     }
   }
 
+  /**
+   * Open the Uppload widget
+   */
   open() {
     if (this.isOpen) return;
     this.isOpen = true;
@@ -125,6 +147,9 @@ export class Uppload {
     this.emitter.emit("open");
   }
 
+  /**
+   * Close the Uppload widget
+   */
   close() {
     if (!this.isOpen) return;
     this.isOpen = false;
@@ -132,7 +157,10 @@ export class Uppload {
     this.emitter.emit("close");
   }
 
-  update() {
+  /**
+   * Re-render the widget
+   */
+  private update() {
     if (!this.container) return;
     const content = this.container.querySelector(".uppload-active-container");
     if (content) content.innerHTML = this.render();
@@ -165,6 +193,10 @@ export class Uppload {
     }
   }
 
+  /**
+   * Returns the HTML template for the services navbar
+   * @param sidebar - Whether this is an input radio (for sidebar) or buttons (for home)
+   */
   private getNavbar(sidebar = false) {
     return `<${sidebar ? "nav" : "div"} class="uppload-services">
       ${this.services
@@ -203,7 +235,10 @@ export class Uppload {
     </${sidebar ? "nav" : "div"}>`;
   }
 
-  getEffectsNavbar() {
+  /**
+   * Returns the HTML template for the effects navbar
+   */
+  private getEffectsNavbar() {
     return `<div class="effects-continue">
     <button class="effects-continue--cancel">Cancel</button>
   </div><div class="effects-tabs">
@@ -235,7 +270,10 @@ export class Uppload {
       </div>`;
   }
 
-  renderContainer() {
+  /**
+   * Renders the main container for the widget
+   */
+  private renderContainer() {
     if (this.container)
       this.container.innerHTML = `
       <div class="uppload-modal">
@@ -254,7 +292,10 @@ export class Uppload {
     `;
   }
 
-  render() {
+  /**
+   * Render the content inside the widget container
+   */
+  private render() {
     return `
       ${this.error ? `<div class="uppload-error">${this.error}</div>` : ""}
       ${
@@ -274,7 +315,10 @@ export class Uppload {
       }`;
   }
 
-  renderActiveService() {
+  /**
+   * Render the currently active service
+   */
+  private renderActiveService() {
     const activeServices = this.services.filter(
       service => service.name === this.activeService
     );
@@ -296,7 +340,10 @@ export class Uppload {
     }
   }
 
-  renderActiveEffect(file: Blob) {
+  /**
+   * Render the currently active effect
+   */
+  private renderActiveEffect(file: Blob) {
     const activeEffects = this.effects.filter(
       effect => effect.name === this.activeEffect
     );
@@ -320,6 +367,10 @@ export class Uppload {
     }
   }
 
+  /**
+   * Updates the file and goes to the active effect
+   * @param file - The currently active file Blob
+   */
   private next(file: Blob) {
     this.file = file;
     if (this.effects.length && !this.activeEffect) {
@@ -335,11 +386,11 @@ export class Uppload {
   }
 
   /**
-   * Upload a file
+   * Upload a file to the server
    * @param file - A Blob object containing the file to upload
    * @returns The file URL
    */
-  private upload(file: Blob): Promise<string> {
+  upload(file: Blob): Promise<string> {
     this.emitter.emit("before-upload");
     return new Promise((resolve, reject) => {
       this.navigate("uploading");
@@ -362,7 +413,11 @@ export class Uppload {
     });
   }
 
-  handle(error: Error) {
+  /**
+   * Gracefully display an error message
+   * @param error - Error to display
+   */
+  private handle(error: Error) {
     this.error = this.lang[error.message] || error.message;
     this.emitter.emit("error", this.error);
     this.update();
@@ -372,7 +427,10 @@ export class Uppload {
     }, 4000);
   }
 
-  handlers() {
+  /**
+   * Adds event handlers for the widget
+   */
+  private handlers() {
     const openFunction = () => this.open();
     const closeFunction = () => this.close();
 

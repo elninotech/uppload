@@ -1,5 +1,9 @@
 export type Elements = string | string[] | Element | Element[];
 
+/**
+ * Gets all the DOM elements matching a selector
+ * @param query - CSS selector string, HTML element, or an array of them
+ */
 export const getElements = (query?: Elements): Element[] => {
   if (!query) return [];
   const elements: Element[] = [];
@@ -24,6 +28,13 @@ export const getElements = (query?: Elements): Element[] => {
 };
 
 const listening: { element: Element; type: string }[] = [];
+
+/**
+ * Safely adds an event listener, preventing duplicates
+ * @param element - HTML element to add event listener to
+ * @param type - Type of event listener to add
+ * @param fn - Callback function to call on event
+ */
 export const safeListen = (
   element: Element,
   type: string,
@@ -37,6 +48,10 @@ export const safeListen = (
   listening.push({ element, type });
 };
 
+/**
+ *
+ * @param image - An HTML <img> element in the DOM
+ */
 export const fitImageToContainer = (image: HTMLImageElement) => {
   return new Promise(resolve => {
     const parent = image.parentElement as HTMLDivElement | null;

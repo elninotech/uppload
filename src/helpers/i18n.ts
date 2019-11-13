@@ -17,10 +17,19 @@ const flattenObject = function(ob: any) {
   return toReturn;
 };
 
+/**
+ *
+ * @param translations
+ */
 export const setI18N = (translations: any) => {
   i18n = flattenObject(translations);
 };
 
+/**
+ * Get a translation from i18n setting
+ * @param key - Translation key
+ * @param params - Single term or array of variables
+ */
 export const translate = (key: string, params?: string | string[]) => {
   try {
     let term = i18n[key] as string;
