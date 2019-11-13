@@ -21,6 +21,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
+    "test": "jest",
     "build-site": "site",
     "build-demo": "parcel build demo/index.html",
     "demo": "parcel demo/index.html",
@@ -32,12 +33,15 @@
   ],
   "devDependencies": {
     "@staart/site": "^1.7.14",
+    "@types/jest": "^24.0.23",
     "cssnano": "^4.1.10",
     "gitmoji-changelog": "^2.0.0",
     "husky": "^3.0.9",
+    "jest": "^24.9.0",
     "parcel": "^1.12.4",
     "prettier": "^1.18.2",
     "sass": "^1.23.3",
+    "ts-jest": "^24.1.0",
     "typescript": "^3.7.2"
   },
   "dependencies": {
