@@ -1,6 +1,6 @@
 let i18n: any = {};
 
-const flattenObject = function(ob: any) {
+export const flattenObject = (ob: any) => {
   const toReturn: any = {};
   for (const i in ob) {
     if (!ob.hasOwnProperty(i)) continue;
