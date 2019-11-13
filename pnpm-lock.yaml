@@ -6,6 +6,7 @@ dependencies:
 devDependencies:
   '@staart/site': 1.7.14
   '@types/jest': 24.0.23
+  coveralls: 3.0.7
   cssnano: 4.1.10
   gitmoji-changelog: 2.0.0
   husky: 3.0.9
@@ -2310,6 +2311,20 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-xb3ZL6+L8b9JLLCx3ZdoZy4+2ECphCMo2PwqgP1tlfVq6M6YReyzBJtvWWtbDSpNr9hn96pkCiZqUcFEc+54Qg==
+  /coveralls/3.0.7:
+    dependencies:
+      growl: 1.10.5
+      js-yaml: 3.13.1
+      lcov-parse: 0.0.10
+      log-driver: 1.2.7
+      minimist: 1.2.0
+      request: 2.88.0
+    dev: true
+    engines:
+      node: '>=4.0.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-mUuH2MFOYB2oBaA4D4Ykqi9LaEYpMMlsiOMJOrv358yAjP6enPIk55fod2fNJ8AvwoYXStWQls37rA+s5e7boA==
   /create-ecdh/4.0.3:
     dependencies:
       bn.js: 4.11.8
@@ -3599,6 +3614,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-W55reMODJFLSuiuxy4MPlidkEKw=
+  /growl/1.10.5:
+    dev: true
+    engines:
+      node: '>=4.x'
+    resolution:
+      integrity: sha512-qBr4OuELkhPenW6goKVXiv47US3clb3/IbuWF9KNKEijAy9oeHxU9IgzjvJhHkUzhaj7rOUD7+YGWqUjLp5oSA==
   /growly/1.3.0:
     dev: true
     resolution:
@@ -5042,6 +5063,10 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-avPEb8P8EGnwXKClwsNUgryVjllcRqtMYa49NTsbQagYuT1DcXnl1915oxWjoyGrXR6zH/Y0Zc96xWsPcoDKeA==
+  /lcov-parse/0.0.10:
+    dev: true
+    resolution:
+      integrity: sha1-GwuP+ayceIklBYK3C3ExXZ2m2aM=
   /left-pad/1.3.0:
     deprecated: use String.prototype.padStart()
     dev: true
@@ -5278,6 +5303,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  /log-driver/1.2.7:
+    dev: true
+    engines:
+      node: '>=0.8.6'
+    resolution:
+      integrity: sha512-U7KCmLdqsGHBLeWqYlFA0V0Sl6P08EE1ZrmA9cxjUE0WVqT9qnyVDPz1kzpFEP0jdJuFnasWIfSd7fsaNXkpbg==
   /log-symbols/2.2.0:
     dependencies:
       chalk: 2.4.2
@@ -9173,6 +9204,7 @@ packages:
 specifiers:
   '@staart/site': ^1.7.14
   '@types/jest': ^24.0.23
+  coveralls: ^3.0.7
   cropperjs: ^1.5.6
   cssnano: ^4.1.10
   gitmoji-changelog: ^2.0.0

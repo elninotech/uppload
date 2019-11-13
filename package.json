@@ -34,6 +34,7 @@
   "devDependencies": {
     "@staart/site": "^1.7.14",
     "@types/jest": "^24.0.23",
+    "coveralls": "^3.0.7",
     "cssnano": "^4.1.10",
     "gitmoji-changelog": "^2.0.0",
     "husky": "^3.0.9",
