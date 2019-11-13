@@ -134,6 +134,13 @@ export class Uppload {
   }
 
   /**
+   * Returns whether the modal is currently open
+   */
+  modalOpen() {
+    return this.isOpen;
+  }
+
+  /**
    * Open the Uppload widget
    */
   open() {
