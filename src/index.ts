@@ -2,7 +2,6 @@ export { Uppload } from "./uppload";
 
 // Base classes
 export { UpploadService } from "./service";
-export { UpploadUploader } from "./uploader";
 export { UpploadEffect } from "./effect";
 
 // Helpers

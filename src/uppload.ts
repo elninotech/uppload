@@ -1,5 +1,4 @@
 import { UpploadService } from "./service";
-import { UpploadUploader } from "./uploader";
 import { UpploadEffect } from "./effect";
 import { setI18N, translate } from "./helpers/i18n";
 import { Elements, getElements, safeListen } from "./helpers/elements";
@@ -29,6 +28,7 @@ export interface UpploadSettings {
   call?: Elements;
   defaultService?: string;
   lang?: { [index: string]: any };
+  uploader?: (file: Blob) => Promise<string>;
 }
 
 /**
@@ -36,7 +36,6 @@ export interface UpploadSettings {
  */
 export class Uppload {
   services: UpploadService[] = [new DefaultService(), new UploadingService()];
-  uploaders: UpploadUploader[] = [];
   effects: UpploadEffect[] = [];
   isOpen = false;
   error?: string;
@@ -46,6 +45,7 @@ export class Uppload {
   container: HTMLDivElement;
   file: Blob | undefined = undefined;
   lang: { [index: string]: any } = {};
+  uploader?: (file: Blob) => Promise<string>;
   emitter = mitt();
 
   /**
@@ -66,6 +66,7 @@ export class Uppload {
     if (this.settings.defaultService)
       this.activeService = this.settings.defaultService;
     if (this.settings.lang) this.lang = this.settings.lang;
+    if (this.settings.uploader) this.uploader = this.settings.uploader;
     this.container = div;
   }
 
@@ -98,16 +99,10 @@ export class Uppload {
    * @param plugin - A single uploader, service, or effect or an array of them
    */
   use(
-    plugin:
-      | UpploadUploader
-      | UpploadService
-      | UpploadEffect
-      | UpploadUploader[]
-      | UpploadService[]
-      | UpploadEffect[]
+    plugin: UpploadService | UpploadEffect | UpploadService[] | UpploadEffect[]
   ) {
     if (Array.isArray(plugin)) {
-      plugin.forEach((item: UpploadUploader | UpploadService | UpploadEffect) =>
+      plugin.forEach((item: UpploadService | UpploadEffect) =>
         this.install(item)
       );
     } else {
@@ -119,13 +114,10 @@ export class Uppload {
    * Install a new uploader, service, or effect to this instance
    * @param plugin - A single uploader, service, or effect
    */
-  private install(plugin: UpploadUploader | UpploadService | UpploadEffect) {
+  private install(plugin: UpploadService | UpploadEffect) {
     if (plugin.type === "service") {
       // Install this service
       this.services.push(plugin as UpploadService);
-      this.ready();
-    } else if (plugin.type === "uploader") {
-      this.uploaders.push(plugin as UpploadUploader);
       this.ready();
     } else if (plugin.type === "effect") {
       this.effects.push(plugin as UpploadEffect);
@@ -399,23 +391,24 @@ export class Uppload {
    */
   upload(file: Blob): Promise<string> {
     this.emitter.emit("before-upload");
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       this.navigate("uploading");
-      if (this.uploaders.length) {
-        const uploader = this.uploaders[this.uploaders.length - 1];
-        console.log("Uploading a file", file, "using", uploader);
-        if (typeof uploader.upload === "function") {
-          uploader
-            .upload(file)
+      if (this.uploader) {
+        console.log("Uploading a file", file, "using", this.uploader);
+        if (typeof this.uploader === "function") {
+          this.uploader(file)
             .then((url: string) => {
               console.log("File uploaded successfully", url);
               this.bind(url);
               this.navigate("default");
               resolve(url);
               this.emitter.emit("upload", url);
+              this.close();
             })
-            .catch((error: Error) => reject(error));
+            .catch((error: Error) => this.handle(error));
         }
+      } else {
+        this.handle(new Error("no-uploader"));
       }
     });
   }
@@ -428,6 +421,7 @@ export class Uppload {
     this.error = this.lang[error.message] || error.message;
     this.emitter.emit("error", this.error);
     this.update();
+    if (this.activeService === "uploading") this.navigate("default");
     setTimeout(() => {
       this.error = undefined;
       this.update();
