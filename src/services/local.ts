@@ -65,7 +65,7 @@ export default class Local extends UpploadService {
     if (input) input.click();
   }
 
-  dragStop() {
+  private dragStop() {
     const dropArea = document.querySelector(".drop-area");
     if (dropArea) dropArea.classList.remove("drop-area-active");
   }

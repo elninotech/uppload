@@ -52,7 +52,9 @@ export const safeListen = (
  *
  * @param image - An HTML <img> element in the DOM
  */
-export const fitImageToContainer = (image: HTMLImageElement) => {
+export const fitImageToContainer = (
+  image: HTMLImageElement
+): Promise<undefined> => {
   return new Promise(resolve => {
     const parent = image.parentElement as HTMLDivElement | null;
     const currentDimensions = image.getBoundingClientRect();
