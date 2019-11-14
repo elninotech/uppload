@@ -53,8 +53,8 @@ export default class Unsplash extends SearchBaseClass<UnsplashResult> {
     super({
       apiKey,
       name: "unsplash",
-      icon: `<svg viewbox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path fill="#000" fill-rule="nonzero" d="M208 44V0h-49l-2 5-22 35-7 9H49v66h44l5 5-49 89v47h49l2-5 24-42 4-6h80v-62h-44l-5-4z"/></svg>`,
-      color: "#000000",
+      icon: `<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M81 113v72h94v-72h81v143H0V113h81zM175 0v71H81V0h94z" fill="#000" fill-rule="evenodd"/></svg>`,
+      color: "#333",
       poweredByUrl: "https://unsplash.com",
       popularEndpoint: (apiKey: string) =>
         `https://api.unsplash.com/photos?client_id=${apiKey}`,

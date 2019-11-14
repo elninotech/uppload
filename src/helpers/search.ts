@@ -17,6 +17,8 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
   getButton: (image: ImageResult) => string;
   getPopularResults: (response: any) => ImageResult[];
   getSearchResults: (response: any) => ImageResult[];
+  noRecolor = false;
+  fetchSettings?: RequestInit;
 
   constructor({
     apiKey,
@@ -28,7 +30,9 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
     searchEndpoint,
     getButton,
     getPopularResults,
-    getSearchResults
+    getSearchResults,
+    noRecolor,
+    fetchSettings
   }: {
     name: string;
     icon: string;
@@ -40,20 +44,24 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
     getButton: (image: ImageResult) => string;
     getPopularResults: (response: any) => ImageResult[];
     getSearchResults: (response: any) => ImageResult[];
+    noRecolor?: boolean;
+    fetchSettings?: (apiKey: string) => RequestInit;
   }) {
     super();
     this.name = name;
     this.icon = icon;
     this.color = color;
     this.apiKey = apiKey;
+    this.noRecolor = !!noRecolor;
     this.poweredByUrl = poweredByUrl;
     this.popularEndpoint = popularEndpoint(this.apiKey);
     this.searchEndpoint = searchEndpoint;
     this.getButton = getButton;
     this.getPopularResults = getPopularResults;
     this.getSearchResults = getSearchResults;
+    if (fetchSettings) this.fetchSettings = fetchSettings(this.apiKey);
     if (this.popularEndpoint)
-      cachedFetch<any>(this.popularEndpoint)
+      cachedFetch<any>(this.popularEndpoint, this.fetchSettings)
         .then(photos => {
           this.results = this.getPopularResults(photos);
           this.update();
@@ -124,7 +132,10 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
         ) as HTMLInputElement | null;
         if (input) {
           const query = input.value;
-          cachedFetch<any>(this.searchEndpoint(this.apiKey, query))
+          cachedFetch<any>(
+            this.searchEndpoint(this.apiKey, query),
+            this.fetchSettings
+          )
             .then(json => {
               this.results = this.getSearchResults(json);
               this.update();
