@@ -51,7 +51,8 @@
   .unsplash-images,
   .pixabay-images,
   .giphy-images,
-  .pexels-images {
+  .pexels-images,
+  .search-images {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -90,7 +91,8 @@
   .unsplash-footer,
   .pixabay-footer,
   .giphy-footer,
-  .pexels-footer {
+  .pexels-footer,
+  .search-footer {
     text-align: center;
     padding-bottom: 1.5rem;
     font-size: 90%;

@@ -11,22 +11,54 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
   apiKey: string;
   results: ImageResult[] = [];
   loading = false;
-  poweredByUrl = "";
-  popularEndpoint = "";
-  searchEndpoint: (query: string) => string = () => "";
-  getButton: (image: ImageResult) => string = () => "";
-  getResults: (response: any) => ImageResult[] = () => [];
+  poweredByUrl: string;
+  popularEndpoint: string;
+  searchEndpoint: (apiKey: string, query: string) => string;
+  getButton: (image: ImageResult) => string;
+  getPopularResults: (response: any) => ImageResult[];
+  getSearchResults: (response: any) => ImageResult[];
 
-  constructor(apiKey: string) {
+  constructor({
+    apiKey,
+    name,
+    icon,
+    color,
+    poweredByUrl,
+    popularEndpoint,
+    searchEndpoint,
+    getButton,
+    getPopularResults,
+    getSearchResults
+  }: {
+    name: string;
+    icon: string;
+    color: string;
+    apiKey: string;
+    poweredByUrl: string;
+    popularEndpoint: (apiKey: string) => string;
+    searchEndpoint: (apiKey: string, query: string) => string;
+    getButton: (image: ImageResult) => string;
+    getPopularResults: (response: any) => ImageResult[];
+    getSearchResults: (response: any) => ImageResult[];
+  }) {
     super();
+    this.name = name;
+    this.icon = icon;
+    this.color = color;
     this.apiKey = apiKey;
-    console.log(this.getButton);
-    cachedFetch<any>(this.popularEndpoint)
-      .then(photos => {
-        this.results = this.getResults(photos);
-        this.update();
-      })
-      .catch(() => {});
+    this.poweredByUrl = poweredByUrl;
+    this.popularEndpoint = popularEndpoint(this.apiKey);
+    this.searchEndpoint = searchEndpoint;
+    this.getButton = getButton;
+    this.getPopularResults = getPopularResults;
+    this.getSearchResults = getSearchResults;
+    if (this.popularEndpoint)
+      cachedFetch<any>(this.popularEndpoint)
+        .then(photos => {
+          this.results = this.getPopularResults(photos);
+          this.update();
+        })
+        .catch(() => {});
   }
 
   updateImages() {
@@ -65,8 +97,8 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
       </form>
       <div class="search-images"></div>
       <p class="search-footer">${translate(
-        "services.${this.name}.poweredBy",
-        `<a href="https://search.com">${translate(
+        "imagesPoweredBy",
+        `<a href="${this.poweredByUrl}" target="_blank">${translate(
           `services.${this.name}.title`
         )}</a>`
       )}</p></div>
@@ -92,9 +124,9 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
         ) as HTMLInputElement | null;
         if (input) {
           const query = input.value;
-          cachedFetch<any>(this.searchEndpoint(query))
+          cachedFetch<any>(this.searchEndpoint(this.apiKey, query))
             .then(json => {
-              this.results = this.getResults(json);
+              this.results = this.getSearchResults(json);
               this.update();
             })
             .catch(error => handle(error));
@@ -104,9 +136,7 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
       });
     }
     this.updateImages();
-    const imageButtons = document.querySelectorAll(
-      ".uppload-service--search .search-images button"
-    );
+    const imageButtons = document.querySelectorAll(".search-images button");
     imageButtons.forEach(image => {
       safeListen(image, "click", () => {
         const url = image.getAttribute("data-full-url");
