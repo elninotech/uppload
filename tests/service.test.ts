@@ -40,7 +40,8 @@ const services = [
 
 describe("service template", () => {
   it("is a function", () => expect(typeof service.template).toBe("function"));
-  it("gives a string", () => expect(typeof service.template()).toBe("string"));
+  it("gives a string", () =>
+    expect(typeof service.template(new Uppload())).toBe("string"));
 });
 
 describe("service class names", () => {

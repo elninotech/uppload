@@ -1,14 +1,15 @@
-import { Local } from "../../src";
+import { Local, Uppload } from "../../src";
 
 const service = new Local();
 
 describe("template", () => {
   it("is a function", () => expect(typeof service.template).toBe("function"));
   it("returns a string", () =>
-    expect(typeof service.template()).toBe("string"));
+    expect(typeof service.template(new Uppload())).toBe("string"));
   it("has a drop area", () =>
-    expect(service.template()).toContain("drop-area"));
-  it("has an input", () => expect(service.template()).toContain("<input"));
+    expect(service.template(new Uppload())).toContain("drop-area"));
+  it("has an input", () =>
+    expect(service.template(new Uppload())).toContain("<input"));
 });
 
 const fakeEvent = {

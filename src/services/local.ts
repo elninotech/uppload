@@ -2,6 +2,7 @@ import { UpploadService } from "../service";
 import { HandlersParams } from "../helpers/interfaces";
 import { translate } from "../helpers/i18n";
 import { safeListen } from "../helpers/elements";
+import { Uppload } from "../uppload";
 
 export default class Local extends UpploadService {
   name = "local";
@@ -14,7 +15,7 @@ export default class Local extends UpploadService {
     if (mimeTypes) this.mimeTypes = mimeTypes;
   }
 
-  template = () => {
+  template = (uppload: Uppload) => {
     return `<div class="drop-area">
       <div>${translate("services.local.drop")}</div>
       <em>${translate("services.local.or")}</em>
