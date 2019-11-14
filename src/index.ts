@@ -14,6 +14,9 @@ export * from "./helpers/i18n";
 export { en } from "./i18n";
 
 // Uploaders
+export * from "./uploaders/xhr";
+
+// Services
 import Camera from "./services/camera";
 import Instagram from "./services/microlink/instagram";
 import Facebook from "./services/microlink/facebook";

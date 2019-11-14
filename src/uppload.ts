@@ -5,6 +5,7 @@ import { Elements, getElements, safeListen } from "./helpers/elements";
 import { show, hide } from "show-hide";
 import { colorSVG } from "./helpers/assets";
 import mitt from "mitt";
+import { Uploader } from "./helpers/interfaces";
 
 let lang: { [index: string]: any } | undefined = undefined;
 class DefaultService extends UpploadService {
@@ -28,7 +29,7 @@ export interface UpploadSettings {
   call?: Elements;
   defaultService?: string;
   lang?: { [index: string]: any };
-  uploader?: (file: Blob) => Promise<string>;
+  uploader?: Uploader;
 }
 
 /**
@@ -45,7 +46,7 @@ export class Uppload {
   container: HTMLDivElement;
   file: Blob | undefined = undefined;
   lang: { [index: string]: any } = {};
-  uploader?: (file: Blob) => Promise<string>;
+  uploader?: Uploader;
   emitter = mitt();
 
   /**
