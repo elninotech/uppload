@@ -42,10 +42,15 @@ const uppload = new Uppload({
   bind: ".uppload-image",
   call: ".uppload-button",
   lang: en,
-  uploader: (file: Blob) =>
-    new Promise(resolve =>
-      setTimeout(() => resolve(window.URL.createObjectURL(file)), 2000)
-    )
+  uploader: (file, updateProgress) =>
+    new Promise(resolve => {
+      setTimeout(() => resolve(window.URL.createObjectURL(file)), 5500);
+      let progress = 0;
+      const interval = setInterval(() => {
+        if (progress > 99) clearInterval(interval);
+        updateProgress(progress++);
+      }, 50);
+    })
 });
 
 // These are our public demo API keys

@@ -1,4 +1,5 @@
 import { HandlersParams } from "./helpers/interfaces";
+import { Uppload } from "./uppload";
 
 export class UpploadService {
   type = "service";
@@ -7,7 +8,7 @@ export class UpploadService {
   noRecolor = false;
   icon: string = "";
   color = "#333";
-  template: () => string = () => "";
+  template: (upploadInstance: Uppload) => string = () => "";
   handlers: (params: HandlersParams) => void = () => {};
 
   /**

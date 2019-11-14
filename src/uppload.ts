@@ -19,7 +19,9 @@ class UploadingService extends UpploadService {
   invisible = true;
   template = () => `<div class="uppload-loader">
   <div></div>
-    <p>${translate("uploading")}</p>
+    <p class="uppload-loader-text">${translate(
+      "uploading"
+    )}<span class="progress"></span></p>
   </div>`;
 }
 
@@ -48,6 +50,7 @@ export class Uppload {
   lang: { [index: string]: any } = {};
   uploader?: Uploader;
   emitter = mitt();
+  uploadProgress = 0;
 
   /**
    * Create a new Uppload instance
@@ -334,7 +337,7 @@ export class Uppload {
       });
       return `${
         typeof activeService.template === "function"
-          ? activeService.template()
+          ? activeService.template(this)
           : ""
       }`;
     }
@@ -397,7 +400,7 @@ export class Uppload {
       if (this.uploader) {
         console.log("Uploading a file", file, "using", this.uploader);
         if (typeof this.uploader === "function") {
-          this.uploader(file)
+          this.uploader(file, this.updateProgress.bind(this))
             .then((url: string) => {
               console.log("File uploaded successfully", url);
               this.bind(url);
@@ -564,5 +567,19 @@ export class Uppload {
    */
   off(type: string, handler: (event?: any) => void) {
     return this.emitter.on(type, handler);
+  }
+
+  /**
+   * Updates the upload progress
+   * @param progressPercent Current progress in percent
+   */
+  private updateProgress(progressPercent: number) {
+    this.uploadProgress = progressPercent;
+    const progressText = document.querySelector(
+      ".uppload-loader-text .progress"
+    );
+    if (progressText)
+      progressText.innerHTML = `${parseInt(progressPercent.toString())}%`;
+    this.emitter.emit("progress", this.updateProgress);
   }
 }
