@@ -20,7 +20,7 @@ import Facebook from "./services/microlink/facebook";
 import Local from "./services/local";
 import GIPHY from "./services/giphy";
 import Pixabay from "./services/pixabay";
-import Unsplash from "./services/unsplash";
+import Unsplash from "./services/search/unsplash";
 import Pexels from "./services/pexels";
 import URL from "./services/microlink/url";
 import Screenshot from "./services/microlink/screenshot";

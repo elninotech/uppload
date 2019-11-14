@@ -3,6 +3,7 @@ import { HandlersParams } from "../helpers/interfaces";
 import { cachedFetch, imageUrlToBlob } from "../helpers/http";
 import { safeListen } from "../helpers/elements";
 import { translate } from "../helpers/i18n";
+import { colorSVG } from "./assets";
 
 let params: any | undefined = undefined;
 
@@ -11,16 +12,16 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
   results: ImageResult[] = [];
   loading = false;
   poweredByUrl = "";
-  popularEndpoint: (apiKey: string) => string = () => "";
-  searchEndpoint: (apiKey: string, query: string) => string = () => "";
+  popularEndpoint = "";
+  searchEndpoint: (query: string) => string = () => "";
   getButton: (image: ImageResult) => string = () => "";
-  getResults: <T>(response: T) => ImageResult[] = () => [];
+  getResults: (response: any) => ImageResult[] = () => [];
 
   constructor(apiKey: string) {
     super();
     this.apiKey = apiKey;
-    console.log("HERE", this.popularEndpoint(this.apiKey));
-    cachedFetch<any>(this.popularEndpoint(this.apiKey))
+    console.log(this.getButton);
+    cachedFetch<any>(this.popularEndpoint)
       .then(photos => {
         this.results = this.getResults(photos);
         this.update();
@@ -48,9 +49,10 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
     if (loader) loader.style.display = this.loading ? "flex" : "none";
   }
 
-  template = () => {
+  template = (): string => {
     return `
       <div class="search-container"><form class="${this.class("form")}">
+      <div class="service-icon">${colorSVG(this.icon, this)}</div>
       <label><span>${translate(`services.${this.name}.label`)}</span>
         <input class="${this.class(
           "input"
@@ -90,7 +92,7 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
         ) as HTMLInputElement | null;
         if (input) {
           const query = input.value;
-          cachedFetch<any>(this.searchEndpoint(this.apiKey, query))
+          cachedFetch<any>(this.searchEndpoint(query))
             .then(json => {
               this.results = this.getResults(json);
               this.update();
