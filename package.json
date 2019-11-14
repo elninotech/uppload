@@ -16,6 +16,12 @@
     "javascript"
   ],
   "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
   "repository": "https://github.com/elninotech/uppload",
   "author": "El Niño <https://elnino.tech>",
   "license": "MIT",

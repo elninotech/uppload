@@ -35,7 +35,11 @@ const uppload = new Uppload({
   value: "https://via.placeholder.com/150",
   bind: ".uppload-image",
   call: ".uppload-button",
-  lang: en
+  lang: en,
+  uploader: (file: Blob) =>
+    new Promise(resolve =>
+      setTimeout(() => resolve(window.URL.createObjectURL(file)), 2000)
+    )
 });
 
 // These are our public demo API keys
