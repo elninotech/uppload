@@ -1,10 +1,9 @@
 import { Uploader } from "../helpers/interfaces";
 
-export const xhr = ({
+export const xhrUploader = ({
   endpoint,
   fileKeyName = "file",
   method = "POST",
-  updateProgress,
   responseKey = "url",
   responseFunction,
   settingsFunction
@@ -12,12 +11,11 @@ export const xhr = ({
   endpoint: string;
   fileKeyName: string;
   method: string;
-  updateProgress?: (progress: number) => void;
   responseKey: string;
   responseFunction?: (responseText: string) => string;
   settingsFunction?: (xmlHttp: XMLHttpRequest) => void | XMLHttpRequest;
 }): Uploader => {
-  return (file: Blob) =>
+  return (file, updateProgress) =>
     new Promise((resolve, reject) => {
       const formData = new FormData();
       formData.append(fileKeyName, file);
@@ -38,5 +36,47 @@ export const xhr = ({
       xmlHttp.addEventListener("error", () => reject("response_not_ok"));
       xmlHttp.addEventListener("abort", () => reject("upload_aborted"));
       xmlHttp.send(formData);
+    });
+};
+
+export const fetchUploader = ({
+  endpoint,
+  settingsFunction,
+  method = "POST",
+  fileKeyName = "file",
+  responseKey = "url",
+  responseFunction
+}: {
+  endpoint: RequestInfo;
+  settingsFunction?: (file: Blob) => RequestInit;
+  method: string;
+  fileKeyName: string;
+  responseKey: string;
+  responseFunction?: (responseText: string) => string;
+}): Uploader => {
+  return file =>
+    new Promise((resolve, reject) => {
+      const formData = new FormData();
+      formData.append(fileKeyName, file);
+      window
+        .fetch(
+          endpoint,
+          settingsFunction
+            ? settingsFunction(file)
+            : {
+                method,
+                body: formData
+              }
+        )
+        .then(response => {
+          if (!response.ok) throw new Error("response_not_ok");
+          return response.json();
+        })
+        .then(json => {
+          if (typeof responseFunction === "function")
+            return resolve(responseFunction(json));
+          return resolve(json[responseKey]);
+        })
+        .catch(() => reject("response_not_ok"));
     });
 };

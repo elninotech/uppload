@@ -4,4 +4,7 @@ export interface HandlersParams {
   handle: (error: any) => void;
 }
 
-export type Uploader = (file: Blob) => Promise<string>;
+export type Uploader = (
+  file: Blob,
+  updateProgress?: (progress: number) => void
+) => Promise<string>;
