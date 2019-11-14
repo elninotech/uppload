@@ -1,6 +1,6 @@
 # Uppload
 
-Uppload is a better JavaScript image uploader. It's highly customizable, supports 15+ ways to select a file, works with any file uploading backend, and is completely free and open-source.
+Uppload is a better JavaScript image uploader. It's highly customizable, supports 20+ ways to select a file, works with any file uploading backend, and is completely free and open-source.
 
 ![Screenshot of Uppload](/assets/screenshots/home.png)
 

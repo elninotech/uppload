@@ -30,6 +30,12 @@ import DeviantArt from "./services/microlink/deviantart";
 import NineGag from "./services/microlink/9gag";
 import ArtStation from "./services/microlink/artstation";
 import Twitter from "./services/microlink/twitter";
+import Flipboard from "./services/microlink/flipboard";
+import Fotki from "./services/microlink/fotki";
+import LinkedIn from "./services/microlink/linkedin";
+import Reddit from "./services/microlink/reddit";
+import Tumblr from "./services/microlink/tumblr";
+import WeHeartIt from "./services/microlink/weheartit";
 export {
   Camera,
   Instagram,
@@ -46,7 +52,13 @@ export {
   NineGag,
   DeviantArt,
   ArtStation,
-  Twitter
+  Twitter,
+  Flipboard,
+  Fotki,
+  LinkedIn,
+  Reddit,
+  Tumblr,
+  WeHeartIt
 };
 
 // Effects

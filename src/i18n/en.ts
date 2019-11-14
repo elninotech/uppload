@@ -77,6 +77,42 @@ export default {
       label: "Pinterest pin URL",
       placeholder: "Enter a Pinterest pin URL"
     },
+    flipboard: {
+      title: "Flipboard",
+      button: "Import from Flipboard",
+      label: "Flipboard URL",
+      placeholder: "Enter a Flipboard article URL"
+    },
+    fotki: {
+      title: "Fotki",
+      button: "Import from Fotki",
+      label: "Fotki URL",
+      placeholder: "Enter a Fotki image URL"
+    },
+    linkedin: {
+      title: "LinkedIn",
+      button: "Import from LinkedIn",
+      label: "LinkedIn URL",
+      placeholder: "Enter a LinkedIn post URL"
+    },
+    reddit: {
+      title: "Reddit",
+      button: "Import from Reddit",
+      label: "Reddit URL",
+      placeholder: "Enter a Reddit post URL"
+    },
+    tumblr: {
+      title: "Tumblr",
+      button: "Import from Tumblr",
+      label: "Tumblr URL",
+      placeholder: "Enter a Tumblr post URL"
+    },
+    weheartit: {
+      title: "We Heart It",
+      button: "Import from We Heart It",
+      label: "We Heart It URL",
+      placeholder: "Enter a We Heart It post URL"
+    },
     screenshot: {
       title: "Screenshot",
       button: "Take screenshot",

@@ -13,6 +13,12 @@ Users can import photos from web services in Uppload by specifying the resource 
 | Pinterest | `Pinterest` |
 | DeviantArt | `DeviantArt` |
 | ArtStation | `ArtStation` |
+| Flipboard | `Flipboard` |
+| Fotki | `Fotki` |
+| LinkedIn | `LinkedIn` |
+| Reddit | `Reddit` |
+| Tumblr | `Tumblr` |
+| WeHeartIt | `WeHeartIt` |
 | Webpage screenshot | `Screenshot` |
 
 ![Screenshot of Instagram service](/assets/screenshots/instagram.png)

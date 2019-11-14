@@ -9,7 +9,13 @@ import {
   Pinterest,
   Screenshot,
   Twitter,
-  URL
+  URL,
+  Flipboard,
+  Fotki,
+  LinkedIn,
+  Reddit,
+  Tumblr,
+  WeHeartIt
 } from "../../src";
 
 const services = [
@@ -22,7 +28,13 @@ const services = [
   new Pinterest(),
   new Screenshot(),
   new Twitter(),
-  new URL()
+  new URL(),
+  new Flipboard(),
+  new Fotki(),
+  new LinkedIn(),
+  new Reddit(),
+  new Tumblr(),
+  new WeHeartIt()
 ];
 
 const microlink = new MicrolinkBaseClass();
