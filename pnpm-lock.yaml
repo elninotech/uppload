@@ -11,11 +11,13 @@ devDependencies:
   gitmoji-changelog: 2.0.0
   husky: 3.0.9
   jest: 24.9.0
+  jest-fetch-mock: 2.1.2
   parcel: 1.12.4
   prettier: 1.19.1
   sass: 1.23.3
   ts-jest: 24.1.0_jest@24.9.0
   typescript: 3.7.2
+  xhr-mock: 2.5.1
 lockfileVersion: 5.1
 packages:
   /@babel/code-frame/7.5.5:
@@ -1739,7 +1741,7 @@ packages:
       integrity: sha512-Z942RysHXmJrhqk88FmKBVq/v5tqmSkDz7p54G/MGyjMnCFFnC79XWNbg+Vta8W6Wb2qtSZTSxIGkJrRpCFEiA==
   /browserslist/4.7.2:
     dependencies:
-      caniuse-lite: 1.0.30001009
+      caniuse-lite: 1.0.30001010
       electron-to-chromium: 1.3.306
       node-releases: 1.1.40
     dev: true
@@ -1930,16 +1932,16 @@ packages:
   /caniuse-api/3.0.0:
     dependencies:
       browserslist: 4.7.2
-      caniuse-lite: 1.0.30001009
+      caniuse-lite: 1.0.30001010
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
     dev: true
     resolution:
       integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==
-  /caniuse-lite/1.0.30001009:
+  /caniuse-lite/1.0.30001010:
     dev: true
     resolution:
-      integrity: sha512-M3rEqHN6SaVjgo4bIik7HsGcWXsi+lI9WA0p51RPMFx5gXfduyOXWJrc0R4xBkSK1pgNf4CNgy5M+6H+WiEP8g==
+      integrity: sha512-RA5GH9YjFNea4ZQszdWgh2SC+dpLiRAg4VDQS2b5JRI45OxmbGrYocYHTa9x0bKMQUE7uvHkNPNffUr+pCxSGw==
   /capture-exit/2.0.0:
     dependencies:
       rsvp: 4.8.5
@@ -2357,6 +2359,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-eAgWf4j7sNJIG329qUHIFi17PSV0VtuWyAu9glZSgu/KlQSrfTQOC2zAz+jHGa5fAB+bJldEnQwvJEaJ8zRf5A==
+  /cross-fetch/2.2.3:
+    dependencies:
+      node-fetch: 2.1.2
+      whatwg-fetch: 2.0.4
+    dev: true
+    resolution:
+      integrity: sha512-PrWWNH3yL2NYIb/7WF/5vFG3DCQiXDOVf8k3ijatbrtnwNuhMWLC7YF7uqf53tbTFDzHIUD8oITw4Bxt8ST3Nw==
   /cross-spawn/6.0.5:
     dependencies:
       nice-try: 1.0.5
@@ -2752,6 +2761,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-2/xPb3ORsQ42nHYiSunXkDjPLBaEj/xTwUO4B7XCZQTRk7EBtTOPaygh10YAAh2OI1Qrp6NWfpAhzswj0ydt9g==
+  /dom-walk/0.1.1:
+    dev: true
+    resolution:
+      integrity: sha1-ZyIm3HTI95mtNTB9+TaroRrNYBg=
   /domain-browser/1.2.0:
     dev: true
     engines:
@@ -3597,6 +3610,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
+  /global/4.4.0:
+    dependencies:
+      min-document: 2.19.0
+      process: 0.11.10
+    dev: true
+    resolution:
+      integrity: sha512-wv/LAoHdRE3BeTGz53FAamhGlPLhlssK45usmGFThIi4XqnBmjKQ16u+RNbP7WvigRZDxUsM0J3gcQ5yicaL0w==
   /globals/11.12.0:
     dev: true
     engines:
@@ -4584,6 +4604,13 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-6d4V2f4nxzIzwendo27Tr0aFm+IXWa0XEUnaH6nU0FMaozxovt+sfRvh4J47wL1OvF83I3SSTu0XK+i4Bqe7uA==
+  /jest-fetch-mock/2.1.2:
+    dependencies:
+      cross-fetch: 2.2.3
+      promise-polyfill: 7.1.2
+    dev: true
+    resolution:
+      integrity: sha512-tcSR4Lh2bWLe1+0w/IwvNxeDocMI/6yIA2bijZ0fyWxC4kQ18lckQ1n7Yd40NKuisGmcGBRFPandRXrW/ti/Bw==
   /jest-get-type/24.9.0:
     dev: true
     engines:
@@ -5378,7 +5405,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-YMJrAjHSb/BordlsDEcVcPyTbiJKkzqMf48N8dAJZT9Zjctrkb6Yg4TY9Sq2AwSIQJFn5qBBKVTYt3vP5FMIHA==
-  /make-fetch-happen/5.0.1:
+  /make-fetch-happen/5.0.2:
     dependencies:
       agentkeepalive: 3.5.2
       cacache: 12.0.3
@@ -5393,7 +5420,7 @@ packages:
       ssri: 6.0.1
     dev: true
     resolution:
-      integrity: sha512-b4dfaMvUDR67zxUq1+GN7Ke9rH5WvGRmoHuMH7l+gmUCR2tCXFP6mpeJ9Dp+jB6z8mShRopSf1vLRBhRs8Cu5w==
+      integrity: sha512-07JHC0r1ykIoruKO8ifMXu+xEU8qOXDFETylktdug6vJDACnP+HKevOu3PXyNPzFyTSlz8vrBYlBO1JZRe8Cag==
   /makeerror/1.0.11:
     dependencies:
       tmpl: 1.0.4
@@ -5577,6 +5604,12 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
+  /min-document/2.19.0:
+    dependencies:
+      dom-walk: 0.1.1
+    dev: true
+    resolution:
+      integrity: sha1-e9KC4/WELtKVu3SM3Z8f+iyCRoU=
   /minimalistic-assert/1.0.1:
     dev: true
     resolution:
@@ -5776,6 +5809,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-nJIxm1QmAj4v3nfCvEeCrYSoVwXyxLnaPBK5W1W5DGEJwjlKuC2VEUycGw5oxk+4zZahRrB84PUJJgEmhFTDFw==
+  /node-fetch/2.1.2:
+    dev: true
+    engines:
+      node: 4.x || >=6.0.0
+    resolution:
+      integrity: sha1-q4hOjn5X44qUR1POxwb3iNF2i7U=
   /node-forge/0.7.6:
     dev: true
     resolution:
@@ -5965,7 +6004,7 @@ packages:
       bluebird: 3.7.1
       figgy-pudding: 3.5.1
       lru-cache: 5.1.1
-      make-fetch-happen: 5.0.1
+      make-fetch-happen: 5.0.2
       npm-package-arg: 6.1.1
       safe-buffer: 5.2.0
     dev: true
@@ -6295,7 +6334,7 @@ packages:
       glob: 7.1.6
       infer-owner: 1.0.4
       lru-cache: 5.1.1
-      make-fetch-happen: 5.0.1
+      make-fetch-happen: 5.0.2
       minimatch: 3.0.4
       minipass: 2.9.0
       mississippi: 3.0.0
@@ -7109,6 +7148,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-mEcocL8igTL8vdhoEputEsPAKeM=
+  /promise-polyfill/7.1.2:
+    dev: true
+    resolution:
+      integrity: sha512-FuEc12/eKqqoRYIGBrUptCBRhobL19PS2U31vMNTfyck1FxPyMfgsXyW4Mav85y/ZN1hop3hOwRlUDok23oYfQ==
   /promise-retry/1.1.1:
     dependencies:
       err-code: 1.1.2
@@ -8990,6 +9033,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-b5lim54JOPN9HtzvK9HFXvBma/rnfFeqsic0hSpjtDbVxR3dJKLc+KB4V6GgiGOvl7CY/KNh8rxSo9DKQrnUEw==
+  /whatwg-fetch/2.0.4:
+    dev: true
+    resolution:
+      integrity: sha512-dcQ1GWpOD/eEQ97k66aiEVpNnapVj90/+R+SXTPYGHpYBBypfKJEQjLrvMZ7YXbKm21gXd4NcuxUTjiv1YtLng==
   /whatwg-mimetype/2.3.0:
     dev: true
     resolution:
@@ -9090,6 +9137,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-GIyAXC2cB7LjvpgMt9EKS2ldqr0MTrORaleiOno6TweZ6r3TKtoFQWay/2PceJ3RuBasOHzXNn5Lrw1X0bEjqA==
+  /xhr-mock/2.5.1:
+    dependencies:
+      global: 4.4.0
+      url: 0.11.0
+    dev: true
+    resolution:
+      integrity: sha512-UKOjItqjFgPUwQGPmRAzNBn8eTfIhcGjBVGvKYAWxUQPQsXNGD6KEckGTiHwyaAUp9C9igQlnN1Mp79KWCg7CQ==
   /xml-name-validator/3.0.0:
     dev: true
     resolution:
@@ -9210,6 +9264,7 @@ specifiers:
   gitmoji-changelog: ^2.0.0
   husky: ^3.0.9
   jest: ^24.9.0
+  jest-fetch-mock: ^2.1.2
   jslib-html5-camera-photo: ^3.1.3
   mitt: ^1.2.0
   parcel: ^1.12.4
@@ -9218,3 +9273,4 @@ specifiers:
   show-hide: ^0.9.0
   ts-jest: ^24.1.0
   typescript: ^3.7.2
+  xhr-mock: ^2.5.1

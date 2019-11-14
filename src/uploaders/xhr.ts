@@ -9,9 +9,9 @@ export const xhrUploader = ({
   settingsFunction
 }: {
   endpoint: string;
-  fileKeyName: string;
-  method: string;
-  responseKey: string;
+  fileKeyName?: string;
+  method?: string;
+  responseKey?: string;
   responseFunction?: (responseText: string) => string;
   settingsFunction?: (xmlHttp: XMLHttpRequest) => void | XMLHttpRequest;
 }): Uploader => {
@@ -49,9 +49,9 @@ export const fetchUploader = ({
 }: {
   endpoint: RequestInfo;
   settingsFunction?: (file: Blob) => RequestInit;
-  method: string;
-  fileKeyName: string;
-  responseKey: string;
+  method?: string;
+  fileKeyName?: string;
+  responseKey?: string;
   responseFunction?: (responseText: string) => string;
 }): Uploader => {
   return file =>
