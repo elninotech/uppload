@@ -3,47 +3,15 @@ import { SearchBaseClass } from "../../helpers/search";
 export interface UnsplashResult {
   id: string;
   alt_description: string;
-  color: string;
-  created_at: string;
-  description: string;
-  height: number;
-  width: number;
-  likes: number;
-  links: {
-    download: string;
-    download_location: string;
-    html: string;
-    self: string;
-  };
-  tags: {
-    type: string;
-    title: string;
-  }[];
+  // color: string;
   urls: {
-    full: string;
-    raw: string;
     regular: string;
-    small: string;
     thumb: string;
   };
   user: {
-    id: string;
-    username: string;
     name: string;
-    location: string;
     profile_image: {
-      large: string;
-      medium: string;
       small: string;
-    };
-    links: {
-      followers: string;
-      following: string;
-      html: string;
-      likes: string;
-      photos: string;
-      portfolio: string;
-      self: string;
     };
   };
 }
