@@ -53,16 +53,19 @@ First, install Uppload using your package manager:
 npm install uppload
 ```
 
-Then, import Uppload and your language of choice and initialize the class:
+Then, import Uppload and an uploader along with your language of choice and initialize the class:
 
 ```ts
-import { Uppload, en } from "uppload";
+import { Uppload, en, xhrUploader } from "uppload";
 
 const profilePicture = new Uppload({
   value: "https://via.placeholder.com/150",
   bind: ".uppload-image",
   call: ".uppload-button",
-  lang: en
+  lang: en,
+  uploader: xhrUploader({
+    endpoint: "https://example.com/upload"
+  });
 });
 ```
 
@@ -86,9 +89,9 @@ profilePicture.use([
 - [Listening to events](https://uppload.netlify.com/listening-to-events)
 - [Multiple Uppload instances](https://uppload.netlify.com/multiple-instances)
 - [Migrating from Uppload 1.x](https://uppload.netlify.com/migrating-to-1x)
-- [Services](https://uppload.netlify.com/services)
-- Effects
-- Uploaders
+- [Services](https://uppload.netlify.com/services) (ways to upload a file)
+- Effects (ways to edit a file)
+- Uploaders (ways to send a file to the server)
 - Themes
 - Wrappers
 - Backends

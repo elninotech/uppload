@@ -11,8 +11,13 @@ Most commonly, you'd want to add the drag-and-drop and file select plugin (known
 Then, you can initialize your plugin:
 
 ```ts
-import { Uppload, Local, Fetch, en } from "uppload";
+import { Uppload, Local, xhrUploader, en } from "uppload";
 
-const uploader = new Uppload({ lang: en });
-uploader.use([new Local(), new Fetch("http://localhost:3000/upload")]);
+const uploader = new Uppload({
+  lang: en,
+  uploader: xhrUploader({
+    endpoint: "https://example.com/upload"
+  });
+});
+uploader.use(new Local());
 ```
