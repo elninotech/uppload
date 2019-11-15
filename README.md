@@ -86,6 +86,7 @@ profilePicture.use([
 
 - [Getting started](https://uppload.netlify.com/getting-started)
 - [Building a custom package](https://uppload.netlify.com/custom-package)
+- [API](https://uppload.netlify.com/api)
 - [Listening to events](https://uppload.netlify.com/listening-to-events)
 - [Multiple Uppload instances](https://uppload.netlify.com/multiple-instances)
 - [Migrating from Uppload 1.x](https://uppload.netlify.com/migrating-from-1x)

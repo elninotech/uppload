@@ -161,6 +161,14 @@ export class Uppload {
   }
 
   /**
+   * Toggles the Uppload widget
+   */
+  toggle() {
+    if (this.modalOpen()) this.close();
+    else this.open();
+  }
+
+  /**
    * Re-render the widget
    */
   private update() {
