@@ -32,6 +32,7 @@
     "build-demo": "parcel build demo/index.html",
     "demo": "parcel demo/index.html",
     "lint": "prettier '**/*.{ts,scss}' --write",
+    "serve-site": "site --serve",
     "test-report": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "changelog": "gitmoji-changelog"
   },

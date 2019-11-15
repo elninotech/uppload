@@ -2,7 +2,7 @@
 
 The Fetch uploader uses a `Fetch` request to send the selected file to a server. This is can be used instead of the [XHR Uploader](/uploaders/xhr) if your use case does not need backwards compatibility with older browsers (like IE 11).
 
-This uploader also does not support progress (%) and will only display an "Uploading..." message instead of live progress, since `Fetch` does not have an `onprogress` event like `XMLHttpRequest` does.
+This uploader also does not support progress (%) and will only display an "Uploading..." message instead of live progress, since `Fetch` does not have an `onprogress` event like `XMLHttpRequest` does. [XHR Uploader](/uploaders/xhr) is therefore recommended over this.
 
 ```ts
 import { Uppload, fetch } from "uppload";
