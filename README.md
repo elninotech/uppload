@@ -89,12 +89,12 @@ profilePicture.use([
 - [Listening to events](https://uppload.netlify.com/listening-to-events)
 - [Multiple Uppload instances](https://uppload.netlify.com/multiple-instances)
 - [Migrating from Uppload 1.x](https://uppload.netlify.com/migrating-to-1x)
-- [Services](https://uppload.netlify.com/services) (ways to select a file)
-- Effects (ways to edit a file)
+- [Services](https://uppload.netlify.com/services) (20+ ways to select a file)
+- [Effects](https://uppload.netlify.com/effects) (10+ ways to edit a file)
 - [Uploaders](https://uppload.netlify.com/uploaders) (ways to send a file to the server)
-- Themes
-- Wrappers
-- Backends
+- [Themes](https://uppload.netlify.com/themes)
+- [Wrappers](https://uppload.netlify.com/wrappers)
+- [Backends](https://uppload.netlify.com/backends)
 - [Internationalization](https://uppload.netlify.com/i18n)
 
 **[View Uppload 2 docs →](https://uppload.netlify.com)**
