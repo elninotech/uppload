@@ -33,7 +33,7 @@
     "demo": "parcel demo/index.html",
     "lint": "prettier '**/*.{ts,scss}' --write",
     "serve-site": "site --serve",
-    "test-report": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "test-report": "jest --coverage",
     "changelog": "gitmoji-changelog"
   },
   "browserslist": [
