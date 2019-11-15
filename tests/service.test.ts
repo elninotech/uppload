@@ -57,7 +57,7 @@ for (const currentService of services) {
     it("template is a function", () =>
       expect(typeof currentService.template).toBe("function"));
     it("template gives a string", () =>
-      expect(typeof currentService.template()).toBe("string"));
+      expect(typeof currentService.template(new Uppload())).toBe("string"));
     it("service is registered", () =>
       expect(uppload.services.includes(currentService)).toBeTruthy());
   });
