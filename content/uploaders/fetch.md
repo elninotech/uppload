@@ -5,10 +5,10 @@ The Fetch uploader uses a `Fetch` request to send the selected file to a server.
 This uploader also does not support progress (%) and will only display an "Uploading..." message instead of live progress, since `Fetch` does not have an `onprogress` event like `XMLHttpRequest` does. [XHR Uploader](/uploaders/xhr) is therefore recommended over this.
 
 ```ts
-import { Uppload, fetch } from "uppload";
+import { Uppload, fetchUploader } from "uppload";
 
 const profilePicture = new Uppload({
-  uploader: fetch({
+  uploader: fetchUploader({
     endpoint: "https://your-backend.com/upload"
   });
 });
@@ -26,7 +26,7 @@ You can customize the key used in the form data in the configuration:
 
 ```ts
 const profilePicture = new Uppload({
-  uploader: fetch({
+  uploader: fetchUploader({
     endpoint: "https://your-backend.com/upload",
     fileKeyName: "image"
   });
@@ -37,7 +37,7 @@ If you don't want to send a POST request, you can specify the HTTP verb as well:
 
 ```ts
 const profilePicture = new Uppload({
-  uploader: fetch({
+  uploader: fetchUploader({
     endpoint: "https://your-backend.com/upload",
     fileKeyName: "image",
     method: "PUT"
@@ -49,7 +49,7 @@ To add custom headers, methods, etc., you can provide additional configuration f
 
 ```ts
 const profilePicture = new Uppload({
-  uploader: fetch({
+  uploader: fetchUploader({
     endpoint: "https://your-backend.com/upload",
     settingsFunction: file => {
       // You get the file blob
@@ -72,7 +72,7 @@ If your server responds with a different JSON schema which does not use the `url
 
 ```ts
 const profilePicture = new Uppload({
-  uploader: fetch({
+  uploader: fetchUploader({
     endpoint: "https://your-backend.com/upload",
     responseKey: "imageUrl"
   });
@@ -83,7 +83,7 @@ Or, if it's more complicated than a simple key, you can parse your own response 
 
 ```ts
 const profilePicture = new Uppload({
-  uploader: fetch({
+  uploader: fetchUploader({
     endpoint: "https://your-backend.com/upload",
     responseFunction: json => {
       // Has the response.json() result as the argument

@@ -3,10 +3,10 @@
 The XHR uploader uses an `XMLHttpRequest` to send the selected file to a server. This is the preferred way to upload files in Uppload since it supports returning progress (%) too, unlike the [Fetch uploader](/uploaders/fetch):
 
 ```ts
-import { Uppload, xhr } from "uppload";
+import { Uppload, xhrUploader } from "uppload";
 
 const profilePicture = new Uppload({
-  uploader: xhr({
+  uploader: xhrUploader({
     endpoint: "https://your-backend.com/upload"
   });
 });
@@ -24,7 +24,7 @@ You can customize the key used in the form data in the configuration:
 
 ```ts
 const profilePicture = new Uppload({
-  uploader: xhr({
+  uploader: xhrUploader({
     endpoint: "https://your-backend.com/upload",
     fileKeyName: "image"
   });
@@ -35,7 +35,7 @@ If you don't want to send a POST request, you can specify the HTTP verb as well:
 
 ```ts
 const profilePicture = new Uppload({
-  uploader: xhr({
+  uploader: xhrUploader({
     endpoint: "https://your-backend.com/upload",
     fileKeyName: "image",
     method: "PUT"
@@ -47,7 +47,7 @@ To add custom headers, methods, etc., to the XHR object, you can do this:
 
 ```ts
 const profilePicture = new Uppload({
-  uploader: xhr({
+  uploader: xhrUploader({
     endpoint: "https://your-backend.com/upload",
     settingsFunction: xmlHttp => {
       // You get the XMLHttpRequest() object as the argument
@@ -62,7 +62,7 @@ If your server responds with a different JSON schema which does not use the `url
 
 ```ts
 const profilePicture = new Uppload({
-  uploader: xhr({
+  uploader: xhrUploader({
     endpoint: "https://your-backend.com/upload",
     responseKey: "imageUrl"
   });
@@ -73,7 +73,7 @@ Or, if it's more complicated than a simple key, you can parse your own response 
 
 ```ts
 const profilePicture = new Uppload({
-  uploader: xhr({
+  uploader: xhrUploader({
     endpoint: "https://your-backend.com/upload",
     responseFunction: responseText => {
       // Return the URL from the response text yourself
