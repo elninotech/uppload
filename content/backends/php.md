@@ -2,7 +2,7 @@
 
 If you have a PHP backend, you can receive files uploaded by Uppload just like you would with HTML forms, using `$_FILES`.
 
-By default, the [Axios uploader](/uploaders/axios) uses the `file` key, so you can get the image like this:
+By default, the [XHR uploader](/uploaders/xhr) uses the `file` key, so you can get the image like this:
 
 ```php
 <?php

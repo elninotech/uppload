@@ -89,9 +89,9 @@ profilePicture.use([
 - [Listening to events](https://uppload.netlify.com/listening-to-events)
 - [Multiple Uppload instances](https://uppload.netlify.com/multiple-instances)
 - [Migrating from Uppload 1.x](https://uppload.netlify.com/migrating-to-1x)
-- [Services](https://uppload.netlify.com/services) (ways to upload a file)
+- [Services](https://uppload.netlify.com/services) (ways to select a file)
 - Effects (ways to edit a file)
-- Uploaders (ways to send a file to the server)
+- [Uploaders](https://uppload.netlify.com/uploaders) (ways to send a file to the server)
 - Themes
 - Wrappers
 - Backends
