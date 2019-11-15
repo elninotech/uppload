@@ -4,7 +4,7 @@ dependencies:
   mitt: 1.2.0
   show-hide: 0.9.0
 devDependencies:
-  '@staart/site': 1.7.14
+  '@staart/site': 1.8.2
   '@types/jest': 24.0.23
   coveralls: 3.0.7
   cssnano: 4.1.10
@@ -1055,7 +1055,7 @@ packages:
       node: '>= 6.0.0'
     resolution:
       integrity: sha512-USSjRAAQYsZFlv43FUPdD+jEGML5/8oLF0rUzPQTtK4q9kvaXr49F5ZplyLz5lox78cLZ0TxN2bIDQ1xhOkulQ==
-  /@staart/site/1.7.14:
+  /@staart/site/1.8.2:
     dependencies:
       axios: 0.19.0
       concurrently: 5.0.0
@@ -1079,7 +1079,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-yKAZX7YYujR/cKYKaGiogA4WJpebK0fzhPT+tpBaADk30Cr4VsmNVAT1CbPEPaWXCCpRsPCqzYAEKpriBIWYtw==
+      integrity: sha512-nhfTrl8Qf+KIQp0nak4n09sYsqX2FBTLjQwk4fxtuvu7HRsBIKwZ4f0NSSj3xTw+IAofMxURZ1+0qF25CqR7tA==
   /@types/babel__core/7.1.3:
     dependencies:
       '@babel/parser': 7.7.3
@@ -7122,7 +7122,7 @@ packages:
       '@jest/types': 24.9.0
       ansi-regex: 4.1.0
       ansi-styles: 3.2.1
-      react-is: 16.11.0
+      react-is: 16.12.0
     dev: true
     engines:
       node: '>= 6'
@@ -7309,10 +7309,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==
-  /react-is/16.11.0:
+  /react-is/16.12.0:
     dev: true
     resolution:
-      integrity: sha512-gbBVYR2p8mnriqAwWx9LbuUrShnAuSCNnuPGyc7GJrMVQtPDAh8iLpv7FRuMPFb56KkaVZIYSz1PrjI9q0QPCw==
+      integrity: sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
   /read-cmd-shim/1.0.5:
     dependencies:
       graceful-fs: 4.2.3
@@ -9256,7 +9256,7 @@ packages:
     resolution:
       integrity: sha512-/is78VKbKs70bVZH7w4YaZea6xcJWOAwkhbR0CFuZBmYtfTYF0xjGJF43AYd8g2Uii1yJwmS5GR2vBmrc32sbg==
 specifiers:
-  '@staart/site': ^1.7.14
+  '@staart/site': ^1.8.2
   '@types/jest': ^24.0.23
   coveralls: ^3.0.7
   cropperjs: ^1.5.6
@@ -9268,7 +9268,7 @@ specifiers:
   jslib-html5-camera-photo: ^3.1.3
   mitt: ^1.2.0
   parcel: ^1.12.4
-  prettier: ^1.18.2
+  prettier: ^1.19.1
   sass: ^1.23.3
   show-hide: ^0.9.0
   ts-jest: ^24.1.0
