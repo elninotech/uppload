@@ -8,7 +8,7 @@ Uppload is a better JavaScript image uploader. It's highly customizable, support
 - [Building a custom package](/custom-package)
 - [Listening to events](/listening-to-events)
 - [Multiple Uppload instances](/multiple-instances)
-- [Migrating from Uppload 1.x](/migrating-to-1x)
+- [Migrating from Uppload 1.x](/migrating-from-1x)
 - [Services](/services) (20+ ways to select a file)
 - [Effects](/effects) (10+ ways to edit a file)
 - [Uploaders](/uploaders) (ways to send a file to the server)
