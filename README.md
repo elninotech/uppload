@@ -53,10 +53,12 @@ First, install Uppload using your package manager:
 npm install uppload
 ```
 
-Then, import Uppload and an uploader along with your language of choice and initialize the class:
+Then, add styles, import Uppload and an uploader along with your language of choice and initialize the class:
 
 ```ts
 import { Uppload, en, xhrUploader } from "uppload";
+import "uppload/dist/uppload.css";
+import "uppload/dist/themes/light.css";
 
 const profilePicture = new Uppload({
   value: "https://via.placeholder.com/150",
@@ -104,31 +106,12 @@ profilePicture.use([
 
 ## 🛣️ Roadmap
 
-- [x] Uppload 2 architecture
-  - [x] TypeScript core & package support
-  - [x] Support for custom builds instead of full build
-  - [x] Build system with CI + CD to NPM
-  - [x] Support for I18N
-  - [x] Event emitter
-  - [x] API for manipulating widget
-  - [x] Themes
-    - [x] Light (default theme)
-    - [x] Dark theme
 - [ ] Services (ways to choose a file)
-  - [x] Drag and drop to upload file
-  - [x] Import image from URL
   - [ ] Click photo from camera
-  - [x] Search for pictures and import
-  - [x] Import image from web service
 - [ ] Effects (ways to change the file)
-  - [x] Preview
-  - [x] Crop
   - [ ] Filters
   - [ ] Rotation, mirror
-  - [x] Blur, brightness, contrast, grayscale
-  - [x] Hue rotate, invert, saturate, sepia
 - [ ] Uploaders (ways to send the file to a server)
-  - [x] Custom function
   - [ ] REST endpoint
   - [ ] AWS S3 bucket
   - [ ] Firebase
@@ -139,11 +122,7 @@ profilePicture.use([
   - [ ] Angular
   - [ ] Ember.js
 - [ ] Documentation
-  - [x] Community guidelines
-  - [x] PR and issue templates for the GitHub community
-  - [x] Static site for docs
   - [ ] Starter templates to show people how to use Uppload with e.g., Firebase
-  - [ ] Getting started page
   - [ ] TypeDoc for exploring packages
 
 ## 👥 Contributors
