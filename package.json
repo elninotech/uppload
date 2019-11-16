@@ -26,7 +26,7 @@
   "author": "El Niño <https://elnino.tech>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && node scripts/build-scss.js",
     "test": "jest",
     "build-site": "site",
     "build-demo": "parcel build demo/index.html",
@@ -50,7 +50,7 @@
     "jest-fetch-mock": "^2.1.2",
     "parcel": "^1.12.4",
     "prettier": "^1.19.1",
-    "sass": "^1.23.3",
+    "sass": "^1.23.5",
     "ts-jest": "^24.1.0",
     "typescript": "^3.7.2",
     "xhr-mock": "^2.5.1"

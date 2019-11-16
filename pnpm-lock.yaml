@@ -4,7 +4,7 @@ dependencies:
   mitt: 1.2.0
   show-hide: 0.9.0
 devDependencies:
-  '@staart/site': 1.8.3
+  '@staart/site': 1.8.7
   '@types/jest': 24.0.23
   coveralls: 3.0.7
   cssnano: 4.1.10
@@ -14,7 +14,7 @@ devDependencies:
   jest-fetch-mock: 2.1.2
   parcel: 1.12.4
   prettier: 1.19.1
-  sass: 1.23.3
+  sass: 1.23.5
   ts-jest: 24.1.0_jest@24.9.0
   typescript: 3.7.2
   xhr-mock: 2.5.1
@@ -1055,7 +1055,7 @@ packages:
       node: '>= 6.0.0'
     resolution:
       integrity: sha512-USSjRAAQYsZFlv43FUPdD+jEGML5/8oLF0rUzPQTtK4q9kvaXr49F5ZplyLz5lox78cLZ0TxN2bIDQ1xhOkulQ==
-  /@staart/site/1.8.3:
+  /@staart/site/1.8.7:
     dependencies:
       axios: 0.19.0
       concurrently: 5.0.0
@@ -1071,7 +1071,7 @@ packages:
       node-cache: 5.0.1
       recursive-readdir: 2.2.2
       remove-markdown: 0.3.0
-      sass: 1.23.3
+      sass: 1.23.5
       signale: 1.4.0
       sitemap: 5.1.0
       truncate: 2.1.0
@@ -1079,7 +1079,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-GAoHWsfIIwejeEGxV6qcRz1n+y0ynHB/iWpUrIr2jtoo77X+SO3WlC1a+H1tgJBMLk3aTU4mVbrk9XhAHQ555g==
+      integrity: sha512-vC2nT4PSBH0CeFVTuUY0yMElLC7wCfgiiAWTaviWzHCH4NlwrFao3iaeLgjv43mKECWaZgL/fzXJS5d4uOQmXQ==
   /@types/babel__core/7.1.3:
     dependencies:
       '@babel/parser': 7.7.3
@@ -7794,7 +7794,7 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-hhbzAgTIX8O7SHfp2c8/kREfEn4qO/9q8C9beyY6+tvZ87EpoZ3i1RIEvp27YBswnNbY9mWd6paKVmKbAgLfZA==
-  /sass/1.23.3:
+  /sass/1.23.5:
     dependencies:
       chokidar: 3.3.0
     dev: true
@@ -7802,7 +7802,7 @@ packages:
       node: '>=8.9.0'
     hasBin: true
     resolution:
-      integrity: sha512-1DKRZxJMOh4Bme16AbWTyYeJAjTlrvw2+fWshHHaepeJfGq2soFZTnt0YhWit+bohtDu4LdyPoEj6VFD4APHog==
+      integrity: sha512-bjrN5UZgB1oKroQOJng8q2Kwe6DyBM0Yu8z3hafATJchTkw3kzoO4rbykPNlnD/Pj+cr/bzI6sexTLXVlvhBjw==
   /sax/1.2.4:
     dev: true
     resolution:
@@ -9269,7 +9269,7 @@ specifiers:
   mitt: ^1.2.0
   parcel: ^1.12.4
   prettier: ^1.19.1
-  sass: ^1.23.3
+  sass: ^1.23.5
   show-hide: ^0.9.0
   ts-jest: ^24.1.0
   typescript: ^3.7.2
