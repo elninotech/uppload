@@ -114,3 +114,22 @@ $modalForegroundZIndex: 12000;
     }
   }
 }
+
+/*
+ * Inline modal
+ */
+.uppload-inline {
+  .uppload-modal-bg {
+    position: relative;
+    .uppload-close {
+      display: none;
+    }
+  }
+  .uppload-modal {
+    position: static;
+    box-shadow: none;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    transform: none;
+    width: 100%;
+  }
+}

@@ -32,6 +32,7 @@ export interface UpploadSettings {
   defaultService?: string;
   lang?: { [index: string]: any };
   uploader?: Uploader;
+  inline?: boolean;
 }
 
 /**
@@ -51,6 +52,7 @@ export class Uppload {
   uploader?: Uploader;
   emitter = mitt();
   uploadProgress = 0;
+  inline = false;
 
   /**
    * Create a new Uppload instance
@@ -60,17 +62,19 @@ export class Uppload {
     this.settings = settings || {};
     lang = this.settings.lang;
     setI18N(this.settings.lang);
-    const div = document.createElement("div");
-    this.renderContainer();
-    div.classList.add("uppload-container");
-    const body = document.body;
-    if (body) {
-      body.appendChild(div);
-    }
     if (this.settings.defaultService)
       this.activeService = this.settings.defaultService;
     if (this.settings.lang) this.lang = this.settings.lang;
     if (this.settings.uploader) this.uploader = this.settings.uploader;
+    this.inline = !!this.settings.inline;
+    const div = document.createElement("div");
+    this.renderContainer();
+    div.classList.add("uppload-container");
+    if (this.inline) div.classList.add("uppload-inline");
+    const body = document.body;
+    if (body) {
+      body.appendChild(div);
+    }
     this.container = div;
   }
 
