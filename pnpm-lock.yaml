@@ -4,7 +4,7 @@ dependencies:
   mitt: 1.2.0
   show-hide: 0.9.0
 devDependencies:
-  '@staart/site': 1.8.2
+  '@staart/site': 1.8.3
   '@types/jest': 24.0.23
   coveralls: 3.0.7
   cssnano: 4.1.10
@@ -1055,7 +1055,7 @@ packages:
       node: '>= 6.0.0'
     resolution:
       integrity: sha512-USSjRAAQYsZFlv43FUPdD+jEGML5/8oLF0rUzPQTtK4q9kvaXr49F5ZplyLz5lox78cLZ0TxN2bIDQ1xhOkulQ==
-  /@staart/site/1.8.2:
+  /@staart/site/1.8.3:
     dependencies:
       axios: 0.19.0
       concurrently: 5.0.0
@@ -1079,7 +1079,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-nhfTrl8Qf+KIQp0nak4n09sYsqX2FBTLjQwk4fxtuvu7HRsBIKwZ4f0NSSj3xTw+IAofMxURZ1+0qF25CqR7tA==
+      integrity: sha512-GAoHWsfIIwejeEGxV6qcRz1n+y0ynHB/iWpUrIr2jtoo77X+SO3WlC1a+H1tgJBMLk3aTU4mVbrk9XhAHQ555g==
   /@types/babel__core/7.1.3:
     dependencies:
       '@babel/parser': 7.7.3
@@ -1132,10 +1132,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-L7MBvwfNpe7yVPTXLn32df/EK+AMBFAFvZrRuArGs7npEWnlziUXK+5GMIUTI4NIuwok3XibsjXCs5HxviYXjg==
-  /@types/node/12.12.7:
+  /@types/node/12.12.8:
     dev: true
     resolution:
-      integrity: sha512-E6Zn0rffhgd130zbCbAr/JdXfXkoOUFAKNs/rF8qnafSJ8KYaA/j3oz7dcwal+lYjLA7xvdd5J4wdYpCTlP8+w==
+      integrity: sha512-XLla8N+iyfjvsa0KKV+BP/iGSoTmwxsu5Ci5sM33z9TjohF72DEz95iNvD6pPmemvbQgxAv/909G73gUn8QR7w==
   /@types/normalize-package-data/2.4.0:
     dev: true
     resolution:
@@ -1150,7 +1150,7 @@ packages:
       integrity: sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
   /@types/sax/1.2.0:
     dependencies:
-      '@types/node': 12.12.7
+      '@types/node': 12.12.8
     dev: true
     resolution:
       integrity: sha512-D8ef/GGUjiHuUOiXV6tkJw6Zq2Sm8vcBScJSvj+monDI5YncJ6M3oNIXR7EtmWPVqJw0jsZF2ARN/X5gvGmQSA==
@@ -7978,7 +7978,7 @@ packages:
       integrity: sha512-/ekMoM4NJ59ivGSfKapeG+FWtrmWvA1p6FBZwXrqojw90vJu8lBmrTxCMuBCydKtkaUe2zt4PlxeTKpjwMbyig==
   /sitemap/5.1.0:
     dependencies:
-      '@types/node': 12.12.7
+      '@types/node': 12.12.8
       '@types/sax': 1.2.0
       arg: 4.1.1
       sax: 1.2.4
@@ -9256,7 +9256,7 @@ packages:
     resolution:
       integrity: sha512-/is78VKbKs70bVZH7w4YaZea6xcJWOAwkhbR0CFuZBmYtfTYF0xjGJF43AYd8g2Uii1yJwmS5GR2vBmrc32sbg==
 specifiers:
-  '@staart/site': ^1.8.2
+  '@staart/site': ^1.8.3
   '@types/jest': ^24.0.23
   coveralls: ^3.0.7
   cropperjs: ^1.5.6
