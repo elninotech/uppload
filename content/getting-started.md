@@ -22,6 +22,13 @@ const uploader = new Uppload({
 uploader.use([new Local(), new Instagram()]);
 ```
 
+You should also include the styles required for Uppload. You can use a bundler like Webpack and import it in Sass, or directly import it your HTML. You need to import `uppload.css` and a [theme](/themes):
+
+```scss
+@import "uppload/dist/uppload.css";
+@import "uppload/dist/themes/light.css";
+```
+
 Now, let's say you have an HTML webpage like the following. Here, we have a `<button>` where users can click to open Uppload, and an `<img>` which the uploaded image should replace:
 
 ```html
