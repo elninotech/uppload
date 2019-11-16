@@ -1,5 +1,63 @@
 # Changelog
 
+<a name="2.0.0-beta.2"></a>
+## 2.0.0-beta.2 (2019-11-16)
+
+### Added
+
+- ✨ Add build script [[99e5485](https://github.com/elninotech/uppload/commit/99e54850421c0902a174db5122478e76a9a284db)]
+- ✨ Support for inline Uppload [[4cbe0cf](https://github.com/elninotech/uppload/commit/4cbe0cfe0e8fe05b4ad53535c4f8d64b7f736dca)]
+- ✅ Add mock fetch tests [[d3daf97](https://github.com/elninotech/uppload/commit/d3daf97784f5e1275ad7b29545cef5f54452c016)]
+- ✨ Add fetch uploader [[3ca79c5](https://github.com/elninotech/uppload/commit/3ca79c55b2b2510384b48ab4525bc94692e248ad)]
+- ✨ Add XHR uploader [[0fd7618](https://github.com/elninotech/uppload/commit/0fd7618475e9eed7cb61581a539b86de9887e242)]
+- ✨ Add 6 new microlink services [[4576a15](https://github.com/elninotech/uppload/commit/4576a15f760e360f7bb87ff3e063b318cadb78be)]
+- ✅ Add tests for helpers, local [[dee723f](https://github.com/elninotech/uppload/commit/dee723fe66d0ed0f02afd8914cf9bb830420365e)]
+- ✅ Add tests for search services [[ecfb0fc](https://github.com/elninotech/uppload/commit/ecfb0fc62331c7eebb1ce0b972e0947f066649a5)]
+- ✅ Add tests for search base class [[51efa8f](https://github.com/elninotech/uppload/commit/51efa8f161c202e5dda7af9a432bb78e8c0f2c3f)]
+- ✨ Support for shared codebase in search [[fc34763](https://github.com/elninotech/uppload/commit/fc34763849f0f09697166c70a14894f24be8d531)]
+- ✅ Add tests for more services [[7f1d4a3](https://github.com/elninotech/uppload/commit/7f1d4a32eabb94edeab4f69788d6925c85c88d77)]
+- ✨ Support for custom uploader [[61d707c](https://github.com/elninotech/uppload/commit/61d707c672814e0aaa8d25409bb0d86db5a21651)]
+
+### Changed
+
+- 🍱 Add service screenshots [[9e14f47](https://github.com/elninotech/uppload/commit/9e14f4724e42e42dc80d0ecf9dc14ab01d819102)]
+- ⬆️ Update @staart/site [[9d0dece](https://github.com/elninotech/uppload/commit/9d0dece818f6c1153e25615cdddda56adc35324c)]
+- ⬆️ Update @staart/site [[6cc5384](https://github.com/elninotech/uppload/commit/6cc5384bb39ca93916f5d6a23f00b9821dc0c034)]
+- 🔧 Remove coveralls reporting [[b2d003e](https://github.com/elninotech/uppload/commit/b2d003efaee9bf76a2b308930b1d92cf797faa49)]
+- 🔧 Add serve site script [[90439d2](https://github.com/elninotech/uppload/commit/90439d2f530020c9df79d5044d06514f5898e3ed)]
+- ⬆️ Update dependencies [[73f3e8d](https://github.com/elninotech/uppload/commit/73f3e8df93858dd5575b0e2c6984c643acac94bb)]
+- 🔧 Add sample progress percent [[3af2011](https://github.com/elninotech/uppload/commit/3af201137a8c04c462e1940e7f2e173522edc961)]
+- 🔧 Fix package.json config for npm files [[48a0871](https://github.com/elninotech/uppload/commit/48a087187e820a9f81c8160443192155917c472c)]
+- ♻️ Migrate search services to base class [[5acc281](https://github.com/elninotech/uppload/commit/5acc2817ef5b682ad0328774a6a84e7250968752)]
+
+### Removed
+
+- 🔥 Remove Axios uploader [[807ede5](https://github.com/elninotech/uppload/commit/807ede5824fec593bc7a91f2a4f892400bb454e7)]
+
+### Fixed
+
+- 🐛 Update migrating from link [[edb0d4a](https://github.com/elninotech/uppload/commit/edb0d4a266196360ea261f9ce055a6c52207c003)]
+- 💚 Fix test on Circle CI [[f8fa7bc](https://github.com/elninotech/uppload/commit/f8fa7bc9fe28b8e5ca81f54098340e8f3aa1b7a9)]
+- 💚 Fix CI build on Circle CI [[50f2881](https://github.com/elninotech/uppload/commit/50f288175f4d396b5afae9f4aba045cd4ebf7192)]
+
+### Miscellaneous
+
+- 📝 Start list of examples [[5ffab22](https://github.com/elninotech/uppload/commit/5ffab227a5f22f7ee65c8ef1d54aa5440c29e22c)]
+- 📝 Update backend docs [[2a2b3a3](https://github.com/elninotech/uppload/commit/2a2b3a31952a728ab7751eaaf0e62d6289fa4ed3)]
+- 📝 Update uploader docs [[158d879](https://github.com/elninotech/uppload/commit/158d879f2b511e6b056f5d3f2e401307b052c1d9)]
+- 📝 Add themes docs [[6c9b4a4](https://github.com/elninotech/uppload/commit/6c9b4a45fd8aced082526bf0ccc5500eb23dc969)]
+- 📝 Add code sandbox demo [[bcf13c2](https://github.com/elninotech/uppload/commit/bcf13c29cd2fc2c7dcabfb7a91b8f0823469f58e)]
+- 📝 Add config docs [[9255d7b](https://github.com/elninotech/uppload/commit/9255d7ba36f4ba874f2aca48acc4f6c66aac9299)]
+- 📝 Add theme to getting started [[232ee1b](https://github.com/elninotech/uppload/commit/232ee1bb7e84c27cd15f16085345c8f739372a64)]
+- 📝 Add API docs [[a360f49](https://github.com/elninotech/uppload/commit/a360f49cd026757713931df767a23ef242e5eb97)]
+- 📝 Change uploader export name [[bc4f892](https://github.com/elninotech/uppload/commit/bc4f89231a29a4064af47a8b81d1e9447608f159)]
+- 📝 Add effects docs [[077369c](https://github.com/elninotech/uppload/commit/077369ce96187a6b5f6c1030b99cec20616086c7)]
+- 📝 Add custom uploader docs [[26e3cef](https://github.com/elninotech/uppload/commit/26e3cef13d17f84c41789f4610c9825aad8ff2b7)]
+- 📝 Add docs for uploaders [[5df88e4](https://github.com/elninotech/uppload/commit/5df88e41bbd56b2a220a51f33aaade48b397efa2)]
+- 📝 Add XHR demo to README [[15a5e89](https://github.com/elninotech/uppload/commit/15a5e8942b9c1ca425f317618fd1191210509dfd)]
+- 🚧 Work on search services with base class [[d547419](https://github.com/elninotech/uppload/commit/d547419fcfea16a1a2e402349bbb8aa38ae3842d)]
+
+
 <a name="2.0.0-beta.1"></a>
 ## 2.0.0-beta.1 (2019-11-13)
 
