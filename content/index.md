@@ -5,6 +5,7 @@ Uppload is a better JavaScript image uploader. It's highly customizable, support
 ![Screenshot of Uppload](/assets/screenshots/home.png)
 
 - [Getting started](/getting-started)
+- [Configuration](/configuration)
 - [Building a custom package](/custom-package)
 - [API](/api)
 - [Listening to events](/listening-to-events)

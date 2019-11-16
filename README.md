@@ -85,6 +85,7 @@ profilePicture.use([
 ## 💻 Usage Docs
 
 - [Getting started](https://uppload.netlify.com/getting-started)
+- [Configuration](https://uppload.netlify.com/configuration)
 - [Building a custom package](https://uppload.netlify.com/custom-package)
 - [API](https://uppload.netlify.com/api)
 - [Listening to events](https://uppload.netlify.com/listening-to-events)
