@@ -8,9 +8,18 @@ export function cachedFetch<T>(
   settings?: RequestInit
 ): Promise<T> {
   return new Promise((resolve, reject) => {
-    const key = `uppload-cache-${JSON.stringify(input)}`;
+    const key = `uppload_cache_${JSON.stringify(input)}`;
+    const maxTTL = new Date();
+    maxTTL.setDate(maxTTL.getDate() + 1);
     const cachedResult = localStorage.getItem(key);
-    if (cachedResult) return resolve(JSON.parse(cachedResult));
+    if (cachedResult) {
+      const cachedResultData = JSON.parse(cachedResult);
+      if (
+        cachedResultData.ttl &&
+        new Date(cachedResultData.ttl).getTime() > new Date().getTime()
+      )
+        return resolve(cachedResultData.result);
+    }
     window
       .fetch(input, settings)
       .then(response => {
@@ -18,7 +27,14 @@ export function cachedFetch<T>(
         return response.json();
       })
       .then(result => {
-        localStorage.setItem(key, JSON.stringify(result));
+        localStorage.setItem(
+          key,
+          JSON.stringify({
+            ttl: maxTTL,
+            updatedAt: new Date(),
+            result
+          })
+        );
         resolve(result);
       })
       .catch(error => reject(error));
