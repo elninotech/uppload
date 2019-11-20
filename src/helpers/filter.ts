@@ -42,29 +42,31 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
     });
   }
 
-  handlers = ({ next }: HandlersParams) => {
-    const hueElement = document.querySelector(
+  handlers = (params: HandlersParams) => {
+    const hueElement = params.uppload.container.querySelector(
       ".uppload-hue-image img"
     ) as HTMLImageElement | null;
     if (hueElement) {
-      fitImageToContainer(hueElement).then(() => {
-        const range = document.querySelector(
+      fitImageToContainer(params, hueElement).then(() => {
+        const range = params.uppload.container.querySelector(
           ".settings input[type='range']"
         ) as HTMLInputElement;
-        if (range) safeListen(range, "change", this.update.bind(this, next));
+        if (range) safeListen(range, "change", this.update.bind(this, params));
       });
     }
   };
 
-  update(next: (file: Blob) => void) {
+  update(params: HandlersParams) {
     let value = 0;
-    const range = document.querySelector(
+    const range = params.uppload.container.querySelector(
       ".settings input[type='range']"
     ) as HTMLInputElement;
     if (range) value = parseInt(range.value);
-    const displayer = document.querySelector(".settings .value span");
+    const displayer = params.uppload.container.querySelector(
+      ".settings .value span"
+    );
     if (displayer) displayer.innerHTML = value.toString();
-    const hueElement = document.querySelector(
+    const hueElement = params.uppload.container.querySelector(
       ".uppload-hue-image img"
     ) as HTMLImageElement | null;
     if (!hueElement) return;
@@ -72,7 +74,7 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
       `${this.cssFilter}(${range.value}${this.unit})`
     ).then(blob => {
       if (!blob) return;
-      next(blob);
+      params.next(blob);
       const image = URL.createObjectURL(blob);
       hueElement.setAttribute("src", image);
     });

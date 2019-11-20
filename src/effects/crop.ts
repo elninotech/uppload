@@ -59,12 +59,12 @@ export default class Crop extends UpploadEffect {
     `;
   };
 
-  handlers = ({ next }: HandlersParams) => {
-    const cropperElement = document.querySelector(
+  handlers = (params: HandlersParams) => {
+    const cropperElement = params.uppload.container.querySelector(
       ".uppload-cropping-element img"
     ) as HTMLImageElement | null;
     if (cropperElement) {
-      fitImageToContainer(cropperElement).then(() => {
+      fitImageToContainer(params, cropperElement).then(() => {
         const cropper = new Cropper(cropperElement, {
           aspectRatio: this.aspectRatio,
           autoCropArea: 1,
@@ -73,19 +73,19 @@ export default class Crop extends UpploadEffect {
             cropper.getCroppedCanvas().toBlob(
               result => {
                 if (!result) return;
-                next(result);
+                params.next(result);
               },
               "image/png",
               1
             );
           }
         });
-        const aspectRatios = document.querySelectorAll(
+        const aspectRatios = params.uppload.container.querySelectorAll(
           "input[name='crop-aspect-ratio']"
         );
         aspectRatios.forEach(aspectRatio => {
           safeListen(aspectRatio, "change", () => {
-            const selectedAspectRatio = document.querySelector(
+            const selectedAspectRatio = params.uppload.container.querySelector(
               "input[name='crop-aspect-ratio']:checked"
             );
             if (selectedAspectRatio) {
@@ -97,7 +97,7 @@ export default class Crop extends UpploadEffect {
               cropper.getCroppedCanvas().toBlob(
                 result => {
                   if (!result) return;
-                  next(result);
+                  params.next(result);
                 },
                 "image/png",
                 1

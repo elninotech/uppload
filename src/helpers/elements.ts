@@ -1,3 +1,5 @@
+import { HandlersParams } from "./interfaces";
+
 export type Elements = string | string[] | Element | Element[];
 
 /**
@@ -53,6 +55,7 @@ export const safeListen = (
  * @param image - An HTML <img> element in the DOM
  */
 export const fitImageToContainer = (
+  params: HandlersParams,
   image: HTMLImageElement
 ): Promise<undefined> => {
   return new Promise(resolve => {
@@ -77,7 +80,7 @@ export const fitImageToContainer = (
         image.style.height = "auto";
       }
       requestAnimationFrame(() => {
-        const effect = document.querySelector(
+        const effect = params.uppload.container.querySelector(
           ".uppload-effect"
         ) as HTMLDivElement | null;
         if (effect) effect.style.opacity = "1";

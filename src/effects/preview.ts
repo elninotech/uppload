@@ -1,5 +1,6 @@
 import { UpploadEffect } from "../";
 import { fitImageToContainer } from "../helpers/elements";
+import { HandlersParams } from "../helpers/interfaces";
 
 export default class Preview extends UpploadEffect {
   name = "preview";
@@ -14,10 +15,10 @@ export default class Preview extends UpploadEffect {
     `;
   };
 
-  handlers = () => {
-    const image = document.querySelector(
+  handlers = (params: HandlersParams) => {
+    const image = params.uppload.container.querySelector(
       ".uppload-preview-element img"
     ) as HTMLImageElement | null;
-    if (image) fitImageToContainer(image);
+    if (image) fitImageToContainer(params, image);
   };
 }

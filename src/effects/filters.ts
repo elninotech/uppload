@@ -1,5 +1,6 @@
 import { UpploadEffect } from "../";
 import { safeListen } from "../helpers/elements";
+import { HandlersParams } from "../helpers/interfaces";
 
 export default class Filters extends UpploadEffect {
   name = "filters";
@@ -41,24 +42,24 @@ export default class Filters extends UpploadEffect {
     `;
   };
 
-  handlers = () => {
-    const range = document.querySelector(
+  handlers = (params: HandlersParams) => {
+    const range = params.uppload.container.querySelector(
       ".settings input[type='range']"
     ) as HTMLInputElement;
     if (range)
       safeListen(range, "change", () => {
-        this.update();
+        this.update(params);
       });
   };
 
-  update() {
+  update({ uppload }: HandlersParams) {
     console.log(new Date());
     let value = 0;
-    const range = document.querySelector(
+    const range = uppload.container.querySelector(
       ".settings input[type='range']"
     ) as HTMLInputElement;
     if (range) value = parseInt(range.value);
-    const displayer = document.querySelector(".settings .value span");
+    const displayer = uppload.container.querySelector(".settings .value span");
     if (displayer) displayer.innerHTML = value.toString();
   }
 }

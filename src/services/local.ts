@@ -28,21 +28,29 @@ export default class Local extends UpploadService {
       </div>`;
   };
 
-  handlers = ({ next }: HandlersParams) => {
-    const dropArea = document.querySelector(".drop-area");
+  handlers = (params: HandlersParams) => {
+    const dropArea = params.uppload.container.querySelector(".drop-area");
     if (dropArea)
       safeListen(dropArea, "drop", event =>
-        this.dropHandler(event as DragEvent, next)
+        this.dropHandler(params, event as DragEvent)
       );
-    if (dropArea) safeListen(dropArea, "dragover", this.dragHandler);
-    if (dropArea) safeListen(dropArea, "dragend", this.dragStop);
-    if (dropArea) safeListen(dropArea, "dragexit", this.dragStop);
-    if (dropArea) safeListen(dropArea, "dragleave", this.dragStop);
-    if (dropArea) safeListen(dropArea, "click", this.fileSelect);
-    const input = document.querySelector(
+    if (dropArea)
+      safeListen(dropArea, "dragover", event =>
+        this.dragHandler(params, event)
+      );
+    if (dropArea)
+      safeListen(dropArea, "dragend", event => this.dragStop(params, event));
+    if (dropArea)
+      safeListen(dropArea, "dragexit", event => this.dragStop(params, event));
+    if (dropArea)
+      safeListen(dropArea, "dragleave", event => this.dragStop(params, event));
+    if (dropArea)
+      safeListen(dropArea, "click", event => this.fileSelect(params, event));
+    const input = params.uppload.container.querySelector(
       ".alternate-input input[type=file]"
     ) as HTMLInputElement | null;
-    if (input) safeListen(input, "change", event => this.getFile(event, next));
+    if (input)
+      safeListen(input, "change", event => this.getFile(event, params.next));
   };
 
   getFile(event: Event, next: (file: Blob) => void) {
@@ -59,26 +67,26 @@ export default class Local extends UpploadService {
     event.preventDefault();
   }
 
-  fileSelect() {
-    const input = document.querySelector(
+  fileSelect(params: HandlersParams, event: Event) {
+    const input = params.uppload.container.querySelector(
       ".alternate-input input[type=file]"
     ) as HTMLInputElement | null;
     if (input) input.click();
   }
 
-  private dragStop() {
-    const dropArea = document.querySelector(".drop-area");
+  private dragStop(params: HandlersParams, event: Event) {
+    const dropArea = params.uppload.container.querySelector(".drop-area");
     if (dropArea) dropArea.classList.remove("drop-area-active");
   }
 
-  dragHandler(event: Event) {
+  dragHandler(params: HandlersParams, event: Event) {
     event.preventDefault();
-    const dropArea = document.querySelector(".drop-area");
+    const dropArea = params.uppload.container.querySelector(".drop-area");
     if (dropArea) dropArea.classList.add("drop-area-active");
   }
 
-  dropHandler(event: DragEvent, next: (file: Blob) => void) {
-    this.dragStop();
+  dropHandler(params: HandlersParams, event: DragEvent) {
+    this.dragStop(params, event);
     let file: File | null = null; // getAsFile() returns File | null
     if (event.dataTransfer && event.dataTransfer.items) {
       for (let i = 0; i < event.dataTransfer.items.length; i++) {
@@ -88,7 +96,7 @@ export default class Local extends UpploadService {
       }
     }
     if (!file) return;
-    if (file) next(file);
+    if (file) params.next(file);
     event.preventDefault();
   }
 }

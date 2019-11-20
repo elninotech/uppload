@@ -64,13 +64,14 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
       cachedFetch<any>(this.popularEndpoint, this.fetchSettings)
         .then(photos => {
           this.results = this.getPopularResults(photos);
-          this.update();
         })
         .catch(() => {});
   }
 
-  updateImages() {
-    const imagesContainer = document.querySelector(".search-images");
+  updateImages(params: HandlersParams) {
+    const imagesContainer = params.uppload.container.querySelector(
+      ".search-images"
+    );
     if (imagesContainer) {
       imagesContainer.innerHTML = `
         ${this.results.map(result => this.getButton(result)).join("\n")}
@@ -78,11 +79,13 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
     }
   }
 
-  update() {
-    this.updateImages();
+  update(params: HandlersParams) {
+    this.updateImages(params);
     if (params) this.handlers(params);
-    const loader = document.querySelector(".search-loader") as HTMLDivElement;
-    const container = document.querySelector(
+    const loader = params.uppload.container.querySelector(
+      ".search-loader"
+    ) as HTMLDivElement;
+    const container = params.uppload.container.querySelector(
       ".search-container"
     ) as HTMLDivElement;
     if (container) container.style.display = this.loading ? "none" : "";
@@ -120,14 +123,13 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
     `;
   };
 
-  handlers = ({ next, handle }: HandlersParams) => {
-    params = { next, handle };
-    const form = document.querySelector(
+  handlers = (params: HandlersParams) => {
+    const form = params.uppload.container.querySelector(
       `.${this.class("form")}`
     ) as HTMLFormElement | null;
     if (form) {
       safeListen(form, "submit", event => {
-        const input = document.querySelector(
+        const input = params.uppload.container.querySelector(
           `.${this.class("input")}`
         ) as HTMLInputElement | null;
         if (input) {
@@ -138,25 +140,27 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
           )
             .then(json => {
               this.results = this.getSearchResults(json);
-              this.update();
+              this.update(params);
             })
-            .catch(error => handle(error));
+            .catch(error => params.handle(error));
         }
         event.preventDefault();
         return false;
       });
     }
-    this.updateImages();
-    const imageButtons = document.querySelectorAll(".search-images button");
+    this.updateImages(params);
+    const imageButtons = params.uppload.container.querySelectorAll(
+      ".search-images button"
+    );
     imageButtons.forEach(image => {
       safeListen(image, "click", () => {
         const url = image.getAttribute("data-full-url");
         this.loading = true;
-        this.update();
+        this.update(params);
         if (url)
           imageUrlToBlob(url)
-            .then(blob => next(blob))
-            .catch(error => handle(error))
+            .then(blob => params.next(blob))
+            .catch(error => params.handle(error))
             .then(() => (this.loading = false));
       });
     });

@@ -146,7 +146,7 @@ export class Uppload {
   open() {
     if (this.isOpen) return;
     this.isOpen = true;
-    const serviceRadio = document.querySelector(
+    const serviceRadio = this.container.querySelector(
       `input[type=radio][value='${this.activeService}']`
     );
     if (serviceRadio) serviceRadio.setAttribute("checked", "checked");
@@ -195,7 +195,7 @@ export class Uppload {
       aside.style.display = "";
       footerEffectsNav.style.display = "none";
     }
-    const effectsContainer = document.querySelector(
+    const effectsContainer = this.container.querySelector(
       ".uppload-effect"
     ) as HTMLElement;
     if (effectsContainer)
@@ -360,7 +360,8 @@ export class Uppload {
           activeService.handlers({
             next: this.next.bind(this),
             upload: this.upload.bind(this),
-            handle: this.handle.bind(this)
+            handle: this.handle.bind(this),
+            uppload: this
           });
       });
       return `${
@@ -385,7 +386,8 @@ export class Uppload {
           activeEffect.handlers({
             next: this.next.bind(this),
             upload: this.upload.bind(this),
-            handle: this.handle.bind(this)
+            handle: this.handle.bind(this),
+            uppload: this
           });
       });
       return `
@@ -407,7 +409,7 @@ export class Uppload {
     if (this.effects.length && !this.activeEffect) {
       this.activeEffect = this.effects[0].name;
       this.update();
-      const activeRadio = document.querySelector(
+      const activeRadio = this.container.querySelector(
         `input[name='uppload-effect-radio'][value='${this.activeEffect}']`
       );
       if (activeRadio) activeRadio.setAttribute("checked", "checked");
@@ -477,7 +479,7 @@ export class Uppload {
       const linkFunction = (e: Event) => {
         const service = link.getAttribute("data-uppload-service");
         if (service) this.navigate(service);
-        const serviceRadio = document.querySelector(
+        const serviceRadio = this.container.querySelector(
           `input[type=radio][value='${service}']`
         );
         if (serviceRadio) serviceRadio.setAttribute("checked", "checked");
@@ -495,7 +497,7 @@ export class Uppload {
     );
     inputRadios.forEach(radio => {
       const radioFunction = (e: Event) => {
-        const inputRadio = document.querySelector(
+        const inputRadio = this.container.querySelector(
           "[name='uppload-radio']:checked"
         ) as HTMLInputElement;
         if (!inputRadio) return;
@@ -514,7 +516,7 @@ export class Uppload {
     );
     effectInputRadios.forEach(radio => {
       const radioFunction = (e: Event) => {
-        const inputRadio = document.querySelector(
+        const inputRadio = this.container.querySelector(
           "[name='uppload-effect-radio']:checked"
         ) as HTMLInputElement;
         if (!inputRadio) return;
@@ -528,7 +530,7 @@ export class Uppload {
     /**
      * Clicking on the background should close the modal
      */
-    const background = document.querySelector(".uppload-modal-bg");
+    const background = this.container.querySelector(".uppload-modal-bg");
     if (background) {
       safeListen(background, "click", closeFunction);
     }
@@ -546,7 +548,9 @@ export class Uppload {
     /**
      * Clicking on the cancel button restarts the process
      */
-    const cancelButton = document.querySelector(".effects-continue--cancel");
+    const cancelButton = this.container.querySelector(
+      ".effects-continue--cancel"
+    );
     if (cancelButton)
       safeListen(cancelButton, "click", () => {
         this.file = undefined;
@@ -558,7 +562,9 @@ export class Uppload {
     /**
      * Clicking on the cancel button restarts the process
      */
-    const uploadButton = document.querySelector(".effects-continue--upload");
+    const uploadButton = this.container.querySelector(
+      ".effects-continue--upload"
+    );
     if (uploadButton)
       safeListen(uploadButton, "click", () => {
         if (!this.file) return;
@@ -603,7 +609,7 @@ export class Uppload {
    */
   private updateProgress(progressPercent: number) {
     this.uploadProgress = progressPercent;
-    const progressText = document.querySelector(
+    const progressText = this.container.querySelector(
       ".uppload-loader-text .progress"
     );
     if (progressText)

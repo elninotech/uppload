@@ -31,45 +31,45 @@ export class MicrolinkBaseClass extends UpploadService {
   </div>`;
   };
 
-  update() {
-    const loader = document.querySelector(
+  update(params: HandlersParams) {
+    const loader = params.uppload.container.querySelector(
       ".microlink-loader"
     ) as HTMLDivElement;
-    const container = document.querySelector(
+    const container = params.uppload.container.querySelector(
       ".microlink-container"
     ) as HTMLDivElement;
     if (container) container.style.display = this.loading ? "none" : "";
     if (loader) loader.style.display = this.loading ? "flex" : "none";
   }
 
-  handlers = ({ next, handle }: HandlersParams) => {
-    const form = document.querySelector(
+  handlers = (params: HandlersParams) => {
+    const form = params.uppload.container.querySelector(
       `.${this.class("form")}`
     ) as HTMLFormElement | null;
     if (form) {
       form.addEventListener("submit", event => {
         event.preventDefault();
-        const input = document.querySelector(
+        const input = params.uppload.container.querySelector(
           `.${this.class("input")}`
         ) as HTMLInputElement | null;
         if (input) {
           const url = input.value;
-          if (!this.validator(url)) return handle("invalid_url");
+          if (!this.validator(url)) return params.handle("invalid_url");
           this.loading = true;
-          this.update();
+          this.update(params);
           if (this.name === "screenshot") {
             imageUrlToBlob(
               `https://api.microlink.io?url=${encodeURIComponent(
                 url
               )}&screenshot=true&meta=false&embed=screenshot.url`
             )
-              .then(blob => next(blob))
-              .catch(error => handle(error))
+              .then(blob => params.next(blob))
+              .catch(error => params.handle(error))
               .then(() => (this.loading = false));
           } else if (this.name === "url") {
             imageUrlToBlob(url)
-              .then(blob => next(blob))
-              .catch(error => handle(error));
+              .then(blob => params.next(blob))
+              .catch(error => params.handle(error));
           } else {
             cachedFetch<{
               data: {
@@ -84,8 +84,8 @@ export class MicrolinkBaseClass extends UpploadService {
                 return result.data.image.url;
               })
               .then(url => imageUrlToBlob(url))
-              .then(blob => next(blob))
-              .catch(error => handle(error));
+              .then(blob => params.next(blob))
+              .catch(error => params.handle(error));
           }
         }
         return false;
