@@ -206,6 +206,22 @@ export class Uppload {
     } else {
       this.container.classList.add("visible");
     }
+    const effectsNav = this.container.querySelector(
+      "footer.effects-nav .effects-tabs"
+    ) as HTMLDivElement | null;
+    if (effectsNav) {
+      const parent = effectsNav.parentElement;
+      if (parent) {
+        let totalButtonsWidth = 0;
+        const buttons = parent.querySelectorAll(".effects-continue");
+        for (let i = 0; i < buttons.length; i++) {
+          const buttonSize = buttons[i].getBoundingClientRect();
+          totalButtonsWidth += buttonSize.width;
+        }
+        const size = parent.getBoundingClientRect();
+        effectsNav.style.width = `${size.width - totalButtonsWidth}px`;
+      }
+    }
   }
 
   /**
@@ -256,7 +272,7 @@ export class Uppload {
   private getEffectsNavbar() {
     return `<div class="effects-continue">
     <button class="effects-continue--cancel">Cancel</button>
-  </div><div class="effects-tabs">
+  </div><div class="effects-tabs"><div class="effects-tabs-flow">
       ${this.effects
         .map(
           effect => `
@@ -280,7 +296,7 @@ export class Uppload {
       `
         )
         .join("")}
-      </div><div class="effects-continue">
+      </div></div><div class="effects-continue">
         <button class="effects-continue--upload">Upload</button>
       </div>`;
   }

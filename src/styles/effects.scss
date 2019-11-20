@@ -17,8 +17,17 @@
     overflow: hidden;
 
     .effects-tabs {
+      // This width is updated with JavaScript
+      width: 100px;
       display: flex;
-      flex-wrap: wrap;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+    }
+
+    .effects-tabs-flow {
+      display: flex;
+      flex-wrap: nowrap;
+      white-space: nowrap;
     }
 
     input[type="radio"] {
