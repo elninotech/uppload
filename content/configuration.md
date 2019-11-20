@@ -21,6 +21,7 @@ The keys you can use in the configuration object are:
 | `lang` | Object | [Language pack](/i18n) |
 | `uploader` | Function | Function to [upload files](/uploaders) |
 | `inline` | Boolean | Show widget inline instead of modal |
+| `customClass` | String | Adds an additional class to the container |
 
 \*The *Elements* type can be any of the following:
 
