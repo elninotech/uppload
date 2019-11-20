@@ -7,11 +7,12 @@ export function cachedFetch<T>(
   input: RequestInfo,
   settings?: RequestInit
 ): Promise<T> {
+  const storage = sessionStorage;
   return new Promise((resolve, reject) => {
     const key = `uppload_cache_${JSON.stringify(input)}`;
     const maxTTL = new Date();
     maxTTL.setDate(maxTTL.getDate() + 1);
-    const cachedResult = localStorage.getItem(key);
+    const cachedResult = storage.getItem(key);
     if (cachedResult) {
       const cachedResultData = JSON.parse(cachedResult);
       if (
@@ -27,7 +28,7 @@ export function cachedFetch<T>(
         return response.json();
       })
       .then(result => {
-        localStorage.setItem(
+        storage.setItem(
           key,
           JSON.stringify({
             ttl: maxTTL,
