@@ -76,7 +76,13 @@ export const fitImageToContainer = (
         image.style.width = `${dimensions.width}px`;
         image.style.height = "auto";
       }
-      requestAnimationFrame(() => resolve());
+      requestAnimationFrame(() => {
+        const effect = document.querySelector(
+          ".uppload-effect"
+        ) as HTMLDivElement | null;
+        if (effect) effect.style.opacity = "1";
+        resolve();
+      });
     });
   });
 };

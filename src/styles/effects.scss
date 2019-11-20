@@ -60,6 +60,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    opacity: 0;
+    transition: opacity 0.2s;
     .active-effect-container {
       flex: 1 0 0;
       display: flex;
