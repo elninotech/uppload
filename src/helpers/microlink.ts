@@ -12,15 +12,13 @@ export class MicrolinkBaseClass extends UpploadService {
   template = (): string => {
     return `
       <div class="microlink-container">
-      <form class="${this.class("form")}">
+      <form class="microlink-search-form">
         <div class="service-icon">${colorSVG(this.icon, this)}</div>
         <label>
         <span>${translate(`services.${this.name}.label`)}</span>
-        <input class="${this.class(
-          "input"
-        )}" type="url" placeholder="${translate(
-      `services.${this.name}.placeholder`
-    ) || ""}" required>
+        <input class="microlink-search-input" type="url" placeholder="${translate(
+          `services.${this.name}.placeholder`
+        ) || ""}" required>
         </label>
         <button type="submit" style="background: ${this.color}">${translate(
       `services.${this.name}.button`
@@ -44,13 +42,13 @@ export class MicrolinkBaseClass extends UpploadService {
 
   handlers = (params: HandlersParams) => {
     const form = params.uppload.container.querySelector(
-      `.${this.class("form")}`
+      `.microlink-search-form`
     ) as HTMLFormElement | null;
     if (form) {
       form.addEventListener("submit", event => {
         event.preventDefault();
         const input = params.uppload.container.querySelector(
-          `.${this.class("input")}`
+          `.microlink-search-input`
         ) as HTMLInputElement | null;
         if (input) {
           const url = input.value;

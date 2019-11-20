@@ -94,14 +94,12 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
 
   template = (): string => {
     return `
-      <div class="search-container"><form class="${this.class("form")}">
+      <div class="search-container"><form class="search-search-form">
       <div class="service-icon">${colorSVG(this.icon, this)}</div>
       <label><span>${translate(`services.${this.name}.label`)}</span>
-        <input class="${this.class(
-          "input"
-        )}" type="search" placeholder="${translate(
-      `services.${this.name}.placeholder`
-    )}" required></label>
+        <input class="search-search-input" type="search" placeholder="${translate(
+          `services.${this.name}.placeholder`
+        )}" required></label>
         <button type="submit" style="background: ${this.color}">${translate(
       `services.${this.name}.button`
     )}</button>
@@ -125,12 +123,12 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
 
   handlers = (params: HandlersParams) => {
     const form = params.uppload.container.querySelector(
-      `.${this.class("form")}`
+      `.search-search-form`
     ) as HTMLFormElement | null;
     if (form) {
       safeListen(form, "submit", event => {
         const input = params.uppload.container.querySelector(
-          `.${this.class("input")}`
+          `.search-search-input`
         ) as HTMLInputElement | null;
         if (input) {
           const query = input.value;

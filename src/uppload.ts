@@ -33,6 +33,7 @@ export interface UpploadSettings {
   lang?: { [index: string]: any };
   uploader?: Uploader;
   inline?: boolean;
+  customClass?: string;
 }
 
 /**
@@ -70,6 +71,7 @@ export class Uppload {
     const div = document.createElement("div");
     this.renderContainer();
     div.classList.add("uppload-container");
+    if (this.settings.customClass) div.classList.add(this.settings.customClass);
     if (this.inline) div.classList.add("uppload-inline");
     const body = document.body;
     if (body) {

@@ -84,9 +84,11 @@ uppload.use([
   new LinkedIn(),
   new Reddit(),
   new Tumblr(),
-  new WeHeartIt(),
+  new WeHeartIt()
+]);
+
+uppload.use([
   new Crop(),
-  // new Filters(),
   new Blur(),
   new Brightness(),
   new Contrast(),
@@ -95,8 +97,6 @@ uppload.use([
   new Invert(),
   new Saturate(),
   new Sepia()
-  // new Rotate(),
-  // new Sharpen()
 ]);
 // uppload.use(new Axios(() => ({
 //   method: "GET",
