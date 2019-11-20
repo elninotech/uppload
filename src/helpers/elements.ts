@@ -50,6 +50,14 @@ export const safeListen = (
   listening.push({ element, type });
 };
 
+const safeRequestAnimationFrame = (callback: FrameRequestCallback) => {
+  if (window.requestAnimationFrame)
+    return window.requestAnimationFrame(callback);
+  setTimeout(() => {
+    callback(0);
+  }, 100);
+};
+
 /**
  *
  * @param image - An HTML <img> element in the DOM
@@ -59,32 +67,34 @@ export const fitImageToContainer = (
   image: HTMLImageElement
 ): Promise<undefined> => {
   return new Promise(resolve => {
-    const parent = image.parentElement as HTMLDivElement | null;
-    const currentDimensions = image.getBoundingClientRect();
-    if (!parent) return;
-    const dimensions = parent.getBoundingClientRect();
-    if (currentDimensions.height < currentDimensions.width) {
-      image.style.height = `${dimensions.height}px`;
-      image.style.width = "auto";
-    } else {
-      image.style.width = `${dimensions.width}px`;
-      image.style.height = "auto";
-    }
-    requestAnimationFrame(() => {
+    safeRequestAnimationFrame(() => {
+      const parent = image.parentElement as HTMLDivElement | null;
       const currentDimensions = image.getBoundingClientRect();
-      if (currentDimensions.height > dimensions.height) {
+      if (!parent) return;
+      const dimensions = parent.getBoundingClientRect();
+      if (currentDimensions.height < currentDimensions.width) {
         image.style.height = `${dimensions.height}px`;
         image.style.width = "auto";
-      } else if (currentDimensions.width > dimensions.width) {
+      } else {
         image.style.width = `${dimensions.width}px`;
         image.style.height = "auto";
       }
-      requestAnimationFrame(() => {
-        const effect = params.uppload.container.querySelector(
-          ".uppload-effect"
-        ) as HTMLDivElement | null;
-        if (effect) effect.style.opacity = "1";
-        resolve();
+      safeRequestAnimationFrame(() => {
+        const currentDimensions = image.getBoundingClientRect();
+        if (currentDimensions.height > dimensions.height) {
+          image.style.height = `${dimensions.height}px`;
+          image.style.width = "auto";
+        } else if (currentDimensions.width > dimensions.width) {
+          image.style.width = `${dimensions.width}px`;
+          image.style.height = "auto";
+        }
+        safeRequestAnimationFrame(() => {
+          const effect = params.uppload.container.querySelector(
+            ".uppload-effect"
+          ) as HTMLDivElement | null;
+          if (effect) effect.style.opacity = "1";
+          resolve();
+        });
       });
     });
   });
