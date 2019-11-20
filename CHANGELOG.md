@@ -1,5 +1,26 @@
 # Changelog
 
+<a name="2.0.0-beta.3"></a>
+## 2.0.0-beta.3 (2019-11-20)
+
+### Added
+
+- ✨ Dynamically size effects tab [[233c6e4](https://github.com/elninotech/uppload/commit/233c6e48f6edfc02cb668eb1a6742ac1063b4347)]
+
+### Changed
+
+- ♻️ Use session storage instead of local [[6f8d742](https://github.com/elninotech/uppload/commit/6f8d7425198be292f6ae8f3dfc92d58067e89fc2)]
+- ♻️ Add cache TTL to cachedFetch [[2a2ef73](https://github.com/elninotech/uppload/commit/2a2ef738a0d1c76f18b0c94f922cdc85e24f2c50)]
+
+### Fixed
+
+- 🐛 Fix flash of image size using opacity [[10b3742](https://github.com/elninotech/uppload/commit/10b37427597391898a3847b60ab0fa4e06de39d6)]
+
+### Miscellaneous
+
+- 📝 Update roadmap with progress [[85716b2](https://github.com/elninotech/uppload/commit/85716b2458f61cee6ec1531671bc34194bdcf844)]
+
+
 <a name="2.0.0-beta.2"></a>
 ## 2.0.0-beta.2 (2019-11-16)
 
