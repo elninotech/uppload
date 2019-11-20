@@ -106,24 +106,22 @@ profilePicture.use([
 
 ## 🛣️ Roadmap
 
-- [ ] Services (ways to choose a file)
+- [ ] Services
   - [ ] Click photo from camera
-- [ ] Effects (ways to change the file)
-  - [ ] Filters
+- [ ] Effects
+  - [ ] Instagram-like filters
   - [ ] Rotation, mirror
-- [ ] Uploaders (ways to send the file to a server)
-  - [ ] REST endpoint
-  - [ ] AWS S3 bucket
-  - [ ] Firebase
-  - [ ] Upload to web service
-- [ ] Wrappers
-  - [ ] Vue.js
-  - [ ] React
-  - [ ] Angular
-  - [ ] Ember.js
 - [ ] Documentation
-  - [ ] Starter templates to show people how to use Uppload with e.g., Firebase
-  - [ ] TypeDoc for exploring packages
+  - [ ] TypeDoc for exploring packages and interfaces
+  - [ ] Docs to show people how to upload to:
+    - [ ] AWS S3 bucket
+    - [ ] Firebase
+    - [ ] Upload to web service like Imgur
+  - [ ] Docs to people how to use Uppload with frameworks:
+    - [ ] Vue.js
+    - [ ] React
+    - [ ] Angular
+    - [ ] Ember.js
 
 ## 👥 Contributors
 
