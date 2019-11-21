@@ -52,7 +52,8 @@ export class MicrolinkBaseClass extends UpploadService {
         ) as HTMLInputElement | null;
         if (input) {
           const url = input.value;
-          if (!this.validator(url)) return params.handle("invalid_url");
+          if (!this.validator(url))
+            return params.handle(new Error("invalid_url"));
           this.loading = true;
           this.update(params);
           if (this.name === "screenshot") {

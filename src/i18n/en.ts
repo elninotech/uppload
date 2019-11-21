@@ -1,5 +1,6 @@
 export default {
   response_not_ok: "We got an error in fetching this file",
+  unable_to_search: "We got an error in searching",
   invalid_url: "This URL is seems to be invalid",
   uploading: "Uploading...",
   fetching: "Getting your image from $1$...",

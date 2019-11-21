@@ -140,7 +140,7 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
               this.results = this.getSearchResults(json);
               this.update(params);
             })
-            .catch(error => params.handle(error));
+            .catch(() => params.handle(new Error("unable_to_search")));
         }
         event.preventDefault();
         return false;
