@@ -1,16 +1,6 @@
 # Uppload
 
-Uppload is a better JavaScript image uploader. It's highly customizable, supports 20+ ways to select a file, works with any file uploading backend, and is completely free and open-source.
-
-Uppload demo image
-
-<!-- <iframe
-  src="https://codesandbox.io/embed/jovial-sky-dm7cm?autoresize=1&fontsize=14&hidenavigation=1&theme=light&view=preview"
-  style="width: 100%; height: 550px; border: 0; border-radius: 4px; overflow: hidden;"
-  title="Uppload demo"
-  allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-  sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
-></iframe> -->
+Uppload is a better JavaScript image uploader. It's highly customizable with 30+ plugins, completely free and open-source, and can be used with any file uploading backend.
 
 - [Getting started](/getting-started)
 - [Configuration](/configuration)
