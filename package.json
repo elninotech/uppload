@@ -58,9 +58,7 @@
   },
   "dependencies": {
     "cropperjs": "^1.5.6",
-    "jslib-html5-camera-photo": "^3.1.3",
-    "mitt": "^1.2.0",
-    "show-hide": "^0.9.0"
+    "mitt": "^1.2.0"
   },
   "husky": {
     "hooks": {

@@ -2,7 +2,6 @@ import { UpploadService } from "./service";
 import { UpploadEffect } from "./effect";
 import { setI18N, translate } from "./helpers/i18n";
 import { Elements, getElements, safeListen } from "./helpers/elements";
-import { show, hide } from "show-hide";
 import { colorSVG } from "./helpers/assets";
 import mitt from "mitt";
 import { Uploader } from "./helpers/interfaces";
