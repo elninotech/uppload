@@ -34,7 +34,8 @@
     "lint": "prettier '**/*.{ts,scss}' --write",
     "serve-site": "site --serve",
     "test-report": "jest --coverage",
-    "changelog": "gitmoji-changelog"
+    "changelog": "gitmoji-changelog",
+    "build-site-demo": "npm run build-site && npm run build-demo && mv dist/index.html dist/demo.html && mv dist/* public"
   },
   "browserslist": [
     "last 1 Chrome versions"

@@ -44,12 +44,12 @@ const uppload = new Uppload({
   lang: en,
   uploader: (file, updateProgress) =>
     new Promise(resolve => {
-      setTimeout(() => resolve(window.URL.createObjectURL(file)), 5500);
+      setTimeout(() => resolve(window.URL.createObjectURL(file)), 2750);
       let progress = 0;
       const interval = setInterval(() => {
         if (progress > 99) clearInterval(interval);
         updateProgress(progress++);
-      }, 50);
+      }, 25);
     })
 });
 
@@ -99,8 +99,4 @@ uppload.use([
   new Sepia()
 ]);
 
-uppload.open();
-
-uppload.on("upload", (url: string) => {
-  console.log("Uploaded image", url);
-});
+// uppload.open();

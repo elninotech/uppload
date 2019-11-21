@@ -78,6 +78,7 @@ export class Uppload {
       body.appendChild(div);
     }
     this.container = div;
+    requestAnimationFrame(() => this.update());
   }
 
   private ready() {
@@ -435,7 +436,6 @@ export class Uppload {
         if (typeof this.uploader === "function") {
           this.uploader(file, this.updateProgress.bind(this))
             .then((url: string) => {
-              console.log("File uploaded successfully", url);
               this.bind(url);
               this.navigate("default");
               resolve(url);
