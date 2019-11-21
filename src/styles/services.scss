@@ -277,3 +277,35 @@
 .uppload-cropping-element {
   text-align: center;
 }
+
+.uppload-service--camera {
+  display: flex;
+  flex-direction: column;
+  video {
+    // This is set by JavaScript
+    width: 100px;
+  }
+  .service-main {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .camera-waiting,
+  .camera-error,
+  .camera-success,
+  .service-footer {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .camera-waiting,
+  .camera-error,
+  .camera-success {
+    flex: 1 0 0;
+    justify-content: center;
+    display: flex;
+    opacity: 0;
+    transition: 0.2s;
+  }
+  .service-footer {
+  }
+}

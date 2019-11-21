@@ -64,7 +64,7 @@ const safeRequestAnimationFrame = (callback: FrameRequestCallback) => {
  */
 export const fitImageToContainer = (
   params: HandlersParams,
-  image: HTMLImageElement
+  image: HTMLImageElement | HTMLVideoElement
 ): Promise<undefined> => {
   return new Promise(resolve => {
     safeRequestAnimationFrame(() => {

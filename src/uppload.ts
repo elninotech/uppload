@@ -408,6 +408,7 @@ export class Uppload {
    * @param file - The currently active file Blob
    */
   private next(file: Blob) {
+    this.stopCurrentService();
     this.file = file;
     if (this.effects.length && !this.activeEffect) {
       this.activeEffect = this.effects[0].name;
