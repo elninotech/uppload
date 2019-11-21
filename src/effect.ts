@@ -9,4 +9,5 @@ export class UpploadEffect {
   icon: string = "";
   template: (file: Blob) => string = () => "";
   handlers: (params: HandlersParams) => void = () => {};
+  supports: () => boolean = () => true;
 }
