@@ -1,6 +1,7 @@
 import { UpploadService } from "../service";
 import { HandlersParams } from "../helpers/interfaces";
 import { safeListen, fitImageToContainer } from "../helpers/elements";
+import { translate } from "../helpers/i18n";
 
 export default class Camera extends UpploadService {
   name = "camera";
@@ -10,6 +11,7 @@ export default class Camera extends UpploadService {
   canvas: HTMLCanvasElement = document.createElement("canvas");
   gotError = false;
   waiting = false;
+  frontCamera = false;
 
   supports = () => navigator.mediaDevices !== undefined;
 
@@ -24,9 +26,12 @@ export default class Camera extends UpploadService {
       </div>
       <footer class="service-footer">
         <button
+          class="camera-switch uppload-button"
+        >${translate("services.camera.switch")}</button>
+        <button
           class="camera-click uppload-button uppload-button--cta"
           style="background: ${this.color}"
-        >Click photo</button>
+        >${translate("services.camera.button")}</button>
       </footer>
     `;
   };
@@ -90,32 +95,33 @@ export default class Camera extends UpploadService {
   handlers = (params: HandlersParams) => {
     this.waiting = true;
     this.update(params);
-    const constraints = { audio: false, video: { width: 1280, height: 1280 } };
-    window.navigator.mediaDevices
-      .getUserMedia(constraints)
-      .then(mediaStream => {
-        this.stream = mediaStream;
-        const video = params.uppload.container.querySelector(
-          "video.camera-stream"
-        ) as HTMLVideoElement | null;
-        if (video) {
-          video.srcObject = mediaStream;
-          safeListen(video, "loadedmetadata", () => video.play());
-          fitImageToContainer(params, video);
-        }
-      })
-      .catch(() => {
-        this.gotError = true;
-      })
-      .then(() => {
-        this.waiting = false;
-        this.update(params);
-      });
-
+    const constraints: MediaStreamConstraints = {
+      audio: false,
+      video: { width: 1280, height: 1280 }
+    };
+    this.startStream(params, constraints);
     const clickButton = params.uppload.container.querySelector(".camera-click");
     if (clickButton)
       safeListen(clickButton, "click", this.clickPhoto.bind(this, params));
+    const switchButton = params.uppload.container.querySelector(
+      ".camera-click"
+    );
+    if (switchButton)
+      safeListen(switchButton, "click", this.switchCamera.bind(this, params));
   };
+
+  switchCamera(params: HandlersParams) {
+    this.frontCamera = !this.frontCamera;
+    const constraints: MediaStreamConstraints = {
+      audio: false,
+      video: {
+        width: 1280,
+        height: 1280,
+        facingMode: this.frontCamera ? "user" : "environment"
+      }
+    };
+    this.startStream(params, constraints);
+  }
 
   clickPhoto(params: HandlersParams) {
     this.canvas = document.createElement("canvas");
@@ -141,5 +147,29 @@ export default class Camera extends UpploadService {
     this.canvas.toBlob(blob => {
       if (blob) params.next(blob);
     });
+  }
+
+  startStream(params: HandlersParams, constraints: MediaStreamConstraints) {
+    this.stop();
+    window.navigator.mediaDevices
+      .getUserMedia(constraints)
+      .then(mediaStream => {
+        this.stream = mediaStream;
+        const video = params.uppload.container.querySelector(
+          "video.camera-stream"
+        ) as HTMLVideoElement | null;
+        if (video) {
+          video.srcObject = mediaStream;
+          safeListen(video, "loadedmetadata", () => video.play());
+          fitImageToContainer(params, video);
+        }
+      })
+      .catch(() => {
+        this.gotError = true;
+      })
+      .then(() => {
+        this.waiting = false;
+        this.update(params);
+      });
   }
 }

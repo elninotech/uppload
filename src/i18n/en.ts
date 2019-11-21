@@ -22,7 +22,8 @@ export default {
     },
     camera: {
       title: "Camera",
-      button: "Click photo"
+      button: "Click photo",
+      switch: "Switch camera"
     },
     instagram: {
       title: "Instagram",

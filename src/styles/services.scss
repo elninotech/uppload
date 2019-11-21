@@ -278,6 +278,13 @@
   text-align: center;
 }
 
+.uppload-modal .service-footer {
+  button.uppload-button {
+    margin: 0 0.5rem;
+    display: inline-block;
+  }
+}
+
 .uppload-service--camera {
   display: flex;
   flex-direction: column;
@@ -305,7 +312,5 @@
     display: flex;
     opacity: 0;
     transition: 0.2s;
-  }
-  .service-footer {
   }
 }
