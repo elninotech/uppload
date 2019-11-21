@@ -1,14 +1,6 @@
 # 🖼️ Uppload
 
-## Uppload 1.x
-
-This README is for the upcoming TypeScript rewrite of Uppload, releasing in December 2019.
-
-You can [view the README of Uppload 1.x](https://github.com/elninotech/uppload/tree/master), the current stable version, in the `master` branch.
-
-## Uppload 2
-
-Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file uploading widget with 15+ ways to select images. It's written in TypeScript and supports custom builds.
+Uppload is a better JavaScript image uploader. It's highly customizable with 30+ plugins, completely free and open-source, and can be used with any file uploading backend.
 
 |  | Status |
 | - | - |
@@ -17,9 +9,7 @@ Uppload 2 is the upcoming major update to Uppload, El Niño's JavaScript file up
 | Documentation | [![Netlify](https://img.shields.io/netlify/5e92d02d-b96b-4b42-8197-804f72a147cf)](https://app.netlify.com/sites/uppload/deploys) [![Website status](https://img.shields.io/website?down_color=red&down_message=down&up_color=brightgreen&up_message=online&url=https%3A%2F%2Fuppload.netlify.com)](https://uppload.netlify.com) [![Uptime](https://img.shields.io/uptimerobot/ratio/7/m783785688-048a2237d8844210960a6a76)](https://stats.uptimerobot.com/m29YvtjqOg) [![Articles](https://img.shields.io/endpoint?url=https%3A%2F%2Fuppload.netlify.com%2Fshield-schema%2Fall.json)](https://uppload.netlify.com) |
 | Community | [![Contributors](https://img.shields.io/github/contributors/elninotech/uppload.svg)](https://github.com/elninotech/uppload/graphs/contributors) [![GitHub](https://img.shields.io/github/license/elninotech/uppload.svg)](https://github.com/elninotech/uppload/blob/master/LICENSE) ![Type definitions](https://img.shields.io/badge/types-TypeScript-blue.svg) [![npm package version](https://img.shields.io/npm/v/uppload)](https://www.npmjs.com/package/uppload) |
 
-**[View Uppload 2 docs →](https://uppload.netlify.com)**
-
-**[View live demo →](https://uppload.netlify.com/demo.html)**
+**[View Uppload demo and docs →](https://uppload.netlify.com)**
 
 ## ⭐ Features
 
@@ -102,12 +92,14 @@ profilePicture.use([
 - [Backends](https://uppload.netlify.com/backends)
 - [Internationalization](https://uppload.netlify.com/i18n)
 
-**[View Uppload 2 docs →](https://uppload.netlify.com)**
+**[View Uppload docs →](https://uppload.netlify.com)**
+
+### Uppload 1.x
+
+Uppload v2 is completely rewritten in TypeScript. You can [view the README of Uppload 1.x](https://github.com/elninotech/uppload/tree/master), the current stable version, in the `master` branch, or the [migration guide](https://uppload.netlify.com/migrating-from-1x).
 
 ## 🛣️ Roadmap
 
-- [ ] Services
-  - [ ] Click photo from camera
 - [ ] Effects
   - [ ] Instagram-like filters
   - [ ] Rotation, mirror
@@ -136,19 +128,19 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://thlassche.nl"><img src="https://avatars3.githubusercontent.com/u/2959888?v=4" width="100px;" alt="Teun Lassche"/><br /><sub><b>Teun Lassche</b></sub></a><br /><a href="https://github.com/elninotech/uppload/issues?q=author%3Athlassche" title="Bug reports">🐛</a> <a href="https://github.com/elninotech/uppload/commits?author=thlassche" title="Code">💻</a> <a href="#security-thlassche" title="Security">🛡️</a></td>
     <td align="center"><a href="https://victorlap.nl"><img src="https://avatars0.githubusercontent.com/u/1645632?v=4" width="100px;" alt="Victor"/><br /><sub><b>Victor</b></sub></a><br /><a href="https://github.com/elninotech/uppload/commits?author=victorlap" title="Code">💻</a> <a href="#translation-victorlap" title="Translation">🌍</a> <a href="https://github.com/elninotech/uppload/commits?author=victorlap" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/Rick053"><img src="https://avatars1.githubusercontent.com/u/4579963?v=4" width="100px;" alt="Rick van Gemert"/><br /><sub><b>Rick van Gemert</b></sub></a><br /><a href="https://github.com/elninotech/uppload/issues?q=author%3ARick053" title="Bug reports">🐛</a> <a href="https://github.com/elninotech/uppload/commits?author=Rick053" title="Code">💻</a></td>
-  </tr>
-  <tr>
     <td align="center"><a href="https://github.com/tomtenvoorde"><img src="https://avatars0.githubusercontent.com/u/38886034?v=4" width="100px;" alt="tomtenvoorde"/><br /><sub><b>tomtenvoorde</b></sub></a><br /><a href="#design-tomtenvoorde" title="Design">🎨</a></td>
     <td align="center"><a href="https://pegler.io/"><img src="https://avatars0.githubusercontent.com/u/94491?v=4" width="100px;" alt="Matt"/><br /><sub><b>Matt</b></sub></a><br /><a href="https://github.com/elninotech/uppload/issues?q=author%3Apegler" title="Bug reports">🐛</a> <a href="https://github.com/elninotech/uppload/commits?author=pegler" title="Code">💻</a></td>
+  </tr>
+  <tr>
     <td align="center"><a href="http://foxego.com"><img src="https://avatars2.githubusercontent.com/u/87010?v=4" width="100px;" alt="Rob"/><br /><sub><b>Rob</b></sub></a><br /><a href="https://github.com/elninotech/uppload/issues?q=author%3Arobisaks" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://mihir.ch"><img src="https://avatars1.githubusercontent.com/u/31861755?v=4" width="100px;" alt="Mihir Chaturvedi"/><br /><sub><b>Mihir Chaturvedi</b></sub></a><br /><a href="https://github.com/elninotech/uppload/commits?author=plibither8" title="Documentation">📖</a></td>
     <td align="center"><a href="https://marrec.io"><img src="https://avatars2.githubusercontent.com/u/25272043?v=4" width="100px;" alt="Kevin Marrec"/><br /><sub><b>Kevin Marrec</b></sub></a><br /><a href="https://github.com/elninotech/uppload/commits?author=kevinmarrec" title="Documentation">📖</a></td>
-  </tr>
-  <tr>
     <td align="center"><a href="https://github.com/jkniest"><img src="https://avatars0.githubusercontent.com/u/15618191?v=4" width="100px;" alt="Jordan Kniest"/><br /><sub><b>Jordan Kniest</b></sub></a><br /><a href="#translation-jkniest" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/beeman"><img src="https://avatars3.githubusercontent.com/u/36491?v=4" width="100px;" alt="Bram Borggreve"/><br /><sub><b>Bram Borggreve</b></sub></a><br /><a href="https://github.com/elninotech/uppload/commits?author=beeman" title="Code">💻</a> <a href="#platform-beeman" title="Packaging/porting to new platform">📦</a></td>
     <td align="center"><a href="http://AlexImbrea.com"><img src="https://avatars2.githubusercontent.com/u/4534299?v=4" width="100px;" alt="Alex Imbrea"/><br /><sub><b>Alex Imbrea</b></sub></a><br /><a href="https://github.com/elninotech/uppload/commits?author=AlexImb" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/dingsbams"><img src="https://avatars2.githubusercontent.com/u/16029597?v=4" width="100px;" alt="Achim Krämer"/><br /><sub><b>Achim Krämer</b></sub></a><br /><a href="#translation-dingsbams" title="Translation">🌍</a></td>
+  </tr>
+  <tr>
     <td align="center"><a href="https://github.com/nsahukar"><img src="https://avatars3.githubusercontent.com/u/2324769?v=4" width="100px;" alt="Nikhil Sahukar"/><br /><sub><b>Nikhil Sahukar</b></sub></a><br /><a href="#design-nsahukar" title="Design">🎨</a></td>
   </tr>
 </table>
