@@ -50,10 +50,10 @@ export default class Local extends UpploadService {
       ".alternate-input input[type=file]"
     ) as HTMLInputElement | null;
     if (input)
-      safeListen(input, "change", event => this.getFile(event, params.next));
+      safeListen(input, "change", event => this.getFile(params, event));
   };
 
-  getFile(event: Event, next: (file: Blob) => void) {
+  getFile(params: HandlersParams, event: Event) {
     const files = (event.target as HTMLInputElement).files;
     let file: File | null = null; // getAsFile() returns File | null
     if (files) {
@@ -63,7 +63,7 @@ export default class Local extends UpploadService {
       }
     }
     if (!file) return;
-    if (file) next(file);
+    if (file) params.next(file);
     event.preventDefault();
   }
 

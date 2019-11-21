@@ -1,6 +1,12 @@
-import { Local, Uppload } from "../../src";
+import { Local, Uppload, HandlersParams } from "../../src";
 
 const service = new Local();
+const handlers: HandlersParams = {
+  next: () => {},
+  upload: () => new Promise(() => {}),
+  handle: () => {},
+  uppload: new Uppload()
+};
 
 describe("template", () => {
   it("is a function", () => expect(typeof service.template).toBe("function"));
@@ -36,26 +42,20 @@ const fakeEvent = {
 
 test("drop handler", () => {
   let file = null;
-  service.dropHandler(fakeEvent as any, (blob: Blob) => (file = blob));
+  service.dropHandler(handlers, fakeEvent as any);
   expect(file).toBeDefined();
 });
 
 test("get file", () => {
   let file = null;
-  service.getFile(fakeEvent as any, (blob: Blob) => (file = blob));
+  service.getFile(handlers, fakeEvent as any);
   expect(file).toBeDefined();
 });
 
 test("drag handler", () =>
-  expect(service.dragHandler(fakeEvent as any)).toBeUndefined());
+  expect(service.dragHandler(handlers, fakeEvent as any)).toBeUndefined());
 
-test("file select", () => expect(service.fileSelect()).toBeUndefined());
+test("file select", () =>
+  expect(service.fileSelect(handlers, fakeEvent as any)).toBeUndefined());
 
-test("handlers", () =>
-  expect(
-    service.handlers({
-      next: () => {},
-      upload: () => new Promise(() => {}),
-      handle: () => {}
-    })
-  ).toBeUndefined());
+test("handlers", () => expect(service.handlers(handlers)).toBeUndefined());

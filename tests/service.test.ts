@@ -44,11 +44,6 @@ describe("service template", () => {
     expect(typeof service.template(new Uppload())).toBe("string"));
 });
 
-describe("service class names", () => {
-  it("gets a name", () =>
-    expect(service.class("example")).toBe("1abc9c-example"));
-});
-
 const uppload = new Uppload();
 uppload.use(services);
 
