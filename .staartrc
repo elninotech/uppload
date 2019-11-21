@@ -9,5 +9,7 @@
     "[🛠️ Getting started](/getting-started)",
     "[🐱 GitHub](https://github.com/elninotech/uppload)",
     "[📦 NPM](https://www.npmjs.com/package/uppload)"
-  ]
+  ],
+  "scripts": ["/uppload-demo.js"],
+  "stylesheets": ["/uppload-demo.css", "/assets/demo.css"]
 }

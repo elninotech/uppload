@@ -37,10 +37,15 @@ import {
   Sepia
 } from "../src";
 
+const button = document.createElement("div");
+button.innerHTML = `<div class="try-button"><button class="try-uppload">Try Uppload</button></div>`;
+const header = document.querySelector("header#masthead .masthead");
+if (header) header.appendChild(button);
+
 const uppload = new Uppload({
   value: "https://via.placeholder.com/150",
   bind: ".uppload-image",
-  call: ".uppload-button",
+  call: ".try-uppload",
   lang: en,
   uploader: (file, updateProgress) =>
     new Promise(resolve => {

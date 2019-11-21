@@ -41,7 +41,7 @@
     "last 1 Chrome versions"
   ],
   "devDependencies": {
-    "@staart/site": "^1.10.2",
+    "@staart/site": "^1.10.6",
     "@types/jest": "^24.0.23",
     "coveralls": "^3.0.7",
     "cssnano": "^4.1.10",

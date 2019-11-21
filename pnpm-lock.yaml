@@ -4,7 +4,7 @@ dependencies:
   mitt: 1.2.0
   show-hide: 0.9.0
 devDependencies:
-  '@staart/site': 1.10.2
+  '@staart/site': 1.10.6
   '@types/jest': 24.0.23
   coveralls: 3.0.8
   cssnano: 4.1.10
@@ -1055,7 +1055,7 @@ packages:
       node: '>= 6.0.0'
     resolution:
       integrity: sha512-USSjRAAQYsZFlv43FUPdD+jEGML5/8oLF0rUzPQTtK4q9kvaXr49F5ZplyLz5lox78cLZ0TxN2bIDQ1xhOkulQ==
-  /@staart/site/1.10.2:
+  /@staart/site/1.10.6:
     dependencies:
       axios: 0.19.0
       concurrently: 5.0.0
@@ -1079,7 +1079,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-naZPhSUtReqiPBAxrJMhtcZj4ayvm6YqXBYFlWWChcR9a5DSupwAOLTvgfqa/xgfEgAOmK3qRVGfiYA/+VTL1Q==
+      integrity: sha512-G425CmdvWXVfO/TgmDwQqqky2oqFGPKq3Eou76/NQFAI52pXI5OOTfzYc7wOLLtLKAidnS49KC+fLKB7rFwuCg==
   /@types/babel__core/7.1.3:
     dependencies:
       '@babel/parser': 7.7.3
@@ -1748,7 +1748,7 @@ packages:
   /browserslist/4.7.3:
     dependencies:
       caniuse-lite: 1.0.30001011
-      electron-to-chromium: 1.3.309
+      electron-to-chromium: 1.3.310
       node-releases: 1.1.40
     dev: true
     hasBin: true
@@ -2871,10 +2871,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
-  /electron-to-chromium/1.3.309:
+  /electron-to-chromium/1.3.310:
     dev: true
     resolution:
-      integrity: sha512-NZd91XD15v2UPLjYXoN/gLnkwIUQjdH4SQLpRCCQiYJH6BBkfgp5pWemBJPr1rZ2dl8Ee3o91O9Sa1QuAfZmog==
+      integrity: sha512-ixvxy46JrDv5c8k1+th66Z+xDZD8zShNs6oh7hgyMpNZUgaoRBisXgFZKAyyhQTAj7oU2Y/uZ0AAsj/TY4N0tA==
   /elliptic/6.5.1:
     dependencies:
       bn.js: 4.11.8
@@ -9356,7 +9356,7 @@ packages:
     resolution:
       integrity: sha512-/4ld+4VV5RnrynMhPZJ/ZpOCGSCeghMykZ3BhdFBDa9Wy/RH6uEGNWDJog+aUlq+9OM1CFTgtYRW5Is1Po9NOA==
 specifiers:
-  '@staart/site': ^1.10.2
+  '@staart/site': ^1.10.6
   '@types/jest': ^24.0.23
   coveralls: ^3.0.7
   cropperjs: ^1.5.6

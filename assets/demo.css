@@ -1,0 +1,13 @@
+header#masthead .masthead {
+  padding: 5vh 0 !important;
+}
+
+.try-uppload {
+  font: inherit;
+  font-size: 125%;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: #f05d5e;
+  border-radius: 0.2rem;
+  margin-top: 2.5vh;
+}
