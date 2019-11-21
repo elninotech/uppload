@@ -91,6 +91,7 @@ profilePicture.use([
 - [Wrappers](https://uppload.netlify.com/wrappers)
 - [Backends](https://uppload.netlify.com/backends)
 - [Internationalization](https://uppload.netlify.com/i18n)
+- [Compare Uppload](https://uppload.netlify.com/compare)
 
 **[View Uppload docs →](https://uppload.netlify.com)**
 
