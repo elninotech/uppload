@@ -100,3 +100,7 @@ uppload.use([
 ]);
 
 uppload.open();
+
+uppload.on("upload", (url: string) => {
+  console.log("Uploaded image", url);
+});

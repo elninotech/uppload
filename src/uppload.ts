@@ -161,6 +161,7 @@ export class Uppload {
    */
   close() {
     if (!this.isOpen) return;
+    this.stopCurrentService();
     this.isOpen = false;
     this.update();
     this.emitter.emit("close");
@@ -430,7 +431,6 @@ export class Uppload {
     return new Promise(resolve => {
       this.navigate("uploading");
       if (this.uploader) {
-        console.log("Uploading a file", file, "using", this.uploader);
         if (typeof this.uploader === "function") {
           this.uploader(file, this.updateProgress.bind(this))
             .then((url: string) => {
@@ -504,8 +504,7 @@ export class Uppload {
         ) as HTMLInputElement;
         if (!inputRadio) return;
         const service = inputRadio.value;
-        this.activeService = service;
-        this.update();
+        this.navigate(service);
       };
       safeListen(radio, "change", radioFunction);
     });
@@ -577,12 +576,27 @@ export class Uppload {
   }
 
   /**
+   * Stops any actions being done by the currently active service
+   * For example, if your webcame is being accessed, kill that process
+   */
+  private stopCurrentService() {
+    const currentService = this.services.filter(
+      item => item.name === this.activeService
+    );
+    if (currentService.length) {
+      const service = currentService[0];
+      service.stop();
+    }
+  }
+
+  /**
    * Navigate to an Uppload service page
    * @param service - Slug name of service (e.g., instagram)
    */
   navigate(service: string) {
     if (!this.services.filter(item => item.name === service).length)
       throw new Error("invalid-service");
+    this.stopCurrentService();
     this.activeService = service;
     this.update();
   }

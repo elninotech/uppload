@@ -10,5 +10,6 @@ export class UpploadService {
   color = "#333";
   template: (upploadInstance: Uppload) => string = () => "";
   handlers: (params: HandlersParams) => void = () => {};
+  stop: () => void = () => {};
   supports: () => boolean = () => true;
 }
