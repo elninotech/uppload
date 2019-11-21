@@ -1,7 +1,7 @@
 # Compare Uppload
 
-| Uploadcare | Dropzone.js | Uppy | Uppload |
-| ---------- | ----------- | ---- | ------- |
+| Feature | Uploadcare | Dropzone.js | Uppy | Uppload |
+| ------- | ---------- | ----------- | ---- | ------- |
 | Responsive | ✅ | ✅ | ✅ | ✅ |
 | Drag and drop | ✅ | ✅ | ✅ | ✅ |
 | File previews | ✅ | ✅ | ✅ | ✅ |
