@@ -23,7 +23,7 @@ When adding a new service or effect, make sure you design an SVG icon using the 
 
 Then, make sure you compress the icon using [SVGOMG](https://jakearchibald.github.io/svgomg/). On average, we've seen that a ~800 byte SVG icon can be compressed to ~250 bytes. Use the minimum precision setting that does not distort the icon and remove all metadata except for xmlns.
 
-Finally, remove the `width` and `height` attributes from the SVG and use `viewbox` to allow scaling. In this case, the beginning of your SVG string should be `<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">`.
+Finally, remove the `width` and `height` attributes from the SVG and use `viewbox` to allow scaling, and add the `aria-hidden="true"` attribute to help screen readers ignore the icon. In this case, the beginning of your SVG string should be `<svg aria-hidden="true" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">`.
 
 ## Translations
 

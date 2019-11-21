@@ -21,7 +21,7 @@ export default class Unsplash extends SearchBaseClass<UnsplashResult> {
     super({
       apiKey,
       name: "unsplash",
-      icon: `<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M81 113v72h94v-72h81v143H0V113h81zM175 0v71H81V0h94z" fill="#000" fill-rule="evenodd"/></svg>`,
+      icon: `<svg aria-hidden="true" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M81 113v72h94v-72h81v143H0V113h81zM175 0v71H81V0h94z" fill="#000" fill-rule="evenodd"/></svg>`,
       color: "#333",
       poweredByUrl: "https://unsplash.com",
       popularEndpoint: (apiKey: string) =>
