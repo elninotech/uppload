@@ -313,4 +313,11 @@
     opacity: 0;
     transition: 0.2s;
   }
+  .camera-waiting,
+  .camera-error {
+    max-width: 75%;
+    margin: auto;
+    text-align: center;
+    flex-direction: column;
+  }
 }

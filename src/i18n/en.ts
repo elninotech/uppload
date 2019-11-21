@@ -5,6 +5,7 @@ export default {
   uploading: "Uploading...",
   fetching: "Getting your image from $1$...",
   imagesPoweredBy: "Images powered by $1$",
+  needHelp: "Need help?",
   units: {
     px: "px",
     "%": "%",
@@ -23,7 +24,10 @@ export default {
     camera: {
       title: "Camera",
       button: "Click photo",
-      switch: "Switch camera"
+      switch: "Switch camera",
+      waiting: "Waiting for permission...",
+      unableToRead:
+        "We're not able to read your camera's video. This may be because you didn't grant the required permission, or because your device doesn't support camera access."
     },
     instagram: {
       title: "Instagram",

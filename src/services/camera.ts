@@ -18,8 +18,15 @@ export default class Camera extends UpploadService {
   template = () => {
     return `
       <div class="service-main">
-        <div class="camera-waiting">Waiting for permission...</div>
-        <div class="camera-error">Didn't get permission.</div>
+        <div class="camera-waiting">${translate(
+          "services.camera.waiting"
+        )}</div>
+        <div class="camera-error">
+          <p>${translate("services.camera.unableToRead")}</p>
+          <p><a href="https://uppload.netlify.com/help/camera" target="_blank">${translate(
+            "needHelp"
+          )}</a></p>
+        </div>
         <div class="camera-success">
           <video class="camera-stream"></video>
         </div>
