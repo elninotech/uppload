@@ -219,10 +219,10 @@ export class Uppload {
       if (parent) {
         let totalButtonsWidth = 0;
         const buttons = parent.querySelectorAll(".effects-continue");
-        for (let i = 0; i < buttons.length; i++) {
-          const buttonSize = buttons[i].getBoundingClientRect();
+        buttons.forEach(button => {
+          const buttonSize = button.getBoundingClientRect();
           totalButtonsWidth += buttonSize.width;
-        }
+        });
         const size = parent.getBoundingClientRect();
         effectsNav.style.width = `${size.width - totalButtonsWidth}px`;
       }

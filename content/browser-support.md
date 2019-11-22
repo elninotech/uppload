@@ -38,3 +38,4 @@ Here's a summary of some web features Uppload uses, and their browser support:
   - Promises: [94%+](https://caniuse.com/#feat=promises)
   - Fetch: [93%+](https://caniuse.com/#feat=fetch)
   - String.startsWith: [89%+](https://caniuse.com/#feat=mdn-javascript_builtins_string_startswith)
+  - NodeList.forEach: [89%+](https://caniuse.com/#feat=mdn-api_nodelist_foreach)

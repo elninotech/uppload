@@ -4,6 +4,8 @@ import "core-js/features/promise";
 // @ts-ignore
 import "core-js/features/string/starts-with";
 // @ts-ignore
+import "core-js/features/dom-collections";
+// @ts-ignore
 import "whatwg-fetch";
 
 // Main class
