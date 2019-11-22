@@ -2,7 +2,7 @@
   "title": "Uppload",
   "hostname": "https://uppload.js.org",
   "themeColor": "#f05d5e",
-  "textColor": "#130000",
+  "textColor": "#1b0000",
   "linkColor": "#dc3545",
   "googleAnalytics": "UA-15148382-2",
   "agastyaApiKey": "uppload",
