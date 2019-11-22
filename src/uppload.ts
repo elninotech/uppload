@@ -167,6 +167,10 @@ export class Uppload {
     );
     if (serviceRadio) serviceRadio.setAttribute("checked", "checked");
     this.update();
+    const firstButton = this.container.querySelector(
+      "button"
+    ) as HTMLButtonElement | null;
+    if (firstButton) firstButton.focus();
     this.emitter.emit("open");
   }
 
@@ -653,6 +657,10 @@ export class Uppload {
     this.stopCurrentService();
     this.activeService = service;
     this.update();
+    const focusable = this.container.querySelector(
+      ".uppload-active-container input, .uppload-active-container button"
+    ) as HTMLInputElement | null;
+    if (focusable) focusable.focus();
   }
 
   /**
