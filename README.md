@@ -113,7 +113,6 @@ Uppload v2 is completely rewritten in TypeScript. You can [view the README of Up
     - [ ] Upload to web service like Imgur
   - [ ] Docs to people how to use Uppload with frameworks:
     - [ ] Vue.js
-    - [ ] React
     - [ ] Angular
     - [ ] Ember.js
 
