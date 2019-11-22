@@ -13,12 +13,13 @@ Uppload is a better JavaScript image uploader. It's highly customizable with 30+
 
 ## ⭐ Features
 
-- Drag and drop to upload file
-- Import image from web services (URL, Instagram, Facebook, etc.)
-- Search for pictures and import (Unsplash, Pexels, Pixabay)
-- Edit photo before uploading (filters, crop, rotate, etc.)
-- All file uploading backends supported
-- Works with all modern browsers (IE 11+)
+- [Drag and drop file or click photo using camera](https://uppload.js.org/services)
+- [Search for pictures and import (Unsplash, Pexels, Pixabay)](https://uppload.js.org/services/search-for-images)
+- [Import image from web services (URL, Instagram, Facebook, etc.)](https://uppload.js.org/services/import-from-web-service)
+- [Edit photo before uploading (filters, crop, rotate, etc.)](https://uppload.js.org/effects)
+- [All file uploading backends supported](https://uppload.js.org/uploaders)
+- [Supports frontend frameworks like Vue.js, React](https://uppload.js.org/wrappers)
+- [Works with all modern browsers (IE 10+)](https://uppload.js.org/browser-support)
 
 <table>
   <tr>
