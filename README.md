@@ -77,6 +77,7 @@ profilePicture.use([
 ## 💻 Usage Docs
 
 - [Getting started](https://uppload.netlify.com/getting-started)
+- [Browser support](https://uppload.netlify.com/browser-support) (IE 10+)
 - [Configuration](https://uppload.netlify.com/configuration)
 - [Examples](https://uppload.netlify.com/examples)
 - [Building a custom package](https://uppload.netlify.com/custom-package)
