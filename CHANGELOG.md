@@ -1,15 +1,28 @@
 # Changelog
 
-<a name="2.0.0-beta.5"></a>
-## 2.0.0-beta.5 (2019-11-22)
+<a name="2.0.0-beta.6"></a>
+## 2.0.0-beta.6 (2019-11-22)
 
 ### Added
 
+- ✨ Scroll to active element [[03abab5](https://github.com/elninotech/uppload/commit/03abab53c94e3eba748fab6a25f09e8281c828eb)]
+- ✨ Support for file compression [[4f6a623](https://github.com/elninotech/uppload/commit/4f6a623ade910242244dd8196377b5d4ae01a588)]
+- ✨ Support for files (fixed [#59](https://github.com/elninotech/uppload/issues/59)) [[b4abc2d](https://github.com/elninotech/uppload/commit/b4abc2d7d8a98cc8dbf2ee133f489d4c152edd73)]
 - ✨ Add built-in polyfills [[6d7d733](https://github.com/elninotech/uppload/commit/6d7d73378a8aa9e218490e2e0cf7c07dd106176f)]
 - ✨ Add browser support check [[14a6788](https://github.com/elninotech/uppload/commit/14a67881465fd95b09ca87a5c95d39d9d0f0f5e0)]
 
 ### Changed
 
+- ♻️ Only scroll from default service [[d68a88f](https://github.com/elninotech/uppload/commit/d68a88f2cfffa7741444cc3455764c2abaf1364f)]
+- ♿ Add focus on update [[1a59ee7](https://github.com/elninotech/uppload/commit/1a59ee798a686e578654e5ba9654f5374647061e)]
+- 🔧 Update text color in docs site [[08d9ab8](https://github.com/elninotech/uppload/commit/08d9ab8b2cdb7fb7be617854b2f8931e3c3a4573)]
+- 🔧 Migrate website URL to js.org [[4e9a53c](https://github.com/elninotech/uppload/commit/4e9a53cec9a91c90725fa6b56214d437c4008080)]
+- 🔧 Update config with analytics [[46a412e](https://github.com/elninotech/uppload/commit/46a412ed1fd3efc94148f89ad682f60ceefd5e7f)]
+- 🍱 Add logos [[b665f8b](https://github.com/elninotech/uppload/commit/b665f8b9f6088fc841a26514fd02f2995a9596d7)]
+- 🔧 Update CNAME for js.org [[b639131](https://github.com/elninotech/uppload/commit/b63913117629420a88608f3f7f27f05fb898e70a)]
+- ⬆️ Update @staart/site [[ccda492](https://github.com/elninotech/uppload/commit/ccda492f0ba575218104371d72a74fc6578594dd)]
+- 💄 Add play icon to try button [[2771362](https://github.com/elninotech/uppload/commit/2771362f282d15474e50d22beb38dfb922d6237a)]
+- ♻️ Use NodeList.forEach [[29360ff](https://github.com/elninotech/uppload/commit/29360ffcf0c6a9eefcb92ea9ff4ca8d14a63ffd4)]
 - 💄 Make modal height responsive [[67c3500](https://github.com/elninotech/uppload/commit/67c3500f42597179c93dd80edd746e1dce6a8410)]
 - ♻️ Remove change camera button for now [[fb3de2d](https://github.com/elninotech/uppload/commit/fb3de2db4426d1edfdec033ac79e4790bb4e1f9b)]
 - 💄 Responsive modal [[256df78](https://github.com/elninotech/uppload/commit/256df78dc0ae410fcd84356525ec46cd3a886d8b)]
@@ -24,10 +37,21 @@
 
 ### Fixed
 
+- 💚 With test with uploadMultiple [[d61062a](https://github.com/elninotech/uppload/commit/d61062a34999a0a8da5304064d7f2709a1cdf974)]
+- 🐛 Fix bug with dark theme color [[d3e1815](https://github.com/elninotech/uppload/commit/d3e1815283dd1d54222a74a13182eb6a88410c24)]
+- 🐛 Sanitize logo SVG for README.md [[16864f8](https://github.com/elninotech/uppload/commit/16864f8af12054a6e1fea968473fa4e3573ac239)]
+- 💚 Fix tests with polyfills [[5021caa](https://github.com/elninotech/uppload/commit/5021caa0871125dd50ded0b7dd597c35af8361f6)]
 - 🐛 Fix compare table [[7572c3b](https://github.com/elninotech/uppload/commit/7572c3b467974c42a8b7d1b7e2b081dad19adb6c)]
 
 ### Miscellaneous
 
+- 📝 Add links to features [[3a72a22](https://github.com/elninotech/uppload/commit/3a72a22116d848405c8863ffab65cecd24bb91c8)]
+- 🚧 Add compressor function [[211b9db](https://github.com/elninotech/uppload/commit/211b9db185a6f7c8a43e5a6247875df28fd018e4)]
+- 🚧 Support for multiple files [[5c20568](https://github.com/elninotech/uppload/commit/5c20568f6860b36e1b854be5f833a762c8fff190)]
+-  Merge branch &#x27;typescript&#x27; of github.com:elninotech/uppload into typescript [[c5a10a7](https://github.com/elninotech/uppload/commit/c5a10a7bbbe16733843dbaa80b607fd092a2ee27)]
+- 📝 Add docs about React [[4a980c0](https://github.com/elninotech/uppload/commit/4a980c084f536e8c5d0586b04465de61ea5c8647)]
+- 📝 Add logo to README [[8e9456f](https://github.com/elninotech/uppload/commit/8e9456fb8321e53523cc48c14cf12c16637d78fb)]
+- 📝 Remove border from try button [[41dc4be](https://github.com/elninotech/uppload/commit/41dc4beceef23537c6dc81cacb3d2a5e6fbdd4b7)]
 - 🚀 Deploy beta 5 [[1462772](https://github.com/elninotech/uppload/commit/1462772c59bbb0e7ef7ca4703103bb6bc218710f)]
 - 📝 Add SVGs to browser support [[680d575](https://github.com/elninotech/uppload/commit/680d5754a25a6d728099564f0072ef5c5bff98cd)]
 - 📝 Add browser support page [[6dd7efd](https://github.com/elninotech/uppload/commit/6dd7efd042c38575d0408bc09aca52feeb738735)]
