@@ -24,7 +24,9 @@ export default class Local extends UpploadService {
       }">${translate("services.local.button")}</button>
     </div>
       <div class="alternate-input">
-        <input type="file" accept="${this.mimeTypes.join()}">
+        <input type="file" accept="${this.mimeTypes.join()}"${
+      uppload.settings.multiple ? " multiple" : ""
+    }>
       </div>`;
   };
 
@@ -57,6 +59,8 @@ export default class Local extends UpploadService {
     const files = (event.target as HTMLInputElement).files;
     let file: File | null = null; // getAsFile() returns File | null
     if (files) {
+      if (params.uppload.settings.multiple && files.length > 1)
+        return params.uploadMultiple(Array.from(files));
       for (let i = 0; i < files.length; i++) {
         const item = files[i];
         if (this.mimeTypes.includes(item.type)) file = item;

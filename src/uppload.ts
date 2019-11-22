@@ -4,7 +4,7 @@ import { setI18N, translate } from "./helpers/i18n";
 import { Elements, getElements, safeListen } from "./helpers/elements";
 import { colorSVG } from "./helpers/assets";
 import mitt from "mitt";
-import { Uploader } from "./helpers/interfaces";
+import { Uploader, MultipleUploader } from "./helpers/interfaces";
 
 let lang: { [index: string]: any } | undefined = undefined;
 class DefaultService extends UpploadService {
@@ -50,7 +50,7 @@ export class Uppload {
   container: HTMLDivElement;
   file: Blob | undefined = undefined;
   lang: { [index: string]: any } = {};
-  uploader?: Uploader;
+  uploader?: Uploader | MultipleUploader;
   emitter = mitt();
   uploadProgress = 0;
   inline = false;
@@ -132,7 +132,7 @@ export class Uppload {
       // Install this service
       this.services.push(plugin as UpploadService);
       this.ready();
-    } else if (plugin.type === "effect" && !this.settings.multiple) {
+    } else if (plugin.type === "effect") {
       this.effects.push(plugin as UpploadEffect);
       this.ready();
     }
@@ -366,6 +366,7 @@ export class Uppload {
           activeService.handlers({
             next: this.next.bind(this),
             upload: this.upload.bind(this),
+            uploadMultiple: this.uploadMultiple.bind(this),
             handle: this.handle.bind(this),
             uppload: this
           });
@@ -392,6 +393,7 @@ export class Uppload {
           activeEffect.handlers({
             next: this.next.bind(this),
             upload: this.upload.bind(this),
+            uploadMultiple: this.uploadMultiple.bind(this),
             handle: this.handle.bind(this),
             uppload: this
           });
@@ -404,6 +406,33 @@ export class Uppload {
         }</div>
       `;
     }
+  }
+
+  /**
+   * Uploads multiple files to the server
+   * @param file
+   * @returns JSON response from server
+   */
+  private uploadMultiple(file: Blob[]): Promise<any> {
+    this.emitter.emit("before-upload");
+    return new Promise(resolve => {
+      this.navigate("uploading");
+      if (this.uploader && typeof this.uploader === "function") {
+        (this.uploader as MultipleUploader)(
+          file,
+          this.updateProgress.bind(this)
+        )
+          .then((response: any) => {
+            this.navigate("default");
+            resolve(response);
+            this.emitter.emit("upload", response);
+            this.close();
+          })
+          .catch((error: Error) => this.handle(error));
+      } else {
+        this.handle(new Error("no-uploader"));
+      }
+    });
   }
 
   /**
@@ -434,18 +463,16 @@ export class Uppload {
     this.emitter.emit("before-upload");
     return new Promise(resolve => {
       this.navigate("uploading");
-      if (this.uploader) {
-        if (typeof this.uploader === "function") {
-          this.uploader(file, this.updateProgress.bind(this))
-            .then((url: string) => {
-              this.bind(url);
-              this.navigate("default");
-              resolve(url);
-              this.emitter.emit("upload", url);
-              this.close();
-            })
-            .catch((error: Error) => this.handle(error));
-        }
+      if (this.uploader && typeof this.uploader === "function") {
+        (this.uploader as Uploader)(file, this.updateProgress.bind(this))
+          .then((url: string) => {
+            this.bind(url);
+            this.navigate("default");
+            resolve(url);
+            this.emitter.emit("upload", url);
+            this.close();
+          })
+          .catch((error: Error) => this.handle(error));
       } else {
         this.handle(new Error("no-uploader"));
       }
