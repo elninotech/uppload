@@ -27,7 +27,7 @@ export default class Camera extends UpploadService {
         )}</div>
         <div class="camera-error">
           <p>${translate("services.camera.unableToRead")}</p>
-          <p><a href="https://uppload.netlify.com/help/camera" target="_blank">${translate(
+          <p><a href="https://uppload.js.org/help/camera" target="_blank">${translate(
             "needHelp"
           )}</a></p>
         </div>

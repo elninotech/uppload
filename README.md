@@ -1,4 +1,4 @@
-[![Uppload](https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/logo-dark.svg?sanitize=true)](https://uppload.netlify.com)
+[![Uppload](https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/logo-dark.svg?sanitize=true)](https://uppload.js.org)
 
 Uppload is a better JavaScript image uploader. It's highly customizable with 30+ plugins, completely free and open-source, and can be used with any file uploading backend.
 
@@ -6,10 +6,10 @@ Uppload is a better JavaScript image uploader. It's highly customizable with 30+
 | - | - |
 | Build | [![Travis CI](https://img.shields.io/travis/elninotech/uppload?label=Travis%20CI)](https://travis-ci.org/elninotech/uppload) [![Circle CI](https://img.shields.io/circleci/build/github/elninotech/uppload?label=Circle%20CI)](https://circleci.com/gh/elninotech/uppload) [![Azure Pipelines](https://dev.azure.com/anandchowdhary0001/Uppload/_apis/build/status/elninotech.uppload?branchName=typescript)](https://dev.azure.com/anandchowdhary0001/Uppload/_build/latest?definitionId=11&branchName=typescript) |
 | Dependencies | [![Dependencies](https://img.shields.io/david/elninotech/uppload.svg)](https://david-dm.org/elninotech/uppload) [![Dev dependencies](https://img.shields.io/david/dev/elninotech/uppload.svg)](https://david-dm.org/elninotech/uppload) ![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/elninotech/uppload.svg) |
-| Documentation | [![Netlify](https://img.shields.io/netlify/5e92d02d-b96b-4b42-8197-804f72a147cf)](https://app.netlify.com/sites/uppload/deploys) [![Website status](https://img.shields.io/website?down_color=red&down_message=down&up_color=brightgreen&up_message=online&url=https%3A%2F%2Fuppload.netlify.com)](https://uppload.netlify.com) [![Uptime](https://img.shields.io/uptimerobot/ratio/7/m783785688-048a2237d8844210960a6a76)](https://stats.uptimerobot.com/m29YvtjqOg) [![Articles](https://img.shields.io/endpoint?url=https%3A%2F%2Fuppload.netlify.com%2Fshield-schema%2Fall.json)](https://uppload.netlify.com) |
+| Documentation | [![Netlify](https://img.shields.io/netlify/5e92d02d-b96b-4b42-8197-804f72a147cf)](https://app.netlify.com/sites/uppload/deploys) [![Website status](https://img.shields.io/website?down_color=red&down_message=down&up_color=brightgreen&up_message=online&url=https%3A%2F%2Fuppload.js.org)](https://uppload.js.org) [![Uptime](https://img.shields.io/uptimerobot/ratio/7/m783785688-048a2237d8844210960a6a76)](https://stats.uptimerobot.com/m29YvtjqOg) [![Articles](https://img.shields.io/endpoint?url=https%3A%2F%2Fuppload.js.org%2Fshield-schema%2Fall.json)](https://uppload.js.org) |
 | Community | [![Contributors](https://img.shields.io/github/contributors/elninotech/uppload.svg)](https://github.com/elninotech/uppload/graphs/contributors) [![GitHub](https://img.shields.io/github/license/elninotech/uppload.svg)](https://github.com/elninotech/uppload/blob/master/LICENSE) ![Type definitions](https://img.shields.io/badge/types-TypeScript-blue.svg) [![npm package version](https://img.shields.io/npm/v/uppload)](https://www.npmjs.com/package/uppload) |
 
-**[View Uppload demo and docs →](https://uppload.netlify.com)**
+**[View Uppload demo and docs →](https://uppload.js.org)**
 
 ## ⭐ Features
 
@@ -76,30 +76,30 @@ profilePicture.use([
 
 ## 💻 Usage Docs
 
-- [Getting started](https://uppload.netlify.com/getting-started)
-- [Browser support](https://uppload.netlify.com/browser-support) (IE 10+)
-- [Configuration](https://uppload.netlify.com/configuration)
-- [Examples](https://uppload.netlify.com/examples)
-- [Building a custom package](https://uppload.netlify.com/custom-package)
-- [Uppload API](https://uppload.netlify.com/api)
-- [Listening to events](https://uppload.netlify.com/listening-to-events)
-- [Services](https://uppload.netlify.com/services) (20+ ways to select a file)
-- [Effects](https://uppload.netlify.com/effects) (10+ ways to edit a file)
-- [Uploaders](https://uppload.netlify.com/uploaders) (ways to send a file to the server)
-- [Themes](https://uppload.netlify.com/themes)
-- [Wrappers](https://uppload.netlify.com/wrappers)
-- [Backends](https://uppload.netlify.com/backends)
-- [Image compression](https://uppload.netlify.com/compression)
-- [Internationalization](https://uppload.netlify.com/i18n)
-- [Compare Uppload](https://uppload.netlify.com/compare)
-- [Multiple Uppload instances](https://uppload.netlify.com/multiple-instances)
-- [Migrating from Uppload 1.x](https://uppload.netlify.com/migrating-from-1x)
+- [Getting started](https://uppload.js.org/getting-started)
+- [Browser support](https://uppload.js.org/browser-support) (IE 10+)
+- [Configuration](https://uppload.js.org/configuration)
+- [Examples](https://uppload.js.org/examples)
+- [Building a custom package](https://uppload.js.org/custom-package)
+- [Uppload API](https://uppload.js.org/api)
+- [Listening to events](https://uppload.js.org/listening-to-events)
+- [Services](https://uppload.js.org/services) (20+ ways to select a file)
+- [Effects](https://uppload.js.org/effects) (10+ ways to edit a file)
+- [Uploaders](https://uppload.js.org/uploaders) (ways to send a file to the server)
+- [Themes](https://uppload.js.org/themes)
+- [Wrappers](https://uppload.js.org/wrappers)
+- [Backends](https://uppload.js.org/backends)
+- [Image compression](https://uppload.js.org/compression)
+- [Internationalization](https://uppload.js.org/i18n)
+- [Compare Uppload](https://uppload.js.org/compare)
+- [Multiple Uppload instances](https://uppload.js.org/multiple-instances)
+- [Migrating from Uppload 1.x](https://uppload.js.org/migrating-from-1x)
 
-**[View Uppload docs →](https://uppload.netlify.com)**
+**[View Uppload docs →](https://uppload.js.org)**
 
 ### Uppload 1.x
 
-Uppload v2 is completely rewritten in TypeScript. You can [view the README of Uppload 1.x](https://github.com/elninotech/uppload/tree/master), the current stable version, in the `master` branch, or the [migration guide](https://uppload.netlify.com/migrating-from-1x).
+Uppload v2 is completely rewritten in TypeScript. You can [view the README of Uppload 1.x](https://github.com/elninotech/uppload/tree/master), the current stable version, in the `master` branch, or the [migration guide](https://uppload.js.org/migrating-from-1x).
 
 ## 🛣️ Roadmap
 

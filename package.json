@@ -23,6 +23,7 @@
     "src"
   ],
   "repository": "https://github.com/elninotech/uppload",
+  "homepage": "https://uppload.js.org",
   "author": "El Niño <https://elnino.tech>",
   "license": "MIT",
   "scripts": {
