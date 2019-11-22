@@ -5,6 +5,7 @@
 $colorWhite: #fff;
 $colorLightGray: whitesmoke;
 $colorDarkGray: #dfe6e9;
+$colorBlack: #1b0000;
 
 /**
  * All variables
@@ -12,7 +13,7 @@ $colorDarkGray: #dfe6e9;
 
 $modalBackground: rgba(125, 125, 125, 0.25);
 $modalElementBackground: $colorWhite;
-$modalElementForeground: inherit;
+$modalElementForeground: $colorBlack;
 $modalElementBoxShadow: 0 5rem 10rem rgba(0, 0, 0, 0.3);
 $linkColor: inherit;
 
