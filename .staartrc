@@ -4,12 +4,15 @@
   "themeColor": "#f05d5e",
   "textColor": "#130000",
   "linkColor": "#dc3545",
+  "googleAnalytics": "UA-15148382-2",
+  "agastyaApiKey": "uppload",
   "navbar": [
     "[📝 Documentation](/)",
     "[🛠️ Getting started](/getting-started)",
     "[🐱 GitHub](https://github.com/elninotech/uppload)",
     "[📦 NPM](https://www.npmjs.com/package/uppload)"
   ],
+  "twitterPublisher": "elninoict",
   "scripts": ["/uppload-demo.js"],
   "stylesheets": ["/uppload-demo.css", "/assets/demo.css"]
 }
