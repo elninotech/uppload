@@ -54,6 +54,11 @@ for (const currentService of services) {
     it("template gives a string", () =>
       expect(typeof currentService.template(new Uppload())).toBe("string"));
     it("service is registered", () =>
-      expect(uppload.services.includes(currentService)).toBeTruthy());
+      expect(
+        // The camera service would not be registered because no Media Devices API
+        currentService.name === "camera"
+          ? !uppload.services.includes(currentService)
+          : uppload.services.includes(currentService)
+      ).toBeTruthy());
   });
 }

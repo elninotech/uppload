@@ -1,5 +1,72 @@
 # Changelog
 
+<a name="2.0.0-beta.5"></a>
+## 2.0.0-beta.5 (2019-11-22)
+
+### Added
+
+- ✨ Add built-in polyfills [[6d7d733](https://github.com/elninotech/uppload/commit/6d7d73378a8aa9e218490e2e0cf7c07dd106176f)]
+- ✨ Add browser support check [[14a6788](https://github.com/elninotech/uppload/commit/14a67881465fd95b09ca87a5c95d39d9d0f0f5e0)]
+
+### Changed
+
+- 💄 Make modal height responsive [[67c3500](https://github.com/elninotech/uppload/commit/67c3500f42597179c93dd80edd746e1dce6a8410)]
+- ♻️ Remove change camera button for now [[fb3de2d](https://github.com/elninotech/uppload/commit/fb3de2db4426d1edfdec033ac79e4790bb4e1f9b)]
+- 💄 Responsive modal [[256df78](https://github.com/elninotech/uppload/commit/256df78dc0ae410fcd84356525ec46cd3a886d8b)]
+- 🍱 Update favicon assets [[7cf9239](https://github.com/elninotech/uppload/commit/7cf9239ffeb31ebc8ab933d52f6d83422f52d8a4)]
+- 🔧 Add Uppload demo CSS/JS [[e9c4a12](https://github.com/elninotech/uppload/commit/e9c4a1210923a6c35a13368d4561fbfe511c24f2)]
+- 🔧 Add demo building script [[a869532](https://github.com/elninotech/uppload/commit/a8695325109f107fe903aae3e7e2269f32761409)]
+- 🍱 Add SMO image [[42ff7d7](https://github.com/elninotech/uppload/commit/42ff7d763cad90eb0bbe4af962d641d92906872a)]
+
+### Removed
+
+- ➖ Remove unrequired dependencies [[5a4b5e0](https://github.com/elninotech/uppload/commit/5a4b5e037f56f53d4722f2a99a7f86643032eae7)]
+
+### Fixed
+
+- 🐛 Fix compare table [[7572c3b](https://github.com/elninotech/uppload/commit/7572c3b467974c42a8b7d1b7e2b081dad19adb6c)]
+
+### Miscellaneous
+
+- 🚀 Deploy beta 5 [[1462772](https://github.com/elninotech/uppload/commit/1462772c59bbb0e7ef7ca4703103bb6bc218710f)]
+- 📝 Add SVGs to browser support [[680d575](https://github.com/elninotech/uppload/commit/680d5754a25a6d728099564f0072ef5c5bff98cd)]
+- 📝 Add browser support page [[6dd7efd](https://github.com/elninotech/uppload/commit/6dd7efd042c38575d0408bc09aca52feeb738735)]
+- 📝 Add compare article [[eecb5c9](https://github.com/elninotech/uppload/commit/eecb5c953478270520538f92218456901ca1945e)]
+- 📝 Update intro text [[dd3b401](https://github.com/elninotech/uppload/commit/dd3b401b8371980707f1b1959d263085b53a086f)]
+- 📝 Make Uppload v2 main README [[005f307](https://github.com/elninotech/uppload/commit/005f307e86f7d1819ed09db33d0b2c779cf5adc3)]
+- 🚧 Add demo build [[a9d6e10](https://github.com/elninotech/uppload/commit/a9d6e10c4c629c7f5b2862c9bd41800166ae3f29)]
+
+
+<a name="2.0.0-beta.4"></a>
+## 2.0.0-beta.4 (2019-11-21)
+
+### Added
+
+- ✨ Add camera i18n, layouting [[e6e11e5](https://github.com/elninotech/uppload/commit/e6e11e52f2186977ca5fb2fdfc8a4de8368c8be3)]
+- ✨ Support for stopping active service [[c45a271](https://github.com/elninotech/uppload/commit/c45a271864be033775ca8c88aeb36abd4c75df7e)]
+- ✨ Add web service URL validation [[01e3fde](https://github.com/elninotech/uppload/commit/01e3fdeeedced6d764a5ae28a2f18f16086d87ec)]
+- ✨ Add polyfill for requestAnimationFrame [[e15f3bc](https://github.com/elninotech/uppload/commit/e15f3bc4377d7cb8ca95cff847d5150e56286d9e)]
+- ✨ Support for custom class on container [[80d00a9](https://github.com/elninotech/uppload/commit/80d00a9758a76e96fe01ff8108a4a166dc7d756b)]
+
+### Changed
+
+- ♿ Add aria-hidden to SVGs [[10e8923](https://github.com/elninotech/uppload/commit/10e8923b9740ba9b99afbbee61e7d7531177f781)]
+- ♻️ Use scopped query selection [[5584835](https://github.com/elninotech/uppload/commit/5584835ca5f0c8dfc06d07e36baa87ed96547b85)]
+
+### Fixed
+
+- 💚 Fix tests with handlers param [[e3a20a7](https://github.com/elninotech/uppload/commit/e3a20a730869fabb10656ee7f2b0c2d02b61dc3f)]
+
+### Miscellaneous
+
+- 🚀 Deploy beta 4 [[3bdaada](https://github.com/elninotech/uppload/commit/3bdaadaadac85762cbc2483d1550d9369852353b)]
+- 🚧 Add switch button [[da78b5c](https://github.com/elninotech/uppload/commit/da78b5c8d3e5f05cbecbe896433336c2d7dd447d)]
+- 🚧 Add camera service [[2131478](https://github.com/elninotech/uppload/commit/2131478f12788d635c45ad853f17650c7eaa3fe1)]
+- 🚧 Support for checking browser support [[3047dd9](https://github.com/elninotech/uppload/commit/3047dd991a28955bb1ea4d650ee7a6e0e35d97da)]
+- 📝 Add more example projects [[7fea818](https://github.com/elninotech/uppload/commit/7fea818a671003e20f9f2105a95ba3acb2acf751)]
+- 📝 Add custom class to docs [[a07df8d](https://github.com/elninotech/uppload/commit/a07df8d6175548aa8f695f6415c01a74fd2841e8)]
+
+
 <a name="2.0.0-beta.3"></a>
 ## 2.0.0-beta.3 (2019-11-20)
 
