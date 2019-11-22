@@ -538,7 +538,22 @@ export class Uppload {
     defaultServiceLinks.forEach(link => {
       const linkFunction = (e: Event) => {
         const service = link.getAttribute("data-uppload-service");
-        if (service) this.navigate(service);
+        if (service) {
+          this.navigate(service);
+          const serviceDiv = this.container.querySelector(
+            `[data-uppload-service="${service}"]`
+          );
+          if (serviceDiv && serviceDiv.parentElement) {
+            let top = 0;
+            let left = 0;
+            const serviceDivRect = serviceDiv.getBoundingClientRect();
+            const serviceNavRect = serviceDiv.parentElement.getBoundingClientRect();
+            top = serviceDivRect.top - serviceNavRect.top;
+            left = serviceDivRect.left - serviceNavRect.left;
+            const aside = serviceDiv.parentElement.parentElement;
+            if (aside) aside.scrollTo(left, top);
+          }
+        }
         const serviceRadio = this.container.querySelector(
           `input[type=radio][value='${service}']`
         );
@@ -661,19 +676,6 @@ export class Uppload {
       ".uppload-active-container input, .uppload-active-container button"
     ) as HTMLInputElement | null;
     if (focusable) focusable.focus();
-    const serviceDiv = this.container.querySelector(
-      `[data-uppload-service="${service}"]`
-    );
-    if (serviceDiv && serviceDiv.parentElement) {
-      let top = 0;
-      let left = 0;
-      const serviceDivRect = serviceDiv.getBoundingClientRect();
-      const serviceNavRect = serviceDiv.parentElement.getBoundingClientRect();
-      top = serviceDivRect.top - serviceNavRect.top;
-      left = serviceDivRect.left - serviceNavRect.left;
-      const aside = serviceDiv.parentElement.parentElement;
-      if (aside) aside.scrollTo(left, top);
-    }
   }
 
   /**
