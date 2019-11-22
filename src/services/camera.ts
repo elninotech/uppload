@@ -32,9 +32,9 @@ export default class Camera extends UpploadService {
         </div>
       </div>
       <footer class="service-footer">
-        <button
+        <!--<button
           class="camera-switch uppload-button"
-        >${translate("services.camera.switch")}</button>
+        >${translate("services.camera.switch")}</button>-->
         <button
           class="camera-click uppload-button uppload-button--cta"
           style="background: ${this.color}"
