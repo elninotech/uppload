@@ -4,7 +4,7 @@ dependencies:
   mitt: 1.2.0
   whatwg-fetch: 3.0.0
 devDependencies:
-  '@staart/site': 1.10.6
+  '@staart/site': 1.10.9
   '@types/jest': 24.0.23
   coveralls: 3.0.8
   cssnano: 4.1.10
@@ -1055,7 +1055,7 @@ packages:
       node: '>= 6.0.0'
     resolution:
       integrity: sha512-USSjRAAQYsZFlv43FUPdD+jEGML5/8oLF0rUzPQTtK4q9kvaXr49F5ZplyLz5lox78cLZ0TxN2bIDQ1xhOkulQ==
-  /@staart/site/1.10.6:
+  /@staart/site/1.10.9:
     dependencies:
       axios: 0.19.0
       concurrently: 5.0.0
@@ -1079,7 +1079,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-G425CmdvWXVfO/TgmDwQqqky2oqFGPKq3Eou76/NQFAI52pXI5OOTfzYc7wOLLtLKAidnS49KC+fLKB7rFwuCg==
+      integrity: sha512-oZGpCwmUW86+PJuIiI/5yDy5Za/OErJRKgEB6mFkYhSHoAn/XHefMiUvNFc5j3nCpuVAG+lzxqSsAq7PZjMQ/A==
   /@types/babel__core/7.1.3:
     dependencies:
       '@babel/parser': 7.7.3
@@ -9357,7 +9357,7 @@ packages:
     resolution:
       integrity: sha512-/4ld+4VV5RnrynMhPZJ/ZpOCGSCeghMykZ3BhdFBDa9Wy/RH6uEGNWDJog+aUlq+9OM1CFTgtYRW5Is1Po9NOA==
 specifiers:
-  '@staart/site': ^1.10.6
+  '@staart/site': ^1.10.9
   '@types/jest': ^24.0.23
   core-js: ^3.4.2
   coveralls: ^3.0.7
