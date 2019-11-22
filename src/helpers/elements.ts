@@ -1,4 +1,5 @@
 import { HandlersParams } from "./interfaces";
+import { UpploadSettings } from "../uppload";
 
 export type Elements = string | string[] | Element | Element[];
 
@@ -99,3 +100,37 @@ export const fitImageToContainer = (
     });
   });
 };
+
+/**
+ * Compress an image using lossy canvas compression
+ * @param file - Image file to compress
+ * @param settings - Uppload settings defined in the constructor
+ */
+export const compressImage = (
+  file: Blob,
+  settings: UpploadSettings
+): Promise<Blob> =>
+  new Promise(resolve => {
+    const imageURL = URL.createObjectURL(file);
+    const canvas = document.createElement("canvas");
+    const image = document.createElement("img");
+    image.src = imageURL;
+    image.onload = () => {
+      const type = settings.compressionMime || "image/jpeg";
+      const quality = settings.compression || 1;
+      canvas.width = image.width;
+      canvas.height = image.height;
+      const context = canvas.getContext("2d");
+      if (!context) return resolve(file);
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.drawImage(image, 0, 0);
+      canvas.toBlob(
+        blob => {
+          if (blob) return resolve(blob);
+          resolve(file);
+        },
+        type,
+        quality
+      );
+    };
+  });

@@ -31,14 +31,16 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
       this.canvas = document.createElement("canvas");
       const image = document.createElement("img");
       image.src = this.originalfileURL;
-      this.canvas.width = image.width;
-      this.canvas.height = image.height;
-      const context = this.canvas.getContext("2d");
-      if (!context) return;
-      context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-      context.filter = filters;
-      context.drawImage(image, 0, 0);
-      this.canvas.toBlob(blob => resolve(blob));
+      image.onload = () => {
+        this.canvas.width = image.width;
+        this.canvas.height = image.height;
+        const context = this.canvas.getContext("2d");
+        if (!context) return;
+        context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        context.filter = filters;
+        context.drawImage(image, 0, 0);
+        this.canvas.toBlob(blob => resolve(blob));
+      };
     });
   }
 

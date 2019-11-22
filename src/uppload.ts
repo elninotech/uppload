@@ -1,7 +1,12 @@
 import { UpploadService } from "./service";
 import { UpploadEffect } from "./effect";
 import { setI18N, translate } from "./helpers/i18n";
-import { Elements, getElements, safeListen } from "./helpers/elements";
+import {
+  Elements,
+  getElements,
+  safeListen,
+  compressImage
+} from "./helpers/elements";
 import { colorSVG } from "./helpers/assets";
 import mitt from "mitt";
 import { Uploader, MultipleUploader } from "./helpers/interfaces";
@@ -460,12 +465,10 @@ export class Uppload {
     }
   }
 
-  compress(file: Blob): Promise<Blob> {
-    return new Promise((resolve, reject) => {
-      if (typeof this.settings.compressor === "function")
-        return this.settings.compressor(file);
-      return resolve(file);
-    });
+  compress(file: Blob) {
+    if (typeof this.settings.compressor === "function")
+      return this.settings.compressor(file);
+    return compressImage(file, this.settings);
   }
 
   /**
