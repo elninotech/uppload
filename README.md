@@ -1,4 +1,4 @@
-# 🖼️ Uppload
+[![Uppload](https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/logo-dark.svg)](https://uppload.netlify.com)
 
 Uppload is a better JavaScript image uploader. It's highly customizable with 30+ plugins, completely free and open-source, and can be used with any file uploading backend.
 
