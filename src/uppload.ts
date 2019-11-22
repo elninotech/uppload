@@ -34,6 +34,12 @@ export interface UpploadSettings {
   inline?: boolean;
   customClass?: string;
   multiple?: boolean;
+  compression?: number;
+  compressionMime?: string;
+  maxWidth?: number;
+  maxHeight?: number;
+  maxSize?: number;
+  compressor?: (file: Blob) => Promise<Blob>;
 }
 
 /**
@@ -454,6 +460,14 @@ export class Uppload {
     }
   }
 
+  compress(file: Blob): Promise<Blob> {
+    return new Promise((resolve, reject) => {
+      if (typeof this.settings.compressor === "function")
+        return this.settings.compressor(file);
+      return resolve(file);
+    });
+  }
+
   /**
    * Upload a file to the server
    * @param file - A Blob object containing the file to upload
@@ -461,10 +475,17 @@ export class Uppload {
    */
   upload(file: Blob): Promise<string> {
     this.emitter.emit("before-upload");
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
       this.navigate("uploading");
       if (this.uploader && typeof this.uploader === "function") {
-        (this.uploader as Uploader)(file, this.updateProgress.bind(this))
+        this.compress(file)
+          .then(file => {
+            if (this.settings.compression) this.emitter.emit("compress", file);
+            return file;
+          })
+          .then(file =>
+            (this.uploader as Uploader)(file, this.updateProgress.bind(this))
+          )
           .then((url: string) => {
             this.bind(url);
             this.navigate("default");
@@ -474,7 +495,7 @@ export class Uppload {
           })
           .catch((error: Error) => this.handle(error));
       } else {
-        this.handle(new Error("no-uploader"));
+        reject("no-uploader");
       }
     });
   }

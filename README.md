@@ -81,18 +81,19 @@ profilePicture.use([
 - [Configuration](https://uppload.netlify.com/configuration)
 - [Examples](https://uppload.netlify.com/examples)
 - [Building a custom package](https://uppload.netlify.com/custom-package)
-- [API](https://uppload.netlify.com/api)
+- [Uppload API](https://uppload.netlify.com/api)
 - [Listening to events](https://uppload.netlify.com/listening-to-events)
-- [Multiple Uppload instances](https://uppload.netlify.com/multiple-instances)
-- [Migrating from Uppload 1.x](https://uppload.netlify.com/migrating-from-1x)
 - [Services](https://uppload.netlify.com/services) (20+ ways to select a file)
 - [Effects](https://uppload.netlify.com/effects) (10+ ways to edit a file)
 - [Uploaders](https://uppload.netlify.com/uploaders) (ways to send a file to the server)
 - [Themes](https://uppload.netlify.com/themes)
 - [Wrappers](https://uppload.netlify.com/wrappers)
 - [Backends](https://uppload.netlify.com/backends)
+- [Image compression](https://uppload.netlify.com/compression)
 - [Internationalization](https://uppload.netlify.com/i18n)
 - [Compare Uppload](https://uppload.netlify.com/compare)
+- [Multiple Uppload instances](https://uppload.netlify.com/multiple-instances)
+- [Migrating from Uppload 1.x](https://uppload.netlify.com/migrating-from-1x)
 
 **[View Uppload docs →](https://uppload.netlify.com)**
 

@@ -23,6 +23,12 @@ The keys you can use in the configuration object are:
 | `inline` | Boolean | Show widget inline instead of modal |
 | `customClass` | String | Adds an additional class to the container |
 | `multiple` | Boolean | Allow multiple file uploads [#59](https://github.com/elninotech/uppload/issues/59) |
+| `compression` | Number | Compress image with this factor (0-1) |
+| `compressionMime` | String | Type of image to return, `image/jpeg` or `image/webp` |
+| `maxWidth` | Number | Resize image to maximum width |
+| `maxHeight` | Number | Resize image to maximum height |
+| `maxSize` | Number[] | Resize image to maximum \[width, height] |
+| `compressor` | Function | Function to [compress files](/compression) |
 
 \*The *Elements* type can be any of the following:
 

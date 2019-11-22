@@ -32,22 +32,18 @@ export default class Local extends UpploadService {
 
   handlers = (params: HandlersParams) => {
     const dropArea = params.uppload.container.querySelector(".drop-area");
-    if (dropArea)
+    if (dropArea) {
       safeListen(dropArea, "drop", event =>
         this.dropHandler(params, event as DragEvent)
       );
-    if (dropArea)
       safeListen(dropArea, "dragover", event =>
         this.dragHandler(params, event)
       );
-    if (dropArea)
       safeListen(dropArea, "dragend", event => this.dragStop(params, event));
-    if (dropArea)
       safeListen(dropArea, "dragexit", event => this.dragStop(params, event));
-    if (dropArea)
       safeListen(dropArea, "dragleave", event => this.dragStop(params, event));
-    if (dropArea)
       safeListen(dropArea, "click", event => this.fileSelect(params, event));
+    }
     const input = params.uppload.container.querySelector(
       ".alternate-input input[type=file]"
     ) as HTMLInputElement | null;
@@ -57,7 +53,7 @@ export default class Local extends UpploadService {
 
   getFile(params: HandlersParams, event: Event) {
     const files = (event.target as HTMLInputElement).files;
-    let file: File | null = null; // getAsFile() returns File | null
+    let file: File | null = null;
     if (files) {
       if (params.uppload.settings.multiple && files.length > 1)
         return params.uploadMultiple(Array.from(files));
