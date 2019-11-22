@@ -4,6 +4,7 @@ const service = new Local();
 const handlers: HandlersParams = {
   next: () => {},
   upload: () => new Promise(() => {}),
+  uploadMultiple: () => new Promise(() => {}),
   handle: () => {},
   uppload: new Uppload()
 };
