@@ -1,3 +1,12 @@
+// Polyfills
+// @ts-ignore
+import "core-js/features/promise";
+// @ts-ignore
+import "core-js/features/string/starts-with";
+// @ts-ignore
+import "whatwg-fetch";
+
+// Main class
 export { Uppload } from "./uppload";
 
 // Base classes
