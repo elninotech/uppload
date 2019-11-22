@@ -93,8 +93,7 @@ profilePicture.use([
 - [Image compression](https://uppload.js.org/compression)
 - [Internationalization](https://uppload.js.org/i18n)
 - [Compare Uppload](https://uppload.js.org/compare)
-- [Multiple Uppload instances](https://uppload.js.org/multiple-instances)
-- [Migrating from Uppload 1.x](https://uppload.js.org/migrating-from-1x)
+- [Frequently Asked Questions](https://uppload.js.org/faq)
 
 **[View Uppload docs →](https://uppload.js.org)**
 
