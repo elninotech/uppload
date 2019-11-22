@@ -22,6 +22,7 @@ The keys you can use in the configuration object are:
 | `uploader` | Function | Function to [upload files](/uploaders) |
 | `inline` | Boolean | Show widget inline instead of modal |
 | `customClass` | String | Adds an additional class to the container |
+| `multiple` | Boolean | Allow multiple file uploads [#59](https://github.com/elninotech/uppload/issues/59) |
 
 \*The *Elements* type can be any of the following:
 

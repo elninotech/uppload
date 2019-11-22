@@ -33,6 +33,7 @@ export interface UpploadSettings {
   uploader?: Uploader;
   inline?: boolean;
   customClass?: string;
+  multiple?: boolean;
 }
 
 /**
@@ -131,7 +132,7 @@ export class Uppload {
       // Install this service
       this.services.push(plugin as UpploadService);
       this.ready();
-    } else if (plugin.type === "effect") {
+    } else if (plugin.type === "effect" && !this.settings.multiple) {
       this.effects.push(plugin as UpploadEffect);
       this.ready();
     }
