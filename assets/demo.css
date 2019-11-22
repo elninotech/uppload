@@ -10,4 +10,5 @@ header#masthead .masthead {
   color: #f05d5e;
   border-radius: 0.2rem;
   margin-top: 2.5vh;
+  border: none;
 }
