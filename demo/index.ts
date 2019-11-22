@@ -38,7 +38,7 @@ import {
 } from "../src";
 
 const button = document.createElement("div");
-button.innerHTML = `<div class="try-button"><button class="try-uppload">Try Uppload</button></div>`;
+button.innerHTML = `<div class="try-button"><button class="try-uppload"><span aria-hidden="true">&#9654;&nbsp;&nbsp;</span>Try Uppload</button></div>`;
 const header = document.querySelector("header#masthead .masthead");
 if (header) header.appendChild(button);
 
