@@ -24,6 +24,7 @@ Here's a summary of some web features Uppload uses, and their browser support:
   - HTML5 elements: [99%+](https://caniuse.com/#feat=html5semantic)
   - querySelector/querySelectorAll: [99%+](https://caniuse.com/#feat=queryselector)
   - getBoundingClientRect: [99%+](https://caniuse.com/#feat=getboundingclientrect)
+  - Inline SVGs: [98%+](https://caniuse.com/#feat=svg-html5)
   - Array features: forEach, isArray, filter, map
   - Dependencies: [Cropper.js](https://github.com/fengyuanchen/cropperjs)
 - Internet Explorer 10+ support:
