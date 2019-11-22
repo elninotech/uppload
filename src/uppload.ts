@@ -125,6 +125,8 @@ export class Uppload {
    * @param plugin - A single uploader, service, or effect
    */
   private install(plugin: UpploadService | UpploadEffect) {
+    // Check if the browser supports this plugin
+    if (!plugin.supports()) return;
     if (plugin.type === "service") {
       // Install this service
       this.services.push(plugin as UpploadService);

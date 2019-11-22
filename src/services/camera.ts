@@ -13,7 +13,11 @@ export default class Camera extends UpploadService {
   waiting = false;
   frontCamera = false;
 
-  supports = () => navigator.mediaDevices !== undefined;
+  supports = () =>
+    !!(
+      window.navigator.mediaDevices &&
+      window.navigator.mediaDevices.enumerateDevices
+    );
 
   template = () => {
     return `
