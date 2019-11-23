@@ -1,4 +1,4 @@
-# Instagram
+# Import image from Instagram
 
 ## How do I upload an image using Instagram?
 
@@ -21,7 +21,7 @@ Using the Instagram app, click on the "More" (three dot) icon on the top-right o
 
 ## Why don't I see the Instagram icon?
 
-If you don't see the camera icon, it could be because:
+If you don't see the Instagram icon, it could be because:
 
 - Your browser does not support importing an image from Instagram; if this is the case, you should update your browser
 - The website has not enabled the Instagram import feature
