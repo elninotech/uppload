@@ -7,7 +7,7 @@ You can import an image using its Facebook URL and then perform manipulations (l
 1. Find the Facebook URL of your photo and copy it
 2. Click on the "Facebook" button in the widget
 3. Paste the Facebook URL in the textbox
-4. Click on the "Import from Facebook" buttom
+4. Click on the "Import from Facebook" button
 
 ## How do I find the Facebook URL of an image?
 

@@ -7,7 +7,7 @@ You can import an image using its DeviantArt URL and then perform manipulations 
 1. Find the DeviantArt URL of your photo and copy it
 2. Click on the "DeviantArt" button in the widget
 3. Paste the DeviantArt URL in the textbox
-4. Click on the "Import from DeviantArt" buttom
+4. Click on the "Import from DeviantArt" button
 
 ## How do I find the DeviantArt URL of an image?
 

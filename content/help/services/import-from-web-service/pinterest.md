@@ -7,7 +7,7 @@ You can import an image using its Pinterest URL and then perform manipulations (
 1. Find the Pinterest URL of your photo and copy it
 2. Click on the "Pinterest" button in the widget
 3. Paste the Pinterest URL in the textbox
-4. Click on the "Import from Pinterest" buttom
+4. Click on the "Import from Pinterest" button
 
 ## How do I find the Pinterest URL of an image?
 

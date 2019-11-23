@@ -7,7 +7,7 @@ You can import an image using its 9GAG URL and then perform manipulations (like 
 1. Find the 9GAG URL of your photo and copy it
 2. Click on the "9GAG" button in the widget
 3. Paste the 9GAG URL in the textbox
-4. Click on the "Import from 9GAG" buttom
+4. Click on the "Import from 9GAG" button
 
 ## How do I find the 9GAG URL of an image?
 

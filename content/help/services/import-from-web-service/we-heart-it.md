@@ -7,7 +7,7 @@ You can import an image using its We Heart It URL and then perform manipulations
 1. Find the We Heart It URL of your photo and copy it
 2. Click on the "We Heart It" button in the widget
 3. Paste the We Heart It URL in the textbox
-4. Click on the "Import from We Heart It" buttom
+4. Click on the "Import from We Heart It" button
 
 ## How do I find the We Heart It URL of an image?
 

@@ -7,7 +7,7 @@ You can import an image using its Fotki URL and then perform manipulations (like
 1. Find the Fotki URL of your photo and copy it
 2. Click on the "Fotki" button in the widget
 3. Paste the Fotki URL in the textbox
-4. Click on the "Import from Fotki" buttom
+4. Click on the "Import from Fotki" button
 
 ## How do I find the Fotki URL of an image?
 

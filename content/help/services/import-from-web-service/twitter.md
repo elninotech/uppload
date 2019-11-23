@@ -7,7 +7,7 @@ You can import an image using its Twitter URL and then perform manipulations (li
 1. Find the Twitter URL of your photo and copy it
 2. Click on the "Twitter" button in the widget
 3. Paste the Twitter URL in the textbox
-4. Click on the "Import from Twitter" buttom
+4. Click on the "Import from Twitter" button
 
 ## How do I find the Twitter URL of an image?
 

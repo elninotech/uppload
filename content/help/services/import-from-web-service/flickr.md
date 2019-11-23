@@ -7,7 +7,7 @@ You can import an image using its Flickr URL and then perform manipulations (lik
 1. Find the Flickr URL of your photo and copy it
 2. Click on the "Flickr" button in the widget
 3. Paste the Flickr URL in the textbox
-4. Click on the "Import from Flickr" buttom
+4. Click on the "Import from Flickr" button
 
 ## How do I find the Flickr URL of an image?
 

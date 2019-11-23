@@ -7,7 +7,7 @@ You can import an image using its Instagram URL and then perform manipulations (
 1. Find the Instagram URL of your photo and copy it
 2. Click on the "Instagram" button in the widget
 3. Paste the Instagram URL in the textbox
-4. Click on the "Import from Instagram" buttom
+4. Click on the "Import from Instagram" button
 
 ## How do I find the Instagram URL of an image?
 

@@ -7,7 +7,7 @@ You can import an image using its Reddit URL and then perform manipulations (lik
 1. Find the Reddit URL of your photo and copy it
 2. Click on the "Reddit" button in the widget
 3. Paste the Reddit URL in the textbox
-4. Click on the "Import from Reddit" buttom
+4. Click on the "Import from Reddit" button
 
 ## How do I find the Reddit URL of an image?
 

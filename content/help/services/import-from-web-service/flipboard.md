@@ -7,7 +7,7 @@ You can import an image using its Flipboard URL and then perform manipulations (
 1. Find the Flipboard URL of your photo and copy it
 2. Click on the "Flipboard" button in the widget
 3. Paste the Flipboard URL in the textbox
-4. Click on the "Import from Flipboard" buttom
+4. Click on the "Import from Flipboard" button
 
 ## How do I find the Flipboard URL of an image?
 

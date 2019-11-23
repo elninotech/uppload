@@ -7,7 +7,7 @@ You can import an image using its Tumblr URL and then perform manipulations (lik
 1. Find the Tumblr URL of your photo and copy it
 2. Click on the "Tumblr" button in the widget
 3. Paste the Tumblr URL in the textbox
-4. Click on the "Import from Tumblr" buttom
+4. Click on the "Import from Tumblr" button
 
 ## How do I find the Tumblr URL of an image?
 
