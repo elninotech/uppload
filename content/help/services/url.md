@@ -5,7 +5,7 @@
 You can import an image using its URL and then perform manipulations (like cropping or filters). URL start with "http://" or "https://".
 
 1. Find the URL of your photo and copy it
-2. Click on the "URL" button in the widget
+2. Click on the "Direct URL" button in the widget
 3. Paste the URL in the textbox
 4. Click on the "Import from URL" button
 
@@ -15,11 +15,11 @@ You can import an image using its URL and then perform manipulations (like cropp
 
 On the web, open the picture you want to select and copy the URL from your browser's address bar.
 
-## Why don't I see the URL icon?
+## Why don't I see the Direct URL icon?
 
-If you don't see the URL icon, it could be because:
+If you don't see the Direct URL icon, it could be because:
 
 - Your browser does not support importing an image from URL; if this is the case, you should update your browser
-- The website has not enabled the URL import feature
+- The website has not enabled the Direct URL import feature
 
 ![Screenshot of the URL service](/assets/screenshots/url.png)
