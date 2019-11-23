@@ -52,7 +52,7 @@ const uploader = new Uppload({
 uploader.use([new Local(), new Instagram()]);
 ```
 
-Instead of using the `bind` and `call` properties, you can also directly use the Uppload API. For example, if you want to programatically open or close the widget:
+Instead of using the `bind` and `call` properties, you can also directly use the [Uppload API](/api). For example, if you want to programatically open or close the widget:
 
 ```ts
 // Open the plugin
@@ -63,3 +63,5 @@ setTimeout(() => {
   uppload.close();
 }, 5000);
 ```
+
+Now that you're ready, it's time to add some [Services](/services) or view [Examples](/examples).

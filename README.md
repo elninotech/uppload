@@ -89,11 +89,10 @@ profilePicture.use([
 - [Effects](https://uppload.js.org/effects) (10+ ways to edit a file)
 - [Uploaders](https://uppload.js.org/uploaders) (ways to send a file to the server)
 - [Themes](https://uppload.js.org/themes)
-- [Wrappers](https://uppload.js.org/wrappers)
 - [Backends](https://uppload.js.org/backends)
+- [Frontend frameworks](https://uppload.js.org/wrappers)
 - [Image compression](https://uppload.js.org/compression)
 - [Internationalization](https://uppload.js.org/i18n)
-- [Compare Uppload](https://uppload.js.org/compare)
 - [Frequently Asked Questions](https://uppload.js.org/faq)
 
 **[View Uppload docs →](https://uppload.js.org)**
