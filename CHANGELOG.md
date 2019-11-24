@@ -1,5 +1,26 @@
 # Changelog
 
+<a name="2.0.0-beta.7"></a>
+## 2.0.0-beta.7 (2019-11-24)
+
+### Changed
+
+- ♻️ Add native polyfills [[1b25508](https://github.com/elninotech/uppload/commit/1b255083f43544560bb7cf5752cdfcb03d5a73d3)]
+- 🔧 Add Algolia search for docs [[6f27557](https://github.com/elninotech/uppload/commit/6f2755784bf9fcaea2f0f59e144da18e4aca5ee8)]
+
+### Miscellaneous
+
+- 📝 Update docs [[ac43ba7](https://github.com/elninotech/uppload/commit/ac43ba7d9d100020f6251041c4726d2cf5fc03bf)]
+-  Merge branch &#x27;typescript&#x27; of github.com:elninotech/uppload into typescript [[f3acc7f](https://github.com/elninotech/uppload/commit/f3acc7ff86d0a98c9a4d535b609212290bacc82d)]
+- 📝 Add npm, i18n badges [[37030bf](https://github.com/elninotech/uppload/commit/37030bf52ed838783c2d7cd34991cb325ad8a88a)]
+- 📝 Add image, edit text for help [[fb9c984](https://github.com/elninotech/uppload/commit/fb9c984122c8886bdadd16c50ee7e5713563c1d9)]
+- 📝 Add search, URL, screenshot usage docs [[a8a9e3d](https://github.com/elninotech/uppload/commit/a8a9e3d804a03e56038435b188491076d831f4b2)]
+- 📝 Fix button spelling [[ab1dde9](https://github.com/elninotech/uppload/commit/ab1dde9dcaf208a1fa8d9e5e758b2d1eda95c819)]
+- 📝 Add usage docs for import from service [[ec0f043](https://github.com/elninotech/uppload/commit/ec0f043c82780eaf50f59df4379ce51aaee79a78)]
+- 📝 Add usage guides [[8ac1522](https://github.com/elninotech/uppload/commit/8ac15228117c4a278a5a24ef2277c8220c2e80ce)]
+- 📝 Add FAQ docs [[b26bd5e](https://github.com/elninotech/uppload/commit/b26bd5e8f6cc8fee44715b0517fbdcda002158b7)]
+
+
 <a name="2.0.0-beta.6"></a>
 ## 2.0.0-beta.6 (2019-11-22)
 
