@@ -1,3 +1,7 @@
+import "whatwg-fetch";
+// @ts-ignore
+require("es6-promise").polyfill();
+
 // https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach#Polyfill
 if (window.NodeList && !NodeList.prototype.forEach) {
   (NodeList as any).prototype.forEach = Array.prototype.forEach;
