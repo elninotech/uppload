@@ -1,12 +1,7 @@
 // Polyfills
-// @ts-ignore
-import "core-js/features/promise";
-// @ts-ignore
-import "core-js/features/string/starts-with";
-// @ts-ignore
-import "core-js/features/dom-collections";
-// @ts-ignore
 import "whatwg-fetch";
+import "promise-polyfill/src/polyfill";
+import "./polyfills";
 
 // Main class
 export { Uppload } from "./uppload";
