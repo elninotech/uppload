@@ -36,7 +36,8 @@
     "serve-site": "site --serve",
     "test-report": "jest --coverage",
     "changelog": "gitmoji-changelog",
-    "build-site-demo": "npm run build-site && npm run build-demo && node scripts/build-demo.js"
+    "build-site-demo": "npm run build-site && npm run build-demo && node scripts/build-demo.js",
+    "build-typedoc": "typedoc --out public/typedoc src"
   },
   "browserslist": [
     "last 1 Chrome versions"
@@ -54,6 +55,7 @@
     "prettier": "^1.19.1",
     "sass": "^1.23.5",
     "ts-jest": "^24.1.0",
+    "typedoc": "^0.15.3",
     "typescript": "^3.7.2",
     "xhr-mock": "^2.5.1"
   },
