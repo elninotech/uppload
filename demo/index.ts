@@ -47,6 +47,7 @@ const uppload = new Uppload({
   bind: ".uppload-image",
   call: ".try-uppload",
   lang: en,
+  maxSize: [256, 256],
   uploader: (file, updateProgress) =>
     new Promise(resolve => {
       setTimeout(() => resolve(window.URL.createObjectURL(file)), 2750);

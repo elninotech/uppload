@@ -43,7 +43,7 @@ export interface UpploadSettings {
   compressionMime?: string;
   maxWidth?: number;
   maxHeight?: number;
-  maxSize?: number;
+  maxSize?: [number, number];
   compressor?: (file: Blob) => Promise<Blob>;
 }
 

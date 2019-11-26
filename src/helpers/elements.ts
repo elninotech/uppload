@@ -114,16 +114,29 @@ export const compressImage = (
     const imageURL = URL.createObjectURL(file);
     const canvas = document.createElement("canvas");
     const image = document.createElement("img");
+    const maxSize = settings.maxSize || [
+      settings.maxWidth || Infinity,
+      settings.maxHeight || Infinity
+    ];
     image.src = imageURL;
     image.onload = () => {
       const type = settings.compressionMime || "image/jpeg";
       const quality = settings.compression || 1;
+      const ratio = image.width / image.height;
+      if (image.width > maxSize[0]) {
+        image.width = maxSize[0];
+        image.height = image.width * (1 / ratio);
+      }
+      if (image.height > maxSize[1]) {
+        image.height = maxSize[1];
+        image.width = image.height * ratio;
+      }
       canvas.width = image.width;
       canvas.height = image.height;
       const context = canvas.getContext("2d");
       if (!context) return resolve(file);
       context.clearRect(0, 0, canvas.width, canvas.height);
-      context.drawImage(image, 0, 0);
+      context.drawImage(image, 0, 0, canvas.width, canvas.height);
       canvas.toBlob(
         blob => {
           if (blob) return resolve(blob);
