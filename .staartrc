@@ -11,8 +11,7 @@
   "navbar": [
     "[📝 Documentation](/)",
     "[🛠️ Getting started](/getting-started)",
-    "[🐱 GitHub](https://github.com/elninotech/uppload)",
-    "[📦 NPM](https://www.npmjs.com/package/uppload)"
+    "[🐱 GitHub](https://github.com/elninotech/uppload)"
   ],
   "twitterPublisher": "elninoict",
   "scripts": ["/uppload-demo.js"],
