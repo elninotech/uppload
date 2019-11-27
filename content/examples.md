@@ -11,3 +11,4 @@ Uppload is highly customizable, and here are some samples to get your started:
 - [Import from Instagram](https://codesandbox.io/s/boring-murdock-sbp87)
 - [Basic image editor](https://codesandbox.io/s/charming-germain-u98cz)
 - [Advanced image editor](https://codesandbox.io/s/winter-night-tjj4b)
+- [Upload to Firebase](https://codesandbox.io/s/uppload-firebase-3zd9b)

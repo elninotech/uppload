@@ -109,7 +109,6 @@ Uppload v2 is completely rewritten in TypeScript. You can [view the README of Up
 - [ ] Documentation
   - [ ] Docs to show people how to upload to:
     - [ ] AWS S3 bucket
-    - [ ] Firebase
     - [ ] Upload to web service like Imgur
   - [ ] Docs to people how to use Uppload with frameworks:
     - [ ] Vue.js
