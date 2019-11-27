@@ -16,7 +16,8 @@ export default class Camera extends UpploadService {
   supports = () =>
     !!(
       window.navigator.mediaDevices &&
-      window.navigator.mediaDevices.enumerateDevices
+      window.navigator.mediaDevices.enumerateDevices &&
+      /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
     );
 
   template = () => {
