@@ -69,6 +69,16 @@ export default class Crop extends UpploadEffect {
           aspectRatio: this.aspectRatio,
           autoCropArea: 1,
           viewMode: 1,
+          ready() {
+            cropper.getCroppedCanvas().toBlob(
+              result => {
+                if (!result) return;
+                params.next(result);
+              },
+              "image/png",
+              1
+            );
+          },
           cropend() {
             cropper.getCroppedCanvas().toBlob(
               result => {

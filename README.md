@@ -8,7 +8,7 @@ Uppload is a better JavaScript image uploader. It's highly customizable with 30+
 | Dependencies | [![Dependencies](https://img.shields.io/david/elninotech/uppload.svg)](https://david-dm.org/elninotech/uppload) [![Dev dependencies](https://img.shields.io/david/dev/elninotech/uppload.svg)](https://david-dm.org/elninotech/uppload) ![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/elninotech/uppload.svg) |
 | Documentation | [![Netlify](https://img.shields.io/netlify/5e92d02d-b96b-4b42-8197-804f72a147cf)](https://app.netlify.com/sites/uppload/deploys) [![Website status](https://img.shields.io/website?down_color=red&down_message=down&up_color=brightgreen&up_message=online&url=https%3A%2F%2Fuppload.js.org)](https://uppload.js.org) [![Uptime](https://img.shields.io/uptimerobot/ratio/7/m783785688-048a2237d8844210960a6a76)](https://stats.uptimerobot.com/m29YvtjqOg) [![Articles](https://img.shields.io/endpoint?url=https%3A%2F%2Fuppload.js.org%2Fshield-schema%2Fall.json)](https://uppload.js.org) |
 | Community | [![Contributors](https://img.shields.io/github/contributors/elninotech/uppload.svg)](https://github.com/elninotech/uppload/graphs/contributors) [![Languages](https://img.shields.io/endpoint?url=https%3A%2F%2Fservices.anandchowdhary.now.sh%2Fapi%2Fgithub-files%3Frepo%3Delninotech%2Fuppload%26path%3Dsrc%2Fi18n%26subtract%3D1%26label%3Di18n%26message%3D%25241%2524%2520language%2524S%2524%26color%3Dblueviolet)](https://github.com/elninotech/uppload/tree/typescript/src/i18n) [![GitHub](https://img.shields.io/github/license/elninotech/uppload.svg)](https://github.com/elninotech/uppload/blob/master/LICENSE) |
-| Package | [![npm package version](https://img.shields.io/npm/v/uppload)](https://www.npmjs.com/package/uppload) [![npm downloads](https://img.shields.io/npm/dm/uppload)](https://www.npmjs.com/package/uppload) [![Type definitions](https://img.shields.io/badge/types-TypeScript-blue.svg)](https://github.com/elninotech/uppload/tree/typescript/src) |
+| Package | [![npm package version](https://img.shields.io/npm/v/uppload)](https://www.npmjs.com/package/uppload) [![npm downloads](https://img.shields.io/npm/dm/uppload)](https://www.npmjs.com/package/uppload) [![Type definitions](https://img.shields.io/badge/types-TypeScript-blue.svg)](https://uppload.js.org/typedoc) |
 
 **[View Uppload demo and docs →](https://uppload.js.org)**
 
@@ -107,7 +107,6 @@ Uppload v2 is completely rewritten in TypeScript. You can [view the README of Up
   - [ ] Instagram-like filters
   - [ ] Rotation, mirror
 - [ ] Documentation
-  - [ ] TypeDoc for exploring packages and interfaces
   - [ ] Docs to show people how to upload to:
     - [ ] AWS S3 bucket
     - [ ] Firebase
