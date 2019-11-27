@@ -144,19 +144,50 @@ export const compressImage = (
     };
   });
 
+/**
+ * Convert a data URI image string to Blob
+ * @param dataURI - Data URI of image
+ * @source https://stackoverflow.com/a/12300351/1656944
+ */
+const dataURItoBlob = (dataURI: string) => {
+  const byteString = atob(dataURI.split(",")[1]);
+  const mimeString = dataURI
+    .split(",")[0]
+    .split(":")[1]
+    .split(";")[0];
+  const arrayBuffer = new ArrayBuffer(byteString.length);
+  const uArray = new Uint8Array(arrayBuffer);
+  for (let i = 0; i < byteString.length; i++)
+    uArray[i] = byteString.charCodeAt(i);
+  return new Blob([arrayBuffer], { type: mimeString });
+};
+
+/**
+ * Export an HTML canvas to Blob image
+ * @param canvas - Canvas element to export
+ * @param type - MIME type of image
+ * @param quality - Compression ratio (0 to 1)
+ */
 export const canvasToBlob = (
   canvas: HTMLCanvasElement,
   type?: string,
   quality?: number
 ): Promise<Blob> => {
   return new Promise((resolve, reject) => {
-    canvas.toBlob(
-      blob => {
-        if (blob) resolve(blob);
-        reject(new Error("errors.response_not_ok"));
-      },
-      type,
-      quality
-    );
+    if (typeof canvas.toBlob === "function") {
+      canvas.toBlob(
+        blob => {
+          if (blob) resolve(blob);
+          reject(new Error("errors.image_error"));
+        },
+        type,
+        quality
+      );
+    } else if (typeof canvas.toDataURL === "function") {
+      const dataURI = canvas.toDataURL(type, quality);
+      resolve(dataURItoBlob(dataURI));
+    } else {
+      reject(new Error("errors.image_error"));
+    }
   });
 };
