@@ -15,16 +15,35 @@ export class MicrolinkBaseClass extends UpploadService {
       <form class="microlink-search-form">
         <div class="service-icon">${colorSVG(this.icon, this)}</div>
         <label>
-        <span>${translate(`services.${this.name}.label`)}</span>
-        <input class="microlink-search-input" type="url" placeholder="${translate(
-          `services.${this.name}.placeholder`
-        ) || ""}" required>
+          <span>${translate(`services.${this.name}.label`) ||
+            translate("services.microlink.label", [
+              translate(`services.${this.name}.title`) || this.name,
+              translate(`services.${this.name}.type`) ||
+                translate("services.microlink.type")
+            ])}</span>
+          <input class="microlink-search-input" type="url" placeholder="${translate(
+            `services.${this.name}.placeholder`
+          ) ||
+            translate("services.microlink.placeholder", [
+              translate(`services.${this.name}.title`) || this.name,
+              translate(`services.${this.name}.type`) ||
+                translate("services.microlink.type")
+            ]) ||
+            ""}" required>
         </label>
         <button type="submit" style="background: ${this.color}">${translate(
       `services.${this.name}.button`
-    )}</button></form></div><div class="uppload-loader microlink-loader">
+    ) ||
+      translate(
+        "services.microlink.button",
+        translate(`services.${this.name}.title`) || this.name
+      )}</button></form></div><div class="uppload-loader microlink-loader">
     <div></div>
     <p>${translate(`services.${this.name}.loading`) ||
+      translate(
+        "services.microlink.loading",
+        translate(`services.${this.name}.title`) || this.name
+      ) ||
       translate("fetching", translate(`services.${this.name}.title`))}</p>
   </div>`;
   };

@@ -512,7 +512,7 @@ export class Uppload {
    * @param error - Error to display
    */
   private handle(error: Error) {
-    this.error = this.lang[error.message] || error.message;
+    this.error = translate(error.message) || error.message;
     this.emitter.emit("error", this.error);
     this.update();
     if (this.activeService === "uploading") this.navigate("default");

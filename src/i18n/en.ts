@@ -34,100 +34,69 @@ export default {
       unableToRead:
         "We're not able to read your camera's video. This may be because you didn't grant the required permission, or because your device doesn't support camera access."
     },
-    instagram: {
-      title: "Instagram",
-      button: "Import from Instagram",
-      label: "Instagram post URL",
-      placeholder: "Enter an Instagram post URL"
+    microlink: {
+      button: "Import from $1$",
+      label: "$1$ $2$ URL",
+      placeholder: "Enter $1$ $2$ URL",
+      type: "post"
     },
     url: {
       title: "Direct URL",
-      button: "Import from URL",
       label: "Image URL",
       placeholder: "Enter an image URL"
     },
+    instagram: {
+      title: "Instagram"
+    },
     facebook: {
-      title: "Facebook",
-      button: "Import from Facebook",
-      label: "Facebook post URL",
-      placeholder: "Enter a Facebook post URL"
+      title: "Facebook"
     },
     flickr: {
       title: "Flickr",
-      button: "Import from Flickr",
-      label: "Flickr photo URL",
-      placeholder: "Enter a Flickr photo URL"
+      type: "photo"
     },
     ninegag: {
       title: "9GAG",
-      button: "Import from 9GAG",
-      label: "9GAG photo URL",
-      placeholder: "Enter a 9GAG photo URL"
+      type: "photo"
     },
     deviantart: {
-      title: "DeviantArt",
-      button: "Import from DeviantArt",
-      label: "DeviantArt post URL",
-      placeholder: "Enter a DeviantArt post URL"
+      title: "DeviantArt"
     },
     artstation: {
-      title: "ArtStation",
-      button: "Import from ArtStation",
-      label: "ArtStation post URL",
-      placeholder: "Enter a ArtStation post URL"
+      title: "ArtStation"
     },
     twitter: {
       title: "Twitter",
-      button: "Import from Twitter",
-      label: "Twitter image tweet URL",
-      placeholder: "Enter a Twitter image tweet URL"
+      type: "image tweet"
     },
     pinterest: {
       title: "Pinterest",
-      button: "Import from Pinterest",
-      label: "Pinterest pin URL",
-      placeholder: "Enter a Pinterest pin URL"
+      type: "pin"
     },
     flipboard: {
       title: "Flipboard",
-      button: "Import from Flipboard",
-      label: "Flipboard URL",
-      placeholder: "Enter a Flipboard article URL"
+      type: "article"
     },
     fotki: {
       title: "Fotki",
-      button: "Import from Fotki",
-      label: "Fotki URL",
-      placeholder: "Enter a Fotki image URL"
+      type: "photo"
     },
     linkedin: {
-      title: "LinkedIn",
-      button: "Import from LinkedIn",
-      label: "LinkedIn URL",
-      placeholder: "Enter a LinkedIn post URL"
+      title: "LinkedIn"
     },
     reddit: {
-      title: "Reddit",
-      button: "Import from Reddit",
-      label: "Reddit URL",
-      placeholder: "Enter a Reddit post URL"
+      title: "Reddit"
     },
     tumblr: {
-      title: "Tumblr",
-      button: "Import from Tumblr",
-      label: "Tumblr URL",
-      placeholder: "Enter a Tumblr post URL"
+      title: "Tumblr"
     },
     weheartit: {
-      title: "We Heart It",
-      button: "Import from We Heart It",
-      label: "We Heart It URL",
-      placeholder: "Enter a We Heart It post URL"
+      title: "We Heart It"
     },
     screenshot: {
       title: "Screenshot",
       button: "Take screenshot",
-      label: "URL",
+      label: "Webpage URL",
       placeholder: "Enter a webpage URL",
       loading: "Taking a screenshot..."
     },
