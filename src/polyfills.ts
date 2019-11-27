@@ -16,3 +16,15 @@ if (!String.prototype.startsWith) {
     }
   });
 }
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+if (!String.prototype.includes) {
+  Object.defineProperty(String.prototype, "includes", {
+    value: function(search: string, start?: number) {
+      if (start === undefined) {
+        start = 0;
+      }
+      return this.indexOf(search, start) !== -1;
+    }
+  });
+}
