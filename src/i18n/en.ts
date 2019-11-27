@@ -168,6 +168,9 @@ export default {
     rotate: {
       title: "Rotate"
     },
+    flip: {
+      title: "Flip"
+    },
     sharpen: {
       title: "Sharpen"
     },

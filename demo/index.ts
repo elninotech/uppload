@@ -12,7 +12,7 @@ import {
   Screenshot,
   Crop,
   Filters,
-  Rotate,
+  Flip,
   Blur,
   Sharpen,
   Flickr,
@@ -43,7 +43,7 @@ const header = document.querySelector("header#masthead .masthead");
 if (header) header.appendChild(button);
 
 const uppload = new Uppload({
-  value: "https://via.placeholder.com/150",
+  value: "https://uppload.js.org/assets/icon-white.svg",
   bind: [".uppload-image", "img.icon"],
   call: ".try-uppload",
   lang: en,
@@ -99,6 +99,7 @@ uppload.use([
   }),
   new Blur(),
   new Brightness(),
+  new Flip(),
   new Contrast(),
   new Grayscale(),
   new HueRotate(),
