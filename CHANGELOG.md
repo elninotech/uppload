@@ -1,5 +1,41 @@
 # Changelog
 
+<a name="2.0.0-beta.9"></a>
+## 2.0.0-beta.9 (2019-11-27)
+
+### Added
+
+- ✨ Add flip effect [[4503cbb](https://github.com/elninotech/uppload/commit/4503cbb1f667a981f783dcfbd41b8dcb00369384)]
+- ➕ Add TypeDoc [[68f9026](https://github.com/elninotech/uppload/commit/68f9026cba7a9d5f5953b5fbaff87f4d610338a6)]
+- ✨ Support for resizing [[a2f5865](https://github.com/elninotech/uppload/commit/a2f58659d66ad95f6c6a2701f168d3b635495980)]
+
+### Changed
+
+- 🔧 Add Uppload icon changing [[c9d8670](https://github.com/elninotech/uppload/commit/c9d867067edb1cfe8772c258bf091b2c45b08ecd)]
+- 🔧 Remove NPM from navbar [[69c580f](https://github.com/elninotech/uppload/commit/69c580f0cf16ee1f45762e194741f05b4faa8bde)]
+
+### Fixed
+
+- 🐛 Fix initial crop image return [[1a1c97e](https://github.com/elninotech/uppload/commit/1a1c97e474ef661a0a60cf7f1a5b74abc30b6005)]
+
+### Miscellaneous
+
+- 📝 Add upload to Firebase [[7f88baf](https://github.com/elninotech/uppload/commit/7f88baf4c58440364848beef07dffe55b8ff45e6)]
+- 📝 Add support section [[a78372c](https://github.com/elninotech/uppload/commit/a78372cc1ef870ab803af56c3a7135d261e23607)]
+
+
+<a name="2.0.0-beta.8"></a>
+## 2.0.0-beta.8 (2019-11-24)
+
+### Fixed
+
+- 💚 Use es6-promise polyfill [[8fbaad2](https://github.com/elninotech/uppload/commit/8fbaad2a0a935fce164490362ed214f6ca399cd0)]
+
+### Miscellaneous
+
+- 🚀 Deploy beta 8 [[f31ce8b](https://github.com/elninotech/uppload/commit/f31ce8b0bfd23ca2722338b431c584fc4bc227c9)]
+
+
 <a name="2.0.0-beta.7"></a>
 ## 2.0.0-beta.7 (2019-11-24)
 
