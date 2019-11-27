@@ -65,8 +65,8 @@ const customUploader = (
     );
 
     // Handle errors
-    xmlHttp.addEventListener("error", () => reject("response_not_ok"));
-    xmlHttp.addEventListener("abort", () => reject("upload_aborted"));
+    xmlHttp.addEventListener("error", () => reject("errors.response_not_ok"));
+    xmlHttp.addEventListener("abort", () => reject("errors.upload_aborted"));
 
     // Send the request
     xmlHttp.send(formData);

@@ -33,8 +33,8 @@ export const xhrUploader = ({
         const json = JSON.parse(responseText);
         return resolve(json[responseKey]);
       });
-      xmlHttp.addEventListener("error", () => reject("response_not_ok"));
-      xmlHttp.addEventListener("abort", () => reject("upload_aborted"));
+      xmlHttp.addEventListener("error", () => reject("errors.response_not_ok"));
+      xmlHttp.addEventListener("abort", () => reject("errors.upload_aborted"));
       xmlHttp.send(formData);
     });
 };
@@ -69,7 +69,7 @@ export const fetchUploader = ({
               }
         )
         .then(response => {
-          if (!response.ok) throw new Error("response_not_ok");
+          if (!response.ok) throw new Error("errors.response_not_ok");
           return response.json();
         })
         .then(json => {
@@ -77,6 +77,6 @@ export const fetchUploader = ({
             return resolve(responseFunction(json));
           return resolve(json[responseKey]);
         })
-        .catch(() => reject("response_not_ok"));
+        .catch(() => reject("errors.response_not_ok"));
     });
 };

@@ -24,7 +24,7 @@ export function cachedFetch<T>(
     window
       .fetch(input, settings)
       .then(response => {
-        if (!response.ok) throw new Error("response_not_ok");
+        if (!response.ok) throw new Error("errors.response_not_ok");
         return response.json();
       })
       .then(result => {
@@ -51,7 +51,7 @@ export const imageUrlToBlob = (url: string): Promise<Blob> => {
     window
       .fetch(`https://images.weserv.nl/?url=${encodeURIComponent(url)}`)
       .then(response => {
-        if (!response.ok) throw new Error("response_not_ok");
+        if (!response.ok) throw new Error("errors.response_not_ok");
         return response.blob();
       })
       .then(blob => resolve(blob))

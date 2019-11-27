@@ -53,7 +53,7 @@ export class MicrolinkBaseClass extends UpploadService {
         if (input) {
           const url = input.value;
           if (!this.validator(url))
-            return params.handle(new Error("invalid_url"));
+            return params.handle(new Error("errors.invalid_url"));
           this.loading = true;
           this.update(params);
           if (this.name === "screenshot") {
@@ -79,7 +79,7 @@ export class MicrolinkBaseClass extends UpploadService {
             }>(`https://api.microlink.io/?url=${encodeURIComponent(url)}`)
               .then(result => {
                 if (!result.data.image || !result.data.image.url)
-                  throw new Error("response_not_ok");
+                  throw new Error("errors.response_not_ok");
                 return result.data.image.url;
               })
               .then(url => imageUrlToBlob(url))

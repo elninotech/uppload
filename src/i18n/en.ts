@@ -1,15 +1,20 @@
 export default {
-  response_not_ok: "We got an error in fetching this file",
-  unable_to_search: "We got an error in searching",
-  invalid_url: "This URL is seems to be invalid",
   uploading: "Uploading...",
   fetching: "Getting your image from $1$...",
   imagesPoweredBy: "Images powered by $1$",
+  poweredBy: "Powered by $1$",
   needHelp: "Need help?",
   units: {
     px: "px",
     "%": "%",
     deg: "°"
+  },
+  errors: {
+    response_not_ok: "We got an error in fetching this file",
+    unable_to_search: "We got an error in searching",
+    invalid_service_url: "This is not a $1$ URL",
+    invalid_url: "This URL is seems to be invalid",
+    upload_aborted: "Upload cancelled"
   },
   services: {
     default: {
