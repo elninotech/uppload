@@ -38,6 +38,8 @@ export const translate = (key: string, params?: string | string[]) => {
       params.forEach((param, index) => {
         term = term.replace(`$${index + 1}$`, param);
       });
+    if (i18n.helper && typeof i18n.helper === "function")
+      term = i18n.helper(term);
     return term;
   } catch (error) {
     return "";

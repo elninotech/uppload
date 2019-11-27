@@ -1,14 +1,36 @@
 export default {
+  /**
+   * Helpers can transform a string before returning it
+   * You can define a language-specific helper here
+   */
+  helper: (text: string) => {
+    // Replace all instances of $A$ with "a" or "an"
+    const AAN = "$A$";
+    while (text.includes(AAN)) {
+      const index = text.indexOf(AAN);
+      if (text.length > index + 3) {
+        if (["a", "e", "i", "o", "u"].includes(text[index + 4].toLowerCase())) {
+          text = text.replace(AAN, "an");
+        } else {
+          text = text.replace(AAN, "a");
+        }
+      }
+    }
+    return text;
+  },
+
   uploading: "Uploading...",
   fetching: "Getting your image from $1$...",
   imagesPoweredBy: "Images powered by $1$",
   poweredBy: "Powered by $1$",
   needHelp: "Need help?",
+
   units: {
     px: "px",
     "%": "%",
     deg: "°"
   },
+
   errors: {
     response_not_ok: "We got an error in fetching this file",
     unable_to_search: "We got an error in searching",
@@ -16,6 +38,7 @@ export default {
     invalid_url: "This URL is seems to be invalid",
     upload_aborted: "Upload cancelled"
   },
+
   services: {
     default: {
       heading: "Select an image"
@@ -37,7 +60,7 @@ export default {
     microlink: {
       button: "Import from $1$",
       label: "$1$ $2$ URL",
-      placeholder: "Enter $1$ $2$ URL",
+      placeholder: "Enter $A$ $1$ $2$ URL",
       type: "post"
     },
     url: {
@@ -125,6 +148,7 @@ export default {
       placeholder: "Search for something"
     }
   },
+
   effects: {
     preview: {
       title: "Preview"
