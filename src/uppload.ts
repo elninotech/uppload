@@ -551,7 +551,10 @@ export class Uppload {
             top = serviceDivRect.top - serviceNavRect.top;
             left = serviceDivRect.left - serviceNavRect.left;
             const aside = serviceDiv.parentElement.parentElement;
-            if (aside) aside.scrollTo(left, top);
+            try {
+              // Edge doesn't support scrollTo and throws an error
+              if (aside) aside.scrollTo(left, top);
+            } catch (error) {}
           }
         }
         const serviceRadio = this.container.querySelector(

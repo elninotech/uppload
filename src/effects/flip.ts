@@ -1,6 +1,10 @@
 import { UpploadEffect } from "..";
 import { HandlersParams } from "../helpers/interfaces";
-import { fitImageToContainer, safeListen } from "../helpers/elements";
+import {
+  fitImageToContainer,
+  safeListen,
+  canvasToBlob
+} from "../helpers/elements";
 import { translate } from "../helpers/i18n";
 
 export default class Flip extends UpploadEffect {
@@ -44,12 +48,10 @@ export default class Flip extends UpploadEffect {
         context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         context.scale(scaleH, scaleV);
         context.drawImage(image, posX, posY);
-        this.canvas.toBlob(blob => {
-          if (blob) {
-            const image = URL.createObjectURL(blob);
-            this.originalfileURL = image;
-            resolve(blob);
-          }
+        canvasToBlob(this.canvas).then(blob => {
+          const image = URL.createObjectURL(blob);
+          this.originalfileURL = image;
+          resolve(blob);
         });
       };
     });

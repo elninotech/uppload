@@ -1,5 +1,9 @@
 import { UpploadEffect } from "..";
-import { safeListen, fitImageToContainer } from "../helpers/elements";
+import {
+  safeListen,
+  fitImageToContainer,
+  canvasToBlob
+} from "../helpers/elements";
 import { HandlersParams } from "./interfaces";
 import { translate } from "./i18n";
 
@@ -39,7 +43,7 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
         context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         context.filter = filters;
         context.drawImage(image, 0, 0);
-        this.canvas.toBlob(blob => resolve(blob));
+        canvasToBlob(this.canvas).then(blob => resolve(blob));
       };
     });
   }

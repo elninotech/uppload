@@ -1,6 +1,10 @@
 import { UpploadService } from "../service";
 import { HandlersParams } from "../helpers/interfaces";
-import { safeListen, fitImageToContainer } from "../helpers/elements";
+import {
+  safeListen,
+  fitImageToContainer,
+  canvasToBlob
+} from "../helpers/elements";
 import { translate } from "../helpers/i18n";
 
 export default class Camera extends UpploadService {
@@ -156,9 +160,7 @@ export default class Camera extends UpploadService {
     if (!context) return;
     context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     context.drawImage(video, 0, 0, width, height);
-    this.canvas.toBlob(blob => {
-      if (blob) params.next(blob);
-    });
+    canvasToBlob(this.canvas).then(blob => params.next(blob));
   }
 
   startStream(params: HandlersParams, constraints: MediaStreamConstraints) {

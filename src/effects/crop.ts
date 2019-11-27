@@ -1,7 +1,11 @@
 import { UpploadEffect } from "../";
 import Cropper from "cropperjs";
 import { HandlersParams } from "../helpers/interfaces";
-import { safeListen, fitImageToContainer } from "../helpers/elements";
+import {
+  safeListen,
+  fitImageToContainer,
+  canvasToBlob
+} from "../helpers/elements";
 import { translate } from "../helpers/i18n";
 
 export default class Crop extends UpploadEffect {
@@ -70,23 +74,13 @@ export default class Crop extends UpploadEffect {
           autoCropArea: 1,
           viewMode: 1,
           ready() {
-            cropper.getCroppedCanvas().toBlob(
-              result => {
-                if (!result) return;
-                params.next(result);
-              },
-              "image/png",
-              1
+            canvasToBlob(cropper.getCroppedCanvas()).then(blob =>
+              params.next(blob)
             );
           },
           cropend() {
-            cropper.getCroppedCanvas().toBlob(
-              result => {
-                if (!result) return;
-                params.next(result);
-              },
-              "image/png",
-              1
+            canvasToBlob(cropper.getCroppedCanvas()).then(blob =>
+              params.next(blob)
             );
           }
         });
@@ -104,13 +98,8 @@ export default class Crop extends UpploadEffect {
                   selectedAspectRatio.getAttribute("data-name") || "free"
                 ]
               );
-              cropper.getCroppedCanvas().toBlob(
-                result => {
-                  if (!result) return;
-                  params.next(result);
-                },
-                "image/png",
-                1
+              canvasToBlob(cropper.getCroppedCanvas()).then(blob =>
+                params.next(blob)
               );
             }
           });

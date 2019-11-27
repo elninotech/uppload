@@ -137,13 +137,26 @@ export const compressImage = (
       if (!context) return resolve(file);
       context.clearRect(0, 0, canvas.width, canvas.height);
       context.drawImage(image, 0, 0, canvas.width, canvas.height);
-      canvas.toBlob(
-        blob => {
-          if (blob) return resolve(blob);
-          resolve(file);
-        },
-        type,
-        quality
-      );
+      canvasToBlob(canvas, type, quality).then((blob: Blob) => {
+        if (blob) return resolve(blob);
+        resolve(file);
+      });
     };
   });
+
+export const canvasToBlob = (
+  canvas: HTMLCanvasElement,
+  type?: string,
+  quality?: number
+): Promise<Blob> => {
+  return new Promise((resolve, reject) => {
+    canvas.toBlob(
+      blob => {
+        if (blob) resolve(blob);
+        reject(new Error("errors.response_not_ok"));
+      },
+      type,
+      quality
+    );
+  });
+};
