@@ -167,7 +167,11 @@ export default {
       title: "Rotate"
     },
     flip: {
-      title: "Flip"
+      title: "Flip",
+      buttons: {
+        horizontal: "Horizontal",
+        vertical: "Vertical"
+      }
     },
     sharpen: {
       title: "Sharpen"

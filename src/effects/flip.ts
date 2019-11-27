@@ -1,6 +1,7 @@
 import { UpploadEffect } from "..";
 import { HandlersParams } from "../helpers/interfaces";
 import { fitImageToContainer, safeListen } from "../helpers/elements";
+import { translate } from "../helpers/i18n";
 
 export default class Flip extends UpploadEffect {
   name = "flip";
@@ -16,8 +17,12 @@ export default class Flip extends UpploadEffect {
         <img style="width: 20px" alt="" src="${image}">
       </div>
       <div class="settings">
-        <button class="flip-btn-horizontal">Horizontal</button>
-        <button class="flip-btn-vertical">Vertical</button>
+        <button class="flip-btn-horizontal">${translate(
+          "effects.flip.buttons.horizontal"
+        )}</button>
+        <button class="flip-btn-vertical">${translate(
+          "effects.flip.buttons.vertical"
+        )}</button>
       </div>
     `;
   };
