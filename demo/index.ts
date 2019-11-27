@@ -44,7 +44,7 @@ if (header) header.appendChild(button);
 
 const uppload = new Uppload({
   value: "https://via.placeholder.com/150",
-  bind: ".uppload-image",
+  bind: [".uppload-image", "img.icon"],
   call: ".try-uppload",
   lang: en,
   maxSize: [256, 256],
@@ -94,7 +94,9 @@ uppload.use([
 ]);
 
 uppload.use([
-  new Crop(),
+  new Crop({
+    aspectRatio: 1
+  }),
   new Blur(),
   new Brightness(),
   new Contrast(),
