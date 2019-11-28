@@ -119,11 +119,13 @@ Uppload v2 is completely rewritten in TypeScript. You can [view the README of Up
 
 If you need help with using Uppload, check out the [Getting started](https://uppload.js.org/getting-started) guide and the documentation. If you found a bug or have a feature request, [open an issue](https://github.com/elninotech/uppload/issues). If you want to contribute to Uppload, read our [Contributing](https://github.com/elninotech/uppload/blob/typescript/CONTRIBUTING.md) guide.
 
-Your organization can also request a custom build of Uppload with specific features, or get professional support. [Request a quote for free →](https://www.elnino.tech/samenwerken)
+Your organization can also request a custom build or get professional support. [Request a quote for free →](https://www.elnino.tech/samenwerken)
 
 ## 👥 Contributors
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Uppload is built by [El Nińo](https://www.elnino.tech), a digital development studio in Enschede, the Netherlands, that builds custom web and mobile apps, webstores, and more, backed by 14+ years of experience.
+
+We'd like to thank these wonderful people for contributing ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
