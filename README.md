@@ -29,10 +29,10 @@ Uppload is a better JavaScript image uploader. It's highly customizable with 30+
   </tr>
   <tr>
     <td><img alt="Screenshot of Unsplash service" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/unsplash.png"></td>
-    <td><img alt="Screenshot of filter effects" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/filters.png"></td>
+    <td><img alt="Screenshot of filter effects" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/crop.png"></td>
   </tr>
   <tr>
-    <td><img alt="Screenshot of GIPHY service" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/giphy.png"></td>
+    <td><img alt="Screenshot of GIPHY service" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/brightness.png"></td>
     <td><img alt="Screenshot of Instagram effects" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/instagram.png"></td>
   </tr>
 </table>
