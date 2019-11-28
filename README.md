@@ -109,7 +109,7 @@ Your organization can also request a custom build or get professional support. [
 
 ## 👥 Contributors
 
-Uppload is built by [El Nińo](https://www.elnino.tech), a digital development studio in Enschede, the Netherlands, that builds custom web and mobile apps, webstores, and more, backed by 14+ years of experience.
+Uppload is built by [El Niño](https://www.elnino.tech), a digital development studio in Enschede, the Netherlands, that builds custom web and mobile apps, webstores, and more, backed by 14+ years of experience.
 
 We'd like to thank these wonderful people for contributing ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
