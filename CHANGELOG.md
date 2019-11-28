@@ -1,5 +1,36 @@
 # Changelog
 
+<a name="2.0.0-beta.10"></a>
+## 2.0.0-beta.10 (2019-11-28)
+
+### Added
+
+- ✨ Add rotate [[102a89a](https://github.com/elninotech/uppload/commit/102a89afa5a36a57d655833895b2841bb30db89c)]
+- ✨ Add Edge support to toBlob [[2c5eb0d](https://github.com/elninotech/uppload/commit/2c5eb0d79e014c7072e8887063988d7bb496bbdb)]
+- ✨ Add a/an helper [[12c02df](https://github.com/elninotech/uppload/commit/12c02dffbf58c217d9aebf83be7f7e963f04d607)]
+- 👷‍♂️ Add GitHub Actions [[e55c1e5](https://github.com/elninotech/uppload/commit/e55c1e5ad5cc4164606e07b8b06686c8f963fc25)]
+
+### Changed
+
+- ♻️ Add canvasToBlob helper [[00a4e33](https://github.com/elninotech/uppload/commit/00a4e33cf107902ad1b92652653fdaa7df20c101)]
+- 🔧 Add string.includes polyfill [[94b033d](https://github.com/elninotech/uppload/commit/94b033d67e6e57ca2669d5a9bf173a9718de229f)]
+- ♻️ Make i18n slimmer [[047f5a2](https://github.com/elninotech/uppload/commit/047f5a2593b6b34eff4ef008bf22f6e156bc4c08)]
+- ♻️ Use errors object [[9dcd583](https://github.com/elninotech/uppload/commit/9dcd583ff8b14c59ae3c862b0aee5a81c15817c6)]
+- 🔧 Hide camera on mobile [[8bf9c35](https://github.com/elninotech/uppload/commit/8bf9c35382551c8e96f1558d13fc50f8c0b97d81)]
+
+### Fixed
+
+- 💚 Add flip tests [[66a7ee9](https://github.com/elninotech/uppload/commit/66a7ee96d4828dfc42f1bd3116bdf78c03926b71)]
+
+### Miscellaneous
+
+- 📝 Remove roadmap from README [[0ab5473](https://github.com/elninotech/uppload/commit/0ab54739928cf86ea39362b09c3fd242b160d84a)]
+- 🚧 Start writing bundle size [[3d6b138](https://github.com/elninotech/uppload/commit/3d6b138a024093ba923d2abe3f006e2e8c72bd43)]
+- 📝 Update El Niño info in README [[5025270](https://github.com/elninotech/uppload/commit/5025270c7504da28205ba9643b5384449fde7c27)]
+- 🌐 Add flip translations [[a69fd45](https://github.com/elninotech/uppload/commit/a69fd4502ccc4219680fe0ee1db92d3da726a6de)]
+- 📝 Add GitHub Actions badge [[7a8d700](https://github.com/elninotech/uppload/commit/7a8d7004fccabd06759ce8b50e0a6f89df57d96f)]
+
+
 <a name="2.0.0-beta.9"></a>
 ## 2.0.0-beta.9 (2019-11-27)
 
