@@ -70,6 +70,7 @@ export {
 
 // Effects
 import Crop from "./effects/crop";
+import Rotate from "./effects/rotate";
 import Flip from "./effects/flip";
 import Filters from "./effects/filters";
 import Preview from "./effects/preview";
@@ -85,6 +86,7 @@ import Saturate from "./effects/filter/saturate";
 export {
   Brightness,
   Crop,
+  Rotate,
   Flip,
   Sharpen,
   Filters,

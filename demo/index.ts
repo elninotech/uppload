@@ -11,6 +11,7 @@ import {
   Pexels,
   Screenshot,
   Crop,
+  Rotate,
   Filters,
   Flip,
   Blur,
@@ -95,8 +96,9 @@ uppload.use([
 
 uppload.use([
   new Crop({
-    aspectRatio: 1
+    // aspectRatio: 1
   }),
+  new Rotate(),
   new Blur(),
   new Brightness(),
   new Flip(),
