@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "core-js": "^3.4.3",
+    "uppload": "^2.0.0-beta.10",
     "vue": "^2.6.10"
   },
   "devDependencies": {

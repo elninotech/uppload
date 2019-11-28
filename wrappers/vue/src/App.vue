@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <UpploadVue v-model="url">
+    <UpploadVue v-model="url" :uploader="uploader">
       <button>Select an image</button>
     </UpploadVue>
     <img alt="" :src="url">
@@ -19,12 +19,24 @@ export default {
     return {
       url: "https://images.unsplash.com/photo-1559403835-749f5ef10e7f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=400"
     }
+  },
+  methods: {
+    uploader(file, updateProgress) {
+      return new Promise(resolve => {
+        setTimeout(() => resolve(window.URL.createObjectURL(file)), 2750);
+        let progress = 0;
+        const interval = setInterval(() => {
+          if (progress > 99) clearInterval(interval);
+          updateProgress(progress++);
+        }, 25);
+      });
+    }
   }
 }
 </script>
 
 <style>
-#app {
+body {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   text-align: center;
   color: #2c3e50;
