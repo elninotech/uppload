@@ -101,20 +101,6 @@ profilePicture.use([
 
 Uppload v2 is completely rewritten in TypeScript. You can [view the README of Uppload 1.x](https://github.com/elninotech/uppload/tree/master), the current stable version, in the `master` branch, or the [migration guide](https://uppload.js.org/migrating-from-1x).
 
-## 🛣️ Roadmap
-
-- [ ] Effects
-  - [ ] Instagram-like filters
-  - [ ] Rotation, mirror
-- [ ] Documentation
-  - [ ] Docs to show people how to upload to:
-    - [ ] AWS S3 bucket
-    - [ ] Upload to web service like Imgur
-  - [ ] Docs to people how to use Uppload with frameworks:
-    - [ ] Vue.js
-    - [ ] Angular
-    - [ ] Ember.js
-
 ## ℹ️ Support
 
 If you need help with using Uppload, check out the [Getting started](https://uppload.js.org/getting-started) guide and the documentation. If you found a bug or have a feature request, [open an issue](https://github.com/elninotech/uppload/issues). If you want to contribute to Uppload, read our [Contributing](https://github.com/elninotech/uppload/blob/typescript/CONTRIBUTING.md) guide.
