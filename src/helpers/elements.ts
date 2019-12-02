@@ -1,7 +1,4 @@
-import { HandlersParams } from "./interfaces";
-import { UpploadSettings } from "../uppload";
-
-export type Elements = string | string[] | Element | Element[];
+import { HandlersParams, Elements, IUpploadSettings } from "./interfaces";
 
 /**
  * Gets all the DOM elements matching a selector
@@ -108,7 +105,7 @@ export const fitImageToContainer = (
  */
 export const compressImage = (
   file: Blob,
-  settings: UpploadSettings
+  settings: IUpploadSettings
 ): Promise<Blob> =>
   new Promise(resolve => {
     const imageURL = URL.createObjectURL(file);

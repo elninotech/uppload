@@ -1,15 +1,15 @@
 import { UpploadService } from "./service";
 import { UpploadEffect } from "./effect";
 import { setI18N, translate } from "./helpers/i18n";
-import {
-  Elements,
-  getElements,
-  safeListen,
-  compressImage
-} from "./helpers/elements";
+import { getElements, safeListen, compressImage } from "./helpers/elements";
 import { colorSVG } from "./helpers/assets";
 import mitt from "mitt";
-import { Uploader, MultipleUploader } from "./helpers/interfaces";
+import {
+  Uploader,
+  MultipleUploader,
+  IUppload,
+  IUpploadSettings
+} from "./helpers/interfaces";
 
 let lang: { [index: string]: any } | undefined = undefined;
 class DefaultService extends UpploadService {
@@ -29,35 +29,17 @@ class UploadingService extends UpploadService {
   </div>`;
 }
 
-export interface UpploadSettings {
-  value?: string;
-  bind?: Elements;
-  call?: Elements;
-  defaultService?: string;
-  lang?: { [index: string]: any };
-  uploader?: Uploader;
-  inline?: boolean;
-  customClass?: string;
-  multiple?: boolean;
-  compression?: number;
-  compressionMime?: string;
-  maxWidth?: number;
-  maxHeight?: number;
-  maxSize?: [number, number];
-  compressor?: (file: Blob) => Promise<Blob>;
-}
-
 /**
  * Uppload image uploading widget
  */
-export class Uppload {
+export class Uppload implements IUppload {
   services: UpploadService[] = [new DefaultService(), new UploadingService()];
   effects: UpploadEffect[] = [];
   isOpen = false;
   error?: string;
   activeService = "default";
   activeEffect = "";
-  settings: UpploadSettings;
+  settings: IUpploadSettings;
   container: HTMLDivElement;
   file: Blob | undefined = undefined;
   lang: { [index: string]: any } = {};
@@ -70,7 +52,7 @@ export class Uppload {
    * Create a new Uppload instance
    * @param settings - Uppload instance settings
    */
-  constructor(settings?: UpploadSettings) {
+  constructor(settings?: IUpploadSettings) {
     this.settings = settings || {};
     this.updateSettings(this.settings);
     const div = document.createElement("div");
@@ -88,7 +70,7 @@ export class Uppload {
    * Update widget settings such as i18n
    * @param settings - Uppload settings object
    */
-  updateSettings(settings: UpploadSettings) {
+  updateSettings(settings: IUpploadSettings) {
     this.emitter.emit("settingsUpdated", settings);
     if (settings.lang) setI18N(settings.lang);
     if (settings.defaultService) this.activeService = settings.defaultService;
