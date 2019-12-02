@@ -55,3 +55,14 @@ uppload.upload(file)
     console.error("ERR", error);
   });
 ```
+
+## Changing settings
+
+If you've already initialized the plugin using `new Uppload()`, you can update its settings (such as language) using the following:
+
+```ts
+uppload.updateSettings({
+  lang: nl
+  uploader: aDifferentUploader
+});
+```
