@@ -29,4 +29,4 @@ Click on the information icon (an "i" or *lock* icon on the top left of your web
 
 If you're not using a modern web browser like Chrome, Firefox, Safari, Opera, or Edge, you should download the most recent version of any of those browser. If you're already using one of them, update them by going to your browser settings.
 
-![Screenshot of the Screenshot service](/assets/screenshots/screenshot.png)
+![Camera of the Camera service](/assets/screenshots/camera.png)
