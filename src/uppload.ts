@@ -72,24 +72,33 @@ export class Uppload {
    */
   constructor(settings?: UpploadSettings) {
     this.settings = settings || {};
-    lang = this.settings.lang;
-    setI18N(this.settings.lang);
-    if (this.settings.defaultService)
-      this.activeService = this.settings.defaultService;
-    if (this.settings.lang) this.lang = this.settings.lang;
-    if (this.settings.uploader) this.uploader = this.settings.uploader;
-    this.inline = !!this.settings.inline;
+    this.updateSettings(this.settings);
     const div = document.createElement("div");
     this.renderContainer();
     div.classList.add("uppload-container");
-    if (this.settings.customClass) div.classList.add(this.settings.customClass);
-    if (this.inline) div.classList.add("uppload-inline");
     const body = document.body;
     if (body) {
       body.appendChild(div);
     }
     this.container = div;
     requestAnimationFrame(() => this.update());
+  }
+
+  /**
+   * Update widget settings such as i18n
+   * @param settings - Uppload settings object
+   */
+  updateSettings(settings: UpploadSettings) {
+    this.emitter.emit("settingsUpdated", settings);
+    if (settings.lang) setI18N(settings.lang);
+    if (settings.defaultService) this.activeService = settings.defaultService;
+    if (settings.lang) this.lang = settings.lang;
+    if (settings.uploader) this.uploader = settings.uploader;
+    this.inline = !!settings.inline;
+    this.update();
+    if (this.settings.customClass)
+      this.container.classList.add(this.settings.customClass);
+    if (this.inline) this.container.classList.add("uppload-inline");
   }
 
   private ready() {
