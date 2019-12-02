@@ -1,11 +1,11 @@
-import { UpploadEffect } from "..";
-import { HandlersParams } from "../helpers/interfaces";
+import { UpploadEffect } from "../..";
+import { HandlersParams } from "../../helpers/interfaces";
 import {
   fitImageToContainer,
   safeListen,
   canvasToBlob
-} from "../helpers/elements";
-import { translate } from "../helpers/i18n";
+} from "../../helpers/elements";
+import { translate } from "../../helpers/i18n";
 
 export default class Flip extends UpploadEffect {
   name = "flip";

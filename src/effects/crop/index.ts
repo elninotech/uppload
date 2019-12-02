@@ -1,12 +1,12 @@
-import { UpploadEffect } from "../";
+import { UpploadEffect } from "../..";
 import Cropper from "cropperjs";
-import { HandlersParams } from "../helpers/interfaces";
+import { HandlersParams } from "../../helpers/interfaces";
 import {
   safeListen,
   fitImageToContainer,
   canvasToBlob
-} from "../helpers/elements";
-import { translate } from "../helpers/i18n";
+} from "../../helpers/elements";
+import { translate } from "../../helpers/i18n";
 
 type CropNum = 1 | 2 | 3 | undefined;
 

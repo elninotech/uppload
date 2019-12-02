@@ -1,6 +1,6 @@
-import { UpploadEffect } from "../";
-import { fitImageToContainer } from "../helpers/elements";
-import { HandlersParams } from "../helpers/interfaces";
+import { UpploadEffect } from "../..";
+import { fitImageToContainer } from "../../helpers/elements";
+import { HandlersParams } from "../../helpers/interfaces";
 
 export default class Preview extends UpploadEffect {
   name = "preview";
