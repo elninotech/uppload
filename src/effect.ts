@@ -1,4 +1,4 @@
-import { HandlersParams } from "./helpers/interfaces";
+import { HandlersParams, TemplateParams } from "./helpers/interfaces";
 
 export class UpploadEffect {
   type = "effect";
@@ -7,7 +7,7 @@ export class UpploadEffect {
   noRecolor = false;
   color = "#000";
   icon: string = "";
-  template: (file: Blob) => string = () => "";
+  template: (props: TemplateParams) => string = () => "";
   handlers: (params: HandlersParams) => void = () => {};
   supports: () => boolean = () => true;
 }

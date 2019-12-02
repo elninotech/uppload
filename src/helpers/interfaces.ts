@@ -8,6 +8,10 @@ export interface HandlersParams {
   uppload: Uppload;
 }
 
+export interface TemplateParams {
+  file: Blob;
+}
+
 export type Uploader = (
   file: Blob,
   updateProgress?: (progress: number) => void

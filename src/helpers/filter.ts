@@ -4,7 +4,7 @@ import {
   fitImageToContainer,
   canvasToBlob
 } from "../helpers/elements";
-import { HandlersParams } from "./interfaces";
+import { HandlersParams, TemplateParams } from "./interfaces";
 import { translate } from "./i18n";
 
 export default class UpploadFilterBaseClass extends UpploadEffect {
@@ -15,7 +15,7 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
   unit = "px";
   value = 0;
 
-  template = (file: Blob) => {
+  template = ({ file }: TemplateParams) => {
     const image = URL.createObjectURL(file);
     this.originalfileURL = image;
     return `

@@ -1,6 +1,6 @@
 import { UpploadEffect } from "../..";
 import Cropper from "cropperjs";
-import { HandlersParams } from "../../helpers/interfaces";
+import { HandlersParams, TemplateParams } from "../../helpers/interfaces";
 import {
   safeListen,
   fitImageToContainer,
@@ -15,7 +15,7 @@ export default class Rotate extends UpploadEffect {
   max = 360;
   unit = "deg";
 
-  template = (file: Blob) => {
+  template = ({ file }: TemplateParams) => {
     const image = URL.createObjectURL(file);
     return `
       <div class="uppload-rotating-element">

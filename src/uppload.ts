@@ -425,7 +425,7 @@ export class Uppload {
       return `
         <div class="active-effect-container">${
           typeof activeEffect.template === "function"
-            ? activeEffect.template(file)
+            ? activeEffect.template({ file })
             : ""
         }</div>
       `;

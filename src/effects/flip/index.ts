@@ -1,5 +1,5 @@
 import { UpploadEffect } from "../..";
-import { HandlersParams } from "../../helpers/interfaces";
+import { HandlersParams, TemplateParams } from "../../helpers/interfaces";
 import {
   fitImageToContainer,
   safeListen,
@@ -13,7 +13,7 @@ export default class Flip extends UpploadEffect {
   icon = `<svg aria-hidden="true" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M153 0v256h103L153 0zM0 256h103V0L0 256z" fill="#000" fill-rule="nonzero"/></svg>`;
   canvas: HTMLCanvasElement = document.createElement("canvas");
 
-  template = (file: Blob) => {
+  template = ({ file }: TemplateParams) => {
     const image = URL.createObjectURL(file);
     this.originalfileURL = image;
     return `
