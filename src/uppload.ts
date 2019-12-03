@@ -16,7 +16,7 @@ let lang: ILanguage | undefined = undefined;
 class DefaultService extends UpploadService {
   name = "default";
   invisible = true;
-  template = () => `<p>${lang ? lang.services.default.heading : ""}</p>`;
+  template = () => `<p>${translate("services.default.heading")}</p>`;
 }
 
 class UploadingService extends UpploadService {

@@ -55,5 +55,5 @@ export type IMultipleUploader = (
 export type ILanguageHelper = (text: string) => string;
 
 export interface ILanguage {
-  [index: string]: string | ILanguage | ILanguageHelper;
+  [index: string]: string | ILanguage | ILanguageHelper | any;
 }
