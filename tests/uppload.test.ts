@@ -41,7 +41,7 @@ describe("modal functions", () => {
     expect(uppload.modalOpen()).toBeFalsy();
   });
   it("has a default active service", () => {
-    expect(uppload.activeService).toBe("default");
+    expect(uppload.activeService).toBe("instagram");
   });
   it("has a default active effect", () => {
     expect(uppload.activeEffect).toBeFalsy();
