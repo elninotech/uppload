@@ -8,10 +8,11 @@ import {
   IUploader,
   IMultipleUploader,
   IUppload,
-  IUpploadSettings
+  IUpploadSettings,
+  ILanguage
 } from "./helpers/interfaces";
 
-let lang: { [index: string]: any } | undefined = undefined;
+let lang: ILanguage | undefined = undefined;
 class DefaultService extends UpploadService {
   name = "default";
   invisible = true;
@@ -42,7 +43,7 @@ export class Uppload implements IUppload {
   settings: IUpploadSettings;
   container: HTMLDivElement;
   file: Blob | undefined = undefined;
-  lang: { [index: string]: any } = {};
+  lang: ILanguage = {};
   uploader?: IUploader | IMultipleUploader;
   emitter = mitt();
   uploadProgress = 0;

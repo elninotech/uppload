@@ -17,7 +17,7 @@ export interface IUpploadSettings {
   bind?: IElements;
   call?: IElements;
   defaultService?: string;
-  lang?: { [index: string]: any };
+  lang?: ILanguage;
   uploader?: IUploader;
   inline?: boolean;
   customClass?: string;
@@ -51,3 +51,9 @@ export type IMultipleUploader = (
   file: Blob[],
   updateProgress?: (progress: number) => void
 ) => Promise<string>;
+
+export type ILanguageHelper = (text: string) => string;
+
+export interface ILanguage {
+  [index: string]: string | ILanguage | ILanguageHelper;
+}

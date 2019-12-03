@@ -1,24 +1,4 @@
 export default {
-  /**
-   * Helpers can transform a string before returning it
-   * You can define a language-specific helper here
-   */
-  helper: (text: string) => {
-    // Replace all instances of $A$ with "a" or "an"
-    const AAN = "$A$";
-    while (text.includes(AAN)) {
-      const index = text.indexOf(AAN);
-      if (text.length > index + 3) {
-        if (["a", "e", "i", "o", "u"].includes(text[index + 4].toLowerCase())) {
-          text = text.replace(AAN, "an");
-        } else {
-          text = text.replace(AAN, "a");
-        }
-      }
-    }
-    return text;
-  },
-
   uploading: "Uploading...",
   uploaded: "Uploaded",
   fetching: "Getting your image from $1$...",
@@ -197,5 +177,25 @@ export default {
     sepia: {
       title: "Sepia"
     }
+  },
+
+  /**
+   * Helpers can transform a string before returning it
+   * You can define a language-specific helper here
+   */
+  helper: (text: string) => {
+    // Replace all instances of $A$ with "a" or "an"
+    const AAN = "$A$";
+    while (text.includes(AAN)) {
+      const index = text.indexOf(AAN);
+      if (text.length > index + 3) {
+        if (["a", "e", "i", "o", "u"].includes(text[index + 4].toLowerCase())) {
+          text = text.replace(AAN, "an");
+        } else {
+          text = text.replace(AAN, "a");
+        }
+      }
+    }
+    return text;
   }
 };
