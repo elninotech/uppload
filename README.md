@@ -93,7 +93,7 @@ profilePicture.use([
 - [Frontend frameworks](https://uppload.js.org/wrappers)
 - [Image compression](https://uppload.js.org/compression)
 - [Internationalization](https://uppload.js.org/i18n)
-- [Frequently Asked Questions](https://uppload.js.org/faq)
+- [Accessibility](https://uppload.js.org/a11y) · [Compare Uppload](https://uppload.js.org/compare) · [FAQs](https://uppload.js.org/faq)
 
 **[View Uppload docs →](https://uppload.js.org)**
 
