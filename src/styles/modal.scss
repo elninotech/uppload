@@ -45,6 +45,10 @@ $modalForegroundZIndex: 12000;
     width: 25%;
     overflow-x: auto;
 
+    &.uppload-services--single {
+      display: none;
+    }
+
     nav {
       .uppload-service-name {
         position: relative;

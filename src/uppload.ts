@@ -153,6 +153,9 @@ export class Uppload implements IUppload {
   open() {
     if (this.isOpen) return;
     this.isOpen = true;
+    this.file = undefined;
+    this.activeService = "default";
+    this.activeEffect = "";
     const serviceRadio = this.container.querySelector(
       `input[type=radio][value='${this.activeService}']`
     );
@@ -162,6 +165,9 @@ export class Uppload implements IUppload {
       "button"
     ) as HTMLButtonElement | null;
     if (firstButton) firstButton.focus();
+    let firstService = this.settings.defaultService;
+    if (this.services.length === 3) this.navigate(this.services[2].name);
+    if (firstService) this.navigate(firstService);
     this.emitter.emit("open");
   }
 
@@ -234,6 +240,9 @@ export class Uppload implements IUppload {
         effectsNav.style.width = `${size.width - totalButtonsWidth}px`;
       }
     }
+    const sideNavbar = this.container.querySelector("aside");
+    if (sideNavbar && this.services.length === 3)
+      sideNavbar.classList.add("uppload-services--single");
   }
 
   /**
