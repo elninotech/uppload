@@ -1,5 +1,4 @@
-import { IHandlersParams } from "./helpers/interfaces";
-import { Uppload } from "./uppload";
+import { IHandlersParams, IServiceTemplateParams } from "./helpers/interfaces";
 
 export class UpploadService {
   type = "service";
@@ -8,7 +7,7 @@ export class UpploadService {
   noRecolor = false;
   icon: string = "";
   color = "#333";
-  template: (upploadInstance: Uppload) => string = () => "";
+  template: (params: IServiceTemplateParams) => string = () => "";
   handlers: (params: IHandlersParams) => void = () => {};
   stop: () => void = () => {};
   supports: () => boolean = () => true;

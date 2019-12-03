@@ -1,11 +1,10 @@
 import { UpploadService } from "../service";
-import { IHandlersParams } from "../helpers/interfaces";
+import { IHandlersParams, IServiceTemplateParams } from "../helpers/interfaces";
 import {
   safeListen,
   fitImageToContainer,
   canvasToBlob
 } from "../helpers/elements";
-import { translate } from "../helpers/i18n";
 
 export default class Camera extends UpploadService {
   name = "camera";
@@ -24,7 +23,7 @@ export default class Camera extends UpploadService {
       !/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
     );
 
-  template = () => {
+  template = ({ translate }: IServiceTemplateParams) => {
     return `
       <div class="service-main">
         <div class="camera-waiting">${translate(

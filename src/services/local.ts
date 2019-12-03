@@ -1,8 +1,6 @@
 import { UpploadService } from "../service";
-import { IHandlersParams } from "../helpers/interfaces";
-import { translate } from "../helpers/i18n";
+import { IHandlersParams, IServiceTemplateParams } from "../helpers/interfaces";
 import { safeListen } from "../helpers/elements";
-import { Uppload } from "../uppload";
 
 export default class Local extends UpploadService {
   name = "local";
@@ -20,17 +18,17 @@ export default class Local extends UpploadService {
     if (maxFileSize) this.maxFileSize = maxFileSize;
   }
 
-  template = (uppload: Uppload) => {
+  template = (params: IServiceTemplateParams) => {
     return `<div class="drop-area">
-      <div>${translate("services.local.drop")}</div>
-      <em>${translate("services.local.or")}</em>
+      <div>${params.translate("services.local.drop")}</div>
+      <em>${params.translate("services.local.or")}</em>
       <button class="uppload-button uppload-button--cta" style="background: ${
         this.color
-      }">${translate("services.local.button")}</button>
+      }">${params.translate("services.local.button")}</button>
     </div>
       <div class="alternate-input">
         <input type="file" accept="${this.mimeTypes.join()}"${
-      uppload.settings.multiple ? " multiple" : ""
+      params.uppload.settings.multiple ? " multiple" : ""
     }>
       </div>`;
   };
@@ -70,7 +68,10 @@ export default class Local extends UpploadService {
           else
             params.handle(
               new Error(
-                translate("errors.file_too_large", `${this.maxFileSize} bytes`)
+                params.translate(
+                  "errors.file_too_large",
+                  `${this.maxFileSize} bytes`
+                )
               )
             );
       }
@@ -110,7 +111,10 @@ export default class Local extends UpploadService {
             file = null;
             params.handle(
               new Error(
-                translate("errors.file_too_large", `${this.maxFileSize} bytes`)
+                params.translate(
+                  "errors.file_too_large",
+                  `${this.maxFileSize} bytes`
+                )
               )
             );
           }

@@ -1,8 +1,7 @@
 import { UpploadService } from "../service";
-import { IHandlersParams } from "../helpers/interfaces";
+import { IHandlersParams, IServiceTemplateParams } from "../helpers/interfaces";
 import { cachedFetch, imageUrlToBlob } from "../helpers/http";
 import { safeListen } from "../helpers/elements";
-import { translate } from "../helpers/i18n";
 import { colorSVG } from "./assets";
 
 let params: any | undefined = undefined;
@@ -92,7 +91,7 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
     if (loader) loader.style.display = this.loading ? "flex" : "none";
   }
 
-  template = (): string => {
+  template = ({ translate }: IServiceTemplateParams): string => {
     return `
       <div class="search-container"><form class="search-search-form">
       <div class="service-icon">${colorSVG(this.icon, this)}</div>

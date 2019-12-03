@@ -387,12 +387,13 @@ export class Uppload implements IUppload {
             upload: this.upload.bind(this),
             uploadMultiple: this.uploadMultiple.bind(this),
             handle: this.handle.bind(this),
-            uppload: this
+            uppload: this,
+            translate
           });
       });
       return `${
         typeof activeService.template === "function"
-          ? activeService.template(this)
+          ? activeService.template({ translate, uppload: this })
           : ""
       }`;
     }
@@ -414,7 +415,8 @@ export class Uppload implements IUppload {
             upload: this.upload.bind(this),
             uploadMultiple: this.uploadMultiple.bind(this),
             handle: this.handle.bind(this),
-            uppload: this
+            uppload: this,
+            translate
           });
       });
       return `

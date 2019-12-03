@@ -1,6 +1,8 @@
 import { Uppload, UpploadEffect, UpploadService } from "../";
 
 export type IElements = string | string[] | Element | Element[];
+
+export type ITranslator = (key: string, params?: string | string[]) => string;
 export interface IUppload {
   services: UpploadService[];
   effects: UpploadEffect[];
@@ -36,11 +38,16 @@ export interface IHandlersParams {
   next: (file: Blob) => void;
   handle: (error: any) => void;
   uppload: Uppload;
+  translate: ITranslator;
 }
 
 export interface ITemplateParams {
   file: Blob;
-  translate: (key: string, params?: string | string[]) => string;
+  translate: ITranslator;
+}
+export interface IServiceTemplateParams {
+  uppload: Uppload;
+  translate: ITranslator;
 }
 
 export type IUploader = (

@@ -1,6 +1,5 @@
 import { UpploadService } from "../service";
-import { translate } from "../helpers/i18n";
-import { IHandlersParams } from "./interfaces";
+import { IHandlersParams, IServiceTemplateParams } from "./interfaces";
 import { imageUrlToBlob, cachedFetch } from "./http";
 import { colorSVG } from "./assets";
 
@@ -9,7 +8,7 @@ export class MicrolinkBaseClass extends UpploadService {
   exampleURL = "";
   validator: (value: string) => boolean = () => true;
 
-  template = (): string => {
+  template = ({ translate }: IServiceTemplateParams): string => {
     return `
       <div class="microlink-container">
       <form class="microlink-search-form">
