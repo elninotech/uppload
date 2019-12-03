@@ -1,6 +1,6 @@
 import { UpploadService } from "../service";
 import { translate } from "../helpers/i18n";
-import { HandlersParams } from "./interfaces";
+import { IHandlersParams } from "./interfaces";
 import { imageUrlToBlob, cachedFetch } from "./http";
 import { colorSVG } from "./assets";
 
@@ -48,7 +48,7 @@ export class MicrolinkBaseClass extends UpploadService {
   </div>`;
   };
 
-  update(params: HandlersParams) {
+  update(params: IHandlersParams) {
     const loader = params.uppload.container.querySelector(
       ".microlink-loader"
     ) as HTMLDivElement;
@@ -59,7 +59,7 @@ export class MicrolinkBaseClass extends UpploadService {
     if (loader) loader.style.display = this.loading ? "flex" : "none";
   }
 
-  handlers = (params: HandlersParams) => {
+  handlers = (params: IHandlersParams) => {
     const form = params.uppload.container.querySelector(
       `.microlink-search-form`
     ) as HTMLFormElement | null;

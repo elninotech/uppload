@@ -1,4 +1,4 @@
-import { Uploader } from "../helpers/interfaces";
+import { IUploader } from "../helpers/interfaces";
 
 export const xhrUploader = ({
   endpoint,
@@ -14,7 +14,7 @@ export const xhrUploader = ({
   responseKey?: string;
   responseFunction?: (responseText: string) => string;
   settingsFunction?: (xmlHttp: XMLHttpRequest) => void | XMLHttpRequest;
-}): Uploader => {
+}): IUploader => {
   return (file, updateProgress) =>
     new Promise((resolve, reject) => {
       const formData = new FormData();
@@ -53,7 +53,7 @@ export const fetchUploader = ({
   fileKeyName?: string;
   responseKey?: string;
   responseFunction?: (responseText: string) => string;
-}): Uploader => {
+}): IUploader => {
   return file =>
     new Promise((resolve, reject) => {
       const formData = new FormData();

@@ -1,5 +1,5 @@
 import { UpploadService } from "../service";
-import { HandlersParams } from "../helpers/interfaces";
+import { IHandlersParams } from "../helpers/interfaces";
 import { cachedFetch, imageUrlToBlob } from "../helpers/http";
 import { safeListen } from "../helpers/elements";
 import { translate } from "../helpers/i18n";
@@ -68,7 +68,7 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
         .catch(() => {});
   }
 
-  updateImages(params: HandlersParams) {
+  updateImages(params: IHandlersParams) {
     const imagesContainer = params.uppload.container.querySelector(
       ".search-images"
     );
@@ -79,7 +79,7 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
     }
   }
 
-  update(params: HandlersParams) {
+  update(params: IHandlersParams) {
     this.updateImages(params);
     if (params) this.handlers(params);
     const loader = params.uppload.container.querySelector(
@@ -122,7 +122,7 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
     `;
   };
 
-  handlers = (params: HandlersParams) => {
+  handlers = (params: IHandlersParams) => {
     const form = params.uppload.container.querySelector(
       `.search-search-form`
     ) as HTMLFormElement | null;

@@ -1,4 +1,4 @@
-import { HandlersParams, TemplateParams } from "./helpers/interfaces";
+import { IHandlersParams, ITemplateParams } from "./helpers/interfaces";
 
 export class UpploadEffect {
   type = "effect";
@@ -7,7 +7,7 @@ export class UpploadEffect {
   noRecolor = false;
   color = "#000";
   icon: string = "";
-  template: (props: TemplateParams) => string = () => "";
-  handlers: (params: HandlersParams) => void = () => {};
+  template: (props: ITemplateParams) => string = () => "";
+  handlers: (params: IHandlersParams) => void = () => {};
   supports: () => boolean = () => true;
 }

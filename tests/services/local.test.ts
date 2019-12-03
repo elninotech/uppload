@@ -1,7 +1,7 @@
-import { Local, Uppload, HandlersParams } from "../../src";
+import { Local, Uppload, IHandlersParams } from "../../src";
 
 const service = new Local();
-const handlers: HandlersParams = {
+const handlers: IHandlersParams = {
   next: () => {},
   upload: () => new Promise(() => {}),
   uploadMultiple: () => new Promise(() => {}),

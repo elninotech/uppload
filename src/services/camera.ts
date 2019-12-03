@@ -1,5 +1,5 @@
 import { UpploadService } from "../service";
-import { HandlersParams } from "../helpers/interfaces";
+import { IHandlersParams } from "../helpers/interfaces";
 import {
   safeListen,
   fitImageToContainer,
@@ -56,7 +56,7 @@ export default class Camera extends UpploadService {
     if (this.stream) this.stream.getTracks().forEach(track => track.stop());
   };
 
-  update(params: HandlersParams) {
+  update(params: IHandlersParams) {
     const waiting = params.uppload.container.querySelector(
       ".camera-waiting"
     ) as HTMLDivElement | null;
@@ -108,7 +108,7 @@ export default class Camera extends UpploadService {
     }
   }
 
-  handlers = (params: HandlersParams) => {
+  handlers = (params: IHandlersParams) => {
     this.waiting = true;
     this.update(params);
     const constraints: MediaStreamConstraints = {
@@ -126,7 +126,7 @@ export default class Camera extends UpploadService {
       safeListen(switchButton, "click", this.switchCamera.bind(this, params));
   };
 
-  switchCamera(params: HandlersParams) {
+  switchCamera(params: IHandlersParams) {
     this.frontCamera = !this.frontCamera;
     const constraints: MediaStreamConstraints = {
       audio: false,
@@ -139,7 +139,7 @@ export default class Camera extends UpploadService {
     this.startStream(params, constraints);
   }
 
-  clickPhoto(params: HandlersParams) {
+  clickPhoto(params: IHandlersParams) {
     this.canvas = document.createElement("canvas");
     const video = params.uppload.container.querySelector(
       "video.camera-stream"
@@ -163,7 +163,7 @@ export default class Camera extends UpploadService {
     canvasToBlob(this.canvas).then(blob => params.next(blob));
   }
 
-  startStream(params: HandlersParams, constraints: MediaStreamConstraints) {
+  startStream(params: IHandlersParams, constraints: MediaStreamConstraints) {
     this.stop();
     window.navigator.mediaDevices
       .getUserMedia(constraints)

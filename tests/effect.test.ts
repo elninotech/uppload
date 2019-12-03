@@ -1,10 +1,8 @@
 import { UpploadEffect, Uppload } from "../src";
 import {
   Crop,
-  Filters,
   Preview,
   Flip,
-  Sharpen,
   Blur,
   Brightness,
   Contrast,
@@ -18,10 +16,8 @@ import {
 const effect = new UpploadEffect();
 const effects = [
   new Crop(),
-  new Filters(),
   new Preview(),
   new Flip(),
-  new Sharpen(),
   new Blur(),
   new Brightness(),
   new Contrast(),
@@ -35,7 +31,7 @@ const effects = [
 describe("effect template", () => {
   it("is a function", () => expect(typeof effect.template).toBe("function"));
   it("gives a string", () =>
-    expect(typeof effect.template(new Blob())).toBe("string"));
+    expect(typeof effect.template({ file: new Blob() })).toBe("string"));
 });
 
 const uppload = new Uppload();
@@ -49,7 +45,9 @@ for (const currentEffect of effects) {
     it("template is a function", () =>
       expect(typeof currentEffect.template).toBe("function"));
     it("template gives a string", () =>
-      expect(typeof currentEffect.template(new Blob())).toBe("string"));
+      expect(typeof currentEffect.template({ file: new Blob() })).toBe(
+        "string"
+      ));
     it("effect is registered", () =>
       expect(uppload.effects.includes(currentEffect)).toBeTruthy());
   });

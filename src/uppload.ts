@@ -5,8 +5,8 @@ import { getElements, safeListen, compressImage } from "./helpers/elements";
 import { colorSVG } from "./helpers/assets";
 import mitt from "mitt";
 import {
-  Uploader,
-  MultipleUploader,
+  IUploader,
+  IMultipleUploader,
   IUppload,
   IUpploadSettings
 } from "./helpers/interfaces";
@@ -43,7 +43,7 @@ export class Uppload implements IUppload {
   container: HTMLDivElement;
   file: Blob | undefined = undefined;
   lang: { [index: string]: any } = {};
-  uploader?: Uploader | MultipleUploader;
+  uploader?: IUploader | IMultipleUploader;
   emitter = mitt();
   uploadProgress = 0;
   inline = false;
@@ -424,7 +424,7 @@ export class Uppload implements IUppload {
     return new Promise(resolve => {
       this.navigate("uploading");
       if (this.uploader && typeof this.uploader === "function") {
-        (this.uploader as MultipleUploader)(
+        (this.uploader as IMultipleUploader)(
           file,
           this.updateProgress.bind(this)
         )
@@ -482,7 +482,7 @@ export class Uppload implements IUppload {
             return file;
           })
           .then(file =>
-            (this.uploader as Uploader)(file, this.updateProgress.bind(this))
+            (this.uploader as IUploader)(file, this.updateProgress.bind(this))
           )
           .then((url: string) => {
             this.bind(url);

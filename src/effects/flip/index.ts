@@ -1,5 +1,5 @@
 import { UpploadEffect } from "../..";
-import { HandlersParams, TemplateParams } from "../../helpers/interfaces";
+import { IHandlersParams, ITemplateParams } from "../../helpers/interfaces";
 import {
   fitImageToContainer,
   safeListen,
@@ -13,7 +13,7 @@ export default class Flip extends UpploadEffect {
   icon = `<svg aria-hidden="true" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M153 0v256h103L153 0zM0 256h103V0L0 256z" fill="#000" fill-rule="nonzero"/></svg>`;
   canvas: HTMLCanvasElement = document.createElement("canvas");
 
-  template = ({ file }: TemplateParams) => {
+  template = ({ file }: ITemplateParams) => {
     const image = URL.createObjectURL(file);
     this.originalfileURL = image;
     return `
@@ -57,7 +57,7 @@ export default class Flip extends UpploadEffect {
     });
   }
 
-  update(params: HandlersParams, x: boolean, y: boolean) {
+  update(params: IHandlersParams, x: boolean, y: boolean) {
     const img = params.uppload.container.querySelector(
       ".uppload-flip img"
     ) as HTMLImageElement | null;
@@ -70,7 +70,7 @@ export default class Flip extends UpploadEffect {
     });
   }
 
-  handlers = (params: HandlersParams) => {
+  handlers = (params: IHandlersParams) => {
     const img = params.uppload.container.querySelector(
       ".uppload-flip img"
     ) as HTMLImageElement | null;

@@ -1,10 +1,10 @@
-import { HandlersParams, Elements, IUpploadSettings } from "./interfaces";
+import { IHandlersParams, IElements, IUpploadSettings } from "./interfaces";
 
 /**
  * Gets all the DOM elements matching a selector
  * @param query - CSS selector string, HTML element, or an array of them
  */
-export const getElements = (query?: Elements): Element[] => {
+export const getElements = (query?: IElements): Element[] => {
   if (!query) return [];
   const elements: Element[] = [];
   if (typeof query === "string") {
@@ -61,7 +61,7 @@ const safeRequestAnimationFrame = (callback: FrameRequestCallback) => {
  * @param image - An HTML <img> element in the DOM
  */
 export const fitImageToContainer = (
-  params: HandlersParams,
+  params: IHandlersParams,
   image: HTMLImageElement | HTMLVideoElement
 ): Promise<undefined> => {
   return new Promise(resolve => {

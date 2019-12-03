@@ -1,6 +1,6 @@
 import { Uppload, UpploadEffect, UpploadService } from "../";
 
-export type Elements = string | string[] | Element | Element[];
+export type IElements = string | string[] | Element | Element[];
 export interface IUppload {
   services: UpploadService[];
   effects: UpploadEffect[];
@@ -14,11 +14,11 @@ export interface IUppload {
 
 export interface IUpploadSettings {
   value?: string;
-  bind?: Elements;
-  call?: Elements;
+  bind?: IElements;
+  call?: IElements;
   defaultService?: string;
   lang?: { [index: string]: any };
-  uploader?: Uploader;
+  uploader?: IUploader;
   inline?: boolean;
   customClass?: string;
   multiple?: boolean;
@@ -30,7 +30,7 @@ export interface IUpploadSettings {
   compressor?: (file: Blob) => Promise<Blob>;
 }
 
-export interface HandlersParams {
+export interface IHandlersParams {
   upload: (file: Blob) => Promise<string>;
   uploadMultiple: (file: Blob[]) => Promise<string>;
   next: (file: Blob) => void;
@@ -38,16 +38,16 @@ export interface HandlersParams {
   uppload: Uppload;
 }
 
-export interface TemplateParams {
+export interface ITemplateParams {
   file: Blob;
 }
 
-export type Uploader = (
+export type IUploader = (
   file: Blob,
   updateProgress?: (progress: number) => void
 ) => Promise<string>;
 
-export type MultipleUploader = (
+export type IMultipleUploader = (
   file: Blob[],
   updateProgress?: (progress: number) => void
 ) => Promise<string>;

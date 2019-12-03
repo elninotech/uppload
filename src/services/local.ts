@@ -1,5 +1,5 @@
 import { UpploadService } from "../service";
-import { HandlersParams } from "../helpers/interfaces";
+import { IHandlersParams } from "../helpers/interfaces";
 import { translate } from "../helpers/i18n";
 import { safeListen } from "../helpers/elements";
 import { Uppload } from "../uppload";
@@ -30,7 +30,7 @@ export default class Local extends UpploadService {
       </div>`;
   };
 
-  handlers = (params: HandlersParams) => {
+  handlers = (params: IHandlersParams) => {
     const dropArea = params.uppload.container.querySelector(".drop-area");
     if (dropArea) {
       safeListen(dropArea, "drop", event =>
@@ -51,7 +51,7 @@ export default class Local extends UpploadService {
       safeListen(input, "change", event => this.getFile(params, event));
   };
 
-  getFile(params: HandlersParams, event: Event) {
+  getFile(params: IHandlersParams, event: Event) {
     const files = (event.target as HTMLInputElement).files;
     let file: File | null = null;
     if (files) {
@@ -67,25 +67,25 @@ export default class Local extends UpploadService {
     event.preventDefault();
   }
 
-  fileSelect(params: HandlersParams, event: Event) {
+  fileSelect(params: IHandlersParams, event: Event) {
     const input = params.uppload.container.querySelector(
       ".alternate-input input[type=file]"
     ) as HTMLInputElement | null;
     if (input) input.click();
   }
 
-  private dragStop(params: HandlersParams, event: Event) {
+  private dragStop(params: IHandlersParams, event: Event) {
     const dropArea = params.uppload.container.querySelector(".drop-area");
     if (dropArea) dropArea.classList.remove("drop-area-active");
   }
 
-  dragHandler(params: HandlersParams, event: Event) {
+  dragHandler(params: IHandlersParams, event: Event) {
     event.preventDefault();
     const dropArea = params.uppload.container.querySelector(".drop-area");
     if (dropArea) dropArea.classList.add("drop-area-active");
   }
 
-  dropHandler(params: HandlersParams, event: DragEvent) {
+  dropHandler(params: IHandlersParams, event: DragEvent) {
     this.dragStop(params, event);
     let file: File | null = null; // getAsFile() returns File | null
     if (event.dataTransfer && event.dataTransfer.items) {

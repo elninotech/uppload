@@ -4,7 +4,7 @@ import {
   fitImageToContainer,
   canvasToBlob
 } from "../helpers/elements";
-import { HandlersParams, TemplateParams } from "./interfaces";
+import { IHandlersParams, ITemplateParams } from "./interfaces";
 import { translate } from "./i18n";
 
 export default class UpploadFilterBaseClass extends UpploadEffect {
@@ -15,7 +15,7 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
   unit = "px";
   value = 0;
 
-  template = ({ file }: TemplateParams) => {
+  template = ({ file }: ITemplateParams) => {
     const image = URL.createObjectURL(file);
     this.originalfileURL = image;
     return `
@@ -48,7 +48,7 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
     });
   }
 
-  handlers = (params: HandlersParams) => {
+  handlers = (params: IHandlersParams) => {
     const hueElement = params.uppload.container.querySelector(
       ".uppload-hue-image img"
     ) as HTMLImageElement | null;
@@ -62,7 +62,7 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
     }
   };
 
-  update(params: HandlersParams) {
+  update(params: IHandlersParams) {
     let value = 0;
     const range = params.uppload.container.querySelector(
       ".settings input[type='range']"

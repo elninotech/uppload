@@ -1,6 +1,6 @@
 import { UpploadEffect } from "../..";
 import Cropper from "cropperjs";
-import { HandlersParams, TemplateParams } from "../../helpers/interfaces";
+import { IHandlersParams, ITemplateParams } from "../../helpers/interfaces";
 import {
   safeListen,
   fitImageToContainer,
@@ -45,7 +45,7 @@ export default class Crop extends UpploadEffect {
       this.hideAspectRatioSettings = hideAspectRatioSettings;
   }
 
-  template = ({ file }: TemplateParams) => {
+  template = ({ file }: ITemplateParams) => {
     const image = URL.createObjectURL(file);
     return `
       <div class="uppload-cropping-element">
@@ -73,7 +73,7 @@ export default class Crop extends UpploadEffect {
     `;
   };
 
-  handlers = (params: HandlersParams) => {
+  handlers = (params: IHandlersParams) => {
     const cropperElement = params.uppload.container.querySelector(
       ".uppload-cropping-element img"
     ) as HTMLImageElement | null;
