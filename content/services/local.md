@@ -13,8 +13,11 @@ const picture = new Uppload();
 picture.use(new Local());
 ```
 
-In the constructor parameter, you can specify the mime types you want to support. By default, JPG, PNG, and GIF images are allowed, since Uppload is primarily an image uploader (but you can easily extend it to be a general-purpose file uploader).
+In the constructor parameter, you can specify the mime types you want to support and the maximum file size. By default, JPG, PNG, and GIF images are allowed, since Uppload is primarily an image uploader (but you can easily extend it to be a general-purpose file uploader).
 
 ```ts
-const localServiceWithVideo = new Local(["image/png", "image/jpeg", "video/mp4"]);
+const localServiceWithVideo = new Local({
+  maxFileSize: 25000,
+  mimeTypes: ["image/png", "image/jpeg", "video/mp4"]
+});
 ```
