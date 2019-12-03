@@ -169,6 +169,9 @@ export class Uppload implements IUppload {
     let firstService = this.settings.defaultService;
     if (this.services.length === 3) this.navigate(this.services[2].name);
     if (firstService) this.navigate(firstService);
+    safeListen(document.body, "keyup", e => {
+      if ((e as KeyboardEvent).key === "Escape" && this.open) this.close();
+    });
     this.emitter.emit("open");
   }
 
