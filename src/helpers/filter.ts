@@ -5,7 +5,6 @@ import {
   canvasToBlob
 } from "../helpers/elements";
 import { IHandlersParams, ITemplateParams } from "./interfaces";
-import { translate } from "./i18n";
 
 export default class UpploadFilterBaseClass extends UpploadEffect {
   canvas: HTMLCanvasElement = document.createElement("canvas");
@@ -15,7 +14,7 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
   unit = "px";
   value = 0;
 
-  template = ({ file }: ITemplateParams) => {
+  template = ({ file, translate }: ITemplateParams) => {
     const image = URL.createObjectURL(file);
     this.originalfileURL = image;
     return `

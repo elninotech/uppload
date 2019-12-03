@@ -1,6 +1,6 @@
 import { UpploadService } from "../service";
 import { IHandlersParams } from "../helpers/interfaces";
-import { translate, flattenObject } from "../helpers/i18n";
+import { translate } from "../helpers/i18n";
 import { safeListen } from "../helpers/elements";
 import { Uppload } from "../uppload";
 

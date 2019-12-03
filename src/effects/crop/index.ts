@@ -6,7 +6,6 @@ import {
   fitImageToContainer,
   canvasToBlob
 } from "../../helpers/elements";
-import { translate } from "../../helpers/i18n";
 
 type CropNum = 1 | 2 | 3 | undefined;
 
@@ -45,7 +44,7 @@ export default class Crop extends UpploadEffect {
       this.hideAspectRatioSettings = hideAspectRatioSettings;
   }
 
-  template = ({ file }: ITemplateParams) => {
+  template = ({ file, translate }: ITemplateParams) => {
     const image = URL.createObjectURL(file);
     return `
       <div class="uppload-cropping-element">

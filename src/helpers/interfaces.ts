@@ -40,6 +40,7 @@ export interface IHandlersParams {
 
 export interface ITemplateParams {
   file: Blob;
+  translate: (key: string, params?: string | string[]) => string;
 }
 
 export type IUploader = (

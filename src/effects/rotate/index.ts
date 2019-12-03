@@ -6,7 +6,6 @@ import {
   fitImageToContainer,
   canvasToBlob
 } from "../../helpers/elements";
-import { translate } from "../../helpers/i18n";
 
 export default class Rotate extends UpploadEffect {
   name = "rotate";
@@ -15,7 +14,7 @@ export default class Rotate extends UpploadEffect {
   max = 360;
   unit = "deg";
 
-  template = ({ file }: ITemplateParams) => {
+  template = ({ file, translate }: ITemplateParams) => {
     const image = URL.createObjectURL(file);
     return `
       <div class="uppload-rotating-element">

@@ -420,7 +420,7 @@ export class Uppload implements IUppload {
       return `
         <div class="active-effect-container">${
           typeof activeEffect.template === "function"
-            ? activeEffect.template({ file })
+            ? activeEffect.template({ file, translate })
             : ""
         }</div>
       `;
