@@ -1,5 +1,52 @@
 # Changelog
 
+<a name="2.0.0-beta.11"></a>
+## 2.0.0-beta.11 (2019-12-03)
+
+### Added
+
+- ✨ Add escape key to close [[79925aa](https://github.com/elninotech/uppload/commit/79925aa5481dc96cbe9d170e5bd041fc2f1f918b)]
+- ✨ Add ILanguage interface [[7f73ad7](https://github.com/elninotech/uppload/commit/7f73ad750ebc7b79c57b182634aa878a1fa3154e)]
+- ✨ Skip home/nav if single service [[c61fc5b](https://github.com/elninotech/uppload/commit/c61fc5b8e2f8d4da9ccad6b3996df9d87ef2f149)]
+- ✨ Support for updating settings [[a9085a5](https://github.com/elninotech/uppload/commit/a9085a5a3522f4327122bf1dc91ca3e8adef8a3c)]
+- ✨ Add cropper options ([#17](https://github.com/elninotech/uppload/issues/17)) [[c8eae93](https://github.com/elninotech/uppload/commit/c8eae93ac201472a9d835fa0fd8fce1be872fe1e)]
+- ✨ Add uploader [[5608b6e](https://github.com/elninotech/uppload/commit/5608b6ee1ada8313f020fef7201a64566eab9eff)]
+- 🎉 Initialize Vue CLI project [[4c51d70](https://github.com/elninotech/uppload/commit/4c51d70d4b5f4ff8a735712c65cd365f60fff91c)]
+
+### Changed
+
+- 💄 Add hover color for home button [[b36faba](https://github.com/elninotech/uppload/commit/b36faba4f10319f7219933f17bd2c57a21f99830)]
+- ♻️ Rename interfaces with &quot;I&quot; suffix [[4663feb](https://github.com/elninotech/uppload/commit/4663febe806aa09d07d12e6a0e068b1696e7c7ff)]
+- ♻️ Move interfaces from class file [[9aa5035](https://github.com/elninotech/uppload/commit/9aa50356f5ca071a587d3dc59ebddd7af1a842b7)]
+- ♻️ Use object arg for effect template [[ada622d](https://github.com/elninotech/uppload/commit/ada622debd25068f57bb2a81729be27735c3b4b3)]
+- 🚚 Move effects to their own dirs [[286267f](https://github.com/elninotech/uppload/commit/286267f91e88e3b0463281206081bc9b63182ac2)]
+- 🍱 Update screenshots (transparency) [[d3c091d](https://github.com/elninotech/uppload/commit/d3c091d1962cd04583929092d37484cb3a082e0f)]
+- 🍱 Update screenshots [[a6d04b6](https://github.com/elninotech/uppload/commit/a6d04b63f62f9267bb3af4dbf7ff41f45004258d)]
+- 🚚 Move wrapper to examples [[7b1fc94](https://github.com/elninotech/uppload/commit/7b1fc944144a34a61046a25e102386d2f396c22a)]
+
+### Removed
+
+- 🔥 Remove sharpen effect [[3eecd2e](https://github.com/elninotech/uppload/commit/3eecd2e1ff1330baaddddaba7a8c0617c47c6b4c)]
+
+### Fixed
+
+- 💚 Fix default service tests [[9bb54d3](https://github.com/elninotech/uppload/commit/9bb54d36e5f9bedb7d4ee926c049cc6aa504bb91)]
+- 🐛 Fix translation of default heading [[7634eeb](https://github.com/elninotech/uppload/commit/7634eeb3d5238be5b94027897e794ed0ab6e1559)]
+- 🐛 Fix camera service supports [[73d0c0e](https://github.com/elninotech/uppload/commit/73d0c0e223098e01bd2a2569eba7b66aee52f1c1)]
+- 🐛 Fix El Niño accent character [[58e25b7](https://github.com/elninotech/uppload/commit/58e25b70d4d7fcf249e879530f83b1f4b9594a36)]
+
+### Miscellaneous
+
+- 📝 Add a11y docs [[ebb0033](https://github.com/elninotech/uppload/commit/ebb0033f4fa4d963bd67ae524a52c71c80762ecb)]
+- 🌐 Add two more i18n keys [[3676895](https://github.com/elninotech/uppload/commit/367689521ff70c5d32ee1eaeb115871fa9f1790f)]
+- 📝 Add change settings API [[d3ae830](https://github.com/elninotech/uppload/commit/d3ae830bb032cb0bca57af6cfca400f2fb25f87a)]
+- 📝 Add docs about changing language [[8e83287](https://github.com/elninotech/uppload/commit/8e8328784f0b151769173373513d1c099ab0a3d8)]
+- 📝 Update camera service icon [[ecaf368](https://github.com/elninotech/uppload/commit/ecaf368e4341eef51666bfa710d5c14b7eee679a)]
+- 📝 Add Vue.js wrapper [[a59a686](https://github.com/elninotech/uppload/commit/a59a68610886ea485760fd7d1ee5ec2b6f5c0bdb)]
+-  Merge pull request [#60](https://github.com/elninotech/uppload/issues/60) from elninotech/vue [[395677a](https://github.com/elninotech/uppload/commit/395677a6ad05e4d2e1a128d108ab328f65820dc2)]
+- 🚧 Add barebones component [[c9f99db](https://github.com/elninotech/uppload/commit/c9f99db88ff6cc5548f95f28e944600894cc656b)]
+
+
 <a name="2.0.0-beta.10"></a>
 ## 2.0.0-beta.10 (2019-11-28)
 
