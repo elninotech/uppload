@@ -98,15 +98,16 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
       <div class="service-icon">${colorSVG(this.icon, this)}</div>
       <label><span>${translate(`services.${this.name}.label`)}</span>
         <input class="search-search-input" type="search" placeholder="${translate(
-          `services.${this.name}.placeholder`
+          `services.search.placeholder`
         )}" required></label>
         <button type="submit" style="background: ${this.color}">${translate(
-      `services.${this.name}.button`
+      `services.search.button`,
+      translate(`services.${this.name}.title`)
     )}</button>
       </form>
       <div class="search-images"></div>
       <p class="search-footer">${translate(
-        "imagesPoweredBy",
+        "services.search.imagesPoweredBy",
         `<a href="${this.poweredByUrl}" target="_blank">${translate(
           `services.${this.name}.title`
         )}</a>`
@@ -158,7 +159,7 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
         if (url)
           imageUrlToBlob(url)
             .then(blob => params.next(blob))
-            .catch(error => params.handle(error))
+            .catch(error => params.handle("errors.response_not_ok"))
             .then(() => (this.loading = false));
       });
     });

@@ -20,8 +20,8 @@ export default {
   },
 
   uploading: "Uploading...",
+  uploaded: "Uploaded",
   fetching: "Getting your image from $1$...",
-  imagesPoweredBy: "Images powered by $1$",
   poweredBy: "Powered by $1$",
   needHelp: "Need help?",
 
@@ -36,7 +36,10 @@ export default {
     unable_to_search: "We got an error in searching",
     invalid_service_url: "This is not a $1$ URL",
     invalid_url: "This URL is seems to be invalid",
-    upload_aborted: "Upload cancelled"
+    upload_aborted: "Your upload was cancelled",
+    upload_error: "We got an error in uploading this file",
+    file_type_not_allowed: "This file type is not allowed",
+    file_too_large: "Your file should be smaller than $1$"
   },
 
   services: {
@@ -123,29 +126,23 @@ export default {
       placeholder: "Enter a webpage URL",
       loading: "Taking a screenshot..."
     },
+    search: {
+      button: "Search on $1$",
+      label: "Find an image",
+      placeholder: "Search for something",
+      imagesPoweredBy: "Images powered by $1$"
+    },
     giphy: {
-      title: "GIPHY",
-      button: "Search on GIPHY",
-      label: "Find a GIF",
-      placeholder: "Search for something"
+      title: "GIPHY"
     },
     unsplash: {
-      title: "Unsplash",
-      button: "Search on Unsplash",
-      label: "Find an image",
-      placeholder: "Search for something"
+      title: "Unsplash"
     },
     pixabay: {
-      title: "Pixabay",
-      button: "Search on Pixabay",
-      label: "Find an image",
-      placeholder: "Search for something"
+      title: "Pixabay"
     },
     pexels: {
-      title: "Pexels",
-      button: "Search on Pexels",
-      label: "Find an image",
-      placeholder: "Search for something"
+      title: "Pexels"
     }
   },
 
