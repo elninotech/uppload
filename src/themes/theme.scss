@@ -91,6 +91,10 @@
     .uppload-services button {
       background-color: $HomeNavItemBackground;
       color: $HomeNavItemForeground;
+      &:hover {
+        background-color: $HomeNavItemHoverBackground;
+        color: $HomeNavItemHoverForeground;
+      }
     }
   }
 
