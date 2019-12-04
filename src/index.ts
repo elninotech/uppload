@@ -15,7 +15,7 @@ export * from "./helpers/http";
 export * from "./helpers/i18n";
 
 // Language packs
-export { en } from "./i18n";
+export * from "./i18n";
 
 // Uploaders
 export * from "./uploaders/xhr";

@@ -95,7 +95,8 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
     return `
       <div class="search-container"><form class="search-search-form">
       <div class="service-icon">${colorSVG(this.icon, this)}</div>
-      <label><span>${translate(`services.${this.name}.label`)}</span>
+      <label><span>${translate(`services.${this.name}.label`) ||
+        translate("services.search.label")}</span>
         <input class="search-search-input" type="search" placeholder="${translate(
           `services.search.placeholder`
         )}" required></label>
