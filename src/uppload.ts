@@ -471,7 +471,7 @@ export class Uppload implements IUppload {
       );
       if (activeRadio) activeRadio.setAttribute("checked", "checked");
     } else {
-      // Upload directly
+      this.upload(file);
     }
   }
 
