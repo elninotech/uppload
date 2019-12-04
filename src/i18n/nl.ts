@@ -1,8 +1,8 @@
 export default {
   uploading: "Uploaden...",
   uploaded: "Geupload",
-  fetching: "Je afbeelding ophalen van $1$...",
-  poweredBy: "Aangedreven door $1$",
+  fetching: "Afbeelding ophalen van $1$...",
+  poweredBy: "Mede mogelijk gemaakt door $1$",
   needHelp: "Hulp nodig?",
   units: {
     px: "px",
@@ -17,7 +17,7 @@ export default {
     invalid_url: "Deze URL is ongeldig",
     upload_aborted: "Je upload is geannuleerd",
     upload_error: "Er is een fout opgetreden bij het uploaden van dit bestand",
-    file_type_not_allowed: "Dit bestands type wordt niet ondersteund",
+    file_type_not_allowed: "Dit bestandstype wordt niet ondersteund",
     file_too_large: "Het bestand moet kleiner zijn dan $1$"
   },
   services: {
@@ -28,12 +28,12 @@ export default {
       title: "Kies een bestand",
       button: "Selecteer een bestand",
       or: "of",
-      drop: "Hier slepen en neerzetten om te uploaden"
+      drop: "Sleep hier een bestand om te uploaden"
     },
     camera: {
       title: "Camera",
       button: "Webcam foto",
-      switch: "Schakel camera",
+      switch: "Switch camera",
       waiting: "Wachten op camera permissie...",
       unableToRead:
         "We kunnen de video van uw camera niet lezen. Dit kan zijn omdat u niet de vereiste toestemming hebt verleend of omdat uw apparaat geen cameratoegang ondersteunt."
@@ -46,7 +46,7 @@ export default {
     },
     url: {
       title: "Directe URL",
-      label: "Afbeelding URL",
+      label: "Afbeeldings-URL",
       placeholder: "Voer een afbeeldings-URL in"
     },
     instagram: {
@@ -101,14 +101,14 @@ export default {
       title: "Screenshot",
       button: "Screenshot maken",
       label: "URL van webpagina",
-      placeholder: "Voer een webpagina-URL in",
+      placeholder: "Voer een URL in",
       loading: "Een screenshot maken..."
     },
     search: {
       button: "Zoeken op $1$",
       label: "Zoek een afbeelding",
       placeholder: "Zoek naar iets",
-      imagesPoweredBy: "Afbeeldingen aangedreven door $1$"
+      imagesPoweredBy: "Afbeeldingen mogelijk gemaakt door $1$"
     },
     giphy: {
       title: "GIPHY"
