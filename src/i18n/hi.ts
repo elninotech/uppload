@@ -107,7 +107,7 @@ export default {
       button: "$1$ पर ढूंढें",
       label: "तस्वीर ढूंढें",
       placeholder: "कुछ ढूंढें",
-      तस्वीरsPoweredBy: "तस्वीरें $1$ द्वारा संचालित"
+      imagesPoweredBy: "तस्वीरें $1$ द्वारा संचालित"
     },
     giphy: {
       title: "गिफी"
