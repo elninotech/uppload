@@ -14,8 +14,8 @@ export default {
   errors: {
     response_not_ok: "We got an error in fetching this file",
     unable_to_search: "We got an error in searching",
-    invalid_service_url: "This is not a $1$ URL",
-    invalid_url: "This URL is seems to be invalid",
+    invalid_service_url: "This is not $A$ $1$ URL",
+    invalid_url: "This URL seems to be invalid",
     upload_aborted: "Your upload was cancelled",
     upload_error: "We got an error in uploading this file",
     file_type_not_allowed: "This file type is not allowed",
