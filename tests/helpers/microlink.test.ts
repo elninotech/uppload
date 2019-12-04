@@ -17,6 +17,7 @@ import {
   Tumblr,
   WeHeartIt
 } from "../../src";
+import { serviceTemplateParams } from "../mocks";
 
 const services = [
   new NineGag(),
@@ -49,9 +50,11 @@ describe("validator", () => {
 describe("template", () => {
   it("is a function", () => expect(typeof microlink.template).toBe("function"));
   it("returns a string", () =>
-    expect(typeof microlink.template()).toBe("string"));
-  it("has a form", () => expect(microlink.template()).toContain("<form"));
-  it("has an input", () => expect(microlink.template()).toContain("<input"));
+    expect(typeof microlink.template(serviceTemplateParams)).toBe("string"));
+  it("has a form", () =>
+    expect(microlink.template(serviceTemplateParams)).toContain("<form"));
+  it("has an input", () =>
+    expect(microlink.template(serviceTemplateParams)).toContain("<input"));
 });
 
 for (const currentService of services) {

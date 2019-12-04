@@ -12,6 +12,7 @@ import {
   Saturate,
   Sepia
 } from "../src";
+import { effectTemplateParams } from "./mocks";
 
 const effect = new UpploadEffect();
 const effects = [
@@ -31,7 +32,7 @@ const effects = [
 describe("effect template", () => {
   it("is a function", () => expect(typeof effect.template).toBe("function"));
   it("gives a string", () =>
-    expect(typeof effect.template({ file: new Blob() })).toBe("string"));
+    expect(typeof effect.template(effectTemplateParams)).toBe("string"));
 });
 
 const uppload = new Uppload();
@@ -45,7 +46,7 @@ for (const currentEffect of effects) {
     it("template is a function", () =>
       expect(typeof currentEffect.template).toBe("function"));
     it("template gives a string", () =>
-      expect(typeof currentEffect.template({ file: new Blob() })).toBe(
+      expect(typeof currentEffect.template(effectTemplateParams)).toBe(
         "string"
       ));
     it("effect is registered", () =>

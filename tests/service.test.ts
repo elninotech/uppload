@@ -17,6 +17,7 @@ import {
   Twitter,
   URL
 } from "../src";
+import { serviceTemplateParams } from "./mocks";
 
 const service = new UpploadService();
 const services = [
@@ -41,7 +42,7 @@ const services = [
 describe("service template", () => {
   it("is a function", () => expect(typeof service.template).toBe("function"));
   it("gives a string", () =>
-    expect(typeof service.template(new Uppload())).toBe("string"));
+    expect(typeof service.template(serviceTemplateParams)).toBe("string"));
 });
 
 const uppload = new Uppload();
@@ -52,7 +53,9 @@ for (const currentService of services) {
     it("template is a function", () =>
       expect(typeof currentService.template).toBe("function"));
     it("template gives a string", () =>
-      expect(typeof currentService.template(new Uppload())).toBe("string"));
+      expect(typeof currentService.template(serviceTemplateParams)).toBe(
+        "string"
+      ));
     it("service is registered", () =>
       expect(
         // The camera service would not be registered because no Media Devices API
