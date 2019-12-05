@@ -1,5 +1,5 @@
 import { flattenObject, setI18N, translate } from "../../src/helpers/i18n";
-import { en, nl, hi } from "../../src";
+import { en, nl, hi, es, fr, it as IT, ru, tr } from "../../src";
 
 test("flattens an object", () => {
   const nonFlatObject = {
@@ -128,21 +128,12 @@ const translationKeys: string[] = [
   "effects.sepia.title"
 ];
 
-describe("english translation", () => {
-  const english: { [index: string]: any } = flattenObject(en);
-  translationKeys.forEach(key => {
-    it(`has translation for ${key}`, () => expect(english[key]).toBeDefined());
-  });
-});
-describe("dutch translation", () => {
-  const dutch: { [index: string]: any } = flattenObject(nl);
-  translationKeys.forEach(key => {
-    it(`has translation for ${key}`, () => expect(dutch[key]).toBeDefined());
-  });
-});
-describe("hindi translation", () => {
-  const hindi: { [index: string]: any } = flattenObject(hi);
-  translationKeys.forEach(key => {
-    it(`has translation for ${key}`, () => expect(hindi[key]).toBeDefined());
+[en, nl, hi, es, fr, IT, ru, tr].forEach((lang, i) => {
+  describe(`translation - lang ${i}`, () => {
+    const language: { [index: string]: any } = flattenObject(lang);
+    translationKeys.forEach(key => {
+      it(`has translation for ${key}`, () =>
+        expect(language[key]).toBeDefined());
+    });
   });
 });
