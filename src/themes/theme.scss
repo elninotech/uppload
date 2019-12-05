@@ -19,15 +19,19 @@
       &:checked + label {
         background-color: $sidebarNavActiveBackground;
         color: $sidebarNavActiveForeground;
-        &:hover {
+        &:hover,
+        &:focus {
           background-color: $sidebarNavActiveBackground;
+          outline: none;
         }
       }
       &:focus + label {
         box-shadow: $sidebarNavFocusBoxShadow;
       }
-      + label:hover {
+      + label:hover,
+      + label:focus {
         background-color: darken($sidebarNavBackground, 5);
+        outline: none;
       }
     }
   }
@@ -51,14 +55,23 @@
     button {
       background-color: $effectsButtonBackground;
       color: $effectsButtonForeground;
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: lighten($effectsButtonBackground, 5);
+        outline: none;
+      }
+      &::-moz-focus-inner {
+        border: 0;
       }
       &.effects-continue--upload {
         background-color: $effectsCTAButtonBackground;
         color: $effectsCTAButtonForeground;
-        &:hover {
+        &:hover,
+        &:focus {
           background-color: darken($effectsCTAButtonBackground, 10);
+        }
+        &::-moz-focus-inner {
+          border: 0;
         }
       }
     }
@@ -77,8 +90,10 @@
       box-shadow: $sidebarNavFocusBoxShadow;
     }
 
-    label:hover {
+    label:hover,
+    label:focus {
       background-color: darken($effectsNavBackground, 5);
+      outline: none;
     }
 
     input[type="radio"]:checked + label {
@@ -91,9 +106,13 @@
     .uppload-services button {
       background-color: $HomeNavItemBackground;
       color: $HomeNavItemForeground;
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: $HomeNavItemHoverBackground;
         color: $HomeNavItemHoverForeground;
+      }
+      &::-moz-focus-inner {
+        border: 0;
       }
     }
   }
