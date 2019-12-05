@@ -41,7 +41,7 @@ export default {
     microlink: {
       button: "Importeer van $1$",
       label: "$1$ $2$ URL",
-      placeholder: "Voer een $1-$2-URL in", // Voer een Instagram-post-URL in
+      placeholder: "Voer een $1$-$2$-URL in",
       type: "post"
     },
     url: {
