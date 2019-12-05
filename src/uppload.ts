@@ -3,7 +3,7 @@ import { UpploadEffect } from "./effect";
 import { setI18N, translate } from "./helpers/i18n";
 import { getElements, safeListen, compressImage } from "./helpers/elements";
 import { colorSVG } from "./helpers/assets";
-import createFocusTrap, { FocusTrap } from "focus-trap";
+import createFocusTrap, { FocusTrap, Options } from "focus-trap";
 import mitt from "mitt";
 import {
   IUploader,
@@ -66,7 +66,9 @@ export class Uppload implements IUppload {
       body.appendChild(div);
     }
     this.container = div;
-    this.focusTrap = createFocusTrap(this.container);
+    this.focusTrap = createFocusTrap(this.container, {
+      initialFocus: () => this.container.querySelector("button")
+    } as Options);
     requestAnimationFrame(() => this.update());
   }
 
@@ -165,10 +167,6 @@ export class Uppload implements IUppload {
     );
     if (serviceRadio) serviceRadio.setAttribute("checked", "checked");
     this.update();
-    const firstButton = this.container.querySelector(
-      "button"
-    ) as HTMLButtonElement | null;
-    if (firstButton) firstButton.focus();
     let firstService = this.settings.defaultService;
     if (this.services.length === 3) this.navigate(this.services[2].name);
     if (firstService) this.navigate(firstService);
