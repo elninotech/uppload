@@ -474,7 +474,7 @@ export class Uppload implements IUppload {
       );
       if (activeRadio) activeRadio.setAttribute("checked", "checked");
     } else {
-      this.upload(file);
+      this.upload(file, true);
     }
   }
 
@@ -489,7 +489,7 @@ export class Uppload implements IUppload {
    * @param file - A Blob object containing the file to upload
    * @returns The file URL
    */
-  upload(file: Blob): Promise<string> {
+  upload(file: Blob, skipNavigation = false): Promise<string> {
     this.emitter.emit("before-upload");
     return new Promise((resolve, reject) => {
       this.navigate("uploading");
@@ -504,7 +504,7 @@ export class Uppload implements IUppload {
           )
           .then((url: string) => {
             this.bind(url);
-            this.navigate("default");
+            if (!skipNavigation) this.navigate("default");
             resolve(url);
             this.emitter.emit("upload", url);
             this.close();
