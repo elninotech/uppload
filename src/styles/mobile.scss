@@ -1,0 +1,54 @@
+@media (max-height: 500px) {
+  .uppload-modal {
+    height: 90%;
+  }
+}
+
+@media (max-width: 850px) {
+  .uppload-modal {
+    transform: none;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+    bottom: 0;
+    height: auto;
+    top: 10%;
+    flex-direction: column;
+    .uppload-service--default .uppload-services .uppload-service-name {
+      width: 47.5%;
+    }
+    aside {
+      height: auto;
+      width: 100%;
+      .uppload-services {
+        display: flex;
+      }
+      nav .uppload-service-name label {
+        white-space: nowrap;
+      }
+    }
+    footer.effects-nav {
+      flex-direction: column;
+      padding: 1rem 0;
+      .effects-tabs {
+        width: 100% !important;
+        margin: 1rem 0 !important;
+      }
+    }
+    .effects-continue {
+      width: 90%;
+    }
+    .effects-continue button {
+      margin: 0 !important;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    section .uppload-active-container footer button {
+      display: block !important;
+      margin: 0.5rem 0 0 0 !important;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}

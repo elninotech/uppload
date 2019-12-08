@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Uppload</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="demo.scss">
+    <style>
+      body { font-family: sans-serif }
+    </style>
+  </head>
+  <body>
+    <p>Hello, world!</p>
+    <img alt="Uppload image" class="uppload-image">
+    <button class="try-uppload">Choose file</button>
+    <script src="index.ts"></script>
+    <script>
+      setTimeout(function() {
+        document.querySelector(".try-uppload").click();
+      }, 250);
+    </script>
+  </body>
+</html>

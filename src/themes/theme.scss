@@ -1,0 +1,127 @@
+.uppload-modal-bg {
+  background-color: $modalBackground;
+}
+
+.uppload-modal {
+  background-color: $modalElementBackground;
+  color: $modalElementForeground;
+  box-shadow: $modalElementBoxShadow;
+
+  a {
+    color: $linkColor;
+  }
+
+  aside {
+    background-color: $sidebarNavBackground;
+    color: $sidebarNavForeground;
+
+    nav .uppload-service-name input[type="radio"] {
+      &:checked + label {
+        background-color: $sidebarNavActiveBackground;
+        color: $sidebarNavActiveForeground;
+        &:hover {
+          background-color: $sidebarNavActiveBackground;
+        }
+      }
+      &:focus + label {
+        box-shadow: $sidebarNavFocusBoxShadow;
+      }
+      + label:hover {
+        background-color: darken($sidebarNavBackground, 5);
+      }
+    }
+  }
+
+  .uppload-error {
+    background-color: $errorBackground;
+    color: $errorForeground;
+  }
+
+  form input {
+    border-color: $inputBorderColor;
+  }
+
+  form button,
+  .uppload-button {
+    background-color: $buttonDefaultBackground;
+    color: $buttonDefaultForeground;
+  }
+
+  .effects-continue {
+    button {
+      background-color: $effectsButtonBackground;
+      color: $effectsButtonForeground;
+      &:hover {
+        background-color: lighten($effectsButtonBackground, 5);
+      }
+      &.effects-continue--upload {
+        background-color: $effectsCTAButtonBackground;
+        color: $effectsCTAButtonForeground;
+        &:hover {
+          background-color: darken($effectsCTAButtonBackground, 10);
+        }
+      }
+    }
+  }
+
+  footer.effects-nav {
+    background-color: $effectsNavBackground;
+    color: $effectsNavForeground;
+
+    label svg g,
+    label svg path {
+      fill: $effectsNavItemIconColor;
+    }
+
+    input[type="radio"]:focus + label {
+      box-shadow: $sidebarNavFocusBoxShadow;
+    }
+
+    label:hover {
+      background-color: darken($effectsNavBackground, 5);
+    }
+
+    input[type="radio"]:checked + label {
+      background-color: $effectsNavActiveBackground;
+      color: $effectsNavActiveForeground;
+    }
+  }
+
+  .uppload-service--default {
+    .uppload-services button {
+      background-color: $HomeNavItemBackground;
+      color: $HomeNavItemForeground;
+      &:hover {
+        background-color: $HomeNavItemHoverBackground;
+        color: $HomeNavItemHoverForeground;
+      }
+    }
+  }
+
+  .uppload-service--local {
+    .drop-area {
+      border: $dropAreaBorder;
+      background-color: $dropAreaBackground;
+      color: $dropAreaColor;
+      &.drop-area-active {
+        border: $dropAreaActiveBorder;
+        background-color: $dropAreaActiveBackground;
+        color: $dropAreaActiveColor;
+      }
+    }
+  }
+
+  .uppload-loader > div {
+    background-color: $loaderColor;
+  }
+
+  .uppload-effect--crop .uppload-actions input[type="radio"]:focus + label {
+    box-shadow: $sidebarNavFocusBoxShadow;
+    z-index: 1;
+  }
+  .uppload-actions label,
+  .settings button {
+    background-color: $effectsLabelBackground;
+    color: $effectsLabelColor;
+  }
+}

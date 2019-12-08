@@ -1,0 +1,139 @@
+$modalBackgroundZIndex: 10000;
+$modalForegroundZIndex: 12000;
+
+/*
+ * Modal background
+ */
+.uppload-modal-bg {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: $modalBackgroundZIndex;
+  text-align: right;
+
+  .uppload-close {
+    font: inherit;
+    border: none;
+    padding: 0;
+    line-height: 1;
+    vertical-align: top;
+    appearance: none;
+    background: none;
+    margin: 1rem 1.5rem;
+    font-size: 200%;
+  }
+}
+
+/*
+ * Modal foreground
+ */
+.uppload-modal {
+  border-radius: 0.2rem;
+  width: 800px;
+  height: 500px;
+  display: flex;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  z-index: $modalForegroundZIndex;
+
+  aside {
+    width: 25%;
+    overflow-x: auto;
+
+    &.uppload-services--single {
+      display: none;
+    }
+
+    nav {
+      .uppload-service-name {
+        position: relative;
+        width: 100%;
+        flex: 1 0 0;
+        display: flex;
+
+        input[type="radio"] {
+          position: absolute;
+          opacity: 0;
+
+          &:checked + label {
+            font-weight: bold;
+          }
+        }
+
+        label {
+          transition: 0.2s;
+          display: block;
+          width: 100%;
+          display: flex;
+          padding: 1rem;
+          align-items: center;
+          line-height: 1;
+
+          svg {
+            margin-right: 0.75rem;
+            height: 1.25rem;
+            display: inline-block;
+            margin-top: -0.1rem;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+
+    .uppload-active-container {
+      display: flex;
+      flex: 1 0 0;
+      padding: 1rem;
+      overflow-y: auto;
+      box-sizing: border-box;
+
+      .uppload-service {
+        width: 100%;
+        flex: 1 0 0;
+      }
+
+      footer {
+        text-align: center;
+        font-size: 90%;
+        a {
+          color: inherit;
+          text-decoration: none;
+          opacity: 0.75;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+ * Inline modal
+ */
+.uppload-inline {
+  .uppload-modal-bg {
+    position: relative;
+    .uppload-close {
+      display: none;
+    }
+  }
+  .uppload-modal {
+    position: static;
+    box-shadow: none;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    transform: none;
+    width: 100%;
+  }
+}

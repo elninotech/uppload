@@ -1,37 +1,93 @@
 {
   "name": "uppload",
-  "version": "1.2.1",
-  "description": "Uppload is a better JavaScript file uploader",
-  "main": "index.js",
+  "version": "2.0.0-beta.13",
+  "description": "Uppload is a JavaScript widget for better file uploading on the web.",
+  "keywords": [
+    "uppload",
+    "typescript",
+    "css",
+    "scss",
+    "el nino",
+    "file upload",
+    "image upload",
+    "crop",
+    "uploader",
+    "upload",
+    "javascript"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "repository": "https://github.com/elninotech/uppload",
   "homepage": "https://uppload.js.org",
-  "repository": "https://github.com/elninotech/uppload.git",
-  "author": "Anand Chowdhary (mail@anandchowdhary.com) with El Niño (https://elnino.tech)",
+  "author": "El Niño <https://elnino.tech>",
   "license": "MIT",
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.26.0",
-    "css-loader": "^1.0.0",
-    "jest": "^23.3.0",
-    "node-sass": "^4.8.3",
-    "onchange": "^5.2.0",
-    "prettier": "^1.12.1",
-    "sass-loader": "^7.0.3",
-    "style-loader": "^0.21.0",
-    "webpack": "^4.6.0",
-    "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4"
-  },
   "scripts": {
-    "start:dev": "webpack-dev-server",
-    "start:prettier": "onchange '**/!(*.min).{js|vue|scss}' -- prettier --use-tabs --print-width 130 --write {{changed}}",
-    "build": "webpack -p",
-    "prettier": "prettier --use-tabs --print-width 130 --write ./src/**/*.{js,vue}",
-    "deploy": "yarn build && npm publish",
+    "build": "tsc && node scripts/build-scss.js",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "build-site": "site",
+    "build-demo": "parcel build demo/index.html",
+    "demo": "parcel demo/index.html",
+    "lint": "prettier '**/*.{ts,scss}' --write",
+    "serve-site": "site --serve",
+    "test-report": "jest --coverage",
+    "changelog": "gitmoji-changelog",
+    "build-site-demo": "npm run build-site && npm run build-demo && node scripts/build-demo.js",
+    "build-typedoc": "typedoc --out public/typedoc src"
+  },
+  "browserslist": [
+    "last 1 Chrome versions"
+  ],
+  "devDependencies": {
+    "@staart/site": "^1.10.11",
+    "@types/jest": "^24.0.23",
+    "auto-i18n": "^1.0.0",
+    "coveralls": "^3.0.7",
+    "cssnano": "^4.1.10",
+    "gitmoji-changelog": "^2.0.0",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "jest-fetch-mock": "^2.1.2",
+    "parcel": "^1.12.4",
+    "prettier": "^1.19.1",
+    "sass": "^1.23.5",
+    "ts-jest": "^24.1.0",
+    "typedoc": "^0.15.3",
+    "typescript": "^3.7.2",
+    "xhr-mock": "^2.5.1"
+  },
+  "dependencies": {
+    "cropperjs": "^1.5.6",
+    "es6-promise": "^4.2.8",
+    "mitt": "^1.2.0",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && git add ."
+    }
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src/",
+      "<rootDir>/tests/"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ],
+    "automock": false,
+    "setupFiles": [
+      "./tests/mocks.ts"
+    ]
   }
 }

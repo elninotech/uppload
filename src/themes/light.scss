@@ -1,0 +1,58 @@
+/**
+ * Light theme (default)
+ */
+
+$colorWhite: #fff;
+$colorLightGray: whitesmoke;
+$colorDarkGray: #dfe6e9;
+$colorBlack: #1b0000;
+
+/**
+ * All variables
+ */
+
+$modalBackground: rgba(125, 125, 125, 0.25);
+$modalElementBackground: $colorWhite;
+$modalElementForeground: $colorBlack;
+$modalElementBoxShadow: 0 5rem 10rem rgba(0, 0, 0, 0.3);
+$linkColor: inherit;
+
+$sidebarNavBackground: $colorDarkGray;
+$sidebarNavForeground: inherit;
+$sidebarNavActiveBackground: $colorWhite;
+$sidebarNavActiveForeground: inherit;
+$sidebarNavFocusBoxShadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+
+$errorBackground: #c33;
+$errorForeground: $colorWhite;
+
+$inputBorderColor: rgba(0, 0, 0, 0.1);
+$buttonDefaultBackground: #333;
+$buttonDefaultForeground: $colorWhite;
+
+$effectsButtonBackground: $colorLightGray;
+$effectsButtonForeground: inherit;
+$effectsCTAButtonBackground: #3498db;
+$effectsCTAButtonForeground: $colorWhite;
+$effectsNavBackground: $colorDarkGray;
+$effectsNavForeground: inherit;
+$effectsNavActiveBackground: $colorWhite;
+$effectsNavActiveForeground: inherit;
+$effectsNavItemIconColor: inherit;
+$effectsLabelBackground: $colorDarkGray;
+$effectsLabelColor: inherit;
+
+$HomeNavItemBackground: $colorLightGray;
+$HomeNavItemForeground: inherit;
+$HomeNavItemHoverBackground: $colorDarkGray;
+$HomeNavItemHoverForeground: inherit;
+
+$loaderColor: #333;
+$dropAreaBorder: 3px dashed rgba(0, 0, 0, 0.1);
+$dropAreaBackground: transparent;
+$dropAreaColor: inherit;
+$dropAreaActiveBorder: 3px dashed rgba(0, 0, 0, 0.25);
+$dropAreaActiveBackground: $colorLightGray;
+$dropAreaActiveColor: inherit;
+
+@import "./theme.scss";

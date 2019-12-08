@@ -43,6 +43,9 @@ typings/
 # Optional npm cache directory
 .npm
 
+# Parcel cache
+.cache
+
 # Optional eslint cache
 .eslintcache
 
@@ -60,3 +63,8 @@ typings/
 
 # Built files
 dist/
+public/
+
+# package-lock & yarn.lock (we commit pnpm-lock.yaml)
+package-lock.json
+yarn.lock

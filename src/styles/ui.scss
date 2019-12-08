@@ -1,0 +1,56 @@
+.uppload-modal {
+  p {
+    margin: 0;
+    margin-bottom: 1rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .uppload-error {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  form {
+    text-align: center;
+    margin: 2rem 0;
+    input {
+      width: 75%;
+      border: 0.1rem solid;
+    }
+  }
+
+  form input,
+  form button,
+  button.uppload-button,
+  .effects-continue button {
+    -webkit-appearance: none;
+    appearance: none;
+    font: inherit;
+    padding: 0.75rem 1rem;
+    border-radius: 0.2rem;
+    font-size: 135%;
+    display: block;
+    margin: 1rem auto;
+    transition: 0.2s;
+  }
+  form button,
+  button.uppload-button,
+  .effects-continue button {
+    border: none;
+  }
+  .effects-continue button {
+    margin: 0 1rem;
+  }
+  form button[type="submit"]::after,
+  .uppload-button--cta::after,
+  .effects-continue--upload::after {
+    content: "→";
+    margin-left: 0.5rem;
+  }
+}

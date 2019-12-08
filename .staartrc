@@ -1,0 +1,19 @@
+{
+  "title": "Uppload",
+  "hostname": "https://uppload.js.org",
+  "themeColor": "#f05d5e",
+  "textColor": "#1b0000",
+  "linkColor": "#dc3545",
+  "googleAnalytics": "UA-15148382-2",
+  "agastyaApiKey": "uppload",
+  "algoliaApiKey": "a6a7714b2b52dbd3313ebef7075746d5",
+  "algoliaIndex": "uppload",
+  "navbar": [
+    "[📝 Documentation](/)",
+    "[🛠️ Getting started](/getting-started)",
+    "[🐱 GitHub](https://github.com/elninotech/uppload)"
+  ],
+  "twitterPublisher": "elninoict",
+  "scripts": ["/uppload-demo.js"],
+  "stylesheets": ["/uppload-demo.css", "/assets/demo.css"]
+}
