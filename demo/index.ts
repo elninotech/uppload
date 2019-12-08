@@ -94,7 +94,7 @@ uppload.use([
 
 uppload.use([
   new Crop({
-    // aspectRatio: 1
+    aspectRatio: 1
   }),
   new Rotate(),
   new Blur(),
