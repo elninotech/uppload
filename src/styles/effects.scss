@@ -131,6 +131,9 @@
       &:checked + label {
         font-weight: bold;
       }
+      &:focus + label {
+        z-index: 1;
+      }
     }
   }
 

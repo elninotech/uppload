@@ -22,7 +22,6 @@
         &:hover,
         &:focus {
           background-color: $sidebarNavActiveBackground;
-          outline: none;
         }
       }
       &:focus + label {
@@ -31,7 +30,6 @@
       + label:hover,
       + label:focus {
         background-color: darken($sidebarNavBackground, 5);
-        outline: none;
       }
     }
   }
@@ -58,10 +56,6 @@
       &:hover,
       &:focus {
         background-color: lighten($effectsButtonBackground, 5);
-        outline: none;
-      }
-      &::-moz-focus-inner {
-        border: 0;
       }
       &.effects-continue--upload {
         background-color: $effectsCTAButtonBackground;
@@ -69,9 +63,6 @@
         &:hover,
         &:focus {
           background-color: darken($effectsCTAButtonBackground, 10);
-        }
-        &::-moz-focus-inner {
-          border: 0;
         }
       }
     }
@@ -93,7 +84,6 @@
     label:hover,
     label:focus {
       background-color: darken($effectsNavBackground, 5);
-      outline: none;
     }
 
     input[type="radio"]:checked + label {
@@ -110,9 +100,6 @@
       &:focus {
         background-color: $HomeNavItemHoverBackground;
         color: $HomeNavItemHoverForeground;
-      }
-      &::-moz-focus-inner {
-        border: 0;
       }
     }
   }
@@ -136,7 +123,6 @@
 
   .uppload-effect--crop .uppload-actions input[type="radio"]:focus + label {
     box-shadow: $sidebarNavFocusBoxShadow;
-    z-index: 1;
   }
   .uppload-actions label,
   .settings button {
