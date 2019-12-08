@@ -66,13 +66,13 @@ const profilePicture = new Uppload({
 Finally, choose which services (ways to select a file), effects (ways to manipulate a file), and uploaders (ways to send the file to a server) you want. Then, import these classes and use the `Uppload.use()` function to create your package:
 
 ```ts
-import { Uppload, en, Local, Unsplash, Crop, Filters } from "uppload";
+import { Uppload, en, Local, Unsplash, Crop, Brightness } from "uppload";
 
 profilePicture.use([
   new Local(),                        // Select file from computer
-  new Unsplash("your api-key"),       // Search and import from Unsplash
-  new Crop(16 / 9),                   // Let users crop image to 16:9
-  new Filters()                       // Let users apply image filters
+  new Unsplash("your API key"),       // Search and import from Unsplash
+  new Crop({ aspectRatio: 16 / 9 }),  // Let users crop image to 16:9
+  new Brightness()                    // Let users apply image filters
 ]);
 ```
 
@@ -99,7 +99,7 @@ profilePicture.use([
 
 ### Uppload 1.x
 
-Uppload v2 is completely rewritten in TypeScript. You can [view the README of Uppload 1.x](https://github.com/elninotech/uppload/tree/master), the current stable version, in the `master` branch, or the [migration guide](https://uppload.js.org/migrating-from-1x).
+Uppload v2 is rewritten from the group up in TypeScript. You can [view the README of Uppload 1.x](https://github.com/elninotech/uppload/tree/1fe2caf2d0a0d4e34a10bef1b4870a823277ce21), the deprecated version, or the [migration guide](https://uppload.js.org/migrating-from-1x).
 
 ## ℹ️ Support
 
@@ -111,7 +111,7 @@ Your organization can also request a custom build or get professional support. [
 
 Uppload is built by [El Niño](https://www.elnino.tech), a digital development studio in Enschede, the Netherlands, that builds custom web and mobile apps, webstores, and more, backed by 14+ years of experience.
 
-We'd like to thank these wonderful people for contributing ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+We'd like to thank these wonderful people and teams for contributing ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
