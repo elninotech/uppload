@@ -1,5 +1,75 @@
 # Changelog
 
+<a name="2.0.0-beta.14"></a>
+## 2.0.0-beta.14 (2019-12-08)
+
+### Added
+
+- ✨ Add focus-trap and make the focus styling prettier [[1c0d381](https://github.com/elninotech/uppload/commit/1c0d3816bd666391f54f8932f05ee5b89f202b3d)]
+- ✅ Add tests for more langs [[4f61774](https://github.com/elninotech/uppload/commit/4f6177419db262508efac4fb6cd882d98e21339b)]
+- ✨ Support for machine-generated translations [[242bb4b](https://github.com/elninotech/uppload/commit/242bb4bda5fea7537a199481fd80026121fdf012)]
+- ➕ Add auto-i18n dependency [[6b141b2](https://github.com/elninotech/uppload/commit/6b141b2eb12d61d695bf0caf78d4cb10b3655828)]
+- ✅ Add language key tests [[d8bc4d7](https://github.com/elninotech/uppload/commit/d8bc4d7f57e84dcf7ab27861c73411bd8d7cd7f0)]
+
+### Changed
+
+- 💄 Remove focus no outline, move to theme [[3880112](https://github.com/elninotech/uppload/commit/388011257e1ef0b8f60443a5fae34262031cddbc)]
+- ♿ Merge pull request [#63](https://github.com/elninotech/uppload/issues/63) from victorlap/add-focustrap [[023615f](https://github.com/elninotech/uppload/commit/023615f96a3fe0dc26ac83d8e1d09476c56708f9)]
+- ♻️ Change branch links to master [[cf945ea](https://github.com/elninotech/uppload/commit/cf945ea5f7b1d5636cc8434d9f8632d5aef62ee0)]
+
+### Fixed
+
+- 🐛 Direct upload without effect [[089bd76](https://github.com/elninotech/uppload/commit/089bd764db034c73f212d449603fa99d5ec4b921)]
+
+### Miscellaneous
+
+- 📝 Add focus trap to a11y docs [[8abd354](https://github.com/elninotech/uppload/commit/8abd354a30fc279a93b2e64c131b79524d6f09b2)]
+- 📝 Edit Uppload v1 note [[b4f5285](https://github.com/elninotech/uppload/commit/b4f52856d8ee0a9d4074588fdf6dda089608a9f2)]
+-  Merge pull request [#64](https://github.com/elninotech/uppload/issues/64) from elninotech/typescript [[0470204](https://github.com/elninotech/uppload/commit/047020479a5e19a7e7e90c79269bb409da56d95c)]
+-  Update uppload.ts [[bd1f934](https://github.com/elninotech/uppload/commit/bd1f934f8a6f68be1390421f3305e8da6bae09b2)]
+- 🌐 Add i18n (machine-generated) [[8a279ef](https://github.com/elninotech/uppload/commit/8a279ef50de9d9e7aa31f2638370d58bfe99b9c6)]
+- 🌐 Add Hindi translation [[81f1181](https://github.com/elninotech/uppload/commit/81f1181d336da934fd1a393fdab1e564af8005a1)]
+- 📝 Add script.module example to docs [[fbf56d0](https://github.com/elninotech/uppload/commit/fbf56d034a28372f4d56d1926e5f72016d9674e0)]
+
+
+<a name="2.0.0-beta.13"></a>
+## 2.0.0-beta.13 (2019-12-04)
+
+### Fixed
+
+- 🐛 Fix NPM build [[2d428aa](https://github.com/elninotech/uppload/commit/2d428aaad88629c7f0e75558b2823a63c3eca0d0)]
+
+
+<a name="2.0.0-beta.12"></a>
+## 2.0.0-beta.12 (2019-12-04)
+
+### Added
+
+- ✨ Upload directly if no effects [[167d80f](https://github.com/elninotech/uppload/commit/167d80f6e06617677d7eb746b9ffc75f82d4c290)]
+- ✨ Add max file size config [[a310ee4](https://github.com/elninotech/uppload/commit/a310ee4c3696a26d06a447585937011f2bcb7dfd)]
+
+### Changed
+
+- ♻️ Use translate param helper in services [[2e769b7](https://github.com/elninotech/uppload/commit/2e769b71630cc66258db3947c081bfc08853e6c6)]
+- ♻️ Use translation param helper in effects [[8812ec9](https://github.com/elninotech/uppload/commit/8812ec99fe0db9094de072e0c735b5f679bb47a5)]
+
+### Fixed
+
+- 🐛 Use import for polyfill [[0a59981](https://github.com/elninotech/uppload/commit/0a59981a8a69082c810be048590f390516b72754)]
+- 💚 Fix tests with object argument [[a1d87ed](https://github.com/elninotech/uppload/commit/a1d87edad2ed5863a6b9fe86b0c949a378493cac)]
+
+### Miscellaneous
+
+- 🚀 Deploy beta 12 [[6e63e1f](https://github.com/elninotech/uppload/commit/6e63e1ff155da2c57ecf3354bb0dc6ce42422cee)]
+- 🌐 Update Dutch translation [[bfab108](https://github.com/elninotech/uppload/commit/bfab108564797874bdf0a030c13940bc6ef0b1ba)]
+- 📝 Add i18n variables guide [[66de216](https://github.com/elninotech/uppload/commit/66de2167f7830aec4ddc7c8cc7128f5da143d0ae)]
+- 📝 Add Gitmoji commit message [[a350b27](https://github.com/elninotech/uppload/commit/a350b278297947f3262cfc54c2198b1f7b61737f)]
+- 📝 Add i18n contributing guide [[2aa65ef](https://github.com/elninotech/uppload/commit/2aa65ef2adb3d1d40e606c723c030336dbe69bd6)]
+- 🚧 Add translation (machine-generated) [[9261649](https://github.com/elninotech/uppload/commit/92616499353494a23b648e6b039a4b894d880578)]
+- 🚧 Add translation (machine-generated)&quot; [[b078216](https://github.com/elninotech/uppload/commit/b078216ebdd2e4d766cbb7dd207020fe32106fe8)]
+- 🚧 Add translation (machine-generated) [[2cb8ead](https://github.com/elninotech/uppload/commit/2cb8ead18b7b5a49732b551330dc7eab9bd7749f)]
+
+
 <a name="2.0.0-beta.11"></a>
 ## 2.0.0-beta.11 (2019-12-03)
 
