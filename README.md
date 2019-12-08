@@ -1,10 +1,10 @@
-[![Uppload](https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/logo-dark.svg?sanitize=true)](https://uppload.js.org)
+[![Uppload](https://raw.githubusercontent.com/elninotech/uppload/master/assets/logo-dark.svg?sanitize=true)](https://uppload.js.org)
 
 Uppload is a better JavaScript image uploader. It's highly customizable with 30+ plugins, completely free and open-source, and can be used with any file uploading backend.
 
 |  | Status |
 | - | - |
-| Build | [![GitHub Actions](https://github.com/elninotech/uppload/workflows/Node%20CI/badge.svg)](https://github.com/elninotech/uppload/actions) [![Travis CI](https://img.shields.io/travis/elninotech/uppload?label=Travis%20CI)](https://travis-ci.org/elninotech/uppload) [![Circle CI](https://img.shields.io/circleci/build/github/elninotech/uppload?label=Circle%20CI)](https://circleci.com/gh/elninotech/uppload) [![Azure Pipelines](https://dev.azure.com/anandchowdhary0001/Uppload/_apis/build/status/elninotech.uppload?branchName=typescript)](https://dev.azure.com/anandchowdhary0001/Uppload/_build/latest?definitionId=11&branchName=typescript) |
+| Build | [![GitHub Actions](https://github.com/elninotech/uppload/workflows/Node%20CI/badge.svg)](https://github.com/elninotech/uppload/actions) [![Travis CI](https://img.shields.io/travis/elninotech/uppload?label=Travis%20CI)](https://travis-ci.org/elninotech/uppload) [![Circle CI](https://img.shields.io/circleci/build/github/elninotech/uppload?label=Circle%20CI)](https://circleci.com/gh/elninotech/uppload) [![Azure Pipelines](https://dev.azure.com/anandchowdhary0001/Uppload/_apis/build/status/elninotech.uppload?branchName=master)](https://dev.azure.com/anandchowdhary0001/Uppload/_build/latest?definitionId=11&branchName=master) |
 | Dependencies | [![Dependencies](https://img.shields.io/david/elninotech/uppload.svg)](https://david-dm.org/elninotech/uppload) [![Dev dependencies](https://img.shields.io/david/dev/elninotech/uppload.svg)](https://david-dm.org/elninotech/uppload) ![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/elninotech/uppload.svg) |
 | Documentation | [![Netlify](https://img.shields.io/netlify/5e92d02d-b96b-4b42-8197-804f72a147cf)](https://app.netlify.com/sites/uppload/deploys) [![Website status](https://img.shields.io/website?down_color=red&down_message=down&up_color=brightgreen&up_message=online&url=https%3A%2F%2Fuppload.js.org)](https://uppload.js.org) [![Uptime](https://img.shields.io/uptimerobot/ratio/7/m783785688-048a2237d8844210960a6a76)](https://stats.uptimerobot.com/m29YvtjqOg) [![Articles](https://img.shields.io/endpoint?url=https%3A%2F%2Fuppload.js.org%2Fshield-schema%2Fall.json)](https://uppload.js.org) |
 | Community | [![Contributors](https://img.shields.io/github/contributors/elninotech/uppload.svg)](https://github.com/elninotech/uppload/graphs/contributors) [![Languages](https://img.shields.io/endpoint?url=https%3A%2F%2Fservices.anandchowdhary.now.sh%2Fapi%2Fgithub-files%3Frepo%3Delninotech%2Fuppload%26path%3Dsrc%2Fi18n%26subtract%3D1%26label%3Di18n%26message%3D%25241%2524%2520language%2524S%2524%26color%3Dblueviolet)](https://github.com/elninotech/uppload/tree/master/src/i18n) [![GitHub](https://img.shields.io/github/license/elninotech/uppload.svg)](https://github.com/elninotech/uppload/blob/master/LICENSE) |
@@ -24,16 +24,16 @@ Uppload is a better JavaScript image uploader. It's highly customizable with 30+
 
 <table>
   <tr>
-    <td><img alt="Screenshot of Uppload home" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/home.png"></td>
-    <td><img alt="Screenshot of local service" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/local.png"></td>
+    <td><img alt="Screenshot of Uppload home" src="https://raw.githubusercontent.com/elninotech/uppload/master/assets/screenshots/home.png"></td>
+    <td><img alt="Screenshot of local service" src="https://raw.githubusercontent.com/elninotech/uppload/master/assets/screenshots/local.png"></td>
   </tr>
   <tr>
-    <td><img alt="Screenshot of Unsplash service" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/unsplash.png"></td>
-    <td><img alt="Screenshot of filter effects" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/crop.png"></td>
+    <td><img alt="Screenshot of Unsplash service" src="https://raw.githubusercontent.com/elninotech/uppload/master/assets/screenshots/unsplash.png"></td>
+    <td><img alt="Screenshot of filter effects" src="https://raw.githubusercontent.com/elninotech/uppload/master/assets/screenshots/crop.png"></td>
   </tr>
   <tr>
-    <td><img alt="Screenshot of GIPHY service" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/brightness.png"></td>
-    <td><img alt="Screenshot of Instagram effects" src="https://raw.githubusercontent.com/elninotech/uppload/typescript/assets/screenshots/instagram.png"></td>
+    <td><img alt="Screenshot of GIPHY service" src="https://raw.githubusercontent.com/elninotech/uppload/master/assets/screenshots/brightness.png"></td>
+    <td><img alt="Screenshot of Instagram effects" src="https://raw.githubusercontent.com/elninotech/uppload/master/assets/screenshots/instagram.png"></td>
   </tr>
 </table>
 
