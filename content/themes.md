@@ -30,6 +30,6 @@ Or, use a CDN for styling:
 
 ## Custom theme
 
-Instead of importing a theme, you can also design a custom theme. The best way is to look at the source code of [light.scss](https://github.com/elninotech/uppload/blob/typescript/src/themes/light.scss) and use the same CSS classes. You'll only have to change the color variables.
+Instead of importing a theme, you can also design a custom theme. The best way is to look at the source code of [light.scss](https://github.com/elninotech/uppload/blob/master/src/themes/light.scss) and use the same CSS classes. You'll only have to change the color variables.
 
-Alternately, you can overwrite some rules instead of building your own theme. The [theme.scss](https://github.com/elninotech/uppload/blob/typescript/src/themes/theme.scss) file applies the color variables to the widget, so that's a good starting point for that.
+Alternately, you can overwrite some rules instead of building your own theme. The [theme.scss](https://github.com/elninotech/uppload/blob/master/src/themes/theme.scss) file applies the color variables to the widget, so that's a good starting point for that.
