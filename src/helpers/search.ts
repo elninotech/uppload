@@ -112,6 +112,9 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
           `services.${this.name}.title`
         )}</a>`
       )}</p></div>
+      <button class="need-help-link"><span>${translate(
+        "needHelp"
+      )}</span aria-hidden="true"><span>?</span></button>
       <div class="uppload-loader search-loader">
         <div></div>
         <p>${translate(
@@ -163,5 +166,12 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
             .then(() => (this.loading = false));
       });
     });
+    const helpButton = params.uppload.container.querySelector(
+      ".need-help-link"
+    );
+    if (helpButton)
+      safeListen(helpButton, "click", () =>
+        params.showHelp(`/services/search/${this.name}`)
+      );
   };
 }

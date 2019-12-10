@@ -1,6 +1,7 @@
 import { UpploadService } from "../service";
 import { IHandlersParams, IServiceTemplateParams } from "../helpers/interfaces";
 import { safeListen } from "../helpers/elements";
+import { translate } from "../helpers/i18n";
 
 export default class Local extends UpploadService {
   name = "local";
@@ -29,8 +30,9 @@ export default class Local extends UpploadService {
       <div class="alternate-input">
         <input type="file" accept="${this.mimeTypes.join()}"${
       params.uppload.settings.multiple ? " multiple" : ""
-    }>
-      </div>`;
+    }></div><button class="need-help-link"><span>${translate(
+      "needHelp"
+    )}</span aria-hidden="true"><span>?</span></button>`;
   };
 
   handlers = (params: IHandlersParams) => {
@@ -52,6 +54,11 @@ export default class Local extends UpploadService {
     ) as HTMLInputElement | null;
     if (input)
       safeListen(input, "change", event => this.getFile(params, event));
+    const helpButton = params.uppload.container.querySelector(
+      ".need-help-link"
+    );
+    if (helpButton)
+      safeListen(helpButton, "click", () => params.showHelp("/services/local"));
   };
 
   getFile(params: IHandlersParams, event: Event) {

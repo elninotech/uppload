@@ -48,6 +48,9 @@ export default class Camera extends UpploadService {
           style="background: ${this.color}"
         >${translate("services.camera.button")}</button>
       </footer>
+      <button class="need-help-link"><span>${translate(
+        "needHelp"
+      )}</span aria-hidden="true"><span>?</span></button>
     `;
   };
 
@@ -123,6 +126,13 @@ export default class Camera extends UpploadService {
     );
     if (switchButton)
       safeListen(switchButton, "click", this.switchCamera.bind(this, params));
+    const helpButton = params.uppload.container.querySelector(
+      ".need-help-link"
+    );
+    if (helpButton)
+      safeListen(helpButton, "click", () =>
+        params.showHelp("/services/camera")
+      );
   };
 
   switchCamera(params: IHandlersParams) {
