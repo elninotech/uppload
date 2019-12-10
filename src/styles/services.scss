@@ -325,48 +325,30 @@
 
 .need-help-link {
   position: absolute;
-  right: 1.5rem;
-  top: 1.5rem;
-  appearance: none;
-  padding: 0;
+  right: 1rem;
+  top: 1rem;
+  z-index: 1;
   font: inherit;
-  background-color: #eee;
-  border: none;
-  padding: 0.5rem 0.8rem;
-  line-height: 1;
   border-radius: 2rem;
-  transition: 0.3s;
-  // span {
-  //   float: left;
-  //   vertical-align: top;
-  //   height: auto;
-  //   overflow: hidden;
-  //   &:first-child {
-  // display: none;
-  // transition: 0.3s;
-  // max-width: 1px;
-  //   border: 0;
-  // 	clip: rect(1px, 1px, 1px, 1px);
-  //   clip-path: inset(50%);
-  // 	height: 1px;
-  // 	margin: -1px;
-  // 	overflow: hidden;
-  // 	padding: 0;
-  // 	position: absolute;
-  // 	width: 1px;
-  // 	white-space: nowrap;
-  //   }
-  // }
-  // &:hover {
-  //   padding: 0.5rem 1rem;
-  //   span {
-  //     &:first-child {
-  //       max-width: 100px;
-  //       display: block;
-  //     }
-  //     &:last-child {
-  //       max-width: 1px;
-  //     }
-  //   }
-  // }
+  line-height: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  opacity: 0.75;
+  span:first-child {
+    display: none;
+  }
+  span:last-child {
+    transform: scale(1.35);
+    display: inline-block;
+  }
+  &:hover,
+  &:focus {
+    opacity: 1;
+    span:first-child {
+      display: inline-block;
+    }
+    span:last-child {
+      display: none;
+    }
+  }
 }

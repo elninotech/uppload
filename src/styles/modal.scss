@@ -59,15 +59,14 @@ $modalForegroundZIndex: 12000;
       background-color: #fff;
     }
     button {
-      font: inherit;
       position: absolute;
-      border-radius: 2rem;
       right: 1rem;
       top: 1rem;
       z-index: 1;
+      font: inherit;
+      border-radius: 2rem;
       line-height: 1;
-      padding: 0.75rem 1.25rem;
-      background: none;
+      padding: 0.75rem 1.25rem 0.75rem 1rem;
       border: none;
       span:last-child {
         margin-left: 0.75rem;

@@ -251,9 +251,14 @@ export class Uppload implements IUppload {
     if (sideNavbar && this.services.length === 3)
       sideNavbar.classList.add("uppload-services--single");
     const help = this.container.querySelector(".uppload-help");
+    const section = this.container.querySelector("section");
     if (help) {
       help.classList.remove("visible");
-      safeListen(help, "click", () => help.classList.remove("visible"));
+      safeListen(help, "click", () => {
+        help.classList.remove("visible");
+        if (sideNavbar) sideNavbar.style.display = "";
+        if (section) section.style.display = "";
+      });
     }
   }
 
@@ -476,6 +481,10 @@ export class Uppload implements IUppload {
    */
   showHelp(url: string) {
     this.emitter.emit("help", url);
+    const aside = this.container.querySelector("aside");
+    if (aside) aside.style.display = "none";
+    const section = this.container.querySelector("section");
+    if (section) section.style.display = "none";
     const help = this.container.querySelector(".uppload-help");
     if (help) {
       const iframe = help.querySelector("iframe");

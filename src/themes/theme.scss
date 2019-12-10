@@ -10,10 +10,11 @@
   .uppload-help {
     background-color: $modalElementBackground;
     color: $modalElementForeground;
-    button {
-      background-color: $sidebarNavBackground;
-      color: $sidebarNavForeground;
-    }
+  }
+  .need-help-link,
+  .uppload-help button {
+    background-color: $sidebarNavBackground;
+    color: $sidebarNavForeground;
   }
 
   a {
