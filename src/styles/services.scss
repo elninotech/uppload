@@ -322,3 +322,51 @@
     flex-direction: column;
   }
 }
+
+.need-help-link {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  appearance: none;
+  padding: 0;
+  font: inherit;
+  background-color: #eee;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  line-height: 1;
+  border-radius: 2rem;
+  transition: 0.3s;
+  // span {
+  //   float: left;
+  //   vertical-align: top;
+  //   height: auto;
+  //   overflow: hidden;
+  //   &:first-child {
+  // display: none;
+  // transition: 0.3s;
+  // max-width: 1px;
+  //   border: 0;
+  // 	clip: rect(1px, 1px, 1px, 1px);
+  //   clip-path: inset(50%);
+  // 	height: 1px;
+  // 	margin: -1px;
+  // 	overflow: hidden;
+  // 	padding: 0;
+  // 	position: absolute;
+  // 	width: 1px;
+  // 	white-space: nowrap;
+  //   }
+  // }
+  // &:hover {
+  //   padding: 0.5rem 1rem;
+  //   span {
+  //     &:first-child {
+  //       max-width: 100px;
+  //       display: block;
+  //     }
+  //     &:last-child {
+  //       max-width: 1px;
+  //     }
+  //   }
+  // }
+}

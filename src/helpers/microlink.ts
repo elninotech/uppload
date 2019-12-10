@@ -36,7 +36,9 @@ export class MicrolinkBaseClass extends UpploadService {
       translate(
         "services.microlink.button",
         translate(`services.${this.name}.title`) || this.name
-      )}</button></form></div><div class="uppload-loader microlink-loader">
+      )}</button></form><button class="need-help-link"><span>${translate(
+      "needHelp"
+    )}</span aria-hidden="true"><span>?</span></button></div><div class="uppload-loader microlink-loader">
     <div></div>
     <p>${translate(`services.${this.name}.loading`) ||
       translate(
