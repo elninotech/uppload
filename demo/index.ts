@@ -108,4 +108,8 @@ uppload.use([
   new Sepia()
 ]);
 
+uppload.on("*", (a: any) => {
+  console.log("Uppload event", a);
+});
+
 // uppload.open();

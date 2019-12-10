@@ -2,6 +2,7 @@ import { UpploadService } from "../service";
 import { IHandlersParams, IServiceTemplateParams } from "./interfaces";
 import { imageUrlToBlob, cachedFetch } from "./http";
 import { colorSVG } from "./assets";
+import { safeListen } from "./elements";
 
 export class MicrolinkBaseClass extends UpploadService {
   loading = false;
@@ -65,7 +66,7 @@ export class MicrolinkBaseClass extends UpploadService {
       `.microlink-search-form`
     ) as HTMLFormElement | null;
     if (form) {
-      form.addEventListener("submit", event => {
+      safeListen(form, "submit", event => {
         event.preventDefault();
         const input = params.uppload.container.querySelector(
           `.microlink-search-input`
@@ -110,5 +111,10 @@ export class MicrolinkBaseClass extends UpploadService {
         return false;
       });
     }
+    const helpButton = params.uppload.container.querySelector(
+      ".need-help-link"
+    );
+    if (helpButton)
+      safeListen(helpButton, "click", () => params.showHelp("Anand"));
   };
 }

@@ -344,6 +344,10 @@ export class Uppload implements IUppload {
           <div class="uppload-active-container"></div>
           <footer style="display: none" class="effects-nav">${this.getEffectsNavbar()}</footer>
         </section>
+        <div class="uppload-help">
+          <div><button><span>Close help</span><span aria-hidden="true">&times;</span></button></div>
+          <iframe src="https://uppload.netlify.com/help/services/url.html"></iframe>
+        </div>
       </div>
       <div class="uppload-modal-bg">
         <button class="uppload-close" aria-label="Close">&times;</button>
@@ -390,6 +394,7 @@ export class Uppload implements IUppload {
             upload: this.upload.bind(this),
             uploadMultiple: this.uploadMultiple.bind(this),
             handle: this.handle.bind(this),
+            showHelp: this.showHelp.bind(this),
             uppload: this,
             translate
           });
@@ -418,6 +423,7 @@ export class Uppload implements IUppload {
             upload: this.upload.bind(this),
             uploadMultiple: this.uploadMultiple.bind(this),
             handle: this.handle.bind(this),
+            showHelp: this.showHelp.bind(this),
             uppload: this,
             translate
           });
@@ -457,6 +463,14 @@ export class Uppload implements IUppload {
         this.handle(new Error("no-uploader"));
       }
     });
+  }
+
+  /**
+   * Show the help article for this plugin in a frame
+   * @param url - URL of help webpage
+   */
+  showHelp(url: string) {
+    this.emitter.emit("help", url);
   }
 
   /**

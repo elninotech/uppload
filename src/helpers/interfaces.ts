@@ -36,6 +36,7 @@ export interface IHandlersParams {
   upload: (file: Blob) => Promise<string>;
   uploadMultiple: (file: Blob[]) => Promise<string>;
   next: (file: Blob) => void;
+  showHelp: (url: string) => void;
   handle: (error: any) => void;
   uppload: Uppload;
   translate: ITranslator;
