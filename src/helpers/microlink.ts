@@ -115,6 +115,14 @@ export class MicrolinkBaseClass extends UpploadService {
       ".need-help-link"
     );
     if (helpButton)
-      safeListen(helpButton, "click", () => params.showHelp("Anand"));
+      safeListen(helpButton, "click", () =>
+        params.showHelp(
+          `/services/${
+            ["url", "screenshot"].includes(this.name)
+              ? this.name
+              : `import-from-web-service/${this.name}`
+          }`
+        )
+      );
   };
 }

@@ -250,6 +250,11 @@ export class Uppload implements IUppload {
     const sideNavbar = this.container.querySelector("aside");
     if (sideNavbar && this.services.length === 3)
       sideNavbar.classList.add("uppload-services--single");
+    const help = this.container.querySelector(".uppload-help");
+    if (help) {
+      help.classList.remove("visible");
+      safeListen(help, "click", () => help.classList.remove("visible"));
+    }
   }
 
   /**
@@ -346,7 +351,7 @@ export class Uppload implements IUppload {
         </section>
         <div class="uppload-help">
           <div><button><span>Close help</span><span aria-hidden="true">&times;</span></button></div>
-          <iframe src="https://uppload.netlify.com/help/services/url.html"></iframe>
+          <iframe src="https://uppload.js.org/help"></iframe>
         </div>
       </div>
       <div class="uppload-modal-bg">
@@ -471,6 +476,13 @@ export class Uppload implements IUppload {
    */
   showHelp(url: string) {
     this.emitter.emit("help", url);
+    const help = this.container.querySelector(".uppload-help");
+    if (help) {
+      const iframe = help.querySelector("iframe");
+      if (iframe)
+        iframe.setAttribute("src", `https://uppload.js.org/help${url}`);
+      help.classList.add("visible");
+    }
   }
 
   /**
