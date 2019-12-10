@@ -43,7 +43,7 @@
     "last 1 Chrome versions"
   ],
   "devDependencies": {
-    "@staart/site": "^1.10.11",
+    "@staart/site": "^1.11.1",
     "@types/jest": "^24.0.23",
     "auto-i18n": "^1.0.0",
     "coveralls": "^3.0.9",
