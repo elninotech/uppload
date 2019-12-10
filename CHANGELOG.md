@@ -1,5 +1,33 @@
 # Changelog
 
+<a name="2.0.0-beta.15"></a>
+## 2.0.0-beta.15 (2019-12-10)
+
+### Added
+
+- ✨ Add help icon to other services [[1626848](https://github.com/elninotech/uppload/commit/16268484c6b99e4648d5a893adb92c0244cb9250)]
+- ✨ Show help (fixed [#65](https://github.com/elninotech/uppload/issues/65)) [[f06adbf](https://github.com/elninotech/uppload/commit/f06adbfad046c9a4dec062fe40c787dac74ce469)]
+
+### Changed
+
+- ⬆️ Update @staart/site to v1.11 [[4d64b8c](https://github.com/elninotech/uppload/commit/4d64b8c679925547ce07e270eb4895b9d35b69c6)]
+- 💄 Move &quot;?&quot; icon to bottom [[11d2967](https://github.com/elninotech/uppload/commit/11d2967cb65bf861e07aaea99318909f4140535e)]
+- 💄 Add styling for show/hide help [[62ca06e](https://github.com/elninotech/uppload/commit/62ca06e94b76cd704c4c10772f10ae1fcdfe5045)]
+
+### Fixed
+
+- 💚 Add showHelp to tests [[5a7faa9](https://github.com/elninotech/uppload/commit/5a7faa97f82c83d3674e1af4d91ca41e93084220)]
+- 🐛 Upload file directly when no effect [[68239c4](https://github.com/elninotech/uppload/commit/68239c4eba927f18394460af37c3f949ee4d4300)]
+
+### Miscellaneous
+
+- 🚀 Deploy beta 15 [[f1e8867](https://github.com/elninotech/uppload/commit/f1e88679d689d3ddd8d8cd6e2e76e80a9fa39b63)]
+- 📝 Add GIPHY docs [[16a0eba](https://github.com/elninotech/uppload/commit/16a0ebaf285da98f7d8c34265846c0fe82c7f6b5)]
+- 🚧 Add help iframe and button [[70bd608](https://github.com/elninotech/uppload/commit/70bd60834339213acfd4b93a37c8e478df85c475)]
+- 🚧 Add &quot;Need help?&quot; icon [[7f33068](https://github.com/elninotech/uppload/commit/7f33068a898ba9fee6132f1040d4091712df07d2)]
+- 📝 Update image branch URLs [[3ae89e9](https://github.com/elninotech/uppload/commit/3ae89e98a1292262eccbe00b5c0d1ef5ec8d408c)]
+
+
 <a name="2.0.0-beta.14"></a>
 ## 2.0.0-beta.14 (2019-12-08)
 

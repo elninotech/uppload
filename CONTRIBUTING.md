@@ -38,3 +38,15 @@ In both cases, since we use Gitmoji, your commit message should be "\:globe_with
 We use [i18n helpers](https://github.com/elninotech/uppload/blob/master/src/helpers/i18n.ts) to find and replace variables in translations. [I18N documentation](https://uppload.js.org/i18n)
 
 For example, in the string "Import from $1$", we replace $1$ with "Instagram" to generate "Import from Instagram". Similarly, the n-th variable replaces $n$ ($1$, $2$, $3$, and so on). You can also define a custom language-specific helper function, which is applied before returning the translation. For example, [`en.ts`](https://github.com/elninotech/uppload/blob/master/src/i18n/en.ts) replaces $A$ with "a" or "an" depending on whether the next word starts with a vowel. In this example, "Enter $A$ $1$ $2$ URL" may be compiled to "Enter an Instagram file URL".
+
+## Build & deploy
+
+When working locally, the `yarn demo` script is used for a local development setup with hot reloading.
+
+When deploying a new version of Uppload, follow these steps:
+
+1. Increment `package.json` version based on [SemVer](https://semver.org/)
+2. Update `CHANGELOG.md` using `yarn changelog`
+3. Build a new package using `yarn build`
+4. Publish the newly built package using `unpm publish`
+5. Create a new release on GitHub with version name (e.g., `v.2.1.1`)
