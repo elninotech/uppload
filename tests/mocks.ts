@@ -23,6 +23,7 @@ const handlersParams: IHandlersParams = {
   uploadMultiple: () => new Promise(() => {}),
   next: () => {},
   handle: () => {},
+  showHelp: () => {},
   uppload,
   translate
 };
