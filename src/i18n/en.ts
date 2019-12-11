@@ -4,6 +4,7 @@ export default {
   fetching: "Getting your image from $1$...",
   poweredBy: "Powered by $1$",
   needHelp: "Need help?",
+  loadingHelp: "Loading help...",
 
   units: {
     px: "px",

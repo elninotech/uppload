@@ -30,6 +30,7 @@ export interface IUpploadSettings {
   maxHeight?: number;
   maxSize?: [number, number];
   compressor?: (file: Blob) => Promise<Blob>;
+  transitionDuration?: number;
 }
 
 export interface IHandlersParams {

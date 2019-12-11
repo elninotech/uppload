@@ -173,3 +173,20 @@ $modalForegroundZIndex: 12000;
     width: 100%;
   }
 }
+
+.uppload-container .uppload-help-loading {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  .uppload-loader {
+    display: flex;
+  }
+  p {
+    width: 100%;
+  }
+  &.visible {
+    display: flex;
+  }
+}

@@ -50,6 +50,7 @@ export class Uppload implements IUppload {
   emitter = mitt();
   uploadProgress = 0;
   inline = false;
+  transitionDuration = 300;
 
   /**
    * Create a new Uppload instance
@@ -81,6 +82,8 @@ export class Uppload implements IUppload {
     if (settings.lang) setI18N(settings.lang);
     if (settings.defaultService) this.activeService = settings.defaultService;
     if (settings.lang) this.lang = settings.lang;
+    if (settings.transitionDuration)
+      this.transitionDuration = settings.transitionDuration;
     if (settings.uploader) this.uploader = settings.uploader;
     this.inline = !!settings.inline;
     this.update();
@@ -166,6 +169,8 @@ export class Uppload implements IUppload {
       `input[type=radio][value='${this.activeService}']`
     );
     if (serviceRadio) serviceRadio.setAttribute("checked", "checked");
+    this.container.style.transition = `${this.transitionDuration}ms`;
+    this.container.style.opacity = "0";
     this.update();
     let firstService = this.settings.defaultService;
     if (this.services.length === 3) this.navigate(this.services[2].name);
@@ -173,6 +178,9 @@ export class Uppload implements IUppload {
     safeListen(document.body, "keyup", e => {
       if ((e as KeyboardEvent).key === "Escape" && this.open) this.close();
     });
+    setTimeout(() => {
+      this.container.style.opacity = "1";
+    }, 1);
     this.emitter.emit("open");
   }
 
@@ -183,8 +191,9 @@ export class Uppload implements IUppload {
     if (!this.isOpen) return;
     this.stopCurrentService();
     this.isOpen = false;
-    this.update();
     this.emitter.emit("close");
+    this.container.style.opacity = "0";
+    setTimeout(() => this.update(), this.transitionDuration);
   }
 
   /**
@@ -252,9 +261,11 @@ export class Uppload implements IUppload {
       sideNavbar.classList.add("uppload-services--single");
     const help = this.container.querySelector(".uppload-help");
     const section = this.container.querySelector("section");
+    const helpLoading = this.container.querySelector(".uppload-help-loading");
     if (help) {
       help.classList.remove("visible");
       safeListen(help, "click", () => {
+        if (helpLoading) helpLoading.classList.remove("visible");
         help.classList.remove("visible");
         if (sideNavbar) sideNavbar.style.display = "";
         if (section) section.style.display = "";
@@ -354,9 +365,15 @@ export class Uppload implements IUppload {
           <div class="uppload-active-container"></div>
           <footer style="display: none" class="effects-nav">${this.getEffectsNavbar()}</footer>
         </section>
+        <div class="uppload-help-loading">
+          <div class="uppload-loader">
+            <div></div>
+            <p class="uppload-loader-text">${translate("loadingHelp")}</p>
+          </div>
+        </div>
         <div class="uppload-help">
           <div><button><span>Close help</span><span aria-hidden="true">&times;</span></button></div>
-          <iframe src="https://uppload.js.org/help"></iframe>
+          <iframe></iframe>
         </div>
       </div>
       <div class="uppload-modal-bg">
@@ -485,12 +502,19 @@ export class Uppload implements IUppload {
     if (aside) aside.style.display = "none";
     const section = this.container.querySelector("section");
     if (section) section.style.display = "none";
+    const helpLoading = this.container.querySelector(".uppload-help-loading");
+    if (helpLoading) helpLoading.classList.add("visible");
     const help = this.container.querySelector(".uppload-help");
     if (help) {
       const iframe = help.querySelector("iframe");
-      if (iframe)
+      if (iframe) {
         iframe.setAttribute("src", `https://uppload.js.org/help${url}`);
-      help.classList.add("visible");
+        const listener = () => {
+          help.classList.add("visible");
+          if (helpLoading) helpLoading.classList.remove("visible");
+        };
+        safeListen(iframe, "load", listener);
+      }
     }
   }
 
