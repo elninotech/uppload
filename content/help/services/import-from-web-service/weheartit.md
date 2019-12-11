@@ -20,4 +20,4 @@ If you don't see the We Heart It icon, it could be because:
 - Your browser does not support importing an image from We Heart It; if this is the case, you should update your browser
 - The website has not enabled the We Heart It import feature
 
-![Screenshot of the We Heart It service](/assets/screenshots/we-heart-it.png)
+![Screenshot of the We Heart It service](/assets/screenshots/weheartit.png)
