@@ -209,6 +209,7 @@ export class Uppload implements IUppload {
    */
   private update() {
     if (!this.container) return;
+    this.hideHelp();
     const content = this.container.querySelector(".uppload-active-container");
     if (content) content.innerHTML = this.render();
     const aside = this.container.querySelector("aside");
@@ -527,10 +528,6 @@ export class Uppload implements IUppload {
           completed = true;
           this.hideHelp();
         });
-        // If it takes more than 30 seconds to load help, cancel the loading state
-        setTimeout(() => {
-          if (!completed) this.hideHelp();
-        }, 30000);
       }
     }
   }
