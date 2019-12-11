@@ -260,16 +260,9 @@ export class Uppload implements IUppload {
     if (sideNavbar && this.services.length === 3)
       sideNavbar.classList.add("uppload-services--single");
     const help = this.container.querySelector(".uppload-help");
-    const section = this.container.querySelector("section");
-    const helpLoading = this.container.querySelector(".uppload-help-loading");
     if (help) {
       help.classList.remove("visible");
-      safeListen(help, "click", () => {
-        if (helpLoading) helpLoading.classList.remove("visible");
-        help.classList.remove("visible");
-        if (sideNavbar) sideNavbar.style.display = "";
-        if (section) section.style.display = "";
-      });
+      safeListen(help, "click", () => this.hideHelp());
     }
   }
 
@@ -494,6 +487,18 @@ export class Uppload implements IUppload {
     });
   }
 
+  hideHelp() {
+    const help = this.container.querySelector(".uppload-help");
+    const helpLoading = this.container.querySelector(".uppload-help-loading");
+    const sideNavbar = this.container.querySelector("aside");
+    const section = this.container.querySelector("section");
+    if (helpLoading) helpLoading.classList.remove("visible");
+    if (help) help.classList.remove("visible");
+    if (sideNavbar) sideNavbar.style.display = "";
+    if (section) section.style.display = "";
+    this.emitter.emit("hide-help");
+  }
+
   /**
    * Show the help article for this plugin in a frame
    * @param url - URL of help webpage
@@ -511,11 +516,21 @@ export class Uppload implements IUppload {
       const iframe = help.querySelector("iframe");
       if (iframe) {
         iframe.setAttribute("src", `https://uppload.js.org/help${url}`);
+        let completed = false;
         const listener = () => {
+          completed = true;
           help.classList.add("visible");
           if (helpLoading) helpLoading.classList.remove("visible");
         };
         safeListen(iframe, "load", listener);
+        safeListen(iframe, "error", () => {
+          completed = true;
+          this.hideHelp();
+        });
+        // If it takes more than 30 seconds to load help, cancel the loading state
+        setTimeout(() => {
+          if (!completed) this.hideHelp();
+        }, 30000);
       }
     }
   }
