@@ -19,6 +19,10 @@ export default {
     file_type_not_allowed: "Этот тип файла не поддерживается",
     file_too_large: "Файл должен быть менее $1$"
   },
+  help: {
+    loading: "Закрыть помощь...",
+    close: "Загрузка справки"
+  },
   services: {
     default: {
       heading: "Выберите изображение"

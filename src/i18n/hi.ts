@@ -19,6 +19,10 @@ export default {
     file_type_not_allowed: "यह फाइल टाइप अनुमति नहीं हैं",
     file_too_large: "आपकी फाइल $1$ से छोटी होनी चाहिए"
   },
+  help: {
+    loading: "मदद लोड हो रही है...",
+    close: "मदद बंद करें"
+  },
   services: {
     default: {
       heading: "एक तस्वीर चुनें"

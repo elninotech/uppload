@@ -368,11 +368,13 @@ export class Uppload implements IUppload {
         <div class="uppload-help-loading">
           <div class="uppload-loader">
             <div></div>
-            <p class="uppload-loader-text">${translate("loadingHelp")}</p>
+            <p class="uppload-loader-text">${translate("help.loading")}</p>
           </div>
         </div>
         <div class="uppload-help">
-          <div><button><span>Close help</span><span aria-hidden="true">&times;</span></button></div>
+          <div><button><span>${translate(
+            "help.close"
+          )}</span><span aria-hidden="true">&times;</span></button></div>
           <iframe></iframe>
         </div>
       </div>

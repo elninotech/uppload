@@ -20,6 +20,10 @@ export default {
     file_type_not_allowed: "Dit bestandstype wordt niet ondersteund",
     file_too_large: "Het bestand moet kleiner zijn dan $1$"
   },
+  help: {
+    loading: "Hulp bij het laden...",
+    close: "Hulp sluiten"
+  },
   services: {
     default: {
       heading: "Selecteer een afbeelding"

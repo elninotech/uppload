@@ -4,7 +4,6 @@ export default {
   fetching: "Getting your image from $1$...",
   poweredBy: "Powered by $1$",
   needHelp: "Need help?",
-  loadingHelp: "Loading help...",
 
   units: {
     px: "px",
@@ -21,6 +20,11 @@ export default {
     upload_error: "We got an error in uploading this file",
     file_type_not_allowed: "This file type is not allowed",
     file_too_large: "Your file should be smaller than $1$"
+  },
+
+  help: {
+    loading: "Loading help...",
+    close: "Close help"
   },
 
   services: {

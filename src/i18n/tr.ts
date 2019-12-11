@@ -19,6 +19,10 @@ export default {
     file_type_not_allowed: "Bu dosya türü desteklenmiyor",
     file_too_large: "Dosya $1$ 'dan az olmalı"
   },
+  help: {
+    loading: "Yardım yükleniyor...",
+    close: "Yardımı kapat"
+  },
   services: {
     default: {
       heading: "Bir resim seç"

@@ -19,6 +19,10 @@ export default {
     file_type_not_allowed: "Dieser Dateityp wird nicht unterstützt",
     file_too_large: "Die Datei muss kleiner als $1$ sein"
   },
+  help: {
+    loading: "Ladehilfe...",
+    close: "Hilfe schließen"
+  },
   services: {
     default: {
       heading: "Wählen Sie ein Bild aus"
