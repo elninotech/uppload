@@ -1,5 +1,24 @@
 # Changelog
 
+<a name="2.0.0-beta.16"></a>
+## 2.0.0-beta.16 (2019-12-11)
+
+### Added
+
+- ✨ Hide help on plugin open [[32b7c02](https://github.com/elninotech/uppload/commit/32b7c02db15cf01d999fcbecb16644148d8dede5)]
+- ✨ Add help loading state [[fcd7c76](https://github.com/elninotech/uppload/commit/fcd7c769ce1833b19cc39b63413fc4f69e47be7f)]
+
+### Changed
+
+- 🚚 Rename &quot;we-heart-it&quot; to &quot;weheartit&quot; [[7880813](https://github.com/elninotech/uppload/commit/78808131b4154b8bf481f6c0810c0a75ecea09f1)]
+- ♻️ Hide help on error [[115b177](https://github.com/elninotech/uppload/commit/115b177ead52ae3a350ec0d2bfb5a0403526fe7c)]
+
+### Miscellaneous
+
+- 🌐 Add help translations [[e000dde](https://github.com/elninotech/uppload/commit/e000dde70d1857d6702a33779741e0ca203c1337)]
+- 📝 Update contributing guide, changelog [[ef23279](https://github.com/elninotech/uppload/commit/ef23279104db81a69a5e4e307a9d0d0685ace846)]
+
+
 <a name="2.0.0-beta.15"></a>
 ## 2.0.0-beta.15 (2019-12-10)
 
