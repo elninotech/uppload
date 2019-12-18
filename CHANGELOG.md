@@ -1,5 +1,21 @@
 # Changelog
 
+<a name="2.0.0-beta.17"></a>
+## 2.0.0-beta.17 (2019-12-18)
+
+### Added
+
+- ➕ Add rollup [[19a80a6](https://github.com/elninotech/uppload/commit/19a80a6fe8d02008e13a92bd2541143631dd1fbb)]
+
+### Changed
+
+- 🔧 Add new build system [[452f9ac](https://github.com/elninotech/uppload/commit/452f9acae7dd5052f7914c0da7f8a05209431c98)]
+
+### Miscellaneous
+
+- 📝 Add upload to Firebase [[9de68a8](https://github.com/elninotech/uppload/commit/9de68a886c35c00b89828e5271156c1cd12cc1dc)]
+
+
 <a name="2.0.0-beta.16"></a>
 ## 2.0.0-beta.16 (2019-12-11)
 
