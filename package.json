@@ -15,7 +15,7 @@
     "upload",
     "javascript"
   ],
-  "main": "dist/index.js",
+  "main": "dist/index.umd.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -29,7 +29,7 @@
   "scripts": {
     "build": "npm run build-package && node scripts/build-scss.js",
     "test": "jest",
-    "build-package": "tsc",
+    "build-package": "gulp build",
     "build-site": "site",
     "build-demo": "parcel build demo/index.html",
     "demo": "parcel demo/index.html",
