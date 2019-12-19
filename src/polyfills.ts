@@ -1,6 +1,6 @@
 import "whatwg-fetch";
 // @ts-ignore
-import "es6-promise/auto";
+import "promise-polyfill/src/polyfill";
 
 // https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach#Polyfill
 if (window.NodeList && !NodeList.prototype.forEach) {
