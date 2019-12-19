@@ -1,4 +1,4 @@
-import { UpploadEffect } from "../..";
+import { UpploadEffect } from "../../effect";
 import { fitImageToContainer } from "../../helpers/elements";
 import { IHandlersParams, ITemplateParams } from "../../helpers/interfaces";
 

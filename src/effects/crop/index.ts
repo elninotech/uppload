@@ -1,4 +1,4 @@
-import { UpploadEffect } from "../..";
+import { UpploadEffect } from "../../effect";
 import Cropper from "cropperjs";
 import { IHandlersParams, ITemplateParams } from "../../helpers/interfaces";
 import {

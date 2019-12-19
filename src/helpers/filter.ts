@@ -1,4 +1,4 @@
-import { UpploadEffect } from "..";
+import { UpploadEffect } from "../effect";
 import {
   safeListen,
   fitImageToContainer,
