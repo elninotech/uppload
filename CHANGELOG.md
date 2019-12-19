@@ -1,5 +1,19 @@
 # Changelog
 
+<a name="2.0.0-beta.19"></a>
+## 2.0.0-beta.19 (2019-12-19)
+
+### Changed
+
+- ♻️ Change custom-package -&gt; treeshaking [[aae659f](https://github.com/elninotech/uppload/commit/aae659fdc0c4a4ac2b7391da7eabc1e71b738c5a)]
+- ♻️ Remove circular dependencies [[99886ee](https://github.com/elninotech/uppload/commit/99886ee67b7fbe27a54741b49f3608152cc546d9)]
+- 🔧 Add external and globals [[bab85a8](https://github.com/elninotech/uppload/commit/bab85a88cd9210c81fe34d07df9767e13fd4745f)]
+
+### Fixed
+
+- 🐛 Use es6-promise with require [[6821e5e](https://github.com/elninotech/uppload/commit/6821e5e06b903466a5a60122fd4cf387aca6cf5c)]
+
+
 <a name="2.0.0-beta.18"></a>
 ## 2.0.0-beta.18 (2019-12-19)
 
