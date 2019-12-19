@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="2.0.0-beta.18"></a>
+## 2.0.0-beta.18 (2019-12-19)
+
+### Changed
+
+- ♻️ Use different promise polyfill [[4beab05](https://github.com/elninotech/uppload/commit/4beab051d1712f9144f21982e0787cb74b3025d9)]
+
+
 <a name="2.0.0-beta.17"></a>
 ## 2.0.0-beta.17 (2019-12-18)
 
