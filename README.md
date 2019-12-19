@@ -82,7 +82,7 @@ profilePicture.use([
 - [Browser support](https://uppload.js.org/browser-support) (IE 10+)
 - [Configuration](https://uppload.js.org/configuration)
 - [Examples](https://uppload.js.org/examples)
-- [Building a custom package](https://uppload.js.org/custom-package)
+- [A-la-carte (treeshaking) plugins](https://uppload.js.org/treeshaking)
 - [Uppload API](https://uppload.js.org/api)
 - [Listening to events](https://uppload.js.org/listening-to-events)
 - [Services](https://uppload.js.org/services) (20+ ways to select a file)
