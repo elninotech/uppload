@@ -13,6 +13,12 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
   max = 10;
   unit = "px";
   value = 0;
+  supports = () =>
+    !!(
+      this.canvas.getContext &&
+      this.canvas.getContext("2d") &&
+      typeof this.canvas.getContext("2d")?.filter === "string"
+    );
 
   template = ({ file, translate }: ITemplateParams) => {
     const image = URL.createObjectURL(file);
