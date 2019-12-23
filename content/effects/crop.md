@@ -41,3 +41,5 @@ profilePicture.use(
     hideAspectRatioSettings: true
 );
 ```
+
+![Screenshot of the Crop effect](/assets/screenshots/crop.png)

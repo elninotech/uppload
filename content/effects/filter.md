@@ -41,3 +41,5 @@ class Brightness extends UpploadFilterBaseClass {
 ```
 
 In the above example, the CSS filter applied to the SVG will be `filter: brightness(10%)` if the value is `10`.
+
+![Screenshot of the Brightness effect](/assets/screenshots/brightness.png)
