@@ -5,7 +5,7 @@ dependencies:
   mitt: 1.2.0
   whatwg-fetch: 3.0.0
 devDependencies:
-  '@rollup/plugin-typescript': 2.0.1_bc61ece99b2052f136123c33a65c69dd
+  '@rollup/plugin-typescript': 2.0.1_c43d6d1c92f803cc012688f27ea7270a
   '@staart/site': 1.11.2
   '@types/jest': 24.0.24
   auto-i18n: 1.0.0
@@ -15,15 +15,15 @@ devDependencies:
   gulp: 4.0.2
   husky: 3.1.0
   jest: 24.9.0
-  jest-fetch-mock: 2.1.2
+  jest-fetch-mock: 3.0.0
   parcel: 1.12.4
   prettier: 1.19.1
-  rollup: 1.27.13
-  sass: 1.23.7
+  rollup: 1.27.14
+  sass: 1.24.0
   ts-jest: 24.2.0_jest@24.9.0
   tslib: 1.10.0
   typedoc: 0.15.5
-  typescript: 3.7.3
+  typescript: 3.7.4
   xhr-mock: 2.5.1
 lockfileVersion: 5.1
 packages:
@@ -1102,13 +1102,13 @@ packages:
       node: '>= 6.0.0'
     resolution:
       integrity: sha512-USSjRAAQYsZFlv43FUPdD+jEGML5/8oLF0rUzPQTtK4q9kvaXr49F5ZplyLz5lox78cLZ0TxN2bIDQ1xhOkulQ==
-  /@rollup/plugin-typescript/2.0.1_bc61ece99b2052f136123c33a65c69dd:
+  /@rollup/plugin-typescript/2.0.1_c43d6d1c92f803cc012688f27ea7270a:
     dependencies:
-      '@rollup/pluginutils': 3.0.0_rollup@1.27.13
+      '@rollup/pluginutils': 3.0.1_rollup@1.27.14
       resolve: 1.14.1
-      rollup: 1.27.13
+      rollup: 1.27.14
       tslib: 1.10.0
-      typescript: 3.7.3
+      typescript: 3.7.4
     dev: true
     engines:
       node: '>=8.0.0'
@@ -1118,17 +1118,17 @@ packages:
       typescript: '>=2.1.0'
     resolution:
       integrity: sha512-UA/bN/DlHN19xdOllXmp7G7pM2ac9dQMg0q2T1rg4Bogzb7oHXj2WGafpiNpEm54PivcJdzGRJvRnI6zCISW3w==
-  /@rollup/pluginutils/3.0.0_rollup@1.27.13:
+  /@rollup/pluginutils/3.0.1_rollup@1.27.14:
     dependencies:
       estree-walker: 0.6.1
-      rollup: 1.27.13
+      rollup: 1.27.14
     dev: true
     engines:
       node: '>= 8.0.0'
     peerDependencies:
       rollup: ^1.20.0
     resolution:
-      integrity: sha512-qBbGQQaUUiId/lBU9VMeYlVLOoRNvz1fV8HWY5tiGDpI2gdPZHbmOfCjzSdXPhdq3XOfyWvXEBlIPbnM3+9ogQ==
+      integrity: sha512-PmNurkecagFimv7ZdKCVOfQuqKDPkrcpLFxRBcQ00LYr4HAjJwhCFxBiY2Xoletll2htTIiXBg6g0Yg21h2M3w==
   /@staart/site/1.11.2:
     dependencies:
       axios: 0.19.0
@@ -1145,7 +1145,7 @@ packages:
       node-cache: 5.1.0
       recursive-readdir: 2.2.2
       remove-markdown: 0.3.0
-      sass: 1.23.7
+      sass: 1.24.0
       signale: 1.4.0
       sitemap: 5.1.0
       truncate: 2.1.0
@@ -2689,13 +2689,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-eAgWf4j7sNJIG329qUHIFi17PSV0VtuWyAu9glZSgu/KlQSrfTQOC2zAz+jHGa5fAB+bJldEnQwvJEaJ8zRf5A==
-  /cross-fetch/2.2.3:
+  /cross-fetch/3.0.4:
     dependencies:
-      node-fetch: 2.1.2
-      whatwg-fetch: 2.0.4
+      node-fetch: 2.6.0
+      whatwg-fetch: 3.0.0
     dev: true
     resolution:
-      integrity: sha512-PrWWNH3yL2NYIb/7WF/5vFG3DCQiXDOVf8k3ijatbrtnwNuhMWLC7YF7uqf53tbTFDzHIUD8oITw4Bxt8ST3Nw==
+      integrity: sha512-MSHgpjQqgbT/94D4CyADeNoYh52zMkCX4pcJvPP5WqPsLFMKjr2TCMg381ox5qI0ii2dPwaLx/00477knXqXVw==
   /cross-spawn/6.0.5:
     dependencies:
       nice-try: 1.0.5
@@ -2946,7 +2946,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-EL/C8IHvYRwAHYgFRse4MGAPSqlJVlOrhVYZ75iQBKrnv+ZedmYsgwH3t+BCDuZDXpoo07+q9j4qgSSOa7irJg==
-  /deasync/0.1.18:
+  /deasync/0.1.19:
     dependencies:
       bindings: 1.5.0
       node-addon-api: 1.7.1
@@ -2955,7 +2955,7 @@ packages:
       node: '>=0.11.0'
     requiresBuild: true
     resolution:
-      integrity: sha512-4KXhVJRh9sw5uNqx0IPXavF7d2bYg/Ka4dnEnjrLdph3rdDwJmhGWA4wnb4B7zNtPg3TkzVxlPdL3oxJzGBgKg==
+      integrity: sha512-oh3MRktfnPlLysCPpBpKZZzb4cUC/p0aA3SyRGp15lN30juJBTo/CiD0d4fR+f1kBtUQoJj1NE9RPNWQ7BQ9Mg==
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -3292,7 +3292,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-7dFHNmqeFSEt2ZBsCriorKnn3Z2pj+fd9kmI6QoWw4//DL+icEBfc0U7qJCisqrTsKTjw4fNFy2pW9OqStD84g==
-  /es-abstract/1.17.0-next.1:
+  /es-abstract/1.17.0:
     dependencies:
       es-to-primitive: 1.2.1
       function-bind: 1.1.1
@@ -3309,7 +3309,7 @@ packages:
     engines:
       node: '>= 0.4'
     resolution:
-      integrity: sha512-7MmGr03N7Rnuid6+wyhD9sHNE2n4tFSwExnU2lQl3lIo2ShXWGePY80zYaoMOmILWv57H0amMjZGHNzzGG70Rw==
+      integrity: sha512-yYkE07YF+6SIBmg1MsJ9dlub5L48Ek7X0qz+c/CPCHS9EBXfESorzng4cJQjJW5/pB6vDF41u7F8vUhLVDqIug==
   /es-to-primitive/1.2.1:
     dependencies:
       is-callable: 1.1.5
@@ -5374,13 +5374,13 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-6d4V2f4nxzIzwendo27Tr0aFm+IXWa0XEUnaH6nU0FMaozxovt+sfRvh4J47wL1OvF83I3SSTu0XK+i4Bqe7uA==
-  /jest-fetch-mock/2.1.2:
+  /jest-fetch-mock/3.0.0:
     dependencies:
-      cross-fetch: 2.2.3
-      promise-polyfill: 7.1.2
+      cross-fetch: 3.0.4
+      promise-polyfill: 8.1.3
     dev: true
     resolution:
-      integrity: sha512-tcSR4Lh2bWLe1+0w/IwvNxeDocMI/6yIA2bijZ0fyWxC4kQ18lckQ1n7Yd40NKuisGmcGBRFPandRXrW/ti/Bw==
+      integrity: sha512-lPizzB0qLury+RNutT//G+XVPihMU4Eb/RJziXMdlBSr9jkrj1wKEvf3dGfzX9/1x3Npg5/LdG579q+1Bey/cg==
   /jest-get-type/24.9.0:
     dev: true
     engines:
@@ -6729,12 +6729,6 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-nJIxm1QmAj4v3nfCvEeCrYSoVwXyxLnaPBK5W1W5DGEJwjlKuC2VEUycGw5oxk+4zZahRrB84PUJJgEmhFTDFw==
-  /node-fetch/2.1.2:
-    dev: true
-    engines:
-      node: 4.x || >=6.0.0
-    resolution:
-      integrity: sha1-q4hOjn5X44qUR1POxwb3iNF2i7U=
   /node-fetch/2.6.0:
     dev: true
     engines:
@@ -7056,7 +7050,7 @@ packages:
   /object.getownpropertydescriptors/2.1.0:
     dependencies:
       define-properties: 1.1.3
-      es-abstract: 1.17.0-next.1
+      es-abstract: 1.17.0
     dev: true
     engines:
       node: '>= 0.8'
@@ -7091,7 +7085,7 @@ packages:
   /object.values/1.1.1:
     dependencies:
       define-properties: 1.1.3
-      es-abstract: 1.17.0-next.1
+      es-abstract: 1.17.0
       function-bind: 1.1.1
       has: 1.0.3
     dev: true
@@ -7401,7 +7395,7 @@ packages:
       cross-spawn: 6.0.5
       css-modules-loader-core: 1.1.0
       cssnano: 4.1.10
-      deasync: 0.1.18
+      deasync: 0.1.19
       dotenv: 5.0.1
       dotenv-expand: 5.1.0
       envinfo: 7.5.0
@@ -8186,10 +8180,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-mEcocL8igTL8vdhoEputEsPAKeM=
-  /promise-polyfill/7.1.2:
+  /promise-polyfill/8.1.3:
     dev: true
     resolution:
-      integrity: sha512-FuEc12/eKqqoRYIGBrUptCBRhobL19PS2U31vMNTfyck1FxPyMfgsXyW4Mav85y/ZN1hop3hOwRlUDok23oYfQ==
+      integrity: sha512-MG5r82wBzh7pSKDRa9y+vllNHz3e3d4CNj1PQE4BQYxLme0gKYYBm9YENq+UkEikyZ0XbiGWxYlVw3Rl9O/U8g==
   /promise-retry/1.1.1:
     dependencies:
       err-code: 1.1.2
@@ -8572,7 +8566,7 @@ packages:
       regenerate: 1.4.0
       regenerate-unicode-properties: 8.1.0
       regjsgen: 0.5.1
-      regjsparser: 0.6.1
+      regjsparser: 0.6.2
       unicode-match-property-ecmascript: 1.0.4
       unicode-match-property-value-ecmascript: 1.1.0
     dev: true
@@ -8595,13 +8589,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha1-fuj4Tcb6eS0/0K4ijSS9lJ6tIFw=
-  /regjsparser/0.6.1:
+  /regjsparser/0.6.2:
     dependencies:
       jsesc: 0.5.0
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-7LutE94sz/NKSYegK+/4E77+8DipxF+Qn2Tmu362AcmsF2NYq/wx3+ObvU90TKEhjf7hQoFXo23ajjrXP7eUgg==
+      integrity: sha512-E9ghzUtoLwDekPT0DYCp+c4h+bvuUpe6rRHCTYn6eGoqj1LgKXxT6I0Il4WbjhQkOghzi/V+y03bPKvbllL93Q==
   /relateurl/0.2.7:
     dev: true
     engines:
@@ -8837,7 +8831,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-ii4iagi25WusVoiC4B4lq7pbXfAp3D9v5CwfkY33vffw2+pkDjY1D8GaN7spsxvCSx8dkPqOZCEZyfxcmJG2IA==
-  /rollup/1.27.13:
+  /rollup/1.27.14:
     dependencies:
       '@types/estree': 0.0.40
       '@types/node': 12.12.21
@@ -8845,7 +8839,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-hDi7M07MpmNSDE8YVwGVFA8L7n8jTLJ4lG65nMAijAyqBe//rtu4JdxjUBE7JqXfdpqxqDTbCDys9WcqdpsQvw==
+      integrity: sha512-DuDjEyn8Y79ALYXMt+nH/EI58L5pEw5HU9K38xXdRnxQhvzUTI/nxAawhkAHUQeudANQ//8iyrhVRHJBuR6DSQ==
   /rsvp/4.8.5:
     dev: true
     engines:
@@ -8916,7 +8910,7 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-hhbzAgTIX8O7SHfp2c8/kREfEn4qO/9q8C9beyY6+tvZ87EpoZ3i1RIEvp27YBswnNbY9mWd6paKVmKbAgLfZA==
-  /sass/1.23.7:
+  /sass/1.24.0:
     dependencies:
       chokidar: 3.3.1
     dev: true
@@ -8924,7 +8918,7 @@ packages:
       node: '>=8.9.0'
     hasBin: true
     resolution:
-      integrity: sha512-cYgc0fanwIpi0rXisGxl+/wadVQ/HX3RhpdRcjLdj2o2ye/sxUTpAxIhbmJy3PLQgRFbf6Pn8Jsrta2vdXcoOQ==
+      integrity: sha512-1TsPyMhLTx+9DLlmwg02iBW2p4poGA7LlkWJLpUY/XticFKNhPcx+l4FsIJLKl6oSUfXmAKpVljHEez1hwjqiw==
   /sax/1.2.4:
     dev: true
     resolution:
@@ -9955,20 +9949,20 @@ packages:
       progress: 2.0.3
       shelljs: 0.8.3
       typedoc-default-themes: 0.6.2
-      typescript: 3.7.3
+      typescript: 3.7.4
     dev: true
     engines:
       node: '>= 6.0.0'
     hasBin: true
     resolution:
       integrity: sha512-AKXLtOUCLRlSTyfXQHYp3LFPy6RiFLnxnKS5z1jwQsYXmCPbHWuhmfgS264Es2hPMZjzvHqk/ZQDzCBpb49u6w==
-  /typescript/3.7.3:
+  /typescript/3.7.4:
     dev: true
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-Mcr/Qk7hXqFBXMN7p7Lusj1ktCBydylfQM/FZCk5glCNQJrCUKPkMHdo9R0MTFWsC/4kPFvDS0fDPvukfCkFsw==
+      integrity: sha512-A25xv5XCtarLwXpcDNZzCGvW2D1S3/bACratYBx2sax8PefsFhlYmkQicKHvpYflFS8if4zne5zT5kpJ7pzuvw==
   /uglify-js/3.7.2:
     dependencies:
       commander: 2.20.3
@@ -10366,12 +10360,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-b5lim54JOPN9HtzvK9HFXvBma/rnfFeqsic0hSpjtDbVxR3dJKLc+KB4V6GgiGOvl7CY/KNh8rxSo9DKQrnUEw==
-  /whatwg-fetch/2.0.4:
-    dev: true
-    resolution:
-      integrity: sha512-dcQ1GWpOD/eEQ97k66aiEVpNnapVj90/+R+SXTPYGHpYBBypfKJEQjLrvMZ7YXbKm21gXd4NcuxUTjiv1YtLng==
   /whatwg-fetch/3.0.0:
-    dev: false
     resolution:
       integrity: sha512-9GSJUgz1D4MfyKU7KRqwOjXCXTqWdFNvEr7eUBYchQiVc744mqK/MzXPNR2WsPkmkOa4ywfg8C2n8h+13Bey1Q==
   /whatwg-mimetype/2.3.0:
@@ -10625,8 +10614,8 @@ packages:
       integrity: sha1-a6MY6xaWFyf10oT46gA+jWFU0Mg=
 specifiers:
   '@rollup/plugin-typescript': ^2.0.1
-  '@staart/site': ^1.11.1
-  '@types/jest': ^24.0.23
+  '@staart/site': ^1.11.2
+  '@types/jest': ^24.0.24
   auto-i18n: ^1.0.0
   coveralls: ^3.0.9
   cropperjs: ^1.5.6
@@ -10637,15 +10626,15 @@ specifiers:
   gulp: ^4.0.2
   husky: ^3.1.0
   jest: ^24.9.0
-  jest-fetch-mock: ^2.1.2
+  jest-fetch-mock: ^3.0.0
   mitt: ^1.2.0
   parcel: ^1.12.4
   prettier: ^1.19.1
-  rollup: ^1.27.13
-  sass: ^1.23.7
+  rollup: ^1.27.14
+  sass: ^1.24.0
   ts-jest: ^24.2.0
   tslib: ^1.10.0
-  typedoc: ^0.15.3
-  typescript: ^3.7.3
+  typedoc: ^0.15.5
+  typescript: ^3.7.4
   whatwg-fetch: ^3.0.0
   xhr-mock: ^2.5.1
