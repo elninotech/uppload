@@ -49,7 +49,5 @@ for (const currentEffect of effects) {
       expect(typeof currentEffect.template(effectTemplateParams)).toBe(
         "string"
       ));
-    it("effect is registered", () =>
-      expect(uppload.effects.includes(currentEffect)).toBeTruthy());
   });
 }
