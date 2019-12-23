@@ -1,5 +1,17 @@
 # Changelog
 
+<a name="2.0.0-beta.20"></a>
+## 2.0.0-beta.20 (2019-12-23)
+
+### Added
+
+- ✨ Add supports for filter effects [[10843ee](https://github.com/elninotech/uppload/commit/10843ee584dab25beb3afedfc8f62b5348e435d1)]
+
+### Miscellaneous
+
+- 📝 Add screenshots to docs [[dbd47d7](https://github.com/elninotech/uppload/commit/dbd47d7b8676092a8dc9fb4231408dec245f33df)]
+
+
 <a name="2.0.0-beta.19"></a>
 ## 2.0.0-beta.19 (2019-12-19)
 
