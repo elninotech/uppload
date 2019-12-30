@@ -1,6 +1,6 @@
-# Building a custom package
+# A-la-carte (treeshaking) plugins
 
-It's very easy to build your own custom package.
+It's very easy to create your own custom build of Uppload, so you only load the feature you want without bloating up your build size.
 
 For example, you can add the following services:
 
