@@ -1,5 +1,23 @@
 # Changelog
 
+<a name="2.0.0"></a>
+## 2.0.0 (2019-12-30)
+
+### Changed
+
+- ⬆️ Update dependencies [[491d82f](https://github.com/elninotech/uppload/commit/491d82f0a5bff2d1bef4b11f4ee730e009e87db4)]
+- ⬆️ Update dev dependencies [[eee8129](https://github.com/elninotech/uppload/commit/eee812949bbab11bac5dc98595e1f45927be453c)]
+
+### Fixed
+
+- 💚 Fix effect test registered [[6fb643a](https://github.com/elninotech/uppload/commit/6fb643a4f6caeb73f163321a2d781d74964fba24)]
+
+### Miscellaneous
+
+- 📝 Change title of treeshaking page [[29b08a3](https://github.com/elninotech/uppload/commit/29b08a3f932aa73710a2986fe014f5557985842f)]
+- 🚀 Deploy v2 to npm [[e056654](https://github.com/elninotech/uppload/commit/e056654b039a811d0e4a235961cd503c3832cf26)]
+
+
 <a name="2.0.0-beta.20"></a>
 ## 2.0.0-beta.20 (2019-12-23)
 
