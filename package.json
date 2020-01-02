@@ -36,7 +36,7 @@
     "lint": "prettier '**/*.{ts,scss}' --write",
     "serve-site": "site --serve",
     "test-report": "jest --coverage",
-    "changelog": "gitmoji-changelog",
+    "changelog": "gitmoji-changelog && prettier 'CHANGELOG.md' --write",
     "build-site-demo": "npm run build-site && npm run build-demo && node scripts/build-demo.js",
     "build-typedoc": "typedoc --out public/typedoc src"
   },
