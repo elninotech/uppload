@@ -1,6 +1,6 @@
 {
   "title": "Uppload",
-  "hostname": "https://uppload.js.org",
+  "baseUrl": "https://uppload.js.org",
   "themeColor": "#f05d5e",
   "textColor": "#1b0000",
   "linkColor": "#dc3545",
@@ -15,5 +15,6 @@
   ],
   "twitterPublisher": "elninoict",
   "scripts": ["/uppload-demo.js"],
-  "stylesheets": ["/uppload-demo.css", "/assets/demo.css"]
+  "stylesheets": ["/uppload-demo.css", "/assets/demo.css"],
+  "fancyLinks": true
 }
