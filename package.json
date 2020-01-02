@@ -45,7 +45,7 @@
   ],
   "devDependencies": {
     "@rollup/plugin-typescript": "^2.0.1",
-    "@staart/site": "^1.12.1",
+    "@staart/site": "^1.12.2",
     "@types/jest": "^24.0.25",
     "auto-i18n": "^1.0.0",
     "coveralls": "^3.0.9",

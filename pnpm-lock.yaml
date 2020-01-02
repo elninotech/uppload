@@ -6,7 +6,7 @@ dependencies:
   whatwg-fetch: 3.0.0
 devDependencies:
   '@rollup/plugin-typescript': 2.0.1_c43d6d1c92f803cc012688f27ea7270a
-  '@staart/site': 1.12.1
+  '@staart/site': 1.12.2
   '@types/jest': 24.0.25
   auto-i18n: 1.0.0
   coveralls: 3.0.9
@@ -1130,7 +1130,7 @@ packages:
       rollup: ^1.20.0
     resolution:
       integrity: sha512-PmNurkecagFimv7ZdKCVOfQuqKDPkrcpLFxRBcQ00LYr4HAjJwhCFxBiY2Xoletll2htTIiXBg6g0Yg21h2M3w==
-  /@staart/site/1.12.1:
+  /@staart/site/1.12.2:
     dependencies:
       axios: 0.19.0
       concurrently: 5.0.2
@@ -1154,7 +1154,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-NEruWQGpZ38w51w5xak6SZGBonb9LhiFfNqOht0fXV8M3gFotcjVHOxmc6NFjotB8Ub7n9lq/bvyl1lKJOA6Fg==
+      integrity: sha512-0uJ4Gz8mFwHWI2ihznvPzKJqbcPRDooduk+WmOS3uJoepuinjp0e+mJgHSVnKXraXO22VUjeS/692Io06hBvOQ==
   /@types/babel__core/7.1.3:
     dependencies:
       '@babel/parser': 7.7.7
@@ -10627,7 +10627,7 @@ packages:
       integrity: sha1-a6MY6xaWFyf10oT46gA+jWFU0Mg=
 specifiers:
   '@rollup/plugin-typescript': ^2.0.1
-  '@staart/site': ^1.12.1
+  '@staart/site': ^1.12.2
   '@types/jest': ^24.0.25
   auto-i18n: ^1.0.0
   coveralls: ^3.0.9
