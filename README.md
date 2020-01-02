@@ -91,6 +91,7 @@ profilePicture.use([
 - [Themes](https://uppload.js.org/themes)
 - [Backends](https://uppload.js.org/backends)
 - [Frontend frameworks](https://uppload.js.org/wrappers)
+- [Blog](https://uppload.js.org/blog)
 - [Image compression](https://uppload.js.org/compression)
 - [Internationalization](https://uppload.js.org/i18n)
 - [Accessibility](https://uppload.js.org/a11y) · [Compare Uppload](https://uppload.js.org/compare) · [FAQs](https://uppload.js.org/faq)

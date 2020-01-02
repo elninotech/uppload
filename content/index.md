@@ -15,6 +15,7 @@ Uppload is a better JavaScript image uploader. It's highly customizable with 30+
 - [Themes](/themes)
 - [Backends](/backends)
 - [Frontend frameworks](/wrappers)
+- [Blog](/blog)
 - [Image compression](/compression)
 - [Internationalization](/i18n)
 - [Accessibility](https://uppload.js.org/a11y) · [Compare Uppload](https://uppload.js.org/compare) · [FAQs](https://uppload.js.org/faq)
