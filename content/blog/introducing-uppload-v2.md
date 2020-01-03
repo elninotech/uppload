@@ -13,15 +13,15 @@ Today, I'm proud to launch **Uppload v2**, a rewrite from the group up in TypeSc
 
 ### A-la-carte plugins
 
-In Uppload v1, you could use a CDN to get start quickly, but the build would include all 4 features (drag-and-drop, camera, import from URL/Facebook/Instagram, and crop); there was no way of choosing which features to keep. With Uppload v2's a-la-carte plugins, you're in charge of your bundle. Simple select which effects and services you want to include, and treeshake the rest with our [`Uppload.use`](https://uppload.js.org/treeshaking) function.
+In Uppload v1, you could use a CDN to get start quickly, but the build would include all 4 features (drag-and-drop, camera, import from URL/Facebook/Instagram, and crop); there was no way of choosing which features to keep. With Uppload v2's a-la-carte plugins, you're in charge of your bundle. Simply select which effects and services you want to include, and treeshake the rest with our [`Uppload.use`](/treeshaking) function.
 
 ### 20+ services
 
-Apart from Uppload v1's signature drag-and-drop file uploader, camera, and import from URL/Facebook/Instagram, Uppload v2 supports several other services. For example, users can now import pictures from popular free image repositories like Unsplash and Pexels without having to worry about the license. Similarly, we also support importing from several more web services, like GIPHY, Flickr, Pinterest, Twitter, and more, and with added utilities like taking a webpage screnshot.
+Apart from Uppload v1's signature [drag-and-drop file uploader](services/local), [camera](/services/camera), and import from URL/Facebook/Instagram services, Uppload v2 supports several other new ways to select photos. For example, users can now import pictures from popular free image repositories like [Unsplash and Pexels](/services/search-for-images) without having to worry about the license. Similarly, we also support importing from several more [web services](/services/import-from-web-service), like GIPHY, Flickr, Pinterest, Twitter, and more, and with added utilities like taking a webpage screnshot.
 
 ### 10+ effects
 
-What made Uppload v1 great was that it was end-to-end, meaning that users could take a picture from their camera, crop it to square, and upload it -- all from within the plugin. With Uppload v2, we've taken this a step further by introducing over 10 new effects apart from cropping, like rotation, flipping, and adjusting filters like brightness, contrast, saturation, and more.
+What made Uppload v1 great was that it was end-to-end, meaning that users could take a picture from their camera, crop it to square, and upload it -- all from within the plugin. With Uppload v2, we've taken this a step further by introducing over 10 new effects apart from [cropping](https://uppload.js.org/effects/crop), like rotation, flipping, and [adjusting filters](https://uppload.js.org/effects/filter) like brightness, contrast, saturation, and more.
 
 ### Comprehensive documentation
 
@@ -29,7 +29,7 @@ We've also made a new [docs website](https://uppload.js.org) with tens of articl
 
 ### User help guides
 
-In our new docs website, we've also included a new [Help section](https://uppload.js.org/help/) for guidelines for end users uploading images using the Uppload widget. We've incorporated these guidelines right into Uppload, so your users can click on the question mark (?) icon and get help about using the widget without leaving your site.
+In our new docs website, we've also included a new [Help section](/help/) for guidelines for end users uploading images using the Uppload widget. We've incorporated these guidelines right into Uppload, so your users can click on the question mark (?) icon and get help about using the widget without leaving your site.
 
 ## What's the same
 
@@ -43,15 +43,15 @@ Uppload still works with any file uploading backend you can build, customizable 
 
 ### Frontend frameworks
 
-You can still use Uppload with your favorite frontend frameworks like React and Vue.js, though we provide examples instead of wrappers now. Using Uppload's API and event listeners, you can easily create your own wrappers and components for other frameworks.
+You can still use Uppload with your favorite [frontend frameworks](/wrappers) like React and Vue.js, though we provide examples instead of wrappers now. Using Uppload's API and event listeners, you can easily create your own wrappers and components for other frameworks.
 
 ### Internationalization
 
-Uppload has community-powered translations to several languages, and you can easily add custom languages or overwrite specific keys. To get started, we've used machine translation to generate some i18n files, and members of our community will edit them and adding more languages with every release.
+Uppload has community-powered translations to [several languages](/i18n), and you can easily add custom languages or overwrite specific keys. To get started, we've used machine translation to generate some i18n files, and members of our community will edit them and adding more languages with every release.
 
 ### Highly customizable
 
-Uppload is still highly customizable, with support for custom endpoints, uploaders, styling, locales, and more. We tried to keep Uppload v2 as unopinionated as possible, while maintaining great experience for end users.
+Uppload is still highly [customizable](/configuration), with support for custom endpoints, uploaders, styling, locales, and more. We tried to keep Uppload v2 as unopinionated as possible, while maintaining great experience for end users.
 
 ### Even more
 
@@ -65,7 +65,7 @@ New light and dark **themes**, along with support for custom color themes, make 
 
 ## Get started in 5 lines
 
-[Getting started](https://uppload.js.org/getting-started) with Uppload v2 is as easy as importing the plugins you need, adding your backend URL, and using our new API:
+[Getting started](/getting-started) with Uppload v2 is as easy as importing the plugins you need, adding your backend URL, and using our new API:
 
 ```ts
 import { Uppload, Local, Instagram, xhrUploader, en as lang } from "uppload";
@@ -75,3 +75,5 @@ const uploader = new Uppload({
 });
 uploader.use([new Local(), new Instagram()]);
 ```
+
+We're very proud of how far this idea has come, and we're going to continue to work hard to make Uppload the best image uploader for the web.
