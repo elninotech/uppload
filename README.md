@@ -1,4 +1,5 @@
 [![Uppload](https://raw.githubusercontent.com/elninotech/uppload/master/assets/logo-dark.svg?sanitize=true)](https://uppload.js.org)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Felninotech%2Fuppload.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Felninotech%2Fuppload?ref=badge_shield)
 
 Uppload is a better JavaScript image uploader. It's highly customizable with 30+ plugins, completely free and open-source, and can be used with any file uploading backend.
 
@@ -149,3 +150,6 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 - Code: [MIT](https://github.com/elninotech/uppload/blob/master/LICENSE)
 - Logo and assets: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - Image filter icons: [CC BY 3.0](https://thenounproject.com/nikhilsahukar/collection/image/)
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Felninotech%2Fuppload.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Felninotech%2Fuppload?ref=badge_large)
