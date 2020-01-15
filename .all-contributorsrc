@@ -152,11 +152,21 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "irohitb",
+      "name": "Rohit Bhatia",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/32276134?v=4",
+      "profile": "https://github.com/irohitb",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "projectName": "uppload",
   "projectOwner": "elninotech",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "skipCi": true
 }
