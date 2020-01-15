@@ -71,7 +71,6 @@
     "es6-promise": "^4.2.8",
     "focus-trap": "^5.1.0",
     "mitt": "^1.2.0",
-    "uppload": "^2.0.0",
     "whatwg-fetch": "^3.0.0"
   },
   "husky": {
