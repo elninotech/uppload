@@ -1,5 +1,41 @@
 # Changelog
 
+<a name="2.0.1"></a>
+
+## 2.0.1 (2020-01-15)
+
+### Changed
+
+- ⬆️ Update dev dependencies [[fafb13f](https://github.com/elninotech/uppload/commit/fafb13f9b95db706f5d190815c5289a3853f910c)]
+- ⬆️ Update @staart/site [[3e982ce](https://github.com/elninotech/uppload/commit/3e982ce5411b02ba9568373dc06a6fa85f09cfd2)]
+- ⬆️ Update @staart/site [[f79cd5c](https://github.com/elninotech/uppload/commit/f79cd5cd99445b8a4ef19c2bb4ce878ea471c2c8)]
+- 🍱 Add blog assets [[ea72bd2](https://github.com/elninotech/uppload/commit/ea72bd28ef7b76c9c0e57a4c83af26b564f36d29)]
+- 🔧 Add blog to navbar [[17e33ba](https://github.com/elninotech/uppload/commit/17e33ba3841cff16810ccc79d4e031c3a498c308)]
+- 🔧 Update site config [[d183de8](https://github.com/elninotech/uppload/commit/d183de8391e3c4e5aeef92c84e74edd819af8f5c)]
+- ⬆️ Update @staart/site, remove !important [[855dc28](https://github.com/elninotech/uppload/commit/855dc28180d46e108377b39c6d0cefc56d575b2f)]
+- 🔧 Lint changelog with prettier [[a7eaf03](https://github.com/elninotech/uppload/commit/a7eaf034aea58987ff5918a6badcaa22e4abbda6)]
+- 🔧 Add eslint-config-prettier [[890aa27](https://github.com/elninotech/uppload/commit/890aa27688fdbdf19a61d7d4b835f18624807838)]
+- ⬆️ Update @staart/site to add blog [[0480eee](https://github.com/elninotech/uppload/commit/0480eee2c5ffe011af85bbcf3fdc3ec3a3d56a00)]
+
+### Removed
+
+- ➖ removed uppload from dependency [[7ea1d83](https://github.com/elninotech/uppload/commit/7ea1d83161c722a2ff8e5b1c31c01d2a6c0f4fc4)]
+- ➖ removed uppload from dependency [[455f18f](https://github.com/elninotech/uppload/commit/455f18f75fe7d3f9fcee7e6a4de967144a63986c)]
+
+### Miscellaneous
+
+- Merge pull request [#69](https://github.com/elninotech/uppload/issues/69) from elninotech/all-contributors/add-irohitb [[5381b66](https://github.com/elninotech/uppload/commit/5381b665da042bcf2f8ef5a5ac8ba764e479a14a)]
+- docs: update .all-contributorsrc [skip ci][dac6779](https://github.com/elninotech/uppload/commit/dac6779ecb520f9fefdedbd3883c51b15a6bb66d)]
+- docs: update README.md [skip ci][b405653](https://github.com/elninotech/uppload/commit/b405653147d2b741a953238b1d5911f1cd4fbe88)]
+- 📝 Add more links to blog post [[4019771](https://github.com/elninotech/uppload/commit/4019771443f97df631fc2813771ab5c4cf57d069)]
+- 📝 Add Uppload v2 blog post [[b4baf00](https://github.com/elninotech/uppload/commit/b4baf0025d76aa18cefd05d6c1e9b4b4abcfb8cc)]
+- 📝 Add code maintainability badge [[565822d](https://github.com/elninotech/uppload/commit/565822d27ea8a53e1710d4ae53d45a0630940f77)]
+- 📝 Add author page for Anand [[9dfc998](https://github.com/elninotech/uppload/commit/9dfc998a8712d0f5a3b30aeeaf147f9454dd925f)]
+- 📝 Add Uppload blog link [[fd11936](https://github.com/elninotech/uppload/commit/fd119362f018e8d16f7690649fc09c6d60dc2874)]
+- 📝 Migrate first article to blog [[e7d952b](https://github.com/elninotech/uppload/commit/e7d952b19b077c15d604bd62692d5d924cc0ac06)]
+- 📝 Use &quot;\[&quot; instead of &quot;[&quot; [[046d9e1](https://github.com/elninotech/uppload/commit/046d9e11b777975e376e466e78218d7a0659a7d2)]
+- 📝 Add code quality badge [[6bc64da](https://github.com/elninotech/uppload/commit/6bc64da94e270d662645d6bd9de19cf2a5456ff2)]
+
 <a name="2.0.0"></a>
 
 ## 2.0.0 (2019-12-30)
