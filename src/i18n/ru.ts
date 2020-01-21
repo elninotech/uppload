@@ -1,4 +1,4 @@
-export default {
+export const ru = {
   uploading: "Загрузить ...",
   uploaded: "загруженное",
   fetching: "Получить изображение от $1$ ...",

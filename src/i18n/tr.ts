@@ -1,4 +1,4 @@
-export default {
+export const tr = {
   uploading: "Yükle ...",
   uploaded: "yüklenen",
   fetching: "$1$ 'dan resim al ...",

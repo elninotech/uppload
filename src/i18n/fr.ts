@@ -1,4 +1,4 @@
-export default {
+export const fr = {
   uploading: "Télécharger ...",
   uploaded: "Téléchargé",
   fetching: "Obtenir une image à partir de $1$ ...",

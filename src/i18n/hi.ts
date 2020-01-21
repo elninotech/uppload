@@ -1,4 +1,4 @@
-export default {
+export const hi = {
   uploading: "अपलोड हो रहा है...",
   uploaded: "अपलोड हो गया",
   fetching: "हम आपकी तस्वीर $1$ से ला रहे हैं...",

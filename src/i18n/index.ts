@@ -1,10 +1,8 @@
-import en from "./en";
-import nl from "./nl";
-import hi from "./hi";
-import es from "./es";
-import fr from "./fr";
-import it from "./it";
-import ru from "./ru";
-import tr from "./tr";
-
-export { en, nl, hi, es, fr, it, ru, tr };
+export { en } from "./en";
+export { nl } from "./nl";
+export { hi } from "./hi";
+export { es } from "./es";
+export { fr } from "./fr";
+export { it } from "./it";
+export { ru } from "./ru";
+export { tr } from "./tr";

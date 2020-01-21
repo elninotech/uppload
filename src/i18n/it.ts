@@ -1,4 +1,4 @@
-export default {
+export const it = {
   uploading: "Carica ...",
   uploaded: "caricato",
   fetching: "Ottieni immagine da $1$ ...",

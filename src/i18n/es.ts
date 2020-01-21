@@ -1,4 +1,4 @@
-export default {
+export const es = {
   uploading: "Subir ...",
   uploaded: "Subido",
   fetching: "Obtener imagen de $1$ ...",
