@@ -20,8 +20,8 @@ export const xhrUploader = ({
       const formData = new FormData();
       formData.append(fileKeyName, file);
       const xmlHttp = new XMLHttpRequest();
-      if (typeof settingsFunction === "function") settingsFunction(xmlHttp);
       xmlHttp.open(method, endpoint, true);
+      if (typeof settingsFunction === "function") settingsFunction(xmlHttp);
       xmlHttp.addEventListener("progress", event => {
         if (typeof updateProgress === "function")
           updateProgress(event.loaded / event.total);
