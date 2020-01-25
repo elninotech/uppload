@@ -1,11 +1,14 @@
 # Changelog
 
-<a name="2.0.1"></a>
+<a name="2.1.0"></a>
 
-## 2.0.1 (2020-01-15)
+## 2.1.0 (2020-01-25)
 
 ### Changed
 
+- ⬆️ Update dev dependencies [[f33fd31](https://github.com/elninotech/uppload/commit/f33fd31a13044ea55b528b1cff8d168ed4a7f6d9)]
+- ♻️ Use const export (fixed [#70](https://github.com/elninotech/uppload/issues/70)) [[58f1ee3](https://github.com/elninotech/uppload/commit/58f1ee3a5d4db98ed798aaf97ade737177b1fea6)]
+- ⬆️ Update dev dependencies [[b484e0d](https://github.com/elninotech/uppload/commit/b484e0d7d86669e7132ddefe8ae7b98259049b86)]
 - ⬆️ Update dev dependencies [[fafb13f](https://github.com/elninotech/uppload/commit/fafb13f9b95db706f5d190815c5289a3853f910c)]
 - ⬆️ Update @staart/site [[3e982ce](https://github.com/elninotech/uppload/commit/3e982ce5411b02ba9568373dc06a6fa85f09cfd2)]
 - ⬆️ Update @staart/site [[f79cd5c](https://github.com/elninotech/uppload/commit/f79cd5cd99445b8a4ef19c2bb4ce878ea471c2c8)]
@@ -22,8 +25,19 @@
 - ➖ removed uppload from dependency [[7ea1d83](https://github.com/elninotech/uppload/commit/7ea1d83161c722a2ff8e5b1c31c01d2a6c0f4fc4)]
 - ➖ removed uppload from dependency [[455f18f](https://github.com/elninotech/uppload/commit/455f18f75fe7d3f9fcee7e6a4de967144a63986c)]
 
+### Fixed
+
+- 💚 Opt-out from config validation [[f7a2c95](https://github.com/elninotech/uppload/commit/f7a2c95fa89b4ec23987272e2d909ea532c98c62)]
+
 ### Miscellaneous
 
+- Merge pull request [#73](https://github.com/elninotech/uppload/issues/73) from elninotech/all-contributors/add-zekenie [[881945a](https://github.com/elninotech/uppload/commit/881945a9f1f6ec856c6dab8eddf0b958b30b7be0)]
+- Merge pull request [#72](https://github.com/elninotech/uppload/issues/72) from zekenie/patch-1 [[7d09fa8](https://github.com/elninotech/uppload/commit/7d09fa8708ede768c979131618efa304074a5794)]
+- docs: update .all-contributorsrc [skip ci][0b56d82](https://github.com/elninotech/uppload/commit/0b56d8282fcd30029b0d968aba1260cc7c33b9d4)]
+- docs: update README.md [skip ci][aa31ac6](https://github.com/elninotech/uppload/commit/aa31ac618d1e09d0340c294af929aa7ab8020a59)]
+- Fixes [#71](https://github.com/elninotech/uppload/issues/71) XHR calls settings function after request open [[3adffaa](https://github.com/elninotech/uppload/commit/3adffaa8b9918a61be2488824e347be2b8ba96fd)]
+- 📝 Add FOSSA badge [[3d3bd06](https://github.com/elninotech/uppload/commit/3d3bd06561c4c3ace64f3e743e9bf0b459c49526)]
+- 🚀 Deploy v2.0.1 [[b82b699](https://github.com/elninotech/uppload/commit/b82b699ecd6f5b4051ecf34cf35c9c1d0ccc9b36)]
 - Merge pull request [#69](https://github.com/elninotech/uppload/issues/69) from elninotech/all-contributors/add-irohitb [[5381b66](https://github.com/elninotech/uppload/commit/5381b665da042bcf2f8ef5a5ac8ba764e479a14a)]
 - docs: update .all-contributorsrc [skip ci][dac6779](https://github.com/elninotech/uppload/commit/dac6779ecb520f9fefdedbd3883c51b15a6bb66d)]
 - docs: update README.md [skip ci][b405653](https://github.com/elninotech/uppload/commit/b405653147d2b741a953238b1d5911f1cd4fbe88)]
