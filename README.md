@@ -139,6 +139,7 @@ We'd like to thank these wonderful people and teams for contributing ([emoji key
   <tr>
     <td align="center"><a href="https://github.com/nsahukar"><img src="https://avatars3.githubusercontent.com/u/2324769?v=4" width="100px;" alt=""/><br /><sub><b>Nikhil Sahukar</b></sub></a><br /><a href="#design-nsahukar" title="Design">🎨</a></td>
     <td align="center"><a href="https://github.com/irohitb"><img src="https://avatars0.githubusercontent.com/u/32276134?v=4" width="100px;" alt=""/><br /><sub><b>Rohit Bhatia</b></sub></a><br /><a href="https://github.com/elninotech/uppload/issues?q=author%3Airohitb" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="http://zeke.io"><img src="https://avatars2.githubusercontent.com/u/962281?v=4" width="100px;" alt=""/><br /><sub><b>Zeke Nierenberg</b></sub></a><br /><a href="https://github.com/elninotech/uppload/issues?q=author%3Azekenie" title="Bug reports">🐛</a> <a href="https://github.com/elninotech/uppload/commits?author=zekenie" title="Code">💻</a></td>
   </tr>
 </table>
 
