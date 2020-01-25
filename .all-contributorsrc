@@ -161,6 +161,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "zekenie",
+      "name": "Zeke Nierenberg",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/962281?v=4",
+      "profile": "http://zeke.io",
+      "contributions": [
+        "bug",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
