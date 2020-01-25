@@ -1,10 +1,15 @@
+version: 1.0
 language: node_js
 node_js:
   - "node"
+install:
+  - "npm run i"
 script:
   - "npm run build"
   - "npm run test-report"
 deploy:
+  edge: true
   provider: npm
   email: $NPM_EMAIL
   api_key: $NPM_TOKEN
+  skip_cleanup: true
