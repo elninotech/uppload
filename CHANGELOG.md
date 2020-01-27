@@ -1,5 +1,17 @@
 # Changelog
 
+<a name="2.2.0"></a>
+
+## 2.2.0 (2020-01-27)
+
+### Fixed
+
+- 🐛 Fix [#75](https://github.com/elninotech/uppload/issues/75) by handling image error [[690d7f0](https://github.com/elninotech/uppload/commit/690d7f096e50c0a8600e400d6ad1f78069b07fce)]
+
+### Miscellaneous
+
+- 📝 Change default export docs in language [[e49bd15](https://github.com/elninotech/uppload/commit/e49bd15dd6cb8150df1998139f4754e630eb6e4b)]
+
 <a name="2.1.0"></a>
 
 ## 2.1.0 (2020-01-25)
