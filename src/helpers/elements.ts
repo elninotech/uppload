@@ -139,6 +139,7 @@ export const compressImage = (
         resolve(file);
       });
     };
+    safeListen(image, "error", () => resolve(file));
   });
 
 /**
