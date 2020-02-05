@@ -1,15 +1,30 @@
 # Changelog
 
-<a name="2.2.0"></a>
+<a name="2.3.0"></a>
 
-## 2.2.0 (2020-01-27)
+## 2.3.0 (2020-02-05)
+
+### Added
+
+- ✨ Add all scoped window exports [[5adb8a7](https://github.com/elninotech/uppload/commit/5adb8a700fae5df5dfbf144b3e8079b1d1d35b6c)]
+- ✨ Add browser build [[4321298](https://github.com/elninotech/uppload/commit/43212983f46e00277518fcfb7dbf3d93fc277519)]
+- ➕ Add webpack [[1d1ae28](https://github.com/elninotech/uppload/commit/1d1ae28c979c7dcb4c2ca78458ad5e1e812fa880)]
+
+### Changed
+
+- 🔧 Add build-browser to build script [[894efca](https://github.com/elninotech/uppload/commit/894efca9187a423325fbd7c8410d63b2a284d380)]
+- 🔧 Add basic webpack config [[ce1e4ab](https://github.com/elninotech/uppload/commit/ce1e4ab0547f251daba2fc93b065007f3876a48d)]
 
 ### Fixed
 
+- 💚 Fix Travis by removing NPM deploy [[a8740eb](https://github.com/elninotech/uppload/commit/a8740eb097fc79e2dab99145d36ecd353c08765a)]
 - 🐛 Fix [#75](https://github.com/elninotech/uppload/issues/75) by handling image error [[690d7f0](https://github.com/elninotech/uppload/commit/690d7f096e50c0a8600e400d6ad1f78069b07fce)]
 
 ### Miscellaneous
 
+- 🙈 Add webpack.config.js (built) to .gitignore [[6696366](https://github.com/elninotech/uppload/commit/669636621b2eeb40478957c0e73718723cfe8aaf)]
+- 🚧 Add browser support (fixed [#78](https://github.com/elninotech/uppload/issues/78)) [[967e0a2](https://github.com/elninotech/uppload/commit/967e0a25e25630593a246fca3edc2f5d43d662f2)]
+- 🚀 Deploy v2.2.0 [[0f6b2ef](https://github.com/elninotech/uppload/commit/0f6b2ef018314fdc13c85ba23b391d467cbcd60a)]
 - 📝 Change default export docs in language [[e49bd15](https://github.com/elninotech/uppload/commit/e49bd15dd6cb8150df1998139f4754e630eb6e4b)]
 
 <a name="2.1.0"></a>
