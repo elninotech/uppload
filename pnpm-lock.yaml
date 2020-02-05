@@ -8,6 +8,7 @@ devDependencies:
   '@rollup/plugin-typescript': 2.1.0_9e66adf6e18a4979553a7e357314f2dd
   '@staart/site': 1.13.3
   '@types/jest': 24.9.1
+  '@types/webpack': 4.41.5
   auto-i18n: 1.0.0
   coveralls: 3.0.9
   cssnano: 4.1.10
@@ -27,6 +28,7 @@ devDependencies:
   typedoc: 0.16.9
   typescript: 3.7.5
   webpack: 4.41.5_webpack@4.41.5
+  webpack-cli: 3.3.10_webpack@4.41.5
   xhr-mock: 2.5.1
 lockfileVersion: 5.1
 packages:
@@ -1289,6 +1291,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-6BpRxtwLvpWvqCrLO8v6KJFYdiQ3p+9MfRELEMbmoVzyiR/k0RO+dO675IpGudzk7Lor3C/V5xOkGhn2Ur5cow==
+  /@types/anymatch/1.3.1:
+    dev: true
+    resolution:
+      integrity: sha512-/+CRPXpBDpo2RK9C68N3b2cOvO0Cf5B9aPijHsoDQTHivnGSObdOF2BRQOYjojWTDy6nQvMjmqRXIxH55VjxxA==
   /@types/babel__core/7.1.3:
     dependencies:
       '@babel/parser': 7.8.4
@@ -1394,14 +1400,47 @@ packages:
     dev: true
     resolution:
       integrity: sha512-dqYdvN7Sbw8QT/0Ci5rhjE4/iCMJEM0Y9rHpCu+gGXD9Lwbz28t6HI2yegsB6BoV1sShRMU6lAmAcgRjmFy7LA==
+  /@types/source-list-map/0.1.2:
+    dev: true
+    resolution:
+      integrity: sha512-K5K+yml8LTo9bWJI/rECfIPrGgxdpeNbj+d53lwN4QjW1MCwlkhUms+gtdzigTeUyBr09+u8BwOIY3MXvHdcsA==
   /@types/stack-utils/1.0.1:
     dev: true
     resolution:
       integrity: sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
+  /@types/tapable/1.0.5:
+    dev: true
+    resolution:
+      integrity: sha512-/gG2M/Imw7cQFp8PGvz/SwocNrmKFjFsm5Pb8HdbHkZ1K8pmuPzOX4VeVoiEecFCVf4CsN1r3/BRvx+6sNqwtQ==
   /@types/tough-cookie/2.3.6:
     dev: true
     resolution:
       integrity: sha512-wHNBMnkoEBiRAd3s8KTKwIuO9biFtTf0LehITzBhSco+HQI0xkXZbLOD55SW3Aqw3oUkHstkm5SPv58yaAdFPQ==
+  /@types/uglify-js/3.0.4:
+    dependencies:
+      source-map: 0.6.1
+    dev: true
+    resolution:
+      integrity: sha512-SudIN9TRJ+v8g5pTG8RRCqfqTMNqgWCKKd3vtynhGzkIIjxaicNAMuY5TRadJ6tzDu3Dotf3ngaMILtmOdmWEQ==
+  /@types/webpack-sources/0.1.6:
+    dependencies:
+      '@types/node': 13.7.0
+      '@types/source-list-map': 0.1.2
+      source-map: 0.6.1
+    dev: true
+    resolution:
+      integrity: sha512-FtAWR7wR5ocJ9+nP137DV81tveD/ZgB1sadnJ/axUGM3BUVfRPx8oQNMtv3JNfTeHx3VP7cXiyfR/jmtEsVHsQ==
+  /@types/webpack/4.41.5:
+    dependencies:
+      '@types/anymatch': 1.3.1
+      '@types/node': 13.7.0
+      '@types/tapable': 1.0.5
+      '@types/uglify-js': 3.0.4
+      '@types/webpack-sources': 0.1.6
+      source-map: 0.6.1
+    dev: true
+    resolution:
+      integrity: sha512-693JfV/83UZxpQY8vutDSwkDjNujy2327UrFqQciJWXh761B/aUIZIM5N05IRIZ17WwsG8VfUSE3edwXvkehiQ==
   /@types/yargs-parser/15.0.0:
     dev: true
     resolution:
@@ -3765,6 +3804,16 @@ packages:
     dev: true
     resolution:
       integrity: sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==
+  /enhanced-resolve/4.1.0:
+    dependencies:
+      graceful-fs: 4.2.3
+      memory-fs: 0.4.1
+      tapable: 1.1.3
+    dev: true
+    engines:
+      node: '>=6.9.0'
+    resolution:
+      integrity: sha512-F/7vkyTtyc/llOIn8oWclcB25KdRaiPBpZYDgJHgh/UHtpgT2p2eldQgtQnLtUvfMKPKxbRaQM/hHkvLHt1Vng==
   /enhanced-resolve/4.1.1:
     dependencies:
       graceful-fs: 4.2.3
@@ -4851,6 +4900,14 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-sKzpEkf11GpOFuw0Zzjzmt4B4UZwjOcG757PPvrfhxcLFbq0wpsgpOqxpxtxFiCG4DtG93M6XRVbF2oGdev7bg==
+  /global-modules/2.0.0:
+    dependencies:
+      global-prefix: 3.0.0
+    dev: true
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-NGbfmJBp9x8IxyJSd1P+otYK8vonoJactOogrVfFRIAEY1ukil8RSKDz2Yo7wh1oihl51l/r6W4epkeKJHqL8A==
   /global-prefix/1.0.2:
     dependencies:
       expand-tilde: 2.0.2
@@ -4863,6 +4920,16 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-2/dDxsFJklk8ZVVoy2btMsASLr4=
+  /global-prefix/3.0.0:
+    dependencies:
+      ini: 1.3.5
+      kind-of: 6.0.3
+      which: 1.3.1
+    dev: true
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-awConJSVCHVGND6x3tmMaKcQvwXLhjdkmomy2W+Goaui8YPgYgXJZewhg3fWC+DlfqqQuWg8AwqjGTD2nAPVWg==
   /global/4.4.0:
     dependencies:
       min-document: 2.19.0
@@ -5391,6 +5458,16 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-BWmOPUXIjo1+nZLLBYTnfwlvPkM=
+  /import-local/2.0.0:
+    dependencies:
+      pkg-dir: 3.0.0
+      resolve-cwd: 2.0.0
+    dev: true
+    engines:
+      node: '>=6'
+    hasBin: true
+    resolution:
+      integrity: sha512-b6s04m3O+s3CGSbqDIyP4R6aAwAeYlVq9+WUWep6iHa8ETRf9yei1U48C5MmfJmV9AiLYYBKPMq/W+/WRpQmCQ==
   /import-local/3.0.2:
     dependencies:
       pkg-dir: 4.2.0
@@ -9717,6 +9794,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==
+  /resolve-cwd/2.0.0:
+    dependencies:
+      resolve-from: 3.0.0
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-AKn3OHVW4nA46uIyyqNypqWbZlo=
   /resolve-cwd/3.0.0:
     dependencies:
       resolve-from: 5.0.0
@@ -11436,6 +11521,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
+  /v8-compile-cache/2.0.3:
+    dev: true
+    resolution:
+      integrity: sha512-CNmdbwQMBjwr9Gsmohvm0pbL954tJrNzf6gWL3K+QMQf00PF7ERGrEiLgjuU3mKreLC2MeGhUsNV9ybTbLgd3w==
   /v8-compile-cache/2.1.0:
     dev: true
     resolution:
@@ -11594,6 +11683,28 @@ packages:
     dev: true
     resolution:
       integrity: sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==
+  /webpack-cli/3.3.10_webpack@4.41.5:
+    dependencies:
+      chalk: 2.4.2
+      cross-spawn: 6.0.5
+      enhanced-resolve: 4.1.0
+      findup-sync: 3.0.0
+      global-modules: 2.0.0
+      import-local: 2.0.0
+      interpret: 1.2.0
+      loader-utils: 1.2.3
+      supports-color: 6.1.0
+      v8-compile-cache: 2.0.3
+      webpack: 4.41.5_webpack@4.41.5
+      yargs: 13.2.4
+    dev: true
+    engines:
+      node: '>=6.11.5'
+    hasBin: true
+    peerDependencies:
+      webpack: 4.x.x
+    resolution:
+      integrity: sha512-u1dgND9+MXaEt74sJR4PR7qkPxXUSQ0RXYq8x1L6Jg1MYVEmGPrH6Ah6C4arD4r0J1P5HKjRqpab36k0eIzPqg==
   /webpack-sources/1.4.3:
     dependencies:
       source-list-map: 2.0.1
@@ -11941,6 +12052,22 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Lhz8TLaYnxq/2ObqHDql8dX8CJi97oHxrjUcYtzKbbykPtVW9WB+poxI+NM2UIzsMgNCZTIf0AQwsjK5yMAqZw==
+  /yargs/13.2.4:
+    dependencies:
+      cliui: 5.0.0
+      find-up: 3.0.0
+      get-caller-file: 2.0.5
+      os-locale: 3.1.0
+      require-directory: 2.1.1
+      require-main-filename: 2.0.0
+      set-blocking: 2.0.0
+      string-width: 3.1.0
+      which-module: 2.0.0
+      y18n: 4.0.0
+      yargs-parser: 13.1.1
+    dev: true
+    resolution:
+      integrity: sha512-HG/DWAJa1PAnHT9JAhNa8AbAv3FPaiLzioSjCcmuXXhP8MlpHO5vwls4g4j6n30Z74GVQj8Xa62dWVx1QCGklg==
   /yargs/13.3.0:
     dependencies:
       cliui: 5.0.0
@@ -12030,6 +12157,7 @@ specifiers:
   '@rollup/plugin-typescript': ^2.1.0
   '@staart/site': ^1.13.3
   '@types/jest': ^24.9.1
+  '@types/webpack': ^4.41.5
   auto-i18n: ^1.0.0
   coveralls: ^3.0.9
   cropperjs: ^1.5.6
@@ -12053,5 +12181,6 @@ specifiers:
   typedoc: ^0.16.8
   typescript: ^3.7.5
   webpack: ^4.41.5
+  webpack-cli: ^3.3.10
   whatwg-fetch: ^3.0.0
   xhr-mock: ^2.5.1
