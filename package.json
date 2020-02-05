@@ -61,9 +61,11 @@
     "rollup": "^1.29.1",
     "sass": "^1.25.1-test.1",
     "ts-jest": "^25.0.0",
+    "ts-loader": "^6.2.1",
     "tslib": "^1.10.0",
     "typedoc": "^0.16.8",
     "typescript": "^3.7.5",
+    "webpack": "^4.41.5",
     "xhr-mock": "^2.5.1"
   },
   "dependencies": {
