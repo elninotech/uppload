@@ -94,6 +94,7 @@ profilePicture.use([
 - [Blog](https://uppload.js.org/blog)
 - [Image compression](https://uppload.js.org/compression)
 - [Internationalization](https://uppload.js.org/i18n)
+- [Using in browsers directly](https://uppload.js.org/browser-usage)
 - [Accessibility](https://uppload.js.org/a11y) · [Compare Uppload](https://uppload.js.org/compare) · [FAQs](https://uppload.js.org/faq)
 
 **[View Uppload docs →](https://uppload.js.org)**
