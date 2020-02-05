@@ -29,7 +29,7 @@
   "scripts": {
     "build": "npm run build-package && node scripts/build-scss.js",
     "test": "jest",
-    "build-package": "gulp build",
+    "build-package": "gulp build && build-browser",
     "build-site": "site",
     "build-demo": "parcel build demo/index.html",
     "build-browser": "tsc --lib es6 webpack.config.ts && webpack --config webpack.config.js",
