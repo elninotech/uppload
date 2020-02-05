@@ -68,3 +68,6 @@ public/
 # package-lock & yarn.lock (we commit pnpm-lock.yaml)
 package-lock.json
 yarn.lock
+
+# Built webpack config
+webpack.config.js
