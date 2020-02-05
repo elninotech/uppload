@@ -1,4 +1,4 @@
-import { Uppload } from "./";
+import { Uppload } from "./index";
 
 export interface UpploadWindow extends Window {
   Uppload: typeof Uppload;
