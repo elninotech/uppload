@@ -10,8 +10,8 @@
 | TypeScript support | ❌ | ✅ | ✅ | ✅ |
 | Import from Instagram | ✅ | ❌ | ✅ | ✅ |
 | Import from Facebook | ✅ | ❌ | ✅ | ✅ |
-| Search on Unsplash | ❌ | ❌ | ✅ | ❌ |
-| Search on Pexels | ❌ | ❌ | ✅ | ❌ |
+| Search on Unsplash | ❌ | ❌ | ❌ | ✅ |
+| Search on Pexels | ❌ | ❌ | ❌ | ✅ |
 | Built-in crop | ✅ | ❌ | ❌ | ✅ |
 | Built-in filters | ❌ | ❌ | ❌ | ✅ |
 | Built-in rotate | ❌ | ❌ | ❌ | ✅ |
