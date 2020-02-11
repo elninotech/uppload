@@ -80,7 +80,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint && git add ."
+      "pre-commit": "npm run lint && git add ."
     }
   },
   "jest": {
