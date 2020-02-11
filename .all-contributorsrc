@@ -171,6 +171,15 @@
         "bug",
         "code"
       ]
+    },
+    {
+      "login": "brianteeman",
+      "name": "Brian Teeman",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1296369?v=4",
+      "profile": "https://brian.teeman.net",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 7,
