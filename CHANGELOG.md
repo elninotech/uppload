@@ -1,5 +1,31 @@
 # Changelog
 
+<a name="2.3.1"></a>
+
+## 2.3.1 (2020-02-11)
+
+### Changed
+
+- ⬆️ Update dev dependencies [[f0bc896](https://github.com/elninotech/uppload/commit/f0bc896ff057198f4d499fb463d209ef2e886178)]
+- ♻️ Use npm instead of pnpm [[8e9f883](https://github.com/elninotech/uppload/commit/8e9f8838b189d72c50fda1c6fdc2e966b559503a)]
+
+### Fixed
+
+- 🐛 Add &quot;npm run&quot; to script [[c571661](https://github.com/elninotech/uppload/commit/c571661302ec96e843249b7b58ffcef9ba3948b9)]
+
+### Miscellaneous
+
+- Merge pull request [#83](https://github.com/elninotech/uppload/issues/83) from elninotech/all-contributors/add-brianteeman [[525c72b](https://github.com/elninotech/uppload/commit/525c72b08a842e5386372efcef6985e0ca952cad)]
+- Merge pull request [#82](https://github.com/elninotech/uppload/issues/82) from brianteeman/patch-1 [[095a609](https://github.com/elninotech/uppload/commit/095a609f280f66144100388b39b790518cb2d36b)]
+- docs: update .all-contributorsrc [skip ci][854d601](https://github.com/elninotech/uppload/commit/854d601c13c156b5af45bf43b82b1db48ecf5cea)]
+- docs: update README.md [skip ci][27fb5a0](https://github.com/elninotech/uppload/commit/27fb5a0364daae082daefbff9c4c78ba52045bf9)]
+- 📝 Add Product Hunt tweet quote [[bd78f0d](https://github.com/elninotech/uppload/commit/bd78f0d708965d4a77709e8ec5e4164e7d7a4d89)]
+- English grammar [[339da4b](https://github.com/elninotech/uppload/commit/339da4b50d928c39f195edc175d85c941064c330)]
+- 📝 Add Product Hunt badge [[3854127](https://github.com/elninotech/uppload/commit/3854127898e1da679d60fbf07be5d0be56877c46)]
+- 📝 Add help docs for local service [[54e48c3](https://github.com/elninotech/uppload/commit/54e48c39b1c9c63992aa01a49fd1d3c9a828ca38)]
+- 📝 Update comparison table [[b7ae098](https://github.com/elninotech/uppload/commit/b7ae098a083e8e4acef94827332772f1edc6d9e1)]
+- 📝 Add browser usage docs [[b936d17](https://github.com/elninotech/uppload/commit/b936d17f9ae7b5df0a2eebeb8c596635e71e9d09)]
+
 <a name="2.3.0"></a>
 
 ## 2.3.0 (2020-02-05)
