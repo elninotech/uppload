@@ -2,6 +2,9 @@
 
 Uppload is a better JavaScript image uploader. It's highly customizable with 30+ plugins, completely free and open-source, and can be used with any file uploading backend.
 
+> “This might just be the easiest way to let your users upload content to your site ☁️✨”
+> — <cite><a href="https://twitter.com/ProductHunt/status/1226959275253207040">Product Hunt</a></cite>
+
 |  | Status |
 | - | - |
 | Build | [![GitHub Actions](https://github.com/elninotech/uppload/workflows/Node%20CI/badge.svg)](https://github.com/elninotech/uppload/actions) [![Travis CI](https://img.shields.io/travis/elninotech/uppload?label=Travis%20CI)](https://travis-ci.org/elninotech/uppload) [![Circle CI](https://img.shields.io/circleci/build/github/elninotech/uppload?label=Circle%20CI)](https://circleci.com/gh/elninotech/uppload) [![Azure Pipelines](https://dev.azure.com/anandchowdhary0001/Uppload/_apis/build/status/elninotech.uppload?branchName=master)](https://dev.azure.com/anandchowdhary0001/Uppload/_build/latest?definitionId=11&branchName=master) |
