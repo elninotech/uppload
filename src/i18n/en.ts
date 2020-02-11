@@ -12,12 +12,12 @@ export const en = {
   },
 
   errors: {
-    response_not_ok: "We got an error in fetching this file",
-    unable_to_search: "We got an error in searching",
+    response_not_ok: "We got an error fetching this file",
+    unable_to_search: "We got an error searching",
     invalid_service_url: "This is not $A$ $1$ URL",
     invalid_url: "This URL seems to be invalid",
     upload_aborted: "Your upload was cancelled",
-    upload_error: "We got an error in uploading this file",
+    upload_error: "We got an error uploading this file",
     file_type_not_allowed: "This file type is not allowed",
     file_too_large: "Your file should be smaller than $1$"
   },
