@@ -1,11 +1,11 @@
 export const ru = {
-  uploading: "Загрузить ...",
+  uploading: "Загрузка... ",
   uploaded: "загруженное",
-  fetching: "Получить изображение от $1$ ...",
-  poweredBy: "Стало возможным за $1$",
+  fetching: "Скачиваем изображение с $1$... ",
+  poweredBy: "Стало возможным благодаря $1$",
   needHelp: "Нужна помощь?",
   units: {
-    px: "ПВ",
+    px: "px",
     "%": "%",
     deg: "°"
   },
@@ -17,11 +17,11 @@ export const ru = {
     upload_aborted: "Ваша загрузка была отменена",
     upload_error: "Произошла ошибка при загрузке этого файла",
     file_type_not_allowed: "Этот тип файла не поддерживается",
-    file_too_large: "Файл должен быть менее $1$"
+    file_too_large: "Файл должен быть не более $1$"
   },
   help: {
-    loading: "Закрыть помощь...",
-    close: "Загрузка справки"
+    loading: "Загрузка...",
+    close: "Закрыть"
   },
   services: {
     default: {
@@ -30,33 +30,34 @@ export const ru = {
     local: {
       title: "Выберите файл",
       button: "Выберите файл",
-      or: "из",
+      or: "или",
       drop: "Перетащите файл сюда, чтобы загрузить"
     },
     camera: {
-      title: "камера",
-      button: "Веб-камера фото",
+      title: "Камера",
+      button: "Cделать фото",
       switch: "Переключить камеру",
-      waiting: "Жду разрешения камеры ...",
+      waiting: "Жду разрешения камеры...",
       unableToRead:
-        "Мы не можем прочитать видео с вашей камеры. Это может быть связано с тем, что вам не предоставлено необходимое разрешение, или потому что ваше устройство не поддерживает доступ к камере."
+        "Мы не можем получить доступ к вашей камере. Это может быть связано с тем, что вы не предоставили разрешение, или ваше устройство не поддерживает доступ к камере."
     },
     microlink: {
-      button: "Импорт от $1$",
-      label: "URL $1$ $2$",
-      placeholder: "Введите URL $1$ $2$",
-      type: "после"
+      button: "Скачать из $1$",
+      label: "Ссылка на $1$ $2$",
+      placeholder: "Введите ссылку на $1$ $2$",
+      type: "пост"
     },
     url: {
-      title: "Прямой URL",
-      label: "URL изображения",
-      placeholder: "Введите URL изображения"
+      title: "Ссылка",
+      label: "Ссылка на изображение",
+      placeholder: "Введите ссылку на изображение",
+      button: "Скачать изображение"
     },
     instagram: {
       title: "Instagram"
     },
     facebook: {
-      title: "facebook"
+      title: "Facebook"
     },
     flickr: {
       title: "Flickr",
@@ -73,19 +74,19 @@ export const ru = {
       title: "ArtStation"
     },
     twitter: {
-      title: "щебет",
+      title: "Twitter",
       type: "фото твит"
     },
     pinterest: {
       title: "Pinterest",
-      type: "штырь"
+      type: "pin"
     },
     flipboard: {
       title: "Flipboard",
       type: "статья"
     },
     fotki: {
-      title: "фотографии",
+      title: "Fotki",
       type: "фото"
     },
     linkedin: {
@@ -98,20 +99,20 @@ export const ru = {
       title: "Tumblr"
     },
     weheartit: {
-      title: "Мы слышали это"
+      title: "We Heart It"
     },
     screenshot: {
       title: "Скриншот",
       button: "Сделать скриншот",
-      label: "URL веб-страницы",
-      placeholder: "Введите URL",
-      loading: "Сделай скриншот ..."
+      label: "Ссылка на сайт",
+      placeholder: "Введите ссылку",
+      loading: "Скриншотим..."
     },
     search: {
-      button: "Искать $1$",
-      label: "Поиск изображения",
-      placeholder: "Искать что-то",
-      imagesPoweredBy: "Изображения стали возможными за $1$"
+      button: "Поиск на $1$",
+      label: "Поиск изображений",
+      placeholder: "",
+      imagesPoweredBy: "картинки предоставлены $1$"
     },
     giphy: {
       title: "GIPHY"
@@ -131,33 +132,33 @@ export const ru = {
       title: "пример"
     },
     filters: {
-      title: "фильтры"
+      title: "Фильтры"
     },
     crop: {
-      title: "культура",
+      title: "Обрезать",
       aspectRatios: {
         free: "Свободный",
-        square: "полный"
+        square: "Квадрат"
       }
     },
     rotate: {
-      title: "скрутить"
+      title: "Поворот"
     },
     flip: {
-      title: "Повернись",
+      title: "Отразить",
       buttons: {
-        horizontal: "горизонтальный",
-        vertical: "вертикальный"
+        horizontal: "Горизонтально",
+        vertical: "Вертикально"
       }
     },
     sharpen: {
       title: "Резкость"
     },
     blur: {
-      title: "увядать"
+      title: "Размытие"
     },
     brightness: {
-      title: "яркость"
+      title: "Яркость"
     },
     contrast: {
       title: "Контраст"
@@ -169,10 +170,10 @@ export const ru = {
       title: "Повернуть оттенок"
     },
     invert: {
-      title: "Перевернуть"
+      title: "Инверсия"
     },
     saturate: {
-      title: "насыщать"
+      title: "Насыщенность"
     },
     sepia: {
       title: "Сепия"
