@@ -3,6 +3,7 @@ import { IHandlersParams, IServiceTemplateParams } from "./interfaces";
 import { imageUrlToBlob, cachedFetch } from "./http";
 import { colorSVG } from "./assets";
 import { safeListen } from "./elements";
+import { blobToUpploadFile } from "./files";
 
 export class MicrolinkBaseClass extends UpploadService {
   loading = false;
@@ -84,12 +85,12 @@ export class MicrolinkBaseClass extends UpploadService {
                 url
               )}&screenshot=true&meta=false&embed=screenshot.url`
             )
-              .then(blob => params.next(blob))
+              .then(blob => params.next(blobToUpploadFile(blob)))
               .catch(error => params.handle(error))
               .then(() => (this.loading = false));
           } else if (this.name === "url") {
             imageUrlToBlob(url)
-              .then(blob => params.next(blob))
+              .then(blob => params.next(blobToUpploadFile(blob)))
               .catch(error => params.handle(error));
           } else {
             cachedFetch<{
@@ -105,7 +106,7 @@ export class MicrolinkBaseClass extends UpploadService {
                 return result.data.image.url;
               })
               .then(url => imageUrlToBlob(url))
-              .then(blob => params.next(blob))
+              .then(blob => params.next(blobToUpploadFile(blob)))
               .catch(error => params.handle(error));
           }
         }

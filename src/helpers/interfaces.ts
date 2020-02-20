@@ -36,7 +36,7 @@ export interface IUpploadSettings {
 export interface IHandlersParams {
   upload: (file: Blob) => Promise<string>;
   uploadMultiple: (file: Blob[]) => Promise<string>;
-  next: (file: Blob) => void;
+  next: (file: IUpploadFile) => void;
   showHelp: (url: string) => void;
   handle: (error: any) => void;
   uppload: Uppload;
@@ -44,7 +44,7 @@ export interface IHandlersParams {
 }
 
 export interface ITemplateParams {
-  file: Blob;
+  file: IUpploadFile;
   translate: ITranslator;
 }
 export interface IServiceTemplateParams {
@@ -66,4 +66,12 @@ export type ILanguageHelper = (text: string) => string;
 
 export interface ILanguage {
   [index: string]: string | ILanguage | ILanguageHelper | any;
+}
+
+export interface IUpploadFile {
+  blob: Blob;
+  name?: string;
+  type?: string;
+  size?: number;
+  lastModified?: Date;
 }

@@ -5,6 +5,7 @@ import {
   fitImageToContainer,
   canvasToBlob
 } from "../helpers/elements";
+import { blobToUpploadFile } from "../helpers/files";
 
 export default class Camera extends UpploadService {
   name = "camera";
@@ -169,7 +170,9 @@ export default class Camera extends UpploadService {
     if (!context) return;
     context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     context.drawImage(video, 0, 0, width, height);
-    canvasToBlob(this.canvas).then(blob => params.next(blob));
+    canvasToBlob(this.canvas).then(blob =>
+      params.next(blobToUpploadFile(blob))
+    );
   }
 
   startStream(params: IHandlersParams, constraints: MediaStreamConstraints) {

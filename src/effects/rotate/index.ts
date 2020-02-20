@@ -1,6 +1,10 @@
 import { UpploadEffect } from "../../effect";
 import Cropper from "cropperjs";
-import { IHandlersParams, ITemplateParams } from "../../helpers/interfaces";
+import {
+  IHandlersParams,
+  ITemplateParams,
+  IUpploadFile
+} from "../../helpers/interfaces";
 import {
   safeListen,
   fitImageToContainer,
@@ -13,9 +17,11 @@ export default class Rotate extends UpploadEffect {
   value = 0;
   max = 360;
   unit = "deg";
+  originalFile: IUpploadFile = { blob: new Blob() };
 
   template = ({ file, translate }: ITemplateParams) => {
-    const image = URL.createObjectURL(file);
+    const image = URL.createObjectURL(file.blob);
+    this.originalFile = file;
     return `
       <div class="uppload-rotating-element">
         <img style="width: 20px" alt="" src="${image}">
@@ -32,6 +38,7 @@ export default class Rotate extends UpploadEffect {
     const rotatorElement = params.uppload.container.querySelector(
       ".uppload-rotating-element img"
     ) as HTMLImageElement | null;
+    const originalFile = this.originalFile;
     if (rotatorElement) {
       fitImageToContainer(params, rotatorElement).then(() => {
         const rotator = new Cropper(rotatorElement, {
@@ -42,9 +49,10 @@ export default class Rotate extends UpploadEffect {
           cropBoxResizable: false,
           toggleDragModeOnDblclick: false,
           ready() {
-            canvasToBlob(rotator.getCroppedCanvas()).then(blob =>
-              params.next(blob)
-            );
+            canvasToBlob(rotator.getCroppedCanvas()).then(blob => {
+              originalFile.blob = blob;
+              params.next(originalFile);
+            });
           }
         });
         const range = params.uppload.container.querySelector(
@@ -63,9 +71,10 @@ export default class Rotate extends UpploadEffect {
             if (displayer) displayer.innerHTML = value.toString();
             rotator.rotate(value - this.value);
             this.value = value;
-            canvasToBlob(rotator.getCroppedCanvas()).then(blob =>
-              params.next(blob)
-            );
+            canvasToBlob(rotator.getCroppedCanvas()).then(blob => {
+              originalFile.blob = blob;
+              params.next(originalFile);
+            });
           });
       });
     }

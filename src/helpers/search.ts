@@ -3,6 +3,7 @@ import { IHandlersParams, IServiceTemplateParams } from "../helpers/interfaces";
 import { cachedFetch, imageUrlToBlob } from "../helpers/http";
 import { safeListen } from "../helpers/elements";
 import { colorSVG } from "./assets";
+import { blobToUpploadFile } from "./files";
 
 let params: any | undefined = undefined;
 
@@ -161,7 +162,7 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
         this.update(params);
         if (url)
           imageUrlToBlob(url)
-            .then(blob => params.next(blob))
+            .then(blob => params.next(blobToUpploadFile(blob)))
             .catch(error => params.handle("errors.response_not_ok"))
             .then(() => (this.loading = false));
       });

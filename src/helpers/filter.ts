@@ -4,11 +4,12 @@ import {
   fitImageToContainer,
   canvasToBlob
 } from "../helpers/elements";
-import { IHandlersParams, ITemplateParams } from "./interfaces";
+import { IHandlersParams, ITemplateParams, IUpploadFile } from "./interfaces";
 
 export default class UpploadFilterBaseClass extends UpploadEffect {
   canvas: HTMLCanvasElement = document.createElement("canvas");
   originalfileURL = "";
+  originalFile: IUpploadFile = { blob: new Blob() };
   cssFilter = "";
   max = 10;
   unit = "px";
@@ -21,8 +22,9 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
     );
 
   template = ({ file, translate }: ITemplateParams) => {
-    const image = URL.createObjectURL(file);
+    const image = URL.createObjectURL(file.blob);
     this.originalfileURL = image;
+    this.originalFile = file;
     return `
       <div class="uppload-hue-image">
         <img style="width: 20px" alt="" src="${image}">
@@ -85,7 +87,8 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
       `${this.cssFilter}(${range.value}${this.unit})`
     ).then(blob => {
       if (!blob) return;
-      params.next(blob);
+      this.originalFile.blob = blob;
+      params.next(this.originalFile);
       const image = URL.createObjectURL(blob);
       hueElement.setAttribute("src", image);
     });

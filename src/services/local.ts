@@ -84,7 +84,15 @@ export default class Local extends UpploadService {
       }
     }
     if (!file) return;
-    if (file) params.next(file);
+    if (file)
+      params.next({
+        blob: file,
+        size: file.size,
+        lastModified: file.lastModified
+          ? new Date(file.lastModified)
+          : undefined,
+        name: file.name
+      });
   }
 
   fileSelect(params: IHandlersParams, event: Event) {
@@ -129,6 +137,14 @@ export default class Local extends UpploadService {
       }
     }
     if (!file) return;
-    if (file) params.next(file);
+    if (file)
+      params.next({
+        blob: file,
+        size: file.size,
+        lastModified: file.lastModified
+          ? new Date(file.lastModified)
+          : undefined,
+        name: file.name
+      });
   }
 }

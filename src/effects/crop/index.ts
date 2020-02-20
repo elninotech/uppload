@@ -1,6 +1,10 @@
 import { UpploadEffect } from "../../effect";
 import Cropper from "cropperjs";
-import { IHandlersParams, ITemplateParams } from "../../helpers/interfaces";
+import {
+  IHandlersParams,
+  ITemplateParams,
+  IUpploadFile
+} from "../../helpers/interfaces";
 import {
   safeListen,
   fitImageToContainer,
@@ -21,6 +25,7 @@ export default class Crop extends UpploadEffect {
   } as { [index: string]: number };
   autoCropArea: CropNum = 1;
   viewMode: CropNum = 1;
+  originalFile: IUpploadFile = { blob: new Blob() };
 
   constructor({
     aspectRatio,
@@ -45,7 +50,8 @@ export default class Crop extends UpploadEffect {
   }
 
   template = ({ file, translate }: ITemplateParams) => {
-    const image = URL.createObjectURL(file);
+    const image = URL.createObjectURL(file.blob);
+    this.originalFile = file;
     return `
       <div class="uppload-cropping-element">
         <img style="width: 20px" alt="" src="${image}">
@@ -76,6 +82,7 @@ export default class Crop extends UpploadEffect {
     const cropperElement = params.uppload.container.querySelector(
       ".uppload-cropping-element img"
     ) as HTMLImageElement | null;
+    const originalFile = this.originalFile;
     if (cropperElement) {
       fitImageToContainer(params, cropperElement).then(() => {
         const cropper = new Cropper(cropperElement, {
@@ -83,14 +90,16 @@ export default class Crop extends UpploadEffect {
           autoCropArea: this.autoCropArea,
           viewMode: this.viewMode,
           ready() {
-            canvasToBlob(cropper.getCroppedCanvas()).then(blob =>
-              params.next(blob)
-            );
+            canvasToBlob(cropper.getCroppedCanvas()).then(blob => {
+              originalFile.blob = blob;
+              params.next(originalFile);
+            });
           },
           cropend() {
-            canvasToBlob(cropper.getCroppedCanvas()).then(blob =>
-              params.next(blob)
-            );
+            canvasToBlob(cropper.getCroppedCanvas()).then(blob => {
+              originalFile.blob = blob;
+              params.next(originalFile);
+            });
           }
         });
         const aspectRatios = params.uppload.container.querySelectorAll(
@@ -107,9 +116,10 @@ export default class Crop extends UpploadEffect {
                   selectedAspectRatio.getAttribute("data-name") || "free"
                 ]
               );
-              canvasToBlob(cropper.getCroppedCanvas()).then(blob =>
-                params.next(blob)
-              );
+              canvasToBlob(cropper.getCroppedCanvas()).then(blob => {
+                originalFile.blob = blob;
+                params.next(originalFile);
+              });
             }
           });
         });

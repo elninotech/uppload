@@ -10,8 +10,10 @@ import {
   IMultipleUploader,
   IUppload,
   IUpploadSettings,
-  ILanguage
+  ILanguage,
+  IUpploadFile
 } from "./helpers/interfaces";
+import { safeUpploadFileToFile } from "./helpers/files";
 
 let lang: ILanguage | undefined = undefined;
 class DefaultService extends UpploadService {
@@ -44,7 +46,7 @@ export class Uppload implements IUppload {
   settings: IUpploadSettings;
   container: HTMLDivElement;
   focusTrap: FocusTrap;
-  file: Blob | undefined = undefined;
+  file: IUpploadFile = { blob: new Blob() };
   lang: ILanguage = {};
   uploader?: IUploader | IMultipleUploader;
   emitter = mitt();
@@ -162,7 +164,7 @@ export class Uppload implements IUppload {
   open() {
     if (this.isOpen) return;
     this.isOpen = true;
-    this.file = undefined;
+    this.file = { blob: new Blob() };
     this.activeService = "default";
     this.activeEffect = "";
     const serviceRadio = this.container.querySelector(
@@ -433,7 +435,7 @@ export class Uppload implements IUppload {
   /**
    * Render the currently active effect
    */
-  private renderActiveEffect(file: Blob) {
+  private renderActiveEffect(file: IUpploadFile) {
     const activeEffects = this.effects.filter(
       effect => effect.name === this.activeEffect
     );
@@ -536,7 +538,7 @@ export class Uppload implements IUppload {
    * Updates the file and goes to the active effect
    * @param file - The currently active file Blob
    */
-  private next(file: Blob) {
+  private next(file: IUpploadFile) {
     this.emitter.emit("next", file);
     this.file = file;
     if (this.activeEffect) {
@@ -547,7 +549,7 @@ export class Uppload implements IUppload {
         this.activeEffect = this.effects[0].name;
         this.update();
       } else {
-        return this.upload(file);
+        return this.upload(safeUpploadFileToFile(file));
       }
     }
     // Set active state to current effect
@@ -718,7 +720,7 @@ export class Uppload implements IUppload {
     );
     if (cancelButton)
       safeListen(cancelButton, "click", () => {
-        this.file = undefined;
+        this.file = { blob: new Blob() };
         this.activeService = "default";
         this.activeEffect = "";
         this.update();
@@ -735,7 +737,7 @@ export class Uppload implements IUppload {
         if (!this.file) return;
         this.activeService = "";
         this.activeEffect = "";
-        this.upload(this.file);
+        this.upload(safeUpploadFileToFile(this.file));
       });
   }
 

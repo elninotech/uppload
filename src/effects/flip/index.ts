@@ -1,5 +1,9 @@
 import { UpploadEffect } from "../../effect";
-import { IHandlersParams, ITemplateParams } from "../../helpers/interfaces";
+import {
+  IHandlersParams,
+  ITemplateParams,
+  IUpploadFile
+} from "../../helpers/interfaces";
 import {
   fitImageToContainer,
   safeListen,
@@ -9,12 +13,14 @@ import {
 export default class Flip extends UpploadEffect {
   name = "flip";
   originalfileURL = "";
+  originalFile: IUpploadFile = { blob: new Blob() };
   icon = `<svg aria-hidden="true" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M153 0v256h103L153 0zM0 256h103V0L0 256z" fill="#000" fill-rule="nonzero"/></svg>`;
   canvas: HTMLCanvasElement = document.createElement("canvas");
 
   template = ({ file, translate }: ITemplateParams) => {
-    const image = URL.createObjectURL(file);
+    const image = URL.createObjectURL(file.blob);
     this.originalfileURL = image;
+    this.originalFile = file;
     return `
       <div class="uppload-flip">
         <img style="width: 20px" alt="" src="${image}">
@@ -63,7 +69,9 @@ export default class Flip extends UpploadEffect {
     if (!img) return;
     this.imageToCanvasBlob(x, y).then(blob => {
       if (!blob) return;
-      params.next(blob);
+      let file = this.originalFile;
+      file.blob = blob;
+      params.next(file);
       const image = URL.createObjectURL(blob);
       img.setAttribute("src", image);
     });
