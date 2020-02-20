@@ -1,9 +1,20 @@
 import { UpploadService } from "../service";
-import { IHandlersParams, IServiceTemplateParams } from "./interfaces";
+import {
+  IHandlersParams,
+  IServiceTemplateParams,
+  IUpploadFile
+} from "./interfaces";
 import { imageUrlToBlob, cachedFetch } from "./http";
 import { colorSVG } from "./assets";
 import { safeListen } from "./elements";
 import { blobToUpploadFile } from "./files";
+
+const generateFileName = (file: IUpploadFile, service: string) => {
+  file.name = `${service}-import-${Math.random()
+    .toString(36)
+    .slice(2)}`;
+  return file;
+};
 
 export class MicrolinkBaseClass extends UpploadService {
   loading = false;
@@ -85,12 +96,20 @@ export class MicrolinkBaseClass extends UpploadService {
                 url
               )}&screenshot=true&meta=false&embed=screenshot.url`
             )
-              .then(blob => params.next(blobToUpploadFile(blob)))
+              .then(blob =>
+                params.next(
+                  generateFileName(blobToUpploadFile(blob), this.name)
+                )
+              )
               .catch(error => params.handle(error))
               .then(() => (this.loading = false));
           } else if (this.name === "url") {
             imageUrlToBlob(url)
-              .then(blob => params.next(blobToUpploadFile(blob)))
+              .then(blob =>
+                params.next(
+                  generateFileName(blobToUpploadFile(blob), this.name)
+                )
+              )
               .catch(error => params.handle(error));
           } else {
             cachedFetch<{
@@ -106,7 +125,11 @@ export class MicrolinkBaseClass extends UpploadService {
                 return result.data.image.url;
               })
               .then(url => imageUrlToBlob(url))
-              .then(blob => params.next(blobToUpploadFile(blob)))
+              .then(blob =>
+                params.next(
+                  generateFileName(blobToUpploadFile(blob), this.name)
+                )
+              )
               .catch(error => params.handle(error));
           }
         }

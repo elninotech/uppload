@@ -17,14 +17,23 @@ const safeBlobToFile = (blob: Blob, fileName?: string, lastModified?: Date) => {
   }
 };
 
-export const blobToUpploadFile = (blob: Blob) => {
+export const blobToUpploadFile = (
+  blob: Blob,
+  name?: string,
+  type?: string,
+  lastModified?: Date
+) => {
   const result: IUpploadFile = {
-    blob
+    name,
+    blob,
+    lastModified,
+    type
   };
   return result;
 };
 
 export const safeUpploadFileToFile = (file: IUpploadFile) => {
   const blob = file.blob;
+  file.lastModified = file.lastModified || new Date();
   return safeBlobToFile(blob, file.name, file.lastModified);
 };

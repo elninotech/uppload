@@ -1,11 +1,27 @@
 import { UpploadService } from "../service";
-import { IHandlersParams, IServiceTemplateParams } from "../helpers/interfaces";
+import {
+  IHandlersParams,
+  IServiceTemplateParams,
+  IUpploadFile
+} from "../helpers/interfaces";
 import { cachedFetch, imageUrlToBlob } from "../helpers/http";
 import { safeListen } from "../helpers/elements";
 import { colorSVG } from "./assets";
 import { blobToUpploadFile } from "./files";
 
 let params: any | undefined = undefined;
+
+const generateFileName = (
+  file: IUpploadFile,
+  service: string,
+  query?: string | null
+) => {
+  file.name = `${query || `${service}-import`}-${Math.random()
+    .toString(36)
+    .slice(2)}.jpg`;
+  file.type = "image/jpeg";
+  return file;
+};
 
 export class SearchBaseClass<ImageResult = any> extends UpploadService {
   apiKey: string;
@@ -162,7 +178,15 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
         this.update(params);
         if (url)
           imageUrlToBlob(url)
-            .then(blob => params.next(blobToUpploadFile(blob)))
+            .then(blob =>
+              params.next(
+                generateFileName(
+                  blobToUpploadFile(blob),
+                  this.name,
+                  image.getAttribute("aria-label")
+                )
+              )
+            )
             .catch(error => params.handle("errors.response_not_ok"))
             .then(() => (this.loading = false));
       });

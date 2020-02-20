@@ -171,7 +171,16 @@ export default class Camera extends UpploadService {
     context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     context.drawImage(video, 0, 0, width, height);
     canvasToBlob(this.canvas).then(blob =>
-      params.next(blobToUpploadFile(blob))
+      params.next(
+        blobToUpploadFile(
+          blob,
+          `camera-photo-${Math.random()
+            .toString(36)
+            .slice(2)}.png`,
+          "image/png",
+          new Date()
+        )
+      )
     );
   }
 

@@ -25,7 +25,12 @@ export default class Pexels extends SearchBaseClass<PexelsResult> {
           query
         )}&per_page=12&page=1`,
       getButton: (image: PexelsResult) => `<div class="result">
-        <button aria-label="" data-full-url="${image.src.large2x}" style="background-image: url('${image.src.tiny}')"></button><small class="author">
+        <button aria-label="${image.photographer ||
+          ""}" data-title="${image.photographer || ""}" data-full-url="${
+        image.src.large2x
+      }" style="background-image: url('${
+        image.src.tiny
+      }')"></button><small class="author">
         <span>${image.photographer}</span>
       </small></div>`,
       getSearchResults: (response: { photos: PexelsResult[] }) =>
