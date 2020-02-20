@@ -172,6 +172,24 @@ export const canvasToBlob = (
   quality?: number
 ): Promise<Blob> => {
   return new Promise((resolve, reject) => {
+    const context = canvas.getContext("2d");
+    let hasTransparency = false;
+    if (context) {
+      const data = context.getImageData(0, 0, canvas.width, canvas.height).data;
+      for (var i = 0; i < data.length; i += 4) {
+        if (data[i + 3] < 255) {
+          hasTransparency = true;
+        }
+      }
+    }
+    /**
+     * If a transparent image is uploaded, like a PNG or GIF,
+     * let it through uncompressed
+     */
+    if (hasTransparency && type !== "image/webp") {
+      type = undefined;
+      quality = undefined;
+    }
     if (typeof canvas.toBlob === "function") {
       canvas.toBlob(
         blob => {
