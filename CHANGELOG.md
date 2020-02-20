@@ -1,5 +1,31 @@
 # Changelog
 
+<a name="2.3.2"></a>
+
+## 2.3.2 (2020-02-20)
+
+### Changed
+
+- ⬆️ Update dev dependencies [[c6e94f9](https://github.com/elninotech/uppload/commit/c6e94f95ab1f4586a1953feb58e14a247696de87)]
+- ♻️ Change &quot;Try Uppload&quot; to &quot;Live demo&quot; [[92bf9d7](https://github.com/elninotech/uppload/commit/92bf9d7f4d6eba2b2b43db0f5b6d1f1bc6f559a2)]
+- 🍱 Add Product Hunt icon [[449162e](https://github.com/elninotech/uppload/commit/449162e362ad849239693324aabdab4898804d86)]
+- 🍱 Add sketch file (svgo bug) [[1fd5729](https://github.com/elninotech/uppload/commit/1fd5729e5fe3e29abbe4913d4af4d01d24a18966)]
+
+### Fixed
+
+- 🐛 Fix transparent image upload issue [#81](https://github.com/elninotech/uppload/issues/81) [[3f2d326](https://github.com/elninotech/uppload/commit/3f2d326dbdb56db29642260506948bb3129608b2)]
+- 🐛 Add height/width attr to ph-icon [[c9391a8](https://github.com/elninotech/uppload/commit/c9391a863feb7850f1d5e447d3f75351d1cd3562)]
+- 💚 Remove Node.js v8.x [[d4bec5c](https://github.com/elninotech/uppload/commit/d4bec5c42b0bae7b4d7c0d5dfbb63ab272d7914a)]
+
+### Miscellaneous
+
+- 🚀 Deploy v2.3.2 [[f182e12](https://github.com/elninotech/uppload/commit/f182e12fa22215a7cd10699388cbe2544fa14697)]
+- Merge pull request [#85](https://github.com/elninotech/uppload/issues/85) from elninotech/all-contributors/add-jeetiss [[3b7d2a0](https://github.com/elninotech/uppload/commit/3b7d2a04a2dbaaf6c82f15b635aa508b3c3c0262)]
+- improves russian translations [[7c6bbd3](https://github.com/elninotech/uppload/commit/7c6bbd33e11d43853523651d67815f88135a8b37)]
+- Merge pull request [#84](https://github.com/elninotech/uppload/issues/84) from jeetiss/ru-locale [[583e717](https://github.com/elninotech/uppload/commit/583e71771fa0359211f15dc510a0009384247170)]
+- docs: update .all-contributorsrc [skip ci][2fc4d2d](https://github.com/elninotech/uppload/commit/2fc4d2dd46adda175bcb61a03d6c4d13be7aed21)]
+- docs: update README.md [skip ci][b5dddda](https://github.com/elninotech/uppload/commit/b5dddda017378b3b16ca4d574af77b3b62513e6a)]
+
 <a name="2.3.1"></a>
 
 ## 2.3.1 (2020-02-11)
