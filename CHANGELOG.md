@@ -1,11 +1,19 @@
 # Changelog
 
-<a name="2.3.2"></a>
+<a name="2.4.0"></a>
 
-## 2.3.2 (2020-02-20)
+## 2.4.0 (2020-02-20)
+
+### Added
+
+- ✨ Generate file name from context [[b9ddf84](https://github.com/elninotech/uppload/commit/b9ddf84fbe2688e973e2244e908e400a94eacaf5)]
 
 ### Changed
 
+- 🔧 Log second attribute of emitter [[b082471](https://github.com/elninotech/uppload/commit/b0824712437a3f4cdd40e4de2f62aceb9d0a4c84)]
+- 🔧 Add test-typescript script [[a1000cd](https://github.com/elninotech/uppload/commit/a1000cd2f322eaf7d6ff95932eeb6e9eb48b9f10)]
+- 🔧 Empty next function [[85db998](https://github.com/elninotech/uppload/commit/85db9984108529b42ae8fa64dd434e648fccac3f)]
+- ♻️ Use let/const instead of var [[10b7875](https://github.com/elninotech/uppload/commit/10b7875702637f13490ae2a6104548f1349157b2)]
 - ⬆️ Update dev dependencies [[c6e94f9](https://github.com/elninotech/uppload/commit/c6e94f95ab1f4586a1953feb58e14a247696de87)]
 - ♻️ Change &quot;Try Uppload&quot; to &quot;Live demo&quot; [[92bf9d7](https://github.com/elninotech/uppload/commit/92bf9d7f4d6eba2b2b43db0f5b6d1f1bc6f559a2)]
 - 🍱 Add Product Hunt icon [[449162e](https://github.com/elninotech/uppload/commit/449162e362ad849239693324aabdab4898804d86)]
@@ -13,12 +21,16 @@
 
 ### Fixed
 
+- 💚 Fix mocks for file object [[9eb3ba5](https://github.com/elninotech/uppload/commit/9eb3ba5d8afb48f56c8b4e8550c107daaee3610d)]
+- 🐛 Add file attributes like name (fixed [#77](https://github.com/elninotech/uppload/issues/77)) [[cb7c108](https://github.com/elninotech/uppload/commit/cb7c1085c8e6062e1843c0f34592ebf73dcaeaf7)]
 - 🐛 Fix transparent image upload issue [#81](https://github.com/elninotech/uppload/issues/81) [[3f2d326](https://github.com/elninotech/uppload/commit/3f2d326dbdb56db29642260506948bb3129608b2)]
 - 🐛 Add height/width attr to ph-icon [[c9391a8](https://github.com/elninotech/uppload/commit/c9391a863feb7850f1d5e447d3f75351d1cd3562)]
 - 💚 Remove Node.js v8.x [[d4bec5c](https://github.com/elninotech/uppload/commit/d4bec5c42b0bae7b4d7c0d5dfbb63ab272d7914a)]
 
 ### Miscellaneous
 
+- 📝 Document transparency check source [[da2f373](https://github.com/elninotech/uppload/commit/da2f37342f5e73a032687f665ce266354f6fab6c)]
+- 📝 Update CHANGELOG [[ed09f5b](https://github.com/elninotech/uppload/commit/ed09f5bcc49bc38feb6c95604ffa68c981ded325)]
 - 🚀 Deploy v2.3.2 [[f182e12](https://github.com/elninotech/uppload/commit/f182e12fa22215a7cd10699388cbe2544fa14697)]
 - Merge pull request [#85](https://github.com/elninotech/uppload/issues/85) from elninotech/all-contributors/add-jeetiss [[3b7d2a0](https://github.com/elninotech/uppload/commit/3b7d2a04a2dbaaf6c82f15b635aa508b3c3c0262)]
 - improves russian translations [[7c6bbd3](https://github.com/elninotech/uppload/commit/7c6bbd33e11d43853523651d67815f88135a8b37)]
