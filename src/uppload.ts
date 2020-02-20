@@ -537,6 +537,7 @@ export class Uppload implements IUppload {
    * @param file - The currently active file Blob
    */
   private next(file: Blob) {
+    this.emitter.emit("next", file);
     this.file = file;
     if (this.activeEffect) {
       // There's already an active effect
