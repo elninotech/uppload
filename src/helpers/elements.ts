@@ -174,13 +174,20 @@ export const canvasToBlob = (
   return new Promise((resolve, reject) => {
     const context = canvas.getContext("2d");
     let hasTransparency = false;
+    /**
+     * Check if an image has transparent pixels
+     * @source https://stackoverflow.com/a/25923108/1656944
+     */
     if (context) {
-      const data = context.getImageData(0, 0, canvas.width, canvas.height).data;
-      for (var i = 0; i < data.length; i += 4) {
-        if (data[i + 3] < 255) {
-          hasTransparency = true;
+      try {
+        const data = context.getImageData(0, 0, canvas.width, canvas.height)
+          .data;
+        for (var i = 0; i < data.length; i += 4) {
+          if (data[i + 3] < 255) {
+            hasTransparency = true;
+          }
         }
-      }
+      } catch (error) {}
     }
     /**
      * If a transparent image is uploaded, like a PNG or GIF,
