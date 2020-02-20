@@ -28,7 +28,7 @@ const handlersParams: IHandlersParams = {
   translate
 };
 const effectTemplateParams: ITemplateParams = {
-  file: new Blob(),
+  file: { blob: new Blob() },
   translate
 };
 

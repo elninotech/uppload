@@ -35,5 +35,5 @@ test("gets popular items", () =>
 
 test("gets button HTML", () =>
   expect(minifyHTML(service.getButton(pexelsResult))).toBe(
-    `<div class="result"><button aria-label="" data-full-url="https://pexels.com/large.jpg" style="background-image: url('https://pexels.com/tiny.jpg')"></button><small class="author"><span>Anand Chowdhary</span></small></div>`
+    `<div class="result"><button aria-label="Anand Chowdhary" data-full-url="https://pexels.com/large.jpg" style="background-image: url('https://pexels.com/tiny.jpg')"></button><small class="author"><span>Anand Chowdhary</span></small></div>`
   ));

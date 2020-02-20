@@ -7,6 +7,7 @@ const service = new Unsplash("API_KEY");
 
 const unsplashResult: UnsplashResult = {
   id: "1",
+  description: "Tree",
   alt_description: "An image of a tree",
   urls: {
     regular: "https://unsplash.com/regular.jpg",
