@@ -39,7 +39,8 @@
     "test-report": "jest --coverage",
     "changelog": "gitmoji-changelog && prettier 'CHANGELOG.md' --write",
     "build-site-demo": "npm run build-site && npm run build-demo && node scripts/build-demo.js",
-    "build-typedoc": "typedoc --out public/typedoc src"
+    "build-typedoc": "typedoc --out public/typedoc src",
+    "test-typescript": "tsc"
   },
   "browserslist": [
     "last 1 Chrome versions"
