@@ -9,18 +9,11 @@ const globals = {
   cropperjs: "Cropper"
 };
 
-gulp.task("build", async function () {
+gulp.task("build", async function() {
   const bundle = await rollup.rollup({
     input: "./src/index.ts",
-    plugins: [
-      rollupTypescript()
-    ],
-    external: [
-      "whatwg-fetch",
-      "focus-trap",
-      "mitt",
-      "cropperjs"
-    ]
+    plugins: [rollupTypescript()],
+    external: ["focus-trap", "mitt", "cropperjs"]
   });
 
   exec("tsc");
