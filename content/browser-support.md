@@ -1,6 +1,6 @@
 # Browser support
 
-Uppload supports the most recent versions of all major browsers, like Chrome, Firefox, Safari, Opera, and Edge. It also supports Internet Explorer 10 and above, but you need two polyfills.
+Uppload supports the most recent versions of all major browsers, like Chrome, Firefox, Safari, Opera, and Edge. It also works with Internet Explorer 9 and 10, but you need two polyfills.
 
 ## Plugin support
 

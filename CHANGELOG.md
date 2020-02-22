@@ -1,5 +1,22 @@
 # Changelog
 
+<a name="2.5.0"></a>
+
+## 2.5.0 (2020-02-22)
+
+### Changed
+
+- 🔧 Remove external from gulpfile [[0a018ee](https://github.com/elninotech/uppload/commit/0a018ee2f516ebc372e6a092337e60bc1177dc78)]
+- ♻️ Use indexOf instead of includes/startsWith [[1244bcd](https://github.com/elninotech/uppload/commit/1244bcd11af3b95df9813bbe194a23077aadf469)]
+
+### Removed
+
+- ➖ Remove promise/fetch polyfills [[5f68dbf](https://github.com/elninotech/uppload/commit/5f68dbf38d5537105f454022afb08a963c6adc8a)]
+
+### Miscellaneous
+
+- 📝 Update PH badge [[c455980](https://github.com/elninotech/uppload/commit/c455980b02467152f87827809076bf256322826e)]
+
 <a name="2.4.0"></a>
 
 ## 2.4.0 (2020-02-20)
