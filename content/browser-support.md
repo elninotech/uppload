@@ -41,6 +41,4 @@ Here's a summary of some web features Uppload uses, and their browser support:
 - No IE support (polyfills recommended):
   - Promises: [94%+](https://caniuse.com/#feat=promises)
   - Fetch: [93%+](https://caniuse.com/#feat=fetch)
-  - String.includes: [93%+](https://caniuse.com/#feat=es6-string-includes)
-  - String.startsWith: [89%+](https://caniuse.com/#feat=mdn-javascript_builtins_string_startswith)
   - NodeList.forEach: [89%+](https://caniuse.com/#feat=mdn-api_nodelist_foreach)

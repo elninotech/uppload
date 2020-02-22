@@ -70,7 +70,7 @@ export default class Local extends UpploadService {
         return params.uploadMultiple(Array.from(files));
       for (let i = 0; i < files.length; i++) {
         const item = files[i];
-        if (this.mimeTypes.includes(item.type))
+        if (this.mimeTypes.indexOf(item.type) !== -1)
           if (item.size < this.maxFileSize) file = item;
           else
             params.handle(
@@ -120,7 +120,7 @@ export default class Local extends UpploadService {
     if (event.dataTransfer && event.dataTransfer.items) {
       for (let i = 0; i < event.dataTransfer.items.length; i++) {
         const item = event.dataTransfer.items[i];
-        if (item.kind === "file" && this.mimeTypes.includes(item.type)) {
+        if (item.kind === "file" && this.mimeTypes.indexOf(item.type) !== -1) {
           file = item.getAsFile();
           if (!file || file.size > this.maxFileSize) {
             file = null;

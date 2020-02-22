@@ -191,10 +191,13 @@ export const en = {
   helper: (text: string) => {
     // Replace all instances of $A$ with "a" or "an"
     const AAN = "$A$";
-    while (text.includes(AAN)) {
+    while (text.indexOf(AAN) !== -1) {
       const index = text.indexOf(AAN);
       if (text.length > index + 3) {
-        if (["a", "e", "i", "o", "u"].includes(text[index + 4].toLowerCase())) {
+        if (
+          ["a", "e", "i", "o", "u"].indexOf(text[index + 4].toLowerCase()) !==
+          -1
+        ) {
           text = text.replace(AAN, "an");
         } else {
           text = text.replace(AAN, "a");

@@ -293,7 +293,7 @@ export class Uppload implements IUppload {
               : "button"
           } data-uppload-service="${service.name}">
             ${
-              service.icon.startsWith("http")
+              service.icon.indexOf("http") === 0
                 ? `<img class="service-icon" alt="" src="${service.icon}">`
                 : colorSVG(service.icon, service)
             }
@@ -326,7 +326,7 @@ export class Uppload implements IUppload {
           }" name="uppload-effect-radio">
         <label for="uppload-effect-radio-${effect.name}">
           ${
-            effect.icon.startsWith("http")
+            effect.icon.indexOf("http") === 0
               ? `<img class="effect-icon" alt="" src="${effect.icon}">`
               : colorSVG(effect.icon, effect)
           }

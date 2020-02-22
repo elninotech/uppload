@@ -143,7 +143,7 @@ export class MicrolinkBaseClass extends UpploadService {
       safeListen(helpButton, "click", () =>
         params.showHelp(
           `/services/${
-            ["url", "screenshot"].includes(this.name)
+            ["url", "screenshot"].indexOf(this.name) !== -1
               ? this.name
               : `import-from-web-service/${this.name}`
           }`

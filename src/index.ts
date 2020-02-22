@@ -1,6 +1,3 @@
-// Polyfills
-import "./polyfills";
-
 // Main class
 export { Uppload } from "./uppload";
 
