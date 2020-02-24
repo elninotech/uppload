@@ -112,8 +112,4 @@ uppload.on("*", (a: any, b?: any) => {
   console.log("Uppload event", a, b);
 });
 
-// uppload.open();
-
-(window as any).remove = (plugin: string) => {
-  uppload.remove(plugin);
-};
+(window as any).uppload = uppload;

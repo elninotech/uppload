@@ -75,3 +75,12 @@ export interface IUpploadFile {
   size?: number;
   lastModified?: Date;
 }
+
+export type IUpploadPlugins =
+  | UpploadService[]
+  | UpploadEffect[]
+  | (UpploadService | UpploadEffect)[];
+
+export type IPluginUpdateFunction = (
+  plugins: IUpploadPlugins
+) => IUpploadPlugins;

@@ -11,7 +11,8 @@ import {
   IUppload,
   IUpploadSettings,
   ILanguage,
-  IUpploadFile
+  IUpploadFile,
+  IPluginUpdateFunction
 } from "./helpers/interfaces";
 import { safeUpploadFileToFile } from "./helpers/files";
 
@@ -143,6 +144,21 @@ export class Uppload implements IUppload {
     this.effects = this.effects.filter(service => service.name !== slug);
     this.update();
     this.emitter.emit("remove", slug);
+  }
+
+  /**
+   * Update the plugins for this instance
+   * @param pluginUpdateFunction - Function to update this instance's plugins
+   */
+  updatePlugins(pluginUpdateFunction: IPluginUpdateFunction) {
+    const plugins = pluginUpdateFunction(this.services);
+    this.services = plugins.filter(
+      plugin => plugin.type === "service"
+    ) as UpploadService[];
+    this.effects = plugins.filter(
+      plugin => plugin.type === "effect"
+    ) as UpploadEffect[];
+    this.update();
   }
 
   /**
