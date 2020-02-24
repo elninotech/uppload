@@ -113,3 +113,7 @@ uppload.on("*", (a: any, b?: any) => {
 });
 
 // uppload.open();
+
+(window as any).remove = (plugin: string) => {
+  uppload.remove(plugin);
+};

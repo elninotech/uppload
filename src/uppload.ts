@@ -135,6 +135,17 @@ export class Uppload implements IUppload {
   }
 
   /**
+   * Remove a plugin (effect or serve) from this instance
+   * @param slug - Slug of the plugin to be removed
+   */
+  remove(slug: string) {
+    this.services = this.services.filter(service => service.name !== slug);
+    this.effects = this.effects.filter(service => service.name !== slug);
+    this.update();
+    this.emitter.emit("remove", slug);
+  }
+
+  /**
    * Install a new uploader, service, or effect to this instance
    * @param plugin - A single uploader, service, or effect
    */
@@ -143,17 +154,14 @@ export class Uppload implements IUppload {
     if (!plugin.supports()) return;
     if (plugin.type === "service") {
       // Install this service if it isn't already installed
-      let has = false;
-      this.services.forEach(service => {
-        if (service.name === plugin.name) has = true;
-      });
+      const has = !!this.services.filter(
+        service => service.name === plugin.name
+      ).length;
       if (!has) this.services.push(plugin as UpploadService);
       this.ready();
     } else if (plugin.type === "effect") {
-      let has = false;
-      this.effects.forEach(effect => {
-        if (effect.name === plugin.name) has = true;
-      });
+      const has = !!this.effects.filter(effect => effect.name === plugin.name)
+        .length;
       if (!has) this.effects.push(plugin as UpploadEffect);
       this.ready();
     }
