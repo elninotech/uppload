@@ -142,11 +142,19 @@ export class Uppload implements IUppload {
     // Check if the browser supports this plugin
     if (!plugin.supports()) return;
     if (plugin.type === "service") {
-      // Install this service
-      this.services.push(plugin as UpploadService);
+      // Install this service if it isn't already installed
+      let has = false;
+      this.services.forEach(service => {
+        if (service.name === plugin.name) has = true;
+      });
+      if (!has) this.services.push(plugin as UpploadService);
       this.ready();
     } else if (plugin.type === "effect") {
-      this.effects.push(plugin as UpploadEffect);
+      let has = false;
+      this.effects.forEach(effect => {
+        if (effect.name === plugin.name) has = true;
+      });
+      if (!has) this.effects.push(plugin as UpploadEffect);
       this.ready();
     }
   }
