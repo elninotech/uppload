@@ -1,5 +1,19 @@
 # Changelog
 
+<a name="2.6.0"></a>
+
+## 2.6.0 (2020-02-24)
+
+### Added
+
+- ✨ Add option to update plugins ([#89](https://github.com/elninotech/uppload/issues/89)) [[e77c4ae](https://github.com/elninotech/uppload/commit/e77c4ae97d2a86ec29095fbdfb78d1b0a65e9b76)]
+- ✨ Add remove plugin feature (fixed [#89](https://github.com/elninotech/uppload/issues/89)) [[9b75e01](https://github.com/elninotech/uppload/commit/9b75e01e4d0f7d4931436a616dd137357e9a2805)]
+
+### Fixed
+
+- 🐛 Make sure default/uploading services are always there [[2f656c8](https://github.com/elninotech/uppload/commit/2f656c8fb605e427e97e718d2c50e7687a5a031e)]
+- 🐛 Prevent multiple plugin installations [[bfe7f31](https://github.com/elninotech/uppload/commit/bfe7f318c4cdb3690ccf7b73d92bf6eafb3a1d8e)]
+
 <a name="2.5.0"></a>
 
 ## 2.5.0 (2020-02-22)
