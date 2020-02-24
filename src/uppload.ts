@@ -152,9 +152,18 @@ export class Uppload implements IUppload {
    */
   updatePlugins(pluginUpdateFunction: IPluginUpdateFunction) {
     const plugins = pluginUpdateFunction(this.services);
-    this.services = plugins.filter(
+    const services = plugins.filter(
       plugin => plugin.type === "service"
     ) as UpploadService[];
+    const hasDefaultService = !!services.filter(
+      service => service.name === "default"
+    ).length;
+    const hasUploadingService = !!services.filter(
+      service => service.name === "uploading"
+    ).length;
+    if (!hasUploadingService) services.unshift(new UploadingService());
+    if (!hasDefaultService) services.unshift(new DefaultService());
+    this.services = services;
     this.effects = plugins.filter(
       plugin => plugin.type === "effect"
     ) as UpploadEffect[];
