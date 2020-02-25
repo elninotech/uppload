@@ -39,6 +39,12 @@ We use [i18n helpers](https://github.com/elninotech/uppload/blob/master/src/help
 
 For example, in the string "Import from $1$", we replace $1$ with "Instagram" to generate "Import from Instagram". Similarly, the n-th variable replaces $n$ ($1$, $2$, $3$, and so on). You can also define a custom language-specific helper function, which is applied before returning the translation. For example, [`en.ts`](https://github.com/elninotech/uppload/blob/master/src/i18n/en.ts) replaces $A$ with "a" or "an" depending on whether the next word starts with a vowel. In this example, "Enter $A$ $1$ $2$ URL" may be compiled to "Enter an Instagram file URL".
 
+## Online one-click setup
+
+With the one-click online setup with Gitpod (a free only VS Code-like IDE), you can get a ready-to-code workspace with all the dependencies installed, and websevers via `npm run demo` running, so that you can started quickly and make a pull request from within your browser.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
+
 ## Build & deploy
 
 When working locally, the `yarn demo` script is used for a local development setup with hot reloading.

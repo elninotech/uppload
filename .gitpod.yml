@@ -1,0 +1,6 @@
+tasks:
+  - before: npm install
+  - command: npm run demo
+ports: 
+  - port: 1234
+    onOpen: open-preview
