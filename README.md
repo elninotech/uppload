@@ -112,12 +112,6 @@ If you need help with using Uppload, check out the [Getting started](https://upp
 
 Your organization can also request a custom build or get professional support. [Request a quote for free →](https://www.elnino.tech/samenwerken)
 
-## Online one-click setup
-
-With the one-click online setup with Gitpod(A free online VS Code like IDE) you'll get a ready to code ready to code workspace with all the dependencies pre-installed, websevers via `npm run demo` and `npm run serve-site` running so that you can start straight away without wasting time on the setup.
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
-
 ## 👥 Contributors
 
 Uppload is built by [El Niño](https://www.elnino.tech), a digital development studio in Enschede, the Netherlands, that builds custom web and mobile apps, webstores, and more, backed by 14+ years of experience.
