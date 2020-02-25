@@ -1,0 +1,9 @@
+tasks:
+  - before: npm install && npm run build-site
+  - command: npm run demo
+  - command: npm run serve-site
+ports: 
+  - port: 1234
+    onOpen: open-preview
+  - port: 8000
+    onOpen: open-browser
