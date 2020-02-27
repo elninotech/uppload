@@ -68,7 +68,15 @@ const PEXELS_API_KEY =
   "563492ad6f9170000100000172ccefc96f674d01869ba24acc62a573";
 
 uppload.use([
-  new Local(),
+  new Local({
+    mimeTypes: [
+      "image/gif",
+      "image/jpeg",
+      "image/jpg",
+      "image/png",
+      "application/pdf"
+    ]
+  }),
   new Camera(),
   new Instagram(),
   new URL(),

@@ -586,7 +586,12 @@ export class Uppload implements IUppload {
       // There's already an active effect
     } else {
       // Find the first effect and navigate to that
-      if (this.effects.length) {
+      // Unless the file type is not an image
+      if (
+        this.effects.length &&
+        file.type &&
+        file.type.indexOf("image/") === 0
+      ) {
         this.activeEffect = this.effects[0].name;
         this.update();
       } else {
