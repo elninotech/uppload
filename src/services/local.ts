@@ -88,6 +88,7 @@ export default class Local extends UpploadService {
       params.next({
         blob: file,
         size: file.size,
+        type: file.type,
         lastModified: file.lastModified
           ? new Date(file.lastModified)
           : undefined,
@@ -141,6 +142,7 @@ export default class Local extends UpploadService {
       params.next({
         blob: file,
         size: file.size,
+        type: file.type,
         lastModified: file.lastModified
           ? new Date(file.lastModified)
           : undefined,
