@@ -23,5 +23,5 @@ jobs:
           test: true
           reviewers: true
           blocking-labels: do not merge
-          checks: true
+          checks: false
           method: squash
