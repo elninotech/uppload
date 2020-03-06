@@ -20,6 +20,7 @@ import {
   it,
   ru,
   tr,
+  zhTW,
   xhrUploader,
   fetchUploader,
   Camera,
