@@ -81,6 +81,7 @@ export interface UpploadWindow extends Window {
   uppload_it: typeof it;
   uppload_ru: typeof ru;
   uppload_tr: typeof tr;
+  uppload_zhTW: typeof zhTW;
   uppload_xhrUploader: typeof xhrUploader;
   uppload_fetchUploader: typeof fetchUploader;
   uppload_Camera: typeof Camera;
@@ -141,6 +142,7 @@ window.uppload_fr = fr;
 window.uppload_it = it;
 window.uppload_ru = ru;
 window.uppload_tr = tr;
+window.uppload_zhTW = zhTW;
 window.uppload_xhrUploader = xhrUploader;
 window.uppload_fetchUploader = fetchUploader;
 window.uppload_Camera = Camera;
