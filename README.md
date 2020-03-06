@@ -146,12 +146,12 @@ We'd like to thank these wonderful people and teams for contributing ([emoji key
     <td align="center"><a href="http://zeke.io"><img src="https://avatars2.githubusercontent.com/u/962281?v=4" width="100px;" alt=""/><br /><sub><b>Zeke Nierenberg</b></sub></a><br /><a href="https://github.com/elninotech/uppload/issues?q=author%3Azekenie" title="Bug reports">🐛</a> <a href="https://github.com/elninotech/uppload/commits?author=zekenie" title="Code">💻</a></td>
     <td align="center"><a href="https://brian.teeman.net"><img src="https://avatars3.githubusercontent.com/u/1296369?v=4" width="100px;" alt=""/><br /><sub><b>Brian Teeman</b></sub></a><br /><a href="#translation-brianteeman" title="Translation">🌍</a></td>
     <td align="center"><a href="https://jeetiss.github.io/"><img src="https://avatars1.githubusercontent.com/u/6726016?v=4" width="100px;" alt=""/><br /><sub><b>Dmitry Ivakhnenko</b></sub></a><br /><a href="#translation-jeetiss" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/orionlu0916"><img src="https://avatars1.githubusercontent.com/u/5774671?v=4" width="100px;" alt=""/><br /><sub><b>Orion Lu</b></sub></a><br /><a href="#translation-orionlu0916" title="Translation">🌍</a></td>
   </tr>
 </table>
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
