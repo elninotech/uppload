@@ -6,3 +6,4 @@ export { fr } from "./fr";
 export { it } from "./it";
 export { ru } from "./ru";
 export { tr } from "./tr";
+export { zhTW } from "./zh-TW";
