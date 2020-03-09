@@ -1,5 +1,46 @@
 # Changelog
 
+<a name="2.6.1"></a>
+
+## 2.6.1 (2020-03-06)
+
+### Added
+
+- 👷‍♂️ Add GitHub Action to merge PRs [[3e17e43](https://github.com/elninotech/uppload/commit/3e17e434c6639ec9b7dc760b4bb3379c00ca8848)]
+
+### Changed
+
+- 🔧 add zh-tw language to browser bundle [[a8bfb29](https://github.com/elninotech/uppload/commit/a8bfb29072237aa06f41b86e5b232df178212e51)]
+- 🔧 Update gitpod config [[a7893d8](https://github.com/elninotech/uppload/commit/a7893d855b947fc0cca0fe5a87c80e1e02040cf8)]
+
+### Fixed
+
+- 🐛 Add &#x60;uppload_zhTW&#x60; to browser bundle [[05e8875](https://github.com/elninotech/uppload/commit/05e8875a0b2f61a8e7102a05ce14a2caf916fdfe)]
+- 🐛 Check uploaded file type (fixed [#90](https://github.com/elninotech/uppload/issues/90)) [[41d944a](https://github.com/elninotech/uppload/commit/41d944aa82a7b2ef71176dec29b7184d0792e66e)]
+
+### Miscellaneous
+
+- add traditional Chinese(zh-TW) language [[94ef891](https://github.com/elninotech/uppload/commit/94ef891a4f2a398a33d8d4811e84198626be227c)]
+- Create zh-TW.ts [[83d710a](https://github.com/elninotech/uppload/commit/83d710acba14e2f9d2d3ee36ab9961a1e18238b5)]
+- Merge pull request [#101](https://github.com/elninotech/uppload/issues/101) from orionlu0916/patch-2 [[9cf9d63](https://github.com/elninotech/uppload/commit/9cf9d63630acef9f212b92f6a3014f872b43159f)]
+- Merge pull request [#99](https://github.com/elninotech/uppload/issues/99) from orionlu0916/patch-1 [[82ec50f](https://github.com/elninotech/uppload/commit/82ec50ffc86a07a5d7f11c8ccc395d2fb9b23fd8)]
+- Merge pull request [#100](https://github.com/elninotech/uppload/issues/100) from elninotech/all-contributors/add-orionlu0916 [[8ec4f3e](https://github.com/elninotech/uppload/commit/8ec4f3eff7555320c51c7334cd36a61feadb7a3a)]
+- docs: update .all-contributorsrc [skip ci][e67ee17](https://github.com/elninotech/uppload/commit/e67ee17c1f1ede90d5f6e023ca9e61e922f7a449)]
+- docs: update README.md [skip ci][08e0477](https://github.com/elninotech/uppload/commit/08e047737b73a6ec6cf2ce8f92d48d0ce55bf484)]
+- Merge pull request [#97](https://github.com/elninotech/uppload/issues/97) from squalrus/master [[f29ec99](https://github.com/elninotech/uppload/commit/f29ec9950330c3302f6b14d6b87c5a255725f7bf)]
+- Update merge-pr.yml [[0838aa0](https://github.com/elninotech/uppload/commit/0838aa06d05c268575426454fa86ddc66e97bdf8)]
+- Merge pull request [#95](https://github.com/elninotech/uppload/issues/95) from squalrus/master [[a97a890](https://github.com/elninotech/uppload/commit/a97a890bd526ba0b2cb0c1a3f4f3d7864d64d054)]
+- Update merge-pr.yml [[d5d6def](https://github.com/elninotech/uppload/commit/d5d6def5ea57f46ed4be53cdb535410cf038b05b)]
+- Update merge-pr.yml [[1b9a109](https://github.com/elninotech/uppload/commit/1b9a10980305acb469746e537e8992b777e22576)]
+- Merge pull request [#94](https://github.com/elninotech/uppload/issues/94) from nisarhassan12/setup-fix [[86f7659](https://github.com/elninotech/uppload/commit/86f7659f6a425dca376108cd85e9d22809157b41)]
+- fix the broken gitpod setup. [[9b65e32](https://github.com/elninotech/uppload/commit/9b65e32cbe6f95e20df6d1196529fc1baf3a1b0a)]
+- Merge pull request [#92](https://github.com/elninotech/uppload/issues/92) from nisarhassan12/master [[20acfb1](https://github.com/elninotech/uppload/commit/20acfb19cd21f074dee8d0618ba2688c6da29c41)]
+- 📝 Remove gitpod note from README [[b1d1ca1](https://github.com/elninotech/uppload/commit/b1d1ca160da581e7483cc45db1e3d6b95fd54c34)]
+- 📝 Remove gitpod badge for now [[5e6b719](https://github.com/elninotech/uppload/commit/5e6b7197032dbd99ea2f517a82506adab25ce1a0)]
+- 📝 Update Gitpod note in CONTRIBUTING.md [[5921cb8](https://github.com/elninotech/uppload/commit/5921cb8fbc1843011c6123b077d9b984e012735f)]
+- simplify code contributions by fully automating the setup with gitpod. [[8d7138c](https://github.com/elninotech/uppload/commit/8d7138c9fa7558f22b27b8eaff97de08d5ef8d8f)]
+- 📝 Add API methods (remove, updatePlugin) [[daf01e5](https://github.com/elninotech/uppload/commit/daf01e51f63c1533f2d6d827b9842ac9d243283e)]
+
 <a name="2.6.0"></a>
 
 ## 2.6.0 (2020-02-24)
