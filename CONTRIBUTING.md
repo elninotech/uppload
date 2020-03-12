@@ -41,13 +41,11 @@ For example, in the string "Import from $1$", we replace $1$ with "Instagram" to
 
 ## Online one-click setup
 
-You can use Gitpod (A free online VS Code-like IDE) for contributing online. With a single click it'll launch a workspace and automatically: 
+You can use Gitpod (a free online VS Code-like IDE) for contributing online. With a single click, it will launch a workspace using which you make a Pull Request from within the browser. Gitpod will automatically: 
     
-- clone the repo. 
-- install the dependencies. 
-- start `npm run demo`. 
-    
-so that you can start quickly and make a pull request from within your browser.
+- Clone the repository
+- Install all required dependencies
+- Run the local development script: `npm run demo`
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
 
