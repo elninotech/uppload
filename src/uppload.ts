@@ -606,6 +606,11 @@ export class Uppload implements IUppload {
   }
 
   compress(file: Blob) {
+    if (
+      this.settings.compressionFromMimes &&
+      !this.settings.compressionFromMimes.includes(file.type)
+    )
+      return new Promise<Blob>(resolve => resolve(file));
     if (typeof this.settings.compressor === "function")
       return this.settings.compressor(file);
     return compressImage(file, this.settings);

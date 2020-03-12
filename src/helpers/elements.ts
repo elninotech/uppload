@@ -117,7 +117,7 @@ export const compressImage = (
     ];
     image.src = imageURL;
     image.onload = () => {
-      const type = settings.compressionMime || "image/jpeg";
+      const type = settings.compressionToMime || "image/jpeg";
       const quality = settings.compression || 1;
       const ratio = image.width / image.height;
       if (image.width > maxSize[0]) {

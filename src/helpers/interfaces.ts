@@ -25,7 +25,8 @@ export interface IUpploadSettings {
   customClass?: string;
   multiple?: boolean;
   compression?: number;
-  compressionMime?: string;
+  compressionToMime?: string;
+  compressionFromMimes?: string[];
   maxWidth?: number;
   maxHeight?: number;
   maxSize?: [number, number];
