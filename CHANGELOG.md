@@ -1,5 +1,35 @@
 # Changelog
 
+<a name="2.7.0"></a>
+
+## 2.7.0 (2020-03-12)
+
+### Added
+
+- ✨ Only compress specific mimes (fixed [#103](https://github.com/elninotech/uppload/issues/103)) [[a234f09](https://github.com/elninotech/uppload/commit/a234f0945c6b22dc20f22397031b9586a7b84dd7)]
+
+### Changed
+
+- ⬆️ Update dev dependencies [[3a8602e](https://github.com/elninotech/uppload/commit/3a8602e96ca577c6572ec00f9c2676dac2e7ca6b)]
+- ⬆️ Update dev dependencies [[036f8d3](https://github.com/elninotech/uppload/commit/036f8d34bc48c334bb03ef7b2de346f661108e6e)]
+
+### Removed
+
+- 🔥 Remove merge-pr.yml for now [[6b6fdb0](https://github.com/elninotech/uppload/commit/6b6fdb0aaea1c9100fbb9129c0b1e799f8200a24)]
+
+### Fixed
+
+- 🐛 Fix [#102](https://github.com/elninotech/uppload/issues/102) by allowing settings to update [[194d196](https://github.com/elninotech/uppload/commit/194d19615e85f93a367057688ff82eaa2994b24e)]
+
+### Miscellaneous
+
+- 📝 Update Gitpod text [[65761e9](https://github.com/elninotech/uppload/commit/65761e968ec3ff1e57590d87f21d75b8d2ed408b)]
+- Merge pull request [#105](https://github.com/elninotech/uppload/issues/105) from elninotech/all-contributors/add-nisarhassan12 [[e1bcc37](https://github.com/elninotech/uppload/commit/e1bcc37f43d065fac5d57e6b8f438583f4579249)]
+- Merge pull request [#104](https://github.com/elninotech/uppload/issues/104) from nisarhassan12/patch-1 [[9cc2228](https://github.com/elninotech/uppload/commit/9cc2228cd3d63ffc958482a4546c73baa676d0b9)]
+- docs: update .all-contributorsrc [skip ci][c49e3b5](https://github.com/elninotech/uppload/commit/c49e3b5e374ec78063a244e31c45c0fa7bce1745)]
+- docs: update README.md [skip ci][0e26002](https://github.com/elninotech/uppload/commit/0e26002e5db236def06124fc1b76cea038517c47)]
+- Update the Online one-click setup description to be more precise. [[986bc18](https://github.com/elninotech/uppload/commit/986bc18c26670a1f6f2014e1e2234fc0575f7e2c)]
+
 <a name="2.6.1"></a>
 
 ## 2.6.1 (2020-03-06)
