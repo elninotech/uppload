@@ -60,8 +60,8 @@ export class Uppload implements IUppload {
    * @param settings - Uppload instance settings
    */
   constructor(settings?: IUpploadSettings) {
-    this.settings = settings || {};
-    this.updateSettings(this.settings);
+    this.settings = {};
+    this.updateSettings(settings || {});
     const div = document.createElement("div");
     this.renderContainer();
     div.classList.add("uppload-container");
@@ -81,6 +81,7 @@ export class Uppload implements IUppload {
    * @param settings - Uppload settings object
    */
   updateSettings(settings: IUpploadSettings) {
+    this.settings = { ...this.settings, ...settings };
     this.emitter.emit("settingsUpdated", settings);
     if (settings.lang) setI18N(settings.lang);
     if (settings.defaultService) this.activeService = settings.defaultService;
