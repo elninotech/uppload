@@ -147,6 +147,7 @@ We'd like to thank these wonderful people and teams for contributing ([emoji key
     <td align="center"><a href="https://brian.teeman.net"><img src="https://avatars3.githubusercontent.com/u/1296369?v=4" width="100px;" alt=""/><br /><sub><b>Brian Teeman</b></sub></a><br /><a href="#translation-brianteeman" title="Translation">🌍</a></td>
     <td align="center"><a href="https://jeetiss.github.io/"><img src="https://avatars1.githubusercontent.com/u/6726016?v=4" width="100px;" alt=""/><br /><sub><b>Dmitry Ivakhnenko</b></sub></a><br /><a href="#translation-jeetiss" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/orionlu0916"><img src="https://avatars1.githubusercontent.com/u/5774671?v=4" width="100px;" alt=""/><br /><sub><b>Orion Lu</b></sub></a><br /><a href="#translation-orionlu0916" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://nisar.dev"><img src="https://avatars3.githubusercontent.com/u/46004116?v=4" width="100px;" alt=""/><br /><sub><b>Nisar Hassan Naqvi</b></sub></a><br /><a href="https://github.com/elninotech/uppload/commits?author=nisarhassan12" title="Documentation">📖</a></td>
   </tr>
 </table>
 
