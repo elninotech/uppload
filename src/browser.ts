@@ -13,6 +13,7 @@ import {
   setI18N,
   translate,
   en,
+  de,
   nl,
   hi,
   es,
@@ -78,6 +79,7 @@ export interface UpploadWindow extends Window {
   uppload_hi: typeof hi;
   uppload_es: typeof es;
   uppload_fr: typeof fr;
+  uppload_de: typeof de;
   uppload_it: typeof it;
   uppload_ru: typeof ru;
   uppload_tr: typeof tr;
@@ -139,6 +141,7 @@ window.uppload_nl = nl;
 window.uppload_hi = hi;
 window.uppload_es = es;
 window.uppload_fr = fr;
+window.uppload_de = de;
 window.uppload_it = it;
 window.uppload_ru = ru;
 window.uppload_tr = tr;

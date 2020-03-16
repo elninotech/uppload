@@ -1,9 +1,10 @@
+export { de } from "./de";
 export { en } from "./en";
-export { nl } from "./nl";
-export { hi } from "./hi";
 export { es } from "./es";
 export { fr } from "./fr";
+export { hi } from "./hi";
 export { it } from "./it";
+export { nl } from "./nl";
 export { ru } from "./ru";
 export { tr } from "./tr";
 export { zhTW } from "./zh-TW";
