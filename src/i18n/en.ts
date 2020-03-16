@@ -1,4 +1,7 @@
 export const en = {
+  upload: "Upload",
+  cancel: "Cancel",
+  close: "Close",
   uploading: "Uploading...",
   uploaded: "Uploaded",
   fetching: "Getting your image from $1$...",

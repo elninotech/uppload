@@ -1,4 +1,7 @@
 export const hi = {
+  upload: "अपलोड",
+  cancel: "रद्द करना",
+  close: "बंद करे",
   uploading: "अपलोड हो रहा है...",
   uploaded: "अपलोड हो गया",
   fetching: "हम आपकी तस्वीर $1$ से ला रहे हैं...",

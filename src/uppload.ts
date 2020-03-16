@@ -358,7 +358,7 @@ export class Uppload implements IUppload {
    */
   private getEffectsNavbar() {
     return `<div class="effects-continue">
-    <button class="effects-continue--cancel">Cancel</button>
+    <button class="effects-continue--cancel">${translate("cancel")}</button>
   </div><div class="effects-tabs"><div class="effects-tabs-flow">
       ${this.effects
         .map(
@@ -384,7 +384,7 @@ export class Uppload implements IUppload {
         )
         .join("")}
       </div></div><div class="effects-continue">
-        <button class="effects-continue--upload">Upload</button>
+        <button class="effects-continue--upload">${translate("upload")}</button>
       </div>`;
   }
 
@@ -417,7 +417,9 @@ export class Uppload implements IUppload {
         </div>
       </div>
       <div class="uppload-modal-bg">
-        <button class="uppload-close" aria-label="Close">&times;</button>
+        <button class="uppload-close" aria-label="${translate(
+          "close"
+        )}">&times;</button>
       </div>
     `;
   }

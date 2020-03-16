@@ -1,4 +1,7 @@
 export const ru = {
+  upload: "Загрузить",
+  cancel: "Отмена",
+  close: "близко",
   uploading: "Загрузка... ",
   uploaded: "загруженное",
   fetching: "Скачиваем изображение с $1$... ",

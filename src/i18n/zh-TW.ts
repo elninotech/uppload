@@ -1,4 +1,7 @@
 export const zhTW = {
+  upload: "上載",
+  cancel: "取消",
+  close: "關",
   uploading: "上傳中...",
   uploaded: "已上傳",
   fetching: "正在取得您的影像從 $1$...",

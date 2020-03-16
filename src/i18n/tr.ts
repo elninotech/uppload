@@ -1,4 +1,7 @@
 export const tr = {
+  upload: "Yükleme",
+  cancel: "İptal etmek",
+  close: "Kapat",
   uploading: "Yükle ...",
   uploaded: "yüklenen",
   fetching: "$1$ 'dan resim al ...",

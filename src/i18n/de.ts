@@ -1,4 +1,7 @@
 export const de = {
+  upload: "Upload",
+  cancel: "Cancel",
+  close: "Close",
   uploading: "Hochladen ...",
   uploaded: "Hochgeladen",
   fetching: "Bild abrufen von $1$ ...",

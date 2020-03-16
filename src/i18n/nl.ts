@@ -1,4 +1,7 @@
 export const nl = {
+  upload: "Uploaden",
+  cancel: "Annuleren",
+  close: "Dichtbij",
   uploading: "Uploaden...",
   uploaded: "Geupload",
   fetching: "Afbeelding ophalen van $1$...",

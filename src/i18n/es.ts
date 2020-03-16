@@ -1,5 +1,8 @@
 export const es = {
-  uploading: "Subir ...",
+  upload: "Subir",
+  cancel: "Cancelar",
+  close: "Cerca",
+  uploading: "Subir...",
   uploaded: "Subido",
   fetching: "Obtener imagen de $1$ ...",
   poweredBy: "Hecho posible por $1$",

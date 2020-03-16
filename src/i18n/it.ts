@@ -1,4 +1,7 @@
 export const it = {
+  upload: "Caricare",
+  cancel: "Annulla",
+  close: "Vicino",
   uploading: "Carica ...",
   uploaded: "caricato",
   fetching: "Ottieni immagine da $1$ ...",

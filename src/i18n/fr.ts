@@ -1,5 +1,8 @@
 export const fr = {
-  uploading: "Télécharger ...",
+  upload: "Télécharger",
+  cancel: "Annuler",
+  close: "Fermer",
+  uploading: "Télécharger...",
   uploaded: "Téléchargé",
   fetching: "Obtenir une image à partir de $1$ ...",
   poweredBy: "Rendu possible par $1$",
