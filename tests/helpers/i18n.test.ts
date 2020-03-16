@@ -1,5 +1,5 @@
 import { flattenObject, setI18N, translate } from "../../src/helpers/i18n";
-import { en, nl, hi, es, fr, it as IT, ru, tr } from "../../src";
+import { de, en, nl, hi, es, fr, it as IT, ru, tr, zhTW } from "../../src";
 
 test("flattens an object", () => {
   const nonFlatObject = {
@@ -128,7 +128,7 @@ const translationKeys: string[] = [
   "effects.sepia.title"
 ];
 
-[en, nl, hi, es, fr, IT, ru, tr].forEach((lang, i) => {
+[en, nl, hi, es, fr, IT, ru, tr, de, zhTW].forEach((lang, i) => {
   describe(`translation - lang ${i}`, () => {
     const language: { [index: string]: any } = flattenObject(lang);
     translationKeys.forEach(key => {
