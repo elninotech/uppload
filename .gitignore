@@ -67,4 +67,8 @@ public/
 
 # Built webpack config
 webpack.config.js
+
+# Examples
 content/examples
+scripts/uppload-examples-master
+scripts/master.zip
