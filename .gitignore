@@ -67,3 +67,4 @@ public/
 
 # Built webpack config
 webpack.config.js
+content/examples
