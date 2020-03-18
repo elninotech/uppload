@@ -90,9 +90,6 @@ export class Uppload implements IUppload {
     if (settings.uploader) this.uploader = settings.uploader;
     this.inline = !!settings.inline;
     this.update();
-    if (this.settings.customClass)
-      this.container.classList.add(this.settings.customClass);
-    if (this.inline) this.container.classList.add("uppload-inline");
   }
 
   private ready() {
@@ -253,6 +250,9 @@ export class Uppload implements IUppload {
   private update() {
     if (!this.container) return;
     this.hideHelp();
+    if (this.settings.customClass)
+      this.container.classList.add(this.settings.customClass);
+    if (this.inline) this.container.classList.add("uppload-inline");
     const content = this.container.querySelector(".uppload-active-container");
     if (content) content.innerHTML = this.render();
     const aside = this.container.querySelector("aside");
