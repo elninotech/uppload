@@ -30,7 +30,7 @@
     "build": "npm run build-package && node scripts/build-scss.js",
     "test": "jest",
     "build-package": "gulp build && npm run build-browser",
-    "build-site": "site",
+    "build-site": "node scripts/build-examples.js && site",
     "build-demo": "parcel build demo/index.html",
     "build-browser": "tsc --lib es6 webpack.config.ts && webpack --config webpack.config.js",
     "demo": "parcel demo/index.html",
