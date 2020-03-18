@@ -45,7 +45,7 @@ const examplesDir =
           .toString()
           .replace(
             "##",
-            `You can [**view the source code on GitHub**](https://github.com/elninotech/uppload-examples/tree/master/examples/uppload-examples) or [try it on CodeSandbox](https://codesandbox.io/s/github/elninotech/uppload-examples/tree/master/examples/uppload-examples).\n\n##`
+            `You can [**view the source code on GitHub**](https://github.com/elninotech/uppload-examples/tree/master/examples/${example}) or [try it on CodeSandbox](https://codesandbox.io/s/github/elninotech/uppload-examples/tree/master/examples/${example}).\n\n##`
           )
       );
     });
