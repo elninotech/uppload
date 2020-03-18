@@ -1,11 +1,34 @@
 # Changelog
 
-<a name="2.7.0"></a>
+<a name="2.7.2"></a>
 
-## 2.7.0 (2020-03-12)
+## 2.7.2 (2020-03-18)
+
+### Changed
+
+- ⬆️ Update dev dependencies [[1499c21](https://github.com/elninotech/uppload/commit/1499c21f369d7426b5ea71ca685b7a8becc228b2)]
+- ⬆️ Bump acorn from 5.7.3 to 5.7.4 [[071cf39](https://github.com/elninotech/uppload/commit/071cf39e575ff61d8880210db8720f27593760a6)]
+
+### Removed
+
+- 🔥 Remove unnecessary lang [[d116ab0](https://github.com/elninotech/uppload/commit/d116ab0779f2ce0bd3bc47d92bd542e8c1f802d6)]
+
+### Fixed
+
+- 🐛 Fix [#77](https://github.com/elninotech/uppload/issues/77) by preserving file attributes [[8e9eb53](https://github.com/elninotech/uppload/commit/8e9eb535b945a5172fac115bc5ec2fe36c765d93)]
+
+### Miscellaneous
+
+- Merge pull request [#109](https://github.com/elninotech/uppload/issues/109) from elninotech/preserve-file-name [[959cd50](https://github.com/elninotech/uppload/commit/959cd50bc2386912d41ce5188f2abb8f36aca6de)]
+- Merge pull request [#108](https://github.com/elninotech/uppload/issues/108) from elninotech/dependabot/npm_and_yarn/acorn-5.7.4 [[f5e39b0](https://github.com/elninotech/uppload/commit/f5e39b0e019bf736c0bdfc13f12486db4d9a51ca)]
+
+<a name="2.7.1"></a>
+
+## 2.7.1 (2020-03-16)
 
 ### Added
 
+- ✅ Add tests for de, zh i18n [[89a999a](https://github.com/elninotech/uppload/commit/89a999a8461cedab016d2ab4e44095cd204c5161)]
 - ✨ Only compress specific mimes (fixed [#103](https://github.com/elninotech/uppload/issues/103)) [[a234f09](https://github.com/elninotech/uppload/commit/a234f0945c6b22dc20f22397031b9586a7b84dd7)]
 
 ### Changed
@@ -19,10 +42,15 @@
 
 ### Fixed
 
+- 🐛 Add de i18n export (fixed [#106](https://github.com/elninotech/uppload/issues/106)) [[80dbf7f](https://github.com/elninotech/uppload/commit/80dbf7fdac2d2043f5b299a67fcaaaa74c85ba4b)]
 - 🐛 Fix [#102](https://github.com/elninotech/uppload/issues/102) by allowing settings to update [[194d196](https://github.com/elninotech/uppload/commit/194d19615e85f93a367057688ff82eaa2994b24e)]
 
 ### Miscellaneous
 
+- 🌐 Add German translations [[c855c37](https://github.com/elninotech/uppload/commit/c855c375bfabfee9d2757ef6dfbe248e5c3ce49d)]
+- 🚀 Deploy v2.7.1 [[2f26a48](https://github.com/elninotech/uppload/commit/2f26a485968dd12bef336decc8cec7b85e521574)]
+- 🌐 Add i18n: upload, cancel, close (fixed [#107](https://github.com/elninotech/uppload/issues/107)) [[6bae64c](https://github.com/elninotech/uppload/commit/6bae64ca61c1170b708455a448a74e13c7fdb4e5)]
+- 🚀 Deploy major version update [[0ca0d4b](https://github.com/elninotech/uppload/commit/0ca0d4beeac1e051c736fabb805c7defd59d4420)]
 - 📝 Update Gitpod text [[65761e9](https://github.com/elninotech/uppload/commit/65761e968ec3ff1e57590d87f21d75b8d2ed408b)]
 - Merge pull request [#105](https://github.com/elninotech/uppload/issues/105) from elninotech/all-contributors/add-nisarhassan12 [[e1bcc37](https://github.com/elninotech/uppload/commit/e1bcc37f43d065fac5d57e6b8f438583f4579249)]
 - Merge pull request [#104](https://github.com/elninotech/uppload/issues/104) from nisarhassan12/patch-1 [[9cc2228](https://github.com/elninotech/uppload/commit/9cc2228cd3d63ffc958482a4546c73baa676d0b9)]
