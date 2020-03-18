@@ -16,7 +16,6 @@ import {
 } from "./helpers/interfaces";
 import { safeUpploadFileToFile } from "./helpers/files";
 
-let lang: ILanguage | undefined = undefined;
 class DefaultService extends UpploadService {
   name = "default";
   invisible = true;
