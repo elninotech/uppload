@@ -20,33 +20,35 @@ const examplesDir =
   extract(join(__dirname, "master.zip"), { dir: __dirname }, error => {
     if (error) return console.error(error);
     console.log("Extracted examples zip");
-  });
-  const examples = readdirSync(
-    join(__dirname, "uppload-examples-master", "examples")
-  );
-  mkdirSync(join(__dirname, "..", "content", "examples"), { recursive: true });
-  examples.forEach(example => {
-    copyFileSync(
-      join(
-        __dirname,
-        "uppload-examples-master",
-        "examples",
-        example,
-        "README.md"
-      ),
-      join(__dirname, "..", "content", "examples", `${example}.md`)
+    const examples = readdirSync(
+      join(__dirname, "uppload-examples-master", "examples")
     );
-    writeFileSync(
-      join(__dirname, "..", "content", "examples", `${example}.md`),
-      readFileSync(
+    mkdirSync(join(__dirname, "..", "content", "examples"), {
+      recursive: true
+    });
+    examples.forEach(example => {
+      copyFileSync(
+        join(
+          __dirname,
+          "uppload-examples-master",
+          "examples",
+          example,
+          "README.md"
+        ),
         join(__dirname, "..", "content", "examples", `${example}.md`)
-      )
-        .toString()
-        .replace(
-          "##",
-          `You can [**view the source code on GitHub**](https://github.com/elninotech/uppload-examples/tree/master/examples/uppload-examples) or [try it on CodeSandbox](https://codesandbox.io/s/github/elninotech/uppload-examples/tree/master/examples/uppload-examples).\n\n##`
+      );
+      writeFileSync(
+        join(__dirname, "..", "content", "examples", `${example}.md`),
+        readFileSync(
+          join(__dirname, "..", "content", "examples", `${example}.md`)
         )
-    );
+          .toString()
+          .replace(
+            "##",
+            `You can [**view the source code on GitHub**](https://github.com/elninotech/uppload-examples/tree/master/examples/uppload-examples) or [try it on CodeSandbox](https://codesandbox.io/s/github/elninotech/uppload-examples/tree/master/examples/uppload-examples).\n\n##`
+          )
+      );
+    });
+    console.log("Added examples!");
   });
-  console.log("Added examples!");
 })();
