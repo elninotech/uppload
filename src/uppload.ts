@@ -14,7 +14,7 @@ import {
   IUpploadFile,
   IPluginUpdateFunction
 } from "./helpers/interfaces";
-import { safeUpploadFileToFile } from "./helpers/files";
+import { safeUpploadFileToFile, blobToUpploadFile } from "./helpers/files";
 
 class DefaultService extends UpploadService {
   name = "default";
@@ -623,15 +623,29 @@ export class Uppload implements IUppload {
    * @param file - A Blob object containing the file to upload
    * @returns The file URL
    */
-  upload(file: Blob): Promise<string> {
-    this.emitter.emit("before-upload");
+  upload(file: File | Blob): Promise<string> {
+    this.emitter.emit("before-upload", file);
     return new Promise((resolve, reject) => {
       this.navigate("uploading");
+      let upploadFile = blobToUpploadFile(file);
+      try {
+        if (typeof (file as File).name === "string")
+          upploadFile = blobToUpploadFile(
+            file,
+            (file as File).name,
+            file.type,
+            new Date((file as File).lastModified)
+          );
+      } catch (error) {}
       if (this.uploader && typeof this.uploader === "function") {
         this.compress(file)
           .then(file => {
             if (this.settings.compression) this.emitter.emit("compress", file);
             return file;
+          })
+          .then(blob => {
+            upploadFile.blob = blob;
+            return safeUpploadFileToFile(upploadFile);
           })
           .then(file =>
             (this.uploader as IUploader)(file, this.updateProgress.bind(this))
