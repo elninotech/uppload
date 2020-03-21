@@ -49,8 +49,10 @@ export default class Rotate extends UpploadEffect {
           cropBoxResizable: false,
           toggleDragModeOnDblclick: false,
           ready() {
+            params.uppload.emitter.emit("processing");
             canvasToBlob(rotator.getCroppedCanvas()).then(blob => {
               originalFile.blob = blob;
+              params.uppload.emitter.emit("process");
               params.next(originalFile);
             });
           }
@@ -71,8 +73,10 @@ export default class Rotate extends UpploadEffect {
             if (displayer) displayer.innerHTML = value.toString();
             rotator.rotate(value - this.value);
             this.value = value;
+            params.uppload.emitter.emit("processing");
             canvasToBlob(rotator.getCroppedCanvas()).then(blob => {
               originalFile.blob = blob;
+              params.uppload.emitter.emit("process");
               params.next(originalFile);
             });
           });

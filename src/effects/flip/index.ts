@@ -36,8 +36,13 @@ export default class Flip extends UpploadEffect {
     `;
   };
 
-  imageToCanvasBlob(flipH = false, flipV = false): Promise<Blob | null> {
+  imageToCanvasBlob(
+    params: IHandlersParams,
+    flipH = false,
+    flipV = false
+  ): Promise<Blob | null> {
     return new Promise(resolve => {
+      params.uppload.emitter.emit("processing");
       const scaleH = flipH ? -1 : 1;
       const scaleV = flipV ? -1 : 1;
       this.canvas = document.createElement("canvas");
@@ -56,7 +61,8 @@ export default class Flip extends UpploadEffect {
         canvasToBlob(this.canvas).then(blob => {
           const image = URL.createObjectURL(blob);
           this.originalfileURL = image;
-          resolve(blob);
+          params.uppload.emitter.emit("process");
+          return resolve(blob);
         });
       };
     });
@@ -67,7 +73,7 @@ export default class Flip extends UpploadEffect {
       ".uppload-flip img"
     ) as HTMLImageElement | null;
     if (!img) return;
-    this.imageToCanvasBlob(x, y).then(blob => {
+    this.imageToCanvasBlob(params, x, y).then(blob => {
       if (!blob) return;
       let file = this.originalFile;
       file.blob = blob;
