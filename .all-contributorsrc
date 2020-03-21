@@ -207,6 +207,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "Zaseth",
+      "name": "Daan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/24899039?v=4",
+      "profile": "https://github.com/Zaseth",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 7,
