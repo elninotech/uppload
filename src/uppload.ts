@@ -73,6 +73,23 @@ export class Uppload implements IUppload {
       initialFocus: () => this.container.querySelector("button")
     } as Options);
     requestAnimationFrame(() => this.update());
+
+    /**
+     * Loader during file processing in effects
+     * https://github.com/elninotech/uppload/issues/111
+     */
+    this.emitter.on("processing", () => {
+      const loader = this.container.querySelector<HTMLDivElement>(
+        ".processing-loader"
+      );
+      if (loader) loader.classList.add("visible");
+    });
+    this.emitter.on("process", () => {
+      const loader = this.container.querySelector<HTMLDivElement>(
+        ".processing-loader"
+      );
+      if (loader) loader.classList.remove("visible");
+    });
   }
 
   /**
@@ -394,6 +411,7 @@ export class Uppload implements IUppload {
     if (this.container)
       this.container.innerHTML = `
       <div class="uppload-modal">
+        <div class="processing-loader"></div>
         <aside style="display: none">
           ${this.getNavbar(true)}
         </aside>

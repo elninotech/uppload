@@ -190,3 +190,31 @@ $modalForegroundZIndex: 12000;
     display: flex;
   }
 }
+
+.processing-loader {
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 4.5rem;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: none;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    margin-left: -3.75rem;
+    margin-top: -3.75rem;
+    background-color: #fff;
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 100%;
+    animation: sk-scaleout 1.5s infinite ease-in-out;
+  }
+  &.visible {
+    display: block;
+  }
+}
