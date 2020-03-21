@@ -1,10 +1,10 @@
 export const nl = {
   upload: "Uploaden",
   cancel: "Annuleren",
-  close: "Dichtbij",
+  close: "Sluiten",
   uploading: "Uploaden...",
   uploaded: "Geupload",
-  fetching: "Afbeelding ophalen van $1$...",
+  fetching: "Bezig met het ophalen van afbeelding vanaf $1$...",
   poweredBy: "Mede mogelijk gemaakt door $1$",
   needHelp: "Hulp nodig?",
   units: {
@@ -24,7 +24,7 @@ export const nl = {
     file_too_large: "Het bestand moet kleiner zijn dan $1$"
   },
   help: {
-    loading: "Hulp bij het laden...",
+    loading: "Bezig met het laden van hulp...",
     close: "Hulp sluiten"
   },
   services: {
@@ -109,7 +109,7 @@ export const nl = {
       button: "Screenshot maken",
       label: "URL van webpagina",
       placeholder: "Voer een URL in",
-      loading: "Een screenshot maken..."
+      loading: "Bezig met het maken van een screenshot..."
     },
     search: {
       button: "Zoeken op $1$",
