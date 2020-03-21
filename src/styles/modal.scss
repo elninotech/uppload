@@ -199,7 +199,6 @@ $modalForegroundZIndex: 12000;
   top: 0;
   bottom: 4.5rem;
   z-index: 1;
-  background-color: rgba(255, 255, 255, 0.5);
   display: none;
   &::after {
     content: "";
@@ -208,7 +207,6 @@ $modalForegroundZIndex: 12000;
     top: 40%;
     margin-left: -3.75rem;
     margin-top: -3.75rem;
-    background-color: #fff;
     width: 7.5rem;
     height: 7.5rem;
     border-radius: 100%;

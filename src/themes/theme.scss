@@ -139,4 +139,11 @@
     background-color: $effectsLabelBackground;
     color: $effectsLabelColor;
   }
+
+  .processing-loader {
+    background-color: rgba($modalElementBackground, 0.5);
+    &::after {
+      background-color: $modalElementBackground;
+    }
+  }
 }
