@@ -1,5 +1,39 @@
 # Changelog
 
+<a name="2.7.3"></a>
+
+## 2.7.3 (2020-03-21)
+
+### Added
+
+- ✨ Add processing state (fixed [#111](https://github.com/elninotech/uppload/issues/111)) [[d8d83e7](https://github.com/elninotech/uppload/commit/d8d83e7e96b709a3edbf4bf9143e1c6a8dad453a)]
+- ✨ Add processing emit to filp, rotate [[252942f](https://github.com/elninotech/uppload/commit/252942fdd3bc10110da278df188bea36d9fda976)]
+- ✨ Emit processing on filter effects [[7408af9](https://github.com/elninotech/uppload/commit/7408af90647062fbbec675fc6352400e7764f38e)]
+- ✨ Add all examples (fixed [#79](https://github.com/elninotech/uppload/issues/79)) [[d7875bd](https://github.com/elninotech/uppload/commit/d7875bdf8e91274cc8a45d66a594d44e83827a13)]
+- ✨ Add build examples [[415166a](https://github.com/elninotech/uppload/commit/415166a508e5e545ef5213b594566e6c5628570c)]
+- ➕ Add extract-zip [[653dbfd](https://github.com/elninotech/uppload/commit/653dbfd004eefdd9c298cfef02fe3479f736ca5e)]
+- ➕ Add download package [[b2179bc](https://github.com/elninotech/uppload/commit/b2179bcccc190210d65073fdfbca18884a8f6e3a)]
+
+### Changed
+
+- ⬆️ Update dev dependencies [[693cb12](https://github.com/elninotech/uppload/commit/693cb120ad8f05b060a60e7dd32890a01bfdfc02)]
+
+### Removed
+
+- 🔥 Remove examples.md [[d1dd9a9](https://github.com/elninotech/uppload/commit/d1dd9a9e3ebd7e6e6000e53295151bbdd4e3fbaf)]
+
+### Fixed
+
+- 🐛 Move custom class and inline to update [[5e2b8df](https://github.com/elninotech/uppload/commit/5e2b8df18c095ce14bc502938802aeb46826cb76)]
+- 🐛 Fix link to example sandbox [[c39fe1f](https://github.com/elninotech/uppload/commit/c39fe1f69722c068096735bcf3b52da85d1dd4c9)]
+- 🐛 Build site after extraction [[404ac76](https://github.com/elninotech/uppload/commit/404ac76936e89efe37345fdf81092b0984ef2bb0)]
+
+### Miscellaneous
+
+- 🙈 Remove examples/index.md from .gitignore [[37e9d87](https://github.com/elninotech/uppload/commit/37e9d87cb02ad2f24538e3e26e1f469f959b7499)]
+- 🙈 Add examples repos to .gitignore [[879a121](https://github.com/elninotech/uppload/commit/879a1214a4312c602a8fb96a924800dfa687d3cf)]
+- 🙈 Add examples to .gitignore [[e5eb1fc](https://github.com/elninotech/uppload/commit/e5eb1fc2fb823c7ac5c5d3401923bb89722e577b)]
+
 <a name="2.7.2"></a>
 
 ## 2.7.2 (2020-03-18)
