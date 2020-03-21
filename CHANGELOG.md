@@ -16,6 +16,7 @@
 
 ### Changed
 
+- 💄 Add processing loader to theme [[79c4d1b](https://github.com/elninotech/uppload/commit/79c4d1b2709ec0aae065d345bbd51c87f7d59eb0)]
 - ⬆️ Update dev dependencies [[693cb12](https://github.com/elninotech/uppload/commit/693cb120ad8f05b060a60e7dd32890a01bfdfc02)]
 
 ### Removed
@@ -30,6 +31,7 @@
 
 ### Miscellaneous
 
+- 🚀 Publish v2.7.3 [[64ed906](https://github.com/elninotech/uppload/commit/64ed906a1cf40702755cc84ac37ebd15f1a19f13)]
 - 🙈 Remove examples/index.md from .gitignore [[37e9d87](https://github.com/elninotech/uppload/commit/37e9d87cb02ad2f24538e3e26e1f469f959b7499)]
 - 🙈 Add examples repos to .gitignore [[879a121](https://github.com/elninotech/uppload/commit/879a1214a4312c602a8fb96a924800dfa687d3cf)]
 - 🙈 Add examples to .gitignore [[e5eb1fc](https://github.com/elninotech/uppload/commit/e5eb1fc2fb823c7ac5c5d3401923bb89722e577b)]
