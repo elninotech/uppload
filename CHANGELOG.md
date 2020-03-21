@@ -1,5 +1,15 @@
 # Changelog
 
+<a name="2.7.4"></a>
+
+## 2.7.4 (2020-03-21)
+
+### Miscellaneous
+
+- 📝 Add Daan as contributor [[9f1b199](https://github.com/elninotech/uppload/commit/9f1b199ae25dcb473d2c7be9390f50dcad7d7786)]
+- Merge pull request [#112](https://github.com/elninotech/uppload/issues/112) from Zaseth/master [[a997b4f](https://github.com/elninotech/uppload/commit/a997b4f1dba6fe20d77c9bc7ecc0d1c7c28bbe90)]
+- Fix bad Dutch translation [[8fb7f33](https://github.com/elninotech/uppload/commit/8fb7f331f20c7780950974fcb9b69e397c7f0b0f)]
+
 <a name="2.7.3"></a>
 
 ## 2.7.3 (2020-03-21)
