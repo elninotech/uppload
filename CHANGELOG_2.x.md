@@ -1,8 +1,10 @@
-# Changelog
+# Changelog (2.x)
 
-## Semantic Versioning
+## Semantic Versioning (3.x)
 
-After Uppload v2.7.4, we are migrating to Semantic Versioning. v3.0.0 does **not** contain any breaking changes after `v2.7.4`, but [semantic-release](https://github.com/semantic-release/semantic-release) will take over from here.
+After Uppload v2.7.4, we are migrating to Semantic Versioning. v3.0.0 does **not** contain any breaking changes after `v2.7.4`, but [semantic-release](https://github.com/semantic-release/semantic-release) will take over from here. Our CHANGELOG is now available exclusively through GitHub Release Notes.
+
+[**View v3.x CHANGELOG →**](https://github.com/elninotech/uppload/releases)
 
 <a name="2.7.4"></a>
 
