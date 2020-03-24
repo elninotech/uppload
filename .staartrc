@@ -17,5 +17,6 @@
   "twitterPublisher": "elninoict",
   "scripts": ["/uppload-demo.js"],
   "stylesheets": ["/uppload-demo.css", "/assets/demo.css"],
+  "footerNavbar": ["[Hosted by Netlify](https://netlify.com)"]
   "fancyLinks": true
 }
