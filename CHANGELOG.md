@@ -1,5 +1,9 @@
 # Changelog
 
+## Semantic Versioning
+
+After Uppload v2.7.4, we are migrating to Semantic Versioning. v3.0.0 does **not** contain any breaking changes after `v2.7.4`, but [semantic-release](https://github.com/semantic-release/semantic-release) will take over from here.
+
 <a name="2.7.4"></a>
 
 ## 2.7.4 (2020-03-21)
