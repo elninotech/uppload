@@ -67,7 +67,7 @@ const profilePicture = new Uppload({
 });
 ```
 
-Finally, choose which services (ways to select a file), effects (ways to manipulate a file), and uploaders (ways to send the file to a server) you want. Then, import these classes and use the `Uppload.use()` function to create your package:
+Finally, choose which [services](https://uppload.js.org/services) (ways to select a file), [effects](https://uppload.js.org/effects/) (ways to manipulate a file), and [uploaders](https://uppload.js.org/uploaders/) (ways to send the file to a server) you want. Then, import these classes and use the `Uppload.use()` function to create your package:
 
 ```ts
 import { Uppload, en, Local, Unsplash, Crop, Brightness } from "uppload";
