@@ -83,6 +83,11 @@ export default class Crop extends UpploadEffect {
       ".uppload-cropping-element img"
     ) as HTMLImageElement | null;
     const originalFile = this.originalFile;
+    const type =
+      originalFile.type &&
+      ["image/jpeg", "image/webp"].includes(originalFile.type)
+        ? originalFile.type
+        : "image/png";
     if (cropperElement) {
       fitImageToContainer(params, cropperElement).then(() => {
         const cropper = new Cropper(cropperElement, {
@@ -90,13 +95,13 @@ export default class Crop extends UpploadEffect {
           autoCropArea: this.autoCropArea,
           viewMode: this.viewMode,
           ready() {
-            canvasToBlob(cropper.getCroppedCanvas()).then(blob => {
+            canvasToBlob(cropper.getCroppedCanvas(), type).then(blob => {
               originalFile.blob = blob;
               params.next(originalFile);
             });
           },
           cropend() {
-            canvasToBlob(cropper.getCroppedCanvas()).then(blob => {
+            canvasToBlob(cropper.getCroppedCanvas(), type).then(blob => {
               originalFile.blob = blob;
               params.next(originalFile);
             });
@@ -116,7 +121,7 @@ export default class Crop extends UpploadEffect {
                   selectedAspectRatio.getAttribute("data-name") || "free"
                 ]
               );
-              canvasToBlob(cropper.getCroppedCanvas()).then(blob => {
+              canvasToBlob(cropper.getCroppedCanvas(), type).then(blob => {
                 originalFile.blob = blob;
                 params.next(originalFile);
               });
