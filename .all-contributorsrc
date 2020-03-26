@@ -231,6 +231,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "nicholasgriffintn",
+      "name": "Nicholas Griffin",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/12116098?v=4",
+      "profile": "https://nicholasgriffin.dev",
+      "contributions": [
+        "bug"
+      ]
     }
   ]
 }
