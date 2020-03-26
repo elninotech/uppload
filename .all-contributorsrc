@@ -4,7 +4,13 @@
   ],
   "imageSize": 100,
   "commit": false,
-  "commitConvention": "gitmoji",
+  "commitTemplate": ":pencil: <%= (newContributor ? \"Add\" : \"Update\") %> @<%= username %> as a contributor",
+  "contributorsPerLine": 7,
+  "projectName": "uppload",
+  "projectOwner": "elninotech",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true,
   "contributors": [
     {
       "login": "elnino-ict",
@@ -226,11 +232,5 @@
         "bug"
       ]
     }
-  ],
-  "contributorsPerLine": 7,
-  "projectName": "uppload",
-  "projectOwner": "elninotech",
-  "repoType": "github",
-  "repoHost": "https://github.com",
-  "skipCi": true
+  ]
 }
