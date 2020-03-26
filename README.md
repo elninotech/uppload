@@ -151,12 +151,12 @@ We'd like to thank these wonderful people and teams for contributing ([emoji key
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/Zaseth"><img src="https://avatars1.githubusercontent.com/u/24899039?v=4" width="100px;" alt=""/><br /><sub><b>Daan</b></sub></a><br /><a href="#translation-Zaseth" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://www.sigmatechnology.co.uk"><img src="https://avatars0.githubusercontent.com/u/17182577?v=4" width="100px;" alt=""/><br /><sub><b>SIGMA Technology</b></sub></a><br /><a href="https://github.com/elninotech/uppload/issues?q=author%3Asigma-technology" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
