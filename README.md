@@ -152,6 +152,7 @@ We'd like to thank these wonderful people and teams for contributing ([emoji key
   <tr>
     <td align="center"><a href="https://github.com/Zaseth"><img src="https://avatars1.githubusercontent.com/u/24899039?v=4" width="100px;" alt=""/><br /><sub><b>Daan</b></sub></a><br /><a href="#translation-Zaseth" title="Translation">🌍</a></td>
     <td align="center"><a href="https://www.sigmatechnology.co.uk"><img src="https://avatars0.githubusercontent.com/u/17182577?v=4" width="100px;" alt=""/><br /><sub><b>SIGMA Technology</b></sub></a><br /><a href="https://github.com/elninotech/uppload/issues?q=author%3Asigma-technology" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://nicholasgriffin.dev"><img src="https://avatars1.githubusercontent.com/u/12116098?v=4" width="100px;" alt=""/><br /><sub><b>Nicholas Griffin</b></sub></a><br /><a href="https://github.com/elninotech/uppload/issues?q=author%3Anicholasgriffintn" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
