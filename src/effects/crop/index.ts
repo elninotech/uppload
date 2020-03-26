@@ -85,7 +85,7 @@ export default class Crop extends UpploadEffect {
     const originalFile = this.originalFile;
     const type =
       originalFile.type &&
-      ["image/jpeg", "image/webp"].includes(originalFile.type)
+      ["image/jpeg", "image/webp"].indexOf(originalFile.type) !== -1
         ? originalFile.type
         : "image/png";
     if (cropperElement) {
