@@ -63,7 +63,7 @@
     "jest": "^25.1.0",
     "jest-fetch-mock": "^3.0.3",
     "parcel": "^1.12.4",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.2",
     "rollup": "^2.1.0",
     "sass": "^1.26.3",
     "semantic-release": "^17.0.4",
