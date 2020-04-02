@@ -79,7 +79,7 @@
   },
   "dependencies": {
     "cropperjs": "^1.5.6",
-    "download": "^7.1.0",
+    "download": "^8.0.0",
     "focus-trap": "^5.1.0",
     "mitt": "^1.2.0"
   },
