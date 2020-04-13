@@ -1,31 +1,35 @@
 export const es = {
   upload: "Subir",
   cancel: "Cancelar",
-  close: "Cerca",
-  uploading: "Subir...",
+  close: "Cerrar",
+  uploading: "Subiendo...",
   uploaded: "Subido",
-  fetching: "Obtener imagen de $1$ ...",
+  fetching: "Obteniendo imagen desde $1$ ...",
   poweredBy: "Hecho posible por $1$",
-  needHelp: "Necesita ayuda?",
+  needHelp: "¿Necesitas ayuda?",
+  
   units: {
     px: "px",
     "%": "%",
     deg: "°"
   },
+  
   errors: {
-    response_not_ok: "Se produjo un error al recuperar este archivo",
+    response_not_ok: "Se produjo un error al obtener este archivo",
     unable_to_search: "Se produjo un error al buscar",
     invalid_service_url: "Esta no es una URL de $1$",
     invalid_url: "Esta URL no es válida.",
     upload_aborted: "Tu carga ha sido cancelada",
-    upload_error: "Se produjo un error al cargar este archivo",
-    file_type_not_allowed: "Este tipo de archivo no es compatible",
+    upload_error: "Se produjo un error al subir este archivo",
+    file_type_not_allowed: "Este tipo de archivo no está permitido",
     file_too_large: "El archivo debe ser inferior a $1$"
   },
+  
   help: {
     loading: "Cargando ayuda...",
-    close: "Ayuda cercana"
+    close: "Cerrar ayuda"
   },
+  
   services: {
     default: {
       heading: "Selecciona una imagen"
@@ -33,14 +37,14 @@ export const es = {
     local: {
       title: "Elige un archivo",
       button: "Selecciona un archivo",
-      or: "de",
+      or: "o",
       drop: "Arrastra un archivo aquí para subir"
     },
     camera: {
       title: "Cámara",
       button: "Foto de la webcam",
       switch: "Cambiar de cámara",
-      waiting: "Esperando el permiso de la cámara ...",
+      waiting: "Esperando el permiso de la cámara...",
       unableToRead:
         "No podemos leer el video de su cámara. Esto puede deberse a que no ha otorgado el permiso requerido o porque su dispositivo no admite el acceso a la cámara."
     },
@@ -53,7 +57,7 @@ export const es = {
     url: {
       title: "URL directa",
       label: "URL de la imagen",
-      placeholder: "Ingrese una URL de imagen"
+      placeholder: "Ingrese la URL de la imagen"
     },
     instagram: {
       title: "Instagram"
@@ -76,12 +80,12 @@ export const es = {
       title: "ArtStation"
     },
     twitter: {
-      title: "Gorjeo",
-      type: "tweet de fotos"
+      title: "Twitter",
+      type: "imagen de twitter"
     },
     pinterest: {
       title: "Pinterest",
-      type: "alfiler"
+      type: "pin"
     },
     flipboard: {
       title: "Flipboard",
@@ -107,11 +111,11 @@ export const es = {
       title: "Captura de pantalla",
       button: "Tomar captura de pantalla",
       label: "URL de la página web",
-      placeholder: "Ingrese una URL",
-      loading: "Toma una captura de pantalla ..."
+      placeholder: "Ingresa una URL",
+      loading: "Tomando una captura de pantalla ..."
     },
     search: {
-      button: "Buscar por $1$",
+      button: "Buscar en $1$",
       label: "Busca una imagen",
       placeholder: "Buscar algo",
       imagesPoweredBy: "Imágenes posibles por $1$"
@@ -129,9 +133,10 @@ export const es = {
       title: "Pexels"
     }
   },
+
   effects: {
     preview: {
-      title: "Ejemplo"
+      title: "Vista Previa"
     },
     filters: {
       title: "Filtros"
@@ -139,25 +144,25 @@ export const es = {
     crop: {
       title: "Recortar",
       aspectRatios: {
-        free: "Gratis",
-        square: "completo"
+        free: "Libre",
+        square: "Cuadrado"
       }
     },
     rotate: {
-      title: "Girar"
+      title: "Rotar"
     },
     flip: {
-      title: "Dar la vuelta",
+      title: "Dar vuelta",
       buttons: {
         horizontal: "Horizontal",
         vertical: "Vertical"
       }
     },
     sharpen: {
-      title: "Afilar"
+      title: "Agudizar"
     },
     blur: {
-      title: "Desenfoque"
+      title: "Desenfocar"
     },
     brightness: {
       title: "Brillo"
@@ -169,10 +174,10 @@ export const es = {
       title: "Escala de grises"
     },
     "hue-rotate": {
-      title: "Girar tono"
+      title: "Rotar tono"
     },
     invert: {
-      title: "Dar vuelta"
+      title: "Invertir"
     },
     saturate: {
       title: "Saturar"
