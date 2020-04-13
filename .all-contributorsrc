@@ -231,6 +231,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "ClaudioEyzaguirre",
+      "name": "Claudio Eyzaguirre",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/13547533?v=4",
+      "profile": "https://github.com/ClaudioEyzaguirre",
+      "contributions": [
+        "translation"
+      ]
     }
   ]
 }
