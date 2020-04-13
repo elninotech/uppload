@@ -24,6 +24,9 @@
   ],
   "repository": "https://github.com/elninotech/uppload",
   "homepage": "https://uppload.js.org",
+  "bugs": {
+    "url": "https://github.com/elninotech/uppload/issues"
+  },
   "author": "El Niño <https://elnino.tech>",
   "license": "MIT",
   "scripts": {
