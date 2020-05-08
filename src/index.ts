@@ -62,7 +62,7 @@ export {
   LinkedIn,
   Reddit,
   Tumblr,
-  WeHeartIt
+  WeHeartIt,
 };
 
 // Effects
@@ -90,5 +90,5 @@ export {
   HueRotate,
   Invert,
   Sepia,
-  Saturate
+  Saturate,
 };

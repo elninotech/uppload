@@ -2,7 +2,7 @@ import { UpploadService } from "../service";
 import {
   IHandlersParams,
   IServiceTemplateParams,
-  IUpploadFile
+  IUpploadFile,
 } from "./interfaces";
 import { imageUrlToBlob, cachedFetch } from "./http";
 import { colorSVG } from "./assets";
@@ -10,9 +10,7 @@ import { safeListen } from "./elements";
 import { blobToUpploadFile } from "./files";
 
 const generateFileName = (file: IUpploadFile, service: string) => {
-  file.name = `${service}-import-${Math.random()
-    .toString(36)
-    .slice(2)}`;
+  file.name = `${service}-import-${Math.random().toString(36).slice(2)}`;
   return file;
 };
 
@@ -27,39 +25,43 @@ export class MicrolinkBaseClass extends UpploadService {
       <form class="microlink-search-form">
         <div class="service-icon">${colorSVG(this.icon, this)}</div>
         <label>
-          <span>${translate(`services.${this.name}.label`) ||
+          <span>${
+            translate(`services.${this.name}.label`) ||
             translate("services.microlink.label", [
               translate(`services.${this.name}.title`) || this.name,
               translate(`services.${this.name}.type`) ||
-                translate("services.microlink.type")
-            ])}</span>
-          <input class="microlink-search-input" type="url" placeholder="${translate(
-            `services.${this.name}.placeholder`
-          ) ||
+                translate("services.microlink.type"),
+            ])
+          }</span>
+          <input class="microlink-search-input" type="url" placeholder="${
+            translate(`services.${this.name}.placeholder`) ||
             translate("services.microlink.placeholder", [
               translate(`services.${this.name}.title`) || this.name,
               translate(`services.${this.name}.type`) ||
-                translate("services.microlink.type")
+                translate("services.microlink.type"),
             ]) ||
-            ""}" required>
+            ""
+          }" required>
         </label>
-        <button type="submit" style="background: ${this.color}">${translate(
-      `services.${this.name}.button`
-    ) ||
+        <button type="submit" style="background: ${this.color}">${
+      translate(`services.${this.name}.button`) ||
       translate(
         "services.microlink.button",
         translate(`services.${this.name}.title`) || this.name
-      )}</button></form><button class="need-help-link"><span>${translate(
+      )
+    }</button></form><button class="need-help-link"><span>${translate(
       "needHelp"
     )}</span aria-hidden="true"><span>?</span></button></div>
     <div class="uppload-loader microlink-loader">
     <div></div>
-    <p>${translate(`services.${this.name}.loading`) ||
+    <p>${
+      translate(`services.${this.name}.loading`) ||
       translate(
         "services.microlink.loading",
         translate(`services.${this.name}.title`) || this.name
       ) ||
-      translate("fetching", translate(`services.${this.name}.title`))}</p>
+      translate("fetching", translate(`services.${this.name}.title`))
+    }</p>
   </div>`;
   };
 
@@ -79,7 +81,7 @@ export class MicrolinkBaseClass extends UpploadService {
       `.microlink-search-form`
     ) as HTMLFormElement | null;
     if (form) {
-      safeListen(form, "submit", event => {
+      safeListen(form, "submit", (event) => {
         event.preventDefault();
         const input = params.uppload.container.querySelector(
           `.microlink-search-input`
@@ -96,21 +98,21 @@ export class MicrolinkBaseClass extends UpploadService {
                 url
               )}&screenshot=true&meta=false&embed=screenshot.url`
             )
-              .then(blob =>
+              .then((blob) =>
                 params.next(
                   generateFileName(blobToUpploadFile(blob), this.name)
                 )
               )
-              .catch(error => params.handle(error))
+              .catch((error) => params.handle(error))
               .then(() => (this.loading = false));
           } else if (this.name === "url") {
             imageUrlToBlob(url)
-              .then(blob =>
+              .then((blob) =>
                 params.next(
                   generateFileName(blobToUpploadFile(blob), this.name)
                 )
               )
-              .catch(error => params.handle(error));
+              .catch((error) => params.handle(error));
           } else {
             cachedFetch<{
               data: {
@@ -119,18 +121,18 @@ export class MicrolinkBaseClass extends UpploadService {
                 };
               };
             }>(`https://api.microlink.io/?url=${encodeURIComponent(url)}`)
-              .then(result => {
+              .then((result) => {
                 if (!result.data.image || !result.data.image.url)
                   throw new Error("errors.response_not_ok");
                 return result.data.image.url;
               })
-              .then(url => imageUrlToBlob(url))
-              .then(blob =>
+              .then((url) => imageUrlToBlob(url))
+              .then((blob) =>
                 params.next(
                   generateFileName(blobToUpploadFile(blob), this.name)
                 )
               )
-              .catch(error => params.handle(error));
+              .catch((error) => params.handle(error));
           }
         }
         return false;

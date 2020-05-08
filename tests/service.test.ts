@@ -15,7 +15,7 @@ import {
   Pinterest,
   Screenshot,
   Twitter,
-  URL
+  URL,
 } from "../src";
 import { serviceTemplateParams } from "./mocks";
 
@@ -36,7 +36,7 @@ const services = [
   new Pinterest(),
   new Screenshot(),
   new Twitter(),
-  new URL()
+  new URL(),
 ];
 
 describe("service template", () => {

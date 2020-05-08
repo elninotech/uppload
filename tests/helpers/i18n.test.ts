@@ -5,19 +5,19 @@ test("flattens an object", () => {
   const nonFlatObject = {
     hello: "world",
     example: {
-      exists: true
-    }
+      exists: true,
+    },
   };
   const flatObject = {
     hello: "world",
-    "example.exists": true
+    "example.exists": true,
   };
   expect(flattenObject(nonFlatObject)).toEqual(flatObject);
 });
 
 test("get a translation", () => {
   const lang = {
-    sayHello: "Hello, world!"
+    sayHello: "Hello, world!",
   };
   setI18N(lang);
   expect(translate("sayHello")).toBe("Hello, world!");
@@ -25,7 +25,7 @@ test("get a translation", () => {
 
 test("get a translation with a variable", () => {
   const lang = {
-    sayHello: "Hello, $1$!"
+    sayHello: "Hello, $1$!",
   };
   setI18N(lang);
   expect(translate("sayHello", "Anand")).toBe("Hello, Anand!");
@@ -33,7 +33,7 @@ test("get a translation with a variable", () => {
 
 test("get a translation with multiple variables", () => {
   const lang = {
-    sayHello: "Hello, $1$ $2$!"
+    sayHello: "Hello, $1$ $2$!",
   };
   setI18N(lang);
   expect(translate("sayHello", ["Anand", "Chowdhary"])).toBe(
@@ -125,13 +125,13 @@ const translationKeys: string[] = [
   "effects.hue-rotate.title",
   "effects.invert.title",
   "effects.saturate.title",
-  "effects.sepia.title"
+  "effects.sepia.title",
 ];
 
 [en, nl, hi, es, fr, IT, ru, tr, de, zhTW].forEach((lang, i) => {
   describe(`translation - lang ${i}`, () => {
     const language: { [index: string]: any } = flattenObject(lang);
-    translationKeys.forEach(key => {
+    translationKeys.forEach((key) => {
       it(`has translation for ${key}`, () =>
         expect(language[key]).toBeDefined());
     });

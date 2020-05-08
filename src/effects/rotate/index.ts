@@ -3,12 +3,12 @@ import Cropper from "cropperjs";
 import {
   IHandlersParams,
   ITemplateParams,
-  IUpploadFile
+  IUpploadFile,
 } from "../../helpers/interfaces";
 import {
   safeListen,
   fitImageToContainer,
-  canvasToBlob
+  canvasToBlob,
 } from "../../helpers/elements";
 
 export default class Rotate extends UpploadEffect {
@@ -28,8 +28,9 @@ export default class Rotate extends UpploadEffect {
       </div>
       <div class="settings">
         <input type="range" value="${this.value}" min="0" max="${this.max}">
-        <span class="value"><span>0</span>${translate(`units.${this.unit}`) ||
-          this.unit}</span>
+        <span class="value"><span>0</span>${
+          translate(`units.${this.unit}`) || this.unit
+        }</span>
       </div>
     `;
   };
@@ -50,12 +51,12 @@ export default class Rotate extends UpploadEffect {
           toggleDragModeOnDblclick: false,
           ready() {
             params.uppload.emitter.emit("processing");
-            canvasToBlob(rotator.getCroppedCanvas()).then(blob => {
+            canvasToBlob(rotator.getCroppedCanvas()).then((blob) => {
               originalFile.blob = blob;
               params.uppload.emitter.emit("process");
               params.next(originalFile);
             });
-          }
+          },
         });
         const range = params.uppload.container.querySelector(
           ".settings input[type='range']"
@@ -74,7 +75,7 @@ export default class Rotate extends UpploadEffect {
             rotator.rotate(value - this.value);
             this.value = value;
             params.uppload.emitter.emit("processing");
-            canvasToBlob(rotator.getCroppedCanvas()).then(blob => {
+            canvasToBlob(rotator.getCroppedCanvas()).then((blob) => {
               originalFile.blob = blob;
               params.uppload.emitter.emit("process");
               params.next(originalFile);

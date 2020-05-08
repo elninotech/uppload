@@ -9,17 +9,17 @@ const config: Configuration = {
       {
         test: /\.tsx?$/,
         use: "ts-loader",
-        exclude: /node_modules/
-      }
-    ]
+        exclude: /node_modules/,
+      },
+    ],
   },
   resolve: {
-    extensions: [".ts", ".js"]
+    extensions: [".ts", ".js"],
   },
   output: {
     filename: "browser.js",
-    path: resolve(__dirname, "dist")
-  }
+    path: resolve(__dirname, "dist"),
+  },
 };
 
 export default config;

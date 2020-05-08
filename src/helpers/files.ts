@@ -10,7 +10,7 @@ const safeBlobToFile = (blob: Blob, fileName?: string, lastModified?: Date) => {
   try {
     return new File([blob], fileName || "file_name", {
       lastModified: (lastModified || new Date()).getTime(),
-      type: blob.type
+      type: blob.type,
     });
   } catch (error) {
     return blob;
@@ -27,7 +27,7 @@ export const blobToUpploadFile = (
     name,
     blob,
     lastModified,
-    type
+    type,
   };
   return result;
 };

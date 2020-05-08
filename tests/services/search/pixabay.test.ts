@@ -10,7 +10,7 @@ const pixabayResult: PixabayResult = {
   user: "Anand Chowdhary",
   userImageURL: "https://pixabay.com/user.jpg",
   pageURL: "https://pixabay.com/file",
-  tags: "photo, example"
+  tags: "photo, example",
 };
 
 test("popular endpoint", () =>
@@ -25,12 +25,12 @@ test("search endpoint", () =>
 
 test("gets search results", () =>
   expect(service.getSearchResults({ hits: [pixabayResult] })).toEqual([
-    pixabayResult
+    pixabayResult,
   ]));
 
 test("gets popular items", () =>
   expect(service.getPopularResults({ hits: [pixabayResult] })).toEqual([
-    pixabayResult
+    pixabayResult,
   ]));
 
 test("gets button HTML", () =>

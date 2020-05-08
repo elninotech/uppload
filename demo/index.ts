@@ -33,7 +33,7 @@ import {
   HueRotate,
   Invert,
   Saturate,
-  Sepia
+  Sepia,
 } from "../src";
 
 const button = document.createElement("div");
@@ -48,7 +48,7 @@ const uppload = new Uppload({
   lang: en,
   maxSize: [256, 256],
   uploader: (file, updateProgress) =>
-    new Promise(resolve => {
+    new Promise((resolve) => {
       console.log("Uploading file...", file);
       setTimeout(() => resolve(window.URL.createObjectURL(file)), 2750);
       let progress = 0;
@@ -56,7 +56,7 @@ const uppload = new Uppload({
         if (progress > 99) clearInterval(interval);
         updateProgress(progress++);
       }, 25);
-    })
+    }),
 });
 
 // These are our public demo API keys
@@ -75,8 +75,8 @@ uppload.use([
       "image/jpeg",
       "image/jpg",
       "image/png",
-      "application/pdf"
-    ]
+      "application/pdf",
+    ],
   }),
   new Camera(),
   new Instagram(),
@@ -98,12 +98,12 @@ uppload.use([
   new LinkedIn(),
   new Reddit(),
   new Tumblr(),
-  new WeHeartIt()
+  new WeHeartIt(),
 ]);
 
 uppload.use([
   new Crop({
-    aspectRatio: 1
+    aspectRatio: 1,
   }),
   new Rotate(),
   new Blur(),
@@ -114,7 +114,7 @@ uppload.use([
   new HueRotate(),
   new Invert(),
   new Saturate(),
-  new Sepia()
+  new Sepia(),
 ]);
 
 uppload.on("*", (a: any, b?: any) => {

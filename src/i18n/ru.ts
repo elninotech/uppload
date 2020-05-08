@@ -10,7 +10,7 @@ export const ru = {
   units: {
     px: "px",
     "%": "%",
-    deg: "°"
+    deg: "°",
   },
   errors: {
     response_not_ok: "Произошла ошибка при получении этого файла",
@@ -20,21 +20,21 @@ export const ru = {
     upload_aborted: "Ваша загрузка была отменена",
     upload_error: "Произошла ошибка при загрузке этого файла",
     file_type_not_allowed: "Этот тип файла не поддерживается",
-    file_too_large: "Файл должен быть не более $1$"
+    file_too_large: "Файл должен быть не более $1$",
   },
   help: {
     loading: "Загрузка...",
-    close: "Закрыть"
+    close: "Закрыть",
   },
   services: {
     default: {
-      heading: "Выберите изображение"
+      heading: "Выберите изображение",
     },
     local: {
       title: "Выберите файл",
       button: "Выберите файл",
       or: "или",
-      drop: "Перетащите файл сюда, чтобы загрузить"
+      drop: "Перетащите файл сюда, чтобы загрузить",
     },
     camera: {
       title: "Камера",
@@ -42,144 +42,144 @@ export const ru = {
       switch: "Переключить камеру",
       waiting: "Жду разрешения камеры...",
       unableToRead:
-        "Мы не можем получить доступ к вашей камере. Это может быть связано с тем, что вы не предоставили разрешение, или ваше устройство не поддерживает доступ к камере."
+        "Мы не можем получить доступ к вашей камере. Это может быть связано с тем, что вы не предоставили разрешение, или ваше устройство не поддерживает доступ к камере.",
     },
     microlink: {
       button: "Скачать из $1$",
       label: "Ссылка на $1$ $2$",
       placeholder: "Введите ссылку на $1$ $2$",
-      type: "пост"
+      type: "пост",
     },
     url: {
       title: "Ссылка",
       label: "Ссылка на изображение",
       placeholder: "Введите ссылку на изображение",
-      button: "Скачать изображение"
+      button: "Скачать изображение",
     },
     instagram: {
-      title: "Instagram"
+      title: "Instagram",
     },
     facebook: {
-      title: "Facebook"
+      title: "Facebook",
     },
     flickr: {
       title: "Flickr",
-      type: "фото"
+      type: "фото",
     },
     ninegag: {
       title: "9GAG",
-      type: "фото"
+      type: "фото",
     },
     deviantart: {
-      title: "DeviantArt"
+      title: "DeviantArt",
     },
     artstation: {
-      title: "ArtStation"
+      title: "ArtStation",
     },
     twitter: {
       title: "Twitter",
-      type: "фото твит"
+      type: "фото твит",
     },
     pinterest: {
       title: "Pinterest",
-      type: "pin"
+      type: "pin",
     },
     flipboard: {
       title: "Flipboard",
-      type: "статья"
+      type: "статья",
     },
     fotki: {
       title: "Fotki",
-      type: "фото"
+      type: "фото",
     },
     linkedin: {
-      title: "LinkedIn"
+      title: "LinkedIn",
     },
     reddit: {
-      title: "Reddit"
+      title: "Reddit",
     },
     tumblr: {
-      title: "Tumblr"
+      title: "Tumblr",
     },
     weheartit: {
-      title: "We Heart It"
+      title: "We Heart It",
     },
     screenshot: {
       title: "Скриншот",
       button: "Сделать скриншот",
       label: "Ссылка на сайт",
       placeholder: "Введите ссылку",
-      loading: "Скриншотим..."
+      loading: "Скриншотим...",
     },
     search: {
       button: "Поиск на $1$",
       label: "Поиск изображений",
       placeholder: "",
-      imagesPoweredBy: "картинки предоставлены $1$"
+      imagesPoweredBy: "картинки предоставлены $1$",
     },
     giphy: {
-      title: "GIPHY"
+      title: "GIPHY",
     },
     unsplash: {
-      title: "Unsplash"
+      title: "Unsplash",
     },
     pixabay: {
-      title: "Pixabay"
+      title: "Pixabay",
     },
     pexels: {
-      title: "Pexels"
-    }
+      title: "Pexels",
+    },
   },
   effects: {
     preview: {
-      title: "пример"
+      title: "пример",
     },
     filters: {
-      title: "Фильтры"
+      title: "Фильтры",
     },
     crop: {
       title: "Обрезать",
       aspectRatios: {
         free: "Свободный",
-        square: "Квадрат"
-      }
+        square: "Квадрат",
+      },
     },
     rotate: {
-      title: "Поворот"
+      title: "Поворот",
     },
     flip: {
       title: "Отразить",
       buttons: {
         horizontal: "Горизонтально",
-        vertical: "Вертикально"
-      }
+        vertical: "Вертикально",
+      },
     },
     sharpen: {
-      title: "Резкость"
+      title: "Резкость",
     },
     blur: {
-      title: "Размытие"
+      title: "Размытие",
     },
     brightness: {
-      title: "Яркость"
+      title: "Яркость",
     },
     contrast: {
-      title: "Контраст"
+      title: "Контраст",
     },
     grayscale: {
-      title: "Оттенки серого"
+      title: "Оттенки серого",
     },
     "hue-rotate": {
-      title: "Повернуть оттенок"
+      title: "Повернуть оттенок",
     },
     invert: {
-      title: "Инверсия"
+      title: "Инверсия",
     },
     saturate: {
-      title: "Насыщенность"
+      title: "Насыщенность",
     },
     sepia: {
-      title: "Сепия"
-    }
-  }
+      title: "Сепия",
+    },
+  },
 };

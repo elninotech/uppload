@@ -30,7 +30,7 @@ export default class Pixabay extends SearchBaseClass<PixabayResult> {
         <span>${image.user}</span>
       </small></div>`,
       getSearchResults: (response: { hits: PixabayResult[] }) => response.hits,
-      getPopularResults: (response: { hits: PixabayResult[] }) => response.hits
+      getPopularResults: (response: { hits: PixabayResult[] }) => response.hits,
     });
   }
 }

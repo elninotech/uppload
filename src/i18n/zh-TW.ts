@@ -11,7 +11,7 @@ export const zhTW = {
   units: {
     px: "px",
     "%": "%",
-    deg: "°"
+    deg: "°",
   },
 
   errors: {
@@ -22,23 +22,23 @@ export const zhTW = {
     upload_aborted: "您的上傳已取消",
     upload_error: "我們在上傳這個檔案時發生錯誤",
     file_type_not_allowed: "這個檔案類型不被允許",
-    file_too_large: "您的檔案應該小於 $1$"
+    file_too_large: "您的檔案應該小於 $1$",
   },
 
   help: {
     loading: "讀取幫助中...",
-    close: "關閉幫助"
+    close: "關閉幫助",
   },
 
   services: {
     default: {
-      heading: "選擇一個影像"
+      heading: "選擇一個影像",
     },
     local: {
       title: "選擇檔案",
       button: "選擇一個檔案",
       or: "或",
-      drop: "拖曳檔案至此"
+      drop: "拖曳檔案至此",
     },
     camera: {
       title: "相機",
@@ -46,144 +46,144 @@ export const zhTW = {
       switch: "切換照片",
       waiting: "等待權限授權中...",
       unableToRead:
-        "我們無法從您的相機讀取影像，這可能是因為您拒絕了授予權限或是因為您的裝置不支援存取相機"
+        "我們無法從您的相機讀取影像，這可能是因為您拒絕了授予權限或是因為您的裝置不支援存取相機",
     },
     microlink: {
       button: "匯入 $1$",
       label: "$1$ $2$ 網址",
       placeholder: "請輸入一個 $1$ 的 $2$ 網址",
-      type: "post"
+      type: "post",
     },
     url: {
       title: "網址",
       label: "影像網址",
-      placeholder: "請輸入一個影像網址"
+      placeholder: "請輸入一個影像網址",
     },
     instagram: {
-      title: "Instagram"
+      title: "Instagram",
     },
     facebook: {
-      title: "Facebook"
+      title: "Facebook",
     },
     flickr: {
       title: "Flickr",
-      type: "圖像"
+      type: "圖像",
     },
     ninegag: {
       title: "9GAG",
-      type: "圖像"
+      type: "圖像",
     },
     deviantart: {
-      title: "DeviantArt"
+      title: "DeviantArt",
     },
     artstation: {
-      title: "ArtStation"
+      title: "ArtStation",
     },
     twitter: {
       title: "Twitter",
-      type: "影像推文"
+      type: "影像推文",
     },
     pinterest: {
       title: "Pinterest",
-      type: "釘文"
+      type: "釘文",
     },
     flipboard: {
       title: "Flipboard",
-      type: "文章"
+      type: "文章",
     },
     fotki: {
       title: "Fotki",
-      type: "影像"
+      type: "影像",
     },
     linkedin: {
-      title: "LinkedIn"
+      title: "LinkedIn",
     },
     reddit: {
-      title: "Reddit"
+      title: "Reddit",
     },
     tumblr: {
-      title: "Tumblr"
+      title: "Tumblr",
     },
     weheartit: {
-      title: "We Heart It"
+      title: "We Heart It",
     },
     screenshot: {
       title: "螢幕截圖",
       button: "擷取螢幕截圖",
       label: "網頁網址",
       placeholder: "請輸入一個網頁網址",
-      loading: "正在擷取螢幕截圖..."
+      loading: "正在擷取螢幕截圖...",
     },
     search: {
       button: "搜尋 $1$",
       label: "找一張影像",
       placeholder: "請輸入關鍵字",
-      imagesPoweredBy: "影像由 $1$ 提供"
+      imagesPoweredBy: "影像由 $1$ 提供",
     },
     giphy: {
-      title: "GIPHY"
+      title: "GIPHY",
     },
     unsplash: {
-      title: "Unsplash"
+      title: "Unsplash",
     },
     pixabay: {
-      title: "Pixabay"
+      title: "Pixabay",
     },
     pexels: {
-      title: "Pexels"
-    }
+      title: "Pexels",
+    },
   },
 
   effects: {
     preview: {
-      title: "預覽"
+      title: "預覽",
     },
     filters: {
-      title: "濾鏡"
+      title: "濾鏡",
     },
     crop: {
       title: "剪裁",
       aspectRatios: {
         free: "自由",
-        square: "正方形"
-      }
+        square: "正方形",
+      },
     },
     rotate: {
-      title: "旋轉"
+      title: "旋轉",
     },
     flip: {
       title: "翻轉",
       buttons: {
         horizontal: "水平",
-        vertical: "垂直"
-      }
+        vertical: "垂直",
+      },
     },
     sharpen: {
-      title: "銳化"
+      title: "銳化",
     },
     blur: {
-      title: "模糊"
+      title: "模糊",
     },
     brightness: {
-      title: "亮度"
+      title: "亮度",
     },
     contrast: {
-      title: "對比"
+      title: "對比",
     },
     grayscale: {
-      title: "灰階"
+      title: "灰階",
     },
     "hue-rotate": {
-      title: "色相旋轉"
+      title: "色相旋轉",
     },
     invert: {
-      title: "負片效果"
+      title: "負片效果",
     },
     saturate: {
-      title: "飽和度"
+      title: "飽和度",
     },
     sepia: {
-      title: "懷舊(黃褐色)"
-    }
-  }
+      title: "懷舊(黃褐色)",
+    },
+  },
 };

@@ -19,20 +19,20 @@ const fakeEvent = {
       {
         kind: "file",
         type: "image/png",
-        getAsFile: () => new Blob()
-      }
-    ]
+        getAsFile: () => new Blob(),
+      },
+    ],
   },
   dataTransfer: {
     items: [
       {
         kind: "file",
         type: "image/png",
-        getAsFile: () => new Blob()
-      }
-    ]
+        getAsFile: () => new Blob(),
+      },
+    ],
   },
-  preventDefault: () => {}
+  preventDefault: () => {},
 };
 
 test("drop handler", () => {

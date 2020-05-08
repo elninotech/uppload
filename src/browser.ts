@@ -57,7 +57,7 @@ import {
   HueRotate,
   Invert,
   Sepia,
-  Saturate
+  Saturate,
 } from "./index";
 
 export interface UpploadWindow extends Window {

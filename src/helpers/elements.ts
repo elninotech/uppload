@@ -41,7 +41,7 @@ export const safeListen = (
   fn: EventListenerOrEventListenerObject
 ) => {
   const hasListener = !!listening.find(
-    a => a.element === element && a.type === type
+    (a) => a.element === element && a.type === type
   );
   if (hasListener) return;
   element.addEventListener(type, fn);
@@ -64,7 +64,7 @@ export const fitImageToContainer = (
   params: IHandlersParams,
   image: HTMLImageElement | HTMLVideoElement
 ): Promise<undefined> => {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     safeRequestAnimationFrame(() => {
       const parent = image.parentElement as HTMLDivElement | null;
       const currentDimensions = image.getBoundingClientRect();
@@ -107,13 +107,13 @@ export const compressImage = (
   file: Blob,
   settings: IUpploadSettings
 ): Promise<Blob> =>
-  new Promise(resolve => {
+  new Promise((resolve) => {
     const imageURL = URL.createObjectURL(file);
     const canvas = document.createElement("canvas");
     const image = document.createElement("img");
     const maxSize = settings.maxSize || [
       settings.maxWidth || Infinity,
-      settings.maxHeight || Infinity
+      settings.maxHeight || Infinity,
     ];
     image.src = imageURL;
     image.onload = () => {
@@ -149,10 +149,7 @@ export const compressImage = (
  */
 const dataURItoBlob = (dataURI: string) => {
   const byteString = atob(dataURI.split(",")[1]);
-  const mimeString = dataURI
-    .split(",")[0]
-    .split(":")[1]
-    .split(";")[0];
+  const mimeString = dataURI.split(",")[0].split(":")[1].split(";")[0];
   const arrayBuffer = new ArrayBuffer(byteString.length);
   const uArray = new Uint8Array(arrayBuffer);
   for (let i = 0; i < byteString.length; i++)
@@ -199,7 +196,7 @@ export const canvasToBlob = (
     }
     if (typeof canvas.toBlob === "function") {
       canvas.toBlob(
-        blob => {
+        (blob) => {
           if (blob) resolve(blob);
           reject(new Error("errors.image_error"));
         },

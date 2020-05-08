@@ -8,7 +8,7 @@ describe("xhr uploader", () => {
   it("returns a function", () =>
     expect(
       typeof xhrUploader({
-        endpoint: "https://example.com"
+        endpoint: "https://example.com",
       })
     ).toBe("function"));
 
@@ -16,15 +16,15 @@ describe("xhr uploader", () => {
     xhr.post("https://example.com", (req, res) => {
       return res.body(
         JSON.stringify({
-          url: "https://example.com/file.jpg"
+          url: "https://example.com/file.jpg",
         })
       );
     });
 
     const uppload = new Uppload({
       uploader: xhrUploader({
-        endpoint: "https://example.com"
-      })
+        endpoint: "https://example.com",
+      }),
     });
     uppload.on("upload", (url: string) => {
       console.log("ANAND GOT", url);
@@ -37,15 +37,15 @@ describe("xhr uploader", () => {
     xhr.post("https://example.com", (req, res) =>
       res.body(
         JSON.stringify({
-          newKey: "https://example.com/file.jpg"
+          newKey: "https://example.com/file.jpg",
         })
       )
     );
     const uppload = new Uppload({
       uploader: xhrUploader({
         endpoint: "https://example.com",
-        fileKeyName: "newKey"
-      })
+        fileKeyName: "newKey",
+      }),
     });
     uppload.on("upload", (url: string) => {
       expect(url).toBe("https://example.com/file.jpg");
@@ -57,15 +57,15 @@ describe("xhr uploader", () => {
     xhr.post("https://example.com", (req, res) =>
       res.body(
         JSON.stringify({
-          newKey: "https://example.com/file.jpg"
+          newKey: "https://example.com/file.jpg",
         })
       )
     );
     const uppload = new Uppload({
       uploader: xhrUploader({
         endpoint: "https://example.com",
-        responseFunction: response => JSON.parse(response).newKey
-      })
+        responseFunction: (response) => JSON.parse(response).newKey,
+      }),
     });
     uppload.on("upload", (url: string) => {
       expect(url).toBe("https://example.com/file.jpg");
@@ -77,15 +77,15 @@ describe("xhr uploader", () => {
     xhr.post("https://example.com", (req, res) =>
       res.body(
         JSON.stringify({
-          newKey: "https://example.com/file.jpg"
+          newKey: "https://example.com/file.jpg",
         })
       )
     );
     const uppload = new Uppload({
       uploader: xhrUploader({
         endpoint: "https://example.com",
-        settingsFunction: request => request
-      })
+        settingsFunction: (request) => request,
+      }),
     });
     uppload.on("upload", (url: string) => {
       expect(url).toBe("https://example.com/file.jpg");
@@ -98,20 +98,20 @@ describe("fetch uploader", () => {
   it("returns a function", () =>
     expect(
       typeof fetchUploader({
-        endpoint: "https://example.com"
+        endpoint: "https://example.com",
       })
     ).toBe("function"));
 
   it("sends fetch request", () => {
     fetch.mockResponseOnce(
       JSON.stringify({
-        url: "https://example.com/file.jpg"
+        url: "https://example.com/file.jpg",
       })
     );
     const uppload = new Uppload({
       uploader: fetchUploader({
-        endpoint: "https://example.com"
-      })
+        endpoint: "https://example.com",
+      }),
     });
     uppload.on("upload", (url: string) => {
       expect(url).toBe("https://example.com/file.jpg");
@@ -122,14 +122,14 @@ describe("fetch uploader", () => {
   it("uses fetch response key", () => {
     fetch.mockResponseOnce(
       JSON.stringify({
-        newKey: "https://example.com/file.jpg"
+        newKey: "https://example.com/file.jpg",
       })
     );
     const uppload = new Uppload({
       uploader: fetchUploader({
         endpoint: "https://example.com",
-        fileKeyName: "newKey"
-      })
+        fileKeyName: "newKey",
+      }),
     });
     uppload.on("upload", (url: string) => {
       expect(url).toBe("https://example.com/file.jpg");
@@ -140,14 +140,14 @@ describe("fetch uploader", () => {
   it("uses fetch response function", () => {
     fetch.mockResponseOnce(
       JSON.stringify({
-        newKey: "https://example.com/file.jpg"
+        newKey: "https://example.com/file.jpg",
       })
     );
     const uppload = new Uppload({
       uploader: fetchUploader({
         endpoint: "https://example.com",
-        responseFunction: response => JSON.parse(response).newKey
-      })
+        responseFunction: (response) => JSON.parse(response).newKey,
+      }),
     });
     uppload.on("upload", (url: string) => {
       expect(url).toBe("https://example.com/file.jpg");
@@ -158,17 +158,17 @@ describe("fetch uploader", () => {
   it("uses fetch settings function", () => {
     fetch.mockResponseOnce(
       JSON.stringify({
-        newKey: "https://example.com/file.jpg"
+        newKey: "https://example.com/file.jpg",
       })
     );
     const uppload = new Uppload({
       uploader: fetchUploader({
         endpoint: "https://example.com",
-        settingsFunction: file => ({
+        settingsFunction: (file) => ({
           method: "PUT",
-          body: file
-        })
-      })
+          body: file,
+        }),
+      }),
     });
     uppload.on("upload", (url: string) => {
       expect(url).toBe("https://example.com/file.jpg");

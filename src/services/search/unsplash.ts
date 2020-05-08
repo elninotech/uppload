@@ -32,8 +32,9 @@ export default class Unsplash extends SearchBaseClass<UnsplashResult> {
           this.apiKey
         }&page=1&query=${encodeURIComponent(query)}`,
       getButton: (image: UnsplashResult) => `<div class="result">
-        <button aria-label="${image.alt_description ||
-          image.description}" data-full-url="${
+        <button aria-label="${
+          image.alt_description || image.description
+        }" data-full-url="${
         image.urls.regular
       }" style="background-image: url('${image.urls.thumb}')"></button>
         <small class="author">
@@ -43,7 +44,7 @@ export default class Unsplash extends SearchBaseClass<UnsplashResult> {
       </div>`,
       getSearchResults: (response: { results: UnsplashResult[] }) =>
         response.results,
-      getPopularResults: (response: UnsplashResult[]) => response
+      getPopularResults: (response: UnsplashResult[]) => response,
     });
   }
 }

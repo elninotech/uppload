@@ -7,13 +7,13 @@ export const es = {
   fetching: "Obteniendo imagen desde $1$ ...",
   poweredBy: "Hecho posible por $1$",
   needHelp: "¿Necesitas ayuda?",
-  
+
   units: {
     px: "px",
     "%": "%",
-    deg: "°"
+    deg: "°",
   },
-  
+
   errors: {
     response_not_ok: "Se produjo un error al obtener este archivo",
     unable_to_search: "Se produjo un error al buscar",
@@ -22,23 +22,23 @@ export const es = {
     upload_aborted: "Tu carga ha sido cancelada",
     upload_error: "Se produjo un error al subir este archivo",
     file_type_not_allowed: "Este tipo de archivo no está permitido",
-    file_too_large: "El archivo debe ser inferior a $1$"
+    file_too_large: "El archivo debe ser inferior a $1$",
   },
-  
+
   help: {
     loading: "Cargando ayuda...",
-    close: "Cerrar ayuda"
+    close: "Cerrar ayuda",
   },
-  
+
   services: {
     default: {
-      heading: "Selecciona una imagen"
+      heading: "Selecciona una imagen",
     },
     local: {
       title: "Elige un archivo",
       button: "Selecciona un archivo",
       or: "o",
-      drop: "Arrastra un archivo aquí para subir"
+      drop: "Arrastra un archivo aquí para subir",
     },
     camera: {
       title: "Cámara",
@@ -46,144 +46,144 @@ export const es = {
       switch: "Cambiar de cámara",
       waiting: "Esperando el permiso de la cámara...",
       unableToRead:
-        "No podemos leer el video de su cámara. Esto puede deberse a que no ha otorgado el permiso requerido o porque su dispositivo no admite el acceso a la cámara."
+        "No podemos leer el video de su cámara. Esto puede deberse a que no ha otorgado el permiso requerido o porque su dispositivo no admite el acceso a la cámara.",
     },
     microlink: {
       button: "Importar desde $1$",
       label: "$1$ $2$ URL",
       placeholder: "Ingrese una URL de $1$ $2$",
-      type: "enviar"
+      type: "enviar",
     },
     url: {
       title: "URL directa",
       label: "URL de la imagen",
-      placeholder: "Ingrese la URL de la imagen"
+      placeholder: "Ingrese la URL de la imagen",
     },
     instagram: {
-      title: "Instagram"
+      title: "Instagram",
     },
     facebook: {
-      title: "Facebook"
+      title: "Facebook",
     },
     flickr: {
       title: "Flickr",
-      type: "una foto"
+      type: "una foto",
     },
     ninegag: {
       title: "9GAG",
-      type: "una foto"
+      type: "una foto",
     },
     deviantart: {
-      title: "DeviantArt"
+      title: "DeviantArt",
     },
     artstation: {
-      title: "ArtStation"
+      title: "ArtStation",
     },
     twitter: {
       title: "Twitter",
-      type: "imagen de twitter"
+      type: "imagen de twitter",
     },
     pinterest: {
       title: "Pinterest",
-      type: "pin"
+      type: "pin",
     },
     flipboard: {
       title: "Flipboard",
-      type: "artículo"
+      type: "artículo",
     },
     fotki: {
       title: "fotos",
-      type: "una foto"
+      type: "una foto",
     },
     linkedin: {
-      title: "LinkedIn"
+      title: "LinkedIn",
     },
     reddit: {
-      title: "Reddit"
+      title: "Reddit",
     },
     tumblr: {
-      title: "Tumblr"
+      title: "Tumblr",
     },
     weheartit: {
-      title: "We Heart It"
+      title: "We Heart It",
     },
     screenshot: {
       title: "Captura de pantalla",
       button: "Tomar captura de pantalla",
       label: "URL de la página web",
       placeholder: "Ingresa una URL",
-      loading: "Tomando una captura de pantalla ..."
+      loading: "Tomando una captura de pantalla ...",
     },
     search: {
       button: "Buscar en $1$",
       label: "Busca una imagen",
       placeholder: "Buscar algo",
-      imagesPoweredBy: "Imágenes posibles por $1$"
+      imagesPoweredBy: "Imágenes posibles por $1$",
     },
     giphy: {
-      title: "GIPHY"
+      title: "GIPHY",
     },
     unsplash: {
-      title: "Unsplash"
+      title: "Unsplash",
     },
     pixabay: {
-      title: "Pixabay"
+      title: "Pixabay",
     },
     pexels: {
-      title: "Pexels"
-    }
+      title: "Pexels",
+    },
   },
 
   effects: {
     preview: {
-      title: "Vista Previa"
+      title: "Vista Previa",
     },
     filters: {
-      title: "Filtros"
+      title: "Filtros",
     },
     crop: {
       title: "Recortar",
       aspectRatios: {
         free: "Libre",
-        square: "Cuadrado"
-      }
+        square: "Cuadrado",
+      },
     },
     rotate: {
-      title: "Rotar"
+      title: "Rotar",
     },
     flip: {
       title: "Dar vuelta",
       buttons: {
         horizontal: "Horizontal",
-        vertical: "Vertical"
-      }
+        vertical: "Vertical",
+      },
     },
     sharpen: {
-      title: "Agudizar"
+      title: "Agudizar",
     },
     blur: {
-      title: "Desenfocar"
+      title: "Desenfocar",
     },
     brightness: {
-      title: "Brillo"
+      title: "Brillo",
     },
     contrast: {
-      title: "Contraste"
+      title: "Contraste",
     },
     grayscale: {
-      title: "Escala de grises"
+      title: "Escala de grises",
     },
     "hue-rotate": {
-      title: "Rotar tono"
+      title: "Rotar tono",
     },
     invert: {
-      title: "Invertir"
+      title: "Invertir",
     },
     saturate: {
-      title: "Saturar"
+      title: "Saturar",
     },
     sepia: {
-      title: "Sepia"
-    }
-  }
+      title: "Sepia",
+    },
+  },
 };

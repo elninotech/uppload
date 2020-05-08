@@ -38,9 +38,9 @@ export default class Pexels extends SearchBaseClass<PexelsResult> {
         response.photos,
       fetchSettings: (apiKey: string) => ({
         headers: {
-          Authorization: apiKey
-        }
-      })
+          Authorization: apiKey,
+        },
+      }),
     });
   }
 }

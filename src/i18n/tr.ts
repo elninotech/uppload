@@ -10,7 +10,7 @@ export const tr = {
   units: {
     px: "px",
     "%": "%",
-    deg: "°"
+    deg: "°",
   },
   errors: {
     response_not_ok: "Bu dosya alınırken bir hata oluştu",
@@ -20,21 +20,21 @@ export const tr = {
     upload_aborted: "Yüklemeniz iptal edildi",
     upload_error: "Bu dosya yüklenirken bir hata oluştu",
     file_type_not_allowed: "Bu dosya türü desteklenmiyor",
-    file_too_large: "Dosya $1$ 'dan az olmalı"
+    file_too_large: "Dosya $1$ 'dan az olmalı",
   },
   help: {
     loading: "Yardım yükleniyor...",
-    close: "Yardımı kapat"
+    close: "Yardımı kapat",
   },
   services: {
     default: {
-      heading: "Bir resim seç"
+      heading: "Bir resim seç",
     },
     local: {
       title: "Bir dosya seç",
       button: "Bir dosya seç",
       or: "arasında",
-      drop: "Yüklemek için bir dosyayı buraya sürükleyin"
+      drop: "Yüklemek için bir dosyayı buraya sürükleyin",
     },
     camera: {
       title: "Kamera",
@@ -42,143 +42,143 @@ export const tr = {
       switch: "Kamera değiştir",
       waiting: "Kamera izni bekleniyor ...",
       unableToRead:
-        "Videoyu kameranızdan okuyamıyoruz. Bunun nedeni gerekli izni vermediğiniz veya cihazınızın kamera erişimini desteklememesi olabilir."
+        "Videoyu kameranızdan okuyamıyoruz. Bunun nedeni gerekli izni vermediğiniz veya cihazınızın kamera erişimini desteklememesi olabilir.",
     },
     microlink: {
       button: "1 $ 'dan içe aktar",
       label: "$1$ $2$ URL",
       placeholder: "Bir $1$ $2$ URL girin",
-      type: "posta"
+      type: "posta",
     },
     url: {
       title: "Doğrudan URL",
       label: "Image URL",
-      placeholder: "Bir resim URL’si girin"
+      placeholder: "Bir resim URL’si girin",
     },
     instagram: {
-      title: "Instagram"
+      title: "Instagram",
     },
     facebook: {
-      title: "Facebook"
+      title: "Facebook",
     },
     flickr: {
       title: "Flickr",
-      type: "bir fotoğraf"
+      type: "bir fotoğraf",
     },
     ninegag: {
       title: "9gag",
-      type: "bir fotoğraf"
+      type: "bir fotoğraf",
     },
     deviantart: {
-      title: "DeviantArt"
+      title: "DeviantArt",
     },
     artstation: {
-      title: "ArtStation"
+      title: "ArtStation",
     },
     twitter: {
       title: "heyecan",
-      type: "fotoğraf tweet"
+      type: "fotoğraf tweet",
     },
     pinterest: {
       title: "pinterest",
-      type: "toplu iğne"
+      type: "toplu iğne",
     },
     flipboard: {
       title: "Flipboard",
-      type: "makale"
+      type: "makale",
     },
     fotki: {
       title: "Resimler",
-      type: "bir fotoğraf"
+      type: "bir fotoğraf",
     },
     linkedin: {
-      title: "LinkedIn"
+      title: "LinkedIn",
     },
     reddit: {
-      title: "Reddit"
+      title: "Reddit",
     },
     tumblr: {
-      title: "Tumblr"
+      title: "Tumblr",
     },
     weheartit: {
-      title: "Biz kalp"
+      title: "Biz kalp",
     },
     screenshot: {
       title: "Ekran görüntüsü",
       button: "Ekran görüntüsü al",
       label: "Web sayfasının URL'si",
       placeholder: "Bir URL girin",
-      loading: "Ekran görüntüsü al ..."
+      loading: "Ekran görüntüsü al ...",
     },
     search: {
       button: "$1$ için ara",
       label: "Bir resim arayın",
       placeholder: "Bir şey arayın",
-      imagesPoweredBy: "Görüntüler $1$ 'a kadar mümkün kılındı"
+      imagesPoweredBy: "Görüntüler $1$ 'a kadar mümkün kılındı",
     },
     giphy: {
-      title: "GIPHY"
+      title: "GIPHY",
     },
     unsplash: {
-      title: "Unsplash"
+      title: "Unsplash",
     },
     pixabay: {
-      title: "Pixabay"
+      title: "Pixabay",
     },
     pexels: {
-      title: "Pexels"
-    }
+      title: "Pexels",
+    },
   },
   effects: {
     preview: {
-      title: "örnek"
+      title: "örnek",
     },
     filters: {
-      title: "Filtreler"
+      title: "Filtreler",
     },
     crop: {
       title: "ekin",
       aspectRatios: {
         free: "Ücretsiz",
-        square: "tam"
-      }
+        square: "tam",
+      },
     },
     rotate: {
-      title: "büküm"
+      title: "büküm",
     },
     flip: {
       title: "Arkanı dön",
       buttons: {
         horizontal: "yatay",
-        vertical: "dikey"
-      }
+        vertical: "dikey",
+      },
     },
     sharpen: {
-      title: "keskinleştirme"
+      title: "keskinleştirme",
     },
     blur: {
-      title: "karartmak"
+      title: "karartmak",
     },
     brightness: {
-      title: "parlaklık"
+      title: "parlaklık",
     },
     contrast: {
-      title: "Kontrast"
+      title: "Kontrast",
     },
     grayscale: {
-      title: "Gri tonlama"
+      title: "Gri tonlama",
     },
     "hue-rotate": {
-      title: "Tonu döndür"
+      title: "Tonu döndür",
     },
     invert: {
-      title: "Ters çevir"
+      title: "Ters çevir",
     },
     saturate: {
-      title: "doyurmak"
+      title: "doyurmak",
     },
     sepia: {
-      title: "Sepya"
-    }
-  }
+      title: "Sepya",
+    },
+  },
 };

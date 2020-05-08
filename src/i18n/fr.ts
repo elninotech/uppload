@@ -10,7 +10,7 @@ export const fr = {
   units: {
     px: "px",
     "%": "%",
-    deg: "°"
+    deg: "°",
   },
   errors: {
     response_not_ok:
@@ -22,21 +22,21 @@ export const fr = {
     upload_error:
       "Une erreur s'est produite lors du téléchargement de ce fichier.",
     file_type_not_allowed: "Ce type de fichier n'est pas supporté",
-    file_too_large: "Le fichier doit être inférieur à $1$"
+    file_too_large: "Le fichier doit être inférieur à $1$",
   },
   help: {
     loading: "Aide au chargement...",
-    close: "Fermer l'aide"
+    close: "Fermer l'aide",
   },
   services: {
     default: {
-      heading: "Sélectionnez une image"
+      heading: "Sélectionnez une image",
     },
     local: {
       title: "Choisissez un fichier",
       button: "Sélectionnez un fichier",
       or: "de",
-      drop: "Faites glisser un fichier ici pour le télécharger"
+      drop: "Faites glisser un fichier ici pour le télécharger",
     },
     camera: {
       title: "Caméra",
@@ -44,143 +44,143 @@ export const fr = {
       switch: "Changer de caméra",
       waiting: "En attente de la permission de la caméra ...",
       unableToRead:
-        "Nous ne pouvons pas lire la vidéo à partir de votre caméra. Cela peut être dû au fait que vous n'avez pas accordé l'autorisation requise ou que votre appareil ne prend pas en charge l'accès à la caméra."
+        "Nous ne pouvons pas lire la vidéo à partir de votre caméra. Cela peut être dû au fait que vous n'avez pas accordé l'autorisation requise ou que votre appareil ne prend pas en charge l'accès à la caméra.",
     },
     microlink: {
       button: "Importation à partir de $1$",
       label: "$1$ $2$ URL",
       placeholder: "Entrez une URL $1$ $2$",
-      type: "poster"
+      type: "poster",
     },
     url: {
       title: "Directe URL",
       label: "URL de l'image",
-      placeholder: "Entrez une URL d'image"
+      placeholder: "Entrez une URL d'image",
     },
     instagram: {
-      title: "Instagram"
+      title: "Instagram",
     },
     facebook: {
-      title: "Facebook"
+      title: "Facebook",
     },
     flickr: {
       title: "Flickr",
-      type: "une photo"
+      type: "une photo",
     },
     ninegag: {
       title: "9GAG",
-      type: "une photo"
+      type: "une photo",
     },
     deviantart: {
-      title: "DeviantArt"
+      title: "DeviantArt",
     },
     artstation: {
-      title: "ArtStation"
+      title: "ArtStation",
     },
     twitter: {
       title: "Gazouillement",
-      type: "photo tweet"
+      type: "photo tweet",
     },
     pinterest: {
       title: "Pinterest",
-      type: "épingle"
+      type: "épingle",
     },
     flipboard: {
       title: "Flipboard",
-      type: "article"
+      type: "article",
     },
     fotki: {
       title: "Photos",
-      type: "une photo"
+      type: "une photo",
     },
     linkedin: {
-      title: "LinkedIn"
+      title: "LinkedIn",
     },
     reddit: {
-      title: "Reddit"
+      title: "Reddit",
     },
     tumblr: {
-      title: "Tumblr"
+      title: "Tumblr",
     },
     weheartit: {
-      title: "Nous avons le coeur"
+      title: "Nous avons le coeur",
     },
     screenshot: {
       title: "Capture d'écran",
       button: "Prendre une capture d'écran",
       label: "URL de la page Web",
       placeholder: "Entrez une URL",
-      loading: "Prenez une capture d'écran ..."
+      loading: "Prenez une capture d'écran ...",
     },
     search: {
       button: "Recherche de $1$",
       label: "Rechercher une image",
       placeholder: "Rechercher quelque chose",
-      imagesPoweredBy: "Images rendues possibles par $1$"
+      imagesPoweredBy: "Images rendues possibles par $1$",
     },
     giphy: {
-      title: "GIPHY"
+      title: "GIPHY",
     },
     unsplash: {
-      title: "Unsplash"
+      title: "Unsplash",
     },
     pixabay: {
-      title: "Pixabay"
+      title: "Pixabay",
     },
     pexels: {
-      title: "Pexels"
-    }
+      title: "Pexels",
+    },
   },
   effects: {
     preview: {
-      title: "Exemple"
+      title: "Exemple",
     },
     filters: {
-      title: "Les filtres"
+      title: "Les filtres",
     },
     crop: {
       title: "Récolte",
       aspectRatios: {
         free: "Libre",
-        square: "Plein"
-      }
+        square: "Plein",
+      },
     },
     rotate: {
-      title: "Tournant"
+      title: "Tournant",
     },
     flip: {
       title: "Faire demi-tour",
       buttons: {
         horizontal: "Horizontal",
-        vertical: "Vertical"
-      }
+        vertical: "Vertical",
+      },
     },
     sharpen: {
-      title: "Netteté"
+      title: "Netteté",
     },
     blur: {
-      title: "Flou"
+      title: "Flou",
     },
     brightness: {
-      title: "La luminosité"
+      title: "La luminosité",
     },
     contrast: {
-      title: "Contraste"
+      title: "Contraste",
     },
     grayscale: {
-      title: "Niveaux de gris"
+      title: "Niveaux de gris",
     },
     "hue-rotate": {
-      title: "Faire pivoter la teinte"
+      title: "Faire pivoter la teinte",
     },
     invert: {
-      title: "Retourner"
+      title: "Retourner",
     },
     saturate: {
-      title: "Saturer"
+      title: "Saturer",
     },
     sepia: {
-      title: "Sépia"
-    }
-  }
+      title: "Sépia",
+    },
+  },
 };

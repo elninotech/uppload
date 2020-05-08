@@ -4,7 +4,7 @@ import {
   IHandlersParams,
   ITemplateParams,
   translate,
-  Uppload
+  Uppload,
 } from "../src";
 const uppload = new Uppload();
 import xhr from "xhr-mock";
@@ -16,7 +16,7 @@ export const fetch = customGlobal.fetch;
 
 const serviceTemplateParams: IServiceTemplateParams = {
   uppload,
-  translate
+  translate,
 };
 const handlersParams: IHandlersParams = {
   upload: () => new Promise(() => {}),
@@ -25,11 +25,11 @@ const handlersParams: IHandlersParams = {
   handle: () => {},
   showHelp: () => {},
   uppload,
-  translate
+  translate,
 };
 const effectTemplateParams: ITemplateParams = {
   file: { blob: new Blob() },
-  translate
+  translate,
 };
 
 export { xhr, serviceTemplateParams, handlersParams, effectTemplateParams };

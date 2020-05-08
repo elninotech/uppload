@@ -9,8 +9,8 @@ const pexelsResult: PexelsResult = {
   src: {
     original: "https://pexels.com/original.jpg",
     large2x: "https://pexels.com/large.jpg",
-    tiny: "https://pexels.com/tiny.jpg"
-  }
+    tiny: "https://pexels.com/tiny.jpg",
+  },
 };
 
 test("popular endpoint", () =>
@@ -25,12 +25,12 @@ test("search endpoint", () =>
 
 test("gets search results", () =>
   expect(service.getSearchResults({ photos: [pexelsResult] })).toEqual([
-    pexelsResult
+    pexelsResult,
   ]));
 
 test("gets popular items", () =>
   expect(service.getPopularResults({ photos: [pexelsResult] })).toEqual([
-    pexelsResult
+    pexelsResult,
   ]));
 
 test("gets button HTML", () =>

@@ -9,13 +9,13 @@ const giphyResult: GIPHYResult = {
   url: "https://giphy.com/image.gif",
   images: {
     downsized_large: { url: "https://giphy.com/large.gif" },
-    preview_gif: { url: "https://giphy.com/preview.gif" }
+    preview_gif: { url: "https://giphy.com/preview.gif" },
   },
   user: {
     avatar_url: "https://giphy.com/avatar.jpg",
     display_name: "Anand Chowdhary",
-    profile_url: "https://giphy.com/anand"
-  }
+    profile_url: "https://giphy.com/anand",
+  },
 };
 
 test("popular endpoint", () =>
@@ -30,12 +30,12 @@ test("search endpoint", () =>
 
 test("gets search results", () =>
   expect(service.getSearchResults({ data: [giphyResult] })).toEqual([
-    giphyResult
+    giphyResult,
   ]));
 
 test("gets popular items", () =>
   expect(service.getPopularResults({ data: [giphyResult] })).toEqual([
-    giphyResult
+    giphyResult,
   ]));
 
 test("gets button HTML", () =>

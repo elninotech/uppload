@@ -10,7 +10,7 @@ export const nl = {
   units: {
     px: "px",
     "%": "%",
-    deg: "°"
+    deg: "°",
   },
   errors: {
     response_not_ok:
@@ -21,21 +21,21 @@ export const nl = {
     upload_aborted: "Je upload is geannuleerd",
     upload_error: "Er is een fout opgetreden bij het uploaden van dit bestand",
     file_type_not_allowed: "Dit bestandstype wordt niet ondersteund",
-    file_too_large: "Het bestand moet kleiner zijn dan $1$"
+    file_too_large: "Het bestand moet kleiner zijn dan $1$",
   },
   help: {
     loading: "Bezig met het laden van hulp...",
-    close: "Hulp sluiten"
+    close: "Hulp sluiten",
   },
   services: {
     default: {
-      heading: "Selecteer een afbeelding"
+      heading: "Selecteer een afbeelding",
     },
     local: {
       title: "Kies een bestand",
       button: "Selecteer een bestand",
       or: "of",
-      drop: "Sleep hier een bestand om te uploaden"
+      drop: "Sleep hier een bestand om te uploaden",
     },
     camera: {
       title: "Camera",
@@ -43,143 +43,143 @@ export const nl = {
       switch: "Switch camera",
       waiting: "Wachten op camera permissie...",
       unableToRead:
-        "We kunnen de video van uw camera niet lezen. Dit kan zijn omdat u niet de vereiste toestemming hebt verleend of omdat uw apparaat geen cameratoegang ondersteunt."
+        "We kunnen de video van uw camera niet lezen. Dit kan zijn omdat u niet de vereiste toestemming hebt verleend of omdat uw apparaat geen cameratoegang ondersteunt.",
     },
     microlink: {
       button: "Importeer van $1$",
       label: "$1$ $2$ URL",
       placeholder: "Voer een $1$-$2$-URL in",
-      type: "post"
+      type: "post",
     },
     url: {
       title: "Directe URL",
       label: "Afbeeldings-URL",
-      placeholder: "Voer een afbeeldings-URL in"
+      placeholder: "Voer een afbeeldings-URL in",
     },
     instagram: {
-      title: "Instagram"
+      title: "Instagram",
     },
     facebook: {
-      title: "Facebook"
+      title: "Facebook",
     },
     flickr: {
       title: "Flickr",
-      type: "foto"
+      type: "foto",
     },
     ninegag: {
       title: "9GAG",
-      type: "foto"
+      type: "foto",
     },
     deviantart: {
-      title: "DeviantArt"
+      title: "DeviantArt",
     },
     artstation: {
-      title: "ArtStation"
+      title: "ArtStation",
     },
     twitter: {
       title: "Twitter",
-      type: "foto tweet"
+      type: "foto tweet",
     },
     pinterest: {
       title: "Pinterest",
-      type: "pin"
+      type: "pin",
     },
     flipboard: {
       title: "Flipboard",
-      type: "artikel"
+      type: "artikel",
     },
     fotki: {
       title: "Fotki",
-      type: "foto"
+      type: "foto",
     },
     linkedin: {
-      title: "LinkedIn"
+      title: "LinkedIn",
     },
     reddit: {
-      title: "Reddit"
+      title: "Reddit",
     },
     tumblr: {
-      title: "Tumblr"
+      title: "Tumblr",
     },
     weheartit: {
-      title: "We Heart It"
+      title: "We Heart It",
     },
     screenshot: {
       title: "Screenshot",
       button: "Screenshot maken",
       label: "URL van webpagina",
       placeholder: "Voer een URL in",
-      loading: "Bezig met het maken van een screenshot..."
+      loading: "Bezig met het maken van een screenshot...",
     },
     search: {
       button: "Zoeken op $1$",
       label: "Zoek een afbeelding",
       placeholder: "Zoek naar iets",
-      imagesPoweredBy: "Afbeeldingen mogelijk gemaakt door $1$"
+      imagesPoweredBy: "Afbeeldingen mogelijk gemaakt door $1$",
     },
     giphy: {
-      title: "GIPHY"
+      title: "GIPHY",
     },
     unsplash: {
-      title: "Unsplash"
+      title: "Unsplash",
     },
     pixabay: {
-      title: "Pixabay"
+      title: "Pixabay",
     },
     pexels: {
-      title: "Pexels"
-    }
+      title: "Pexels",
+    },
   },
   effects: {
     preview: {
-      title: "Voorbeeld"
+      title: "Voorbeeld",
     },
     filters: {
-      title: "Filters"
+      title: "Filters",
     },
     crop: {
       title: "Bijsnijden",
       aspectRatios: {
         free: "Free",
-        square: "Plein"
-      }
+        square: "Plein",
+      },
     },
     rotate: {
-      title: "Draaien"
+      title: "Draaien",
     },
     flip: {
       title: "Omdraaien",
       buttons: {
         horizontal: "Horizontaal",
-        vertical: "Verticaal"
-      }
+        vertical: "Verticaal",
+      },
     },
     sharpen: {
-      title: "Verscherpen"
+      title: "Verscherpen",
     },
     blur: {
-      title: "Vervagen"
+      title: "Vervagen",
     },
     brightness: {
-      title: "Helderheid"
+      title: "Helderheid",
     },
     contrast: {
-      title: "Contrast"
+      title: "Contrast",
     },
     grayscale: {
-      title: "Grijstinten"
+      title: "Grijstinten",
     },
     "hue-rotate": {
-      title: "Tint roteren"
+      title: "Tint roteren",
     },
     invert: {
-      title: "Omkeren"
+      title: "Omkeren",
     },
     saturate: {
-      title: "Verzadigen"
+      title: "Verzadigen",
     },
     sepia: {
-      title: "Sepia"
-    }
-  }
+      title: "Sepia",
+    },
+  },
 };

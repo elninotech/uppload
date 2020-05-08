@@ -7,7 +7,7 @@ interface IExampleImage {
 }
 const exampleImage: IExampleImage = {
   name: "user-name",
-  image: "image-url"
+  image: "image-url",
 };
 
 const exampleClass = new SearchBaseClass<IExampleImage>({
@@ -21,7 +21,7 @@ const exampleClass = new SearchBaseClass<IExampleImage>({
     `https://example.com/search?key=${apiKey}&q=${q}`,
   getButton: (button: IExampleImage) => `<button>${button.name}</button>`,
   getPopularResults: (response: IExampleImage[]) => response,
-  getSearchResults: (response: IExampleImage[]) => response
+  getSearchResults: (response: IExampleImage[]) => response,
 });
 
 const searchClasses = [
@@ -29,7 +29,7 @@ const searchClasses = [
   new GIPHY("API_KEY"),
   new Pexels("API_KEY"),
   new Pixabay("API_KEY"),
-  new Unsplash("API_KEY")
+  new Unsplash("API_KEY"),
 ];
 
 describe("example search service", () => {
@@ -66,7 +66,7 @@ describe("example search service", () => {
       ).toBeTruthy());
     it("returns the same", () =>
       expect(exampleClass.getPopularResults([exampleImage])).toEqual([
-        exampleImage
+        exampleImage,
       ]));
   });
   describe("getSearchResults", () => {
@@ -80,7 +80,7 @@ describe("example search service", () => {
       ).toBeTruthy());
     it("returns the same", () =>
       expect(exampleClass.getSearchResults([exampleImage])).toEqual([
-        exampleImage
+        exampleImage,
       ]));
   });
 });

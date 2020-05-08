@@ -15,7 +15,7 @@ import {
   LinkedIn,
   Reddit,
   Tumblr,
-  WeHeartIt
+  WeHeartIt,
 } from "../../src";
 import { serviceTemplateParams } from "../mocks";
 
@@ -35,7 +35,7 @@ const services = [
   new LinkedIn(),
   new Reddit(),
   new Tumblr(),
-  new WeHeartIt()
+  new WeHeartIt(),
 ];
 
 const microlink = new MicrolinkBaseClass();

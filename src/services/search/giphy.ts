@@ -33,7 +33,7 @@ export default class GIPHY extends SearchBaseClass<GIPHYResult> {
       getButton: (image: GIPHYResult) => `<div class="result">
         <button aria-label="${image.title}" data-full-url="${image.images.downsized_large.url}" style="background-image: url('${image.images.preview_gif.url}')"></button></div>`,
       getSearchResults: (response: { data: GIPHYResult[] }) => response.data,
-      getPopularResults: (response: { data: GIPHYResult[] }) => response.data
+      getPopularResults: (response: { data: GIPHYResult[] }) => response.data,
     });
   }
 }

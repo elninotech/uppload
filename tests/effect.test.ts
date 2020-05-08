@@ -10,7 +10,7 @@ import {
   HueRotate,
   Invert,
   Saturate,
-  Sepia
+  Sepia,
 } from "../src";
 import { effectTemplateParams } from "./mocks";
 
@@ -26,7 +26,7 @@ const effects = [
   new HueRotate(),
   new Invert(),
   new Saturate(),
-  new Sepia()
+  new Sepia(),
 ];
 
 describe("effect template", () => {

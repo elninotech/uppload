@@ -3,12 +3,12 @@ import Cropper from "cropperjs";
 import {
   IHandlersParams,
   ITemplateParams,
-  IUpploadFile
+  IUpploadFile,
 } from "../../helpers/interfaces";
 import {
   safeListen,
   fitImageToContainer,
-  canvasToBlob
+  canvasToBlob,
 } from "../../helpers/elements";
 
 type CropNum = 1 | 2 | 3 | undefined;
@@ -21,7 +21,7 @@ export default class Crop extends UpploadEffect {
   aspectRatioOptions = {
     free: NaN,
     square: 1,
-    "16:9": 16 / 9
+    "16:9": 16 / 9,
   } as { [index: string]: number };
   autoCropArea: CropNum = 1;
   viewMode: CropNum = 1;
@@ -32,7 +32,7 @@ export default class Crop extends UpploadEffect {
     aspectRatioOptions,
     hideAspectRatioSettings,
     autoCropArea,
-    viewMode
+    viewMode,
   }: {
     aspectRatio?: number;
     aspectRatioOptions?: { [index: string]: number };
@@ -67,9 +67,10 @@ export default class Crop extends UpploadEffect {
           }" data-name="${aspectRatio}" name="crop-aspect-ratio" type="radio"${
               !index ? " checked" : ""
             } id="crop-aspect-ratio-${aspectRatio}">
-          <label for="crop-aspect-ratio-${aspectRatio}">${translate(
-              `effects.crop.aspectRatios.${aspectRatio}`
-            ) || aspectRatio}</label>`
+          <label for="crop-aspect-ratio-${aspectRatio}">${
+              translate(`effects.crop.aspectRatios.${aspectRatio}`) ||
+              aspectRatio
+            }</label>`
           )
           .join("")}
       </div>`
@@ -95,22 +96,22 @@ export default class Crop extends UpploadEffect {
           autoCropArea: this.autoCropArea,
           viewMode: this.viewMode,
           ready() {
-            canvasToBlob(cropper.getCroppedCanvas(), type).then(blob => {
+            canvasToBlob(cropper.getCroppedCanvas(), type).then((blob) => {
               originalFile.blob = blob;
               params.next(originalFile);
             });
           },
           cropend() {
-            canvasToBlob(cropper.getCroppedCanvas(), type).then(blob => {
+            canvasToBlob(cropper.getCroppedCanvas(), type).then((blob) => {
               originalFile.blob = blob;
               params.next(originalFile);
             });
-          }
+          },
         });
         const aspectRatios = params.uppload.container.querySelectorAll(
           "input[name='crop-aspect-ratio']"
         );
-        aspectRatios.forEach(aspectRatio => {
+        aspectRatios.forEach((aspectRatio) => {
           safeListen(aspectRatio, "change", () => {
             const selectedAspectRatio = params.uppload.container.querySelector(
               "input[name='crop-aspect-ratio']:checked"
@@ -121,7 +122,7 @@ export default class Crop extends UpploadEffect {
                   selectedAspectRatio.getAttribute("data-name") || "free"
                 ]
               );
-              canvasToBlob(cropper.getCroppedCanvas(), type).then(blob => {
+              canvasToBlob(cropper.getCroppedCanvas(), type).then((blob) => {
                 originalFile.blob = blob;
                 params.next(originalFile);
               });

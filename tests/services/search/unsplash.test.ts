@@ -1,5 +1,5 @@
 import Unsplash, {
-  UnsplashResult
+  UnsplashResult,
 } from "../../../src/services/search/unsplash";
 import { minifyHTML } from "../../../src/helpers/utils";
 
@@ -11,14 +11,14 @@ const unsplashResult: UnsplashResult = {
   alt_description: "An image of a tree",
   urls: {
     regular: "https://unsplash.com/regular.jpg",
-    thumb: "https://unsplash.com/thumb.jpg"
+    thumb: "https://unsplash.com/thumb.jpg",
   },
   user: {
     name: "Anand Chowdhary",
     profile_image: {
-      small: "https://unsplash.com/user.jpg"
-    }
-  }
+      small: "https://unsplash.com/user.jpg",
+    },
+  },
 };
 
 test("popular endpoint", () =>
@@ -33,12 +33,12 @@ test("search endpoint", () =>
 
 test("gets search results", () =>
   expect(service.getSearchResults({ results: [unsplashResult] })).toEqual([
-    unsplashResult
+    unsplashResult,
   ]));
 
 test("gets popular items", () =>
   expect(service.getPopularResults([unsplashResult])).toEqual([
-    unsplashResult
+    unsplashResult,
   ]));
 
 test("gets button HTML", () =>
