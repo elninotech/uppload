@@ -19,6 +19,7 @@ import {
   es,
   fr,
   it,
+  ro,
   ru,
   tr,
   zhTW,
@@ -81,6 +82,7 @@ export interface UpploadWindow extends Window {
   uppload_fr: typeof fr;
   uppload_de: typeof de;
   uppload_it: typeof it;
+  uppload_ro: typeof ro;
   uppload_ru: typeof ru;
   uppload_tr: typeof tr;
   uppload_zhTW: typeof zhTW;
@@ -143,6 +145,7 @@ window.uppload_es = es;
 window.uppload_fr = fr;
 window.uppload_de = de;
 window.uppload_it = it;
+window.uppload_ro = ro;
 window.uppload_ru = ru;
 window.uppload_tr = tr;
 window.uppload_zhTW = zhTW;
