@@ -240,6 +240,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "netlify",
+      "name": "Netlify",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/7892489?v=4",
+      "profile": "https://www.netlify.com",
+      "contributions": [
+        "infra"
+      ]
     }
   ]
 }
