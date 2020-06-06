@@ -3,7 +3,7 @@ export const pt = {
   cancel: "Cancelar",
   close: "Fechar",
   uploading: "Enviando...",
-  uploaded: "Uploaded",
+  uploaded: "Enviado",
   fetching: "Buscando imagem de $1$...",
   poweredBy: "Fornecido por $1$",
   needHelp: "Precisa de ajuda?",
@@ -16,7 +16,7 @@ export const pt = {
 
   errors: {
     response_not_ok: "Ocorreu um erro ao buscar este arquivo",
-    unable_to_search: "We got an error searching",
+    unable_to_search: "Não foi possível realizar a busca",
     invalid_service_url: "Esta URL não pertence a $1$",
     invalid_url: "Esta URL parece ser inválida",
     upload_aborted: "Seu envio foi cancelado",
