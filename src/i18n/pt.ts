@@ -50,8 +50,8 @@ export const pt = {
     },
     microlink: {
       button: "Importar $1$",
-      label: "$1$ $2$ URL",
-      placeholder: "Insira a URL $A$ $1$ $2$",
+      label: "$2$ do $1$",
+      placeholder: "Insira a URL do $2$ do $1$",
       type: "post",
     },
     url: {
