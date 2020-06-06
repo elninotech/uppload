@@ -154,6 +154,7 @@ We'd like to thank these wonderful people and teams for contributing ([emoji key
     <td align="center"><a href="https://www.sigmatechnology.co.uk"><img src="https://avatars0.githubusercontent.com/u/17182577?v=4" width="100px;" alt=""/><br /><sub><b>SIGMA Technology</b></sub></a><br /><a href="https://github.com/elninotech/uppload/issues?q=author%3Asigma-technology" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/ClaudioEyzaguirre"><img src="https://avatars2.githubusercontent.com/u/13547533?v=4" width="100px;" alt=""/><br /><sub><b>Claudio Eyzaguirre</b></sub></a><br /><a href="#translation-ClaudioEyzaguirre" title="Translation">🌍</a></td>
     <td align="center"><a href="https://www.netlify.com"><img src="https://avatars1.githubusercontent.com/u/7892489?v=4" width="100px;" alt=""/><br /><sub><b>Netlify</b></sub></a><br /><a href="#infra-netlify" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://github.com/cristianoap"><img src="https://avatars2.githubusercontent.com/u/4174411?v=4" width="100px;" alt=""/><br /><sub><b>Cristiano AP</b></sub></a><br /><a href="#translation-cristianoap" title="Translation">🌍</a></td>
   </tr>
 </table>
 

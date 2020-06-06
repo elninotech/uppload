@@ -249,6 +249,15 @@
       "contributions": [
         "infra"
       ]
+    },
+    {
+      "login": "cristianoap",
+      "name": "Cristiano AP",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4174411?v=4",
+      "profile": "https://github.com/cristianoap",
+      "contributions": [
+        "translation"
+      ]
     }
   ]
 }
