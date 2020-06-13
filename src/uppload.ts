@@ -875,7 +875,7 @@ export class Uppload implements IUppload {
    * @param handler - Event handler function
    */
   off(type: string, handler: (event?: any) => void) {
-    return this.emitter.on(type, handler);
+    return this.emitter.off(type, handler);
   }
 
   /**
