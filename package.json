@@ -50,7 +50,7 @@
     "last 1 Chrome versions"
   ],
   "devDependencies": {
-    "@rollup/plugin-typescript": "^2.1.0",
+    "@rollup/plugin-typescript": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
     "@staart/site": "^2.1.0",
     "@types/jest": "^26.0.0",
