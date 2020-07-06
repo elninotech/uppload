@@ -1,6 +1,6 @@
 const gulp = require("gulp");
 const rollup = require("rollup");
-const rollupResolve = require("@rollup/plugin-node-resolve");
+const { nodeResolve } = require("@rollup/plugin-node-resolve");
 const rollupTypescript = require("@rollup/plugin-typescript");
 const exec = require("child_process").exec;
 
@@ -13,7 +13,7 @@ const globals = {
 gulp.task("build", async function () {
   const bundle = await rollup.rollup({
     input: "./src/index.ts",
-    plugins: [rollupResolve(), rollupTypescript()],
+    plugins: [nodeResolve(), rollupTypescript()],
     external: ["focus-trap", "mitt", "cropperjs"],
   });
 
