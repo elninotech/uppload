@@ -51,7 +51,7 @@
   ],
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^8.1.0",
-    "@rollup/plugin-typescript": "^5.0.1",
+    "@rollup/plugin-typescript": "^6.0.0",
     "@semantic-release/git": "^9.0.0",
     "@staart/site": "^2.1.0",
     "@types/jest": "^26.0.3",
