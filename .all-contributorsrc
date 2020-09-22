@@ -276,6 +276,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "pedantic-git",
+      "name": "Quinn (they/them)",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/962930?v=4",
+      "profile": "https://www.quinn.mx/",
+      "contributions": [
+        "bug"
+      ]
     }
   ]
 }
