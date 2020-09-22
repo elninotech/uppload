@@ -841,7 +841,7 @@ export class Uppload implements IUppload {
     if (currentService.length) {
       const service = currentService[0];
       service.stop();
-      this.activeService = "default";
+      this.activeService = this.services[0].name;
     }
   }
 
