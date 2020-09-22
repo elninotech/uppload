@@ -158,6 +158,9 @@ We'd like to thank these wonderful people and teams for contributing ([emoji key
     <td align="center"><a href="https://github.com/RichardJohnn"><img src="https://avatars0.githubusercontent.com/u/1699095?v=4" width="100px;" alt=""/><br /><sub><b>Richard</b></sub></a><br /><a href="https://github.com/elninotech/uppload/issues?q=author%3ARichardJohnn" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/MaximusBaton"><img src="https://avatars1.githubusercontent.com/u/10597367?v=4" width="100px;" alt=""/><br /><sub><b>MaximusBaton</b></sub></a><br /><a href="https://github.com/elninotech/uppload/issues?q=author%3AMaximusBaton" title="Bug reports">🐛</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://www.quinn.mx/"><img src="https://avatars3.githubusercontent.com/u/962930?v=4" width="100px;" alt=""/><br /><sub><b>Quinn (they/them)</b></sub></a><br /><a href="https://github.com/elninotech/uppload/issues?q=author%3Apedantic-git" title="Bug reports">🐛</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->
