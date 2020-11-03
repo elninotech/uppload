@@ -46,7 +46,7 @@ export const en = {
       switch: "Switch camera",
       waiting: "Waiting for permission...",
       unableToRead:
-        "We're not able to read your camera's video. This may be because you didn't grant the required permission, or because your device doesn't support camera access.",
+        "We're not able to read your camera's video. This may be because you didn't grant the required permission, or because your camera is in use by another application.",
     },
     microlink: {
       button: "Import from $1$",
