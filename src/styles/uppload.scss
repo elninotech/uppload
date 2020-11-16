@@ -13,3 +13,11 @@
     display: block;
   }
 }
+
+.upploaded-images {
+  width: 300px;
+  background-color: #eee;
+  height: 460px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}

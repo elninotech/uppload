@@ -34,6 +34,7 @@ import {
   Invert,
   Saturate,
   Sepia,
+  ShowUploadedImages
 } from "../src";
 
 const button = document.createElement("div");
@@ -77,28 +78,7 @@ uppload.use([
       "image/png",
       "application/pdf",
     ],
-  }),
-  new Camera(),
-  new Instagram(),
-  new URL(),
-  new Facebook(),
-  new Screenshot(),
-  new GIPHY(GIPHY_API_KEY),
-  new Unsplash(UNSPLASH_API_KEY),
-  new Pixabay(PIXABAY_API_KEY),
-  new Pexels(PEXELS_API_KEY),
-  new Pinterest(),
-  new Flickr(),
-  new Twitter(),
-  new NineGag(),
-  new DeviantArt(),
-  new ArtStation(),
-  new Flipboard(),
-  new Fotki(),
-  new LinkedIn(),
-  new Reddit(),
-  new Tumblr(),
-  new WeHeartIt(),
+  })
 ]);
 
 uppload.use([
@@ -116,6 +96,14 @@ uppload.use([
   new Saturate(),
   new Sepia(),
 ]);
+
+ShowUploadedImages([
+  "https://images.unsplash.com/photo-1532450106241-ed30d951fbb5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9",
+  "https://images.unsplash.com/photo-1532450106241-ed30d951fbb5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9",
+  "https://images.unsplash.com/photo-1532450106241-ed30d951fbb5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9",
+  "https://images.unsplash.com/photo-1532450106241-ed30d951fbb5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9",
+  "https://images.unsplash.com/photo-1532450106241-ed30d951fbb5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9",
+])
 
 uppload.on("*", (a: any, b?: any) => {
   console.log("Uppload event", a, b);

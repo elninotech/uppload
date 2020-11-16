@@ -28,9 +28,16 @@ class UploadingService extends UpploadService {
   template = () => `<div class="uppload-loader">
   <div></div>
     <p class="uppload-loader-text">${translate(
-      "uploading"
-    )}<span class="progress"></span></p>
+    "uploading"
+  )}<span class="progress"></span></p>
   </div>`;
+}
+
+let uploadedData: never[] = [];
+
+export const ShowUploadedImages = (data: any) => {
+  console.log("Uploaded Data: ", data)
+  uploadedData = data;
 }
 
 /**
@@ -337,30 +344,25 @@ export class Uppload implements IUppload {
         .filter((service) => !service.invisible)
         .map(
           (service) =>
-            `<div data-uppload-service="${
-              service.name
+            `<div data-uppload-service="${service.name
             }" class="uppload-service-name">
-          ${
-            sidebar
+          ${sidebar
               ? `<input type="radio" id="uppload-service-radio-${service.name}" value="${service.name}" name="uppload-radio">`
               : ""
-          }
-          <${
-            sidebar
+            }
+          <${sidebar
               ? `label for="uppload-service-radio-${service.name}"`
               : "button"
-          } data-uppload-service="${service.name}">
-            ${
-              service.icon.indexOf("http") === 0
-                ? `<img class="service-icon" alt="" src="${service.icon}">`
-                : colorSVG(service.icon, service)
+            } data-uppload-service="${service.name}">
+            ${service.icon.indexOf("http") === 0
+              ? `<img class="service-icon" alt="" src="${service.icon}">`
+              : colorSVG(service.icon, service)
             }
-            <span>${
-              this.lang.services &&
+            <span>${this.lang.services &&
               this.lang.services[service.name] &&
               this.lang.services[service.name].title
-                ? this.lang.services[service.name].title
-                : service.name
+              ? this.lang.services[service.name].title
+              : service.name
             }</span>
           </${sidebar ? "label" : "button"}>
         </div>`
@@ -379,22 +381,19 @@ export class Uppload implements IUppload {
       ${this.effects
         .map(
           (effect) => `
-      <input type="radio" id="uppload-effect-radio-${effect.name}" value="${
-            effect.name
-          }" name="uppload-effect-radio">
+      <input type="radio" id="uppload-effect-radio-${effect.name}" value="${effect.name
+            }" name="uppload-effect-radio">
         <label for="uppload-effect-radio-${effect.name}">
-          ${
-            effect.icon.indexOf("http") === 0
+          ${effect.icon.indexOf("http") === 0
               ? `<img class="effect-icon" alt="" src="${effect.icon}">`
               : colorSVG(effect.icon, effect)
-          }
-          <span>${
-            this.lang.effects &&
-            this.lang.effects[effect.name] &&
-            this.lang.effects[effect.name].title
+            }
+          <span>${this.lang.effects &&
+              this.lang.effects[effect.name] &&
+              this.lang.effects[effect.name].title
               ? this.lang.effects[effect.name].title
               : effect.name
-          }</span>
+            }</span>
         </label>
       `
         )
@@ -428,15 +427,15 @@ export class Uppload implements IUppload {
         </div>
         <div class="uppload-help">
           <div><button><span>${translate(
-            "help.close"
-          )}</span><span aria-hidden="true">&times;</span></button></div>
+        "help.close"
+      )}</span><span aria-hidden="true">&times;</span></button></div>
           <iframe></iframe>
         </div>
       </div>
       <div class="uppload-modal-bg">
         <button class="uppload-close" aria-label="${translate(
-          "close"
-        )}">&times;</button>
+        "close"
+      )}">&times;</button>
       </div>
     `;
   }
@@ -447,18 +446,14 @@ export class Uppload implements IUppload {
   private render() {
     return `
       ${this.error ? `<div class="uppload-error">${this.error}</div>` : ""}
-      ${
-        this.activeEffect
-          ? `<div class="uppload-effect uppload-effect--${
-              this.activeEffect || "none"
-            }">
-      ${
-        this.activeEffect && this.file ? this.renderActiveEffect(this.file) : ""
-      }
+      ${this.activeEffect
+        ? `<div class="uppload-effect uppload-effect--${this.activeEffect || "none"
+        }">
+      ${this.activeEffect && this.file ? this.renderActiveEffect(this.file) : ""
+        }
     </div>`
-          : `<div class="uppload-service uppload-service--${
-              this.activeService
-            }">
+        : `<div class="upploaded-images">${uploadedData.map(el => `<img src=${el} width="100%" >`)}</div><div class="uppload-service uppload-service--${this.activeService
+        }">
       ${this.activeEffect && this.file ? "" : this.renderActiveService()}
       ${this.activeService === "default" ? this.getNavbar() : ""}
     </div>`
@@ -486,11 +481,10 @@ export class Uppload implements IUppload {
             translate,
           });
       });
-      return `${
-        typeof activeService.template === "function"
-          ? activeService.template({ translate, uppload: this })
-          : ""
-      }`;
+      return `${typeof activeService.template === "function"
+        ? activeService.template({ translate, uppload: this })
+        : ""
+        }`;
     }
   }
 
@@ -516,10 +510,9 @@ export class Uppload implements IUppload {
           });
       });
       return `
-        <div class="active-effect-container">${
-          typeof activeEffect.template === "function"
-            ? activeEffect.template({ file, translate })
-            : ""
+        <div class="active-effect-container">${typeof activeEffect.template === "function"
+          ? activeEffect.template({ file, translate })
+          : ""
         }</div>
       `;
     }
@@ -655,7 +648,7 @@ export class Uppload implements IUppload {
             file.type,
             new Date((file as File).lastModified)
           );
-      } catch (error) {}
+      } catch (error) { }
       if (this.uploader && typeof this.uploader === "function") {
         this.compress(file)
           .then((file) => {
@@ -730,7 +723,7 @@ export class Uppload implements IUppload {
             try {
               // Edge doesn't support scrollTo and throws an error
               if (aside) aside.scrollTo(left, top);
-            } catch (error) {}
+            } catch (error) { }
           }
         }
         const serviceRadio = this.container.querySelector(
