@@ -61,14 +61,13 @@ export class Uppload implements IUppload {
   constructor(settings?: IUpploadSettings) {
     this.settings = {};
     this.updateSettings(settings || {});
-    const div = document.createElement("div");
+    this.container = document.createElement("div");
     this.renderContainer();
-    div.classList.add("uppload-container");
+    this.container.classList.add("uppload-container");
     const body = document.body;
     if (body) {
-      body.appendChild(div);
+      body.appendChild(this.container);
     }
-    this.container = div;
     this.focusTrap = createFocusTrap(this.container, {
       initialFocus: () => this.container.querySelector("button"),
     } as Options);
@@ -841,6 +840,7 @@ export class Uppload implements IUppload {
     if (currentService.length) {
       const service = currentService[0];
       service.stop();
+      this.activeService = this.services[0].name;
     }
   }
 
@@ -875,7 +875,7 @@ export class Uppload implements IUppload {
    * @param handler - Event handler function
    */
   off(type: string, handler: (event?: any) => void) {
-    return this.emitter.on(type, handler);
+    return this.emitter.off(type, handler);
   }
 
   /**

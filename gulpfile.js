@@ -1,19 +1,20 @@
 const gulp = require("gulp");
 const rollup = require("rollup");
+const { nodeResolve } = require("@rollup/plugin-node-resolve");
 const rollupTypescript = require("@rollup/plugin-typescript");
 const exec = require("child_process").exec;
 
 const globals = {
   "focus-trap": "createFocusTrap",
   mitt: "mitt",
-  cropperjs: "Cropper"
+  cropperjs: "Cropper",
 };
 
-gulp.task("build", async function() {
+gulp.task("build", async function () {
   const bundle = await rollup.rollup({
     input: "./src/index.ts",
-    plugins: [rollupTypescript()],
-    external: ["focus-trap", "mitt", "cropperjs"]
+    plugins: [nodeResolve(), rollupTypescript()],
+    external: ["focus-trap", "mitt", "cropperjs"],
   });
 
   exec("tsc");
@@ -23,20 +24,20 @@ gulp.task("build", async function() {
     format: "umd",
     name: "uppload",
     sourcemap: true,
-    globals
+    globals,
   });
 
   await bundle.write({
     file: "./dist/index.cjs.js",
     format: "cjs",
     sourcemap: true,
-    globals
+    globals,
   });
 
   await bundle.write({
     file: "./dist/index.amd.js",
     format: "amd",
     sourcemap: true,
-    globals
+    globals,
   });
 });

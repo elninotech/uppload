@@ -36,10 +36,6 @@ describe("modal functions", () => {
     uppload.open();
     expect(uppload.modalOpen()).toBeTruthy();
   });
-  it("closes", () => {
-    uppload.close();
-    expect(uppload.modalOpen()).toBeFalsy();
-  });
   it("has a default active service", () => {
     expect(uppload.activeService).toBe("instagram");
   });
@@ -56,5 +52,9 @@ describe("modal functions", () => {
   it("navigates to effect", () => {
     uppload.navigate("instagram");
     expect(uppload.activeService).toBe("instagram");
+  });
+  it("closes", () => {
+    uppload.close();
+    expect(uppload.modalOpen()).toBeFalsy();
   });
 });

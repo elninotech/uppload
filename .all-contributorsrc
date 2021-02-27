@@ -249,6 +249,42 @@
       "contributions": [
         "infra"
       ]
+    },
+    {
+      "login": "cristianoap",
+      "name": "Cristiano AP",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4174411?v=4",
+      "profile": "https://github.com/cristianoap",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "RichardJohnn",
+      "name": "Richard",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1699095?v=4",
+      "profile": "https://github.com/RichardJohnn",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "MaximusBaton",
+      "name": "MaximusBaton",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/10597367?v=4",
+      "profile": "https://github.com/MaximusBaton",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "pedantic-git",
+      "name": "Quinn (they/them)",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/962930?v=4",
+      "profile": "https://www.quinn.mx/",
+      "contributions": [
+        "bug"
+      ]
     }
   ]
 }
