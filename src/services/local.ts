@@ -68,12 +68,21 @@ export default class Local extends UpploadService {
     const files = (event.target as HTMLInputElement).files;
     let file: File | null = null;
     if (files) {
-      if (params.uppload.settings.multiple && files.length > 1)
-        return params.uploadMultiple(Array.from(files));
       for (let i = 0; i < files.length; i++) {
         const item = files[i];
         if (this.mimeTypes.indexOf(item.type) !== -1)
-          if (item.size < this.maxFileSize) file = item;
+          if (item.size < this.maxFileSize)
+            file=item
+            if (file)
+              params.next({
+                blob: file,
+                size: file.size,
+                type: file.type,
+                lastModified: file.lastModified
+                  ? new Date(file.lastModified)
+                  : undefined,
+                name: file.name,
+              });
           else
             params.handle(
               new Error(
@@ -86,16 +95,6 @@ export default class Local extends UpploadService {
       }
     }
     if (!file) return;
-    if (file)
-      params.next({
-        blob: file,
-        size: file.size,
-        type: file.type,
-        lastModified: file.lastModified
-          ? new Date(file.lastModified)
-          : undefined,
-        name: file.name,
-      });
   }
 
   fileSelect(params: IHandlersParams, event: Event) {
@@ -120,11 +119,13 @@ export default class Local extends UpploadService {
     event.preventDefault();
     this.dragStop(params, event);
     let file: File | null = null; // getAsFile() returns File | null
+    let files=[];
     if (event.dataTransfer && event.dataTransfer.items) {
       for (let i = 0; i < event.dataTransfer.items.length; i++) {
         const item = event.dataTransfer.items[i];
         if (item.kind === "file" && this.mimeTypes.indexOf(item.type) !== -1) {
           file = item.getAsFile();
+          files.push(file);
           if (!file || file.size > this.maxFileSize) {
             file = null;
             params.handle(
@@ -139,16 +140,19 @@ export default class Local extends UpploadService {
         }
       }
     }
-    if (!file) return;
-    if (file)
-      params.next({
-        blob: file,
-        size: file.size,
-        type: file.type,
-        lastModified: file.lastModified
-          ? new Date(file.lastModified)
-          : undefined,
-        name: file.name,
-      });
+    
+    files.forEach(function(file) {
+      if (!file) return;
+      if (file)
+        params.next({
+          blob: file,
+          size: file.size,
+          type: file.type,
+          lastModified: file.lastModified
+            ? new Date(file.lastModified)
+            : undefined,
+          name: file.name,
+        });
+    });
   }
 }
