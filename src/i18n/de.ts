@@ -1,6 +1,6 @@
 export const de = {
   upload: "Hochladen",
-  cancel: "Stornieren",
+  cancel: "Abbrechen",
   close: "Schließen",
   uploading: "Hochladen ...",
   uploaded: "Hochgeladen",
@@ -33,7 +33,7 @@ export const de = {
     local: {
       title: "Wählen Sie eine Datei",
       button: "Wählen Sie eine Datei aus",
-      or: "von",
+      or: "oder",
       drop: "Ziehen Sie eine Datei hierher, um sie hochzuladen",
     },
     camera: {
@@ -140,14 +140,14 @@ export const de = {
       title: "Zuschneiden",
       aspectRatios: {
         free: "Frei",
-        square: "voll",
+        square: "Quadratisch",
       },
     },
     rotate: {
-      title: "Wende dich",
+      title: "Drehen",
     },
     flip: {
-      title: "Dreh dich um",
+      title: "Spiegeln",
       buttons: {
         horizontal: "Horizontal",
         vertical: "Vertikal",
@@ -172,7 +172,7 @@ export const de = {
       title: "Farbton drehen",
     },
     invert: {
-      title: "Umdrehen",
+      title: "Invertieren",
     },
     saturate: {
       title: "Sättigen",
