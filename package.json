@@ -85,7 +85,7 @@
     "cropperjs": "^1.5.7",
     "download": "^8.0.0",
     "focus-trap": "^5.1.0",
-    "mitt": "^1.2.0"
+    "mitt": "^3.0.0"
   },
   "husky": {
     "hooks": {
