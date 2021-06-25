@@ -92,3 +92,8 @@ export {
   Sepia,
   Saturate,
 };
+
+import { ShowUploadedImages } from './uppload'
+export {
+  ShowUploadedImages
+}
