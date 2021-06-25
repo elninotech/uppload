@@ -2,6 +2,7 @@ import { UpploadService } from "../service";
 import { IHandlersParams, IServiceTemplateParams } from "../helpers/interfaces";
 import { safeListen } from "../helpers/elements";
 import { translate } from "../helpers/i18n";
+import { formatBytes } from '../helpers/utils';
 
 export default class Local extends UpploadService {
   name = "local";
@@ -79,7 +80,7 @@ export default class Local extends UpploadService {
               new Error(
                 params.translate(
                   "errors.file_too_large",
-                  `${this.maxFileSize} bytes`
+                  formatBytes(this.maxFileSize)
                 )
               )
             );
@@ -131,7 +132,7 @@ export default class Local extends UpploadService {
               new Error(
                 params.translate(
                   "errors.file_too_large",
-                  `${this.maxFileSize} bytes`
+                  formatBytes(this.maxFileSize)
                 )
               )
             );
