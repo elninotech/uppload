@@ -63,7 +63,7 @@
     "extract-zip": "^2.0.1",
     "gitmoji-changelog": "^2.1.0",
     "gulp": "^4.0.2",
-    "husky": "^4.2.5",
+    "husky": "^7.0.1",
     "jest": "^26.1.0",
     "jest-fetch-mock": "^3.0.3",
     "parcel": "^1.12.4",
