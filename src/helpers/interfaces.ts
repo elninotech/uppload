@@ -4,6 +4,8 @@ export type IElements = string | string[] | Element | Element[];
 
 export type ITranslator = (key: string, params?: string | string[]) => string;
 export interface IUppload {
+  id: string;
+  wrapper?: string;
   services: UpploadService[];
   effects: UpploadEffect[];
   isOpen: boolean;
@@ -15,6 +17,8 @@ export interface IUppload {
 }
 
 export interface IUpploadSettings {
+  id?: string;
+  wrapper?: string;
   value?: string;
   bind?: IElements;
   call?: IElements;
