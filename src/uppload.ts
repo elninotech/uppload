@@ -234,13 +234,13 @@ export class Uppload implements IUppload {
     else if (this.services.length === 3) this.navigate(this.services[2].name);
     const serviceRadio = this.container.querySelector(
       `input[type=radio][value='${this.activeService}']`
-    );
+    ) as HTMLInputElement;
     if (serviceRadio) {
       serviceRadio.setAttribute("checked", "checked");
       serviceRadio.checked = true;
     }
-    const escape = (e) => {
-      if ((e as KeyboardEvent).key === "Escape" && this.isOpen) this.close();
+    const escape = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && this.isOpen) this.close();
     };
     safeUnlisten(document.body, "keyup", escape);
     safeListen(document.body, "keyup", escape);
@@ -631,8 +631,11 @@ export class Uppload implements IUppload {
     // Set active state to current effect
     const activeRadio = this.container.querySelector(
       `input[name='uppload-effect-radio'][value='${this.activeEffect}']`
-    );
-    if (activeRadio) activeRadio.setAttribute("checked", "checked");
+    ) as HTMLInputElement;
+    if (activeRadio) {
+      activeRadio.setAttribute("checked", "checked");
+      activeRadio.checked = true;
+    }
   }
 
   compress(file: Blob) {
@@ -725,7 +728,7 @@ export class Uppload implements IUppload {
         const service = link.getAttribute("data-uppload-service");
         const serviceRadio = this.container.querySelector(
           `input[type=radio][value='${service}']`
-        );
+        ) as HTMLInputElement;
         if (serviceRadio) {
           serviceRadio.setAttribute("checked", "checked");
           serviceRadio.checked = true;
