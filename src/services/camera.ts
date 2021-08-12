@@ -24,7 +24,7 @@ export default class Camera extends UpploadService {
       !/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
     );
 
-  template = ({ translate }: IServiceTemplateParams) => {
+  template = ({ translate, uppload }: IServiceTemplateParams) => {
     return `
       <div class="service-main">
         <div class="camera-waiting">${translate(
@@ -49,9 +49,9 @@ export default class Camera extends UpploadService {
           style="background: ${this.color}"
         >${translate("services.camera.button")}</button>
       </footer>
-      <button class="need-help-link"><span>${translate(
+      ${!uppload.settings.disableHelp ? `<button class="need-help-link"><span>${translate(
         "needHelp"
-      )}</span aria-hidden="true"><span>?</span></button>
+      )}</span aria-hidden="true"><span>?</span></button>` : ""}
     `;
   };
 

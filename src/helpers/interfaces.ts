@@ -37,6 +37,7 @@ export interface IUpploadSettings {
   compressor?: (file: Blob) => Promise<Blob>;
   transitionDuration?: number;
   disableModalClickClose?: boolean;
+  disableHelp?: boolean;
 }
 
 export interface IHandlersParams {

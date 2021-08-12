@@ -30,9 +30,9 @@ export default class Local extends UpploadService {
       <div class="alternate-input">
         <input type="file" accept="${this.mimeTypes.join()}"${
       params.uppload.settings.multiple ? " multiple" : ""
-    }></div><button class="need-help-link"><span>${translate(
+    }></div>${!params.uppload.settings.disableHelp ? `<button class="need-help-link"><span>${translate(
       "needHelp"
-    )}</span aria-hidden="true"><span>?</span></button>`;
+    )}</span aria-hidden="true"><span>?</span></button>` : ""}`;
   };
 
   handlers = (params: IHandlersParams) => {
