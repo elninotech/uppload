@@ -822,7 +822,6 @@ export class Uppload implements IUppload {
     if (cancelButton)
       safeListen(cancelButton, "click", () => {
         this.file = { blob: new Blob() };
-        this.activeService = "default";
         this.activeEffect = "";
         this.update();
       });
