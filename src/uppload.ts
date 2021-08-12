@@ -38,6 +38,7 @@ class UploadingService extends UpploadService {
  */
 export class Uppload implements IUppload {
   id: string = `${+new Date()}`;
+  wrapper?: string;
   services: UpploadService[] = [new DefaultService(), new UploadingService()];
   effects: UpploadEffect[] = [];
   isOpen = false;
@@ -66,9 +67,9 @@ export class Uppload implements IUppload {
     this.container.setAttribute("id", `uppload-${this.id}`);
     this.renderContainer();
     this.container.classList.add("uppload-container");
-    const body = document.body;
-    if (body) {
-      body.appendChild(this.container);
+    const wrapper = this.wrapper ? document.querySelector(this.wrapper) : document.body;
+    if (wrapper) {
+      wrapper.appendChild(this.container);
     }
     this.focusTrap = createFocusTrap(this.container, {
       initialFocus: () => this.container.querySelector("button"),
@@ -101,6 +102,7 @@ export class Uppload implements IUppload {
     this.settings = { ...this.settings, ...settings };
     this.emitter.emit("settingsUpdated", settings);
     if (settings.id) this.id = settings.id;
+    if (settings.wrapper) this.wrapper = settings.wrapper;
     if (settings.lang) setI18N(settings.lang);
     if (settings.defaultService) this.activeService = settings.defaultService;
     if (settings.lang) this.lang = settings.lang;
