@@ -229,9 +229,9 @@ export class Uppload implements IUppload {
     this.container.style.transition = `${this.transitionDuration}ms`;
     this.container.style.opacity = "0";
     this.update();
-    let firstService = this.settings.defaultService;
-    if (this.services.length === 3) this.navigate(this.services[2].name);
+    const firstService = this.settings.defaultService;
     if (firstService) this.navigate(firstService);
+    else if (this.services.length === 3) this.navigate(this.services[2].name);
     const serviceRadio = this.container.querySelector(
       `input[type=radio][value='${this.activeService}']`
     );
