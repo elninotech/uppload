@@ -1,7 +1,7 @@
 import { UpploadService } from "./service";
 import { UpploadEffect } from "./effect";
 import { setI18N, translate } from "./helpers/i18n";
-import { getElements, safeListen, compressImage } from "./helpers/elements";
+import { getElements, safeListen, safeUnlisten, compressImage } from "./helpers/elements";
 import { colorSVG } from "./helpers/assets";
 import createFocusTrap, { FocusTrap, Options } from "focus-trap";
 import mitt from "mitt";
@@ -37,6 +37,7 @@ class UploadingService extends UpploadService {
  * Uppload image uploading widget
  */
 export class Uppload implements IUppload {
+  id: string = `${+new Date()}`;
   services: UpploadService[] = [new DefaultService(), new UploadingService()];
   effects: UpploadEffect[] = [];
   isOpen = false;
@@ -62,6 +63,7 @@ export class Uppload implements IUppload {
     this.settings = {};
     this.updateSettings(settings || {});
     this.container = document.createElement("div");
+    this.container.setAttribute("id", `uppload-${this.id}`);
     this.renderContainer();
     this.container.classList.add("uppload-container");
     const body = document.body;
@@ -98,6 +100,7 @@ export class Uppload implements IUppload {
   updateSettings(settings: IUpploadSettings) {
     this.settings = { ...this.settings, ...settings };
     this.emitter.emit("settingsUpdated", settings);
+    if (settings.id) this.id = settings.id;
     if (settings.lang) setI18N(settings.lang);
     if (settings.defaultService) this.activeService = settings.defaultService;
     if (settings.lang) this.lang = settings.lang;
@@ -231,9 +234,11 @@ export class Uppload implements IUppload {
     let firstService = this.settings.defaultService;
     if (this.services.length === 3) this.navigate(this.services[2].name);
     if (firstService) this.navigate(firstService);
-    safeListen(document.body, "keyup", (e) => {
-      if ((e as KeyboardEvent).key === "Escape" && this.open) this.close();
-    });
+    const escape = (e) => {
+      if ((e as KeyboardEvent).key === "Escape" && this.isOpen) this.close();
+    };
+    safeUnlisten(document.body, "keyup", escape);
+    safeListen(document.body, "keyup", escape);
     setTimeout(() => {
       this.container.style.opacity = "1";
     }, 1);
@@ -341,12 +346,12 @@ export class Uppload implements IUppload {
             }" class="uppload-service-name">
           ${
             sidebar
-              ? `<input type="radio" id="uppload-service-radio-${service.name}" value="${service.name}" name="uppload-radio">`
+              ? `<input type="radio" id="uppload-service-radio-${service.name}-${this.id}" value="${service.name}" name="uppload-radio">`
               : ""
           }
           <${
             sidebar
-              ? `label for="uppload-service-radio-${service.name}"`
+              ? `label for="uppload-service-radio-${service.name}-${this.id}"`
               : "button"
           } data-uppload-service="${service.name}">
             ${
@@ -378,10 +383,10 @@ export class Uppload implements IUppload {
       ${this.effects
         .map(
           (effect) => `
-      <input type="radio" id="uppload-effect-radio-${effect.name}" value="${
+      <input type="radio" id="uppload-effect-radio-${effect.name}-${this.id}" value="${
             effect.name
           }" name="uppload-effect-radio">
-        <label for="uppload-effect-radio-${effect.name}">
+        <label for="uppload-effect-radio-${effect.name}-${this.id}">
           ${
             effect.icon.indexOf("http") === 0
               ? `<img class="effect-icon" alt="" src="${effect.icon}">`
