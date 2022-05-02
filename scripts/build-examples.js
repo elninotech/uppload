@@ -18,6 +18,7 @@ const examplesDir =
   await download(examplesDir, __dirname, { filename: "master.zip" });
   console.log("Downloaded zip");
   extract(join(__dirname, "master.zip"), { dir: __dirname }, error => {
+    console.warn("Error extracting zip", error);
     if (error) return console.error(error);
     console.log("Extracted examples zip");
     const examples = readdirSync(

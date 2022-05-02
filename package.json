@@ -34,9 +34,9 @@
     "test": "jest",
     "build-package": "gulp build && npm run build-browser",
     "build-site": "node scripts/build-examples.js && site",
-    "build-demo": "parcel build demo/index.html",
+    "build-demo": "parcel build ./demo --dist-dir=dist",
     "build-browser": "tsc --lib es6 webpack.config.ts && webpack --config webpack.config.js",
-    "demo": "parcel demo/index.html",
+    "demo": "parcel ./demo --dist-dir=dist",
     "lint": "prettier '**/*.{ts,scss}' --write",
     "serve-site": "site --serve",
     "test-report": "jest --coverage",
@@ -50,6 +50,7 @@
     "last 1 Chrome versions"
   ],
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.5.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
     "@rollup/plugin-typescript": "^8.3.2",
     "@semantic-release/git": "^10.0.1",
@@ -66,6 +67,7 @@
     "gulp": "^4.0.2",
     "husky": "^7.0.1",
     "jest": "^27.1.4",
+    "jest-canvas-mock": "^2.4.0",
     "jest-fetch-mock": "^3.0.3",
     "parcel": "^2.5.0",
     "prettier": "^2.0.5",
@@ -110,6 +112,7 @@
     "automock": false,
     "setupFiles": [
       "./tests/mocks.ts"
-    ]
+    ],
+    "testEnvironment": "jsdom"
   }
 }

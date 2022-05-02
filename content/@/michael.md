@@ -1,6 +1,5 @@
 ---
 linkedin: magroeneveld
-facebook: michaelangelo.groeneveld
 website: https://www.elnino.tech
 ---
 

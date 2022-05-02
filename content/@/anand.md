@@ -2,7 +2,6 @@
 linkedin: AnandChowdhary
 twitter: AnandChowdhary
 github: AnandChowdhary
-facebook: AnandChowdhary
 website: https://anandchowdhary.com
 ---
 

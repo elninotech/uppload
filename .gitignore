@@ -44,7 +44,7 @@ typings/
 .npm
 
 # Parcel cache
-.cache
+.parcel-cache
 
 # Optional eslint cache
 .eslintcache
