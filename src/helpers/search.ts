@@ -85,9 +85,8 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
   }
 
   updateImages(params: IHandlersParams) {
-    const imagesContainer = params.uppload.container.querySelector(
-      ".search-images"
-    );
+    const imagesContainer =
+      params.uppload.container.querySelector(".search-images");
     if (imagesContainer) {
       imagesContainer.innerHTML = `
         ${this.results.map((result) => this.getButton(result)).join("\n")}
@@ -193,9 +192,8 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
             .then(() => (this.loading = false));
       });
     });
-    const helpButton = params.uppload.container.querySelector(
-      ".need-help-link"
-    );
+    const helpButton =
+      params.uppload.container.querySelector(".need-help-link");
     if (helpButton)
       safeListen(helpButton, "click", () =>
         params.showHelp(`/services/search/${this.name}`)

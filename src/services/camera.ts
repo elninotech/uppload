@@ -18,10 +18,8 @@ export default class Camera extends UpploadService {
   frontCamera = false;
 
   supports = () =>
-    (
-        window.navigator.mediaDevices &&
-        !/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
-    );
+    window.navigator.mediaDevices &&
+    !/iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   template = ({ translate }: IServiceTemplateParams) => {
     return `
@@ -121,14 +119,12 @@ export default class Camera extends UpploadService {
     const clickButton = params.uppload.container.querySelector(".camera-click");
     if (clickButton)
       safeListen(clickButton, "click", this.clickPhoto.bind(this, params));
-    const switchButton = params.uppload.container.querySelector(
-      ".camera-click"
-    );
+    const switchButton =
+      params.uppload.container.querySelector(".camera-click");
     if (switchButton)
       safeListen(switchButton, "click", this.switchCamera.bind(this, params));
-    const helpButton = params.uppload.container.querySelector(
-      ".need-help-link"
-    );
+    const helpButton =
+      params.uppload.container.querySelector(".need-help-link");
     if (helpButton)
       safeListen(helpButton, "click", () =>
         params.showHelp("/services/camera")

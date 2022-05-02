@@ -138,9 +138,8 @@ export class MicrolinkBaseClass extends UpploadService {
         return false;
       });
     }
-    const helpButton = params.uppload.container.querySelector(
-      ".need-help-link"
-    );
+    const helpButton =
+      params.uppload.container.querySelector(".need-help-link");
     if (helpButton)
       safeListen(helpButton, "click", () =>
         params.showHelp(

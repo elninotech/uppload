@@ -78,15 +78,13 @@ export class Uppload implements IUppload {
      * https://github.com/elninotech/uppload/issues/111
      */
     this.emitter.on("processing", () => {
-      const loader = this.container.querySelector<HTMLDivElement>(
-        ".processing-loader"
-      );
+      const loader =
+        this.container.querySelector<HTMLDivElement>(".processing-loader");
       if (loader) loader.classList.add("visible");
     });
     this.emitter.on("process", () => {
-      const loader = this.container.querySelector<HTMLDivElement>(
-        ".processing-loader"
-      );
+      const loader =
+        this.container.querySelector<HTMLDivElement>(".processing-loader");
       if (loader) loader.classList.remove("visible");
     });
   }
@@ -274,9 +272,8 @@ export class Uppload implements IUppload {
     const aside = this.container.querySelector("aside");
     if (aside && this.activeService !== "default" && !this.activeEffect)
       aside.style.display = "block";
-    const footerEffectsNav: HTMLElement | null = this.container.querySelector(
-      ".effects-nav"
-    );
+    const footerEffectsNav: HTMLElement | null =
+      this.container.querySelector(".effects-nav");
     if (aside && footerEffectsNav && this.activeEffect) {
       footerEffectsNav.style.display = "";
       aside.style.display = "none";
@@ -722,7 +719,8 @@ export class Uppload implements IUppload {
             let top = 0;
             let left = 0;
             const serviceDivRect = serviceDiv.getBoundingClientRect();
-            const serviceNavRect = serviceDiv.parentElement.getBoundingClientRect();
+            const serviceNavRect =
+              serviceDiv.parentElement.getBoundingClientRect();
             top = serviceDivRect.top - serviceNavRect.top;
             left = serviceDivRect.left - serviceNavRect.left;
             const aside = serviceDiv.parentElement.parentElement;
@@ -745,9 +743,8 @@ export class Uppload implements IUppload {
     /**
      * Clicking on each sidebar link should open its service
      */
-    const inputRadios: NodeListOf<HTMLInputElement> = this.container.querySelectorAll(
-      ".uppload-services input[type='radio']"
-    );
+    const inputRadios: NodeListOf<HTMLInputElement> =
+      this.container.querySelectorAll(".uppload-services input[type='radio']");
     inputRadios.forEach((radio) => {
       const radioFunction = (e: Event) => {
         const inputRadio = this.container.querySelector(
@@ -763,9 +760,8 @@ export class Uppload implements IUppload {
     /**
      * Clicking on each sidebar link should open its service
      */
-    const effectInputRadios: NodeListOf<HTMLInputElement> = this.container.querySelectorAll(
-      ".effects-nav input[type='radio']"
-    );
+    const effectInputRadios: NodeListOf<HTMLInputElement> =
+      this.container.querySelectorAll(".effects-nav input[type='radio']");
     effectInputRadios.forEach((radio) => {
       const radioFunction = (e: Event) => {
         const inputRadio = this.container.querySelector(

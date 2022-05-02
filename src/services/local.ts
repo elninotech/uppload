@@ -56,9 +56,8 @@ export default class Local extends UpploadService {
     ) as HTMLInputElement | null;
     if (input)
       safeListen(input, "change", (event) => this.getFile(params, event));
-    const helpButton = params.uppload.container.querySelector(
-      ".need-help-link"
-    );
+    const helpButton =
+      params.uppload.container.querySelector(".need-help-link");
     if (helpButton)
       safeListen(helpButton, "click", () => params.showHelp("/services/local"));
   };

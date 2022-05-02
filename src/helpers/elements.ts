@@ -177,8 +177,12 @@ export const canvasToBlob = (
      */
     if (context) {
       try {
-        const data = context.getImageData(0, 0, canvas.width, canvas.height)
-          .data;
+        const data = context.getImageData(
+          0,
+          0,
+          canvas.width,
+          canvas.height
+        ).data;
         for (let i = 0; i < data.length; i += 4) {
           if (data[i + 3] < 255) {
             hasTransparency = true;
