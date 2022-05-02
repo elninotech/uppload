@@ -18,10 +18,9 @@ export default class Camera extends UpploadService {
   frontCamera = false;
 
   supports = () =>
-    !!(
-      window.navigator.mediaDevices &&
-      window.navigator.mediaDevices.enumerateDevices &&
-      !/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+    (
+        window.navigator.mediaDevices &&
+        !/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
     );
 
   template = ({ translate }: IServiceTemplateParams) => {

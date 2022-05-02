@@ -3,7 +3,7 @@ import { UpploadEffect } from "./effect";
 import { setI18N, translate } from "./helpers/i18n";
 import { getElements, safeListen, compressImage } from "./helpers/elements";
 import { colorSVG } from "./helpers/assets";
-import createFocusTrap, { FocusTrap, Options } from "focus-trap";
+import { createFocusTrap, FocusTrap, Options } from "focus-trap";
 import mitt from "mitt";
 import {
   IUploader,

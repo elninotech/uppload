@@ -39,7 +39,7 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
 .uppload-modal .uppload-effect [type="range"] {
   -webkit-appearance: none;
   background: transparent;
-  margin: $thumb-height / 2 0;
+  margin: $thumb-height * 0.5 0;
   width: $track-width;
 
   &::-moz-focus-outer {
@@ -71,14 +71,14 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
   &::-webkit-slider-thumb {
     @include thumb;
     -webkit-appearance: none;
-    margin-top: (($track-height) / 2 - $thumb-height / 2);
+    margin-top: (($track-height) * 0.5 - $thumb-height * 0.5);
   }
 
   &::-moz-range-track {
     @include track;
     background: $track-color;
     border-radius: $track-radius;
-    height: $track-height / 2;
+    height: $track-height * 0.5;
   }
 
   &::-moz-range-thumb {
@@ -89,7 +89,7 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
     @include track;
     background: transparent;
     border-color: transparent;
-    border-width: ($thumb-height / 2) 0;
+    border-width: ($thumb-height * 0.5) 0;
     color: transparent;
   }
 
@@ -105,7 +105,7 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
 
   &::-ms-thumb {
     @include thumb;
-    margin-top: $track-height / 4;
+    margin-top: $track-height * 0.25;
   }
 
   &:disabled {

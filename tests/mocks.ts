@@ -9,7 +9,7 @@ import {
 const uppload = new Uppload();
 import xhr from "xhr-mock";
 
-const customGlobal: GlobalWithFetchMock = global as GlobalWithFetchMock;
+const customGlobal: GlobalWithFetchMock = global as unknown as GlobalWithFetchMock;
 customGlobal.fetch = require("jest-fetch-mock");
 customGlobal.fetchMock = customGlobal.fetch;
 export const fetch = customGlobal.fetch;
