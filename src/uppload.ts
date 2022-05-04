@@ -1,7 +1,7 @@
 import { UpploadService } from "./service";
 import { UpploadEffect } from "./effect";
 import { setI18N, translate } from "./helpers/i18n";
-import { getElements, safeListen, compressImage } from "./helpers/elements";
+import { getElements, safeListen, safeUnlisten, compressImage } from "./helpers/elements";
 import { colorSVG } from "./helpers/assets";
 import { createFocusTrap, FocusTrap, Options } from "focus-trap";
 import mitt from "mitt";
@@ -37,6 +37,8 @@ class UploadingService extends UpploadService {
  * Uppload image uploading widget
  */
 export class Uppload implements IUppload {
+  id: string = `${+new Date()}`;
+  wrapper?: string;
   services: UpploadService[] = [new DefaultService(), new UploadingService()];
   effects: UpploadEffect[] = [];
   isOpen = false;
@@ -62,11 +64,12 @@ export class Uppload implements IUppload {
     this.settings = {};
     this.updateSettings(settings || {});
     this.container = document.createElement("div");
+    this.container.setAttribute("id", `uppload-${this.id}`);
     this.renderContainer();
     this.container.classList.add("uppload-container");
-    const body = document.body;
-    if (body) {
-      body.appendChild(this.container);
+    const wrapper = this.wrapper ? document.querySelector(this.wrapper) : document.body;
+    if (wrapper) {
+      wrapper.appendChild(this.container);
     }
     this.focusTrap = createFocusTrap(this.container, {
       initialFocus: () => this.container.querySelector("button"),
@@ -96,6 +99,8 @@ export class Uppload implements IUppload {
   updateSettings(settings: IUpploadSettings) {
     this.settings = { ...this.settings, ...settings };
     this.emitter.emit("settingsUpdated", settings);
+    if (settings.id) this.id = settings.id;
+    if (settings.wrapper) this.wrapper = settings.wrapper;
     if (settings.lang) setI18N(settings.lang);
     if (settings.defaultService) this.activeService = settings.defaultService;
     if (settings.lang) this.lang = settings.lang;
@@ -219,19 +224,24 @@ export class Uppload implements IUppload {
     this.file = { blob: new Blob() };
     this.activeService = "default";
     this.activeEffect = "";
-    const serviceRadio = this.container.querySelector(
-      `input[type=radio][value='${this.activeService}']`
-    );
-    if (serviceRadio) serviceRadio.setAttribute("checked", "checked");
     this.container.style.transition = `${this.transitionDuration}ms`;
     this.container.style.opacity = "0";
     this.update();
-    let firstService = this.settings.defaultService;
-    if (this.services.length === 3) this.navigate(this.services[2].name);
+    const firstService = this.settings.defaultService;
     if (firstService) this.navigate(firstService);
-    safeListen(document.body, "keyup", (e) => {
-      if ((e as KeyboardEvent).key === "Escape" && this.open) this.close();
-    });
+    else if (this.services.length === 3) this.navigate(this.services[2].name);
+    const serviceRadio = this.container.querySelector(
+      `input[type=radio][value='${this.activeService}']`
+    ) as HTMLInputElement;
+    if (serviceRadio) {
+      serviceRadio.setAttribute("checked", "checked");
+      serviceRadio.checked = true;
+    }
+    const escape = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && this.isOpen) this.close();
+    };
+    safeUnlisten(document.body, "keyup", escape);
+    safeListen(document.body, "keyup", escape);
     setTimeout(() => {
       this.container.style.opacity = "1";
     }, 1);
@@ -338,12 +348,12 @@ export class Uppload implements IUppload {
             }" class="uppload-service-name">
           ${
             sidebar
-              ? `<input type="radio" id="uppload-service-radio-${service.name}" value="${service.name}" name="uppload-radio">`
+              ? `<input type="radio" id="uppload-service-radio-${service.name}-${this.id}" value="${service.name}" name="uppload-radio" ${service.name === this.activeService ? `checked="checked"` : ""}>`
               : ""
           }
           <${
             sidebar
-              ? `label for="uppload-service-radio-${service.name}"`
+              ? `label for="uppload-service-radio-${service.name}-${this.id}"`
               : "button"
           } data-uppload-service="${service.name}">
             ${
@@ -375,10 +385,10 @@ export class Uppload implements IUppload {
       ${this.effects
         .map(
           (effect) => `
-      <input type="radio" id="uppload-effect-radio-${effect.name}" value="${
+      <input type="radio" id="uppload-effect-radio-${effect.name}-${this.id}" value="${
             effect.name
           }" name="uppload-effect-radio">
-        <label for="uppload-effect-radio-${effect.name}">
+        <label for="uppload-effect-radio-${effect.name}-${this.id}">
           ${
             effect.icon.indexOf("http") === 0
               ? `<img class="effect-icon" alt="" src="${effect.icon}">`
@@ -416,6 +426,7 @@ export class Uppload implements IUppload {
           <div class="uppload-active-container"></div>
           <footer style="display: none" class="effects-nav">${this.getEffectsNavbar()}</footer>
         </section>
+        ${!this.settings.disableHelp ? `
         <div class="uppload-help-loading">
           <div class="uppload-loader">
             <div></div>
@@ -427,7 +438,7 @@ export class Uppload implements IUppload {
             "help.close"
           )}</span><span aria-hidden="true">&times;</span></button></div>
           <iframe></iframe>
-        </div>
+        </div>` : ""}
       </div>
       <div class="uppload-modal-bg">
         <button class="uppload-close" aria-label="${translate(
@@ -618,8 +629,11 @@ export class Uppload implements IUppload {
     // Set active state to current effect
     const activeRadio = this.container.querySelector(
       `input[name='uppload-effect-radio'][value='${this.activeEffect}']`
-    );
-    if (activeRadio) activeRadio.setAttribute("checked", "checked");
+    ) as HTMLInputElement;
+    if (activeRadio) {
+      activeRadio.setAttribute("checked", "checked");
+      activeRadio.checked = true;
+    }
   }
 
   compress(file: Blob) {
@@ -710,6 +724,13 @@ export class Uppload implements IUppload {
     defaultServiceLinks.forEach((link) => {
       const linkFunction = (e: Event) => {
         const service = link.getAttribute("data-uppload-service");
+        const serviceRadio = this.container.querySelector(
+          `input[type=radio][value='${service}']`
+        ) as HTMLInputElement;
+        if (serviceRadio) {
+          serviceRadio.setAttribute("checked", "checked");
+          serviceRadio.checked = true;
+        }
         if (service) {
           this.navigate(service);
           const serviceDiv = this.container.querySelector(
@@ -730,10 +751,6 @@ export class Uppload implements IUppload {
             } catch (error) {}
           }
         }
-        const serviceRadio = this.container.querySelector(
-          `input[type=radio][value='${service}']`
-        );
-        if (serviceRadio) serviceRadio.setAttribute("checked", "checked");
         e.preventDefault();
         return false;
       };
@@ -805,7 +822,6 @@ export class Uppload implements IUppload {
     if (cancelButton)
       safeListen(cancelButton, "click", () => {
         this.file = { blob: new Blob() };
-        this.activeService = "default";
         this.activeEffect = "";
         this.update();
       });

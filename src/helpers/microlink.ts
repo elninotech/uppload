@@ -19,7 +19,7 @@ export class MicrolinkBaseClass extends UpploadService {
   exampleURL = "";
   validator: (value: string) => boolean = () => true;
 
-  template = ({ translate }: IServiceTemplateParams): string => {
+  template = ({ translate, uppload }: IServiceTemplateParams): string => {
     return `
       <div class="microlink-container">
       <form class="microlink-search-form">
@@ -49,9 +49,9 @@ export class MicrolinkBaseClass extends UpploadService {
         "services.microlink.button",
         translate(`services.${this.name}.title`) || this.name
       )
-    }</button></form><button class="need-help-link"><span>${translate(
+    }</button></form>${!uppload.settings.disableHelp ? `<button class="need-help-link"><span>${translate(
       "needHelp"
-    )}</span aria-hidden="true"><span>?</span></button></div>
+    )}</span aria-hidden="true"><span>?</span></button>` : ""}</div>
     <div class="uppload-loader microlink-loader">
     <div></div>
     <p>${

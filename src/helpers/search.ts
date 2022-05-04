@@ -107,7 +107,7 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
     if (loader) loader.style.display = this.loading ? "flex" : "none";
   }
 
-  template = ({ translate }: IServiceTemplateParams): string => {
+  template = ({ translate, uppload }: IServiceTemplateParams): string => {
     return `
       <div class="search-container"><form class="search-search-form">
       <div class="service-icon">${colorSVG(this.icon, this)}</div>
@@ -130,9 +130,9 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
           `services.${this.name}.title`
         )}</a>`
       )}</p></div>
-      <button class="need-help-link"><span>${translate(
+      ${!uppload.settings.disableHelp ? `<button class="need-help-link"><span>${translate(
         "needHelp"
-      )}</span aria-hidden="true"><span>?</span></button>
+      )}</span aria-hidden="true"><span>?</span></button>` : ""}
       <div class="uppload-loader search-loader">
         <div></div>
         <p>${translate(
