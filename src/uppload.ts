@@ -99,7 +99,7 @@ export class Uppload implements IUppload {
     if (settings.lang) setI18N(settings.lang);
     if (settings.defaultService) this.activeService = settings.defaultService;
     if (settings.lang) this.lang = settings.lang;
-    if (settings.transitionDuration)
+    if (typeof settings.transitionDuration !== 'undefined')
       this.transitionDuration = settings.transitionDuration;
     if (settings.uploader) this.uploader = settings.uploader;
     this.inline = !!settings.inline;
