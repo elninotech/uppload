@@ -65,7 +65,7 @@ export class Uppload implements IUppload {
     this.container = document.createElement("div");
     this.renderContainer();
     this.container.classList.add("uppload-container");
-    this.uId = const uId = (Math.random() + 1).toString(36).substring(7);
+    this.uId = (Math.random() + 1).toString(36).substring(7);
     const body = document.body;
     if (body) {
       body.appendChild(this.container);
