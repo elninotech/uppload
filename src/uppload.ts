@@ -53,6 +53,7 @@ export class Uppload implements IUppload {
   uploadProgress = 0;
   inline = false;
   transitionDuration = 300;
+  uId = null;
 
   /**
    * Create a new Uppload instance
@@ -64,6 +65,7 @@ export class Uppload implements IUppload {
     this.container = document.createElement("div");
     this.renderContainer();
     this.container.classList.add("uppload-container");
+    this.uId = const uId = (Math.random() + 1).toString(36).substring(7);
     const body = document.body;
     if (body) {
       body.appendChild(this.container);
@@ -338,12 +340,12 @@ export class Uppload implements IUppload {
             }" class="uppload-service-name">
           ${
             sidebar
-              ? `<input type="radio" id="uppload-service-radio-${service.name}" value="${service.name}" name="uppload-radio">`
+              ? `<input type="radio" id="uppload-service-radio-${this.uId}-${service.name}" value="${service.name}" name="uppload-radio">`
               : ""
           }
           <${
             sidebar
-              ? `label for="uppload-service-radio-${service.name}"`
+              ? `label for="uppload-service-radio-${this.uId}-${service.name}"`
               : "button"
           } data-uppload-service="${service.name}">
             ${
@@ -375,10 +377,10 @@ export class Uppload implements IUppload {
       ${this.effects
         .map(
           (effect) => `
-      <input type="radio" id="uppload-effect-radio-${effect.name}" value="${
+      <input type="radio" id="uppload-effect-radio-${this.uId}-${effect.name}" value="${
             effect.name
           }" name="uppload-effect-radio">
-        <label for="uppload-effect-radio-${effect.name}">
+        <label for="uppload-effect-radio-${this.uId}-${effect.name}">
           ${
             effect.icon.indexOf("http") === 0
               ? `<img class="effect-icon" alt="" src="${effect.icon}">`
