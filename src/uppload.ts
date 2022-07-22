@@ -53,7 +53,7 @@ export class Uppload implements IUppload {
   uploadProgress = 0;
   inline = false;
   transitionDuration = 300;
-  uId = null;
+  uId = "";
 
   /**
    * Create a new Uppload instance
