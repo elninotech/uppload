@@ -328,6 +328,7 @@ export class Uppload implements IUppload {
    * @param sidebar - Whether this is an input radio (for sidebar) or buttons (for home)
    */
   private getNavbar(sidebar = false) {
+    const uId = (Math.random() + 1).toString(36).substring(7);
     return `<${sidebar ? "nav" : "div"} class="uppload-services">
       ${this.services
         .filter((service) => !service.invisible)
@@ -338,12 +339,12 @@ export class Uppload implements IUppload {
             }" class="uppload-service-name">
           ${
             sidebar
-              ? `<input type="radio" id="uppload-service-radio-${service.name}" value="${service.name}" name="uppload-radio">`
+              ? `<input type="radio" id="uppload-service-radio-${uId}-${service.name}" value="${service.name}" name="uppload-radio">`
               : ""
           }
           <${
             sidebar
-              ? `label for="uppload-service-radio-${service.name}"`
+              ? `label for="uppload-service-radio-${uId}-${service.name}"`
               : "button"
           } data-uppload-service="${service.name}">
             ${
