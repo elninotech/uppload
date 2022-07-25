@@ -40,5 +40,5 @@ test("gets popular items", () =>
 
 test("gets button HTML", () =>
   expect(minifyHTML(service.getButton(giphyResult))).toBe(
-    `<div class="result"><button aria-label="An image" data-full-url="https://giphy.com/large.gif" style="background-image: url('https://giphy.com/preview.gif')"></button></div>`
+    `<div class="result"><button aria-label="An image" data-full-url="https://giphy.com/large.gif&uppload-output=gif" style="background-image: url('https://giphy.com/preview.gif')"></button></div>`
   ));
