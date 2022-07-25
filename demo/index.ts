@@ -57,6 +57,10 @@ const uppload = new Uppload({
         updateProgress(progress++);
       }, 25);
     }),
+  compression: 0.8,
+  compressionFromMimes: ["image/jpeg", "image/png", "image/webp"],
+  compressionToMime: "image/webp",
+  skipEditMimes: ["image/gif"],
 });
 
 // These are our public demo API keys

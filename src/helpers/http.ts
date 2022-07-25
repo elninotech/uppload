@@ -47,9 +47,10 @@ export function cachedFetch<T>(
  * @param url - URL of an image
  */
 export const imageUrlToBlob = (url: string): Promise<Blob> => {
+  const output = url.indexOf('uppload-output=gif') !== -1? '&output=gif&n=-1' : '';
   return new Promise((resolve, reject) => {
     window
-      .fetch(`https://images.weserv.nl/?url=${encodeURIComponent(url)}`)
+      .fetch(`https://images.weserv.nl/?url=${encodeURIComponent(url)}${output}`)
       .then((response) => {
         if (!response.ok) throw new Error("errors.response_not_ok");
         return response.blob();

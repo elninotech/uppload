@@ -36,7 +36,7 @@ export default class Unsplash extends SearchBaseClass<UnsplashResult> {
           image.alt_description || image.description
         }" data-full-url="${
         image.urls.regular
-      }" style="background-image: url('${image.urls.thumb}')"></button>
+        }" style="background-image: url('${image.urls.thumb}')"></button>
         <small class="author">
           <img alt="" src="${image.user.profile_image.small}">
           <span>${image.user.name}</span>

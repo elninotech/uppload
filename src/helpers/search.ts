@@ -14,12 +14,14 @@ let params: any | undefined = undefined;
 const generateFileName = (
   file: IUpploadFile,
   service: string,
+  type?: string,
   query?: string | null
 ) => {
+  const ext = type === 'image/gif' ? 'gif' : 'jpg'
   file.name = `${query || `${service}-import`}-${Math.random()
     .toString(36)
-    .slice(2)}.jpg`;
-  file.type = "image/jpeg";
+    .slice(2)}.${ext}`;
+  file.type = type ? type : "image/jpeg";
   return file;
 };
 
@@ -81,7 +83,7 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
         .then((photos) => {
           this.results = this.getPopularResults(photos);
         })
-        .catch(() => {});
+        .catch(() => { });
   }
 
   updateImages(params: IHandlersParams) {
@@ -111,17 +113,16 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
     return `
       <div class="search-container"><form class="search-search-form">
       <div class="service-icon">${colorSVG(this.icon, this)}</div>
-      <label><span>${
-        translate(`services.${this.name}.label`) ||
-        translate("services.search.label")
+      <label><span>${translate(`services.${this.name}.label`) ||
+      translate("services.search.label")
       }</span>
         <input class="search-search-input" type="search" placeholder="${translate(
-          `services.search.placeholder`
-        )}" required></label>
+        `services.search.placeholder`
+      )}" required></label>
         <button type="submit" style="background: ${this.color}">${translate(
-      `services.search.button`,
-      translate(`services.${this.name}.title`)
-    )}</button>
+        `services.search.button`,
+        translate(`services.${this.name}.title`)
+      )}</button>
       </form>
       <div class="search-images"></div>
       <p class="search-footer">${translate(
@@ -136,9 +137,9 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
       <div class="uppload-loader search-loader">
         <div></div>
         <p>${translate(
-          "fetching",
-          translate(`services.${this.name}.title`)
-        )}</p>
+        "fetching",
+        translate(`services.${this.name}.title`)
+      )}</p>
       </div>
     `;
   };
@@ -177,19 +178,20 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
         const url = image.getAttribute("data-full-url");
         this.loading = true;
         this.update(params);
-        if (url)
-          imageUrlToBlob(url)
-            .then((blob) =>
-              params.next(
-                generateFileName(
-                  blobToUpploadFile(blob),
-                  this.name,
-                  image.getAttribute("aria-label")
-                )
+        if (url) {
+          imageUrlToBlob(url).then((blob) =>
+            params.next(
+              generateFileName(
+                blobToUpploadFile(blob),
+                this.name,
+                blob.type,
+                image.getAttribute("aria-label")
               )
             )
+          )
             .catch((error) => params.handle("errors.response_not_ok"))
             .then(() => (this.loading = false));
+        }
       });
     });
     const helpButton =
