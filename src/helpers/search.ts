@@ -17,7 +17,7 @@ const generateFileName = (
   type?: string,
   query?: string | null
 ) => {
-  const ext = type === 'image/gif' ? 'gif' : 'jpg'
+  const ext = type?.indexOf('image/gif') == 0 ? 'gif' : 'jpg'
   file.name = `${query || `${service}-import`}-${Math.random()
     .toString(36)
     .slice(2)}.${ext}`;
