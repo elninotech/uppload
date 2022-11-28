@@ -50,7 +50,7 @@ export const imageUrlToBlob = (url: string): Promise<Blob> => {
   const output = url.indexOf('uppload-output=gif') !== -1? '&output=gif&n=-1' : '';
   return new Promise((resolve, reject) => {
     window
-      .fetch(`https://images.weserv.nl/?url=${encodeURIComponent(url)}${output}`)
+      .fetch(`https://wsrv.nl/?url${encodeURIComponent(url)}${output}`)
       .then((response) => {
         if (!response.ok) throw new Error("errors.response_not_ok");
         return response.blob();
