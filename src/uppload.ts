@@ -626,7 +626,7 @@ export class Uppload implements IUppload {
 
   compress(file: Blob) {
     if (
-      this.settings.compressionFromMimes &&
+      !this.settings.compressionFromMimes ||
       this.settings.compressionFromMimes.indexOf(file.type) === -1
     )
       return new Promise<Blob>((resolve) => resolve(file));
