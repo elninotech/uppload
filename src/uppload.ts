@@ -1,20 +1,20 @@
 import { UpploadService } from "./service";
 import { UpploadEffect } from "./effect";
 import { setI18N, translate } from "./helpers/i18n";
-import { getElements, safeListen, compressImage } from "./helpers/elements";
+import { compressImage, getElements, safeListen } from "./helpers/elements";
 import { colorSVG } from "./helpers/assets";
 import { createFocusTrap, FocusTrap, Options } from "focus-trap";
 import mitt from "mitt";
 import {
-  IUploader,
-  IMultipleUploader,
-  IUppload,
-  IUpploadSettings,
   ILanguage,
-  IUpploadFile,
+  IMultipleUploader,
   IPluginUpdateFunction,
+  IUploader,
+  IUppload,
+  IUpploadFile,
+  IUpploadSettings,
 } from "./helpers/interfaces";
-import { safeUpploadFileToFile, blobToUpploadFile } from "./helpers/files";
+import { blobToUpploadFile, safeUpploadFileToFile } from "./helpers/files";
 
 class DefaultService extends UpploadService {
   name = "default";
@@ -101,7 +101,7 @@ export class Uppload implements IUppload {
     if (settings.lang) setI18N(settings.lang);
     if (settings.defaultService) this.activeService = settings.defaultService;
     if (settings.lang) this.lang = settings.lang;
-    if (typeof settings.transitionDuration !== 'undefined')
+    if (typeof settings.transitionDuration !== "undefined")
       this.transitionDuration = settings.transitionDuration;
     if (settings.uploader) this.uploader = settings.uploader;
     this.inline = !!settings.inline;
@@ -121,7 +121,7 @@ export class Uppload implements IUppload {
   private bind(value: string) {
     if (this.settings.bind) {
       const elements = getElements(this.settings.bind);
-      elements.forEach((element) => {
+      elements.forEach(element => {
         if (element.nodeName === "IMG") {
           element.setAttribute("src", value);
         } else {
@@ -153,8 +153,8 @@ export class Uppload implements IUppload {
    * @param slug - Slug of the plugin to be removed
    */
   remove(slug: string) {
-    this.services = this.services.filter((service) => service.name !== slug);
-    this.effects = this.effects.filter((service) => service.name !== slug);
+    this.services = this.services.filter(service => service.name !== slug);
+    this.effects = this.effects.filter(service => service.name !== slug);
     this.update();
     this.emitter.emit("remove", slug);
   }
@@ -166,19 +166,19 @@ export class Uppload implements IUppload {
   updatePlugins(pluginUpdateFunction: IPluginUpdateFunction) {
     const plugins = pluginUpdateFunction(this.services);
     const services = plugins.filter(
-      (plugin) => plugin.type === "service"
+      plugin => plugin.type === "service"
     ) as UpploadService[];
     const hasDefaultService = !!services.filter(
-      (service) => service.name === "default"
+      service => service.name === "default"
     ).length;
     const hasUploadingService = !!services.filter(
-      (service) => service.name === "uploading"
+      service => service.name === "uploading"
     ).length;
     if (!hasUploadingService) services.unshift(new UploadingService());
     if (!hasDefaultService) services.unshift(new DefaultService());
     this.services = services;
     this.effects = plugins.filter(
-      (plugin) => plugin.type === "effect"
+      plugin => plugin.type === "effect"
     ) as UpploadEffect[];
     this.update();
   }
@@ -193,12 +193,12 @@ export class Uppload implements IUppload {
     if (plugin.type === "service") {
       // Install this service if it isn't already installed
       const has = !!this.services.filter(
-        (service) => service.name === plugin.name
+        service => service.name === plugin.name
       ).length;
       if (!has) this.services.push(plugin as UpploadService);
       this.ready();
     } else if (plugin.type === "effect") {
-      const has = !!this.effects.filter((effect) => effect.name === plugin.name)
+      const has = !!this.effects.filter(effect => effect.name === plugin.name)
         .length;
       if (!has) this.effects.push(plugin as UpploadEffect);
       this.ready();
@@ -231,8 +231,8 @@ export class Uppload implements IUppload {
     let firstService = this.settings.defaultService;
     if (this.services.length === 3) this.navigate(this.services[2].name);
     if (firstService) this.navigate(firstService);
-    safeListen(document.body, "keyup", (e) => {
-      if ((e as KeyboardEvent).key === "Escape" && this.open) this.close();
+    safeListen(document.body, "keyup", e => {
+      if ((e as KeyboardEvent).key === "Escape" && this.isOpen) this.close();
     });
     setTimeout(() => {
       this.container.style.opacity = "1";
@@ -307,7 +307,7 @@ export class Uppload implements IUppload {
       if (parent) {
         let totalButtonsWidth = 0;
         const buttons = parent.querySelectorAll(".effects-continue");
-        buttons.forEach((button) => {
+        buttons.forEach(button => {
           const buttonSize = button.getBoundingClientRect();
           totalButtonsWidth += buttonSize.width;
         });
@@ -332,9 +332,9 @@ export class Uppload implements IUppload {
   private getNavbar(sidebar = false) {
     return `<${sidebar ? "nav" : "div"} class="uppload-services">
       ${this.services
-        .filter((service) => !service.invisible)
+        .filter(service => !service.invisible)
         .map(
-          (service) =>
+          service =>
             `<div data-uppload-service="${
               service.name
             }" class="uppload-service-name">
@@ -376,10 +376,10 @@ export class Uppload implements IUppload {
   </div><div class="effects-tabs"><div class="effects-tabs-flow">
       ${this.effects
         .map(
-          (effect) => `
-      <input type="radio" id="uppload-effect-radio-${this.uId}-${effect.name}" value="${
+          effect => `
+      <input type="radio" id="uppload-effect-radio-${this.uId}-${
             effect.name
-          }" name="uppload-effect-radio">
+          }" value="${effect.name}" name="uppload-effect-radio">
         <label for="uppload-effect-radio-${this.uId}-${effect.name}">
           ${
             effect.icon.indexOf("http") === 0
@@ -468,28 +468,29 @@ export class Uppload implements IUppload {
    */
   private renderActiveService() {
     const activeServices = this.services.filter(
-      (service) => service.name === this.activeService
+      service => service.name === this.activeService
     );
-    if (activeServices.length) {
-      const activeService = activeServices[0];
-      requestAnimationFrame(() => {
-        if (typeof activeService.handlers === "function")
-          activeService.handlers({
-            next: this.next.bind(this),
-            upload: this.upload.bind(this),
-            uploadMultiple: this.uploadMultiple.bind(this),
-            handle: this.handle.bind(this),
-            showHelp: this.showHelp.bind(this),
-            uppload: this,
-            translate,
-          });
-      });
-      return `${
-        typeof activeService.template === "function"
-          ? activeService.template({ translate, uppload: this })
-          : ""
-      }`;
+    if (!activeServices.length) {
+      return "";
     }
+    const activeService = activeServices[0];
+    requestAnimationFrame(() => {
+      if (typeof activeService.handlers === "function")
+        activeService.handlers({
+          next: this.next.bind(this),
+          upload: this.upload.bind(this),
+          uploadMultiple: this.uploadMultiple.bind(this),
+          handle: this.handle.bind(this),
+          showHelp: this.showHelp.bind(this),
+          uppload: this,
+          translate,
+        });
+    });
+    return `${
+      typeof activeService.template === "function"
+        ? activeService.template({ translate, uppload: this })
+        : ""
+    }`;
   }
 
   /**
@@ -497,30 +498,31 @@ export class Uppload implements IUppload {
    */
   private renderActiveEffect(file: IUpploadFile) {
     const activeEffects = this.effects.filter(
-      (effect) => effect.name === this.activeEffect
+      effect => effect.name === this.activeEffect
     );
-    if (activeEffects.length) {
-      const activeEffect = activeEffects[0];
-      requestAnimationFrame(() => {
-        if (typeof activeEffect.handlers === "function")
-          activeEffect.handlers({
-            next: this.next.bind(this),
-            upload: this.upload.bind(this),
-            uploadMultiple: this.uploadMultiple.bind(this),
-            handle: this.handle.bind(this),
-            showHelp: this.showHelp.bind(this),
-            uppload: this,
-            translate,
-          });
-      });
-      return `
+    if (!activeEffects.length) {
+      return "";
+    }
+    const activeEffect = activeEffects[0];
+    requestAnimationFrame(() => {
+      if (typeof activeEffect.handlers === "function")
+        activeEffect.handlers({
+          next: this.next.bind(this),
+          upload: this.upload.bind(this),
+          uploadMultiple: this.uploadMultiple.bind(this),
+          handle: this.handle.bind(this),
+          showHelp: this.showHelp.bind(this),
+          uppload: this,
+          translate,
+        });
+    });
+    return `
         <div class="active-effect-container">${
           typeof activeEffect.template === "function"
             ? activeEffect.template({ file, translate })
             : ""
         }</div>
       `;
-    }
   }
 
   /**
@@ -530,7 +532,7 @@ export class Uppload implements IUppload {
    */
   private uploadMultiple(file: Blob[]): Promise<any> {
     this.emitter.emit("before-upload");
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       this.navigate("uploading");
       if (this.uploader && typeof this.uploader === "function") {
         (this.uploader as IMultipleUploader)(
@@ -579,17 +581,12 @@ export class Uppload implements IUppload {
       const iframe = help.querySelector("iframe");
       if (iframe) {
         iframe.setAttribute("src", `https://uppload.js.org/help${url}`);
-        let completed = false;
         const listener = () => {
-          completed = true;
           help.classList.add("visible");
           if (helpLoading) helpLoading.classList.remove("visible");
         };
         safeListen(iframe, "load", listener);
-        safeListen(iframe, "error", () => {
-          completed = true;
-          this.hideHelp();
-        });
+        safeListen(iframe, "error", () => this.hideHelp());
       }
     }
   }
@@ -601,9 +598,7 @@ export class Uppload implements IUppload {
   private next(file: IUpploadFile) {
     this.emitter.emit("next", file);
     this.file = file;
-    if (this.activeEffect) {
-      // There's already an active effect
-    } else {
+    if (!this.activeEffect) {
       // Find the first effect and navigate to that
       // Unless the file type is not an image
       if (
@@ -622,6 +617,7 @@ export class Uppload implements IUppload {
       `input[name='uppload-effect-radio'][value='${this.activeEffect}']`
     );
     if (activeRadio) activeRadio.setAttribute("checked", "checked");
+    return undefined;
   }
 
   compress(file: Blob) {
@@ -629,7 +625,7 @@ export class Uppload implements IUppload {
       this.settings.compressionFromMimes &&
       this.settings.compressionFromMimes.indexOf(file.type) === -1
     )
-      return new Promise<Blob>((resolve) => resolve(file));
+      return new Promise<Blob>(resolve => resolve(file));
     if (typeof this.settings.compressor === "function")
       return this.settings.compressor(file);
     return compressImage(file, this.settings);
@@ -656,15 +652,15 @@ export class Uppload implements IUppload {
       } catch (error) {}
       if (this.uploader && typeof this.uploader === "function") {
         this.compress(file)
-          .then((file) => {
+          .then(file => {
             if (this.settings.compression) this.emitter.emit("compress", file);
             return file;
           })
-          .then((blob) => {
+          .then(blob => {
             upploadFile.blob = blob;
             return safeUpploadFileToFile(upploadFile);
           })
-          .then((file) =>
+          .then(file =>
             (this.uploader as IUploader)(file, this.updateProgress.bind(this))
           )
           .then((url: string) => {
@@ -709,7 +705,7 @@ export class Uppload implements IUppload {
     const defaultServiceLinks = this.container.querySelectorAll(
       ".uppload-service--default .uppload-service-name button"
     );
-    defaultServiceLinks.forEach((link) => {
+    defaultServiceLinks.forEach(link => {
       const linkFunction = (e: Event) => {
         const service = link.getAttribute("data-uppload-service");
         if (service) {
@@ -747,8 +743,8 @@ export class Uppload implements IUppload {
      */
     const inputRadios: NodeListOf<HTMLInputElement> =
       this.container.querySelectorAll(".uppload-services input[type='radio']");
-    inputRadios.forEach((radio) => {
-      const radioFunction = (e: Event) => {
+    inputRadios.forEach(radio => {
+      const radioFunction = () => {
         const inputRadio = this.container.querySelector(
           "[name='uppload-radio']:checked"
         ) as HTMLInputElement;
@@ -764,8 +760,8 @@ export class Uppload implements IUppload {
      */
     const effectInputRadios: NodeListOf<HTMLInputElement> =
       this.container.querySelectorAll(".effects-nav input[type='radio']");
-    effectInputRadios.forEach((radio) => {
-      const radioFunction = (e: Event) => {
+    effectInputRadios.forEach(radio => {
+      const radioFunction = () => {
         const inputRadio = this.container.querySelector(
           "[name='uppload-effect-radio']:checked"
         ) as HTMLInputElement;
@@ -793,7 +789,7 @@ export class Uppload implements IUppload {
      */
     if (this.settings.call) {
       const elements = getElements(this.settings.call);
-      elements.forEach((element) => {
+      elements.forEach(element => {
         safeListen(element, "click", openFunction);
       });
     }
@@ -833,7 +829,7 @@ export class Uppload implements IUppload {
    */
   private stopCurrentService() {
     const currentService = this.services.filter(
-      (item) => item.name === this.activeService
+      item => item.name === this.activeService
     );
     if (currentService.length) {
       const service = currentService[0];
@@ -847,7 +843,7 @@ export class Uppload implements IUppload {
    * @param service - Slug name of service (e.g., instagram)
    */
   navigate(service: string) {
-    if (!this.services.filter((item) => item.name === service).length)
+    if (!this.services.filter(item => item.name === service).length)
       throw new Error("invalid-service");
     this.stopCurrentService();
     this.activeService = service;

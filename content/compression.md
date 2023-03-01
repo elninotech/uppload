@@ -6,7 +6,7 @@ To save on bandwidth and storage costs, you may want to upload resized and compr
 import { Uppload } from "uppload";
 
 const uploader = new Uppload({
-  maxSize: [800, 600]
+  maxSize: [800, 600],
 });
 ```
 
@@ -17,7 +17,7 @@ If you want to apply compression, you can specify the `compression` factor (from
 ```ts
 const uploader = new Uppload({
   compression: 0.8,
-  compressionToMime: "image/webp"
+  compressionToMime: "image/webp",
 });
 ```
 
@@ -27,7 +27,7 @@ If you only want specific file types to be compress, for example only JPEG and W
 const uploader = new Uppload({
   compression: 0.8,
   compressionFromMimes: ["image/jpeg", "image/webp"],
-  compressionToMime: "image/webp"
+  compressionToMime: "image/webp",
 });
 ```
 
@@ -40,6 +40,6 @@ const uploader = new Uppload({
       // Perform your compression here
       resolve(file);
     });
-  }
+  },
 });
 ```

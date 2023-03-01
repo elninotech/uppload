@@ -23,8 +23,11 @@ Or, use a CDN for styling:
 
 ```html
 <head>
-  <link rel="stylesheet" href="https://unpkg.com/uppload/dist/uppload.css">
-  <link rel="stylesheet" href="https://unpkg.com/uppload/dist/themes/light.css">
+  <link rel="stylesheet" href="https://unpkg.com/uppload/dist/uppload.css" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/uppload/dist/themes/light.css"
+  />
 </head>
 ```
 

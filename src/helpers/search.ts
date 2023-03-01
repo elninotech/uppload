@@ -3,13 +3,11 @@ import {
   IHandlersParams,
   IServiceTemplateParams,
   IUpploadFile,
-} from "../helpers/interfaces";
-import { cachedFetch, imageUrlToBlob } from "../helpers/http";
-import { safeListen } from "../helpers/elements";
+} from "./interfaces";
+import { cachedFetch, imageUrlToBlob } from "./http";
+import { safeListen } from "./elements";
 import { colorSVG } from "./assets";
 import { blobToUpploadFile } from "./files";
-
-let params: any | undefined = undefined;
 
 const generateFileName = (
   file: IUpploadFile,
@@ -78,7 +76,7 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
     if (fetchSettings) this.fetchSettings = fetchSettings(this.apiKey);
     if (this.popularEndpoint)
       cachedFetch<any>(this.popularEndpoint, this.fetchSettings)
-        .then((photos) => {
+        .then(photos => {
           this.results = this.getPopularResults(photos);
         })
         .catch(() => {});
@@ -89,7 +87,7 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
       params.uppload.container.querySelector(".search-images");
     if (imagesContainer) {
       imagesContainer.innerHTML = `
-        ${this.results.map((result) => this.getButton(result)).join("\n")}
+        ${this.results.map(result => this.getButton(result)).join("\n")}
       `;
     }
   }
@@ -148,7 +146,7 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
       `.search-search-form`
     ) as HTMLFormElement | null;
     if (form) {
-      safeListen(form, "submit", (event) => {
+      safeListen(form, "submit", event => {
         const input = params.uppload.container.querySelector(
           `.search-search-input`
         ) as HTMLInputElement | null;
@@ -158,7 +156,7 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
             this.searchEndpoint(this.apiKey, query),
             this.fetchSettings
           )
-            .then((json) => {
+            .then(json => {
               this.results = this.getSearchResults(json);
               this.update(params);
             })
@@ -172,14 +170,14 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
     const imageButtons = params.uppload.container.querySelectorAll(
       ".search-images button"
     );
-    imageButtons.forEach((image) => {
+    imageButtons.forEach(image => {
       safeListen(image, "click", () => {
         const url = image.getAttribute("data-full-url");
         this.loading = true;
         this.update(params);
         if (url)
           imageUrlToBlob(url)
-            .then((blob) =>
+            .then(blob =>
               params.next(
                 generateFileName(
                   blobToUpploadFile(blob),
@@ -188,7 +186,7 @@ export class SearchBaseClass<ImageResult = any> extends UpploadService {
                 )
               )
             )
-            .catch((error) => params.handle("errors.response_not_ok"))
+            .catch(() => params.handle("errors.response_not_ok"))
             .then(() => (this.loading = false));
       });
     });

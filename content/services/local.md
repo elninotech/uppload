@@ -18,6 +18,6 @@ In the constructor parameter, you can specify the mime types you want to support
 ```ts
 const localServiceWithVideo = new Local({
   maxFileSize: 25000,
-  mimeTypes: ["image/png", "image/jpeg", "video/mp4"]
+  mimeTypes: ["image/png", "image/jpeg", "video/mp4"],
 });
 ```

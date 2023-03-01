@@ -23,11 +23,11 @@ export function cachedFetch<T>(
     }
     window
       .fetch(input, settings)
-      .then((response) => {
+      .then(response => {
         if (!response.ok) throw new Error("errors.response_not_ok");
         return response.json();
       })
-      .then((result) => {
+      .then(result => {
         storage.setItem(
           key,
           JSON.stringify({
@@ -38,7 +38,7 @@ export function cachedFetch<T>(
         );
         resolve(result);
       })
-      .catch((error) => reject(error));
+      .catch(error => reject(error));
   });
 }
 
@@ -50,11 +50,11 @@ export const imageUrlToBlob = (url: string): Promise<Blob> => {
   return new Promise((resolve, reject) => {
     window
       .fetch(`https://wsrv.nl/?url=${encodeURIComponent(url)}`)
-      .then((response) => {
+      .then(response => {
         if (!response.ok) throw new Error("errors.response_not_ok");
         return response.blob();
       })
-      .then((blob) => resolve(blob))
-      .catch((error) => reject(error));
+      .then(blob => resolve(blob))
+      .catch(error => reject(error));
   });
 };

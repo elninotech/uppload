@@ -5,8 +5,8 @@
 You can upload a file from your computer by dragging and dropping the file in the "Drop files here" area, or clicking the "Select a file" button.
 
 1. Click on the "Select a file" button
-3. Select the file from your device's file manager
-4. Click on the "Upload" button
+2. Select the file from your device's file manager
+3. Click on the "Upload" button
 
 ## How do I find a file?
 

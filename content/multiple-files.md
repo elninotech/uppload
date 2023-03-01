@@ -4,7 +4,7 @@ Uppload is designed for single-image uploads, like profile and cover photos. How
 
 ```ts
 const uploader = new Uppload({
-  multiple: true
+  multiple: true,
 });
 ```
 

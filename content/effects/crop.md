@@ -14,7 +14,7 @@ You can force the aspect ratio. For example, only allow squares (1:1):
 ```ts
 profilePicture.use(
   new Crop({
-    aspectRatio: 1
+    aspectRatio: 1,
   })
 );
 ```
@@ -27,8 +27,8 @@ profilePicture.use(
     aspectRatioOptions: {
       free: NaN,
       square: 1,
-      "16:9": 16 / 9
-    }
+      "16:9": 16 / 9,
+    },
   })
 );
 ```

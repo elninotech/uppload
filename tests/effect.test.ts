@@ -13,6 +13,7 @@ import {
   Sepia,
 } from "../src";
 import { effectTemplateParams } from "./mocks";
+import "jest-canvas-mock";
 
 const effect = new UpploadEffect();
 const effects = [

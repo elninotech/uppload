@@ -8,8 +8,8 @@ import { Uppload, Local, xhrUploader, en } from "uppload";
 const uploader = new Uppload({
   lang: en,
   uploader: xhrUploader({
-    endpoint: "https://example.com/upload"
-  })
+    endpoint: "https://example.com/upload",
+  }),
 });
 uploader.use(new Local());
 ```
@@ -48,10 +48,12 @@ Lastly, you can also upload a file:
 ```ts
 const file = new Blob();
 
-uppload.upload(file)
+uppload
+  .upload(file)
   .then(url => {
     console.log("Uploaded URL", url);
-  }).catch(error => {
+  })
+  .catch(error => {
     console.error("ERR", error);
   });
 ```
@@ -85,9 +87,11 @@ The `updatePlugins` function takes a function as the argument; that function tak
 For example, you can use the `Array.filter()` function to create a list of active plugins:
 
 ```ts
-uppload.updatePlugins(plugins => plugins.filter(plugin => {
-  plugin.name === "instagram"
-}));
+uppload.updatePlugins(plugins =>
+  plugins.filter(plugin => {
+    plugin.name === "instagram";
+  })
+);
 ```
 
 Or, come up with your own logic that returns a list of plugins:

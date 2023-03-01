@@ -28,9 +28,9 @@ export default class Unsplash extends SearchBaseClass<UnsplashResult> {
       popularEndpoint: (apiKey: string) =>
         `https://api.unsplash.com/photos?client_id=${apiKey}`,
       searchEndpoint: (apiKey: string, query: string) =>
-        `https://api.unsplash.com/search/photos?client_id=${
-          this.apiKey
-        }&page=1&query=${encodeURIComponent(query)}`,
+        `https://api.unsplash.com/search/photos?client_id=${apiKey}&page=1&query=${encodeURIComponent(
+          query
+        )}`,
       getButton: (image: UnsplashResult) => `<div class="result">
         <button aria-label="${
           image.alt_description || image.description

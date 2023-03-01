@@ -43,7 +43,7 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
     filters: string
   ): Promise<Blob | null> {
     params.uppload.emitter.emit("processing");
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       this.canvas = document.createElement("canvas");
       const image = document.createElement("img");
       image.src = this.originalfileURL;
@@ -55,7 +55,7 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
         context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         context.filter = filters;
         context.drawImage(image, 0, 0);
-        canvasToBlob(this.canvas).then((blob) => {
+        canvasToBlob(this.canvas).then(blob => {
           params.uppload.emitter.emit("process");
           return resolve(blob);
         });
@@ -94,7 +94,7 @@ export default class UpploadFilterBaseClass extends UpploadEffect {
     this.imageToCanvasBlob(
       params,
       `${this.cssFilter}(${range.value}${this.unit})`
-    ).then((blob) => {
+    ).then(blob => {
       if (!blob) return;
       this.originalFile.blob = blob;
       params.next(this.originalFile);

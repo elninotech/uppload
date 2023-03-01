@@ -35,7 +35,7 @@ In our new docs website, we've also included a new [Help section](/help/) for gu
 
 ### Browser support
 
-Uppload still has great support for older browsers, all the way up to Internet Explorer 10. With a few simple [polyfills](/browser-support#polyfills), you can even support Internet Explorer 9. And with progressive enhancement, newer features like [Camera](/services/camera) and [Filters](/effects/filter) will only show up in browser that support them.
+Uppload still has great support for older browsers, all the way up to Internet Explorer 10. And with progressive enhancement, newer features like [Camera](/services/camera) and [Filters](/effects/filter) will only show up in browser that support them.
 
 ### Supports all backends
 
@@ -71,7 +71,7 @@ New light and dark **themes**, along with support for custom color themes, make 
 import { Uppload, Local, Instagram, xhrUploader, en as lang } from "uppload";
 const uploader = new Uppload({
   lang,
-  uploader: xhrUploader({ endpoint: "https://example.com/upload" })
+  uploader: xhrUploader({ endpoint: "https://example.com/upload" }),
 });
 uploader.use([new Local(), new Instagram()]);
 ```

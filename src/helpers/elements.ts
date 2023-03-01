@@ -41,7 +41,7 @@ export const safeListen = (
   fn: EventListenerOrEventListenerObject
 ) => {
   const hasListener = !!listening.find(
-    (a) => a.element === element && a.type === type
+    a => a.element === element && a.type === type
   );
   if (hasListener) return;
   element.addEventListener(type, fn);
@@ -54,6 +54,7 @@ const safeRequestAnimationFrame = (callback: FrameRequestCallback) => {
   setTimeout(() => {
     callback(0);
   }, 100);
+  return;
 };
 
 /**
@@ -64,7 +65,7 @@ export const fitImageToContainer = (
   params: IHandlersParams,
   image: HTMLImageElement | HTMLVideoElement
 ): Promise<void> => {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     safeRequestAnimationFrame(() => {
       const parent = image.parentElement as HTMLDivElement | null;
       const currentDimensions = image.getBoundingClientRect();
@@ -107,7 +108,7 @@ export const compressImage = (
   file: Blob,
   settings: IUpploadSettings
 ): Promise<Blob> =>
-  new Promise((resolve) => {
+  new Promise(resolve => {
     const imageURL = URL.createObjectURL(file);
     const canvas = document.createElement("canvas");
     const image = document.createElement("img");
@@ -200,7 +201,7 @@ export const canvasToBlob = (
     }
     if (typeof canvas.toBlob === "function") {
       canvas.toBlob(
-        (blob) => {
+        blob => {
           if (blob) resolve(blob);
           reject(new Error("errors.image_error"));
         },

@@ -131,7 +131,7 @@ const translationKeys: string[] = [
 [en, nl, hi, es, fr, IT, ru, tr, de, zhTW].forEach((lang, i) => {
   describe(`translation - lang ${i}`, () => {
     const language: { [index: string]: any } = flattenObject(lang);
-    translationKeys.forEach((key) => {
+    translationKeys.forEach(key => {
       it(`has translation for ${key}`, () =>
         expect(language[key]).toBeDefined());
     });

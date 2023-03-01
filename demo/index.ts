@@ -42,19 +42,19 @@ const header = document.querySelector("header#masthead .masthead");
 if (header) header.appendChild(button);
 
 const uppload = new Uppload({
-  value: "https://uppload.js.org/assets/icon-white.svg",
+  value: "https://via.placeholder.com/150x150",
   bind: [".uppload-image", "img.icon"],
   call: ".try-uppload",
   lang: en,
   maxSize: [256, 256],
   uploader: (file, updateProgress) =>
-    new Promise((resolve) => {
+    new Promise(resolve => {
       console.log("Uploading file...", file);
       setTimeout(() => resolve(window.URL.createObjectURL(file)), 2750);
       let progress = 0;
       const interval = setInterval(() => {
         if (progress > 99) clearInterval(interval);
-        updateProgress(progress++);
+        updateProgress && updateProgress(progress++);
       }, 25);
     }),
 });
@@ -117,8 +117,13 @@ uppload.use([
   new Sepia(),
 ]);
 
-uppload.on("*", (a: any, b?: any) => {
-  console.log("Uppload event", a, b);
+uppload.on("*", (...args: any) => {
+  console.log("Uppload event", ...args);
 });
+
+setTimeout(function () {
+  // @ts-ignore-next-line
+  document.querySelector(".try-uppload").click();
+}, 250);
 
 (window as any).uppload = uppload;

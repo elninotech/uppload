@@ -5,14 +5,14 @@ const uppload = new Uppload({ lang: en });
 test("adds an Uppload service", () => {
   uppload.use(new Instagram());
   expect(
-    uppload.services.filter((services) => services.name === "instagram").length
+    uppload.services.filter(services => services.name === "instagram").length
   ).toBe(1);
 });
 
 test("adds an Uppload effect", () => {
   uppload.use(new Crop());
   expect(
-    uppload.effects.filter((effects) => effects.name === "crop").length
+    uppload.effects.filter(effects => effects.name === "crop").length
   ).toBe(1);
 });
 

@@ -24,12 +24,12 @@ uploader.off("error", errorLogger); // Stop listening
 
 You can listen to the following event:
 
-| Event | Description |
-| ----- | ----------- |
-| `ready` | Plugin is ready and initialized |
-| `bind` | The value of a new URL is applied |
-| `open` | Plugin is opened |
-| `close` | Plugin is closed |
-| `before-upload` | File upload has started |
-| `upload` | File upload has completed |
-| `error` | File upload got an error |
+| Event           | Description                       |
+| --------------- | --------------------------------- |
+| `ready`         | Plugin is ready and initialized   |
+| `bind`          | The value of a new URL is applied |
+| `open`          | Plugin is opened                  |
+| `close`         | Plugin is closed                  |
+| `before-upload` | File upload has started           |
+| `upload`        | File upload has completed         |
+| `error`         | File upload got an error          |

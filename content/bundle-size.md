@@ -2,14 +2,14 @@
 
 ## Compared to v1
 
-*This section is currently in development.*
+_This section is currently in development._
 
-| Bundle type | Uppload v1 | Uppload v2 |
-| ----------- | ---------- | ---------- |
-| Lean build | 39.8 kB | some |
-| True build | 59.1 kB | some plugins |
-| Full build | 134 kB | 137 kB |
-| True full build | 154 kB | 137 kB |
+| Bundle type     | Uppload v1 | Uppload v2   |
+| --------------- | ---------- | ------------ |
+| Lean build      | 39.8 kB    | some         |
+| True build      | 59.1 kB    | some plugins |
+| Full build      | 134 kB     | 137 kB       |
+| True full build | 154 kB     | 137 kB       |
 
 - In Uppload v1, Lean bundle includes no polyfills; in Uppload v2, it includes no plugins
 - Uppload v1 included lazy-loaded components, True builds includes them too

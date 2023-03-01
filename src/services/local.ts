@@ -39,24 +39,22 @@ export default class Local extends UpploadService {
   handlers = (params: IHandlersParams) => {
     const dropArea = params.uppload.container.querySelector(".drop-area");
     if (dropArea) {
-      safeListen(dropArea, "drop", (event) =>
+      safeListen(dropArea, "drop", event =>
         this.dropHandler(params, event as DragEvent)
       );
-      safeListen(dropArea, "dragover", (event) =>
+      safeListen(dropArea, "dragover", event =>
         this.dragHandler(params, event)
       );
-      safeListen(dropArea, "dragend", (event) => this.dragStop(params, event));
-      safeListen(dropArea, "dragexit", (event) => this.dragStop(params, event));
-      safeListen(dropArea, "dragleave", (event) =>
-        this.dragStop(params, event)
-      );
-      safeListen(dropArea, "click", (event) => this.fileSelect(params, event));
+      safeListen(dropArea, "dragend", event => this.dragStop(params, event));
+      safeListen(dropArea, "dragexit", event => this.dragStop(params, event));
+      safeListen(dropArea, "dragleave", event => this.dragStop(params, event));
+      safeListen(dropArea, "click", event => this.fileSelect(params, event));
     }
     const input = params.uppload.container.querySelector(
       ".alternate-input input[type=file]"
     ) as HTMLInputElement | null;
     if (input)
-      safeListen(input, "change", (event) => this.getFile(params, event));
+      safeListen(input, "change", event => this.getFile(params, event));
     const helpButton =
       params.uppload.container.querySelector(".need-help-link");
     if (helpButton)
@@ -96,16 +94,17 @@ export default class Local extends UpploadService {
           : undefined,
         name: file.name,
       });
+    return;
   }
 
-  fileSelect(params: IHandlersParams, event: Event) {
+  fileSelect(params: IHandlersParams, _event: Event) {
     const input = params.uppload.container.querySelector(
       ".alternate-input input[type=file]"
     ) as HTMLInputElement | null;
     if (input) input.click();
   }
 
-  private dragStop(params: IHandlersParams, event: Event) {
+  private dragStop(params: IHandlersParams, _event: Event) {
     const dropArea = params.uppload.container.querySelector(".drop-area");
     if (dropArea) dropArea.classList.remove("drop-area-active");
   }

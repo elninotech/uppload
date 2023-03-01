@@ -4,10 +4,10 @@ Users can search for photos from web services which have a free API. This is par
 
 | Service name | Class name |
 | ------------ | ---------- |
-| Unsplash | `Unsplash` |
-| Pexels | `Pexels` |
-| Pixabay | `Pixabay` |
-| GIPHY | `GIPHY` |
+| Unsplash     | `Unsplash` |
+| Pexels       | `Pexels`   |
+| Pixabay      | `Pixabay`  |
+| GIPHY        | `GIPHY`    |
 
 You can sign up for a free API key for all these services, and they are also CORS-friendly. Under the hood, Uppload caches API responses in local storage.
 

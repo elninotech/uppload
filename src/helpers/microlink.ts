@@ -81,7 +81,7 @@ export class MicrolinkBaseClass extends UpploadService {
       `.microlink-search-form`
     ) as HTMLFormElement | null;
     if (form) {
-      safeListen(form, "submit", (event) => {
+      safeListen(form, "submit", event => {
         event.preventDefault();
         const input = params.uppload.container.querySelector(
           `.microlink-search-input`
@@ -98,21 +98,21 @@ export class MicrolinkBaseClass extends UpploadService {
                 url
               )}&screenshot=true&meta=false&embed=screenshot.url`
             )
-              .then((blob) =>
+              .then(blob =>
                 params.next(
                   generateFileName(blobToUpploadFile(blob), this.name)
                 )
               )
-              .catch((error) => params.handle(error))
+              .catch(error => params.handle(error))
               .then(() => (this.loading = false));
           } else if (this.name === "url") {
             imageUrlToBlob(url)
-              .then((blob) =>
+              .then(blob =>
                 params.next(
                   generateFileName(blobToUpploadFile(blob), this.name)
                 )
               )
-              .catch((error) => params.handle(error));
+              .catch(error => params.handle(error));
           } else {
             cachedFetch<{
               data: {
@@ -121,18 +121,18 @@ export class MicrolinkBaseClass extends UpploadService {
                 };
               };
             }>(`https://api.microlink.io/?url=${encodeURIComponent(url)}`)
-              .then((result) => {
+              .then(result => {
                 if (!result.data.image || !result.data.image.url)
                   throw new Error("errors.response_not_ok");
                 return result.data.image.url;
               })
-              .then((url) => imageUrlToBlob(url))
-              .then((blob) =>
+              .then(url => imageUrlToBlob(url))
+              .then(blob =>
                 params.next(
                   generateFileName(blobToUpploadFile(blob), this.name)
                 )
               )
-              .catch((error) => params.handle(error));
+              .catch(error => params.handle(error));
           }
         }
         return false;

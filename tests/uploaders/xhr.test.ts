@@ -13,7 +13,7 @@ describe("xhr uploader", () => {
     ).toBe("function"));
 
   it("sends xmlhttprequest", () => {
-    xhr.post("https://example.com", (req, res) => {
+    xhr.post("https://example.com", (_req, res) => {
       return res.body(
         JSON.stringify({
           url: "https://example.com/file.jpg",
@@ -34,7 +34,7 @@ describe("xhr uploader", () => {
   });
 
   it("uses xhr response key", () => {
-    xhr.post("https://example.com", (req, res) =>
+    xhr.post("https://example.com", (_req, res) =>
       res.body(
         JSON.stringify({
           newKey: "https://example.com/file.jpg",
@@ -54,7 +54,7 @@ describe("xhr uploader", () => {
   });
 
   it("uses xhr response function", () => {
-    xhr.post("https://example.com", (req, res) =>
+    xhr.post("https://example.com", (_req, res) =>
       res.body(
         JSON.stringify({
           newKey: "https://example.com/file.jpg",
@@ -64,7 +64,7 @@ describe("xhr uploader", () => {
     const uppload = new Uppload({
       uploader: xhrUploader({
         endpoint: "https://example.com",
-        responseFunction: (response) => JSON.parse(response).newKey,
+        responseFunction: response => JSON.parse(response).newKey,
       }),
     });
     uppload.on("upload", (url: string) => {
@@ -74,7 +74,7 @@ describe("xhr uploader", () => {
   });
 
   it("uses xhr settings function", () => {
-    xhr.post("https://example.com", (req, res) =>
+    xhr.post("https://example.com", (_req, res) =>
       res.body(
         JSON.stringify({
           newKey: "https://example.com/file.jpg",
@@ -84,7 +84,7 @@ describe("xhr uploader", () => {
     const uppload = new Uppload({
       uploader: xhrUploader({
         endpoint: "https://example.com",
-        settingsFunction: (request) => request,
+        settingsFunction: request => request,
       }),
     });
     uppload.on("upload", (url: string) => {
@@ -146,7 +146,7 @@ describe("fetch uploader", () => {
     const uppload = new Uppload({
       uploader: fetchUploader({
         endpoint: "https://example.com",
-        responseFunction: (response) => JSON.parse(response).newKey,
+        responseFunction: response => JSON.parse(response).newKey,
       }),
     });
     uppload.on("upload", (url: string) => {
@@ -164,7 +164,7 @@ describe("fetch uploader", () => {
     const uppload = new Uppload({
       uploader: fetchUploader({
         endpoint: "https://example.com",
-        settingsFunction: (file) => ({
+        settingsFunction: file => ({
           method: "PUT",
           body: file,
         }),

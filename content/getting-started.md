@@ -16,8 +16,8 @@ import { Uppload, Local, Instagram, xhrUploader, en } from "uppload";
 const uploader = new Uppload({
   lang: en,
   uploader: xhrUploader({
-    endpoint: "https://example.com/upload"
-  })
+    endpoint: "https://example.com/upload",
+  }),
 });
 uploader.use([new Local(), new Instagram()]);
 ```
@@ -33,7 +33,7 @@ Now, let's say you have an HTML webpage like the following. Here, we have a `<bu
 
 ```html
 <body>
-  <img alt="Profile picture" class="profile-pic">
+  <img alt="Profile picture" class="profile-pic" />
   <button class="pic-btn">Change picture</button>
 </body>
 ```
@@ -44,10 +44,10 @@ You can add properties in the Uppload constructor to automate that functionality
 const uploader = new Uppload({
   lang: en,
   uploader: xhrUploader({
-    endpoint: "https://example.com/upload"
+    endpoint: "https://example.com/upload",
   }),
   bind: document.querySelector("img.profile-pic"),
-  call: document.querySelector("button.pic-btn")
+  call: document.querySelector("button.pic-btn"),
 });
 uploader.use([new Local(), new Instagram()]);
 ```
