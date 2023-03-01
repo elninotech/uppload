@@ -1,6 +1,6 @@
 # Rotate
 
-The Rotate effect lets users rotate their images before uploading them. 
+The Rotate effect lets users rotate their images before uploading them.
 
 ```ts
 import { Uppload, Rotate } from "uppload";

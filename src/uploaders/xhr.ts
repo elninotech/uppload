@@ -22,7 +22,7 @@ export const xhrUploader = ({
       const xmlHttp = new XMLHttpRequest();
       xmlHttp.open(method, endpoint, true);
       if (typeof settingsFunction === "function") settingsFunction(xmlHttp);
-      xmlHttp.addEventListener("progress", (event) => {
+      xmlHttp.addEventListener("progress", event => {
         if (typeof updateProgress === "function")
           updateProgress(event.loaded / event.total);
       });
@@ -54,7 +54,7 @@ export const fetchUploader = ({
   responseKey?: string;
   responseFunction?: (responseText: string) => string;
 }): IUploader => {
-  return (file) =>
+  return file =>
     new Promise((resolve, reject) => {
       const formData = new FormData();
       formData.append(fileKeyName, file);
@@ -68,11 +68,11 @@ export const fetchUploader = ({
                 body: formData,
               }
         )
-        .then((response) => {
+        .then(response => {
           if (!response.ok) throw new Error("errors.response_not_ok");
           return response.json();
         })
-        .then((json) => {
+        .then(json => {
           if (typeof responseFunction === "function")
             return resolve(responseFunction(json));
           return resolve(json[responseKey]);

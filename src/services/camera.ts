@@ -53,7 +53,7 @@ export default class Camera extends UpploadService {
   };
 
   stop = () => {
-    if (this.stream) this.stream.getTracks().forEach((track) => track.stop());
+    if (this.stream) this.stream.getTracks().forEach(track => track.stop());
   };
 
   update(params: IHandlersParams) {
@@ -154,7 +154,7 @@ export default class Camera extends UpploadService {
     const videoSize = video.getBoundingClientRect();
     let width = videoSize.width;
     let height = videoSize.height;
-    this.stream.getTracks().forEach((track) => {
+    this.stream.getTracks().forEach(track => {
       const settings = track.getSettings();
       if (settings.width) width = settings.width;
       if (settings.height) height = settings.height;
@@ -165,7 +165,7 @@ export default class Camera extends UpploadService {
     if (!context) return;
     context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     context.drawImage(video, 0, 0, width, height);
-    canvasToBlob(this.canvas).then((blob) =>
+    canvasToBlob(this.canvas).then(blob =>
       params.next(
         blobToUpploadFile(
           blob,
@@ -181,7 +181,7 @@ export default class Camera extends UpploadService {
     this.stop();
     window.navigator.mediaDevices
       .getUserMedia(constraints)
-      .then((mediaStream) => {
+      .then(mediaStream => {
         this.stream = mediaStream;
         const video = params.uppload.container.querySelector(
           "video.camera-stream"

@@ -13,10 +13,10 @@ const customUploader = (file: Blob): Promise<string> => {
     // Send the file and get the URL
     resolve("uploaded-file-url");
   });
-}
+};
 
 const profilePicture = new Uppload({
-  uploader: customUploader
+  uploader: customUploader,
 });
 ```
 
@@ -34,7 +34,7 @@ const customUploader = (
     // Send the file as soon as it is uploaded
     resolve("uploaded-file-url");
   });
-}
+};
 ```
 
 For example, a custom XHR request uploader could look like this:

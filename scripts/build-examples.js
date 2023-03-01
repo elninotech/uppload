@@ -7,7 +7,7 @@ const {
   copyFileSync,
   mkdirSync,
   writeFileSync,
-  readFileSync
+  readFileSync,
 } = require("fs");
 
 const examplesDir =
@@ -17,13 +17,15 @@ const examplesDir =
   console.log("Downloading examples...");
   await download(examplesDir, __dirname, { filename: "master.zip" });
 
-  console.log("Extracting examples...")
+  console.log("Extracting examples...");
   await extract(join(__dirname, "master.zip"), { dir: __dirname });
 
-  const examples = readdirSync(join(__dirname, "uppload-examples-master", "examples"));
+  const examples = readdirSync(
+    join(__dirname, "uppload-examples-master", "examples")
+  );
 
   mkdirSync(join(__dirname, "..", "content", "examples"), {
-    recursive: true
+    recursive: true,
   });
 
   examples.forEach(example => {

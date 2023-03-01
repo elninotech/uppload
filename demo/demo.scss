@@ -1,2 +1,7 @@
-@import "../src/styles/uppload.scss";
-@import "../src/themes/light.scss";
+@import "../src/styles/uppload";
+@import "../src/themes/light";
+
+body > * {
+  display: block;
+  margin: 20px;
+}

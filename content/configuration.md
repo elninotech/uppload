@@ -6,7 +6,7 @@ In the following example, the `value` property is used in the configuration obje
 import { Uppload } from "uppload";
 
 const uploader = new Uppload({
-  value: "https://example.com/image.jpg"
+  value: "https://example.com/image.jpg",
 });
 ```
 

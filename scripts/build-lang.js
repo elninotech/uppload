@@ -3,7 +3,12 @@ const { writeFileSync, readFileSync } = require("fs");
 const { join } = require("path");
 
 let lang;
-eval("lang = " + readFileSync(join("src", "i18n", "nl.ts")).toString().replace("export default ", ""));
+eval(
+  "lang = " +
+    readFileSync(join("src", "i18n", "nl.ts"))
+      .toString()
+      .replace("export default ", "")
+);
 
 translateObject(lang, "de")
   .then(translation => {
@@ -11,5 +16,5 @@ translateObject(lang, "de")
     writeFileSync(join("src", "i18n", "de.ts"), content);
   })
   .catch(error => {
-      console.log("Got an error", error);
+    console.log("Got an error", error);
   });

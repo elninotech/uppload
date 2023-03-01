@@ -18,7 +18,7 @@ Uppload 1.x had all packages built-in, so you could initialize it like this:
 
 ```js
 const profilePicture = new Uppload({
-  value: "https://randomuser.me/api/portraits/women/17.jpg"
+  value: "https://randomuser.me/api/portraits/women/17.jpg",
 });
 ```
 
@@ -27,7 +27,7 @@ In Uppload 2.x, however, you have to import the features you require.
 ```ts
 import { Uppload, Instagram, Pexels } from "uppload";
 const profilePicture = new Uppload({
-  value: "https://randomuser.me/api/portraits/women/17.jpg"
+  value: "https://randomuser.me/api/portraits/women/17.jpg",
 });
 profilePicture.use(new Instagram(), new Pexels());
 ```

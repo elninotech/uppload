@@ -23,7 +23,7 @@ If you've clicked on the camera icon, but you don't see your picture, this could
 
 ### Grant permission
 
-Click on the information icon (an "i" or *lock* icon on the top left of your web browser), and choose "Allow" under "Camera". This option may be in a different place depending on your browser.
+Click on the information icon (an "i" or _lock_ icon on the top left of your web browser), and choose "Allow" under "Camera". This option may be in a different place depending on your browser.
 
 ### Update your browser
 

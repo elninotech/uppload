@@ -10,7 +10,7 @@ const config = {
   apiKey: "your-firebase-api-key",
   projectId: "your-project-id",
   storageBucket: "your-project-id.appspot.com",
-  childPath: "path/to/dir"
+  childPath: "path/to/dir",
 };
 
 const firebaseUploader = (file, updateProgress) =>
@@ -22,9 +22,10 @@ const firebaseUploader = (file, updateProgress) =>
 
     // Generate a file name based on current date and random number
     const reference = storageReference.child(
-      `${config.childPath || ""}/${
-        Math.random().toString().replace("0.", "").substr(0, 7)
-      }-${new Date().getTime()}.png`
+      `${config.childPath || ""}/${Math.random()
+        .toString()
+        .replace("0.", "")
+        .substr(0, 7)}-${new Date().getTime()}.png`
     );
 
     // Upload the file to the storage reference
@@ -58,7 +59,7 @@ And then you can use `firebaseUploader` like any other custom uploader.
 import { Uppload } from "uppload";
 
 const profilePicture = new Uppload({
-  uploader: firebaseUploader
+  uploader: firebaseUploader,
 });
 ```
 

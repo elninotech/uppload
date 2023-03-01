@@ -18,7 +18,7 @@ uploader.use([
   new Local(),
   new URL(),
   new Unsplash("unsplash-api-key"),
-  new Pexels("pexels-api-key")
+  new Pexels("pexels-api-key"),
 ]);
 ```
 

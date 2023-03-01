@@ -2,23 +2,23 @@
 
 Users can import photos from web services in Uppload by specifying the resource URL. Currently supported services are:
 
-| Service name | Class name |
-| ------------ | ---------- |
-| Direct URL | `URL` |
-| Instagram | `Instagram` |
-| Facebook | `Facebook` |
-| Twitter | `Twitter` |
-| Flickr | `Flickr` |
-| 9GAG | `NineGag` |
-| Pinterest | `Pinterest` |
-| DeviantArt | `DeviantArt` |
-| ArtStation | `ArtStation` |
-| Flipboard | `Flipboard` |
-| Fotki | `Fotki` |
-| LinkedIn | `LinkedIn` |
-| Reddit | `Reddit` |
-| Tumblr | `Tumblr` |
-| WeHeartIt | `WeHeartIt` |
+| Service name       | Class name   |
+| ------------------ | ------------ |
+| Direct URL         | `URL`        |
+| Instagram          | `Instagram`  |
+| Facebook           | `Facebook`   |
+| Twitter            | `Twitter`    |
+| Flickr             | `Flickr`     |
+| 9GAG               | `NineGag`    |
+| Pinterest          | `Pinterest`  |
+| DeviantArt         | `DeviantArt` |
+| ArtStation         | `ArtStation` |
+| Flipboard          | `Flipboard`  |
+| Fotki              | `Fotki`      |
+| LinkedIn           | `LinkedIn`   |
+| Reddit             | `Reddit`     |
+| Tumblr             | `Tumblr`     |
+| WeHeartIt          | `WeHeartIt`  |
 | Webpage screenshot | `Screenshot` |
 
 ![Screenshot of Instagram service](/assets/screenshots/instagram.png)

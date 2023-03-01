@@ -51,7 +51,7 @@ export default class Rotate extends UpploadEffect {
           toggleDragModeOnDblclick: false,
           ready() {
             params.uppload.emitter.emit("processing");
-            canvasToBlob(rotator.getCroppedCanvas()).then((blob) => {
+            canvasToBlob(rotator.getCroppedCanvas()).then(blob => {
               originalFile.blob = blob;
               params.uppload.emitter.emit("process");
               params.next(originalFile);
@@ -75,7 +75,7 @@ export default class Rotate extends UpploadEffect {
             rotator.rotate(value - this.value);
             this.value = value;
             params.uppload.emitter.emit("processing");
-            canvasToBlob(rotator.getCroppedCanvas()).then((blob) => {
+            canvasToBlob(rotator.getCroppedCanvas()).then(blob => {
               originalFile.blob = blob;
               params.uppload.emitter.emit("process");
               params.next(originalFile);

@@ -41,7 +41,7 @@ export default class Flip extends UpploadEffect {
     flipH = false,
     flipV = false
   ): Promise<Blob | null> {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       params.uppload.emitter.emit("processing");
       const scaleH = flipH ? -1 : 1;
       const scaleV = flipV ? -1 : 1;
@@ -58,7 +58,7 @@ export default class Flip extends UpploadEffect {
         context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         context.scale(scaleH, scaleV);
         context.drawImage(image, posX, posY);
-        canvasToBlob(this.canvas).then((blob) => {
+        canvasToBlob(this.canvas).then(blob => {
           const image = URL.createObjectURL(blob);
           this.originalfileURL = image;
           params.uppload.emitter.emit("process");
@@ -73,7 +73,7 @@ export default class Flip extends UpploadEffect {
       ".uppload-flip img"
     ) as HTMLImageElement | null;
     if (!img) return;
-    this.imageToCanvasBlob(params, x, y).then((blob) => {
+    this.imageToCanvasBlob(params, x, y).then(blob => {
       if (!blob) return;
       let file = this.originalFile;
       file.blob = blob;

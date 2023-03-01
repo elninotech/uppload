@@ -2,7 +2,8 @@ const { join } = require("path");
 const { writeFileSync, readdirSync, readFileSync, mkdirSync } = require("fs");
 
 const siteFiles = readdirSync(join(__dirname, "..", "dist")).filter(
-  file => file.startsWith("demo.") && (file.endsWith(".css") || file.endsWith(".js"))
+  file =>
+    file.startsWith("demo.") && (file.endsWith(".css") || file.endsWith(".js"))
 );
 
 siteFiles.forEach(file => {

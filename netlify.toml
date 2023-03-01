@@ -1,3 +1,3 @@
 [build]
-	command = "npm run build-site-demo && npm run build-typedoc"
+	command = "npm run build"
 	publish = "public"
