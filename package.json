@@ -48,7 +48,7 @@
   "devDependencies": {
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/npm": "^9.0.2",
-    "@staart/site": "^2.1.0",
+    "@staart/site": "^3.0.0-beta.20",
     "@types/estree": "^1.0.0",
     "@types/jest": "^29.2.5",
     "@types/jsdom": "^21.1.0",
