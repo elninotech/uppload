@@ -31,7 +31,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite --host",
-    "build": "build:package && build:styles && build:site",
+    "build": "npm run build:package && npm run build:styles",
     "build:package": "tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
     "build:styles": "node scripts/build-scss.js",
     "build:site": "node scripts/build-examples.js && site",
