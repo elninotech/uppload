@@ -266,7 +266,8 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/1699095?v=4",
       "profile": "https://github.com/RichardJohnn",
       "contributions": [
-        "bug"
+        "bug",
+        "code"
       ]
     },
     {
@@ -287,5 +288,6 @@
         "bug"
       ]
     }
-  ]
+  ],
+  "commitConvention": "angular"
 }
