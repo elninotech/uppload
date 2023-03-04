@@ -5,6 +5,7 @@
   "imageSize": 100,
   "commit": false,
   "commitTemplate": ":pencil: <%= (newContributor ? \"Add\" : \"Update\") %> @<%= username %> as a contributor",
+  "commitConvention": "gitmoji",
   "contributorsPerLine": 7,
   "projectName": "uppload",
   "projectOwner": "elninotech",
