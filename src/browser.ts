@@ -22,6 +22,7 @@ import {
   ro,
   ru,
   tr,
+  uk,
   zhTW,
   xhrUploader,
   fetchUploader,
@@ -85,6 +86,7 @@ export interface UpploadWindow extends Window {
   uppload_ro: typeof ro;
   uppload_ru: typeof ru;
   uppload_tr: typeof tr;
+  uppload_uk: typeof uk;
   uppload_zhTW: typeof zhTW;
   uppload_xhrUploader: typeof xhrUploader;
   uppload_fetchUploader: typeof fetchUploader;
@@ -148,6 +150,7 @@ window.uppload_it = it;
 window.uppload_ro = ro;
 window.uppload_ru = ru;
 window.uppload_tr = tr;
+window.uppload_uk = uk;
 window.uppload_zhTW = zhTW;
 window.uppload_xhrUploader = xhrUploader;
 window.uppload_fetchUploader = fetchUploader;
