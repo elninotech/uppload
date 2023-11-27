@@ -52,7 +52,7 @@
     "@types/estree": "^1.0.0",
     "@types/jest": "^29.2.5",
     "@types/jsdom": "^21.1.0",
-    "@types/node": "^18.11.18",
+    "@types/node": "^20.10.0",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
     "auto-i18n": "^1.0.0",
