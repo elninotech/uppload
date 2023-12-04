@@ -60,7 +60,7 @@
     "cssnano": "^5.1.7",
     "dts-bundle-generator": "^7.1.0",
     "eslint": "^8.32.0",
-    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "extract-zip": "^2.0.1",
     "gitmoji-changelog": "^2.1.0",
