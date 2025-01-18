@@ -260,6 +260,20 @@ export class Uppload implements IUppload {
     else this.open();
   }
 
+  clearselectedfile() {
+    if (this.settings.bind) {
+      const elements = getElements(this.settings.bind);
+      elements.forEach(element => {
+        if (element.nodeName === "IMG") {
+          element.setAttribute("src", "");
+        } else {
+          element.setAttribute("value", "");
+        }
+      });
+      this.emitter.emit("bind");
+    }
+  }
+
   /**
    * Re-render the widget
    */
@@ -698,7 +712,7 @@ export class Uppload implements IUppload {
   private handlers() {
     const openFunction = () => this.open();
     const closeFunction = () => this.close();
-
+    const clearFunction = () => this.clearselectedfile();
     /**
      * Clicking on each sidebar link should open its service
      */
@@ -791,6 +805,14 @@ export class Uppload implements IUppload {
       const elements = getElements(this.settings.call);
       elements.forEach(element => {
         safeListen(element, "click", openFunction);
+      });
+    }
+
+    if (this.settings.close) {
+      const elements = getElements(this.settings.close);
+
+      elements.forEach(element => {
+        safeListen(element, "click", clearFunction);
       });
     }
 
