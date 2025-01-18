@@ -57,6 +57,7 @@ const uppload = new Uppload({
         updateProgress && updateProgress(progress++);
       }, 25);
     }),
+  close: ".on-clear",
 });
 
 // These are our public demo API keys
