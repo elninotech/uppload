@@ -6,7 +6,7 @@ export default class ArtStation extends MicrolinkBaseClass {
   color = "#3ea2cf";
   exampleURL = "https://www.artstation.com/artwork/VdGOkZ";
   validator = (input: string) =>
-    /(https?:\/\/(.+?\.)?artstation\.com(\/[A-Za-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;\=]*)?)/.test(
+    /(https?:\/\/(.+?\.)?artstation\.com(\/[A-Za-z0-9\-._~:/?#[\]@!$&'()*+,;=]*)?)/.test(
       input
     );
 }

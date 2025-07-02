@@ -6,7 +6,7 @@ export default class NineGag extends MicrolinkBaseClass {
   color = "#000";
   exampleURL = "https://9gag.com/gag/awoBXb8";
   validator = (input: string) =>
-    /(https?:\/\/(.+?\.)?9gag\.com(\/[A-Za-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;\=]*)?)/.test(
+    /(https?:\/\/(.+?\.)?9gag\.com(\/[A-Za-z0-9\-._~:/?#[\]@!$&'()*+,;=]*)?)/.test(
       input
     );
 }

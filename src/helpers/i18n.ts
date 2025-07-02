@@ -3,11 +3,11 @@ let i18n: any = {};
 export const flattenObject = (ob: any) => {
   const toReturn: any = {};
   for (const i in ob) {
-    if (!ob.hasOwnProperty(i)) continue;
+    if (!Object.prototype.hasOwnProperty.call(ob, i)) continue;
     if (typeof ob[i] == "object") {
       const flatObject = flattenObject(ob[i]);
       for (const x in flatObject) {
-        if (!flatObject.hasOwnProperty(x)) continue;
+        if (!Object.prototype.hasOwnProperty.call(flatObject, x)) continue;
         toReturn[i + "." + x] = flatObject[x];
       }
     } else {

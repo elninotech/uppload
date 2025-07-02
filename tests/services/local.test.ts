@@ -36,13 +36,13 @@ const fakeEvent = {
 };
 
 test("drop handler", () => {
-  let file = null;
+  const file = null;
   service.dropHandler(handlersParams, fakeEvent as any);
   expect(file).toBeDefined();
 });
 
 test("get file", () => {
-  let file = null;
+  const file = null;
   service.getFile(handlersParams, fakeEvent as any);
   expect(file).toBeDefined();
 });

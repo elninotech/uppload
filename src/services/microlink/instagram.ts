@@ -6,7 +6,7 @@ export default class Instagram extends MicrolinkBaseClass {
   color = "#cc3366";
   exampleURL = "https://www.instagram.com/p/Bu_T4RihQFB/";
   validator = (input: string) =>
-    /(https?:\/\/(.+?\.)?(instagram|instagr)\.(com|am)(\/[A-Za-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;\=]*)?)/.test(
+    /(https?:\/\/(.+?\.)?(instagram|instagr)\.(com|am)(\/[A-Za-z0-9\-._~:/?#[\]@!$&'()*+,;=]*)?)/.test(
       input
     );
 }

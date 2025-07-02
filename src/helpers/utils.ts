@@ -12,11 +12,11 @@ export const minifyHTML = (html: string) =>
  * @param decimals - The number of decimals to show
  * @returns The formatted string
  */
-export const formatBytes = (bytes: number, decimals: number = 2) => {
+export const formatBytes = (bytes: number, decimals = 2) => {
   if (bytes === 0) {
     return "0 Bytes";
   }
-  const base: number = 1024;
+  const base = 1024;
   const dm: number = decimals < 0 ? 0 : decimals;
   const sizes: string[] = [
     "Bytes",

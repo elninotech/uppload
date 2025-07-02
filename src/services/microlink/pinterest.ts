@@ -2,11 +2,11 @@ import { MicrolinkBaseClass } from "../../helpers/microlink";
 
 export default class Pinterest extends MicrolinkBaseClass {
   name = "pinterest";
-  icon = `<svg aria-hidden="true" viewbox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M128 0a128 128 0 00-47 247c-1-10-2-25 1-36l15-64s-4-8-4-19c0-18 10-31 23-31 11 0 16 8 16 18 0 11-7 27-11 43-3 12 7 23 19 23 23 0 41-24 41-59 0-31-22-52-54-52-36 0-58 27-58 55 0 11 5 23 10 30l1 3-4 15c0 2-1 3-4 1-16-7-26-30-26-49 0-41 30-78 85-78 44 0 79 32 79 74 0 44-28 80-67 80-13 0-25-7-29-15l-8 31c-3 11-11 25-16 33A128 128 0 10128 0z" fill="#000" fill-rule="nonzero"/></svg>`;
-  color = "#e60023";
-  exampleURL = "https://pinterest.com/pin/437201076327078006/";
+  icon = `<svg aria-hidden="true" viewbox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M128 0C81 0 44 37 44 89c0 30 11 49 28 49 7 0 11-19 11-19s-3-12-3-29c0-22 18-42 42-42 32 0 48 23 48 54 0 38-17 65-41 65-13 0-23-11-20-24 4-15 12-32 12-43 0-10-5-18-16-18-13 0-23 13-23 31 0 11 4 19 4 19s-13 55-15 65c-5 20-1 45-1 48 0 2 3 2 4 1 2-2 23-28 29-47 2-5 10-39 10-39 5 10 20 18 36 18 47 0 79-43 79-100C212 38 174 0 128 0z" fill="#000" fill-rule="nonzero"/></svg>`;
+  color = "#e12828";
+  exampleURL = "https://www.pinterest.com/pin/526147168097149894/";
   validator = (input: string) =>
-    /(https?:\/\/(.+?\.)?(pinterest|pin)\.(com|it)(\/[A-Za-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;\=]*)?)/.test(
+    /(https?:\/\/(.+?\.)?pinterest\.com(\/[A-Za-z0-9\-._~:/?#[\]@!$&'()*+,;=]*)?)/.test(
       input
     );
 }

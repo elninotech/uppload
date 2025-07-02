@@ -228,7 +228,7 @@ export class Uppload implements IUppload {
     this.container.style.transition = `${this.transitionDuration}ms`;
     this.container.style.opacity = "0";
     this.update();
-    let firstService = this.settings.defaultService;
+    const firstService = this.settings.defaultService;
     if (this.services.length === 3) this.navigate(this.services[2].name);
     if (firstService) this.navigate(firstService);
     safeListen(document.body, "keyup", e => {

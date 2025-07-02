@@ -7,7 +7,7 @@ export default class Facebook extends MicrolinkBaseClass {
   exampleURL =
     "https://www.facebook.com/elninotech/photos/a.2066268863489861/2066268886823192/?type=3&theater";
   validator = (input: string) =>
-    /(https?:\/\/(.+?\.)?(facebook|fb)\.(com|me)(\/[A-Za-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;\=]*)?)/.test(
+    /(https?:\/\/(.+?\.)?(facebook|fb)\.(com|me)(\/[A-Za-z0-9\-._~:/?#[\]@!$&'()*+,;=]*)?)/.test(
       input
     );
 }
