@@ -2,12 +2,15 @@ import { IHandlersParams, ITemplateParams } from "./helpers/interfaces";
 
 export class UpploadEffect {
   type = "effect";
-  name: string = "";
+  name = "";
   invisible = false;
   noRecolor = false;
   color = "#000";
-  icon: string = "";
+  icon = "";
   template: (props: ITemplateParams) => string = () => "";
-  handlers: (params: IHandlersParams) => void = () => {};
+  /** Base handler method - meant to be overridden by subclasses */
+  handlers: (params: IHandlersParams) => void = () => {
+    // Intentionally empty - base implementation
+  };
   supports: () => boolean = () => true;
 }

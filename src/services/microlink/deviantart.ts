@@ -7,7 +7,7 @@ export default class DeviantArt extends MicrolinkBaseClass {
   exampleURL =
     "https://www.deviantart.com/artbycatherineradley/art/Despair-820869682";
   validator = (input: string) =>
-    /(https?:\/\/(.+?\.)?(deviantart|fav)\.(com|me)(\/[A-Za-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;\=]*)?)/.test(
+    /(https?:\/\/(.+?\.)?(deviantart|fav)\.(com|me)(\/[A-Za-z0-9\-._~:/?#[\]@!$&'()*+,;=]*)?)/.test(
       input
     );
 }

@@ -7,7 +7,7 @@ export default class Fotki extends MicrolinkBaseClass {
   exampleURL =
     "https://public.fotki.com/EricAnke/holland/molens/20170928-162510.html";
   validator = (input: string) =>
-    /(https?:\/\/(.+?\.)?fotki\.com(\/[A-Za-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;\=]*)?)/.test(
+    /(https?:\/\/(.+?\.)?fotki\.com(\/[A-Za-z0-9\-._~:/?#[\]@!$&'()*+,;=]*)?)/.test(
       input
     );
 }

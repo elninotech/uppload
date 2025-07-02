@@ -7,7 +7,7 @@ export default class Flickr extends MicrolinkBaseClass {
   color = "#ff0084";
   exampleURL = "https://www.flickr.com/photos/renewolf/26111951000/";
   validator = (input: string) =>
-    /(https?:\/\/(.+?\.)?(flickr|flic)\.(com|kr)(\/[A-Za-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;\=]*)?)/.test(
+    /(https?:\/\/(.+?\.)?(flickr|flic)\.(com|kr)(\/[A-Za-z0-9\-._~:/?#[\]@!$&'()*+,;=]*)?)/.test(
       input
     );
 }

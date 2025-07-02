@@ -75,7 +75,7 @@ export default class Flip extends UpploadEffect {
     if (!img) return;
     this.imageToCanvasBlob(params, x, y).then(blob => {
       if (!blob) return;
-      let file = this.originalFile;
+      const file = this.originalFile;
       file.blob = blob;
       params.next(file);
       const image = URL.createObjectURL(blob);
