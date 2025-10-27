@@ -1,0 +1,15 @@
+@use "modal";
+@use "ui";
+@use "services";
+@use "effects";
+@use "mobile";
+
+/**
+ * Initially, the widget will be appended to body but invisible
+ */
+.uppload-container {
+  display: none;
+  &.visible {
+    display: block;
+  }
+}

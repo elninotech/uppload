@@ -27,7 +27,5 @@ coverage
 *.sw?
 
 # Examples
-content/examples/*
-!content/examples/index.md
-scripts/uppload-examples-master
-scripts/master.zip
+docs/content/examples/*
+!docs/content/examples/index.md

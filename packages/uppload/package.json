@@ -1,0 +1,68 @@
+{
+  "name": "uppload",
+  "version": "4.0.0-alpha",
+  "description": "Uppload is a JavaScript widget for better file uploading on the web.",
+  "keywords": [
+    "uppload",
+    "typescript",
+    "css",
+    "scss",
+    "el nino",
+    "file upload",
+    "image upload",
+    "crop",
+    "uploader",
+    "upload",
+    "javascript"
+  ],
+  "packageManager": "pnpm@10.19.0",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": ["**/*.css"],
+  "repository": "https://github.com/elninotech/uppload",
+  "homepage": "https://uppload.js.org",
+  "bugs": {
+    "url": "https://github.com/elninotech/uppload/issues"
+  },
+  "author": "El Niño <https://elnino.tech>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build:js": "tsdown",
+    "build:css": "sass src/styles/uppload.scss:dist/uppload.css src/themes/dark.scss:dist/themes/dark.css src/themes/light.scss:dist/themes/light.css",
+    "build": "npm run build:js && npm run build:css",
+    "prepublishOnly": "pnpm build",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "sass": "^1.93.2",
+    "tsdown": "^0.15.9",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.1"
+  },
+  "dependencies": {
+    "cropperjs": "^1.5.7",
+    "focus-trap": "^7.3.1",
+    "mitt": "^3.0.0"
+  },
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./uppload.css" : "./dist/uppload.css",
+    "./themes/dark.css" : "./dist/themes/dark.css",
+    "./themes/light.css" : "./dist/themes/light.css"
+  }
+}

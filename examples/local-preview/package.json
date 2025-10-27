@@ -1,0 +1,18 @@
+{
+  "name": "local-preview-example",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build"
+  },
+  "author": "El Niño (https://www.elnino.tech)",
+  "license": "MIT",
+  "dependencies": {
+    "uppload": "workspace:^"
+  },
+  "devDependencies": {
+    "vite": "^6.0.7",
+    "typescript": "^5.7.3"
+  }
+}
