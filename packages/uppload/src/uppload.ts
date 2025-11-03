@@ -195,7 +195,13 @@ export class Uppload implements IUppload {
       const has = !!this.services.filter(
         service => service.name === plugin.name
       ).length;
-      if (!has) this.services.push(plugin as UpploadService);
+      if (!has) {
+        const service = plugin as UpploadService;
+        this.services.push(service);
+        if (!service.invisible && this.activeService === "default") {
+          this.activeService = service.name;
+        }
+      }
       this.ready();
     } else if (plugin.type === "effect") {
       const has = !!this.effects.filter(effect => effect.name === plugin.name)

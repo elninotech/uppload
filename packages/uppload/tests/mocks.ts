@@ -1,4 +1,4 @@
-import { GlobalWithFetchMock } from "jest-fetch-mock";
+import type { GlobalWithFetchMock } from "jest-fetch-mock";
 import {
   IServiceTemplateParams,
   IHandlersParams,
@@ -11,9 +11,10 @@ import xhr from "xhr-mock";
 
 const customGlobal: GlobalWithFetchMock =
   global as unknown as GlobalWithFetchMock;
-customGlobal.fetch = require("jest-fetch-mock");
-customGlobal.fetchMock = customGlobal.fetch;
-export const fetch = customGlobal.fetch;
+const fetchMock = require("jest-fetch-mock");
+customGlobal.fetch = fetchMock;
+customGlobal.fetchMock = fetchMock;
+export const fetch = fetchMock;
 
 const serviceTemplateParams: IServiceTemplateParams = {
   uppload,
