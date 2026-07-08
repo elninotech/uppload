@@ -66,36 +66,46 @@ export const fitImageToContainer = (
   image: HTMLImageElement | HTMLVideoElement
 ): Promise<void> => {
   return new Promise(resolve => {
-    safeRequestAnimationFrame(() => {
-      const parent = image.parentElement as HTMLDivElement | null;
-      const currentDimensions = image.getBoundingClientRect();
-      if (!parent) return;
-      const dimensions = parent.getBoundingClientRect();
-      if (currentDimensions.height < currentDimensions.width) {
-        image.style.height = `${dimensions.height}px`;
-        image.style.width = "auto";
-      } else {
-        image.style.width = `${dimensions.width}px`;
-        image.style.height = "auto";
-      }
+    const fit = () => {
       safeRequestAnimationFrame(() => {
+        const parent = image.parentElement as HTMLDivElement | null;
         const currentDimensions = image.getBoundingClientRect();
-        if (currentDimensions.height > dimensions.height) {
+        if (!parent) return;
+        const dimensions = parent.getBoundingClientRect();
+        if (currentDimensions.height < currentDimensions.width) {
           image.style.height = `${dimensions.height}px`;
           image.style.width = "auto";
-        } else if (currentDimensions.width > dimensions.width) {
+        } else {
           image.style.width = `${dimensions.width}px`;
           image.style.height = "auto";
         }
         safeRequestAnimationFrame(() => {
-          const effect = params.uppload.container.querySelector(
-            ".uppload-effect"
-          ) as HTMLDivElement | null;
-          if (effect) effect.style.opacity = "1";
-          resolve();
+          const currentDimensions = image.getBoundingClientRect();
+          if (currentDimensions.height > dimensions.height) {
+            image.style.height = `${dimensions.height}px`;
+            image.style.width = "auto";
+          } else if (currentDimensions.width > dimensions.width) {
+            image.style.width = `${dimensions.width}px`;
+            image.style.height = "auto";
+          }
+          safeRequestAnimationFrame(() => {
+            const effect = params.uppload.container.querySelector(
+              ".uppload-effect"
+            ) as HTMLDivElement | null;
+            if (effect) effect.style.opacity = "1";
+            resolve();
+          });
         });
       });
-    });
+    };
+    // Wait for the image to finish loading, otherwise its natural
+    // dimensions (and so getBoundingClientRect) are still 0x0
+    if (image instanceof HTMLImageElement && !image.complete) {
+      safeListen(image, "load", fit);
+      safeListen(image, "error", fit);
+    } else {
+      fit();
+    }
   });
 };
 
